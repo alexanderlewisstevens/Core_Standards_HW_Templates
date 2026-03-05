@@ -1,0 +1,178 @@
+\documentclass[8pt]{article}
+\usepackage[letterpaper,margin=0.25in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{multicol}
+\usepackage{enumitem}
+\setlist{nosep,leftmargin=8pt}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1pt}
+\setlength{\columnsep}{0.12in}
+\usepackage[compact,small]{titlesec}
+\titlespacing*{\section}{0pt}{2pt}{1pt}
+\titlespacing*{\subsection}{0pt}{1pt}{0pt}
+\setlength{\abovedisplayskip}{1pt}
+\setlength{\belowdisplayskip}{1pt}
+\pagestyle{empty}
+
+\begin{document}
+\begin{center}
+\textbf{\large Proof Techniques Cheat Sheet --- Core Assessment 2}
+\end{center}
+\vspace{-6pt}
+
+\begin{multicols}{3}
+\small
+
+\section*{Rules of Inference}
+\textbf{Propositional:}
+\begin{itemize}[nosep]
+\item \textbf{Modus Ponens:} $p, p \to q \therefore q$
+\item \textbf{Modus Tollens:} $\neg q, p \to q \therefore \neg p$
+\item \textbf{Hypothetical Syllogism:} $p \to q, q \to r \therefore p \to r$
+\item \textbf{Disjunctive Syllogism:} $p \lor q, \neg p \therefore q$
+\item \textbf{Addition:} $p \therefore p \lor q$
+\item \textbf{Simplification:} $p \land q \therefore p$
+\item \textbf{Conjunction:} $p, q \therefore p \land q$
+\item \textbf{Resolution:} $p \lor q, \neg p \lor r \therefore q \lor r$
+\end{itemize}
+
+\textbf{Quantified:}
+\begin{itemize}[nosep]
+\item \textbf{Universal Instantiation (UI):} $\forall x\, P(x) \therefore P(c)$ for any $c$
+\item \textbf{Universal Generalization (UG):} $P(c)$ for arbitrary $c \therefore \forall x\, P(x)$
+  \\ (must be arbitrary, not specific!)
+\item \textbf{Existential Instantiation (EI):} $\exists x\, P(x) \therefore P(c)$ for some $c$
+  \\ (use new name, can't reuse!)
+\item \textbf{Existential Generalization (EG):} $P(c) \therefore \exists x\, P(x)$
+\end{itemize}
+
+\textbf{Common Errors:}
+\begin{itemize}[nosep]
+\item Using same constant for multiple EI
+\item Universal generalization on specific element
+\item Can't simplify $\lor$ (only $\land$)
+\item Converse error: $q, p \to q \not\Rightarrow p$
+\item Inverse error: $\neg p, p \to q \not\Rightarrow \neg q$
+\end{itemize}
+\newcolumn
+\section*{Proof Techniques}
+\subsection*{Direct Proof}
+\textbf{Structure:} Assume $p$, show $q$ directly.
+
+\textbf{Template:}
+\begin{enumerate}[nosep]
+\item Assume $p$ is true
+\item Use definitions, axioms, proven theorems
+\item Chain of logical steps
+\item Conclude $q$ is true
+\end{enumerate}
+
+\textbf{Key Definitions:}
+\begin{itemize}[nosep]
+\item Even: $n = 2k$ for some integer $k$
+\item Odd: $n = 2k+1$ for some integer $k$
+\item Divisible: $a|b$ means $b = ak$ for some integer $k$
+\item Perfect square: $n = m^2$ for some integer $m$
+\item Rational: $r = p/q$ where $p,q$ integers, $q \neq 0$
+\item Irrational: not rational
+\end{itemize}
+
+\subsection*{Proof by Contrapositive}
+\textbf{Structure:} To prove $p \to q$, prove $\neg q \to \neg p$.
+
+\textbf{When to use:}
+\begin{itemize}[nosep]
+\item Conclusion is negative ("not even", "not divisible")
+\item Hypothesis is disjunction: $p \lor q$
+  \\ Contrapositive: $\neg p \land \neg q$
+\item Direct proof seems difficult
+\end{itemize}
+
+
+\subsection*{Proof by Contradiction}
+\textbf{Structure:} To prove $p$, assume $\neg p$ and derive contradiction.
+
+\textbf{When to use:}
+\begin{itemize}[nosep]
+\item Statement says something "doesn't exist"
+\item Proving irrationality
+\item Proving uniqueness
+\item No clear direct path
+\end{itemize}
+
+\textbf{Template:}
+\begin{enumerate}[nosep]
+\item Assume $\neg p$ (opposite of what we want)
+\item Derive logical consequences
+\item Reach contradiction ($r \land \neg r$)
+\item Conclude $p$ must be true
+\end{enumerate}
+
+
+\subsection*{Proof by Cases}
+\textbf{Structure:} Break into exhaustive cases, prove each.
+
+\textbf{When to use:}
+\begin{itemize}[nosep]
+\item Natural divisions (even/odd, positive/negative/zero)
+\item Absolute values, max/min functions
+\item Disjunction in hypothesis
+\end{itemize}
+
+\textbf{Template:}
+\begin{enumerate}[nosep]
+\item Identify exhaustive cases
+\item Prove statement for each case
+\item Conclude statement true overall
+\end{enumerate}
+
+
+
+\subsection*{Biconditional Proofs (If and Only If)}
+\textbf{To prove $p \leftrightarrow q$:}
+\begin{itemize}[nosep]
+\item Prove $p \to q$ (forward direction)
+\item Prove $q \to p$ (backward direction)
+\end{itemize}
+
+
+\subsection*{Counterexamples}
+\textbf{To disprove $\forall x\, P(x)$:} Find one $x$ where $P(x)$ false.
+
+\textbf{To disprove $p \to q$:} Find case where $p$ true but $q$ false.
+
+\section*{Proof Tricks}
+
+\subsection*{Without Loss of Generality (WLOG)}
+\textbf{Use when:} Cases are symmetric, can reduce work.
+
+
+\subsection*{Constructive vs Nonconstructive}
+\textbf{Constructive:} Explicitly find/build example.
+
+\textbf{Nonconstructive:} Prove existence without construction.
+
+
+\section*{Proof Strategy Guide}
+\textbf{Choose method based on:}
+
+\textbf{Direct:} Default choice, clear path from $p$ to $q$
+
+\textbf{Contrapositive:}
+\begin{itemize}[nosep]
+\item Conclusion is negative
+\item Hypothesis is disjunction ($p \lor q$)
+\item Easier to work with negations
+\end{itemize}
+
+\textbf{Contradiction:}
+\begin{itemize}[nosep]
+\item Proving irrationality
+\item Proving non-existence
+\item Proving uniqueness
+\item No direct or contrapositive path clear
+\end{itemize}
+
+\end{multicols}
+
+\end{document}

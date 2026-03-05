@@ -1,0 +1,151 @@
+\documentclass[11pt]{article}
+
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{enumitem}
+\usepackage[margin=1in]{geometry}
+\usepackage{setspace}
+
+\onehalfspacing
+
+% Numbering setup
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+
+\theoremstyle{plain}
+\newtheorem{axiom}{Axiom}[subsection]
+\newtheorem{theorem}{Theorem}[subsection]
+
+\setlist[itemize]{topsep=0.5em,itemsep=0.25em}
+
+\begin{document}
+
+\section*{Introduction}
+
+These notes present several axiomatic systems for geometry. We begin with abstract
+\emph{practice geometries}, designed to emphasize how different axiom sets generate
+different mathematical worlds.
+
+Certain foundational terms are intentionally left undefined. This reflects the axiomatic
+method: objects are characterized not by intrinsic meaning, but by the relations imposed
+by the axioms.
+
+\section{Practice Geometries}
+
+The following terms will be left undefined:
+\begin{itemize}
+    \item point
+    \item line
+    \item lie on
+    \item passing through
+\end{itemize}
+
+\subsection*{Definitions}
+
+\begin{definition}
+Points $A$ and $B$ are \emph{collinear} if there exists a line that passes through both $A$ and $B$.
+\end{definition}
+
+\begin{definition}
+Lines $\ell$ and $m$ \emph{intersect} if there exists a point $A$ such that $A$ lies on both $\ell$
+and $m$.
+\end{definition}
+
+\subsection{Practice Geometry \#1}
+
+\subsubsection*{Axioms}
+
+\begin{axiom}
+There exist four points such that no three are collinear.
+\end{axiom}
+
+\begin{axiom}
+For each pair of points, there exists a unique line passing through both points.
+\end{axiom}
+
+\begin{axiom}
+Every pair of lines intersect.
+\end{axiom}
+
+\begin{axiom}
+There exists a line with exactly five points on it.
+\end{axiom}
+
+\subsubsection*{Theorems}
+
+\begin{theorem}
+Every pair of lines intersect at exactly one point.
+\end{theorem}
+
+\begin{theorem}
+There exist four lines such that no three intersect at the same point.
+\end{theorem}
+
+\begin{theorem}
+There exists a point with exactly five lines passing through it.
+\end{theorem}
+
+\begin{theorem}
+For any pair of points, there exists a line that does not pass through either point.
+\end{theorem}
+
+\begin{theorem}
+Each point lies on exactly five lines.
+\end{theorem}
+
+\begin{theorem}
+Each line passes through exactly five points.
+\end{theorem}
+
+\begin{theorem}
+There are exactly 21 points.
+\end{theorem}
+
+\begin{theorem}
+There are exactly 21 lines.
+\end{theorem}
+
+\subsection{Practice Geometry \#2}
+
+\subsubsection*{Axioms}
+
+\begin{axiom}
+There exist four points such that no three are collinear.
+\end{axiom}
+
+\begin{axiom}
+For each pair of points, there exists a unique line passing through both points.
+\end{axiom}
+
+\begin{axiom}
+Given a line $\ell$ and a point $P$ not on $\ell$, there is a unique line through $P$
+that does not intersect $\ell$.
+\end{axiom}
+
+\begin{axiom}
+There exists a line with exactly three points on it.
+\end{axiom}
+
+\subsubsection*{Theorems}
+
+\begin{theorem}
+Every point lies on exactly four lines.
+\end{theorem}
+
+\begin{theorem}
+Each line passes through exactly three points.
+\end{theorem}
+
+\begin{theorem}
+For each line $\ell$, there are exactly two lines that do not intersect $\ell$.
+\end{theorem}
+
+\begin{theorem}
+There are exactly nine points.
+\end{theorem}
+
+\begin{theorem}
+There are exactly twelve lines.
+\end{theorem}
+
+
+\end{document}

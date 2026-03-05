@@ -1,0 +1,229 @@
+\documentclass[8pt]{article}
+\usepackage[letterpaper,margin=0.25in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{multicol}
+\usepackage{enumitem}
+\setlist{nosep,leftmargin=8pt}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1pt}
+\setlength{\columnsep}{0.12in}
+\usepackage[compact,small]{titlesec}
+\titlespacing*{\section}{0pt}{2pt}{1pt}
+\titlespacing*{\subsection}{0pt}{1pt}{0pt}
+\setlength{\abovedisplayskip}{1pt}
+\setlength{\belowdisplayskip}{1pt}
+\pagestyle{empty}
+
+\begin{document}
+\begin{center}
+\textbf{\large 1.1-1.3 Definitions}
+\end{center}
+\vspace{-6pt}
+
+\begin{multicols}{3}
+\small
+
+\section*{Truth Tables}
+\textbf{Basic Connectives:}
+\vspace{-2pt}
+\begin{itemize}[nosep]
+\item $\neg p$: NOT (opposite)
+\item $p \land q$: AND (both true)
+\item $p \lor q$: OR (at least one true)
+\item $p \to q$: IF-THEN (false only when $p$ true, $q$ false)
+\item $p \leftrightarrow q$: IFF (same truth value)
+\end{itemize}
+
+\textbf{Procedure:}
+\begin{enumerate}[nosep]
+\item List all variable combinations (rows: $2^n$)
+\item Evaluate innermost operations first
+\item Work outward to main connective
+\end{enumerate}
+
+\textbf{Key patterns:}
+\begin{itemize}[nosep]
+\item $p \land \neg p$: always F (contradiction)
+\item $p \lor \neg p$: always T (tautology)
+\item $p \to q \equiv \neg p \lor q$
+\item $p \leftrightarrow q \equiv (p \to q) \land (q \to p)$
+\end{itemize}
+
+\section*{Logical Equivalences}
+\textbf{De Morgan's Laws:}
+\begin{itemize}[nosep]
+\item $\neg(p \land q) \equiv \neg p \lor \neg q$
+\item $\neg(p \lor q) \equiv \neg p \land \neg q$
+\end{itemize}
+
+\textbf{Conditional Equivalences:}
+\begin{itemize}[nosep]
+\item $p \to q \equiv \neg p \lor q$
+\item $p \to q \equiv \neg q \to \neg p$ (contrapositive)
+\item $\neg(p \to q) \equiv p \land \neg q$
+\end{itemize}
+
+\textbf{Biconditional:}
+\begin{itemize}[nosep]
+\item $p \leftrightarrow q \equiv (p \to q) \land (q \to p)$
+\item $p \leftrightarrow q \equiv (p \land q) \lor (\neg p \land \neg q)$
+\end{itemize}
+
+\textbf{Distributive Laws:}
+\begin{itemize}[nosep]
+\item $p \land (q \lor r) \equiv (p \land q) \lor (p \land r)$
+\item $p \lor (q \land r) \equiv (p \lor q) \land (p \lor r)$
+\end{itemize}
+
+\textbf{Common Tautologies:}
+\begin{itemize}[nosep]
+\item $p \lor \neg p$ (Law of Excluded Middle)
+\item $[(p \to q) \land p] \to q$ (Modus Ponens)
+\item $[(p \to q) \land \neg q] \to \neg p$ (Modus Tollens)
+\item $[(p \to q) \land (q \to r)] \to (p \to r)$ (Hypothetical Syllogism)
+\end{itemize}
+
+\section*{Predicate Logic}
+\textbf{Quantifiers:}
+\begin{itemize}[nosep]
+\item $\forall x\, P(x)$: for all $x$, $P(x)$ is true
+\item $\exists x\, P(x)$: there exists $x$ such that $P(x)$ is true
+\end{itemize}
+
+\textbf{Translation Tips:}
+\begin{itemize}[nosep]
+\item "All" / "Every" $\to$ $\forall x (P(x) \to Q(x))$
+\item "Some" / "There exists" $\to$ $\exists x (P(x) \land Q(x))$
+\item "No" / "None" $\to$ $\forall x (P(x) \to \neg Q(x))$ or $\neg \exists x (P(x) \land Q(x))$
+\item "and" $\to$ $\land$, "or" $\to$ $\lor$, "but" $\to$ $\land$
+\end{itemize}
+
+\textbf{Common Patterns:}
+\begin{itemize}[nosep]
+\item "Everyone is X" $\to$ $\forall x\, X(x)$
+\item "Someone is X" $\to$ $\exists x\, X(x)$
+\item "No one is X" $\to$ $\forall x\, \neg X(x)$ or $\neg \exists x\, X(x)$
+\item "Not everyone is X" $\to$ $\neg \forall x\, X(x)$ or $\exists x\, \neg X(x)$
+\end{itemize}
+
+\textbf{Domain Switching:}
+\begin{itemize}[nosep]
+\item Class domain: $\exists x\, P(x)$
+\item All people: $\exists x\, (S(x) \land P(x))$ where $S(x)$ = "x is in class"
+\end{itemize}
+
+\section*{Negating Quantifiers}
+\textbf{Negation Rules:}
+\begin{itemize}[nosep]
+\item $\neg(\forall x\, P(x)) \equiv \exists x\, \neg P(x)$
+\item $\neg(\exists x\, P(x)) \equiv \forall x\, \neg P(x)$
+\end{itemize}
+
+\textbf{Procedure:}
+\begin{enumerate}[nosep]
+\item Move negation to right of quantifiers
+\item Flip quantifiers: $\forall \leftrightarrow \exists$
+\item Negate predicate
+\item Apply De Morgan's to compound predicates
+\end{enumerate}
+
+\textbf{Examples:}
+\begin{itemize}[nosep]
+\item $\neg(\forall x\, D(x)) \equiv \exists x\, \neg D(x)$
+  \\ "Not all dogs..." $\to$ "Some dog doesn't..."
+\item $\neg(\exists x\, H(x)) \equiv \forall x\, \neg H(x)$
+  \\ "There is no horse..." $\to$ "All horses don't..."
+\item $\neg(\forall x (P(x) \to Q(x))) \equiv \exists x (P(x) \land \neg Q(x))$
+\item $\neg(\exists x (P(x) \land Q(x))) \equiv \forall x (P(x) \to \neg Q(x))$
+\end{itemize}
+
+\textbf{Multiple Quantifiers:}
+\begin{itemize}[nosep]
+\item Work from left to right
+\item $\neg(\forall x \exists y\, P(x,y)) \equiv \exists x \forall y\, \neg P(x,y)$
+\end{itemize}
+
+\section*{Consistency \& Satisfiability}
+\textbf{Definitions:}
+\begin{itemize}[nosep]
+\item \textbf{Consistent:} can assign truth values to make all statements true
+\item \textbf{Inconsistent:} no such assignment exists
+\item \textbf{Tautology:} always true (all T column)
+\item \textbf{Contradiction:} always false (all F column)
+\item \textbf{Contingency:} sometimes T, sometimes F
+\end{itemize}
+
+\textbf{Checking Consistency:}
+\begin{enumerate}[nosep]
+\item Identify propositional variables
+\item Translate to logical form
+\item Try to find satisfying assignment
+\item If contradiction found $\to$ inconsistent
+\end{enumerate}
+
+\textbf{Tips:}
+\begin{itemize}[nosep]
+\item "if and only if" $\to$ $\leftrightarrow$
+\item "only if" $\to$ $\to$
+\item "necessary" $\to$ consequence (reversed arrow)
+\item "sufficient" $\to$ antecedent
+\item Look for contradictory pairs: $p$ and $\neg p$
+\end{itemize}
+
+\section*{Key Translations}
+\textbf{English $\to$ Logic:}
+\begin{itemize}[nosep]
+\item "If P then Q" $\to$ $P \to Q$
+\item "P only if Q" $\to$ $P \to Q$
+\item "P is sufficient for Q" $\to$ $P \to Q$
+\item "Q is necessary for P" $\to$ $P \to Q$
+\item "P if Q" $\to$ $Q \to P$
+\item "P unless Q" $\to$ $\neg Q \to P$ or $P \lor Q$
+\item "Neither P nor Q" $\to$ $\neg P \land \neg Q$
+\item "Not both P and Q" $\to$ $\neg(P \land Q)$ or $\neg P \lor \neg Q$
+\end{itemize}
+
+\section*{Proving Equivalences}
+\textbf{Method 1: Truth Tables}
+\begin{itemize}[nosep]
+\item Show both have identical columns
+\end{itemize}
+
+\textbf{Method 2: Logical Equivalences}
+\begin{itemize}[nosep]
+\item Start with one side
+\item Apply known equivalences
+\item Transform to other side
+\end{itemize}
+
+\textbf{Useful for Conditionals:}
+\begin{itemize}[nosep]
+\item $(p \to q) \land (p \to r) \equiv p \to (q \land r)$
+\item $(p \to r) \land (q \to r) \equiv (p \lor q) \to r$
+\item $(p \to q) \lor (p \to r) \equiv p \to (q \lor r)$
+\end{itemize}
+
+\section*{Common Mistakes}
+\begin{itemize}[nosep]
+\item Confusing $\to$ with $\leftrightarrow$
+\item $p \to q$ is NOT the same as $q \to p$ (converse)
+\item "All A are B" is $\forall x (A(x) \to B(x))$, \textbf{NOT} $\forall x (A(x) \land B(x))$
+\item "Some A are B" is $\exists x (A(x) \land B(x))$, \textbf{NOT} $\exists x (A(x) \to B(x))$
+\item When negating, flip quantifiers AND negate predicate
+\end{itemize}
+
+\section*{Quick Reference}
+\textbf{Expanding Quantifiers (domain $\{1,2,3\}$):}
+\begin{itemize}[nosep]
+\item $\forall x\, P(x) \equiv P(1) \land P(2) \land P(3)$
+\item $\exists x\, P(x) \equiv P(1) \lor P(2) \lor P(3)$
+\end{itemize}
+
+\textbf{Counterexamples:}
+\begin{itemize}[nosep]
+\item To disprove $\forall x\, P(x)$: find one $x$ where $P(x)$ is false
+\end{itemize}
+
+\end{multicols}
+
+\end{document}

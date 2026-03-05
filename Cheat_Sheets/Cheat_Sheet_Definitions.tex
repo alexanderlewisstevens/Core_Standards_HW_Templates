@@ -1,0 +1,188 @@
+\documentclass[8pt]{article}
+
+\usepackage[letterpaper,margin=0.25in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage{amsthm}
+\usepackage[compact,small]{titlesec}
+
+% ===== Tight spacing settings =====
+\setlist{nosep,leftmargin=8pt}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\columnsep}{0.1in}
+\setlength{\multicolsep}{0pt}
+
+% Display math spacing
+\setlength{\abovedisplayskip}{0pt}
+\setlength{\belowdisplayskip}{0pt}
+\setlength{\abovedisplayshortskip}{0pt}
+\setlength{\belowdisplayshortskip}{0pt}
+
+% Section heading spacing
+\titlespacing*{\section}{0pt}{0pt}{0pt}
+\titlespacing*{\subsection}{0pt}{0pt}{0pt}
+
+% ===== Theorem Environment =====
+\theoremstyle{definition}
+\newtheorem*{defn}{Definition}
+
+\makeatletter
+\def\th@definition{%
+  \normalfont
+  \thm@headpunct{\newline}%
+  \topsep0pt \partopsep0pt \parskip0pt \parsep0pt%
+}
+\makeatother
+
+\pagestyle{empty}
+
+\begin{document}
+
+\begin{center}
+\textbf{\large Logic Cheat Sheet --- Core Assessment 1}
+\end{center}
+\vspace{-6pt}
+\begin{multicols}{3}
+\small
+\section*{Propositional Equivalences}
+\begin{defn}[Identity Laws]
+$p \land T \equiv p \qquad$\\
+$p \lor F \equiv p$
+\end{defn}
+
+\begin{defn}[Domination Laws]
+$p \lor T \equiv T \qquad$\\
+$p \land F \equiv F$
+\end{defn}
+
+\begin{defn}[Idempotent Laws]
+$p \lor p \equiv p \qquad$\\
+$p \land p \equiv p$
+\end{defn}
+
+\begin{defn}[Double Negation]
+$\lnot \lnot p \equiv p$
+\end{defn}
+
+\begin{defn}[Commutative Laws]
+$p \lor q \equiv q \lor p$\\
+$p \land q \equiv q \land p$
+\end{defn}
+
+\begin{defn}[Associative Laws]
+$(p \lor q) \lor r \equiv p \lor (q \lor r)$\\
+$(p \land q) \land r \equiv p \land (q \land r)$
+\end{defn}
+
+\begin{defn}[Distributive Laws]
+$p \lor (q \land r) \equiv (p \lor q) \land (p \lor r)$\\
+$p \land (q \lor r) \equiv (p \land q) \lor (p \land r)$
+\end{defn}
+
+\begin{defn}[De Morgan's Laws]
+
+$\lnot (p \land q) \equiv \lnot p \lor \lnot q$\\
+$\lnot (p \lor q) \equiv \lnot p \land \lnot q$
+
+\end{defn}
+
+\begin{defn}[Absorption Laws]
+$p \lor (p \land q) \equiv p$\\
+$p \land (p \lor q) \equiv p$
+
+\end{defn}
+
+\begin{defn}[Implication Restatement]
+$p \to q \equiv \lnot p \lor q$
+\end{defn}
+
+\begin{defn}[Biconditional]
+
+$p \leftrightarrow q \equiv (p \to q) \land (q \to p)$
+
+\end{defn}
+\newcolumn
+\section*{Rules of Inference}
+\begin{defn}[Modus ponens]
+$p,p\to q \vdash q$
+\end{defn}
+
+\begin{defn}[Modus tollens]
+$\lnot q,p\to q \vdash \lnot p$
+\end{defn}
+\begin{defn}[Hypothetical syllogism]
+$(p \to q) , (q \to r) \vdash (p \to r)$
+\end{defn}
+\begin{defn}[Disjunctive syllogism]
+$(p \lor q),\lnot p \vdash q$
+\end{defn}
+\begin{defn}[Addition]
+$p \vdash p \lor q$
+\end{defn}
+\begin{defn}[Simplification]
+$p \land q\vdash p$
+\end{defn}
+\begin{defn}[Conjunction]
+$p,q \vdash p \land q$
+\end{defn}
+\begin{defn}[Resolution]
+$p \lor q, \lnot p \lor r  \vdash q \lor r$
+\end{defn}
+\newcolumn
+\section*{Predicate Logic}
+\textbf{Quantifiers:}
+\begin{itemize}[nosep]
+\item $\forall x\, P(x)$: for all $x$, $P(x)$ is true
+\item $\exists x\, P(x)$: there exists $x$ such that $P(x)$ is true
+\end{itemize}
+
+\textbf{Negation Rules:}
+\begin{itemize}[nosep]
+\item $\neg(\forall x\, P(x)) \equiv \exists x\, \neg P(x)$
+\item $\neg(\exists x\, P(x)) \equiv \forall x\, \neg P(x)$
+\end{itemize}
+\textbf{Expanding Quantifiers (domain $\{1,2,3\}$):}
+\begin{itemize}[nosep]
+\item $\forall x\, P(x) \equiv P(1) \land P(2) \land P(3)$
+\item $\exists x\, P(x) \equiv P(1) \lor P(2) \lor P(3)$
+\end{itemize}
+
+\section*{Consistency \& Satisfiability}
+\begin{itemize}[nosep]
+\item \textbf{Consistent:} can assign truth values to make all statements true simultaneously
+\item \textbf{Inconsistent:} no such assignment exists
+\item \textbf{Tautology:} always true (all T column)
+\item \textbf{Contradiction:} always false (all F column)
+\item \textbf{Contingency:} sometimes T, sometimes F
+\end{itemize}
+
+\section*{Key Translations}
+\textbf{English $\to$ Logic:}
+\begin{itemize}[nosep]
+\item "If P then Q" $\iff$ $P \to Q$
+\item "P only if Q" $\iff$ $P \to Q$
+\item "P is sufficient for Q" $\iff$ $P \to Q$
+\item "Q is necessary for P" $\iff$ $P \to Q$
+\item "P if Q" $\iff$ $Q \to P$
+\item "P unless Q" $\iff$ $\neg Q \to P$ or $P \lor Q$
+\item "Neither P nor Q" $\iff$ $\neg P \land \neg Q$
+
+\end{itemize}
+
+\section*{Proving Equivalences}
+\textbf{Method 1: Truth Tables}
+\begin{itemize}[nosep]
+\item Show both have identical columns
+\end{itemize}
+
+\textbf{Method 2: Logical Equivalences}
+\begin{itemize}[nosep]
+\item Start with one side
+\item Apply known equivalences
+\item Transform to other side
+\end{itemize}
+\end{multicols}
+
+\end{document}

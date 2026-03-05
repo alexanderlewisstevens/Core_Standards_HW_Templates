@@ -1,0 +1,304 @@
+\documentclass[9pt]{article}
+
+% --- Packing + layout ---
+\usepackage{fancyhdr}
+\usepackage[letterpaper,margin=0.3in,includehead,includefoot,headheight=14pt,headsep=6pt]{geometry}
+\setlength{\columnsep}{0.15in}
+\usepackage{microtype}
+\usepackage{multicol}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+% Tighten section spacing
+\usepackage[compact,small]{titlesec}
+\titlespacing*{\section}{0pt}{2pt}{1pt}
+\titlespacing*{\subsection}{0pt}{2pt}{1pt}
+
+% Tighten lists
+\usepackage{enumitem}
+\setlist{nosep,leftmargin=*}
+\setlist[itemize]{noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt,leftmargin=*}
+\setlist[enumerate]{noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt,leftmargin=*}
+
+% Math spacing
+\setlength{\abovedisplayskip}{2pt}
+\setlength{\belowdisplayskip}{2pt}
+\setlength{\abovedisplayshortskip}{1pt}
+\setlength{\belowdisplayshortskip}{1pt}
+
+% Math + links
+\usepackage{amsmath,amssymb}
+\usepackage[hidelinks]{hyperref}
+
+% For including images
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+
+% Callout boxes (kept for consistency even if unused)
+\usepackage[most]{tcolorbox}
+\tcbset{colback=white,colframe=black,boxrule=0.4pt,arc=2pt,left=6pt,right=6pt,top=4pt,bottom=4pt}
+\newtcolorbox{notebox}{title=Note}
+\newtcolorbox{solutionbox}{title=Solution}
+
+% --- Fancy header/footer ---
+\setlength{\headheight}{14pt}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textbf{Core Assessment 3 2026-02-10}}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\fancypagestyle{plain}{%
+  \fancyhf{}
+  \fancyhead[L]{\textbf{Core Assessment 5}}
+  \fancyfoot[C]{\thepage}
+  \renewcommand{\headrulewidth}{0.4pt}
+}
+\newcommand{\MinusOne}{\rulecite{Sign-flip: $a\equiv -b$}}
+\newcommand{\Period}{\rulecite{Periodicity / Euler–Carmichael}}
+\newcommand{\CRT}{\rulecite{CRT}}
+\newcommand{\Geo}{\rulecite{Geometric grouping}}
+\newcommand{\rulecite}[1]{\textit{[#1]}}
+\newcommand{\CDL}{\rulecite{CDL}}
+\newcommand{\FD}{\rulecite{FD}}
+\newcommand{\Residues}{\rulecite{Residues}}
+\newcommand{\Parity}{\rulecite{Parity}}
+\newcommand{\Factor}{\rulecite{Factor}}
+\newcommand{\EL}{\rulecite{Euclid's Lemma}}
+\newcommand{\LinComb}{\rulecite{Linear Combinations}}
+
+\begin{document}
+\small
+\begin{multicols}{3}
+\section*{A}
+\textbf{Fill in the blanks.} Each item below asks you to supply missing values—either \(a\), \(b\), \(a \bmod b\), or \(a \,\mathrm{div}\, b\). If no valid number exists for the blank, “not possible” is an acceptable answer.
+
+\begin{enumerate}
+    \item $a = \underline{\quad},\ b = 5,\ a \bmod b = 1,\ a \,\mathrm{div}\, b = 2$ \text{(or not possible)}
+    \item $a = -7,\ b = 3,\ a \bmod b = \underline{\quad},\ a \,\mathrm{div}\, b = -3$ \text{(or not possible)}
+    \item $a = 10,\ b = \underline{\quad},\ a \bmod b = 2,\ a \,\mathrm{div}\, b = 2$ \text{(or not possible)}
+    \item $a = 12,\ b = 5,\ a \bmod b = 2,\ a \,\mathrm{div}\, b = \underline{\quad}$ \text{(or not possible)}
+    \item $a = -15,\ b = 6,\ a \bmod b = 3,\ a \,\mathrm{div}\, b = \underline{\quad}$ \text{(or not possible)}
+    \item $a = \underline{\quad},\ b = 4,\ a \bmod b = 1,\ a \,\mathrm{div}\, b = -2$ \text{(or not possible)}
+    \item $a = 23,\ b = \underline{\quad},\ a \bmod b = \underline{\quad},\ a \,\mathrm{div}\, b = 3$ \text{(or not possible)}
+    \item $a = -18,\ b = 5,\ a \bmod b = \underline{\quad},\ a \,\mathrm{div}\, b = -4$ \text{(or not possible)}
+\end{enumerate}
+
+
+\section*{B}
+\textbf{Bézout Coefficient Problems.}  Use the extended Euclidean algorithm to find integers \(x\) and \(y\) such that
+\[
+a\,x + b\,y = \gcd(a,b).
+\]
+Please show your work. 
+\begin{enumerate}
+    \item \((a,b) = (13, 8)\)
+    \item \((a,b) = (21, 13)\)
+    \item \((a,b) = (15, 4)\)
+    \item \((a,b) = (18, 7)\)
+    \item \((a,b) = (25, 9)\)
+    \item \((a,b) = (20, 8)\)
+    \item \((a,b) = (28, 12)\)
+    \item \((a,b) = (18, 5)\)
+\end{enumerate}
+
+\section*{C}
+
+\textbf{Number Base Conversions.} 
+For Questions 1–4, convert the given hexadecimal and octal numbers to binary.  
+For Questions 5–8, convert the given binary numbers to hexadecimal and octal.
+
+\begin{enumerate}
+    % Hex & Octal to Binary
+    \item Convert $(2F)_{16}$ and $(47)_8$ to binary.
+    \item Convert $(A3)_{16}$ and $(52)_8$ to binary.
+    \item Convert $(7B)_{16}$ and $(35)_8$ to binary.
+    \item Convert $(C4)_{16}$ and $(63)_8$ to binary.
+
+    % Binary to Hex & Octal
+    \item Convert $(101011)_2$ to hexadecimal and octal.
+    \item Convert $(1101011)_2$ to hexadecimal and octal.
+    \item Convert $(10011100)_2$ to hexadecimal and octal.
+    \item Convert $(11110010)_2$ to hexadecimal and octal.
+\end{enumerate}
+
+
+
+\begin{enumerate}
+\item
+
+\subsection*{D}
+\subsection*{Identify the conclusion}
+
+\noindent
+The primary task of a university is to educate. But to teach well, professors must be informed about new developments in their disciplines, and that requires research. Yet many universities cannot afford to support faculty research adequately. So a lack of funds for research adversely affects the degree to which a university can fulfill its central mission.
+
+ 
+\noindent
+
+\textbf{Which one of the following most accurately expresses the conclusion of the argument?}
+
+\begin{enumerate}[label=(\alph*)]
+    \item In order to be able to teach well, university professors must conduct research.
+    \item Lack of financial support for faculty research is the root of ineffective teaching at universities.
+    \item Effective teaching is the primary mission of a university.
+    \item Lack of funds for research reduces the quality of education a university provides.
+    \item New means of funding faculty research at universities are needed.
+\end{enumerate}
+
+\item
+
+\subsection*{Identify an entailment}
+\noindent
+A person with a type B lipid profile is at much greater risk of heart disease than a person with a type A lipid profile. In an experiment, both type A volunteers and type B volunteers were put on a low-fat diet. The cholesterol levels of the type B volunteers soon dropped substantially, although their lipid profiles were unchanged. The type A volunteers, however, showed no benefit from the diet, and 40 percent of them actually shifted to type B profiles.
+
+ 
+
+\noindent
+\textbf{If the information above is true, which one of the following must also be true?}
+
+\begin{enumerate}[label=(\alph*)]
+    \item In the experiment, most of the volunteers had their risk of heart disease reduced at least marginally as a result of having been put on the diet.
+    \item People with type B lipid profiles have higher cholesterol levels, on average, than do people with type A lipid profiles.
+    \item Apart from adopting the low-fat diet, most of the volunteers did not substantially change any aspect of their lifestyle that would have affected their cholesterol levels or lipid profiles.
+    \item The reduction in cholesterol levels in the volunteers is solely responsible for the change in their lipid profiles.
+    \item For at least some of the volunteers in the experiment, the risk of heart disease increased after having been put on the low-fat diet.
+\end{enumerate}
+
+\item
+\subsection*{Identify the principle}
+\noindent
+\textbf{Politician:} We should impose a tariff on imported fruit to make it cost consumers more than domestic fruit. Otherwise, growers from other countries who can grow better fruit more cheaply will put domestic fruit growers out of business. This will result in farmland's being converted to more lucrative industrial uses and the consequent vanishing of a unique way of life.
+
+ 
+
+\noindent
+\textbf{The politician's recommendation most closely conforms to which one of the following principles?}
+
+\begin{enumerate}[label=(\alph*)]
+    \item A country should put its own economic interest over that of other countries.
+    \item The interests of producers should always take precedence over those of consumers.
+    \item Social concerns should sometimes take precedence over economic efficiency.
+    \item A country should put the interests of its own citizens ahead of those of citizens of other countries.
+    \item Government intervention sometimes creates more economic efficiency than free markets.
+\end{enumerate}
+
+\item
+\subsection*{Match the Structure}
+
+\noindent
+It is inaccurate to say that a diet high in refined sugar cannot cause adult-onset diabetes, since a diet high in refined sugar can make a person overweight, and being overweight can predispose a person to adult-onset diabetes.
+
+ 
+
+\noindent
+\textbf{The argument is most parallel, in its logical structure, to which one of the following?}
+
+\begin{enumerate}[label=(\alph*)]
+    \item It is inaccurate to say that being in cold air can cause a person to catch a cold, since colds are caused by viruses, and viruses flourish in warm, crowded places.
+    \item It is accurate to say that no airline flies from Halifax to Washington. No airline offers a direct flight, although some airlines have flights from Halifax to Boston and others have flights from Boston to Washington.
+    \item It is correct to say that overfertilization is the primary cause of lawn disease, since fertilizer causes lawn grass to grow rapidly and rapidly growing grass has little resistance to disease.
+    \item It is incorrect to say that inferior motor oil cannot cause a car to get poorer gasoline mileage, since inferior motor oil can cause engine valve deterioration, and engine valve deterioration can lead to poorer gasoline mileage.
+    \item It is inaccurate to say that Alexander the Great was a student of Plato; Alexander was a student of Aristotle and Aristotle was a student of Plato.
+\end{enumerate}
+
+\item
+\subsection*{Match Principles}
+
+\noindent
+When drivers are deprived of sleep there are definite behavioral changes, such as slower responses to stimuli and a reduced ability to concentrate, but people's self-awareness of these changes is poor. Most drivers think they can tell when they are about to fall asleep, but they cannot.
+
+ 
+
+\noindent
+\textbf{Each of the following illustrates the principle that the passage illustrates \underline{EXCEPT}:}
+
+\begin{enumerate}[label=(\alph*)]
+    \item People who have been drinking alcohol are not good judges of whether they are too drunk to drive.
+    \item Elementary school students who dislike arithmetic are not good judges of whether multiplication tables should be included in the school's curriculum.
+    \item Industrial workers who have just been exposed to noxious fumes are not good judges of whether they should keep working.
+    \item People who have just donated blood and have become faint are not good judges of whether they are ready to walk out of the facility.
+    \item People who are being treated for schizophrenia are not good judges of whether they should continue their medical treatments.
+\end{enumerate}
+
+
+\item
+\subsection*{Identify a flaw}
+\noindent
+Despite the efforts of a small minority of graduate students at one university to unionize, the majority of graduate students there remain unaware of the attempt. Most of those who are aware believe that a union would not represent their interests or that, if it did, it would not effectively pursue them. Thus, the graduate students at the university should not unionize, since the majority of them obviously disapprove of the attempt.
+
+ 
+
+\noindent
+\textbf{The reasoning in the argument is most vulnerable to criticism on the grounds that the argument}
+
+\begin{enumerate}[label=(\alph*)]
+    \item tries to establish a conclusion simply on the premise that the conclusion agrees with a long-standing practice
+    \item fails to exclude alternative explanations for why some graduate students disapprove of unionizing
+    \item presumes that simply because a majority of a population is unaware of something, it must not be a good idea
+    \item ignores the possibility that although a union might not effectively pursue graduate student interests, there are other reasons for unionizing
+    \item blurs the distinction between active disapproval and mere lack of approval
+\end{enumerate}
+
+\item
+\subsection*{Match Flaws}
+
+\noindent
+\textbf{Critic:} The contemporary novel is incapable of making important new contributions. The evidence is clear. Contemporary psychological novels have been failures. Contemporary action novels lack any social significance. And contemporary romance novels are stale and formulaic.
+
+ 
+
+\noindent
+\textbf{The flawed reasoning in the critic's argument is most similar to that in which one of the following?}
+
+\begin{enumerate}[label=(\alph*)]
+    \item Since no government has been able to regulate either employment or inflation very closely, it is impossible for any government to improve its nation's economy.
+    \item Because there has been substantial progress in recent years in making machines more efficient, it is only a matter of time before we invent a perpetual motion machine.
+    \item The essayist Macaulay was as widely read in his time as Dickens, but has been neglected since. Thus writers who are popular today are likely to be forgotten in the future.
+    \item This politician has not made any proposals for dealing with the problem of unemployment and thus must not think the problem is important.
+    \item In international commerce, the corporations that are best suited for success are large and multinational. Thus small corporations cannot compete at the international level.
+\end{enumerate}
+
+
+\item 
+\subsection*{Necessary Assumptions}
+
+\noindent
+\textbf{Economist:} Our economy's weakness is the direct result of consumers' continued reluctance to spend, which in turn is caused by factors such as high-priced goods and services. This reluctance is exacerbated by the fact that the average income is significantly lower than it was five years ago. Thus, even though it is not a perfect solution, if the government were to lower income taxes, the economy would improve.
+
+ 
+
+\noindent
+\textbf{Which one of the following is an assumption required by the economist’s argument?}
+
+\begin{enumerate}[label=(\alph*)]
+    \item Increasing consumer spending will cause prices for goods and services to decrease.
+    \item If consumer spending increases, the average income will increase.
+    \item If income taxes are not lowered, consumers' wages will decline even further.
+    \item Consumers will be less reluctant to spend money if income taxes are lowered.
+    \item Lowering income taxes will have no effect on government spending.
+\end{enumerate}
+
+\item
+\subsection*{Sufficient Conditions}
+\noindent
+\textbf{Morris:} Computers, despite some people's expectations, will have an inappreciable impact on education. To be sure, computers are useful for drills promoting memorization, though only a small part of education can be accomplished through drills. But machines cannot help students with any of the higher intellectual functions we call understanding; for that, human teachers are indispensable.
+
+
+\noindent
+\textbf{The conclusion of Morris's argument follows logically if which one of the following is assumed?}
+
+\begin{enumerate}[label=(\alph*)]
+    \item Whatever memorization is necessary can be accomplished as easily without computers as with them.
+    \item Requiring memorization in appreciable amounts tends to thwart development of higher intellectual functions in students.
+    \item Successful memorization of relevant facts is a necessary precondition for the development of higher intellectual functions in students.
+    \item Many students become familiar with computers before encountering them at school.
+    \item Having an appreciable impact on education involves affecting the higher intellectual functions of students.
+\end{enumerate}
+\end{enumerate}
+\end{multicols}
+
+
+
+
+\end{document}
