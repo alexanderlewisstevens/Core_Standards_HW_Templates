@@ -1,6 +1,9 @@
 # macOS
 .DS_Store
 
+# Local editor workspace files
+*.code-workspace
+
 # LaTeX build/intermediate artifacts (not needed in Overleaf source sync)
 *.aux
 *.fdb_latexmk
@@ -33,4 +36,3 @@
 
 # Compiled PDFs from TeX builds
 *.pdf
-
