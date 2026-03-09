@@ -4,11 +4,11 @@
 			"path": "../../GitHub/Core_Standards_HW_Templates"
 		},
 		{
-			"path": "."
-		},
-		{
 			"name": "Course Highlights",
 			"path": "course_highlights"
+		},
+		{
+			"path": "../../website vault/Core_Assessment_Solutions"
 		}
 	],
 	"settings": {}
