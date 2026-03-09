@@ -1,0 +1,36 @@
+# macOS
+.DS_Store
+
+# LaTeX build/intermediate artifacts (not needed in Overleaf source sync)
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.toc
+*.nav
+*.snm
+*.synctex.gz
+*.xdv
+*.dvi
+*.bbl
+*.bcf
+*.blg
+*.run.xml
+*.lof
+*.lot
+*.idx
+*.ind
+*.ilg
+*.acn
+*.acr
+*.alg
+*.glg
+*.glo
+*.gls
+*.ist
+*.vrb
+
+# Compiled PDFs from TeX builds
+*.pdf
+

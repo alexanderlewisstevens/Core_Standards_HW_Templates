@@ -1,2 +1,7 @@
+\def\coursehighlightschead{Ch. 01 Foundations}
 \def\coursehighlightsincludeonly{chapters/01_foundations}
-\input{course_highlights_compendium.tex}
+\IfFileExists{course_highlights_compendium.tex}{%
+  \input{course_highlights_compendium.tex}
+}{%
+  \input{course_highlights/course_highlights_compendium.tex}
+}

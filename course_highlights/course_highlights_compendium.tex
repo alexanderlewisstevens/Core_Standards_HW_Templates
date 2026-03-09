@@ -192,11 +192,14 @@
 %
 %%%%%%%%%%%%
 \usepackage{fancyhdr}
-\lhead{COMP 2300}
+\providecommand{\coursehighlightslhead}{COMP 2300}
+\providecommand{\coursehighlightschead}{Notes}
+\providecommand{\coursehighlightsrhead}{Fall 2025}
+\lhead{\coursehighlightslhead}
 %It is recommended to add your name
 %%%%%%%%%%%%
-\chead{Notes}
-\rhead{Fall 2025}
+\chead{\coursehighlightschead}
+\rhead{\coursehighlightsrhead}
 \lfoot{}
 \cfoot{}
 \rfoot{\thepage}
@@ -208,22 +211,41 @@
 %######################################
 %######################################
 
+% Resolve chapter path for both local and Overleaf-style project roots.
+\newcommand{\coursehighlightschapterdir}{chapters}
+\IfFileExists{chapters/01_foundations.tex}{}{%
+  \IfFileExists{course_highlights/chapters/01_foundations.tex}{%
+    \renewcommand{\coursehighlightschapterdir}{course_highlights/chapters}%
+  }{%
+    \PackageError{coursehighlights}{Cannot locate chapter files}%
+    {Expected chapters in chapters/ or course_highlights/chapters/.}%
+  }%
+}
 
 % Compile a single chapter by defining:
 % \def\coursehighlightsincludeonly{chapters/01_foundations}
 \ifdefined\coursehighlightsincludeonly
-  \includeonly{\coursehighlightsincludeonly}
+  \IfFileExists{\coursehighlightsincludeonly.tex}{%
+    \includeonly{\coursehighlightsincludeonly}
+  }{%
+    \IfFileExists{course_highlights/\coursehighlightsincludeonly.tex}{%
+      \includeonly{course_highlights/\coursehighlightsincludeonly}
+    }{%
+      \PackageError{coursehighlights}{Invalid includeonly target}%
+      {Could not find \coursehighlightsincludeonly.tex in either root layout.}%
+    }%
+  }%
 \fi
 
 \begin{document}
 \pagestyle{fancy}
 
-\include{chapters/01_foundations}
-\include{chapters/02_sets_functions_sequences_sums_matrices}
-\include{chapters/03_algorithms}
-\include{chapters/04_number_theory_cryptography}
-\include{chapters/05_induction}
-\include{chapters/06_counting}
-\include{chapters/07_discrete_probability}
+\include{\coursehighlightschapterdir/01_foundations}
+\include{\coursehighlightschapterdir/02_sets_functions_sequences_sums_matrices}
+\include{\coursehighlightschapterdir/03_algorithms}
+\include{\coursehighlightschapterdir/04_number_theory_cryptography}
+\include{\coursehighlightschapterdir/05_induction}
+\include{\coursehighlightschapterdir/06_counting}
+\include{\coursehighlightschapterdir/07_discrete_probability}
 
 \end{document}

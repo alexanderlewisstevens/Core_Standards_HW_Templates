@@ -1,0 +1,204 @@
+\documentclass[9pt]{article}
+
+% --- Packing + layout ---
+\usepackage{fancyhdr}
+\usepackage[letterpaper,margin=0.3in,includehead,includefoot,headheight=14pt,headsep=6pt]{geometry}
+\setlength{\columnsep}{0.15in}
+\usepackage{microtype}
+\usepackage{multicol}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+% Tighten section spacing
+\usepackage[compact,small]{titlesec}
+\titlespacing*{\section}{0pt}{2pt}{1pt}
+\titlespacing*{\subsection}{0pt}{2pt}{1pt}
+
+% Tighten lists
+\usepackage{enumitem}
+\setlist{nosep,leftmargin=*}
+\setlist[itemize]{noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt,leftmargin=*}
+\setlist[enumerate]{noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt,leftmargin=*}
+
+% Math spacing
+\setlength{\abovedisplayskip}{2pt}
+\setlength{\belowdisplayskip}{2pt}
+\setlength{\abovedisplayshortskip}{1pt}
+\setlength{\belowdisplayshortskip}{1pt}
+
+% Math + links
+\usepackage{amsmath,amssymb}
+\usepackage[hidelinks]{hyperref}
+
+% Callout boxes (kept for consistency even if unused)
+\usepackage[most]{tcolorbox}
+\tcbset{colback=white,colframe=black,boxrule=0.4pt,arc=2pt,left=6pt,right=6pt,top=4pt,bottom=4pt}
+\newtcolorbox{notebox}{title=Note}
+\newtcolorbox{solutionbox}{title=Solution}
+
+% --- Fancy header/footer ---
+\setlength{\headheight}{14pt}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textbf{Core Assessment 3 2026-02-27}}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\fancypagestyle{plain}{%
+  \fancyhf{}
+  \fancyhead[L]{\textbf{Core Assessment 3}}
+  \fancyfoot[C]{\thepage}
+  \renewcommand{\headrulewidth}{0.4pt}
+}
+
+\begin{document}
+
+The following problems are a pool of items for your \textbf{C3 Assessment — Proof Techniques}. \textbf{Please practice these problems!}
+
+\begin{multicols}{2}
+
+\section*{C3. Proof Techniques}
+\subsection*{Rules of Inference}
+\subsection*{A.1}
+For each of these sets of premises, what relevant conclusion or conclusions can be drawn?
+\begin{itemize}
+  \item (a) "If I take the day off, it either rains or snows." "I took Tuesday off or I took Thursday off." "It was sunny on Tuesday." "It did not snow on Thursday."
+  \item (b) "If I eat spicy foods, then I have strange dreams." "I have strange dreams if there is thunder while I sleep." "I did not have strange dreams."
+  \item (c) "I am either clever or lucky." "I am not lucky." "If I am lucky, then I will win the lottery."
+\end{itemize}
+
+\subsection*{A.2}
+For each of these sets of premises, what relevant conclusion or conclusions can be drawn?
+\begin{itemize}
+  \item (a) "Every computer science major has a personal computer." "Ralph does not have a personal computer." "Ann has a personal computer."
+  \item (b) "What is good for corporations is good for the United States." "What is good for the United States is good for you." "What is good for corporations is for you to buy lots of stuff."
+  \item (c) "All rodents gnaw their food." "Mice are rodents." "Rabbits do not gnaw their food." "Bats are not rodents."
+\end{itemize}
+
+\subsection*{A.3}
+For each of these sets of premises, what relevant conclusion or conclusions can be drawn?
+\begin{itemize}
+  \item (a) "If I play hockey, then I am sore the next day." "I use the whirlpool if I am sore." "I did not use the whirlpool."
+  \item (b) "If I work, it is either sunny or partly sunny." "I worked last Monday or I worked last Tuesday." "It rained on Tuesday." "It was not partly sunny on Monday."
+  \item (c) "All insects have six legs." "Dragonflies are insects." "Spiders do not have six legs." "Spiders eat dragonflies."
+\end{itemize}
+
+\subsection*{A.4}
+For each of these sets of premises, what relevant conclusion or conclusions can be drawn?
+\begin{itemize}
+  \item (a) "Every student has an Internet account." "Homer does not have an Internet account." "Maggie has an Internet account."
+  \item (b) "All foods that are healthy to eat do not taste good." "Tofu is healthy to eat." "You only eat what tastes good." "You do not eat tofu." "Cheeseburgers are not healthy to eat."
+  \item (c) "I am either dreaming or hallucinating." "I am not dreaming." "If I am hallucinating, I see elephants running down the road."
+\end{itemize}
+
+\subsection*{A.5}
+Determine whether each of these arguments is correct or incorrect.
+\begin{itemize}
+  \item (a) "Doug, a student in this class, knows how to write programs in JAVA. Everyone who knows how to write programs in JAVA can get a high-paying job. Therefore, everyone in this class can get a high-paying job."
+  \item (b) "Somebody in this class enjoys whale watching. Every person who enjoys whale watching cares about ocean pollution. Therefore, there is a person in this class who cares about ocean pollution."
+  \item (c) "Each of the 93 students in this class owns a personal computer. Someone who owns a personal computer can use a word processing program. Therefore, Zeke, a student in this class, can use a word processing program."
+  \item (d) "Everyone in New Jersey lives within 50 miles of the ocean. Someone in New Jersey has never seen the ocean. Therefore, someone who has never seen the ocean lives within 50 miles of the ocean."
+\end{itemize}
+
+\subsection*{A.6}
+Determine whether each of these arguments is correct or incorrect and explain why.
+\begin{itemize}
+  \item (a) "Linda, a student in this class, owns a red convertible. Everyone who owns a red convertible has gotten at least one speeding ticket. Therefore, someone in this class has gotten a speeding ticket."
+  \item (b) "Each of five roommates, Melissa, Aaron, Ralph, Veneesha, and Keeshawn, has taken a course in discrete mathematics. Every student who has taken a course in discrete mathematics can take a course in algorithms. Therefore, all five roommates can take a course in algorithms next year."
+  \item (c) "All movies produced by John Sayles are wonderful. John Sayles produced a movie about coal miners. Therefore, movies about coal miners are wonderful."
+  \item (d) "Everyone in this class has been to France. Someone who went to France visits the Louvre. Therefore, someone in this class has visited the Louvre."
+\end{itemize}
+
+\subsection*{A.7}
+Determine whether each of these arguments is correct or incorrect and explain why.
+\begin{itemize}
+  \item (a) All students in this class understand logic. Xavier is a student in this class. Therefore, Xavier understands logic.
+  \item (b) Every computer science major takes discrete mathematics. Natasha is taking discrete mathematics. Therefore, Natasha is a computer science major.
+  \item (c) All parrots like fruit. My pet bird is not a parrot. Therefore, my pet bird does not like fruit.
+  \item (d) Everyone who eats granola every day is healthy. Linda is not healthy. Therefore, Linda does not eat granola every day.
+\end{itemize}
+
+
+
+\section*{Number Theory Proofs}
+You Should use definitions of even, odd and rational.
+
+\subsection*{B.1} For every integer \( n \), if \( n \) is even, then \( n^2 \) is even.
+
+\subsection*{B.2}  For all integers \( a \) and \( b \), if \( a \mid b \), then \( a \mid (-b) \).
+
+\subsection*{B.3}  For all integers \( a, b, \) and \( c \), if \( a \mid b \) and \( a \mid c \), then \( a \mid (b + c) \).
+
+\subsection*{B.4}  For every integer \( n \), if \( n \) is odd, then \( n^2 \) is odd.
+
+\subsection*{B.5}  For all integers \( a \) and \( b \), if \( a \mid b \) and \( b \mid a \), then \( |a| = |b| \).
+
+\newpage
+\section*{Set Proofs}
+
+\subsection*{C.1}
+For any sets \( A \) and \( B \), if \( x \in A \cap B \), then \( x \in A \).
+
+\subsection*{C.2}
+For any sets \( A \) and \( B \), if \( A \subseteq B \), then \( A \setminus B = \varnothing \).
+
+\subsection*{C.3}
+Suppose \( A \subseteq B \) and \( x \in A \).
+Prove that \( x \in B \).
+
+\subsection*{C.4}
+Suppose \( A \cap C \subseteq B \) and \( x \in C \).
+Prove that if \( x \in A \), then \( x \in B \).
+
+\subsection*{C.5}
+Suppose \( A \setminus B \subseteq C \).
+Prove that if \( x \in A \setminus C \), then \( x \in B \).
+
+\subsection*{C.6}
+Suppose \( A \subseteq C \), and \( B \) and \( C \) are disjoint.
+Prove that if \( x \in A \), then \( x \notin B \).
+
+\columnbreak
+
+\section*{Proofs with functions}
+
+\subsection*{D.1}
+Prove that for all real numbers \( x \) and \( y \),
+\[
+\max(x,y) = \frac{x+y+|x-y|}{2}
+\quad\text{and}\quad
+\min(x,y) = \frac{x+y-|x-y|}{2}.
+\]
+
+\subsection*{D.2}
+Prove that for all real numbers \( x \) and \( y \),
+\[
+\max(x,y) - \min(x,y) = |x-y|.
+\]
+
+\subsection*{D.3}
+Prove that for all real numbers \( x \),
+\[
+\lfloor x \rfloor + \lfloor x + \tfrac12 \rfloor
+\in \{2\lfloor x \rfloor,\; 2\lfloor x \rfloor + 1\}.
+\]
+
+\subsection*{D.4}
+Prove that for all real numbers \( x \) and \( y \),
+\[
+\lfloor x \rfloor + \lfloor y \rfloor
+\le \lfloor x + y \rfloor
+\le \lfloor x \rfloor + \lfloor y \rfloor + 1.
+\]
+
+\subsection*{D.5}
+Let \( x,y,z \in \mathbb{R} \). Prove that
+\[
+\max\!\bigl(x,\, \min(y,z)\bigr)
+\;=\;
+\min\!\bigl(\max(x,y),\, \max(x,z)\bigr).
+\]
+
+
+
+\end{multicols}
+\end{document}

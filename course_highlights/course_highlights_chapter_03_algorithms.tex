@@ -1,2 +1,7 @@
+\def\coursehighlightschead{Ch. 03 Algorithms}
 \def\coursehighlightsincludeonly{chapters/03_algorithms}
-\input{course_highlights_compendium.tex}
+\IfFileExists{course_highlights_compendium.tex}{%
+  \input{course_highlights_compendium.tex}
+}{%
+  \input{course_highlights/course_highlights_compendium.tex}
+}

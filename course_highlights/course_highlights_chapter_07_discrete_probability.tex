@@ -1,2 +1,7 @@
+\def\coursehighlightschead{Ch. 07 Discrete Probability}
 \def\coursehighlightsincludeonly{chapters/07_discrete_probability}
-\input{course_highlights_compendium.tex}
+\IfFileExists{course_highlights_compendium.tex}{%
+  \input{course_highlights_compendium.tex}
+}{%
+  \input{course_highlights/course_highlights_compendium.tex}
+}

@@ -1,2 +1,7 @@
+\def\coursehighlightschead{Ch. 02 Sets, Functions, Sequences}
 \def\coursehighlightsincludeonly{chapters/02_sets_functions_sequences_sums_matrices}
-\input{course_highlights_compendium.tex}
+\IfFileExists{course_highlights_compendium.tex}{%
+  \input{course_highlights_compendium.tex}
+}{%
+  \input{course_highlights/course_highlights_compendium.tex}
+}

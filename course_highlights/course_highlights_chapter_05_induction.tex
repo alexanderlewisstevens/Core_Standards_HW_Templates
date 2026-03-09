@@ -1,2 +1,7 @@
+\def\coursehighlightschead{Ch. 05 Induction}
 \def\coursehighlightsincludeonly{chapters/05_induction}
-\input{course_highlights_compendium.tex}
+\IfFileExists{course_highlights_compendium.tex}{%
+  \input{course_highlights_compendium.tex}
+}{%
+  \input{course_highlights/course_highlights_compendium.tex}
+}

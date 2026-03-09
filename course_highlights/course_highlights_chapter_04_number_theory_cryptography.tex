@@ -1,2 +1,7 @@
+\def\coursehighlightschead{Ch. 04 Number Theory and Cryptography}
 \def\coursehighlightsincludeonly{chapters/04_number_theory_cryptography}
-\input{course_highlights_compendium.tex}
+\IfFileExists{course_highlights_compendium.tex}{%
+  \input{course_highlights_compendium.tex}
+}{%
+  \input{course_highlights/course_highlights_compendium.tex}
+}
