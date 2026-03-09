@@ -1,0 +1,276 @@
+\section{Discrete Probability}
+\subsection{Intro to Discrete Probability}
+\begin{defn}
+    If $S$ is a finite nonempty sample space of equally likely outcomes, and $E$ is an event, i.e., a subset of $S$, then the probability of $E$ is given by $P(E) = \frac{|E|}{|S|}$.
+\end{defn}
+
+\begin{exmp}
+If the sample space $S=\{a,b,c,d,e\}$ and the $E=:\{x| x \text{ is a vowel}\}$, then $P(E)=\frac{|\{a,e\}|}{|S|}=\frac{2}{5}$. 
+\newline
+This is one way that we model probability. We would say something like, if we randomly pick a letter from $S$, the probability that it is a vowel is $\frac{2}{5}$.
+\newline
+
+\end{exmp}
+
+\begin{exmp}
+    Let $E$ be an event in a sample space $S$. The probability of the event $E$'s complement, denoted as $S - E$, is given by
+    \[
+    P(S-E) = 1 - P(E).
+    \]
+\end{exmp}
+\begin{exmp}
+For instance, in the example above if we want to know the probability of randomly selecting a consonant, we can instead subtract the probability of finding a vowel from one!
+\newline
+Let $C=\{b,c,d\}$ then notice that $C=\overline{S}$ and $P(C)=\frac{3}{5}=1-\frac{2}{5}$.
+\newline
+\end{exmp}
+\begin{exmp}
+If the probability that you eat chicken tomorrow is $.3$ what is the probability you don't eat chicken tomorrow?
+\vspace{2cm}
+\end{exmp}
+
+\begin{exmp}
+    Let $E_1$ and $E_2$ be events in the sample space $S$. Then the probability of the union of events $E_1$ and $E_2$ is given by
+    \[
+    p(E_1 \cup E_2) = p(E_1) + p(E_2) - p(E_1 \cap E_2).
+    \]
+\end{exmp}
+\begin{exmp}
+If the probability you eat breakfast at your mom's house is .2 and the probability you eat breakfast at a diner is .3 and you are not a hobbit (you only eat one breakfast).
+What is the probability that you eat breakfast at your mom's or at a diner?
+\vspace{2cm}
+\end{exmp}
+\begin{exmp}[The Monty Hall Three-Door Puzzle] $ $\\ Suppose you are a game show contestant. You have a
+chance to win a large prize. You are asked to select one of three doors to open; the new car
+is behind one of the three doors. Behind another door is a goat. Behind the third door is trash. Once you select a door, the
+game show host, who knows what is behind each door, does the following. First, whether or not
+you selected the winning door (car), he opens one of the other two doors that he knows is a losing
+door (selecting at random if both are losing doors). Then he asks you whether you would like to
+switch doors. Which strategy should you use? Should you change doors or keep your original
+selection, or does it not matter?
+
+\noindent Let $G={\text{"you picked the goat door"}}$
+\newline
+Let $T={\text{"you picked the trash door"}}$
+\newline
+Let $C={\text{"you picked the car door"}}$
+\newline
+Draw a decision tree of the scenario that you keep your choice, and find the probability of winning the car and then compare this to the decision tree of the scenario of switching your choice.
+\vspace{3cm}
+\end{exmp}
+\subsection{Probability Theory}
+\begin{defn}
+We can assign other probabilities to events, the two conditions that must be met are, that $P(S)=1$ and $0\leq P(T)\leq 1$ for all $T\subseteq S$.
+\newline
+In \textbf{discrete} probability theory, we call the elements of $S$ 'outcomes'. We say that the probability of an event $E\subseteq S$ is the sum of the probabilities of the outcomes. (so we really only assign probabilities to the outcomes, and the probability of the events is a result of the outcome probabilities). When all outcomes have the same probability we call this the \textbf{uniform} distribution. Here the probabilities are uniformly distributed among the outcomes.
+\end{defn}
+\begin{exmp}
+We can model the rolling of a fair die, by defining $S=\{1,2,3,4,5,6\}$ and assigning a uniform distribution. 
+\newline
+Compute the probabilities of the following events. 
+\newline
+\begin{itemize}
+\item We roll a 1
+\vspace{1cm}
+\item We roll an even
+\vspace{1cm}
+\end{itemize}
+\end{exmp}
+\begin{defn}{Conditional Probability}
+Let $E$ and $F$ be events with $p(F) > 0$. The conditional probability of $E$ given $F$, denoted by $p(E | F)$, is defined as
+\[
+p(E | F) = \frac{p(E \cap F)}{p(F)}
+\]
+\end{defn}
+\begin{exmp}What is the probability that we rolled a 3 if we know we rolled an odd?
+\vspace{1cm}
+\end{exmp}
+\begin{defn}[Independence]
+The events $E$ and $F$ are \textbf{independent} if and only if $P(E \cap F)=P(E)\cdot P(F)$
+\end{defn}
+\begin{exmp}Prove that if $E$ and $F$ are independent, then
+\newline
+$P(E|F)=P(E)$ and $P(F|E)=P(F)$
+\vspace{2cm}
+
+\end{exmp}
+\begin{exmp} Suppose that we flip $n$ fair coins and keep track of whether they land on heads of tails. 
+Let $H_1$ be the event that the first coin lands on heads, $T_1$ be the event the first coin lands on tails. More generally, let $H_n$ be the event that the $n$th coin lands on heads, $T_n$ be the event the $n$th coin lands on tails and 
+\newline
+Find the following probabilities:
+\begin{itemize}
+\item $P(H_1)$
+\vspace{1cm}
+\item $P(T_4)$
+\vspace{1cm}
+\item $P(H_1\cap H_2)$
+\vspace{1cm}
+\item $P(H_1)\cdot P(H_2)$
+\vspace{1cm}
+\item $P(H_1|H_2)$
+\vspace{1cm}
+\end{itemize}
+
+
+\end{exmp}
+\begin{defn}[Bernoulli trials]
+Consider an experiment with only two possible outcomes, such as generating a random bit (0 or 1) or flipping a coin (heads or tails). Each iteration of such an experiment, where there are only two potential results, is termed a Bernoulli trial, (named after James Bernoulli).
+
+A possible outcome of a Bernoulli trial is classified as either a \textbf{success} or a \textbf{failure}. Let $p$ represent the probability of success and $q$ represent the probability of failure, with the constraint that $p + q = 1$.
+
+For many problems, one can find solutions by determining the probability of achieving k successes when an experiment consists of n mutually independent Bernoulli trials. The term "mutually independent" refers to the condition where the probability of success in any given trial remains p, irrespective of any information about the outcomes of the other trials.
+\end{defn}
+\begin{exmp}[Fair Coin]$ $\\
+What is the probability that after 2 coin flips exactly one is heads?
+\newline
+\vspace{1cm}
+\newline
+What is the probability that after 4 coin flips exactly 2 are heads?
+\newline
+\vspace{1cm}
+\newline
+What is the probability that after 6 coin flips exactly 2 are heads?
+\newline
+\vspace{1cm}
+
+\end{exmp}
+
+\noindent \textbf{Recall} If $A\cap B=\emptyset$ then $P(A \cup B)=P(A)+P(B)$
+
+\noindent \textbf{Notice} $P(HT)=P(TH)$
+\begin{exmp}[Unfair Coin]
+Suppose that we have an unfair coin which lands on heads with probability $.7$ and tails with probability $.3$.
+\\
+What is the probability that after 2 coin flips exactly one is heads?
+\newline
+\vspace{1cm}
+\newline
+What is the probability that after 4 coin flips exactly 2 are heads?
+\newline
+\vspace{1cm}
+\newline
+What is the probability that after 6 coin flips exactly 2 are heads?
+\newline
+\vspace{1cm}
+
+
+\end{exmp}
+\begin{defn}
+The probability of exactly \(k\) successes in \(n\) independent Bernoulli trials, with a probability of success \(p\) and a probability of failure \(q = 1 - p\), is given by the binomial probability formula:
+
+\[
+C(n, k) p^k q^{n-k}
+\]
+
+where \(X\) is the random variable representing the number of successes, \(C(n, k)\) is the binomial coefficient, and \(p\) and \(q\) are the probabilities of success and failure, respectively.
+
+\end{defn}
+
+\begin{defn}[Random Variable]
+A \textbf{random variable} is a function from the sample space of an experiment to the set of real numbers. That is, a random variable assigns a real number to each possible outcome. (Equivalently, a random variable is a function that maps each event to a real number.)
+\end{defn}
+
+\begin{exmp}
+Suppose that a coin is flipped three times. Let \(X(t)\) be the random variable that equals the
+number of heads that appear when \(t\) is the outcome. Then \(X(t)\) takes on the following values:
+\newline
+\vspace{2cm}
+\end{exmp}
+
+\begin{defn}[Distribution]
+The \textbf{distribution} of a random variable \(X\) on a sample space \(S\) is the set of pairs 
+\[
+(r,\, P(X = r))
+\]
+for all \(r \in X(S)\), where \(P(X = r)\) is the probability that \(X\) takes the value \(r\). 
+The distribution is completely determined by the probabilities \(P(X = r)\) for each \(r \in X(S)\).
+\end{defn}
+
+
+
+\begin{exmp}[Distribution of a Dice Roll]
+Let the sample space be
+\[
+S = \{1, 2, 3, 4, 5, 6\},
+\]
+corresponding to the outcomes of rolling a fair six-sided die.  
+Define the random variable \(X(t)\) to be the number showing on the upper face.
+
+Then the distribution of \(X\) is
+\[
+\{(1, \tfrac{1}{6}), (2, \tfrac{1}{6}), (3, \tfrac{1}{6}), (4, \tfrac{1}{6}), (5, \tfrac{1}{6}), (6, \tfrac{1}{6})\}.
+\]
+
+That is, for each possible value \(r \in X(S)\),
+\[
+P(X = r) = \tfrac{1}{6}.
+\]
+
+This example illustrates a \emph{discrete uniform distribution}—each outcome in the range of \(X\) is equally likely.
+\newline
+\vspace{1cm}
+\end{exmp}
+
+
+
+\subsection{Bayes' Theorem}
+\begin{defn}
+\textbf{Bayes' Theorem:} Suppose that \(E\) and \(F\) are events from a sample space \(S\) such that \(p(E) \neq 0\) and \(p(F) \neq 0\). Then
+\[
+p(F | E) = \frac{p(E | F) \cdot p(F)}{p(E | F) \cdot p(F) + p(E | \overline{F}) \cdot p(\overline{F})}
+\]
+\end{defn}
+\begin{exmp}[Bayes use in real life]
+
+Let:
+\begin{align*}
+& P(\text{Disease}) = 0.01 \quad (\text{1\% of the population has the disease}) \\
+& P(\text{Positive} | \text{Disease}) = 0.95 \quad (\text{95\% chance of a positive test if the person has the disease}) \\
+& P(\text{Negative} | \text{No Disease}) = 0.90 \quad (\text{90\% chance of a negative test if the person does not have the disease}) \\
+& P(\text{No Disease}) = 1 - P(\text{Disease}) = 0.99 \quad (\text{99\% of the population does not have the disease})
+\end{align*}
+
+The probability of having the disease given a positive test result using Bayes' Theorem is given by:
+\[
+P(\text{Disease} | \text{Positive}) = \frac{P(\text{Positive} |\text{Disease}) \cdot P(\text{Disease})}{P(\text{Positive} | \text{Disease}) \cdot P(\text{Disease}) + P(\text{Negative} | \text{No Disease}) \cdot P(\text{No Disease})}
+\]
+
+Substituting the given values:
+\[
+P(\text{Disease} | \text{Positive}) = \frac{0.95 \cdot 0.01}{0.95 \cdot 0.01 + (1 - 0.90) \cdot 0.99}
+\]
+
+\end{exmp}
+\subsection{Expected Value}
+\begin{defn}
+The expected value, also called the expectation or mean, of the random variable \(X\) on the sample space \(S\) is equal to
+\[ E(X) = \sum_{s \in S} p(s)X(s). \]
+
+The deviation of \(X\) at \(s \in S\) is \(X(s) - E(X)\), the difference between the value of \(X\) and the mean of \(X\).
+
+\end{defn}
+\begin{exmp}
+Let $X$ be the number that comes up when a fair die is rolled. What
+is the expected value of $X$?
+\vspace{3cm}
+\end{exmp}
+
+\begin{thm}
+If \(X_i, i = 1, 2, \ldots, n\) with \(n\) as a positive integer, are random variables on \(S\), and if \(a\) and \(b\) are real numbers, then
+\begin{enumerate}
+    \item \(E(X_1 + X_2 + \ldots + X_n) = E(X_1) + E(X_2) + \ldots + E(X_n)\)
+    \item \(E(aX + b) = aE(X) + b\).
+\end{enumerate}
+
+\end{thm}
+\begin{exmp}
+Find the expected number of successes when $n$ mutually independent Bernoulli trials are performed,
+where $p$ is the probability of success on each trial.
+\end{exmp}
+% \begin{exmp}
+% The expected number of successes when n mutually independent Bernoulli trials are performed,
+% where p is the probability of success on each trial?
+% \vspace
+% \end{exmp}
+
+

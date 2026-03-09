@@ -1,0 +1,308 @@
+\section{Counting}
+\subsection{The Basics of Counting}
+ In the back of your mind you will want to be thinking of this as considering Sets and their cardinality.
+
+\begin{defn}[Product Rule]
+    Suppose that a procedure can be broken down into a sequence of two tasks. If there are $n_1$ ways to do the first task and for each of these ways of doing the first task, there are $n_2$ ways to do the second task, then there are $n_1 n_2$ ways to do the procedure.
+\end{defn}
+\begin{exmp}[Set analog] Recall that $|A\times B|=|A|\times |B|$
+\end{exmp}
+\begin{exmp}
+    A new company, XYZ Corp, has just two employees, Sanchez and Patel. They have rented a floor of a building with 12 offices. The company is deciding how to assign these offices to the employees. How many ways are there to assign different offices to Sanchez and Patel?
+    
+    \vspace{2cm}
+\end{exmp}
+\begin{exmp}
+    The chairs of an auditorium are to be labeled with an uppercase English letter followed by a positive integer not exceeding 100. What is the largest number of chairs that can be labeled differently?
+    \vspace{2cm}
+\end{exmp}
+\begin{exmp}
+    How many different bit strings of length seven are there?
+    \vspace{2cm}
+\end{exmp}
+\begin{exmp}
+    Counting Functions: How many functions are there from a set with $m$ elements to a set with $n$ elements?
+    \vspace{2cm}
+\end{exmp}
+\begin{defn}[Sum Rule]
+    If a task can be done either in one of $n_1$ ways or in one of $n_2$ ways, where none of the set of $n_1$ ways is the same as any of the set of $n_2$ ways, then there are $n_1 + n_2$ ways to do the task.
+\end{defn}
+\begin{exmp}[Set analog] Recall that if $A$ and $B$ are disjoint sets,  $|A\cup B|=|A|+|B|$
+\end{exmp}
+
+\begin{exmp}
+    Suppose that either a member of the CS faculty or a grad student is chosen as a representative to a university committee. How many different choices are there for this representative if there are 37 members of the CS faculty and 83 grad students, and no one is both a faculty member and a student?
+
+    \vspace{2cm}
+\end{exmp}
+
+\newpage
+\begin{exmp}
+    What is the value of $k$ after the following code, where $n_1, n_2, \ldots, n_m$ are positive integers, has been executed?
+
+    \begin{verbatim}
+k := 0
+for i_1 := 1 to n_1
+    k := k + 1
+for i_2 := 1 to n_2
+    k := k + 1
+.
+.
+.
+for i_m := 1 to n_m
+    k := k + 1
+\end{verbatim}
+\vspace{2cm}
+\end{exmp}
+\subsubsection{Tricky Counting Problems}
+\begin{exmp}
+    Each user on a computer system has a password, which is six to eight characters long, where each character is an uppercase letter or a digit. Each password must contain at least one digit. How many possible passwords are there?
+    \vspace{4cm}
+\end{exmp}
+
+\begin{defn}[Subtraction Rule]
+    If a task can be done in either $n_1$ ways or $n_2$ ways, then the number of ways to do the task is $n_1 + n_2$ minus the number of ways to do the task that are common to the two different ways.
+\end{defn}
+\begin{exmp}[set analog]
+For any sets $A$ and $B$,
+$|A\cup B|=|A|+|B|-|A\cap B|$ (this is called the principle of inclusion-exclusion)
+\end{exmp}
+\begin{exmp}
+If I have 6 shirts and 3 are red, and I have 3 hats and 2 are  red, how many ways can I get dressed and make sure that I am wearing red?
+\vspace{2cm}
+\end{exmp}
+
+\begin{defn}[Division Rule]
+    There are $\frac{n}{d}$ ways to do a task if it can be done using a procedure that can be carried out in $n$ ways, and for every way $w$, exactly $d$ of the $n$ ways correspond to way $w$.
+\end{defn}
+\begin{exmp}[Set Analog]
+If you take a set of size $n$ and break this down into a collection of disjoint sets of size $d$, then there are $\frac{n}{d}$ of these sets.
+
+\end{exmp}
+\begin{exmp}
+    How many different ways are there to seat four people around a circular table, where two seatings are considered the same when each person has the same left neighbor and the same right neighbor?
+
+    \vspace{2cm}
+\end{exmp}
+\subsection{The Pigeonhole Principle}
+
+\begin{defn}[Pigeonhole Principle]
+    If $k$ is a positive integer and $k + 1$ or more objects are placed into $k$ boxes, then there is at least one box containing two or more of the objects.
+\end{defn}
+\begin{exmp}
+
+    A function $f$ from a set with $k + 1$ or more elements to a set with $k$ elements is not one-to-one.
+
+\end{exmp}
+\begin{thm}[Generalized Pigeonhole Principle]
+    If $N$ objects are placed into $k$ boxes, then there is at least one box containing at least $\lceil N/k \rceil$ objects.
+\end{thm}
+\begin{proof} $ $\\
+\vspace{4cm}
+$ $\\
+\end{proof}
+
+\begin{exmp} Suppose that between 10 people, they have 31 marbles. Prove that at least one person has at least 4 marbles.
+\vspace{2cm}
+\end{exmp}
+
+\begin{exmp} Suppose that on average, some group of people has 3.1 marbles. Prove that at least one person has at least 4 marbles.
+\vspace{2cm}
+\end{exmp}
+\begin{exmp}
+    How many cards must be selected from a standard deck of 52 cards to guarantee that at least three cards of the same suit are chosen?
+\vspace{3cm}
+\end{exmp}
+\subsubsection{Ramsey Problems}
+\begin{exmp}
+    Assume that in a group of six people, each pair of individuals consists of two friends or two enemies. Show that there are either three mutual friends or three mutual enemies in the group.
+    \vspace{3cm}
+\end{exmp}
+
+\newpage
+
+\subsection{Permutations and Combinations}
+\begin{defn}[Permutation]
+A permutation of a set of distinct objects is an ordered arrangement of these objects.
+We also are interested in ordered arrangements of some of the elements of a set. An ordered
+arrangement of r elements of a set is called an r-permutation.
+    The number of $r$-permutations of a set with $n$ elements is denoted by $P(n, r)$.
+
+
+\end{defn}
+\begin{exmp}
+    Let $S = \{1, 2, 3\}$. The ordered arrangement $3, 1, 2$ is a permutation of $S$. The ordered arrangement $3, 2$ is a $2$-permutation of $S$.
+\end{exmp}
+
+\begin{thm}
+    If $n$ is a positive integer and $r$ is an integer with $1 \leq r \leq n$, then there are $P(n, r) = n(n - 1)(n - 2) \cdot \ldots \cdot (n - r + 1)$ $r$-permutations of a set with $n$ distinct elements.
+\end{thm}
+We will almost always use this notation:
+\begin{defn}
+    If $n$ and $r$ are integers with $0 \leq r \leq n$, then $P(n, r) = \frac{n!}{(n - r)!}$. We call this "$n$ pick $r$".
+\end{defn}
+\begin{exmp}
+How many different ways can we select a first-prize winner, a second-prize winner, and a third-prize winner from a pool of 100 contestants who have entered a contest?
+\vspace{2cm}
+\end{exmp}
+
+
+\begin{exmp}
+
+How many permutations of the letters ABCDEFGH contain the string ABC.
+\vspace{3cm}
+\end{exmp}
+\begin{defn}
+    An $r$-combination of elements of a set is an unordered selection of $r$ elements from the set. Thus, an $r$-combination is simply a subset of the set with $r$ elements.
+\end{defn}
+\begin{defn}
+    The number of $r$-combinations of a set with $n$ distinct elements is denoted by $C(n, r)$. Note that $C(n, r)$ is also denoted by $\binom{n}{r}$ and is called a binomial coefficient.
+\end{defn}
+\begin{thm}
+    The number of $r$-combinations of a set with $n$ elements, where $n$ is a nonnegative integer and $r$ is an integer with $0 \leq r \leq n$, equals
+    \[
+    C(n, r) = \frac{n!}{r! (n - r)!}.
+    \]
+\end{thm}
+\begin{exmp}
+    The number of permutations $P(n, r)$ is equal to the product of the number of combinations $C(n, r)$ and the number of permutations $P(r, r)$:
+    \[
+    P(n, r) = C(n, r) \cdot P(r, r).
+    \]
+    \vspace{3cm}
+\end{exmp}
+\begin{thm}
+
+    Let $n$ and $r$ be nonnegative integers with $r \leq n$. Then, 
+    \[
+    C(n, r) = C(n, n - r).
+    \]
+    \vspace{3cm}
+\end{thm}
+\subsection{Binomial Coefficients}
+
+First Consider Pascal's Identity:
+\begin{thm}[Pascal's Identity]
+    Let \(n\) and \(k\) be positive integers with \(n \geq k\). Then
+    \[
+    \binom{n+1}{k} = \binom{n}{k-1} + \binom{n}{k}.
+    \]
+\begin{proof}
+Pascals' Identity claims that the numbers of ways a committee of $k$ people can be formed from a collection of $n+1$ people is the same as the number of ways a committee of $k-1$ people can be formed from a group of $n$ people plus the numbers of ways a committee of $k$ people can be formed by a committee of $n$ people.
+\end{proof}
+\end{thm}
+
+\begin{exmp}
+For example:
+Suppose that I have a set of size 5, $S$. I would like to count the number of subsets of size 3. This is $\binom{5}{3}$.
+\newline
+For $S=\{A,B,C,D,E\}$, we have 
+$\{A,B,C\}$,$\{A,B,D\}, \{A,B,E\}$,
+$\{A,C,D\}$,$\{A,C,E\}$,$\{A,D,E\}$,
+$\{B,C,D\},\{B,C,E\},\{B,D,E\}$
+\newline
+so there are nine in total. 
+\newline
+What is another way of counting these 9?
+\newline
+I can first consider all the subsets of size 3 which contain a $A$: $\{A,B,C\}$,$\{A,B,D\}, \{A,B,E\}$,
+$\{A,C,D\}$,$\{A,C,E\}$ and $\{A,D,E\}$
+and then consider all the subsets which don't contain $A$: $\{B,C,D\},\{B,C,E\},\{B,D,E\}$.
+\newline
+The number of subsets of size 3 which include $A$ have two more choices of remaining values. Therefore these choices are equivalent to choosing two elements from $\{B,C,D,E\}$--$\binom{4}{2}$.
+\newline
+The number of subsets of size 3 which do not include $A$ have three choices of remaining values. Therefore these choices are equivalent to choosing three elements from $\{B,C,D,E\}$--$\binom{4}{3}$.
+\end{exmp}
+ From this observation we can create a Triangle called Pascals triangle. 
+
+
+\begin{exmp}
+We will be using the notation $\binom{n}{k}$ to represent $C(n,k)$ (the number of ways we can select $k$ unordered distinct things from a collection of $n$ distinct things)
+For example, from above we have:
+\newline
+$\binom{3}{2}=\binom{2}{2}+\binom{2}{1}$
+\newline
+we can also see that $\binom{2}{1}=\binom{1}{1}+\binom{1}{0}$
+\newline
+Note that $\binom{n}{0}=1$ and $\binom{n}{n}=1$.
+\newline
+In this way we see a RECURSIVE relationship between binomial terms.\\
+We can then write $\binom{n}{k}$ as a recursive function below:
+\newline
+\begin{verbatim}
+def binom(n,k):
+    if n==k:
+        return 1
+    elif k==0:
+        return 1
+    else:
+        return binom(n-1,k)+binom(n-1,k-1)
+print(binom(4,2))
+\end{verbatim}
+\end{exmp}
+
+\begin{exmp}
+This recursive relationship can also be seen in\\
+Pascals Triangle. The first few rows are the values
+\newline
+$\binom{0}{0}$
+\newline
+$\binom{1}{0}$,$\binom{1}{1}$
+\newline
+$\binom{2}{0}$, $\binom{2}{1}$,$\binom{2}{2}$
+\newline
+Can you use Pascal's Triangle to calculate $\binom{6}{3}$?
+
+\begin{verbatim}
+              1
+            1   1
+          1   2   1
+        1   3   3   1
+      1   4   6   4   1
+    1   5  10  10   5   1
+  1   6  15  20  15   6   1
+\end{verbatim}
+\end{exmp}
+As it turns out, this observation gives us the binomial theorem. Which we use to understand a probability distribution called the binomial distribution-- it is the discrete version of the normal distribution (perhaps the most well known probability distribution).
+\begin{thm}[The Binomial Theorem]
+    Let \(x\) and \(y\) be variables, and let \(n\) be a nonnegative integer. Then
+    \[
+    (x + y)^n = \sum_{j=0}^{n} \binom{n}{j} x^{n-j}y^j = \binom{n}{0}x^n + \binom{n}{1}x^{n-1}y + \ldots + \binom{n}{n-1}xy^{n-1} + \binom{n}{n}y^n.
+    \]
+\end{thm}
+
+\subsubsection{Permutations with Repetition}
+\begin{thm}
+    The number of $r$-permutations of a set of $n$ objects with repetition allowed is $n^r$.
+\end{thm}
+\begin{exmp}
+    How many strings of length $r$ can be formed from the uppercase letters of the English alphabet?
+\vspace{3cm}
+\end{exmp}
+\subsubsection{Combinations with Repetition}
+\begin{thm}
+    There are $\binom{n + r - 1}{r} = \binom{n + r - 1}{n - 1}$ $r$-combinations from a set with $n$ elements when repetition of elements is allowed. (This is called the starts and bars argument).
+\end{thm}
+\begin{exmp}
+    Suppose that a cookie shop has four different kinds of cookies. How many different ways can six cookies be chosen? Assume that only the type of cookie, and not the individual cookies or the order in which they are chosen, matters.
+\vspace{3cm}
+\end{exmp}
+\subsubsection{Permutations with Indistinguishable Objects}
+
+\begin{thm}
+The number of different permutations of $n$ objects, where there are $n_1$ indistinguishable objects of type 1, $n_2$ indistinguishable objects of type 2, ..., and $n_k$ indistinguishable objects of type $k$, is
+\[
+\frac{n!}{n_1! \cdot n_2! \cdot \ldots \cdot n_k!}.
+\]
+
+\end{thm}
+
+\begin{exmp}
+How many different strings can be made by reordering the letters of the word SUCCESS?\vspace{3cm}
+\end{exmp}
+
+
+\begin{exmp}
+How many ways are there to distribute hands of 5 cards to each of four players from the standard
+deck of 52 cards?
+\end{exmp}

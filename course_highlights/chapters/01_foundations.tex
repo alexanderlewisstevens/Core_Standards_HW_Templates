@@ -1,0 +1,922 @@
+\section{The Foundations}
+\subsection{Logic and Proofs}
+
+\begin{defn}[proposition]
+A \textbf{proposition} is a declarative sentence (that is, a sentence that declares a fact) that is either true
+or false, but not both.
+\end{defn}
+
+\begin{defn}[propositional variables]
+We use letters to denote \textbf{propositional variables} (or statement variables), that is, variables that represent propositions, just as letters are used to denote numerical variables.
+\end{defn}
+\begin{defn}[truth value] The \textbf{truth value} of a proposition is true, denoted by $T$, if it is a true proposition, and the truth value of a proposition
+is false, denoted by $F$, if it is a false proposition.
+\end{defn}
+
+\begin{defn}[negation]
+Let $p$ be a proposition. The \textbf{negation} of $p$, denoted by $ \lnot p$, is the statement 
+\newline\todo{"It is not the case that p"}. 
+\newline The proposition $\lnot p$ is read “not p.” The truth value of the negation of $p$, $\lnot p$, is the opposite of the truth value of $p$.
+\end{defn}
+
+\begin{exmp}[truth table of $\lnot$]
+Below is an example of a truth table. 
+
+Typically, the leftmost columns correspond to the propositional variables that we use in our model. 
+
+Each row in the table corresponds to a different assignment of the propositional variables, each possible combination of T and F values.
+
+For example, the first row below corresponds to the world (or model) in which $p$ is True. The second row corresponds to world (or model) in which $p$ is False. 
+
+The columns to the right of the propositional variables tell us the value of $\lnot p$ corresponding to the truth value of $p$ in this row.
+
+\begin{center}
+\begin{tabular}{ | c | c | c |} 
+  \hline
+ $p$& $ \lnot p$ \\
+ \hline
+  T & F \\ 
+  F & T \\ 
+  \hline
+\end{tabular}
+\end{center}
+\end{exmp}
+
+Suppose that $p$ is the proposition "candy is free"
+
+
+Then the first row corresponds to a world in which the proposition "candy is free" is True, in which case the negation of this proposition "it is not the case that candy is free" is False.
+
+The second row corresponds to a world in which the proposition "candy is free" is \todo{?False}, in which case the negation of this proposition "it is not the case that candy is free" is \todo{True}
+
+\begin{defn}[conjunction,($\land$)]
+Let $p$ and $q$ be propositions. The \textbf{conjunction} of $p$ and $q$, denoted by $p \land q$, is the proposition
+“$p$ and $q$.” The conjunction $p \land q$ is True when both $p$ and $q$ are True and is False otherwise.
+\end{defn}
+
+\begin{exmp}[truth table of $\land$]
+Below is the \textbf{truth table} of $p \land q$. In the leftmost columns are the propositional values $p$ and $q$. Each row represents a different world (or model or assignment) in which $p$ and $q$ take on the values True and False. 
+
+\begin{center}
+\begin{tabular}{ | c | c | c |} 
+  \hline
+ $p$ $q$ & $ p \land q$ \\
+ \hline
+  T T & T \\ 
+  T F & F \\ 
+  F T & F \\ 
+  F F & F \\ 
+  \hline
+\end{tabular}
+\end{center}
+
+The first row represent a world in which both $p$ and $q$ are true. 
+
+The second row represents a world in which $p$ is True and $q$ is \todo{F}.
+
+The third row represents a world in which $p$ is \todo{F} and $q$ is \todo{T}.
+
+The last row represents \todo{a world in which p and q are both false}
+
+Suppose that $p$ represents the proposition "candy is free" and that $q$ represents the proposition "we all get along".
+Then the first row represents a world in which $p$ and $q$ are true, in which case the proposition "candy is free and we all get along " is true. The second row, however, represents a world in which the proposition "candy is free" is \todo{True} and "we all get along is" \todo{False} in which case the proposition "candy is free and we all get along " is \todo{False}.
+\end{exmp}
+
+
+\newpage
+\begin{defn}[disjunction $\lor$]
+Let $p$ and $q$ be propositions. The \textbf{disjunction} of $p$ and $q$, denoted by $p \lor q$, is the proposition
+“p or q.” The disjunction $p \lor q$ is false when both p and q are false and is true otherwise.
+\end{defn}
+
+\begin{exmp}[truth table of or $\lor$]
+Below is the truth table of $p \lor q$. In the leftmost columns are the propositional values $p$ and $q$. Each row represents a different world (or model or assignment) in which $p$ and $q$ take on the values True and False. 
+
+\begin{center}
+\begin{tabular}{ | c | c | c |} 
+  \hline
+ $p$ $q$ & $ p \lor q$ \\
+ \hline
+  T T & \todo{T} \\ 
+  T F & \todo{T} \\ 
+  F T & \todo{T} \\ 
+  F F & \todo{F} \\ 
+  \hline
+\end{tabular}
+\end{center}
+
+Suppose that $p$ represents the proposition "I am going to win my soccer match" and that $q$ represents the proposition "I am going to cry".
+
+The first row represent a world in which both $p$ and $q$ are true.
+This means that I will \todo{win} my soccer match and then I will \todo{cry}. The proposition "I am going to win my soccer match or I am going to cry" is \todo{True}.
+
+The second row represents a world in which $p$ is True and $q$ is False. This means that I will \todo{Win} my soccer match and then I will \todo{Not Cry}. The proposition "I am going to win my soccer match or I am going to cry" is \todo{True}.
+
+The third row represents a world in which $p$ is \todo{False} and $q$ is \todo{True}. This means that I will \todo{Lose} my soccer match and then I will \todo{Cry}. The proposition "I am going to win my soccer match or I am going to cry" is \todo{True}.
+
+The last row represents a world in which $p$ is \todo{False} and $q$ is \todo{False}. This means that I will \todo{Lose} my soccer match and then I will \todo{Not Cry}. The proposition "I am going to win my soccer match or I am going to cry" is \todo{False}.
+\end{exmp}
+\begin{defn}[exclusive or $\lxor$]
+Let $p$ and $q$ be propositions. The \textbf{exclusive or} of $p$ and $q$, denoted by $p \lxor q$, is the proposition
+that is true when exactly one of $p$ and $q$ is true and is false otherwise.
+\end{defn}
+\begin{exmp}[truth table of $\lxor$]
+
+\begin{center}
+\begin{tabular}{ | c | c | c |} 
+  \hline
+ $p$ $q$ & $ p \lxor q$ \\
+ \hline
+  T T & \todo{F} \\ 
+  T F & \todo{T} \\ 
+  F T & \todo{T} \\ 
+  F F & \todo{F} \\ 
+  \hline
+\end{tabular}
+\end{center}
+\end{exmp}
+If $p$ is the statement "My side is soup" and $q$ is the statement "My side is salad", then $p \lxor q$ represents the proposition "My side is soup or salad (but not both)", which is true in models where exactly one of the propositions "my side is soup" and "my side is salad" is true.
+
+\begin{defn}[conditional $p \to q$]
+Let $p$ and $q$ be propositions. The conditional statement $p \to q$ is the proposition “if $p$, then
+$q$.” The conditional statement $p \to q$ is false when $p$ is true and $q$ is false, and true otherwise.
+In the conditional statement $p \to q$, $p$ is called the hypothesis (or antecedent or premise)
+and $q$ is called the conclusion (or consequence).
+\end{defn}
+\begin{exmp}[truth table of $\to$]
+\begin{center}
+\begin{tabular}{ | c | c | c |} 
+  \hline
+ $p$ $q$ & $ p \to q$ \\
+ \hline
+  T T & T \\ 
+  T F & F \\ 
+  F T & T \\ 
+  F F & T \\ 
+  \hline
+\end{tabular}
+\end{center}
+If $p$ is the proposition "You give me 1000 dollars" and $q$ is the statement "Your roof will stop leaking." Then $p \to q$ represents the proposition, 
+\newline 
+\todo{"If you give me 1000 dollars your roof  will stop leaking"}.
+\newline
+The proposition $p\to q$ is False when the proposition "You give me 1000 dollars" is \todo{True} and "Your roof will stop leaking." is \todo{False}.
+\end{exmp}
+
+\newpage
+
+\begin{exmp}[conditional $p\to q$ ] \hspace{\fill}
+
+Consider the two propositions and their respective propositional variables
+
+$ p:=\text{"You eat 20 hot dogs for dinner"} $
+
+$ q:=\text{"You don't need a little snacky poo"} $
+
+The proposition (or statement)
+\newline
+$p\to q:= $\todo{If you eat 20 hot dogs for dinner then you don't need a little snacky poo }
+\newline
+In a world in which you only ate 19 hotdogs for dinner and you don't want a snack, $p\to q$ is \todo{True}.
+
+In a world in which you eat 20 hotdogs and you do still need a little snack, $p \to q$ is \todo{False}.
+
+\end{exmp}
+
+\begin{defn}[biconditional $p\iff q$]\ \\
+Let $p$ and $q$ be propositions. The \textbf{biconditional} statement $p \iff q$ is the proposition “$p$ if
+and only if $q$.” The biconditional statement $p \iff q$ is true when $p$ and $q$ have the same truth
+values, and is false otherwise. Biconditional statements are also called bi-implications.
+\end{defn}
+
+\begin{exmp}[truth table of $\iff$]
+\begin{center}
+\begin{tabular}{ | c | c | c |} 
+  \hline
+ $p$ $q$ & $ p \iff q$ \\
+ \hline
+  T T & \todo{T} \\ 
+  T F & \todo{F} \\ 
+  F T & \todo{F} \\ 
+  F F & \todo{T} \\ 
+  \hline
+\end{tabular}
+\end{center}
+If $p$ is the proposition "Harry potter dies." and $q$ is the statement "Voldemort dies." Then $p \iff q$ represents the proposition, \todo{"Harry potter dies if and only if Voldemort dies"}.
+
+The proposition $p\iff q$ is False when the proposition "Harry potter dies." is True and "Voldemort dies." is \todo{False} OR when the proposition "Harry potter dies." is False and "Voldemort dies." is \todo{True}.
+
+\end{exmp}
+
+\newpage
+\subsection{Applications of Propositional Logic}
+
+\subsubsection{Logic Puzzles}
+\begin{exmp}[logic puzzle]
+
+On an island in the future there are two groups of people. One group always lies and the other group always tells the truth.
+
+You come across 2 people.
+One person says "I don't lie, but she does!"
+The other person says "I don't lie, but she does!"
+
+What are possible scenarios of who is the liar and who tells the truth?
+
+Can you write the scenario above as a compound proposition?
+
+\begin{proof} \ \\
+I will interpret "I don't lie, but she does!" as equivalent to the statement "I don't lie \textbf{and} she does!"
+
+$A:=\text{person 1 tells the truth}$
+
+$B:=\text{person 2 tells the truth}$
+
+Then person one says, $A\land (\lnot B)$
+and person two says $B\land (\lnot A)$
+
+Supposing that $A$ is true (person 1 is telling the truth), $A\land (\lnot B)$ must be true, in which case $\lnot B $ is true. This means person 1 is telling the truth and person 2 is lying. 
+We now need to confirm that person 2 lied. If person 2 lied, $B$ is false and $B \land \lnot(A)$ must also be false. Therefore, $\lnot(B \land \lnot(A))$ must be true. Using De Morgans law, $\lnot B \lor \lnot A$ must be True, and since $\lnot B$ we see that this is the case. Therefore it is possible that person 1 told the truth and person 2 lied.
+
+Supposing that $A$ is false (person 1 is lying), $A\land (\lnot B)$ must be false, which is satisfied by $A$ being false. Therefore $B$ may take the value false and the statement $A\land (\lnot B)$ is false (because person lied in the first half of the sentence and the best interpretation of 'but' in this context is 'and' but it makes me want to cry. Not all sentences translate perfectly.)
+
+\end{proof}
+
+\end{exmp}
+
+\newpage
+
+\subsection{Propositional Equivalences}
+
+\begin{defn}[tautology and contradiction]
+
+A compound proposition that is always true, no matter what the truth values of the propositional
+variables that occur in it, is called a \textbf{tautology}. A compound proposition that is always
+false is called a \textbf{contradiction}. A compound proposition that is neither a tautology nor a
+contradiction is called a contingency.
+
+\end{defn}
+\begin{defn}[equivalence]
+The compound propositions $p$ and $q$ are called logically equivalent if $p \iff q$ is a tautology.
+The notation $p \equiv q$ denotes that p and q are logically equivalent. This means that the two statements evaluate identically in every possible world!
+\end{defn}
+\begin{exmp}[tautology]
+A tautology is logically equivalent to True, while a contradiction is logically equivalent to False.
+
+The truth table below shows that $p \lor \lnot p$ is a \todo{tautology} and that $p \land \lnot p$ is a \todo{contradiction}.
+\begin{center} 
+\begin{tabular}{ | c | c | c |c |c |c |c |c |} 
+  \hline
+ $p$ & T & $ p \lor \lnot p$&F & $p \land \lnot p$\\
+ \hline
+  T &T  &T&F&F\\ 
+  F & T & T&F&F\\ 
+  \hline
+\end{tabular}
+\end{center}
+\end{exmp}
+
+\begin{exmp}[Here are some Logical Equivalences]
+\begin{align}
+p \land T &\equiv p  & \text{Identity Laws}\\
+p \lor F &\equiv p  & \\
+p \lor T & \equiv T & \text{Domination Laws}\\
+p \land F & \equiv F & \\
+p \lor p & \equiv p & \text{Idempotent Laws}\\
+p \land p & \equiv p & \\
+\lnot \lnot p & \equiv p & \text{Double Negation}\\
+p \lor q & \equiv q \lor p & \text{Commutative Laws}\\
+p \land q & \equiv q \land p & \\
+(p \lor q) \lor r & \equiv p \lor (q \lor r) & \text{Associative Laws}\\
+(p \land q) \land r & \equiv p \land (q \land r) \\
+p \lor (q\land\land r) & \equiv (p \lor q ) \land 
+ (p \lor r)  & \text{Distributive Laws}\\
+p \land (q\lor r) & \equiv (p \land q) \lor (p \land r) & \\
+\lnot (p\land q) & \equiv \lnot p \lor \lnot q & \text{De Morgan's Laws}\\
+\lnot (p\lor q) & \equiv \lnot p \land \lnot q & \\
+p \lor (p \land q) & \equiv p & \text{Absorption Laws}\\
+p \land (p \lor q)& \equiv p &\\
+p \to q & \equiv q \lor \lnot p   & \text{$\lor$ restatement of implication}\\
+p \to q & \equiv \lnot q \to \lnot p & \text{Contraposition}\\
+(p \to q) \land (p \to r) &\equiv p\to (q \land r)& \text{Conjunction of implications}\\
+(p \to r) \land (q \to r) &\equiv (p \lor q) \to r & \text{will show this below}  \\ 
+(p \to q) \lor (p \to r) &\equiv p\to q \lor r& \text{disjunction of implications}\\
+(p \to r) \lor (q \to r) &\equiv (p\land q)\to r\\
+p \iff q & \equiv (p\to q)\land(q\to p)  & \text{Conjunction of implications}\\
+p \iff q & \equiv \lnot p \iff \lnot q  & \text{Negation restatement}\\
+\lnot(p \iff q) & \equiv \lnot p \iff q  & \text{Negation}
+\end{align}
+\end{exmp}
+
+
+\newpage
+\begin{exmp}[Showing logical equivalence]
+Suppose that we want to prove $(p \to r) \land (q \to r) \equiv (p \lor q) \to r$ using only Laws we have previously established.
+we may do so by transforming the LHS to the RHS one transformation at a time. Each transformation, we should state which Law we are using for example, this is a long hard one:
+
+\begin{align*}
+(p \to r) \land (q \to r) \equiv& (r \lor \lnot p) \land (r\lor \lnot q)\\
+&\equiv (r \lor (\lnot p \land \lnot q))\\
+&\equiv (r \lor \lnot (p \lor q))\\
+&\equiv (p \lor q) \to r
+\end{align*}
+\end{exmp}
+
+\newpage 
+\subsection{Predicates and Quantifiers}
+
+\begin{defn}[predicate]
+A \textbf{predicate} is a boolean valued function-- that is, $P$ is a function $P: \mathfrak{U} \to \{True,False\}$
+\end{defn}
+
+\begin{defn}[Universal Quantification]
+The \textbf{universal quantification} of $P(x)$ is the statement
+“$P(x)$ for all values of $x$ in the domain.”
+The notation $\forall x P(x)$ denotes the universal quantification of $P(x)$. Here $\forall$ is called the
+universal quantifier.We read $\forall xP(x)$ as “for all $x P(x)$” or “for every  $xP(x)$.” An element
+for which $P(x)$ is false is called a \textbf{counterexample} of $ \forall xP(x)$.
+\end{defn}
+\begin{exmp}
+
+Suppose that $\mathfrak{U}:= \{2,3,4,5,6,7,8,9\}$.
+Determine the truth of the proposition "All odd numbers in $\mathfrak{U}$ are prime." 
+First we define the predicates
+$P(x):=\text{$x$ is prime}$, 
+$S(x):= \text{$x$ is odd}$.
+
+Using Universal quantification, the expression above is equivalent to $\forall x (S(x)\to P(x))$.
+
+This is equivalent to the statement:
+$(S(1) \to P(1)) \land (S(2) \to P(2)) \land (S(3) \to P(3)) \cdots$
+
+which is false if $S(i)\to P(i)$ is false for some i in $\mathfrak{U}$.
+
+\begin{center} 
+\begin{tabular}{ | c | c | c |c |c |c |c |c |} 
+  \hline
+ $x$& $P(x)$ & $S(x)$ & $S(x) \to P(x)$ \\
+ \hline
+  2 & T & F& T\\ 
+  3 & T & T & T\\ 
+  4 & F & F & T\\ 
+  5 & T & T & T\\ 
+  6 & F & F & T\\ 
+  7 & T & T & T\\ 
+  8 & F & F & T\\ 
+  9 & F & T & F\\ 
+  \hline
+\end{tabular}
+
+\end{center}
+
+\vspace{2cm}
+\end{exmp}
+\begin{defn}[Existential Quantification]
+The \textbf{existential quantification} of $P(x)$ is the proposition
+“There exists an element $x$ in the domain such that $P(x)$.”
+We use the notation $\exists xP(x)$ for the existential quantification of $P(x)$. Here $\exists$ is called the
+existential quantifier.
+\end{defn}
+\begin{exmp}[Existential]
+Let $P(x)$ denote the statement “$x^2 = 8 $.” What is the truth value of the quantification $\exists xP(x)$,
+where the domain is all integers?
+\begin{proof}
+$\exists x P(x)$ is True if there exists an integer such that $x^2=8$. Since no such integer exists, we $\exists x P(x)$ is False.
+\end{proof}
+\end{exmp}
+\begin{defn}[set notation] \ \\
+The predicate
+\\
+$P(x):= \text{"x is in the set $P$"}$ is so common that we have special notation for it, $x \in P$.
+\\
+We may restate statements in predicate logic using this alternate notation:
+\\
+$\forall x (P(x) \implies R(x))\iff \forall x \in P, R(x)$
+\\
+We read this as "For all $x$ in $P$, $R(x)$". With the meaning, "For all $x$ in $P$, $R(x)$ is True."
+\\
+$\exists x (P(x) \land  R(x))\iff \exists x \in P s.t. R(x)\iff \exists x \in P | R(x)$
+\\
+We read this as "There exists an $x$ in $P$, such that $R(x)$". With the meaning, "There exists an $x$ in $P$, such that $R(x)$ is True."
+\\
+We read the statement $x\notin P$, as "$x$ not in $P$".
+\end{defn}
+\begin{rem}
+These statements are not a part of the formal language, but they are great at making arguments  more clear to the reader. (Another example of this is when we write $\cdots$. While this is not in the formal language, using $\cdots$ can help make our arguments easier to follow and we like helping the reader whenever we can.)
+\end{rem}
+\begin{exmp}[translation]
+Translate the following proposition to predicates, quantifiers
+"There is a real number which is not rational, but it's square is a rational"
+
+\begin{proof}
+We know that the proposition is equivalent to the statement "There is a real number which is not rational, and it's square is a rational".
+\\
+Recall, the statement"$x$ is real" is equivalent to $x \in \mathbb{R}$.
+\\
+Recall, the statement"$x$ is rational" is equivalent to $x \in \mathbb{Q}$.
+\\
+Putting this together, we have
+$\exists x \in \mathbb{R} |( x \notin \mathbb{Q} \land x^2 \in \mathbb{Q} )$
+\end{proof}
+\begin{proof}
+We may also write this statement without set inclusion notation.
+
+
+
+\end{proof}
+
+
+
+\end{exmp}
+
+\begin{exmp}
+Translate each of these statements into logical expressions
+using predicates, quantifiers, and logical connectives.
+\begin{itemize}
+\item a) No one is perfect.
+\begin{proof}
+$\mathfrak{U}:=\{\text{all people}\}$ 
+\newline
+$P(x):=\text{"x is perfect"}$
+\newline
+"It is not that case that someone is perfect"
+\newline
+"It is not that (there exists a person who is perfect)"
+\newline
+$\lnot(\exists x, P(x)) $
+\end{proof}
+\item b) Not everyone is perfect.
+\begin{proof}
+$\mathfrak{U}:=\{\text{all people}\}$ 
+\newline
+$P(x):=\text{"x is perfect"}$
+\newline
+" It is not the case that (For all people, people are perfect)"
+\newline
+$\lnot(\forall x, P(x)) $
+\end{proof}
+\item c) All your friends are perfect.
+\begin{proof}
+$\mathfrak{U}:=\{\text{all people}\}$ 
+\newline
+$F(x):=\text{"x is my friend"}$
+\newline
+$P(x):=\text{"x is perfect"}$
+\newline
+"For all people, if someone is your friend, then they are perfect."
+\newline
+$\forall x ( F(x) \to P(x) ) $
+\end{proof}
+\item d) At least one of your friends is perfect.
+\begin{proof}
+$\mathfrak{U}:=\{\text{all people}\}$ 
+\newline
+$F(x):=\text{"x is my friend"}$
+\newline
+$P(x):=\text{"x is perfect"}$
+\newline
+version 1:
+\newline
+"There exists a person, who is your friend and who is perfect."
+\newline
+$\exists x (F(x) \land P(x)) $
+\newline
+Doesn't WORK
+\newline
+version 2:"There exists a person, who if they are your friend, they are perfect."
+\newline
+$\exists x (F(x) \to P(x)) $
+\end{proof}
+\end{itemize}
+\end{exmp}
+$\mathfrak{U}:=\{\text{Unicorns}\}$
+\newline
+$F\equiv\exists x \lnot (P(x))\equiv \lnot \forall x P(x)$
+\newline
+$F\equiv\lnot \forall x P(x)$
+\newline
+$T\equiv \forall x P(x)$
+
+
+\begin{defn}[Demorgan's Law for quantification]
+
+\[\lnot (\forall x P(x)) \equiv \exists x \lnot( P(x))\]
+\[\lnot (\exists x P(x)) \equiv \forall x \lnot( P(x))\]
+
+\end{defn}
+\begin{exmp}
+
+What are the negations of the following statements
+
+"Everyone is a cop or a robber"
+
+"Everyone who loves cats loves dogs"
+\end{exmp}
+\begin{proof}
+Let 
+\\$C(x):=\text{$x$ is a cop }$ and
+\\$R(x):=\text{$x$ is a robber}$.
+\\Then "Everyone is a cop or a robber" may be written as $\forall x (C(x) \lor R(x))$.
+The negation of which is $\lnot \forall x (C(x) \lor R(x))$.
+\\ This is equivalent to $\exists x \lnot (C(x) \lor R(x))$, which may be written as $\exists x (\lnot C(x) \land \lnot R(x))$.
+\\ putting this back in to plain language gives us the statement
+\\"There exists someone who is neither a cop nor a robber"
+\end{proof}
+"Everyone who loves cats loves dogs"
+\begin{proof}
+Let 
+\\$C(x):=\text{$x$ loves cats}$ and
+\\$D(x):=\text{$x$ loves dogs}$.
+\\Then "Everyone who loves cats loves dogs" may be written as $\forall x (C(x) \to D(x))$.
+The negation of which is $\lnot \forall x (C(x) \to R(x))$.
+\\ This is equivalent to $\exists x \lnot (C(x) \to D(x))$, which may be written as $\exists x \lnot ( D(x) \lor \lnot C(x) )$, which then may be rewritten as $\exists x ( \lnot D(x) \land C(x) )$.
+\\ putting this back in to plain language gives us the statement
+\\"There exists someone who dislikes dogs and who likes cats"
+\end{proof}
+
+\subsection{Nested Quantifiers}
+
+\begin{exmp}
+Are the following equivalences?
+
+\begin{align}
+\forall x (\forall y P(x,y))\equiv & \forall y (\forall x P(x,y)) \text{ this is true!}\\
+\forall x (\exists y P(x,y))\equiv & \exists y (\forall x P(x,y)) \text{ this is false!}\\
+\exists x (\exists y P(x,y))\equiv & \exists y (\exists x P(x,y)) \text{ this is true!}
+\end{align}
+\end{exmp}
+\begin{exmp}
+Suppose that $P(x,y)$ uses $\mathfrak{U}=:\{1,2\}$ how would I state the following using universal and existential quantifiers?
+
+
+\begin{align}
+(P(1,1)\land P(1,2))\lor(P(2,1) \land P(2,2))\equiv & \exists x \forall y P(x,y)\\
+(P(1,1)\lor P(1,2))\lor(P(2,1) \lor P(2,2))\equiv & \exists x \exists y P(x,y)\\
+(P(1,1)\land P(1,2))\land(P(2,1) \land P(2,2))\equiv &\forall x \forall y P(x,y)\\
+(P(1,1)\lor P(1,2))\land(P(2,1) \lor P(2,2))\equiv &\forall x \exists y P(x,y)
+\end{align}
+\end{exmp}
+\newpage
+\begin{exmp}[]\ \\
+Rewrite the following expressions into equivalent expressions where all negation operators immediately precede predicates. Show all intermediate steps. For example, $P(x) \land \lnot Q(x)$ is an acceptable form, $\lnot(P(x) \land Q(x))$ is not acceptable.
+
+    \[\lnot \exists x \exists y \bigl( \lnot S(x) \land \lnot T(y) \bigr)\]
+    \vspace{3cm}
+%Solution:
+\begin{proof}
+ \begin{align}
+\lnot \exists x \exists y \bigl( \lnot S(x) \land \lnot T(y) \bigr)&\equiv \forall x \lnot \exists y \bigl( \lnot S(x) \land \lnot T(y) \bigr)\text{DeMorgans}\\
+&\equiv \forall x \forall y \lnot  \bigl( \lnot S(x) \land \lnot T(y) \bigr)&\text{DeMorgans}\\
+&\equiv \forall x \forall y  \bigl( \lnot \lnot S(x) \lor \lnot \lnot T(y) \bigr)&\text{DeMorgans}\\
+&\equiv \forall x \forall y  \bigl( S(x) \lor T(y) \bigr)&\text{DeMorgans}
+ \end{align}
+\end{proof}
+\end{exmp}
+\begin{exmp}[]\ \\
+Rewrite the following expressions into equivalent expressions where all negation operators immediately precede predicates. Show all intermediate steps. For example, $P(x) \land \lnot Q(x)$ is an acceptable form, $\lnot(P(x) \land Q(x))$ is not acceptable.
+
+    \[\lnot \forall x \bigl( \lnot P(x) \land \lnot \exists y T(y) \bigr)\]
+    \vspace{3cm}
+%Solution:
+\begin{proof}
+ \begin{align}
+\lnot \forall x \bigl( \lnot P(x) \land \lnot \exists y T(y) \bigr)&\equiv  \exists x \lnot \bigl( \lnot P(x) \land \lnot \exists y T(y) \bigr)&\text{DeMorgans negation of universal quantifier}\\
+&\equiv  \exists x  \bigl( \lnot(\lnot P(x)) \lor \lnot(\lnot \exists y T(y) )\bigr)&\text{DeMorgans}\\
+&\equiv  \exists x  \bigl( P(x)) \lor \exists y T(y) \bigr)&\text{DeMorgans}\\
+ \end{align}
+\end{proof}
+\end{exmp}
+\begin{exmp}
+Translate the following arguments into logical statements using predicates, logical connectives, and quantifiers as appropriate.
+
+  \begin{enumerate}
+      \item
+    All dogs are mammals.\\
+    Some dogs go to heaven.\\
+    Some mammals go to heaven
+%%%%%%%%%%%%%%%%% Add your solution below%%%%%%%%%%%%%%%%%%
+\vspace{3cm}
+\begin{proof}
+Define the predicates,
+$D(x):=\text{x is a Dog}$\\
+$M(x):=\text{x is a mammal}$\\
+$H(x):=\text{x goes to heaven}$\\
+Then
+\begin{align}
+\text{All dogs are mammals.}\equiv& \forall x (D(x)\to M(x))\\
+\text{Some dogs go to heaven.}\equiv& \exists x (D(x)\land H(x))\\
+\text{Some mammals go to heaven}\equiv& \exists x(M(x) \land H(x))
+\end{align}
+
+
+\end{proof}
+
+  \item
+    All Cats are great.\\
+    Some cats are awful.\\
+    Some animals are great and awful.
+    \vspace{3cm}
+    \begin{proof}
+Define the predicates,\hspace*{\fill} \\ 
+$C(x):=\text{x is a Cat}$ \hspace*{\fill} \\ 
+$G(x):=\text{x is Great}$\hspace*{\fill} \\ 
+$A(x):=\text{x is an animal}$\hspace*{\fill} \\ 
+
+Then
+\begin{align}
+\text{All Cats are great.}\equiv& \forall x (C(x)\to G(x))\\
+\text{Some cats are awful.}\equiv& \exists x (C(x)\land A(x))\\
+\text{Some animals are great and awful.}\equiv& \exists x (A(x) \land G(x))
+\end{align}
+
+
+\end{proof}
+    
+  \end{enumerate}
+%%%%%%%%%%%%%%%%% Add your solution below%%%%%%%%%%%%%%%%%%
+\begin{align}
+\text{this is stuff}
+\end{align}
+\end{exmp}
+
+\begin{exmp}
+Express each of the following using mathematical and logical operators,
+predicates, and quantifiers. Define the domain of each variable used.
+(a) Any rational number can be expressed as the quotient of two integers.
+(b) There are no real numbers x and y such that x = y/0.
+
+\end{exmp}
+\vspace{3cm}
+
+\newpage
+\subsection{Rules of Inference}
+\begin{defn}[]
+An \textbf{argument} in propositional logic is a sequence of propositions. All but the final proposition
+in the argument are called \textbf{premises} and the final proposition is called the \textbf{conclusion}. An
+argument is \textbf{valid} if the truth of all its premises implies that the conclusion is true.
+An argument form in propositional logic is a sequence of compound propositions involving
+propositional variables. An argument form is valid no matter which particular propositions
+are substituted for the propositional variables in its premises, the conclusion is true if
+the premises are all true.
+\end{defn}
+\begin{defn}[rules of inference]
+\textbf{Rules of inference} can be used as building blocks to construct more complicated valid argument forms.
+We will now introduce the most important rules of inference in propositional logic.
+\end{defn}
+This notation is incredibly cumbersome. Instead of writing things in this way:
+\begin{tabular}{cl}
+    & $A$\\
+    & $B$\\
+    \hline
+    $\therefore$ & $C$
+  \end{tabular}
+I will be using this
+$A,B \vdash C$.
+
+\begin{defn}[Modus ponens]
+$p,p\to q \vdash q$
+\end{defn}
+
+\begin{defn}[Modus tollens]
+$\lnot q,p\to q \vdash \lnot p$
+\end{defn}
+\begin{defn}[Hypothetical syllogism]
+$(p \to q) , (q \to r) \vdash (p \to r)$
+\end{defn}
+\begin{defn}[Disjunctive syllogism]
+$(p \lor q),\lnot p \vdash q$
+\end{defn}
+\begin{defn}[Addition]
+$p \vdash p \lor q$
+\end{defn}
+\begin{defn}[Simplification]
+$p \land q\vdash p$
+\end{defn}
+\begin{defn}[Conjunction]
+$p,q \vdash p \land q$
+\end{defn}
+\begin{defn}[Resolution]
+$p \lor q, \lnot p \lor r  \vdash q \lor r$
+\end{defn}
+\newpage 
+\begin{rem}
+We can always think of our truth tables (even if we aren't using them explicitly!)\\
+Suppose we want to show the following:\\
+If $a\vdash b$ and $b \vdash c$, then $a\vdash c$. \\
+This should remind you of the hypothetical syllogism\\
+We can say this as "If you can prove the conclusion $b$ from the premise $a$, and you can prove the conclusion $c$ from the premise $b$, then you can prove the conclusion $c$ from the premise $a$."
+\\
+This means that propositions we have established using laws of inference may be used.
+\\
+This should make sense with our model interpretation:\\
+"If in every world in which a is true, b is also true" and "If every world in which b is true, c is true" then "every world in which a is true, c is true". 
+\\
+\end{rem}
+\begin{exmp}
+Suppose that \\
+$a :=p\land (\lnot q \land \lnot r)$,\\
+$b:= (\lnot q \land \lnot r)$, and \\
+$c:=\lnot q \to \lnot r$.\\
+Show that
+$a\vdash c$.
+\begin{proof}
+Lets restrict our attention to worlds where $a$ is true. Below are all the assignments in which $a$ is true.\\
+\begin{tabular}{ | c | c | c |c |c |} 
+  \hline
+ $p$ $q$ $r$ & premise & $p \land (\lnot q \land \lnot r)$& conclusion & $\lnot q \land \lnot r$\\
+ \hline
+  T F F  &&T &&T\\ 
+ \hline
+\end{tabular}\\
+We notice that in all of these worlds (assignments) $b$ is also true.\\
+We now restrict our attention only to worlds (assignments) where $b$ is true.\\
+Below are all the assignments in which $b$ is true.\\
+\begin{tabular}{ | c | c | c |c |c |} 
+  \hline
+ $p$ $q$ $r$ & premise & $\lnot q \land \lnot r$& conclusion & $\lnot q \to \lnot r$\\
+ \hline
+  T F F  &&T &&T\\
+  F F F  &&T &&T\\ 
+ \hline
+\end{tabular}\\
+We notice that in all of these worlds (assignments) $c$ is also true.\\
+Since every assignment in which $a$ is true, $b$ is true, and in every assignment in which $b$ is true, $c$ is true, every assignment in which $a$ is true, $c$ is true.\\
+We can think of constructing an argument in this way, by restricting our attention to only some models (where it can be easier to see )\\
+
+\begin{tabular}{ | c | c | c |c |c |} 
+  \hline
+ $p$ $q$ $r$ & $p \land (\lnot q \land \lnot r)$&$(\lnot q \land \lnot r)$&$\lnot q \to \lnot r$\\
+ \hline
+  T T T  &F &F&\textbf{T}\\
+  T T F  &F &F&\textbf{T}\\
+  T F T  &F &F&F\\
+  F T T  &F &F&\textbf{T}\\
+  T F F  &\textbf{T} &\textbf{T}&\textbf{T}\\ 
+  F T F  &F &F&\textbf{T}\\ 
+  F F T  &F &F&F\\ 
+  F F F  &F &\textbf{T}&\textbf{T}\\ 
+ \hline
+\end{tabular}\\
+Any assignment where the first column is true, the second column is true, and any assignment that the second column is true the third column is true, so every assignment where the first column is true, the last column is true.
+\end{proof}
+\end{exmp}
+
+\newpage
+
+\begin{exmp}[] \ \\
+
+\begin{enumerate}
+\item (this is a formal argument form, you should be able to do this)\\
+Show\\
+\begin{tabular}{cl}
+    & $p \to q$\\
+    & $\lnot p \to r$\\
+    & $r \to s $\\
+    \hline
+    $\therefore$ & $\lnot q \to s$
+  \end{tabular}\\
+
+\renewcommand{\arraystretch}{2}
+
+\begin{tabularx}{\textwidth - \leftmargin}{clX}
+& Argument Steps: & Reason/Rule/Law of Logic:\\
+
+a) & $p\to q$ & \text{ Premise}
+\\
+\cline{3-3}
+b) & $\lnot q \to \lnot p$  & \text{ contraposition of a)}
+\\
+\cline{3-3}
+
+c) & $\lnot p \to r$ & \text{ Premise}
+\\
+\cline{3-3}
+
+d) &  $\lnot q \to r$ & \text{ Hypothetical Syllogism of b) and c)}
+\\
+\cline{3-3}
+e) & $r \to s$ & \text{ Premise}
+\\
+\cline{3-3}
+f) & $\lnot q \to s$ & \text{ Hypothetical Syllogism of d) and e)}
+\\
+\cline{3-3}
+\end{tabularx}
+\renewcommand{\arraystretch}{1}
+
+\item (This is the equivalent informal argument form, this is how most people will prove things)\\
+These should all be written neatly in full sentences. 
+
+Show $p \to q, \lnot p \to r,r \to s \vdash \lnot q \to s$.
+\begin{proof}
+By contraposition, $p\to q\vdash \lnot q \to \lnot p $.\\
+Because we have proven $\lnot q \to \lnot p$ using our premises, we may now use it (as though it was a premise).\\
+By hypothetical syllogism, $\lnot q \to \lnot p, \lnot p \to r \vdash  \lnot q \to r$.\\
+By hypothetical syllogism, $\lnot q \to r, r \to s \vdash  \lnot q \to s$.\\
+\end{proof}
+\end{enumerate}
+\end{exmp}
+\vspace{4cm}
+\newpage 
+\begin{defn}[Universal Instantiation]
+$\forall x P(x) \vdash P(c)$
+\end{defn}
+\begin{defn}[Universal Generalization]
+$\text{for arbitrary c } P(c)  \vdash \forall x P(x) $
+\end{defn}
+\begin{defn}[Existential Instantiation]
+$\exists x P(x) \vdash \text{for some } c, P(c)$
+\end{defn}
+\begin{defn}[Existential Generalization]
+$ P(c) \text{ for some c } \vdash \exists x P(x)$
+\end{defn}
+\begin{exmp}
+Show,
+$\exists x(C(x)\land \lnot B(x)), \forall x(C(x) \to P(x)) \vdash \exists x(P(x)\land \lnot B(x))$
+\\
+(I will do this informally for the sake of brevity, but we should be able to construct the formal argument form also).
+\begin{proof}
+
+\end{proof}
+By existential instantiation,$\exists x(C(x)\land \lnot B(x))\vdash$ for some $d$ $(C(d)\land \lnot B(d))$. \\
+By simplification, from $(C(d)\land \lnot B(d))$ we have $ C(d)$.\\
+By universal modus ponens,from 
+$\forall x(C(x) \to P(x))$ and $C(d)$ we know $P(d)$.\\
+Using, simplification of $C(d)\land \lnot B(d)$ we have  $\lnot B(d)$. 
+\\
+Conjunction of $\lnot B(d)$, $P(d)$ yields, $P(d) \land \lnot B(d)$.
+\\ Thus, through Existential Generalization, we see $\exists x(P(x)\land \lnot B(x))$
+
+
+
+
+
+\end{exmp}
+
+
+\begin{exmp}
+Determine the truth value of the statement $\exists x \forall y (x\leq y^2)$
+if the domain for the variables consists of
+\newline
+\begin{enumerate}
+\item a) the positive real numbers.
+\vspace{3cm}
+\begin{proof}
+We will prove that this statement is false by proving the truth of it's negation.
+We begin by rewriting the negation:
+\begin{align}
+\lnot(\exists x \forall y (x\leq y^2))&\equiv \forall x \lnot \forall y (x\leq y^2))\\
+&\equiv \forall x  \exists y \lnot  (x\leq y^2))\\
+&\equiv \forall x  \exists y (x > y^2)).
+\end{align}
+To show the truth of this equivalent statement we will show that for all x in the domain, there exists a y in the domain such that $x>y^2$.
+\\
+Choose an arbitrary $c$ in the positive real numbers. Define $d:=\sqrt{c/2}$. Notice that $d$ is a positive real number.
+\\
+It is clear that for arbitrary $c$, for some $d$, $c>d^2$.\\
+ for arbitrary $c\in \mathbb{R}$, for some $d\in \mathbb{R}$,$(c > d^2) $.\\
+By the inference rule of Existential Generalization,
+for arbitrary $c\in \mathbb{R}$, $\exists y \in \mathbb{R}$ such that $(c > y^2) $.\\
+By the inference rule of Universal Generalization,
+$\forall x, \exists y (x > y^2)$.\\
+Therefore, $\lnot(\exists x \forall y (x\leq y^2))$.
+\end{proof}
+\newpage 
+\item b) the integers.
+\vspace{3cm}
+\begin{proof}
+We begin by rewriting the proposition,
+\begin{align}
+\exists x \forall y (x\leq y^2))\equiv& \text{for some } c,\forall y (c\leq y^2))\text{ Universal Instantiation}\\
+\equiv& \text{for some } c,\text{for all d,} (c\leq d^2))\text{ Universal Instantiation}.
+\end{align}
+Let $c=0$ and $d\in \mathbb{Z}$. Then $\abs{d}\geq 0$ and $d^2\geq 0$.\\
+Therefore, for $c=0$,$\forall d\in \mathbb{Z}$, $ (c\leq d^2))$.\\
+By Universal Generalization, $c=0$,$\forall y$, $ (c\leq y^2))$.\\
+By Existential Generalization, $\exists x$$\forall y$, $ (x\leq y^2))$.\\
+
+\end{proof}
+\noindent
+\item c) the nonzero real numbers.
+\vspace{3cm}
+\newline
+\end{enumerate}
+\end{exmp}
+\vspace{3cm}
+
+\begin{exmp}{Importance of Formalizing arguments}
+(Because Tony wanted a paradox and I feel bad for making him type in .tex, here is Curry's Paradox)\\
+
+Analyze the truth of the following sentence.\\
+
+"If this proposition is true, then pigs can fly"\\
+\end{exmp}
+\begin{proof}
+$P:=$"If this proposition is true, then then pigs can fly"\\
+$Q:=$"pigs can fly"\\
+$P:=P\to Q$
+If $P$ then by modus ponens, $Q$. this is absurd so $P$ is false. Since P is false, $P\to Q$ is True, $P$ shares a truth value with $P\to Q$, so $P$ is True, therefore $Q$.
+\end{proof}
+
+
+
+\newpage

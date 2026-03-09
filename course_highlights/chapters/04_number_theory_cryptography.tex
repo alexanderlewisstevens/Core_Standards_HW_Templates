@@ -1,0 +1,444 @@
+\section{Number Theory and Cryptography}
+\subsection{Divisibility and Modular Arithmetic}
+\begin{defn}[Divides]
+If \(a\) and \(b\) are integers with \(a \neq 0\), we say that \(a\) divides \(b\) if there is an integer \(c\) such that \(b = ac\), or equivalently, if \(\frac{b}{a}\) is an integer. When \(a\) divides \(b\), we say that \(a\) is a factor or divisor of \(b\), and that \(b\) is a multiple of \(a\). The notation \(a \mid b\) denotes that \(a\) divides \(b\). We write \(a \nmid b\) when \(a\) does not divide \(b\).
+
+\end{defn}
+\begin{thm}[basic properties of divisibility]
+Let \(a\), \(b\), and \(c\) be integers, where \(a \neq 0\). Then
+\begin{enumerate}
+    \item[(i)] If \(a \mid b\) and \(a \mid c\), then \(a \mid (b + c)\);
+    \item[(ii)] If \(a \mid b\), then \(a \mid bc\) for all integers \(c\);
+    \item[(iii)] If \(a \mid b\) and \(b \mid c\), then \(a \mid c\).
+\end{enumerate}
+
+\end{thm}
+\begin{thm}[useful consequence]
+If \(a\), \(b\), and \(c\) are integers, where \(a \neq 0\), such that \(a \mid b\) and \(a \mid c\), then \(a \mid mb + nc\) whenever \(m\) and \(n\) are integers.
+
+
+\end{thm}
+
+\begin{thm}[The Division Algorithm]
+Let \(a\) be an integer and \(d\) a positive integer. Then there are unique integers \(q\) and \(r\), with \(0 \leq r < d\), such that \(a = dq + r\).
+
+\end{thm}
+\begin{defn}[quotient, remainder]
+In the equality given in the division algorithm, \(d\) is called the divisor, \(a\) is called the dividend, \(q\) is called the quotient, and \(r\) is called the remainder. This notation is used to express the quotient and remainder:
+\[q = \frac{a}{d}, \quad r = a \mod d.\]
+
+
+\end{defn}
+
+\begin{defn}[modulo]
+If \(a\) and \(b\) are integers and \(m\) is a positive integer, then \(a\) is congruent to \(b\) modulo \(m\) if \(m\) divides \(a - b\). We use the notation \(a \equiv b \pmod{m}\) to indicate that \(a\) is congruent to \(b\) modulo \(m\). We say that \(a \equiv b \pmod{m}\) is a congruence and that \(m\) is its modulus (plural moduli). If \(a\) and \(b\) are not congruent modulo \(m\), we write \(a \not\equiv b \pmod{m}\).
+
+
+\end{defn}
+\begin{thm}[modular equivalence]
+Let \(a\) and \(b\) be integers, and let \(m\) be a positive integer. Then \(a \equiv b \pmod{m}\) if and only if \(a \mod m = b \mod m\).
+
+\end{thm}
+\begin{thm}[converting between modulo and mod]
+Let \(m\) be a positive integer. The integers \(a\) and \(b\) are congruent modulo \(m\) if and only if there is an integer \(k\) such that \(a = b + km\).
+
+
+\end{thm}
+\begin{thm}[more conversions from mod to modulo]
+Let \(m\) be a positive integer. If \(a \equiv b \pmod{m}\) and \(c \equiv d \pmod{m}\), then
+\[a + c \equiv b + d \pmod{m}\] and \[ac \equiv bd \pmod{m}.\]
+
+\end{thm}
+\begin{thm}[a careful point]
+Let \(m\) be a positive integer, and let \(a\) and \(b\) be integers. Then
+\[(a + b) \mod m = ((a \mod m) + (b \mod m)) \mod m\]
+and
+\[ab \mod m = ((a \mod m)(b \mod m)) \mod m.\]
+
+\end{thm}
+\newpage
+\subsubsection{EXAMPLES}
+\begin{exmp}
+Show that if \(a, b, c, \) and \(d\) are integers, where \(a \neq 0\), such that \(a \mid c\) and \(b \mid d\), then \(ab \mid cd\).
+\begin{proof}$ $\\
+
+\vspace{2cm}
+\end{proof}
+\end{exmp}
+
+\begin{exmp}
+
+Show that if \(a, b,\) and \(c\) are integers, where \(a \neq 0\) and \(c \neq 0\), such that \(ac \mid bc\), then \(a \mid b\).
+
+\begin{proof}$ $\\
+
+\vspace{2cm}
+\end{proof}
+\end{exmp}
+\begin{exmp}
+
+Prove or disprove that if \(a \mid bc\), where \(a, b,\) and \(c\) are positive integers and \(a \neq 0\), then \(a \mid b\) or \(a \mid c\).
+
+
+\begin{proof}$ $\\
+
+\vspace{2cm}
+\end{proof}
+\end{exmp}
+\begin{exmp}
+\begin{itemize} $ $\\
+\item What are the quotient and remainder when 44 is divided by 8?
+\item What time does a 12-hour clock read 80 hours after it reads 11:00?
+\item Suppose that \(a\) and \(b\) are integers, \(a \equiv 4 \pmod{13}\), and \(b \equiv 9 \pmod{13}\). Find the integer \(c\) with \(0 \leq c \leq 12\) such that
+\(c \equiv 2a + 3b \pmod{13}\)
+\end{itemize}
+
+\end{exmp}
+\newpage
+\subsection{Integer Representations and Algorithms}
+\begin{thm}[Integer Representation]
+Let \(b\) be an integer greater than 1. Then if \(n\) is a positive integer, it can be expressed uniquely in the form
+\[n = a_k b^k + a_{k-1} b^{k-1} + \ldots + a_1 b + a_0,\]
+where \(k\) is a nonnegative integer, \(a_0, a_1, \ldots, a_k\) are nonnegative integers less than \(b\), and \(a_k \neq 0\).
+\end{thm}
+\begin{defn}
+The representation of \(n\) given in the Theorem above is called the base \(b\) expansion of \(n\). The base \(b\) expansion of \(n\) is denoted by \((a_k a_{k-1} \ldots a_1a_0)_b\). For instance, \((245)_8\) represents \(2 \cdot 8^2 + 4 \cdot 8 + 5 = 165\). 
+
+\textbf{DECIMAL EXPANSIONS} Typically, the subscript 10 is omitted for base 10 expansions of integers because base 10, or decimal expansions, are commonly used to represent integers.
+
+\textbf{BINARY EXPANSIONS:} Choosing 2 as the base gives binary expansions of integers. In binary notation, each digit is either a 0 or a 1. In other words, the binary expansion of an integer is just a bit string. Binary expansions (and related expansions that are variants of binary expansions) are used by computers to represent and do arithmetic with integers.
+
+\textbf{OCTAL AND HEXADECIMAL EXPANSIONS:} Base 8 expansions are called octal expansions, and base 16 expansions are hexadecimal expansions.
+The hexadecimal expansion of a number is a representation using the digits 0-9 and the letters A-F, where each digit contributes to the sum based on powers of 16. For example, $1A3_{16}$ corresponds to $1 \times 16^2 + 10 \times 16^1 + 3 \times 16^0$.
+
+\end{defn}
+
+\begin{exmp} $ $\\
+
+\begin{itemize}
+\item Convert the decimal expansion of each of these integers to a binary expansion. 231
+
+\vspace{2cm}
+
+\item  Convert the binary expansion of each of these integers to a decimal expansion.
+ $(1 1111)_2$
+ \vspace{2cm}
+
+ \item Convert the hexadecimal expansion of each of these integers
+to a binary expansion. $(80E)_{16}$
+
+\newpage
+\item Convert $(100110111)_2$ to octal.
+\newline
+\[\sum_{i=0}^8 a_i*2^i\approx \sum_{i=0}^3 b_i*(2^3)^i \]
+
+\begin{align}
+=&(a_8a_7a_6a_5a_4a_3a_2a_1a_0)_2\\
+=&\sum_{i=0}^8a_i*2^i\\
+=&(a_84+a_72+a_6)(2^3)^2+(a_54+a_42+a_3)2^3+a_2*4+a_1*2+a_0\\
+=&(b_2)(2^3)^2+(b_1)2^3+b_0\\
+=&\sum_{i=0}^2 b_i*(2^3)^i\\
+=&(b_2b_1b_0)_{8}
+\end{align}
+
+\[(110110111)_2=(667)_{8}\]
+
+
+\end{itemize}
+
+\end{exmp}
+
+\newpage
+\subsection{Primes and Greatest Divisors}
+\begin{defn}[prime]
+An integer $p$ greater than 1 is called prime if the only positive factors of $p$ are 1 and $p$.
+A positive integer that is greater than 1 and is not prime is called composite.
+\end{defn}
+
+\begin{thm}{THE FUNDAMENTAL THEOREM OF ARITHMETIC}$ $\\
+Every integer greater than 1 can be written uniquely as a prime or as the product of two or more primes, where the prime factors are written in order of nondecreasing size.
+\end{thm}
+\begin{thm}[Factor Bounds]$ $\\
+If $n$ is a composite integer, then $n$ has a prime divisor less than or equal to $\sqrt{n}$.
+
+\end{thm}
+\begin{exmp}Show that 101 is prime.
+\begin{proof} $ $\\
+\vspace{2cm}
+ $ $\\
+ 101 is not divisible by 2, 3, 5, 7, 11. By Theorem 4.20, since 101 is not divisible by primes less that root 101, we are good!
+\end{proof}
+\end{exmp}
+\begin{exmp}{The Sieve of Eratosthenes}$ $\\
+
+The Sieve of Eratosthenes is like an old-school trick for figuring out all the prime numbers up to a certain point. You start with 2 and cross out all its multiples, then move to the next unmarked number and do the same. Keep going until you've dealt with the multiples up to the square root of the limit – what's left are the primes.
+\begin{enumerate}
+  \item \textbf{Initialization:}
+    \begin{itemize}
+      \item Create a list of boolean values representing numbers from 2 to the given limit, initially all marked as true.
+      \item Mark 0 and 1 as false since they are not prime.
+    \end{itemize}
+  
+  \item \textbf{Iteration:}
+    \begin{itemize}
+      \item Start with the first number in the list (2), the smallest prime.
+      \item Mark all multiples of the current prime as false, as they cannot be prime.
+      \item Move to the next number in the list that is still marked as true, and repeat the process.
+      \item Continue until the square of the current prime exceeds the given limit.
+    \end{itemize}
+  
+  \item \textbf{Completion:}
+    \begin{itemize}
+      \item The remaining unmarked numbers in the list are primes.
+    \end{itemize}
+  
+  \item \textbf{Result:}
+    \begin{itemize}
+      \item The algorithm produces a list of all prime numbers up to the given limit.
+    \end{itemize}
+\end{enumerate}
+\href{https://pythontutor.com/render.html#code=def%20sieve_of_eratosthenes%28limit%29%3A%0A%20%20%20%20primes%20%3D%20%5B%5D%0A%20%20%20%20is_prime%20%3D%20%5B1%5D%20*%20%28limit%20%2B%201%29%0A%20%20%20%20is_prime%5B0%5D%20%3D%20is_prime%5B1%5D%20%3D%200%0A%0A%20%20%20%20for%20number%20in%20range%282,%20int%28limit**0.5%29%20%2B%201%29%3A%0A%20%20%20%20%20%20%20%20if%20is_prime%5Bnumber%5D%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20primes.append%28number%29%0A%20%20%20%20%20%20%20%20%20%20%20%20for%20multiple%20in%20range%28number%20*%20number,%20limit%20%2B%201,%20number%29%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20is_prime%5Bmultiple%5D%20%3D%200%0A%0A%20%20%20%20for%20number%20in%20range%28int%28limit**0.5%29%20%2B%201,%20limit%20%2B%201%29%3A%0A%20%20%20%20%20%20%20%20if%20is_prime%5Bnumber%5D%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20primes.append%28number%29%0A%0A%20%20%20%20return%20primes%0A%0A%23%20Example%20usage%3A%0Alimit%20%3D%2020%0Aresult%20%3D%20sieve_of_eratosthenes%28limit%29%0Aprint%28%22Prime%20numbers%20up%20to%22,%20limit,%20%22are%3A%22,%20result%29&cumulative=true&curInstr=0&heapPrimitives=false&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=true}{Example implementation here}
+\end{exmp}
+
+\begin{thm}{Infinitude of primes} 
+There are infinitely many primes.
+\begin{proof}
+$ $\\
+\vspace{1cm}
+Suppose that there are a finite number of primes $p_0,p_1,p_2,p_3,\cdots,p_n$.
+\newline
+$n=p_0\cdot p_1\cdot p_2 \cdot p_3 \cdot\cdots\cdot p_n$
+\newline
+$n\% p_i=0$
+\newline
+$n+1\% p_i=1$
+\newline
+$n+1$ is a new prime! this contradicts our assumption, therefore there are an infinite number of primes.
+$ $\\
+\end{proof}
+\end{thm}
+\begin{defn}{GCD}$ $\\
+Let $a$ and $b$ be integers, not both zero. The largest integer $d$ such that $d | a$ and $d | b$ is called the greatest common divisor of $a$ and $b$. The greatest common divisor of $a$ and $b$ is denoted by $\gcd(a, b)$.
+\end{defn}
+\begin{exmp}Find $\gcd(48, 18)$
+$ $\\
+Since 6 is the largest divisor of $18$ which divides $48$ 6 is the $\gcd(48,18)$
+\vspace{0.5em}
+\noindent
+$18=2*3*3$\newline
+$48=2*2*2*2*3$
+\end{exmp}
+
+
+\begin{defn}{Relatively Prime}$ $\\
+The integers $a$ and $b$ are relatively prime if their greatest common divisor is 1.
+\end{defn}
+\begin{exmp} Find which pairs of the following numbers are relatively prime. 
+25,9,12, and 7.
+\newline
+\noindent
+$25=5*5$\newline
+$9=3*3$\newline
+$12=3*2*2$\newline
+$7=7$\newline
+
+
+\end{exmp}
+\begin{defn}{LCM}$ $\\
+The least common multiple of the positive integers $a$ and $b$ is the smallest positive integer that is divisible by both $a$ and $b$. The least common multiple of $a$ and $b$ is denoted by $\lcm(a, b)$.
+\end{defn}
+\begin{exmp}
+Compute $\lcm(6,9)$
+\newline
+$6=2*3$
+\newline
+$9=3*3$
+
+\end{exmp}
+\begin{thm}{LCM and GCD}$ $\\
+Let $a$ and $b$ be positive integers. Then $ab = \gcd(a, b) \cdot \lcm(a, b)$.
+\end{thm}
+\newpage
+\begin{exmp}
+Find $\gcd(12,15)$ and $\gcd(12,15)$ and  confirm $12\cdot15 = \gcd(12, 15) \cdot \lcm(12, 15)$.
+\newline
+$12=3*2*2$\newline
+$15=5*3$\newline
+$\gcd(12,15)=3$\newline
+$\lcm(12,15)=5*3*2*2$\newline
+\newline
+$\lcm(a,b)=\frac{a\cdot b}{\gcd(a,b)}$
+
+
+\end{exmp}
+\begin{exmp}Suppose $a|b$, what is $\gcd(a,b)$? what is $\lcm(a,b)$
+$ $\\
+$a=\gcd(a,b)$\\
+
+\end{exmp}
+\
+\begin{thm}{Lemma for Euclidean Algorithm}$ $\\
+Let $a = bq + r$, where $a$, $b$, $q$, and $r$ are integers. Then $\gcd(a, b) = \gcd(b, r)$.
+
+\end{thm}
+\newpage
+\begin{thm}{Euclidean Algorithm}$ $\\
+The Euclidean Algorithm is a method for finding the greatest common divisor (gcd) of two integers. Let $a$ and $b$ be positive integers. The algorithm proceeds by iteratively replacing the larger number with the remainder of the division of the larger number by the smaller number. This process continues until the remainder is zero. The gcd is then the last non-zero remainder. The algorithm can be expressed as follows:
+
+\textbf{Euclidean Algorithm:}
+
+\begin{enumerate}
+  \item \textbf{Initialization:}
+    \begin{itemize}
+      \item Let $a$ and $b$ be positive integers.
+    \end{itemize}
+  
+  \item \textbf{Iteration:}
+    \begin{itemize}
+      \item Replace the larger number $a$ with the remainder of $a$ divided by $b$.
+      \item Continue this process until the remainder is zero.
+      \item The greatest common divisor (gcd) is the last non-zero remainder, which is $b$.
+    \end{itemize}
+  
+  \item \textbf{Result:}
+    \begin{itemize}
+      \item The algorithm efficiently computes the gcd of $a$ and $b$.
+    \end{itemize}
+\end{enumerate}
+
+\end{thm}
+\begin{exmp}Use the Euclidean algorithm to show 48 and 
+18. Write down all of the quotients and remainders which were calculated.
+\vspace{3cm}
+\end{exmp}
+\href{https://pythontutor.com/render.html#code=def%20euclidean_algorithm%28a,%20b%29%3A%0A%20%20%20%20while%20b%20!%3D%200%3A%0A%20%20%20%20%20%20%20%20print%28f%22%7Ba%7D%3D%7Bb%7Dx%7Ba//b%7D%2B%7Ba%25b%7D%22%29%0A%20%20%20%20%20%20%20%20a,%20b%20%3D%20b,%20a%20%25%20b%0A%20%20%20%20return%20a%0A%0A%23%20Example%20usage%3A%0Anum1%20%3D%2048%0Anum2%20%3D%2018%0Aresult%20%3D%20euclidean_algorithm%28num1,%20num2%29%0A%0Aprint%28f%22The%20gcd%20of%20%7Bnum1%7D%20and%20%7Bnum2%7D%20is%3A%20%7Bresult%7D%22%29&cumulative=true&curInstr=18&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false}{Implementation Here}
+\begin{thm}{Bézout's Theorem}$ $\\
+If $a$ and $b$ are positive integers, then there exist integers $s$ and $t$ such that $\gcd(a, b) = sa + tb$.
+\end{thm}
+\begin{exmp}
+Find $s$ and $t$ such that $\gcd(48,18)= s48 + t18$
+\vspace{2cm}
+\newline
+48=18x2+12
+\newline
+18=12x1+6
+\newline
+12=6x2+0
+\newline
+6=18x3-48
+\end{exmp}
+
+\begin{thm}{Prime Factors}$ $\\
+If $p$ is a prime and $p \mid a_1 \cdot a_2 \cdot \ldots \cdot a_n$, where each $a_i$ is an integer, then $p \mid a_i$ for some $i$.
+\end{thm}
+\begin{exmp}{Find the prime factorization of 360}
+\vspace{2cm} $ $\\
+360=2*2*2*3*3*5
+\end{exmp}
+
+\begin{exmp}
+$3+(-3)=0$ additive ($a+0=a$)!
+\newline
+$2*(.5)=1$ multiplicative ($a*1=a$)
+\newline
+$(6*1)\mod p$. $1$ is multiplicative identity when dealing with mods.
+\newline
+$(2*s)=1 (\mod 3)$ 2 is multiplicative inverse of itself.
+\newline
+$(2*s)=1 (\mod 5)$ 3 is the multiplicative inverse!
+\newline
+$(2*s)=1 (\mod 7)$ 4 is the multiplicative inverse
+\newline
+$(2*s)=1 (\mod 6)$ DOES NOT EXIST!!!!!.
+\newline
+
+\end{exmp}
+\begin{thm}{Multiplicative Inverse Property}
+
+If $a$ and $m$ are relatively prime integers, where $m > 1$, then an inverse of $a$ modulo $m$ exists. Furthermore, this inverse is unique modulo $m$. In other words, there is a unique positive integer $a^{-1}$ less than $m$ that is an inverse of $a$ modulo $m$, and every other inverse of $a$ modulo $m$ is congruent to $a^{-1}$ modulo $m$.
+
+\end{thm}
+\begin{exmp} Does the modular inverse of $22 \mod 5$ exist? explain why. Then, use Bézout's Theorem to find $s$ and $t$ such that $s\cdot 22+t\cdot 5=1$, take both sides $\mod 5$ and find the inverse of $22 \mod 5$.
+\newline
+$s\cdot22+t\cdot 5=1$
+\newline
+22-5*4=2
+\newline
+5-2x2=1
+\newline
+5-(22-5*4)x2=1
+\newline $ $\\
+5*9-22*2=1
+\newline
+$(5*9-22*2)\mod 5=1\mod 5$
+\newline
+$(22*-2)\mod 5=1\mod 5$
+\newline
+modular inverse is $3$
+\newline
+
+
+\end{exmp}
+
+
+
+\newpage
+\subsection{Solving Congruences}$ $\\
+\begin{thm}{Chinese Remainder Theorem:}
+
+
+Let $m_1, m_2, \ldots, m_k$ be pairwise coprime positive integers, and let $a_1, a_2, \ldots, a_k$ be integers. Then, the system of congruences:
+
+
+\begin{align*}
+x &\equiv a_1 \pmod{m_1} \\
+x &\equiv a_2 \pmod{m_2} \\
+& \vdots \\
+x &\equiv a_k \pmod{m_k}
+\end{align*}
+
+
+has a unique solution modulo $M = m_1 \cdot m_2 \cdot \ldots \cdot m_k$ given by:
+
+\[
+x \equiv a_1 M_1 y_1 + a_2 M_2 y_2 + \ldots + a_k M_k y_k \pmod{M},
+\]
+
+where $M_i = M/m_i$ and $y_i$ is the modular inverse of $M_i$ modulo $m_i$.
+
+\end{thm}
+\begin{exmp}
+Find a value of $x$ which satisfies the system of congruences:
+
+\begin{align*}
+x &\equiv 2 \pmod{3} \\
+x &\equiv 3 \pmod{5} \\
+x &\equiv 1 \pmod{7}
+\end{align*}
+
+
+The Chinese Remainder Theorem allows us to find a unique solution modulo \(3 \times 5 \times 7 = 105\).
+
+Let \(M_1 = 5 \times 7 = 35\), \(M_2 = 3 \times 7 = 21\), and \(M_3 = 3 \times 5 = 15\).
+
+Find the modular inverses:
+
+\begin{align*}
+35 \cdot y_1 &\equiv 1 \pmod{3} \quad \text{(solve for \(y_1\))} \quad \Rightarrow \quad y_1 \equiv 2 \pmod{3} \\
+21 \cdot y_2 &\equiv 1 \pmod{5} \quad \text{(solve for \(y_2\))} \quad \Rightarrow \quad y_2 \equiv 1 \pmod{5} \\
+15 \cdot y_3 &\equiv 1 \pmod{7} \quad \text{(solve for \(y_3\))} \quad \Rightarrow \quad y_3 \equiv 1 \pmod{7}
+\end{align*}
+
+
+Apply the Chinese Remainder Theorem formula:
+\[ x \equiv (2 \cdot 35 \cdot 2) + (3 \cdot 21 \cdot 1) + (1 \cdot 15 \cdot 1) \pmod{105} \]
+
+Solving this congruence, we get \(x \equiv 41 \pmod{105}\).
+\end{exmp}
+\begin{thm}{Fermat's Little Theorem}$ $\\
+
+If $p$ is prime and $a$ is an integer not divisible by $p$, then $a^{p-1} \equiv 1 \pmod{p}$. Furthermore, for every integer $a$, we have $a^p \equiv a \pmod{p}$.
+
+\end{thm}
+\newpage
+

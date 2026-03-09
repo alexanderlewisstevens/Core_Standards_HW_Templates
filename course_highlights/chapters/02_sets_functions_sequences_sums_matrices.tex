@@ -1,0 +1,538 @@
+\section{Sets, Functions, Sequences, Sums, and Matrices}
+\subsection{Sets}
+
+\begin{defn}[Set]
+A set is an unordered collection of objects, called elements or members of the set. A set is
+said to contain its elements.We write $a \in A$ to denote that $a$ is an element of the set $A$. The
+notation $a \notin A$ denotes that $a$ is not an element of the set $A$.
+\end{defn}
+\begin{defn}[Equality]
+Two sets are equal if and only if they have the same elements. Therefore, if $A$ and $B$ are sets,
+then $A$ and $B$ are equal if and only if $\forall x(x \in A \leftrightarrow x \in B)$.We write $A = B$ if A and B are
+equal sets.
+\end{defn}
+\begin{defn}[Subset]
+The set $A$ is a subset of $B$ if and only if every element of $A$ is also an element of $B$. We use
+the notation $A \subseteq B$ to indicate that $A$ is a subset of the set $B$.
+\end{defn}
+\begin{defn}[empty set]
+The set with no element is called the empty set and denoted $\emptyset$ or $\{\}$. We use the language 'the' empty set and not 'an' empty set because all empty sets are equal to one another.
+\end{defn}
+\begin{thm}[trivial subsets]
+For every set $S$, $\emptyset \subseteq S$ and $S \subseteq S$.
+\end{thm}
+
+\begin{defn}[cardinality]
+Let $S$ be a set. If there are exactly $n$ distinct elements in $S$ where $n$ is a nonnegative integer,
+we say that $S$ is a finite set and that $n$ is the cardinality of S. The cardinality of $S$ is denoted
+by $\card{S}$.
+\end{defn}
+\begin{defn}[infinite]
+A set is said to be infinite if it is not finite.
+\end{defn}
+\begin{defn}[Power Set]
+Given a set $S$, the power set of $S$ is the set of all subsets of the set $S$. The power set of $S$ is
+denoted by $\mathcal{P}(S)$.
+\end{defn}
+\begin{defn}[$n$-tuple]
+The ordered $n$-tuple $(a_1, a_2, . . . , a_n)$ is the ordered collection that has $a_1$ as its first element,
+$a_2$ as its second element,$\cdots$, and an as its $n$th element.
+\end{defn}
+\begin{defn}[Cartesian Product]
+Let $A$ and $B$ be sets. The Cartesian product of $A$ and $B$, denoted by $A \times B$, is the set of all
+ordered pairs $(a, b)$, where $a \in A$ and $b \in B$. Hence,
+$A \times B = {(a, b) | a \in A \land b \in B}$.
+\end{defn}
+\begin{defn}[Cartesian Product of Sets]
+The Cartesian product of the sets $A_1,A_2, \cdots , A_n,$ denoted by $A_1 \times A2 \times \cdots \times A_n$, is the
+set of ordered $n$-tuples $(a_1, a_2, \cdots , a_n)$, where $a_i$ belongs to $A_i$ for $i = 1, 2, \cdot , n$. In other
+words,
+\[A_1 \times A_2 \times \cdots \times A_n = \{(a_1, a_2, \cdots , a_n) | a_i \in A_i \text{ for }i = 1, 2,\cdots, n\}\].
+\end{defn}
+\begin{exmp}
+Draw out $\mathcal{P}(\{a,b,c\})$ and draw an arrow from the set  $A$ to the set $B$ if $A\subseteq B$ and $\card{B}-\card{A}=1$.\\
+\vspace{2cm}\\
+Describe $A\cap B$ using directed paths to $A$ and $B$.\\
+\vspace{1cm}\\
+Describe $A\cup B$ using directed paths from $A$ and $B$.\\
+\vspace{1cm}\\
+
+\end{exmp}
+
+\newpage
+\subsection{Set Operations}
+\begin{defn}[union]
+Let $A$ and $B$ be sets. The union of the sets $A$ and $B$, denoted by $A \cup B$, is the set that contains
+those elements that are either in $A$ or in $B$, or in both.
+\end{defn}
+\begin{defn}[intersection]
+Let $A$ and $B$ be sets. The intersection of the sets $A$ and $B$, denoted by $A \cap B$, is the set
+containing those elements in both $A$ and $B$.
+\end{defn}
+\begin{defn}[disjoint]
+Two sets are called disjoint if their intersection is the empty set.
+\end{defn}
+\begin{defn}[difference]
+Let $A$ and $B$ be sets. The difference of $A$ and $B$, denoted by $A - B$ (or more commonly $A \setminus B$), is the set containing those
+elements that are in $A$ but not in $B$. The difference of $A$ and $B$ is also called the complement
+of $B$ with respect to $A$.
+\end{defn}
+\begin{defn}[compliment]
+Let $U$ be the universal set. The complement of the set $A$, denoted by $\overline{A}$, is the complement
+of $A$ with respect to $U$. Therefore, the complement of the set $A$ is $U - A$ ($U \setminus A$).
+\end{defn}
+\begin{exmp}Deriving Set Identities
+\begin{align}
+p \land T &\equiv p  &A\cap U=A \hspace{1cm}& \text{Identity Laws}\\
+p \lor F &\equiv p  &A\cup \emptyset=A \hspace{1cm}& \\
+p \lor T & \equiv T &A\cup U=U \hspace{1cm}& \text{Domination Laws}\\
+p \land F & \equiv F &A\cap \emptyset=\emptyset \hspace{1cm}& \\
+p \lor p & \equiv p &A\cup A=A \hspace{1cm}& \text{Idempotent Laws}\\
+p \land p & \equiv p &A\cap A=A\hspace{1cm}& \\
+\lnot \lnot p & \equiv p &A=((A)^c)^c\hspace{1cm}& \text{Complementation}\\
+p \lor q & \equiv q \lor p &A\cap B=B\cap A\hspace{1cm}& \text{Commutative Laws}\\
+p \land p & \equiv q \land p &A\cup B=B\cup A\hspace{1cm}& \\
+(p \lor q) \lor r & \equiv p \lor (q \lor r) &(A\cup B)\cup C=A\cup (B\cup C)\hspace{1cm}& \text{Associative Laws}\\
+(p \land q) \land r & \equiv p \land (q \land r)&(A\cap B)\cap C=(A\cap B)\cap C\hspace{1cm}& \\
+p \lor (q\land r) & \equiv (p \lor q ) \land 
+ (p \lor r)  &A \cup (B\cap C) = (A \cup B ) \cap 
+ (A \cup C)\hspace{1cm}& \text{Distributive Laws}\\
+p \land (q\lor r) & \equiv (p \land q) \lor (p \land r) &\underline{\hspace{5cm}}\hspace{1cm}& \\
+\lnot (p\land q) & \equiv \lnot p \lor \lnot q & \overline{A\cap B}= \overline{A} \cup \overline{B} \hspace{1cm}& \text{De Morgan's Laws}\\
+\lnot (p\lor q) & \equiv \lnot p \land \lnot q &\underline{\hspace{5cm}}\hspace{1cm}& \\
+p \lor (p \land q) & \equiv p &\underline{\hspace{5cm}}\hspace{1cm}& \text{Absorption Laws}\\
+p \land (p \lor q)& \equiv p &\underline{\hspace{5cm}}\hspace{1cm}&\\
+p \lor \lnot p= T  &\hspace{3cm}&\underline{\hspace{5cm}}\hspace{1cm}& \text{Complement Laws}\\
+p \land \lnot p=F & \equiv q \lor \lnot p   &\underline{\hspace{5cm}}\hspace{1cm}&
+\end{align}
+\end{exmp}
+\begin{defn}[arbitrary union]
+The union of a collection of sets is the set that contains those elements that are members of
+at least one set in the collection.\\
+We use the notation
+$A_1\cup A_2 \cup \cdots \cup A_n = \union_{i=1}^{n}A_n$
+to denote the union of the sets $A_1,A_2, \cdots, A_n$.
+\end{defn}
+\begin{defn}[arbitrary intersection]
+The intersection of a collection of sets is the set that contains those elements that are members
+of all the sets in the collection.\\
+We use the notation
+$A_1\cap A_2 \cap \cdots \cap A_n = \intersect_{i=1}^{n}A_n$
+to denote the intersection of the sets $A_1,A_2, \cdots, A_n$.
+\end{defn}
+
+
+\begin{exmp}
+Suppose that $A$ and $B$ are subsets of the universal set $U$. 
+\\
+Match the sets below with equivalent sets from the bank below.
+\begin{align}
+&\{x| x\in A \land x \notin B\} \hspace{3cm}&\underline{\hspace{1cm}
+%YourSolutionHere
+}\\
+&\{x| (x\in A) \to (x \in B)\} \hspace{3cm}&\underline{\hspace{1cm}
+%YourSolutionHere
+}\\
+&\{x\in A| (x\in A) \to (x \in B)\} \hspace{3cm}&\underline{\hspace{1cm}
+%YourSolutionHere
+}\\
+&\{x| (x\in A) \leftrightarrow (x \in B)\} \hspace{3cm}&\underline{\hspace{1cm}
+%YourSolutionHere
+}\\
+&\{x| (x\notin A) \lor (x \notin B)\} \hspace{3cm}&\underline{\hspace{1cm}
+%YourSolutionHere
+}
+\end{align}
+\end{exmp}
+\begin{exmp}
+Let $A$,$B$ and $C$ be subsets of $U$.\\
+If $A\cap C=B\cap C$ and $A\cup C =B\cup C$ then $A=B$.
+\end{exmp}
+\begin{proof}
+We begin by showing that $A\subseteq B$.\\
+Suppose $x\in A$.\\
+There are two cases\\
+Case 1: $x\in C$\\
+Suppose $x \in C$. Then $x\in A\cap C$ and since $A\cap C=B\cap C$, $x\in B\cap C$, therefore $x \in B$.\\
+Case 2: $x\notin C$\\
+Suppose $x\notin C$, 
+then $x$ in $A\cup C$. 
+Since $A\cup C=B\cup C$, 
+$x\in B\cup C$. 
+Therefore $x\in B$ or $x \in C$.
+Since $x \notin C$ by assumption, $x\in B$.
+Since in all cases $x \in B$, we have $x \in A \to x \in B$ and so $A \subseteq B$.
+\end{proof}
+
+\begin{lem}
+If $A=B\cap A$ and $A =B\cup A$ then $A=B$
+\end{lem}
+\begin{proof}
+\vspace{5cm}
+\end{proof}
+\begin{exmp}
+Show $(A\cup B)\cap (B\cup C)\cap (C\cup A) =(A\cap B)\cup (B\cap C)\cup (C\cap A)$
+\end{exmp}
+\begin{proof}
+
+\end{proof}
+
+\newpage
+\subsection{Functions}
+
+\begin{defn}[function]
+Let $A$ and $B$ be nonempty sets. A function $f$ from $A$ to $B$ is an assignment of exactly one
+element of $B$ to each element of $A$. We write $f (a) = b$ if $b$ is the unique element of $B$
+assigned by the function $f$ to the element $a$ of $A$. If $f$ is a function from $A$ to $B$, we write
+$f : A \to B$.
+\end{defn}
+\begin{defn}[domain codomain]
+If $f$ is a function from $A$ to $B$, we say that $A$ is the domain of $f$ and $B$ is the codomain of $f$.
+If $f (a) = b$, we say that $b$ is the image of $a$ and $a$ is a preimage of $b$. The range, or image,
+of $f$ is the set of all images of elements of $A$. Also, if $f$ is a function from $A$ to $B$, we say
+that $f$ maps $A$ to $B$.
+\end{defn}
+\begin{defn}[function addition and multiplication]
+Let $f_1$ and $f_2$ be functions from $A$ to $\mathbb{R}$. Then $f_1 + f_2$ and $f_1f_2$ are also functions from $A$
+to $\mathbb{R}$ defined for all $x \in A$ by
+$(f_1 + f_2)(x) = f_1(x) + f_2(x)$,
+$(f_1\cdot f_2)(x) = f_1(x)f_2(x)$.
+\end{defn}
+\begin{defn}[image]
+Let $f$ be a function from $A$ to $B$ and let $S$ be a subset of $A$. The image of $S$ under the function
+$f$ is the subset of $B$ that consists of the images of the elements of $S$.We denote the image of
+$S$ by $f (S)$, so
+$f (S) = \{t | \exists \in S (t = f (s))\}$.
+We also use the shorthand $\{f (s) | s \in S\}$ to denote this set.
+\end{defn}
+\begin{defn}[injective]
+A function $f$ is said to be one-to-one, or an injunction, if and only if $f (a) = f (b)$ implies that
+$a = b$ for all $a$ and $b$ in the domain of $f$. A function is said to be injective if it is one-to-one.
+\end{defn}
+
+\begin{defn}[onto]
+A function $f$ from $A$ to $B$ is called onto, or a surjection, if and only if for every element
+$b \in B$ there is an element $a \in A$ with $f (a) = b$. A function $f$ is called surjective if it is onto.
+\end{defn}
+\begin{defn}[bijection]
+The function $f$ is a one-to-one correspondence, or a bijection, if it is both one-to-one and
+onto. We also say that such a function is bijective.
+\end{defn}
+
+\begin{defn}[inverse]
+Let $f$ be a one-to-one correspondence from the set $A$ to the set $B$. The inverse function of
+$f$ is the function that assigns to an element $b$ belonging to $B$ the unique element $a$ in $A$
+such that $f(a)=b$.
+
+The inverse function of $f$ is denoted by $f^{-1}$. 
+
+Hence, $f^{-1}(b)=a$
+when
+$f(a)=b$.
+
+
+\end{defn}
+
+\begin{defn}[composition]
+Let $g$ be a function from the set $A$ to the set $B$ and let $f$ be a function from the set $B$ to the
+set $C$. The composition of the functions $f$ and $g$, denoted for all $a \in A$ by $f \circ g$, is defined
+by
+$(f \circ g)(a) = f (g(a))$.
+\end{defn}
+\begin{defn}[floor]
+The floor function assigns to the real number $x$ the largest integer that is less than or equal to
+$x$. The value of the floor function at $x$ is denoted by $\lfloor x \rfloor$. The ceiling function assigns to the
+real number $x$ the smallest integer that is greater than or equal to $x$. The value of the ceiling
+function at $x$ is denoted by $\lceil x \rceil$.
+\end{defn}
+
+\newpage
+\begin{exmp}{Domain and Range}
+Find the Domain and Range of these Functions. 
+
+\begin{itemize}
+\item a function which takes in a word and outputs a word that rhymes
+\newline
+$A:=\{words \}$
+
+$B:=\{ words\}$
+
+$f:A\to B$
+
+\item a function which takes in a bit string and returns the number of ones.
+
+$A:=\{"bit strings" \}$
+
+$B:=\{0, 1, 2, 3, \cdots \}$
+
+$f:A\to B$
+
+\item a function which takes in a group of people and returns the oldest person
+
+$\mathcal{P}(A):=\{S: S\subseteq A\}$
+
+$A:=\mathcal{P}(\{"all people"\})$
+
+$B:=\{\text{"thing"} | \text{"thing is a person"}\}$
+
+$f:A\to B$
+
+\item a function which takes in a pizza topping and returns the group of people who like the pizza topping
+
+$A:=\{\text{"all pizza toppings"}\}$
+
+$B:=\mathcal{P}("all people")$
+
+$f:A\to B$
+
+$f('pepperoni')=\{hussain, will, alex \}$
+
+$\mathcal{P}(A):=\{S |S\subseteq A\}$
+
+$S \in \mathcal{P}(A)$
+
+$S \subseteq A$
+
+\item a function which takes in a set of pizza toppings and returns the group of all people who like these pizza toppings
+
+$A:=\mathcal{P}(\{pizza toppings\})$
+
+$B:=\mathcal{P}(\{all people\})$
+
+
+\end{itemize}
+\end{exmp}
+\begin{defn}
+We can present a function $f:A\to B$, as a set of tuples $F$, where $F:=\{(a,b)| a\in A, b \in B, f(a)=b\}$
+\end{defn}
+
+\begin{exmp}
+Determine whether each of these functions from $\{a,b,c,d\}$ to itself is one to one, onto and/or bijective.
+\begin{itemize}
+\item $F=\{(a,b), (b,a), (c,a),(d,d)\}$
+
+not onto (nothing maps to c)
+
+not one to one (both b and c map to a)
+\item $F=\{(a,a), (b,b), (c,c),(d,d)\}$
+Since the image of $A$ under $f$ is the codomain, $f$ is onto.
+
+One to one, because $a$ maps to itself.
+
+
+
+\end{itemize}
+\end{exmp}
+
+\begin{exmp}
+Determine whether each of these functions from $\mathbb{R} \to \mathbb{R}$ is one to one, onto and/or bijective.
+\begin{itemize}
+\item $f(x)=|x-2|+3$
+
+$f(6)=7$ and $f(-2)=7$ but $6\neq -2 $ therefore $f$ is not injective. 
+
+
+$f(x)>=0+3=3$ so for instance $f(x)\neq -2$ and since $-2$ is in the codomain, $f$ is not onto.
+
+\item $f(x)=x^3$
+
+Suppose $f(a)=f(b)$ then $a^3=b^3$, therefore $a=b$. Therefore injective
+
+$b \in \mathbb{R}$, find an $a$ such that $f(a)=b$ let $a= \sqrt[3]{b}$ so this is onto!
+
+\item $f(x)=2^x$
+
+
+$\ln(a^b)=b\cdot \ln(a)$
+
+
+one to one, let $f(a)=f(b)$, then $2^a=2^b$
+so 
+
+$\ln(2^a)=\ln(2^b)$
+
+$a \cdot \ln(2)=b \cdot \ln(2)$
+
+$a=b$
+
+It is not onto! we will never find we have negative numbers.
+
+$a^b=a\cdot a\cdot a$ b many times
+
+$a^{-b}=\frac{1}{a^b}$
+
+
+\end{itemize}
+\end{exmp}
+\begin{exmp}
+Give examples of a function from $\mathbb{N}$ to $\mathbb{N}$ which is.
+\begin{itemize}
+\item one to one, but not onto
+
+$\mathbb{N}:=\{1,2, \cdots \}$
+
+$f(n)=2\cdot n$
+
+\item onto but not one to one
+$\mathbb{N}:=\{1,2, \cdots \}$
+
+$f(n)=\lfloor \frac{n}{2} \rfloor+1$
+
+$f(2)=2$, $f(3)=2$
+
+$f(x)=|4-x|+1$
+
+
+$3*(n-3)^3+15(n-3)^2$
+
+\item both one to one and onto
+$f(n)=n$
+
+
+
+\item neither one to one nor onto
+
+$f(n)=1$
+
+$f(n)=n^0$
+\vspace{1cm}
+\end{itemize}
+\end{exmp}
+\newpage
+\begin{exmp}
+Determine whether each of these sets in finite, countably infinite or uncountable
+\begin{itemize}
+\item the numbers divisible by both 3 and 5
+\vspace{1cm}
+\item the set of all finite length words of an alphabet with 6 letters
+\vspace{1cm}
+\item the set of all infinite length words of an alphabet with 6 letters
+\vspace{1cm}
+\item The interval $(p,q)$ where $p<q$.
+\end{itemize}
+\end{exmp}
+\newpage
+\begin{exmp}{Compositions}
+\begin{itemize}
+\item Show that if $f$ and $g$ are onto then $f \circ g$ is onto. 
+\vspace{3cm}
+\item Show that if $f$ and $g$ are one to one then $f \circ g$ is one to one. 
+\vspace{3cm}
+\item Argue that $f$ and $g$ are bijections, then $f \circ g$ is a bijection
+\vspace{1cm}
+\item Show that if $|A|=|B|$ and $|B|=|C|$ then $|A|=|C|$
+\vspace{3cm}
+\end{itemize}
+\end{exmp}
+
+\newpage
+
+\subsection{Sequence and Summations}
+\begin{defn}[sequence]
+A sequence is a function from a subset of the set of integers (usually either the set $\{0, 1, 2, \ldots\}$ or the set $\{1, 2, 3, \ldots\}$) to a set $S$. We use the notation $a_n$ to denote the image of the integer $n$. We call $a_n$ a term of the sequence.
+\end{defn}
+
+\begin{defn}[geometric progression]
+A geometric progression is a sequence of the form $a, ar, ar^2, \ldots, ar^n, \ldots$, where the initial term $a$ and the common ratio $r$ are real numbers.
+\end{defn}
+\begin{defn}[arithmetic progression]
+An arithmetic progression is a sequence of the form $a, a + d, a + 2d, \ldots, a + nd, \ldots$, where the initial term $a$ and the common difference $d$ are real numbers.
+
+\end{defn}
+\begin{defn}[Recurrence Relation]
+A recurrence relation for the sequence $\{a_n\}$ is an equation that expresses $a_n$ in terms of one or more of the previous terms of the sequence, namely, $a_0, a_1, \ldots, a_{n-1}$, for all integers $n$ with $n \geq n_0$, where $n_0$ is a nonnegative integer. A sequence is called a solution of a recurrence relation if its terms satisfy the recurrence relation.
+\end{defn}
+\begin{defn}[Fibonacci sequence]
+The Fibonacci sequence, $f_0, f_1, f_2, \ldots$, is defined by the initial conditions $f_0 = 0$, $f_1 = 1$, and the recurrence relation
+\[f_n = f_{n-1} + f_{n-2}\]
+for \(n = 2, 3, 4, \ldots\).
+\end{defn}
+\begin{defn}[closed form geometric]
+If \(a\) and \(r\) are real numbers and \(r \neq 0\), then
+\[
+\sum_{j=0}^{n} ar^j =
+\begin{cases}
+    \frac{ar^{n+1} - a}{r - 1} & \text{if } r \neq 1 \\
+    (n + 1)a & \text{if } r = 1.
+\end{cases}
+\]
+\end{defn}
+
+
+\begin{table}[h]
+\centering
+\caption{Some Useful Summation Formulae.}
+\begin{tabular}{|c|c|}
+\hline
+Sum & Closed Form \\
+\hline
+$\displaystyle\sum_{k=0}^{n} ar^k$ & $\frac{ar^{n+1} - a}{r - 1}$, $r \neq 1$ \\
+\hline
+$\displaystyle\sum_{k=1}^{n} k$ & $\frac{n(n + 1)}{2}$ \\
+\hline
+$\displaystyle\sum_{k=1}^{n} k^2$ & $\frac{n(n + 1)(2n + 1)}{6}$ \\
+\hline
+$\displaystyle\sum_{k=1}^{n} k^3$ & $\frac{n^2(n + 1)^2}{4}$ \\
+\hline
+$\displaystyle\sum_{k=0}^{\infty} x^k$, $|x| < 1$ & $\frac{1}{1 - x}$ \\
+\hline
+$\displaystyle\sum_{k=1}^{\infty} kx^{k-1}$, $|x| < 1$ & $\frac{1}{(1 - x)^2}$ \\
+\hline
+\end{tabular}
+\end{table}
+\newpage
+\subsubsection{EXAMPLES}
+\newpage
+\subsection{Cardinality of Sets}
+\begin{defn}[Cardinality]
+The sets $A$ and $B$ have the same cardinality if and only if there is a one-to-one correspondence from $A$ to $B$. When $A$ and $B$ have the same cardinality, we write $|A| = |B|$.
+
+\end{defn}
+\begin{defn}[$|A| \leq |B|$]
+If there is a one-to-one function from $A$ to $B$, the cardinality of $A$ is less than or the same as the cardinality of $B$, and we write $|A| \leq |B|$. Moreover, when $|A| \leq |B|$ and $A$ and $B$ have different cardinalities, we say that the cardinality of $A$ is less than the cardinality of $B$, and we write $|A| < |B|$.
+\end{defn}
+
+\begin{thm}[Cantor's Diagonalization]
+
+To show that the set of real numbers is uncountable, we suppose that the set of real numbers is countable and arrive at a contradiction. Then, the subset of all real numbers that fall between 0 and 1 would also be countable (because any subset of a countable set is also countable; see Exercise 16). Under this assumption, the real numbers between 0 and 1 can be listed in some order, say, $r_1, r_2, r_3, \ldots$. Let the decimal representation of these real numbers be
+\[
+\begin{aligned}
+    r_1 &= 0.d_{11}d_{12}d_{13}d_{14}\ldots, \\
+    r_2 &= 0.d_{21}d_{22}d_{23}d_{24}\ldots, \\
+    r_3 &= 0.d_{31}d_{32}d_{33}d_{34}\ldots, \\
+    r_4 &= 0.d_{41}d_{42}d_{43}d_{44}\ldots, \\
+    \ldots
+\end{aligned}
+\]
+where $d_{ij} \in \{0, 1, 2, 3, 4, 5, 6, 7, 8, 9\}$. (For example, if $r_1 = 0.23794102\ldots$, we have $d_{11} = 2$, $d_{12} = 3$, $d_{13} = 7$, and so on.) Then, form a new real number with decimal expansion
+\[
+r = 0.d_1d_2d_3d_4\ldots,
+\]
+where the decimal digits are determined by the following rule:
+\[
+d_i =
+\begin{cases}
+    4 & \text{if } d_{ii} = 4, \\
+    5 & \text{if } d_{ii} \neq 4.
+\end{cases}
+\]
+(As an example, suppose that $r_1 = 0.23794102\ldots$, $r_2 = 0.44590138\ldots$, $r_3 = 0.09118764\ldots$, $r_4 = 0.80553900\ldots$, and so on. Then, we have $r = 0.d_1d_2d_3d_4\ldots = 0.4544\ldots$, where $d_1 = 4$ because $d_{11} \neq 4$, $d_2 = 5$ because $d_{22} = 4$, $d_3 = 4$ because $d_{33} \neq 4$, $d_4 = 4$ because $d_{44} = 4$, and so on.)
+
+A number with a decimal expansion that terminates has a second decimal expansion ending with an infinite sequence of 9s because $1 = 0.999\ldots$. Every real number has a unique decimal expansion (when the possibility that the expansion has a tail end that consists entirely of the digit 9 is excluded). Therefore, the real number $r$ is not equal to any of $r_1, r_2, \ldots$ because the decimal expansion of $r$ differs from the decimal expansion of $r_i$ in the $i$th place to the right of the decimal point, for each $i$.
+
+Because there is a real number $r$ between 0 and 1 that is not in the list, the assumption that all the real numbers between 0 and 1 could be listed must be false. Therefore, all the real numbers between 0 and 1 cannot be listed, so the set of real numbers between 0 and 1 is uncountable. Any set with an uncountable subset is uncountable. Hence, the set of real numbers is uncountable.
+\end{thm}
+\begin{thm}[uncountable supersets]
+If $A$ and $B$ are countable sets, then $A \cup B$ is also countable.
+
+\end{thm}
+
+\begin{thm}[Schröder-Bernstein Theorem:] If $A$ and $B$ are sets with $|A| \leq |B|$ and $|B| \leq |A|$, then $|A| = |B|$. In other words, if there are one-to-one functions $f$ from $A$ to $B$ and $g$ from $B$ to $A$, then there is a one-to-one correspondence between $A$ and $B$.
+\end{thm}
+\begin{defn}[Computability]
+We say that a function is computable if there is a computer program in some programming language that finds the values of this function. If a function is not computable, we say it is uncomputable.
+
+\end{defn}
+\newpage
+\subsubsection{EXAMPLES}
+\newpage
