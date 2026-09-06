@@ -9,12 +9,12 @@ Assessment names are topic words rather than sequence numbers. This keeps the so
 | Teaching order | Canvas name | Canvas assignment | Source status |
 | --- | --- | --- | --- |
 | 1 | Logic | `2057866` | `2300/core_assessments/logic_assessment.tex` |
-| 2 | Arguments | `2057865` | `2300/core_assessments/arguments_assessment.tex`; original analogous reasoning problems only |
-| 3 | Proofs | `2057867` | `2300/core_assessments/proofs_assessment.tex` |
-| 4 | Sets | `2057868` | `2300/core_assessments/sets_assessment.tex`; functions targets still need to be integrated |
+| 2 | Arguments | `2057865` | `2300/core_assessments/arguments_assessment.tex`; five sections, 21 types, and at least 10 original problems per type |
+| 3 | Sets | `2057868` | `2300/core_assessments/sets_assessment.tex`; includes functions and relation targets |
+| 4 | Proofs | `2057867` | `2300/core_assessments/proofs_assessment.tex` |
 | 5 | Divisibility | `2057869` | `2300/core_assessments/divisibility_assessment.tex` |
 | 6 | Induction | `2057870` | `2300/core_assessments/induction_assessment.tex` |
-| 7 | Counting | `2057871` | `2300/core_assessments/counting_assessment.tex`; probability targets still need to be integrated |
+| 7 | Counting | `2057871` | `2300/core_assessments/counting_assessment.tex`; includes elementary probability targets |
 
 Participation and Practice is a Canvas category, not a Core assessment or a
 LaTeX source. The Canvas assignment IDs above identify the Autumn 2026 course
@@ -25,6 +25,11 @@ The private Obsidian vault contains solution notes. Do not add solution keys to 
 Official LSAT/LawHub question text is not a public repository asset. Keep licensed
 questions in LawHub and use only instructor-authored analogous problems in these
 sources. The legacy local LSAT draft under `in_progress/` is intentionally ignored.
+
+The seven sources are public practice banks rather than live paper forms. Each
+labeled item is one problem. Meets permits at most one incorrect, incomplete, or
+omitted problem; Exceeds requires a perfect complete form. Retakes cover the whole
+form, and Canvas records the holistic result as 0/4/5 for Not Yet/Meets/Exceeds.
 
 ## Layout
 
