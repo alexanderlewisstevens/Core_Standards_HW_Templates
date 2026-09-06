@@ -22,6 +22,10 @@ records; the one-word names remain the durable identifiers across terms.
 
 The private Obsidian vault contains solution notes. Do not add solution keys to this public repository.
 
+Official LSAT/LawHub question text is not a public repository asset. Keep licensed
+questions in LawHub and use only instructor-authored analogous problems in these
+sources. The legacy local LSAT draft under `in_progress/` is intentionally ignored.
+
 ## Layout
 
 - `2300/core_assessments/`: standalone assessment sources
