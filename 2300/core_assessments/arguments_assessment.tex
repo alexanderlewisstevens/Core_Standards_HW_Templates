@@ -1,276 +1,405 @@
-\documentclass[9pt]{extarticle}
+\documentclass[10pt]{extarticle}
 
-% --- Packing + layout ---
 \usepackage{fancyhdr}
-\usepackage[letterpaper,margin=0.38in,includehead,includefoot,headheight=14pt,headsep=6pt]{geometry}
-\setlength{\columnsep}{0.18in}
+\usepackage[letterpaper,margin=0.55in,includehead,includefoot,headheight=14pt,headsep=8pt]{geometry}
+\setlength{\columnsep}{0.25in}
 \usepackage{microtype}
 \usepackage{multicol}
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0pt}
-
-% Tighten section spacing
 \usepackage[compact,small]{titlesec}
 \titlespacing*{\section}{0pt}{2pt}{1pt}
 \titlespacing*{\subsection}{0pt}{3pt}{1pt}
-
-% Tighten lists
 \usepackage{enumitem}
 \setlist{nosep,leftmargin=*}
 \setlist[itemize]{noitemsep,topsep=1pt,parsep=0pt,partopsep=0pt,leftmargin=*}
 \setlist[enumerate]{noitemsep,topsep=1pt,parsep=0pt,partopsep=0pt,leftmargin=*}
-
-% Math spacing
 \setlength{\abovedisplayskip}{2pt}
 \setlength{\belowdisplayskip}{2pt}
 \setlength{\abovedisplayshortskip}{1pt}
 \setlength{\belowdisplayshortskip}{1pt}
-
-% Math + links
 \usepackage{amsmath,amssymb}
 \usepackage[hidelinks]{hyperref}
 
-% --- Fancy header/footer ---
 \setlength{\headheight}{14pt}
 \pagestyle{fancy}
 \fancyhf{}
-\fancyhead[L]{\textbf{Arguments Assessment}}
+\fancyhead[L]{\textbf{Arguments Core}}
 \fancyhead[R]{COMP 2300}
 \fancyfoot[C]{\thepage}
 \renewcommand{\headrulewidth}{0.4pt}
 \fancypagestyle{plain}{%
   \fancyhf{}
-  \fancyhead[L]{\textbf{Arguments Assessment}}
+  \fancyhead[L]{\textbf{Arguments Core}}
   \fancyhead[R]{COMP 2300}
   \fancyfoot[C]{\thepage}
   \renewcommand{\headrulewidth}{0.4pt}
 }
-
 \newcommand{\choice}[1]{\item #1}
+\newcommand{\nexttarget}{\end{multicols}\newpage\thispagestyle{fancy}\begin{multicols}{2}}
 
 \begin{document}
 \small
 
-These instructor-authored problems form the practice pool for the \textbf{Arguments assessment}. A complete form tests all four targets below. Read for structure: an argument may be about any subject, but its quality depends on what follows from what. Use the blank space on each page to show your reasoning.
+\textbf{How to use this document.} These instructor-authored problems prepare
+you for the \textbf{Arguments} Core. A live paper form is a supervised,
+20-minute assessment with five labeled problems, one drawn or adapted from each
+section A--E; sections B--D therefore form the majority. Live forms use new
+scenarios from the same problem families. Each labeled problem counts as one
+unit, and every required subpart must be correct for that problem to count as
+correct. \textbf{Meets} requires at least four of the five problems to be fully
+correct; \textbf{Exceeds} requires all five. Course staff record the result in
+Canvas as 0 = Not Yet, 4 = Meets, or 5 = Exceeds. For each multiple-choice
+problem, select one answer and give a concise justification; an unsupported
+letter is incomplete. This document is not a live graded form and is not
+endorsed by LSAC.
+
+\textbf{Skill attribution.} Sections B--D contain 15 instructor-authored
+Logical Reasoning analogues inspired by the problem-type distribution in LSAC's
+publicly disclosed January 2023, February 2024, and April 2025 tests. No official
+question text, stimulus, or answer choice is reproduced.
 
 \begin{multicols}{2}
 
-\section*{A. Reconstruct Natural-Language Arguments}
+\section*{A. Reconstruct and Challenge Natural-Language Arguments}
 
 \subsection*{A.1 Find the Argument's Spine}
-Read the passage.
+\emph{Archived build logs receive automatic timestamps. Any record with a
+trustworthy timestamp can be audited after a failure. Therefore, archived build
+logs can be audited after a failure. Because an auditable release process makes
+debugging more reliable, the team should archive a build log for every release.}
 
-\emph{Archived build logs receive automatic timestamps. Any record with a trustworthy timestamp can be audited after a failure. Therefore, archived build logs can be audited after a failure. Because an auditable release process makes debugging more reliable, the team should archive a build log for every release.}
+Identify (i) the main conclusion, (ii) the intermediate conclusion, and
+(iii) every stated premise. Draw an arrow diagram showing the support
+relationships, then state one plausible unstated bridge premise needed to support
+the intermediate conclusion and another needed to support the recommendation.
 
-Identify (i) the main conclusion, (ii) the intermediate conclusion, and (iii) every stated premise. Then draw an arrow diagram showing the support relationships.
-
-\subsection*{A.2 Separate Evidence from Context}
-Read the passage.
-
-\emph{Last month the campus shuttle was late on six rainy evenings. Riders cannot control the weather. Nevertheless, the transit office should add ten minutes to the published rainy-day route time, because an accurate schedule helps riders choose between waiting for the shuttle and walking.}
-
-Which sentence is the conclusion? Which sentence supplies the direct reason for it? What role do the other two sentences play? Explain why a sentence in a passage need not be a premise.
-
-\subsection*{A.3 Expose Hidden Conditionals}
+\subsection*{A.2 Expose Hidden Conditionals}
 Let
 \begin{itemize}
   \item $T$: a student completes safety training,
   \item $E$: the student may enter the fabrication lab,
   \item $S$: a supervisor is present.
 \end{itemize}
-Translate each policy into symbols and state whether the named condition is necessary, sufficient, both, or neither.
+Translate each policy into symbols. For the named condition, state which
+necessary or sufficient relationship the policy establishes; do not assume a
+converse that the policy does not state.
 \begin{enumerate}[label=(\alph*)]
   \item A student may enter only if training is complete. (training for entry)
   \item Completing training is enough for entry. (training for entry)
-  \item Entry requires both training and a supervisor. (supervision for entry)
-  \item Training alone does not guarantee entry, but nobody enters without it. (training for entry)
+  \item Entry is permitted exactly when training is complete and a supervisor
+        is present. (supervision for entry)
+  \item A supervisor's presence is enough to permit entry. (supervision for entry)
 \end{enumerate}
+For one statement, also write its contrapositive and explain why the converse
+does not automatically follow.
 
-\subsection*{A.4 Standard Form and Validity}
-Rewrite each argument in numbered premise/conclusion form. Decide whether it is deductively valid. If valid, name the inference pattern; if invalid, give a valuation or concrete case with true premises and a false conclusion.
+\subsection*{A.3 Validity, Countermodels, and Repair}
+Rewrite each argument in numbered premise/conclusion form. Decide whether it is
+deductively valid. If valid, name the inference pattern. If invalid, give a
+valuation with true premises and a false conclusion, then make the smallest
+clear change that repairs the argument.
 \begin{enumerate}[label=(\alph*)]
-  \item If the cache is stale, the test fails. The test did not fail. So the cache is not stale.
-  \item If the cache is stale, the test fails. The test failed. So the cache is stale.
-  \item Either the parser rejected the file or the compiler accepted it. The parser did not reject it. Thus the compiler accepted it.
-  \item If the sensor is calibrated, its readings are stable. If its readings are stable, the controller can use them. The sensor is calibrated. Hence the controller can use the readings.
+  \item If the cache is stale, the test fails. The test did not fail. Therefore,
+        the cache is not stale.
+  \item If the cache is stale, the test fails. The test failed. Therefore, the
+        cache is stale.
+  \item Either the parser rejected the file or the compiler accepted it. The
+        parser did not reject it. Therefore, the compiler accepted it.
+  \item If the sensor is calibrated, its readings are stable. If its readings
+        are stable, the controller can use them. The sensor is calibrated.
+        Therefore, the controller can use the readings.
 \end{enumerate}
 
-\end{multicols}
+\nexttarget
 
-\newpage
-\thispagestyle{fancy}
-\begin{multicols}{2}
+\section*{B. Logical Reasoning I: Anatomy and Inference}
 
-\section*{B. Assumptions, Flaws, and Evidence}
+\subsection*{B.1 Main Conclusion}
+\emph{A useful diagram cannot contain every detail of the system it represents.
+Adding every detail would make the diagram as complicated as the system and
+therefore useless as a guide. Thus, a useful diagram must omit some true
+information, even though those omissions can occasionally mislead.}
 
-\subsection*{B.1 Necessary Assumption}
-\emph{The help desk should add evening staff. Requests sent after 5 p.m. now wait until morning, and quicker replies tend to increase user satisfaction. Therefore, adding evening staff will increase user satisfaction.}
-
-Which claim is required by the argument?
+What is the main conclusion?
 \begin{enumerate}[label=(\alph*)]
-  \choice{Every user prefers an evening reply to a morning reply.}
-  \choice{Evening staff will answer at least some after-hours requests sooner than they are answered now.}
-  \choice{No daytime employee can answer requests after 5 p.m.}
-  \choice{User satisfaction depends only on reply speed.}
-  \choice{The help desk receives more requests at night than during the day.}
+  \choice{Diagrams occasionally mislead.}
+  \choice{A system can be more complicated than its diagram.}
+  \choice{A useful diagram must omit some true information.}
+  \choice{No diagram can accurately represent a system.}
+  \choice{Guides should contain every available detail.}
 \end{enumerate}
-Use the negation test to justify your answer.
 
-\subsection*{B.2 Sufficient Assumption}
-\emph{The department replaced a long final project with three smaller checkpoints. Therefore, fewer students will miss the final deadline.}
+\subsection*{B.2 Role of a Statement}
+\emph{The courtyard should be planted with thyme rather than turf. Thyme needs
+less water than turf, and water use must be reduced this summer. Moreover, thyme
+tolerates foot traffic.}
 
-Which added premise is sufficient to make the conclusion follow?
+In the argument, the claim that water use must be reduced this summer serves as
 \begin{enumerate}[label=(\alph*)]
-  \choice{Some students prefer projects to examinations.}
-  \choice{At least one student would miss the old project deadline; every enrolled student completes all three checkpoints; and everyone who completes them submits the final work by the deadline.}
-  \choice{The checkpoints cover the same topics as the project.}
-  \choice{Last year's project required at least ten pages.}
-  \choice{Students may discuss checkpoints with classmates.}
+  \choice{the conclusion the argument seeks to establish.}
+  \choice{background that is irrelevant to the recommendation.}
+  \choice{a principle that, with another premise, supports the recommendation.}
+  \choice{a claim offered to refute the fact that thyme tolerates foot traffic.}
+  \choice{an example of a planting plan already adopted.}
 \end{enumerate}
-Explain why a sufficient assumption can be stronger than necessary.
 
-\subsection*{B.3 Diagnose the Flaw}
-\emph{Eight members of the robotics club tried the new coding tutorial, and seven rated it highly. The tutorial will therefore be popular with nearly all first-year students.}
+\subsection*{B.3 Point at Issue}
+Nara says, “The city should permit food carts in the central plaza because they
+would make lunch less expensive.” Ivo replies, “The plaza's narrow paths would
+become dangerously crowded, so food carts should not be permitted there.”
 
-State the conclusion, identify the flaw precisely, and choose the best description.
+Nara and Ivo disagree about whether
 \begin{enumerate}[label=(\alph*)]
-  \choice{It treats a selected, very small group as representative of a broader population.}
-  \choice{It attacks the club members rather than their ratings.}
-  \choice{It assumes that what happens later caused what happened earlier.}
-  \choice{It uses a word in two different senses.}
-  \choice{It draws a conditional conclusion from a universal premise.}
+  \choice{food carts generally sell less expensive lunches than restaurants do.}
+  \choice{the city should allow food carts in the central plaza.}
+  \choice{the plaza has narrower paths than other city spaces.}
+  \choice{crowded places are always dangerous.}
+  \choice{the city regulates restaurant prices.}
 \end{enumerate}
 
-\subsection*{B.4 Cause or Correlation?}
-\emph{Students who enabled calendar reminders submitted more work on time than students who did not. Thus calendar reminders cause timely submission.}
+\subsection*{B.4 What Must Follow?}
+Every accredited sanctuary employs a veterinarian. No organization that trades
+animals for profit is accredited. Meadow House is accredited, and River Yard
+trades animals for profit.
 
-Give one plausible alternative explanation. Then state one new piece of evidence that would strengthen the causal claim and one that would weaken it.
-
-\subsection*{B.5 Repair an Invalid Argument}
-\emph{Either the database is unavailable or the network is congested. The database is unavailable. Therefore, the network is not congested.}
-
-Show why the conclusion does not follow under the inclusive meaning of ``or.'' Add the weakest natural premise you can that makes the argument valid, and identify the resulting inference.
-
-\end{multicols}
-
-\newpage
-\thispagestyle{fancy}
-\begin{multicols}{2}
-
-\section*{C. Parallel Reasoning and Constraints}
-
-\subsection*{C.1 Match a Valid Structure}
-\emph{If the archive is indexed, searches are fast. If searches are fast, the support team resolves tickets sooner. The archive is indexed. Therefore, the team resolves tickets sooner.}
-
-Which argument has the same logical structure?
+Which statement must be true?
 \begin{enumerate}[label=(\alph*)]
-  \choice{If the room is reserved, the door unlocks. The door unlocked. Therefore, the room was reserved.}
-  \choice{If the soil is dry, the sensor alerts. If the sensor alerts, the valve opens. The soil is dry. Therefore, the valve opens.}
-  \choice{If a file is encrypted, it is protected. The file is not encrypted. Therefore, it is not protected.}
-  \choice{Either the train is early or the display is wrong. The train is early. Therefore, the display is correct.}
-  \choice{If the key is valid, login succeeds. Login did not succeed. Therefore, the key is valid.}
+  \choice{River Yard employs no veterinarian.}
+  \choice{Meadow House employs a veterinarian.}
+  \choice{Meadow House never transfers an animal.}
+  \choice{Every organization with a veterinarian is accredited.}
+  \choice{River Yard is the only unaccredited organization.}
 \end{enumerate}
-Represent the shared structure symbolically.
 
-\subsection*{C.2 Match a Flawed Structure}
-\emph{All encrypted backups require a key. This archive requires a key. Therefore, this archive is an encrypted backup.}
+\subsection*{B.5 Parallel Reasoning}
+\emph{Whenever the library hosts an evening lecture, it keeps the west door
+open. The west door is not open tonight. Therefore, the library is not hosting
+an evening lecture tonight.}
 
-Which argument repeats the flaw?
+Which argument uses the same pattern of reasoning?
 \begin{enumerate}[label=(\alph*)]
-  \choice{All cedar trees are plants. This tree is a cedar. Therefore, it is a plant.}
-  \choice{Every lab assistant has building access. Mira has building access. Therefore, Mira is a lab assistant.}
-  \choice{No square has three sides. This figure has three sides. Therefore, it is not a square.}
-  \choice{Every approved form has a signature. This form lacks a signature. Therefore, it is not approved.}
-  \choice{Some musicians read notation. Ivo is a musician. Therefore, Ivo may read notation.}
+  \choice{If the kiln is hot, the studio is open. The studio is open, so the
+          kiln is hot.}
+  \choice{If the pond freezes, skating is allowed. The pond froze, so skating
+          is allowed.}
+  \choice{If the bell rings, class ends. Class did not end, but the bell may
+          have rung.}
+  \choice{If the archive closes, researchers leave. Researchers left, so the
+          archive closed.}
+  \choice{If the greenhouse is being watered, its pump is running. The pump is
+          not running, so the greenhouse is not being watered.}
 \end{enumerate}
-Name the flaw and state what additional premise would validate the original conclusion.
 
-\subsection*{C.3 Apply a Principle}
-Principle: \emph{When a policy imposes a serious burden on people who cannot reasonably avoid it, the policy should be adopted only if its expected benefit is comparably serious.}
+\nexttarget
+
+\section*{C. Logical Reasoning II: Assumptions and Evidence}
+
+\subsection*{C.1 Necessary Assumption}
+A school will replace printed notices with an app to reduce paper waste. The
+principal concludes that the change will substantially reduce the school's total
+paper use.
+
+The conclusion requires assuming that
+\begin{enumerate}[label=(\alph*)]
+  \choice{every family owns the newest model of phone.}
+  \choice{no teacher will ever print an app message.}
+  \choice{the app will cost nothing to maintain.}
+  \choice{students prefer notifications to paper notices.}
+  \choice{eliminating printed notices will produce a substantial net reduction
+          rather than merely shift comparable paper use to other tasks.}
+\end{enumerate}
+Use the negation test in your justification.
+
+\subsection*{C.2 Sufficient Assumption}
+If the supplier closes, the workshop will miss its deadline unless it has enough
+stored oak. The supplier will close. Therefore, the workshop will miss its
+deadline.
+
+Which added assumption makes the conclusion follow logically?
+\begin{enumerate}[label=(\alph*)]
+  \choice{Oak is the workshop's most expensive material.}
+  \choice{The supplier has closed before.}
+  \choice{The workshop does not have enough stored oak.}
+  \choice{The deadline cannot be extended.}
+  \choice{The workshop uses no other supplier.}
+\end{enumerate}
+Formalize the completed argument in your justification.
+
+\subsection*{C.3 Diagnose the Flaw}
+Eight members of the robotics club tried a new coding tutorial, and seven rated
+it highly. The tutorial will therefore be popular with nearly all first-year
+students.
+
+The argument is most vulnerable because it
+\begin{enumerate}[label=(\alph*)]
+  \choice{treats a selected, very small group as representative of a broader
+          population.}
+  \choice{attacks the club members rather than their ratings.}
+  \choice{assumes that what happens later caused what happened earlier.}
+  \choice{uses the term tutorial in two different senses.}
+  \choice{draws a conditional conclusion from a universal premise.}
+\end{enumerate}
+
+\subsection*{C.4 Strengthen}
+After a ceramics studio installed a new ventilation system, reports of headaches
+among its evening students decreased. A researcher concludes that the
+ventilation change caused the decrease.
+
+Which fact most strengthens the conclusion?
+\begin{enumerate}[label=(\alph*)]
+  \choice{Some students prefer working with porcelain.}
+  \choice{Comparable nearby studios that did not change ventilation showed no
+          similar decrease during the same period.}
+  \choice{The studio replaced its kilns several years earlier.}
+  \choice{Evening classes are shorter than weekend workshops.}
+  \choice{Students report symptoms electronically.}
+\end{enumerate}
+
+\subsection*{C.5 Weaken}
+An editor concludes that articles with shorter headlines attract more readers
+because, in last month's issue, articles with headlines under six words received
+more online views than articles with longer headlines.
+
+Which statement most weakens the conclusion?
+\begin{enumerate}[label=(\alph*)]
+  \choice{Some short headlines contain uncommon words.}
+  \choice{The magazine publishes twelve issues each year.}
+  \choice{The most-viewed articles were promoted prominently on the home page,
+          while most articles with longer headlines were not.}
+  \choice{Many readers access the magazine on phones.}
+  \choice{Editors sometimes revise headlines before publication.}
+\end{enumerate}
+
+\nexttarget
+
+\section*{D. Logical Reasoning III: Principles and Explanations}
+
+\subsection*{D.1 Principle Support}
+A museum promises to evaluate contemporary art by artistic merit. A reviewer
+argues that the museum therefore should not reject a sculpture merely because
+its message is unpopular, provided that displaying it would create no safety
+hazard.
+
+Which principle most strongly supports the reviewer's reasoning?
+\begin{enumerate}[label=(\alph*)]
+  \choice{Museums should exhibit every work submitted by a professional artist.}
+  \choice{An institution should apply its stated selection criteria even when
+          doing so produces controversy.}
+  \choice{Public institutions should avoid taking positions on disputed questions.}
+  \choice{Safety concerns are never relevant to artistic decisions.}
+  \choice{A museum's most popular exhibits are generally its most valuable ones.}
+\end{enumerate}
+
+\subsection*{D.2 Resolve the Discrepancy}
+A ferry operated fewer hours in May than in April, yet it carried substantially
+more passengers in May. Its fare and passenger capacity did not change.
+
+Which fact best resolves the apparent discrepancy?
+\begin{enumerate}[label=(\alph*)]
+  \choice{The ferry carried less freight in May.}
+  \choice{Its crew worked the same shifts in both months.}
+  \choice{A commuter-rail station opened beside the ferry terminal in May,
+          bringing many new riders.}
+  \choice{Fuel cost the ferry operator more in May.}
+  \choice{The ferry's timetable used a new typeface in May.}
+\end{enumerate}
+
+\subsection*{D.3 Parallel Flaw}
+Every cedar in the park is a tree, and some trees in the park are diseased.
+Therefore, some cedars in the park must be diseased.
+
+Which argument contains the same flaw?
+\begin{enumerate}[label=(\alph*)]
+  \choice{Every violin is an instrument, and some instruments in the shop are
+          damaged; therefore, some violins in the shop are damaged.}
+  \choice{Some buses are electric, and every electric vehicle is quiet;
+          therefore, some buses are quiet.}
+  \choice{No ceramic cups are flexible, and this cup is ceramic; therefore,
+          this cup is not flexible.}
+  \choice{Every comet orbits the Sun, and object K is a comet; therefore,
+          object K orbits the Sun.}
+  \choice{Some editors are poets, and some poets are teachers; therefore, some
+          editors may be teachers.}
+\end{enumerate}
+
+\subsection*{D.4 Method of Reasoning}
+A theorist defines creativity as producing something new in order to win
+approval. An isolated mathematician, however, develops a genuinely new proof
+solely from curiosity, and the work is still creative. The definition is
+therefore inadequate.
+
+The argument proceeds by
+\begin{enumerate}[label=(\alph*)]
+  \choice{claiming that approval is impossible to measure.}
+  \choice{showing that everything new is automatically valuable.}
+  \choice{presenting a plausible creative case that lacks the stated motive.}
+  \choice{arguing that curiosity and approval are identical motives.}
+  \choice{appealing to the theorist's lack of mathematical expertise.}
+\end{enumerate}
+
+\subsection*{D.5 Complete the Argument}
+A tutoring company claims that its service is the best because it charges the
+highest fee. Its spokesperson adds that any equally good competitor would
+necessarily charge at least as much. The reasoning is circular because it
+\begin{enumerate}[label=(\alph*)]
+  \choice{confuses the best current service with the best imaginable service.}
+  \choice{infers a property of the company from a property of each tutor.}
+  \choice{gives premises that contradict one another.}
+  \choice{assumes the connection between high price and high quality that the
+          conclusion needs.}
+  \choice{ignores the possibility that every tutoring service is ineffective.}
+\end{enumerate}
+
+\nexttarget
+
+\section*{E. Integrated Evaluation and Revision}
+
+\subsection*{E.1 Cause or Correlation?}
+\emph{Students who enabled calendar reminders submitted more work on time than
+students who did not. Thus calendar reminders cause timely submission.}
+
+State the conclusion and explain why the evidence alone does not establish it.
+Give one plausible common-cause or selection explanation. Then state one new
+piece of evidence that would strengthen the causal claim and one that would
+weaken it.
+
+\subsection*{E.2 Apply a Principle}
+Principle: \emph{When a policy imposes a serious burden on people who cannot
+reasonably avoid it, the policy should be adopted only if its expected benefit
+is comparably serious.}
 
 Which judgment most directly applies the principle?
 \begin{enumerate}[label=(\alph*)]
   \choice{A library should rearrange shelves because the new order looks cleaner.}
-  \choice{A school should not require an expensive device for a minor convenience when some students have no practical alternative to buying it.}
-  \choice{A city should choose the least expensive paint for every public building.}
+  \choice{A school should not require an expensive device for a minor
+          convenience when some students have no practical alternative to
+          buying it.}
+  \choice{A city should choose the least expensive paint for every public
+          building.}
   \choice{A club may change its logo whenever a majority prefers a new design.}
   \choice{A restaurant should offer more desserts when desserts are profitable.}
 \end{enumerate}
-Map each phrase in the principle to facts in the best application.
+Map each condition in the principle to a stated fact in the best application.
 
-\subsection*{C.4 Scheduling Constraints}
-Four workshops---Argument Mapping ($A$), Bugs ($B$), Conditionals ($C$), and Drafting ($D$)---occupy slots 1--4, one per slot.
-\begin{itemize}
-  \item $A$ occurs before $D$.
-  \item $B$ occurs immediately before $C$.
-  \item $D$ is not in slot 2.
-\end{itemize}
-\begin{enumerate}[label=(\alph*)]
-  \item List every valid schedule.
-  \item Which workshop must be in slot 4?
-  \item If $A$ is in slot 3, what is the complete schedule?
-  \item Explain how each rule restricts the possibilities; do not rely on guessing alone.
-\end{enumerate}
-
-\end{multicols}
-
-\newpage
-\thispagestyle{fancy}
-\begin{multicols}{2}
-
-\section*{D. Integrated Argument Analysis}
-
-\subsection*{D.1 Analyze and Improve an Op-Ed Argument}
-Read this invented excerpt.
-
-\emph{Some students share rooms or equipment and therefore lack a dependable place to run long programs at home. A pilot last spring kept one lab open late, and students used it steadily. Any resource that is steadily used is worth its cost. Students who used the pilot lab also completed more assignments on time than students who did not use it. Thus the university should keep one computer lab open overnight during the final two weeks, since the pilot proves that overnight access improves academic performance.}
+\subsection*{E.3 Analyze and Improve an Op-Ed Argument}
+\emph{Some students share rooms or equipment and therefore lack a dependable
+place to run long programs at home. A pilot last spring kept one lab open late,
+and students used it steadily. Any resource that is steadily used is worth its
+cost. Students who used the pilot lab also completed more assignments on time
+than students who did not use it. Thus the university should keep one computer
+lab open overnight during the final two weeks, since the pilot proves that
+overnight access improves academic performance.}
 
 \begin{enumerate}[label=(\alph*)]
   \item State the main conclusion and the strongest stated support for it.
   \item Identify the intermediate conclusion, if any.
   \item Identify one ambiguity and one gap in the reasoning.
-  \item Does the pilot establish that overnight access \emph{causes} improved performance? Explain.
-  \item Rewrite the final two sentences to make a careful conclusion that the evidence actually supports.
+  \item Does the pilot establish that overnight access \emph{causes} improved
+        performance? Explain.
+  \item Rewrite the final two sentences to make a careful conclusion that the
+        evidence actually supports.
 \end{enumerate}
-
-\subsection*{D.2 Formalize a Software Policy}
-A deployment is approved only if it passes review and either the tests pass or a documented exception exists. Any documented exception requires a manager's signature. This deployment is approved and has no manager's signature.
-
-Let $A,R,T,E,M$ represent approval, review, passing tests, documented exception, and manager signature.
-\begin{enumerate}[label=(\alph*)]
-  \item Translate all three statements into symbols.
-  \item Determine everything that must follow about $R$, $T$, and $E$.
-  \item Name the inference rule used at each step.
-  \item Explain why ``approved only if reviewed'' does not mean ``reviewed only if approved.''
-\end{enumerate}
-
-\subsection*{D.3 What Must Follow?}
-\emph{Every proposal that reduces energy use is reviewed. No proposal is funded unless it is reviewed. Some proposal reduces energy use but is not funded.}
-
-Which statement must be true?
-\begin{enumerate}[label=(\alph*)]
-  \choice{Every reviewed proposal reduces energy use.}
-  \choice{Some reviewed proposal is not funded.}
-  \choice{No funded proposal reduces energy use.}
-  \choice{Every proposal that is not funded is unreviewed.}
-  \choice{At least one unreviewed proposal is funded.}
-\end{enumerate}
-Prove your choice from the premises and give a countermodel for one tempting wrong answer.
-
-\subsection*{D.4 Necessary, Sufficient, or Neither?}
-For each pair, determine whether the first condition is necessary for, sufficient for, both necessary and sufficient for, or neither for the second. Justify from definitions, not ordinary expectations.
-\begin{enumerate}[label=(\alph*)]
-  \item being divisible by $4$; being even (integers)
-  \item being a square; being a rectangle (standard Euclidean definitions)
-  \item having a password; being authorized to enter a system (no policy facts supplied)
-  \item passing every required test; satisfying the stated rule ``a build ships exactly when every required test passes''
-\end{enumerate}
-
-\subsection*{D.5 Build a Counterargument}
-\emph{Our reading group met online twice and attendance was high, so every future meeting should be online.}
-
-Write a charitable reconstruction of the argument. Then write a counterargument that (i) grants the attendance fact, (ii) challenges the universal conclusion without attacking anyone, and (iii) identifies evidence that would help decide between the two positions.
 
 \end{multicols}
-
 \end{document}
