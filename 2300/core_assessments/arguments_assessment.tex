@@ -1,32 +1,32 @@
 \documentclass[10pt]{extarticle}
 
 \usepackage{fancyhdr}
-\usepackage[letterpaper,margin=0.55in,includehead,includefoot,headheight=14pt,headsep=8pt]{geometry}
-\setlength{\columnsep}{0.25in}
+\usepackage[letterpaper,margin=0.5in,includehead,includefoot,headheight=14pt,headsep=6pt]{geometry}
+\setlength{\columnsep}{0.22in}
 \usepackage{microtype}
 \usepackage{multicol}
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0pt}
 \usepackage[compact,small]{titlesec}
-\titlespacing*{\section}{0pt}{4pt}{2pt}
-\titlespacing*{\subsection}{0pt}{4pt}{1pt}
-\titlespacing*{\subsubsection}{0pt}{3pt}{1pt}
+\titlespacing*{\section}{0pt}{3pt}{1pt}
+\titlespacing*{\subsection}{0pt}{3pt}{1pt}
+\titlespacing*{\subsubsection}{0pt}{2pt}{0pt}
 \usepackage{enumitem}
 \setlist{nosep,leftmargin=*}
-\setlist[itemize]{noitemsep,topsep=1pt,parsep=0pt,partopsep=0pt,leftmargin=*}
-\setlist[enumerate]{noitemsep,topsep=1pt,parsep=0pt,partopsep=0pt,leftmargin=*}
+\setlist[itemize]{noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt,leftmargin=*}
+\setlist[enumerate]{noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt,leftmargin=*}
 \usepackage{amsmath,amssymb}
 \usepackage[hidelinks]{hyperref}
 
 \pagestyle{fancy}
 \fancyhf{}
-\fancyhead[L]{\textbf{Arguments Core Practice Bank}}
+\fancyhead[L]{\textbf{Arguments Core}}
 \fancyhead[R]{COMP 2300}
 \fancyfoot[C]{\thepage}
 \renewcommand{\headrulewidth}{0.4pt}
 \fancypagestyle{plain}{%
   \fancyhf{}
-  \fancyhead[L]{\textbf{Arguments Core Practice Bank}}
+  \fancyhead[L]{\textbf{Arguments Core}}
   \fancyhead[R]{COMP 2300}
   \fancyfoot[C]{\thepage}
   \renewcommand{\headrulewidth}{0.4pt}
@@ -35,215 +35,73 @@
 \newcommand{\bankitem}[1]{\subsubsection*{#1}}
 
 \begin{document}
-\small
+\footnotesize
 
-\textbf{How to use this bank.} These original problems prepare you for the
-\textbf{Arguments} Core. A live paper form is a supervised, 20-minute assessment
-with five scoring units, one drawn or adapted from each section A--E. Live forms
-use new scenarios from the same problem families. Every required part of a unit
-must be correct. \textbf{Meets} is four of five fully correct; \textbf{Exceeds}
-is five of five. Staff record 0 = Not Yet, 4 = Meets, or 5 = Exceeds in Canvas.
+\textbf{Name:} \rule{2.1in}{0.4pt}\hfill
+\textbf{Date:} \rule{1.25in}{0.4pt}
+
+\textbf{Directions.} Complete the problems identified by your instructor.
 For multiple-choice problems, select one answer and give a concise justification;
-an unsupported letter is incomplete. This practice bank is not a live form and is
-not endorsed by LSAC.
-
-\textbf{Original-material notice.} The Logical Reasoning problems are
-instructor-authored analogues informed by general LSAT problem families. No
-official LSAC or LawHub stimulus, question, answer choice, or explanation is
-reproduced.
+an unsupported letter is incomplete. Show enough work to make your reasoning clear.
 
 \begin{multicols}{2}
 \section*{A. Reconstruct and Challenge Natural-Language Arguments}
 \subsection*{A.1 Argument Structure}
 Identify how the claims fit together rather than merely listing them.
+\begin{samepage}
 \bankitem{A.1.01}
 The team should archive a build log for every release. After all, archived build logs receive automatic timestamps, and any record with a trustworthy timestamp can be audited after a failure. Archived build logs can therefore be audited after a failure, while an auditable release process makes debugging more reliable.
 \begin{enumerate}[label=(\alph*)]
   \item State the main conclusion, the intermediate conclusion, and every stated premise.
   \item Describe the support relationships and give one plausible bridge premise needed for the final recommendation.
 \end{enumerate}
-\bankitem{A.1.02}
-The city should place its next three bike-share docks beside rail stations. The city wants more residents to combine bicycles with transit, and most bike-share trips already begin or end within two blocks of a station. Moreover, station-area docks are used more often than otherwise similar docks. Those patterns indicate that placing docks near stations increases bike-share use.
-\begin{enumerate}[label=(\alph*)]
-  \item State the main conclusion, the intermediate conclusion, and every stated premise.
-  \item Describe the support relationships and give one plausible bridge premise needed for the final recommendation.
-\end{enumerate}
-\bankitem{A.1.03}
-Tutorial videos without captions cannot be used fully by every student. The course should add accurate captions before assigning its tutorial videos. The reason is that materials some students cannot use fully do not satisfy the department's accessibility rule; consequently, uncaptioned tutorial videos do not satisfy that rule.
-\begin{enumerate}[label=(\alph*)]
-  \item State the main conclusion, the intermediate conclusion, and every stated premise.
-  \item Describe the support relationships and give one plausible bridge premise needed for the final recommendation.
-\end{enumerate}
-\bankitem{A.1.04}
-The support team should require repeatable steps in every nonemergency bug report. A report with repeatable steps lets an engineer reproduce the failure, and reproducing a failure makes its cause easier to isolate. Reports with repeatable steps therefore make causes easier to isolate. This matters because faster diagnosis shortens outages.
-\begin{enumerate}[label=(\alph*)]
-  \item State the main conclusion, the intermediate conclusion, and every stated premise.
-  \item Describe the support relationships and give one plausible bridge premise needed for the final recommendation.
-\end{enumerate}
-\bankitem{A.1.05}
-Because the neighborhood has little existing shade, the city should plant canopy trees along its busiest walking routes. Measurements show that shaded blocks stay cooler during afternoon heat, and lower afternoon temperatures reduce heat-related risk for pedestrians. Increasing street shade can therefore reduce pedestrian heat risk.
-\begin{enumerate}[label=(\alph*)]
-  \item State the main conclusion, the intermediate conclusion, and every stated premise.
-  \item Describe the support relationships and give one plausible bridge premise needed for the final recommendation.
-\end{enumerate}
+\end{samepage}\par\smallskip
+\begin{samepage}
 \bankitem{A.1.06}
 Small commits reduce recovery time after a defect: focused version-control commits make it possible to reverse one change without discarding unrelated work, and selective reversal shortens recovery. The development team should therefore require each feature to be committed in focused steps.
 \begin{enumerate}[label=(\alph*)]
   \item State the main conclusion, the intermediate conclusion, and every stated premise.
   \item Describe the support relationships and give one plausible bridge premise needed for the final recommendation.
 \end{enumerate}
-\bankitem{A.1.07}
-The transit agency should shift the northbound departure five minutes later. Currently, when the eastbound bus arrives after the northbound bus leaves, riders wait nearly thirty minutes. A five-minute timetable shift would make the connection reliable on most days, and reliable connections reduce total travel time.
-\begin{enumerate}[label=(\alph*)]
-  \item State the main conclusion, the intermediate conclusion, and every stated premise.
-  \item Describe the support relationships and give one plausible bridge premise needed for the final recommendation.
-\end{enumerate}
-\bankitem{A.1.08}
-An offline backup cannot be encrypted by ransomware that reaches only the active network, and a backup that remains unencrypted can restore records after such an attack. The clinic should keep one daily backup disconnected from its network. The relevant intermediate result is that an offline backup protects the ability to restore records.
-\begin{enumerate}[label=(\alph*)]
-  \item State the main conclusion, the intermediate conclusion, and every stated premise.
-  \item Describe the support relationships and give one plausible bridge premise needed for the final recommendation.
-\end{enumerate}
-\bankitem{A.1.09}
-The library should extend its finals-week hours. Students used the library's late hours heavily during the two pilot weeks, and resources used heavily during peak demand address a demonstrated need. The pilot thus addressed a demonstrated need. Keeping the library open one additional hour during finals would continue that service.
-\begin{enumerate}[label=(\alph*)]
-  \item State the main conclusion, the intermediate conclusion, and every stated premise.
-  \item Describe the support relationships and give one plausible bridge premise needed for the final recommendation.
-\end{enumerate}
-\bankitem{A.1.10}
-The utility should offer real-time water meters first in buildings with aging plumbing. Households with such meters detect leaks sooner than households receiving only monthly bills, and earlier detection prevents more water loss. Real-time meters can therefore reduce water lost to leaks.
-\begin{enumerate}[label=(\alph*)]
-  \item State the main conclusion, the intermediate conclusion, and every stated premise.
-  \item Describe the support relationships and give one plausible bridge premise needed for the final recommendation.
-\end{enumerate}
+\end{samepage}\par\smallskip
 \subsection*{A.2 Hidden Conditionals}
 Translate each rule exactly. Do not assume its converse.
-\bankitem{A.2.01}
-Let T mean training is complete, E mean entry is permitted, and S mean a supervisor is present. Rules: entry is permitted only if training is complete; completing training is enough for entry; entry is permitted exactly when both training and supervision are present.
-\begin{enumerate}[label=(\alph*)]
-  \item Translate all three rules symbolically and classify the named necessary or sufficient relationships.
-  \item Write the contrapositive of the first rule and explain why its converse is not licensed.
-\end{enumerate}
-\bankitem{A.2.02}
-Let P mean a patch is installed, R mean the server restarts, and V mean the vulnerability is removed. Rules: the vulnerability is removed only if the patch is installed; installing the patch and restarting the server guarantees removal; removal guarantees a restart.
-\begin{enumerate}[label=(\alph*)]
-  \item Translate all three rules symbolically and classify the relevant necessary or sufficient relationships.
-  \item Write the contrapositive of the first rule and state one converse that is not licensed by that rule alone.
-\end{enumerate}
+\begin{samepage}
 \bankitem{A.2.03}
 Let M mean a member may vote, D mean dues are current, and A mean the member attended orientation. Rules: only members with current dues may vote; current dues are enough to vote unless orientation was missed; a member may vote if and only if dues are current and orientation was attended.
 \begin{enumerate}[label=(\alph*)]
   \item Translate all three rules symbolically, treating 'unless orientation was missed' as requiring attendance here.
   \item State what the biconditional makes necessary and sufficient, then give the contrapositive of the first rule.
 \end{enumerate}
-\bankitem{A.2.04}
-Let B mean a file is backed up, C mean it is copied to cloud storage, and L mean it is copied to a local drive. Rules: a file is backed up exactly when it has a cloud copy or a local copy; a cloud copy guarantees backup; backup requires at least one of the two copies.
-\begin{enumerate}[label=(\alph*)]
-  \item Translate all three rules symbolically and identify which are logically equivalent.
-  \item Give the contrapositive of the cloud-copy rule and explain what cannot be inferred from backup alone.
-\end{enumerate}
-\bankitem{A.2.05}
-Let G mean a student may graduate, C mean all core requirements are complete, and F mean the final form is filed. Rules: graduation requires completion of every core; completing the cores is not enough unless the final form is also filed; completing the cores and filing the form guarantees graduation.
-\begin{enumerate}[label=(\alph*)]
-  \item Translate all three rules symbolically.
-  \item Classify C and F as necessary or sufficient for G, and give the contrapositive of the graduation-requires-cores rule.
-\end{enumerate}
-\bankitem{A.2.06}
-Let N mean a notification is sent, H mean the threshold is high, and U mean urgent mode is enabled. Rules: a notification is sent whenever urgent mode is enabled; a notification is sent only when the threshold is high or urgent mode is enabled; high threshold alone is sufficient for a notification.
-\begin{enumerate}[label=(\alph*)]
-  \item Translate all three rules symbolically.
-  \item Identify the necessary and sufficient conditions and give the contrapositive of the second rule.
-\end{enumerate}
-\bankitem{A.2.07}
-Let A mean an application is accepted, I mean the interview is passed, and R mean references are approved. Rules: acceptance implies a passed interview; approved references together with a passed interview are sufficient for acceptance; failing either the interview or reference check prevents acceptance.
-\begin{enumerate}[label=(\alph*)]
-  \item Translate the rules symbolically, writing the final rule both as a prevention rule and as an equivalent requirement.
-  \item State which conditions are necessary and which combination is sufficient.
-\end{enumerate}
+\end{samepage}\par\smallskip
+\begin{samepage}
 \bankitem{A.2.08}
 Let O mean an event is held outdoors, W mean the forecast is dry, and P mean a permit is approved. Rules: outdoor events require an approved permit; a dry forecast does not by itself guarantee an outdoor event; the event is held outdoors exactly when both the forecast is dry and the permit is approved.
 \begin{enumerate}[label=(\alph*)]
   \item Translate the first and third rules and express the second as a non-implication.
   \item Classify W and P relative to O and give the contrapositive of the permit requirement.
 \end{enumerate}
-\bankitem{A.2.09}
-Let X mean a message is encrypted, K mean the recipient has the key, and D mean the message can be decoded. Rules: possessing the key is sufficient to decode an encrypted message; decoding an encrypted message requires the key; for encrypted messages, decoding occurs exactly when the key is possessed.
-\begin{enumerate}[label=(\alph*)]
-  \item Translate the three rules with X included where it is needed.
-  \item Explain why D does not imply X, and give a contrapositive that applies when X is true.
-\end{enumerate}
-\bankitem{A.2.10}
-Let R mean a room may be reserved, E mean the requester is eligible, and F mean the room is free. Rules: reservation is permitted only for eligible requesters; eligibility alone does not ensure a reservation; a reservation is permitted if and only if the requester is eligible and the room is free.
-\begin{enumerate}[label=(\alph*)]
-  \item Translate the rules symbolically, including the stated non-implication.
-  \item State all necessary and sufficient relationships established and give the contrapositive of the first rule.
-\end{enumerate}
+\end{samepage}\par\smallskip
 \subsection*{A.3 Validity, Countermodels, and Repair}
 Rewrite each argument in numbered premise/conclusion form. If valid, name the rule; if invalid, give a true-premise/false-conclusion countermodel and a minimal repair.
-\bankitem{A.3.01}
-If both the patch is installed and the server restarts, the vulnerability is removed. If the vulnerability is removed, the compliance audit passes. The patch is installed, and the server restarts. Therefore, the compliance audit passes.
-\begin{enumerate}[label=(\alph*)]
-  \item Formalize the argument and evaluate it as directed.
-\end{enumerate}
-\bankitem{A.3.02}
-If the badge is active, then either the door unlocks or the security desk receives an alert. The door did not unlock, and the security desk received no alert. Therefore, the badge is not active.
-\begin{enumerate}[label=(\alph*)]
-  \item Formalize the argument and evaluate it as directed.
-\end{enumerate}
-\bankitem{A.3.03}
-Either the parser rejects the file or the compiler accepts it, but not both. The compiler accepts the file only if its schema is valid. The schema is not valid. Therefore, the parser rejects the file.
-\begin{enumerate}[label=(\alph*)]
-  \item Formalize the argument and evaluate it as directed.
-\end{enumerate}
-\bankitem{A.3.04}
-If the sensor is calibrated, its readings are stable. If the scheduler is active, samples arrive regularly. If readings are stable and samples arrive regularly, the controller can use them. The sensor is calibrated, and the scheduler is active. Therefore, the controller can use the readings.
-\begin{enumerate}[label=(\alph*)]
-  \item Formalize the argument and evaluate it as directed.
-\end{enumerate}
+\begin{samepage}
 \bankitem{A.3.05}
 If the cache is stale, then the integration test fails and the warning log records a mismatch. The integration test failed, and the warning log recorded a mismatch. Therefore, the cache is stale.
 \begin{enumerate}[label=(\alph*)]
   \item Formalize the argument and evaluate it as directed.
 \end{enumerate}
-\bankitem{A.3.06}
-If the room is reserved, the calendar shows it. If the calendar shows the room, the coordinator receives a notice. The room is not reserved. Therefore, the coordinator did not receive a notice.
-\begin{enumerate}[label=(\alph*)]
-  \item Formalize the argument and evaluate it as directed.
-\end{enumerate}
-\bankitem{A.3.07}
-Every certified device passed the safety test. No prototype passed the safety test. Unit K is a prototype, although some nonprototype units also failed the test. Therefore, Unit K is not certified.
-\begin{enumerate}[label=(\alph*)]
-  \item Formalize the argument and evaluate it as directed.
-\end{enumerate}
-\bankitem{A.3.08}
-If the lab is open, either a technician or a supervisor is present. If a supervisor is present, the incident desk is staffed. The lab is open, but no technician is present. Therefore, the incident desk is staffed.
-\begin{enumerate}[label=(\alph*)]
-  \item Formalize the argument and evaluate it as directed.
-\end{enumerate}
-\bankitem{A.3.09}
-If the grant is renewed, the lab hires an assistant; if it is not renewed, the lab reduces weekend hours. Hiring an assistant preserves weekday service, and reducing weekend hours preserves weekday service. The grant is either renewed or not renewed. Therefore, weekday service is preserved.
-\begin{enumerate}[label=(\alph*)]
-  \item Formalize the argument and evaluate it as directed.
-\end{enumerate}
+\end{samepage}\par\smallskip
+\begin{samepage}
 \bankitem{A.3.10}
 The report is accurate exactly when both sensors agree and their calibration is current. The sensors agree, and an automatic check completed, but the premises do not say that this check establishes current calibration. Therefore, the report is accurate.
 \begin{enumerate}[label=(\alph*)]
   \item Formalize the argument and evaluate it as directed.
 \end{enumerate}
+\end{samepage}\par\smallskip
 \section*{B. Logical Reasoning I: Anatomy and Inference}
 \subsection*{B.1 Main Conclusion}
 Select the claim the author is ultimately trying to establish, then justify your choice by describing the role of the other claims.
-\bankitem{B.1.01}
-\emph{Some emergency planners want response maps to reproduce every hydrant, curb, and utility line. But field teams must identify evacuation routes within seconds, and trials show that adding features irrelevant to evacuation slows route selection without improving it. A response map should therefore omit details that do not affect evacuation decisions. This is not to deny that the omitted features matter for other tasks; it is to recognize that a representation's usefulness depends on its purpose.}
-
-What is the main conclusion?
-\begin{enumerate}[label=(\alph*)]
-  \choice{Field teams must be able to identify evacuation routes quickly.}
-  \choice{Details omitted from an emergency map may matter for tasks other than evacuation.}
-  \choice{A response map should omit details that do not affect evacuation decisions.}
-  \choice{Adding irrelevant features slows route selection without improving it.}
-  \choice{The usefulness of a representation depends partly on the purpose it serves.}
-\end{enumerate}
+\begin{samepage}
 \bankitem{B.1.02}
 \emph{The neighborhood clinic should begin offering Saturday appointments next month. Although its weekday schedule has short openings, those openings occur when many hourly workers cannot attend, and the last three evening clinics filled within a day. Weekend service was previously rejected because no nurse could cover it and no money had been allocated. A qualified nurse has now accepted the open position, and the existing budget covers the additional shift.}
 
@@ -255,50 +113,8 @@ What is the main conclusion?
   \choice{The two practical obstacles that previously blocked weekend service have been removed.}
   \choice{A qualified nurse can cover the proposed additional shift.}
 \end{enumerate}
-\bankitem{B.1.03}
-\emph{Merchants are right that the pilot bicycle lane removed several curbside spaces, and that cost should not be ignored. Still, the corridor carried more travelers per hour after the lane opened, serious crashes declined, and deliveries remained possible after two loading zones were relocated. A street redesign that improves safe access for more travelers is warranted when its principal local cost can be substantially mitigated. The pilot meets that standard. The city ought, therefore, to extend the protected lane to the station.}
-
-What is the main conclusion?
-\begin{enumerate}[label=(\alph*)]
-  \choice{The loss of curbside spaces is a genuine cost of the pilot lane.}
-  \choice{Relocating loading zones substantially mitigated the lane's principal local cost.}
-  \choice{A redesign is warranted when it improves safe access and its principal local cost can be mitigated.}
-  \choice{The pilot bicycle lane meets the stated standard for a warranted redesign.}
-  \choice{The city ought to extend the protected lane to the station.}
-\end{enumerate}
-\bankitem{B.1.04}
-\emph{Reusable containers cost six times as much to purchase as disposable ones, a fact the vendor's comparison prominently reports. That comparison is nevertheless a poor guide to the dining hall's decision: even after washing costs are included, a reusable container becomes cheaper per serving after its thirty-fifth use, and the hall expects each container to be used at least eighty times. Replacing disposables with reusables will therefore lower the hall's long-run serving costs. This calculation by itself says nothing about which option has the smaller environmental impact.}
-
-What is the main conclusion?
-\begin{enumerate}[label=(\alph*)]
-  \choice{The vendor's comparison gives too much weight to initial purchase price.}
-  \choice{Replacing disposables with reusables will lower the dining hall's long-run serving costs.}
-  \choice{A reusable container becomes cheaper per serving after thirty-five uses, including washing costs.}
-  \choice{The dining hall expects to use each reusable container at least eighty times.}
-  \choice{The cost calculation does not determine which option has the smaller environmental impact.}
-\end{enumerate}
-\bankitem{B.1.05}
-\emph{The organization should reject the proposed forty-character password minimum and require memorable passphrases instead. Security staff defend the proposal on the ground that longer strings resist automated guessing. But rules users cannot reliably remember increase reuse and encourage insecure storage; support records show both behaviors rose during a smaller length increase last year. Thus the proposed minimum is unlikely to produce a net security gain, even if it improves resistance to one kind of attack.}
-
-What is the main conclusion?
-\begin{enumerate}[label=(\alph*)]
-  \choice{Longer password strings are more resistant to automated guessing.}
-  \choice{Password rules that burden memory can increase reuse and insecure storage.}
-  \choice{The proposed minimum is unlikely to produce a net security gain.}
-  \choice{The organization should reject the proposed minimum and require memorable passphrases instead.}
-  \choice{The proposal may improve resistance to one kind of attack.}
-\end{enumerate}
-\bankitem{B.1.06}
-\emph{After recalibration, two weather stations agree closely with each other and with a portable reference sensor used on randomly selected days. A critic notes that agreement alone cannot prove that every reading is exact, since instruments can share an error. Yet the three devices use different sensing mechanisms, so a shared error large enough to reverse the decade-to-decade trend is improbable. The recalibrated records are therefore reliable enough for that comparison, though not necessarily for estimating every day's exact temperature.}
-
-What is the main conclusion?
-\begin{enumerate}[label=(\alph*)]
-  \choice{The two stations and the reference sensor agree closely after recalibration.}
-  \choice{Agreement among instruments cannot establish that every individual reading is exact.}
-  \choice{The recalibrated records are reliable enough for comparing the two decades.}
-  \choice{A shared error large enough to reverse the observed trend is improbable.}
-  \choice{The records should not be used to estimate any day's exact temperature.}
-\end{enumerate}
+\end{samepage}\par\smallskip
+\begin{samepage}
 \bankitem{B.1.07}
 \emph{The department should waive Mira's late-registration fee. Its policy permits a waiver when a student took all reasonable steps to comply but was prevented by circumstances outside the student's control. Server logs show that the registration portal failed for the entire final hour, and Mira's saved form shows that she had completed every required step before the outage. Granting this waiver would apply the existing policy; it would not commit the department to excuse students who simply began late.}
 
@@ -310,74 +126,10 @@ What is the main conclusion?
   \choice{The existing waiver policy applies to Mira's case.}
   \choice{Granting Mira a waiver would not require waiving fees for students who merely began late.}
 \end{enumerate}
-\bankitem{B.1.08}
-\emph{The library should retain the new search tool during the next academic year. Critics correctly observe that it sometimes ranks an irrelevant record first. But the old tool did so as well, and in a blinded trial users found specified records in half the time with the new tool while reporting no decline in confidence that they had found the right record. Since the defect is measurable and can be monitored, occasional irrelevant results do not outweigh the demonstrated improvement.}
-
-What is the main conclusion?
-\begin{enumerate}[label=(\alph*)]
-  \choice{The new search tool sometimes ranks an irrelevant record first.}
-  \choice{The old search tool also sometimes ranked an irrelevant record first.}
-  \choice{Trial users found specified records more quickly with the new tool.}
-  \choice{Occasional irrelevant results do not outweigh the new tool's demonstrated improvement.}
-  \choice{The library should retain the new search tool during the next academic year.}
-\end{enumerate}
-\bankitem{B.1.09}
-\emph{The proposed platform reports a score after each unit but does not reveal which skills were missed or permit comments on submitted work. A score can show that improvement is needed, yet without information about the source of an error it does little to guide that improvement. The platform would therefore reduce the useful formative feedback students now receive. Because the department committed to preserving such feedback, it should not adopt the platform unless that limitation is corrected.}
-
-What is the main conclusion?
-\begin{enumerate}[label=(\alph*)]
-  \choice{A score can indicate that a student's work needs improvement.}
-  \choice{The department should not adopt the platform unless its feedback limitation is corrected.}
-  \choice{The platform does not identify missed skills or permit comments.}
-  \choice{The platform would reduce the useful formative feedback students receive.}
-  \choice{Information about the source of an error can guide improvement.}
-\end{enumerate}
-\bankitem{B.1.10}
-\emph{The community garden's waiting list grew even after twenty plots were added, and most applicants live in buildings without private outdoor space. These facts show that demand for shared growing space remains high; they do not, by themselves, identify the best site for expansion. The unused gravel lot, however, is the only city-owned parcel within walking distance that does not provide storm-water drainage or recreation. The council should therefore convert that lot into additional garden plots rather than leave it vacant.}
-
-What is the main conclusion?
-\begin{enumerate}[label=(\alph*)]
-  \choice{Adding twenty plots did not eliminate the garden's waiting list.}
-  \choice{Demand for shared growing space remains high.}
-  \choice{The waiting-list evidence alone does not identify the best expansion site.}
-  \choice{The council should convert the gravel lot into additional garden plots.}
-  \choice{The gravel lot is the only suitable city-owned parcel within walking distance.}
-\end{enumerate}
+\end{samepage}\par\smallskip
 \subsection*{B.2 Role of a Statement}
 Identify the argumentative function of the specified statement, not merely whether it is true.
-\bankitem{B.2.01}
-\emph{The courtyard should be planted with thyme rather than turf. Turf would tolerate the expected foot traffic, so durability alone does not settle the choice. Thyme tolerates nearly as much traffic while using about half as much irrigation. Water use must be reduced this summer because reservoir levels are unusually low. Although native wildflowers would use even less water, they would not survive regular use of the courtyard.}
-
-In the argument, the claim that water use must be reduced this summer serves as
-\begin{enumerate}[label=(\alph*)]
-  \choice{evidence that thyme tolerates more foot traffic than turf.}
-  \choice{an intermediate conclusion drawn from the comparison of thyme and turf.}
-  \choice{a decision constraint that, together with the comparative irrigation facts, supports choosing thyme.}
-  \choice{a concession offered in support of retaining turf.}
-  \choice{the conclusion for which the planting recommendation is offered as support.}
-\end{enumerate}
-\bankitem{B.2.02}
-\emph{The archive should begin scanning the fragile notebooks this month. Tests show that the ink on several pages has faded measurably since last year, and the conservator cannot predict which pages will deteriorate next. High-resolution scanning will require several weeks and temporarily limit researchers' access. That disruption is real, but appointments can be staggered; information lost to further fading cannot be reconstructed later.}
-
-The statement that high-resolution scanning will require several weeks functions as
-\begin{enumerate}[label=(\alph*)]
-  \choice{the principal evidence that further fading cannot be reversed.}
-  \choice{an intermediate conclusion used to establish that appointments should be staggered.}
-  \choice{the claim the author ultimately seeks to establish.}
-  \choice{a practical cost of the recommendation that the author acknowledges and treats as manageable.}
-  \choice{support for the claim that scanning itself will damage the notebooks.}
-\end{enumerate}
-\bankitem{B.2.03}
-\emph{If the committee had inspected the raw transaction file, it would have noticed the repeated timestamps, assuming those repetitions were already present. The minutes contain no mention of them, so the committee probably relied only on the summary table. An independent audit later established that the repeated timestamps were present before the committee met. The agency should therefore require future review panels to record which source files they inspect.}
-
-The statement about the independent audit functions as
-\begin{enumerate}[label=(\alph*)]
-  \choice{evidence for a factual condition needed to support the inference about what the committee inspected.}
-  \choice{an intermediate conclusion inferred from the committee minutes.}
-  \choice{a counterexample to the claim that inspecting raw data would reveal repetitions.}
-  \choice{support offered directly for the general recording requirement, independently of the committee's conduct.}
-  \choice{a qualification limiting the claim that the committee relied on a summary.}
-\end{enumerate}
+\begin{samepage}
 \bankitem{B.2.04}
 \emph{Several engineers recommend closing the footbridge until it can be replaced, arguing that even targeted repairs will be expensive. The inspection report agrees about the cost but finds no structural instability and concludes that replacing two rail sections would restore the required safety margin. Closure would also force pedestrians onto a road with no sidewalk. The bridge should remain open during the targeted work, with access limited to one side.}
 
@@ -389,50 +141,8 @@ The statement that repair will be expensive is presented as
   \choice{a qualification of the claim that the required safety margin can be restored.}
   \choice{a consideration favoring closure that the author grants but argues is outweighed.}
 \end{enumerate}
-\bankitem{B.2.05}
-\emph{Every encrypted backup prevents someone without the key from reading its contents. Drive K is encrypted, so an unauthorized person cannot casually inspect the records on it. That protection does not prevent someone with access to the storage console from deleting the drive. Since the clinic needs protection against both disclosure and loss, encryption alone is not an adequate backup policy.}
-
-The statement that an unauthorized person cannot casually inspect the records on Drive K is
-\begin{enumerate}[label=(\alph*)]
-  \choice{a premise offered to establish that Drive K is encrypted.}
-  \choice{a subsidiary conclusion drawn from the encryption facts and then limited before the final policy judgment.}
-  \choice{the final conclusion that encryption is an adequate backup policy.}
-  \choice{a concession to the view that console access prevents disclosure.}
-  \choice{an example intended to refute the general claim about encrypted backups.}
-\end{enumerate}
-\bankitem{B.2.06}
-\emph{The city should publish its budget data in a documented machine-readable format, not only as scanned tables. Such files would let researchers test spending patterns automatically and let journalists reproduce comparisons without retyping thousands of entries. Errors in any one analysis would also be easier for others to identify. Public oversight becomes more effective when independent verification is both inexpensive and repeatable.}
-
-The final statement serves as
-\begin{enumerate}[label=(\alph*)]
-  \choice{a prediction derived from the claim that analysts sometimes make errors.}
-  \choice{the specific publication policy the passage recommends.}
-  \choice{a general principle explaining why the practical verification benefits support the recommendation.}
-  \choice{evidence that scanned tables contain inaccurate spending figures.}
-  \choice{a limitation suggesting that machine-readable files should be withheld when verification is costly.}
-\end{enumerate}
-\bankitem{B.2.07}
-\emph{The transit report estimates that commuters are highly satisfied, but its sample was drawn only from riders boarding before 7 a.m., when service is most frequent. Later riders experience different schedules and were not represented. The estimate therefore cannot justify system-wide staffing cuts. Before changing staffing, the agency should collect responses across routes and times, even if that produces a smaller number of responses per time block.}
-
-The claim that the estimate cannot justify system-wide staffing cuts functions as
-\begin{enumerate}[label=(\alph*)]
-  \choice{an intermediate judgment supported by the sampling defect and used to support collecting a broader sample before acting.}
-  \choice{a description of how the transit report selected its respondents.}
-  \choice{a concession that fewer responses always produce a less representative sample.}
-  \choice{the report's own conclusion about commuter satisfaction.}
-  \choice{a general definition of when a sample is representative.}
-\end{enumerate}
-\bankitem{B.2.08}
-\emph{Replacing the old windows would reduce annual heating use by about twenty percent. Even using the contractor's optimistic energy-price forecast, however, the installation cost would not be recovered for twelve years. The university plans to sell the building in three years, and the buyer will not pay more for improvements it intends to remove during renovation. Thus replacing the windows now is not financially justified for the university, although a long-term owner might reasonably make a different choice.}
-
-The statement about the building's scheduled sale functions as
-\begin{enumerate}[label=(\alph*)]
-  \choice{the conclusion drawn from the estimate that heating use will fall.}
-  \choice{a general definition of financial justification.}
-  \choice{evidence that the contractor's energy-price forecast is pessimistic.}
-  \choice{a qualification showing that window replacement can never be economical.}
-  \choice{a premise that, with the payback period and resale facts, limits the financial benefit to the current owner.}
-\end{enumerate}
+\end{samepage}\par\smallskip
+\begin{samepage}
 \bankitem{B.2.09}
 \emph{A public evacuation alert is useful only if residents can understand it without consulting another source. The proposed alert uses three abbreviations familiar to emergency staff but undefined for the public, and its map labels use two of them. Many residents would therefore not understand the alert quickly enough. The agency should rewrite the alert in plain language and test it with readers who have no emergency-management training.}
 
@@ -444,19 +154,10 @@ The claim that many residents would not understand the alert quickly enough is
   \choice{the general standard that defines when any alert is useful.}
   \choice{background that plays no part in the recommendation.}
 \end{enumerate}
-\bankitem{B.2.10}
-\emph{The tutoring pilot's organizers report that participants passed at a rate twelve points higher than nonparticipants and describe the difference as the program's effect. The numerical difference may be genuine. Students chose whether to participate, however, and participants entered with higher prior grades and fewer work hours. Until those differences are addressed, the pilot does not establish that tutoring caused the higher pass rate.}
-
-The organizers' report of a twelve-point difference is used as
-\begin{enumerate}[label=(\alph*)]
-  \choice{the author's conclusion that tutoring caused the higher pass rate.}
-  \choice{evidence that participants and nonparticipants were comparable before the pilot.}
-  \choice{a general principle about when causal conclusions are justified.}
-  \choice{an observed association the author grants while challenging the organizers' causal interpretation of it.}
-  \choice{evidence that prior grades and work hours had no effect on participation.}
-\end{enumerate}
+\end{samepage}\par\smallskip
 \subsection*{B.3 Point at Issue}
 Select the proposition one speaker accepts and the other rejects. Both positions must be textually supported.
+\begin{samepage}
 \bankitem{B.3.01}
 \emph{Nara: The city should permit up to four food carts in the central plaza during lunch. Similar plazas became only slightly busier after adopting that limit, while nearby workers gained less expensive options. Ivo: Those plazas have wider paths. Even four carts would leave too little room here for wheelchairs during the noon rush, so the proposed permit should be denied.}
 
@@ -468,50 +169,8 @@ Nara and Ivo disagree about whether
   \choice{wheelchair access should be considered when issuing permits.}
   \choice{a numerical limit can prevent a plaza from becoming crowded.}
 \end{enumerate}
-\bankitem{B.3.02}
-\emph{Leah: Because the twelve respondents were randomly selected from the complete student list and all twelve replied, this survey is reliable enough to estimate whether most students support the proposal. Omar: Random selection prevents one kind of bias, but with only twelve responses the sampling uncertainty is too large to determine whether a majority supports it.}
-
-Leah and Omar disagree about whether
-\begin{enumerate}[label=(\alph*)]
-  \choice{this survey is reliable enough to determine whether most students support the proposal.}
-  \choice{random selection can reduce selection bias.}
-  \choice{all twelve selected students replied to the survey.}
-  \choice{a complete student list was available for selection.}
-  \choice{a sample of twelve produces some sampling uncertainty.}
-\end{enumerate}
-\bankitem{B.3.03}
-\emph{Priya: Since the signed originals have been preserved and the photocopies are catalogued as duplicates, the archive may discard the copies without examining every page. Tomas: A copy can duplicate the printed text while containing unique handwritten notes. Until each copy has been checked for such additions, discarding any of them is not justified.}
-
-Priya and Tomas disagree about whether
-\begin{enumerate}[label=(\alph*)]
-  \choice{the archive has preserved the signed originals.}
-  \choice{some photocopies can contain writing absent from the original.}
-  \choice{catalogue descriptions can occasionally be incomplete.}
-  \choice{the printed text of the photocopies duplicates the originals.}
-  \choice{the archive may discard the photocopies without first inspecting each one for additions.}
-\end{enumerate}
-\bankitem{B.3.04}
-\emph{Mei: The forecasting model reproduced last year's hourly demand and correctly predicted this summer's weekend peaks. That track record makes it suitable for deciding next year's staffing. Arturo: Both periods used the current fare policy. Next year's fare-free pilot may change not only the number of riders but when they travel, so the model is not suitable for that staffing decision without adjustment.}
-
-Mei and Arturo disagree about whether
-\begin{enumerate}[label=(\alph*)]
-  \choice{the model accurately reproduced last year's hourly demand.}
-  \choice{the unadjusted model is suitable for deciding next year's staffing.}
-  \choice{the fare-free pilot could change the number of riders.}
-  \choice{weekend peaks occurred during the summer.}
-  \choice{a model that performed well in two periods has some evidential support.}
-\end{enumerate}
-\bankitem{B.3.05}
-\emph{Dana: The damaged railing has been replaced, the drainage channel is clear, and inspectors approved both repairs. The trail should reopen now, with the hillside monitored after heavy rain. Sol: Those repairs are adequate, but the latest soil reading is outside the range the inspectors evaluated. Monitoring after reopening is not enough; the trail should remain closed until the slope is assessed.}
-
-Dana and Sol disagree about whether
-\begin{enumerate}[label=(\alph*)]
-  \choice{the railing and drainage repairs were adequate.}
-  \choice{the inspectors evaluated the latest soil reading.}
-  \choice{heavy rain could make hillside monitoring useful.}
-  \choice{the trail should reopen before the slope receives another assessment.}
-  \choice{an approved railing repair is relevant to reopening the trail.}
-\end{enumerate}
+\end{samepage}\par\smallskip
+\begin{samepage}
 \bankitem{B.3.06}
 \emph{Amina: Every assigned video should receive accurate captions. Once the spoken content is available as text, each video will be fully accessible to students who cannot hear the audio. Joel: Captions are necessary and should be added, but a demonstration may communicate essential information only visually. Without descriptions of that information, captions alone will not make every video fully accessible.}
 
@@ -523,74 +182,10 @@ Amina and Joel disagree about whether
   \choice{some demonstrations communicate information visually.}
   \choice{visual information can be essential to understanding a demonstration.}
 \end{enumerate}
-\bankitem{B.3.07}
-\emph{Ruth: The town should replace the lamps on every residential block with brighter models. Studies in comparable towns associate brighter nighttime streets with fewer thefts, and prevention is worth a modest increase in energy use. Ken: Nearly all of our recent thefts occurred in daylight and on two commercial blocks. Whatever the studies show elsewhere, replacing every residential lamp would not be an effective response to this town's theft problem.}
-
-Ruth and Ken disagree about whether
-\begin{enumerate}[label=(\alph*)]
-  \choice{brighter nighttime streets have been associated with fewer thefts in some comparable towns.}
-  \choice{a modest increase in energy use can sometimes be justified by prevention benefits.}
-  \choice{replacing every residential lamp would effectively address this town's theft problem.}
-  \choice{most recent local thefts occurred on commercial blocks during daylight.}
-  \choice{the town should consider evidence from comparable places.}
-\end{enumerate}
-\bankitem{B.3.08}
-\emph{Hana: Laboratory tests show that the manuscript's paper and ink were both manufactured during the period it claims. Since a later imitation would probably use later materials, the test results make the manuscript probably authentic. Luis: The tested materials remained in ordinary commercial use for almost a century after that period. The results are consistent with authenticity, but they do not by themselves make it more likely than a later imitation.}
-
-Hana and Luis disagree about whether
-\begin{enumerate}[label=(\alph*)]
-  \choice{the paper and ink were manufactured during the claimed period.}
-  \choice{later imitations sometimes use materials manufactured earlier.}
-  \choice{the test results are consistent with the manuscript's authenticity.}
-  \choice{the materials remained commercially available after the claimed period.}
-  \choice{the test results make authenticity more likely than a later imitation.}
-\end{enumerate}
-\bankitem{B.3.09}
-\emph{Cam: The cafe should stop offering disposable cups next month. The deposit program has already reduced the number of mugs that disappear, and reusable mugs generate less waste when most are returned. Noor: Returns have improved but are still below half. At that rate manufacturing replacements creates more waste than continuing limited disposable service, so ending disposable cups next month would be premature.}
-
-Cam and Noor disagree about whether
-\begin{enumerate}[label=(\alph*)]
-  \choice{the deposit program has improved the mug return rate.}
-  \choice{reusable mugs produce less waste whenever at least some are returned.}
-  \choice{the cafe should stop offering disposable cups next month.}
-  \choice{manufacturing replacement mugs creates some waste.}
-  \choice{the current return rate is below half.}
-\end{enumerate}
-\bankitem{B.3.10}
-\emph{Sera: Every approved project has passed a privacy review. Since Project L was not approved, it follows that Project L did not pass that review. Ben: Privacy review is required for approval, but budget and accessibility reviews are required as well. Project L might have passed privacy review and failed one of the others, so its lack of approval does not settle the privacy question.}
-
-Sera and Ben disagree about whether
-\begin{enumerate}[label=(\alph*)]
-  \choice{every approved project passed a privacy review.}
-  \choice{approval has requirements in addition to privacy review.}
-  \choice{Project L was not approved.}
-  \choice{an unapproved project could nevertheless have passed privacy review.}
-  \choice{failing privacy review is sufficient to prevent approval.}
-\end{enumerate}
+\end{samepage}\par\smallskip
 \subsection*{B.4 Must Follow}
 Choose the statement that is logically guaranteed by the facts. Do not assume a converse, exclusivity, or an unstated relationship.
-\bankitem{B.4.01}
-\emph{Every accredited wildlife sanctuary that admits injured raptors employs a veterinarian certified in avian medicine. Every sanctuary employing such a veterinarian maintains a quarantine room. Meadow House is accredited and admits injured raptors. River Yard maintains a quarantine room, but its accreditation and admissions policies are unknown.}
-
-Which statement must follow?
-\begin{enumerate}[label=(\alph*)]
-  \choice{River Yard employs a veterinarian certified in avian medicine.}
-  \choice{Meadow House maintains a quarantine room.}
-  \choice{Every accredited sanctuary admits injured raptors.}
-  \choice{Only accredited sanctuaries maintain quarantine rooms.}
-  \choice{Meadow House and River Yard follow the same admissions policy.}
-\end{enumerate}
-\bankitem{B.4.02}
-\emph{Every file in the secure folder is encrypted. Any file encrypted with the archive key requires a custodian's approval whenever it is opened outside the records laboratory. Report Q is in the secure folder and was encrypted with the archive key. The records laboratory is closed for renovation this week.}
-
-Which statement must follow?
-\begin{enumerate}[label=(\alph*)]
-  \choice{Every encrypted file is stored in the secure folder.}
-  \choice{Report Q cannot be opened anywhere while the laboratory is closed.}
-  \choice{A custodian has already approved access to Report Q.}
-  \choice{If Report Q is opened this week, a custodian's approval is required.}
-  \choice{Only files encrypted with the archive key require approval outside the laboratory.}
-\end{enumerate}
+\begin{samepage}
 \bankitem{B.4.03}
 \emph{Some robotics-club members are first-year students assigned to the fabrication team. Every first-year fabrication-team member completed both safety training and a supervised tool demonstration. Anyone who completed the demonstration may reserve the beginner workbench, although completing it does not guarantee membership in the robotics club.}
 
@@ -602,50 +197,8 @@ Which statement must follow?
   \choice{Some first-year students who are not club members completed the demonstration.}
   \choice{Every fabrication-team member completed safety training.}
 \end{enumerate}
-\bankitem{B.4.04}
-\emph{The methods workshop is offered on Tuesday or Thursday, but not both. If it is offered Tuesday, Mira attends unless the laboratory inspection occurs that afternoon. If it is offered Thursday, Luis attends. The workshop is not offered Thursday, and the laboratory inspection has been postponed until Friday.}
-
-Which statement must follow?
-\begin{enumerate}[label=(\alph*)]
-  \choice{Luis does not attend any workshop this week.}
-  \choice{Mira attends if and only if the workshop is offered Tuesday.}
-  \choice{The workshop and the laboratory inspection occur on the same day.}
-  \choice{The workshop would be cancelled if Mira could not attend.}
-  \choice{The workshop is offered Tuesday, and Mira attends it.}
-\end{enumerate}
-\bankitem{B.4.05}
-\emph{No temporary credential issued before the security audit remains valid after midnight. Every kiosk credential was issued before the audit. Credential K is a kiosk credential and remains valid after midnight. Some permanent credentials were also issued before the audit but were replaced for unrelated reasons.}
-
-Which statement must follow?
-\begin{enumerate}[label=(\alph*)]
-  \choice{Credential K was issued on the day before the audit.}
-  \choice{Every permanent credential issued before the audit remains valid after midnight.}
-  \choice{Credential K is not temporary.}
-  \choice{Only kiosk credentials were issued before the audit.}
-  \choice{Every credential replaced after the audit was temporary.}
-\end{enumerate}
-\bankitem{B.4.06}
-\emph{Every proposal approved unanimously reaches the final agenda unless it is placed on legal hold. Every proposal that reaches the final agenda receives a public docket number. Proposal L was approved unanimously and is not on legal hold. Some docketed proposals are later postponed, but the postponement list has not yet been released.}
-
-Which statement must follow?
-\begin{enumerate}[label=(\alph*)]
-  \choice{Proposal L will not be postponed.}
-  \choice{Proposal L receives a public docket number.}
-  \choice{Every docketed proposal was approved unanimously.}
-  \choice{No proposal on legal hold can receive a docket number.}
-  \choice{Proposal L is one of the postponed proposals.}
-\end{enumerate}
-\bankitem{B.4.07}
-\emph{Whenever the alarm is armed, at least one of the blue and amber indicators is lit. If the backup battery is disabled, the two indicators cannot both be lit. The alarm is armed, the backup battery is disabled, and the blue indicator is not lit. An indicator can also be lit during a diagnostic test when the alarm is not armed.}
-
-Which statement must follow?
-\begin{enumerate}[label=(\alph*)]
-  \choice{The amber indicator is lit only when the alarm is armed.}
-  \choice{The blue indicator is broken.}
-  \choice{No diagnostic test is running.}
-  \choice{The amber indicator is lit and the blue indicator is not lit.}
-  \choice{The backup battery is disabled whenever exactly one indicator is lit.}
-\end{enumerate}
+\end{samepage}\par\smallskip
+\begin{samepage}
 \bankitem{B.4.08}
 \emph{Every peer-reviewed article in the digital collection includes both a citation list and an author identifier. At least one article in the collection lacks a citation list, although every article has an author identifier. The collection also contains editorials, some of which have citation lists despite not having been peer reviewed.}
 
@@ -657,74 +210,10 @@ Which statement must follow?
   \choice{Exactly one article in the collection lacks a citation list.}
   \choice{At least one editorial lacks an author identifier.}
 \end{enumerate}
-\bankitem{B.4.09}
-\emph{The nightly backup runs if and only if the server is idle and the remote archive is connected. Whenever the backup runs, a completion notice is sent. No completion notice was sent last night. A notice can fail for several reasons, but the monitoring log confirms that the notification service itself was functioning normally.}
-
-Which statement must follow?
-\begin{enumerate}[label=(\alph*)]
-  \choice{The server was not idle last night.}
-  \choice{The remote archive was disconnected last night.}
-  \choice{The backup ran but its notice was lost.}
-  \choice{A completion notice is sent only when the backup runs.}
-  \choice{Either the server was not idle or the remote archive was disconnected last night.}
-\end{enumerate}
-\bankitem{B.4.10}
-\emph{Some courses with laboratories require goggles for at least one experiment. Every course that requires goggles provides in-person safety training before the relevant experiment. No online-only course has a laboratory, although some online-only courses provide optional safety videos. Every course with in-person safety training assigns a safety acknowledgement.}
-
-Which statement must follow?
-\begin{enumerate}[label=(\alph*)]
-  \choice{Every laboratory course provides in-person safety training.}
-  \choice{No online-only course assigns a safety acknowledgement.}
-  \choice{At least one laboratory course provides in-person safety training and assigns a safety acknowledgement.}
-  \choice{Every course assigning a safety acknowledgement requires goggles.}
-  \choice{Some online-only course requires goggles for an experiment.}
-\end{enumerate}
+\end{samepage}\par\smallskip
 \subsection*{B.5 Parallel Reasoning}
 Choose the argument with the same valid logical structure, ignoring subject matter.
-\bankitem{B.5.01}
-\emph{If the archive is open to researchers, a supervisor is present. Whenever a supervisor is present, the security desk is staffed. The security desk is not staffed today. Therefore, the archive is not open to researchers today.}
-
-Which argument uses the same pattern of reasoning?
-\begin{enumerate}[label=(\alph*)]
-  \choice{If the pump runs, the tank fills; if the tank fills, the gauge rises. The gauge rose, so the pump ran.}
-  \choice{If the lamp is on, the room is bright; if the room is bright, the camera records. The lamp is off, so the camera does not record.}
-  \choice{If a file is signed, it is official; if it is official, it is archived. The file is not signed, so it is not archived.}
-  \choice{If a seed sprouts, it was watered; if it was watered, the soil is damp. The soil is damp, so the seed sprouted.}
-  \choice{If the sprinkler runs, the pump runs; whenever the pump runs, the meter turns. The meter did not turn, so the sprinkler did not run.}
-\end{enumerate}
-\bankitem{B.5.02}
-\emph{Every archived petition is indexed. No indexed document is eligible for routine destruction. Petition R is archived. Therefore, Petition R is not eligible for routine destruction.}
-
-Which argument uses the same pattern of reasoning?
-\begin{enumerate}[label=(\alph*)]
-  \choice{Every cedar is a tree. No shrub is a tree. Plant K is a shrub. Therefore, Plant K is not a cedar.}
-  \choice{Every licensed pilot is trained. No untrained person may fly. Mira may fly. Therefore, Mira is a licensed pilot.}
-  \choice{Every registered vehicle has a plate. No plated vehicle may enter the trail. Van K is registered. Therefore, Van K may not enter the trail.}
-  \choice{No fragile parcel is stacked. Some delivered parcels were stacked. Therefore, some delivered parcels are not fragile.}
-  \choice{Every poem is a written work. Some written works are short. Therefore, some poems are short.}
-\end{enumerate}
-\bankitem{B.5.03}
-\emph{Either the sensor is faulty or the wiring is loose. If the sensor is faulty, the self-test reports an error. If the wiring is loose, the readings fluctuate. The self-test reports no error. Therefore, the readings fluctuate.}
-
-Which argument uses the same pattern of reasoning?
-\begin{enumerate}[label=(\alph*)]
-  \choice{Either the train is late or the platform changed. If late, the board flashes; if changed, an alert sounds. The board flashes, so no alert sounds.}
-  \choice{Either the key is in the drawer or in the bag. If in the drawer, the drawer sensor lights; if in the bag, the tracker pings. The sensor is dark, so the tracker pings.}
-  \choice{If the key is in the drawer, the drawer is locked. If the drawer is locked, the alarm is armed. The alarm is not armed, so the key is absent.}
-  \choice{Either the file is large or encrypted. If large, it loads slowly; if encrypted, it needs a key. It needs a key, so it is not large.}
-  \choice{The plant is dry or shaded. If dry, it wilts; if shaded, it grows slowly. It did not wilt, so it is not shaded.}
-\end{enumerate}
-\bankitem{B.5.04}
-\emph{If the permit is approved, construction begins. If construction begins, the road closes. Either the permit is approved or the project is abandoned. The project is not abandoned. Therefore, the road closes.}
-
-Which argument uses the same pattern of reasoning?
-\begin{enumerate}[label=(\alph*)]
-  \choice{If the code compiles, tests run. If tests run, a report appears. Either the code compiles or the build is cancelled. The build is not cancelled, so a report appears.}
-  \choice{If rain falls, streets are wet. If streets are wet, traffic slows. Traffic slowed or the event ended, so rain fell.}
-  \choice{If the badge works, the gate opens. If the gate opens, entry is logged. The badge works and the log is missing, so entry occurred.}
-  \choice{If a student enrolls, an account exists. If an account exists, a fee is posted. No fee is posted or enrollment ended, so the student did not enroll.}
-  \choice{If the heater runs, the room warms. If the room warms, the sensor responds. Either the heater runs or a window opens. The heater does not run, so the sensor responds.}
-\end{enumerate}
+\begin{samepage}
 \bankitem{B.5.05}
 \emph{Some archived memos concern the budget. Every budget memo is indexed, and every indexed memo is searchable. Therefore, some archived memos are searchable.}
 
@@ -736,50 +225,8 @@ Which argument uses the same pattern of reasoning?
   \choice{Some marked trails cross wetlands. Every wetland trail is mapped, and every mapped trail is inspected. Therefore, some marked trails are inspected.}
   \choice{Some safe bridges are inspected. Every inspected bridge is recorded, and every recorded bridge has an identifier. Therefore, every safe bridge has an identifier.}
 \end{enumerate}
-\bankitem{B.5.06}
-\emph{The archive is accessible exactly when a curator is present. If a curator is present, the security log records an entry. No entry was recorded. Therefore, the archive was not accessible.}
-
-Which argument uses the same pattern of reasoning?
-\begin{enumerate}[label=(\alph*)]
-  \choice{The door opens exactly when a badge works. If the door opens, the alarm sounds. The alarm sounded, so the badge worked.}
-  \choice{A form is reviewed exactly when it is complete. If complete, it is archived. The form is not complete, so it was not reviewed.}
-  \choice{Water boils exactly when the heater works. If water boils, steam forms. Steam formed, so the heater worked.}
-  \choice{A ticket is valid exactly when payment clears. If valid, entry is allowed. Entry was denied, so payment may have cleared.}
-  \choice{The seed germinates exactly when moisture is adequate. If moisture is adequate, roots form. No roots formed, so the seed did not germinate.}
-\end{enumerate}
-\bankitem{B.5.07}
-\emph{No confidential report is publicly posted. Some audit documents are confidential reports, and every audit document is retained. Therefore, some retained documents are not publicly posted.}
-
-Which argument uses the same pattern of reasoning?
-\begin{enumerate}[label=(\alph*)]
-  \choice{No glass object is flexible. Some tools are flexible, and every tool is useful. Therefore, no useful object is glass.}
-  \choice{All poems are written works. Some written works are short, and every short work is anthologized. Therefore, some poems are anthologized.}
-  \choice{No reptiles are warm-blooded. Some zoo animals are reptiles, and every zoo animal is catalogued. Therefore, some catalogued animals are not warm-blooded.}
-  \choice{No late application is reviewed. This application was not reviewed, and every application is dated. Therefore, some dated application was late.}
-  \choice{Some maps are digital. No book is a map, and every digital object is indexed. Therefore, some indexed books are not maps.}
-\end{enumerate}
-\bankitem{B.5.08}
-\emph{If either the east gate or the west gate is open, visitors can enter. If visitors can enter, the reception desk is staffed. The west gate is open. Therefore, the reception desk is staffed.}
-
-Which argument uses the same pattern of reasoning?
-\begin{enumerate}[label=(\alph*)]
-  \choice{If both switches are on, the motor runs. If the motor runs, the belt moves. One switch is on, so the belt moves.}
-  \choice{If tea or coffee is available, a hot drink can be served. If a hot drink can be served, the station opens. Coffee is available, so the station opens.}
-  \choice{If the file is local, it opens quickly. If it opens quickly, the review begins. The review began, so the file is local.}
-  \choice{If the road is dry, travel is safe. If travel is safe, the route opens. The road is not dry, so the route does not open.}
-  \choice{If one witness agrees or a recording exists, the claim is reviewed. If reviewed, a report is filed. No witness agrees, so no report is filed.}
-\end{enumerate}
-\bankitem{B.5.09}
-\emph{The beacon flashes exactly when both the transmitter is active and the channel is clear. The beacon flashes. Therefore, the transmitter is active.}
-
-Which argument uses the same pattern of reasoning?
-\begin{enumerate}[label=(\alph*)]
-  \choice{The archive opens exactly when a curator is present and the alarm is disarmed. The archive is open, so a curator is present.}
-  \choice{If a curator is present and the alarm is disarmed, the archive opens. The archive is open, so a curator is present.}
-  \choice{The archive opens unless it is Sunday or the alarm is armed. It is open, so a curator is present.}
-  \choice{Only when a curator is present and the alarm is disarmed does the archive open. A curator is present, so the archive opens.}
-  \choice{The archive opens exactly when a curator is present or the alarm is disarmed. The archive is open, so both conditions hold.}
-\end{enumerate}
+\end{samepage}\par\smallskip
+\begin{samepage}
 \bankitem{B.5.10}
 \emph{If the server is overloaded, requests slow down. Either the server is overloaded or the network is disconnected. Requests did not slow down. Therefore, the network is disconnected.}
 
@@ -791,20 +238,11 @@ Which argument uses the same pattern of reasoning?
   \choice{If the pump runs, water flows. Either the pump runs or the valve is closed. Water did not flow, so the valve is closed.}
   \choice{If the form is late, a fee applies. Either no fee applies or the form is late. A fee applies, so the form was late.}
 \end{enumerate}
+\end{samepage}\par\smallskip
 \section*{C. Logical Reasoning II: Assumptions and Evidence}
 \subsection*{C.1 Necessary Assumption}
 Select the assumption the argument requires. If it were false, the stated reasoning would fail.
-\bankitem{C.1.01}
-\emph{Team Delta keeps encrypted backups of its project files, and last month's recovery drill restored every file selected for the drill. The backup system can restore any file included in the most recently completed encrypted backup even if all team laptops are lost. Delta's manager therefore concludes that, if the laptops were lost tonight, every project file currently in use could be restored.}
-
-Which assumption does the argument require?
-\begin{enumerate}[label=(\alph*)]
-  \choice{Every project file currently in use is included in Delta's most recently completed encrypted backup.}
-  \choice{The recovery drill used files from more than one of Delta's projects.}
-  \choice{Encrypted backups cost less than replacing the team's laptops.}
-  \choice{No team elsewhere in the organization uses a different backup system.}
-  \choice{The files selected for the drill were more valuable than the files not selected.}
-\end{enumerate}
+\begin{samepage}
 \bankitem{C.1.02}
 \emph{During the month after a museum installed color-coded directional signs, the proportion of visitors who asked staff for directions fell sharply. Attendance remained about the same, and the museum did not reduce the number of staffed information desks. The facilities director concludes that the signs, rather than some unrelated change, produced most of the decline in requests.}
 
@@ -816,50 +254,8 @@ Which assumption does the argument require?
   \choice{A majority of all visitors noticed at least one of the new signs.}
   \choice{Reducing requests for directions allowed staff to complete other work.}
 \end{enumerate}
-\bankitem{C.1.03}
-\emph{Every purchase request approved by the university bears a valid budget officer's signature and appears in the procurement database. Rowan's request bears such a signature, although the database will not refresh until tomorrow. The department chair nevertheless concludes that Rowan's request has already been approved.}
-
-Which assumption does the argument require?
-\begin{enumerate}[label=(\alph*)]
-  \choice{Rowan submitted the request before the ordinary budget deadline.}
-  \choice{Budget officers sign substantially more approved requests than unapproved ones.}
-  \choice{No purchase request that remains unapproved bears a valid budget officer's signature.}
-  \choice{Rowan's request costs less than most requests already listed in the database.}
-  \choice{Every request signed this month will appear in the database after its next refresh.}
-\end{enumerate}
-\bankitem{C.1.04}
-\emph{The library committee has funding for one of four submitted renovation plans. Plan K is the only plan that stays within the authorized budget and can be completed before the building reopens; another plan offers more study seats but misses the deadline. The committee should therefore adopt Plan K rather than postpone renovation.}
-
-Which assumption does the argument require?
-\begin{enumerate}[label=(\alph*)]
-  \choice{No submitted plan costs less than Plan K.}
-  \choice{The committee has previously approved a plan that offered fewer study seats than an alternative.}
-  \choice{Plan K contains every feature mentioned in the committee's original request.}
-  \choice{Neither postponing renovation nor selecting a plan that violates a stated constraint is preferable to adopting the sole plan that satisfies both constraints.}
-  \choice{The architects who prepared Plan K have completed an on-time library renovation before.}
-\end{enumerate}
-\bankitem{C.1.05}
-\emph{Before a software build can be released, an automated checker tests its privacy settings, dependency licenses, and accessibility labels. The checker reports warnings as well as blocking errors. It reported two style warnings for Build 18 but no blocking error. The release manager concludes that Build 18 satisfies every requirement that could prevent its release.}
-
-Which assumption does the argument require?
-\begin{enumerate}[label=(\alph*)]
-  \choice{Build 18 was checked after all of its style warnings had been reviewed.}
-  \choice{The checker reports every instance of inefficient code as a warning or an error.}
-  \choice{A build that may be released never benefits from additional testing.}
-  \choice{Most builds with only style warnings are eventually released.}
-  \choice{Build 18 cannot violate a release-blocking requirement without the checker reporting a blocking error.}
-\end{enumerate}
-\bankitem{C.1.06}
-\emph{A writing course at North Campus introduced a schedule requiring two rounds of peer feedback before each major revision. Compared with earlier offerings taught by the same instructor, the course produced stronger final drafts without increasing grading time. The South Campus course uses the same assignments but meets in a different format. Its chair predicts that adopting the schedule will likewise improve its final drafts.}
-
-Which assumption does the argument require?
-\begin{enumerate}[label=(\alph*)]
-  \choice{No difference between the two courses makes the peer-feedback schedule materially less effective at South Campus.}
-  \choice{Students at both campuses prefer peer feedback to comments from an instructor.}
-  \choice{North Campus will continue using the schedule in every later offering.}
-  \choice{The rubric used to compare final drafts measures quality with complete objectivity.}
-  \choice{The courses enroll approximately the same number of students in each section.}
-\end{enumerate}
+\end{samepage}\par\smallskip
+\begin{samepage}
 \bankitem{C.1.07}
 \emph{At a city-sponsored cycling workshop, 186 volunteers from the Lakeview neighborhood completed a transportation survey. Nearly all favored converting one traffic lane into a protected bicycle lane. The workshop drew residents from every precinct, so the planning office concludes that Lakeview residents overwhelmingly favor the conversion.}
 
@@ -871,74 +267,10 @@ Which assumption does the argument require?
   \choice{Residents who oppose protected lanes understand the difference between protected and painted lanes.}
   \choice{The workshop attracted at least as many volunteers as the planning office expected.}
 \end{enumerate}
-\bankitem{C.1.08}
-\emph{At closing time, the cabinet key is normally returned to the reception desk, hung on a labeled hook, or secured in the supply drawer. Tonight it is not on the desk and not on the hook. The sign-out sheet shows that every employee who borrowed it has returned it. The supervisor concludes that the key must now be in the locked supply drawer.}
-
-Which assumption does the argument require?
-\begin{enumerate}[label=(\alph*)]
-  \choice{No key other than the cabinet key is stored in the supply drawer.}
-  \choice{Only the evening supervisor is currently permitted to open the supply drawer.}
-  \choice{Given that all borrowers returned the key, the desk, hook, and drawer exhaust its possible present locations.}
-  \choice{The cabinet key was found on the labeled hook at closing time yesterday.}
-  \choice{A spare that opens the same cabinet is stored in a different building.}
-\end{enumerate}
-\bankitem{C.1.09}
-\emph{A transit survey compared each participant's commute before and after a new express route opened. The average reported commute became twelve minutes shorter, and the median also fell. The transit director concludes that the express route shortened the commute of every surveyed rider who used it, not merely that it reduced commuting time overall.}
-
-Which assumption does the argument require?
-\begin{enumerate}[label=(\alph*)]
-  \choice{No participant stopped commuting before the follow-up survey was conducted.}
-  \choice{The express route makes fewer stops than every local route serving the same corridor.}
-  \choice{More than half of all riders who used the express route participated in both surveys.}
-  \choice{No surveyed user of the express route had an unchanged or longer commute after it opened.}
-  \choice{Surveyed riders generally care more about travel time than about the comfort of a bus.}
-\end{enumerate}
-\bankitem{C.1.10}
-\emph{In a pilot, applicants completed a revised registration form several minutes faster than the current form, while employees found the two forms equally easy to process. The revised form would require a one-time software update, however, and the pilot did not test every unusual application. The office should nevertheless replace the current form with the revision.}
-
-Which assumption does the argument require?
-\begin{enumerate}[label=(\alph*)]
-  \choice{The current registration form has been in use long enough for applicants to recognize it.}
-  \choice{Applicants who participated in the pilot all complete forms at approximately the same speed.}
-  \choice{The revision achieves its time savings by asking fewer questions than the current form.}
-  \choice{The office could reverse the software update if the revised form proved unsatisfactory.}
-  \choice{The revision's time savings are not outweighed by omitted information, transition costs, or other decision-relevant losses.}
-\end{enumerate}
+\end{samepage}\par\smallskip
 \subsection*{C.2 Sufficient Assumption}
 Select the statement that, if added to the stated premises, makes the conclusion follow logically.
-\bankitem{C.2.01}
-\emph{A sensor receives field certification if it passes both the sustained-load test and the high-temperature test, provided that its calibration record is current. Sensor R passed the sustained-load test, and the laboratory confirmed that its calibration record is current. The engineering team therefore expects Sensor R to receive field certification.}
-
-Which assumption is sufficient to justify the conclusion?
-\begin{enumerate}[label=(\alph*)]
-  \choice{Sensor R passed the high-temperature test.}
-  \choice{Every sensor that receives field certification has passed the sustained-load test.}
-  \choice{Sensor R was calibrated before another sensor that received certification.}
-  \choice{The high-temperature test takes less time to administer than the load test.}
-  \choice{No uncertified sensor with a current calibration record failed both tests.}
-\end{enumerate}
-\bankitem{C.2.02}
-\emph{The incident log establishes that the synchronization failure began either in the network service or in the database service; failures originating in the application layer produce a different log signature. The network and database services later failed separate health checks. The investigator concludes that the database service originated this synchronization failure.}
-
-Which assumption is sufficient to justify the conclusion?
-\begin{enumerate}[label=(\alph*)]
-  \choice{The network and database services exchange messages during every synchronization.}
-  \choice{The network service did not originate this synchronization failure.}
-  \choice{The database service has originated a synchronization failure with the same visible symptom before.}
-  \choice{The network service recovered before the database service passed its health check.}
-  \choice{No user reported an application-layer error during the incident.}
-\end{enumerate}
-\bankitem{C.2.03}
-\emph{Every manuscript accepted for the journal receives a permanent archive number after copyediting, whereas submissions still under review retain only a temporary tracking number. Manuscript M now has a permanent archive number, although its public page is not yet visible. The managing editor concludes that M has been accepted.}
-
-Which assumption is sufficient to justify the conclusion?
-\begin{enumerate}[label=(\alph*)]
-  \choice{At least two editors recommended that Manuscript M be accepted.}
-  \choice{Any rejected manuscript that is revised receives a new temporary tracking number.}
-  \choice{A manuscript receives a permanent archive number only if it has been accepted for the journal.}
-  \choice{Manuscript M's permanent archive number was issued after copyediting began.}
-  \choice{Every accepted manuscript eventually becomes visible to journal subscribers.}
-\end{enumerate}
+\begin{samepage}
 \bankitem{C.2.04}
 \emph{The town can fund either a footbridge or a fountain this year, but not both. The footbridge would provide the only safe pedestrian route across the stream during spring floods. The fountain would improve the central square and cost slightly less. The council should nevertheless fund the footbridge rather than the fountain.}
 
@@ -950,50 +282,8 @@ Which assumption is sufficient to justify the conclusion?
   \choice{When exactly one of these projects can be funded, providing the safe spring crossing should take priority over the fountain's lower cost and benefit to the square.}
   \choice{The footbridge and fountain would be completed during the same construction season.}
 \end{enumerate}
-\bankitem{C.2.05}
-\emph{Every member of the regional planning council serves on at least one of its working groups. Some consultants also attend working-group meetings, but they do not vote. Niko serves on the accessibility working group and votes on its recommendations. The chair concludes that Niko is a member of the planning council.}
-
-Which assumption is sufficient to justify the conclusion?
-\begin{enumerate}[label=(\alph*)]
-  \choice{The council has more voting members than the accessibility working group does.}
-  \choice{Niko attends every meeting of the accessibility working group.}
-  \choice{No planning-council member votes in more than two working groups.}
-  \choice{Consultants who attend working-group meetings may speak but may not vote.}
-  \choice{Everyone who votes on recommendations of the accessibility working group is a planning-council member.}
-\end{enumerate}
-\bankitem{C.2.06}
-\emph{In the month after an office introduced a proofing checklist, the error rate per hundred printed pages fell by nearly half. The office printed more pages than usual, and the staff members who used the checklist were the same people who had prepared documents the prior month. The director concludes that using the checklist caused the reduction in the error rate.}
-
-Which assumption is sufficient to justify the conclusion?
-\begin{enumerate}[label=(\alph*)]
-  \choice{The checklist was the only difference between the two months capable of lowering the printing-error rate.}
-  \choice{The office printed at least ten percent more pages in the later month.}
-  \choice{Every employee reported that the checklist was easy to remember and use.}
-  \choice{Most errors counted in either month were noticed before documents were mailed.}
-  \choice{The checklist contains every proofing step used by the office's most accurate employee.}
-\end{enumerate}
-\bankitem{C.2.07}
-\emph{Any proposal receiving legal approval advances to a final vote unless its sponsor withdraws it. Every proposal advancing to a final vote appears on Friday's agenda. Proposal P received legal approval, and its sponsor has confirmed that it remains active. Thus, Proposal P will be discussed at Friday's meeting.}
-
-Which assumption is sufficient to justify the conclusion?
-\begin{enumerate}[label=(\alph*)]
-  \choice{Every proposal placed on Friday's agenda previously received legal approval.}
-  \choice{Every active proposal that appears on Friday's agenda will be discussed at Friday's meeting.}
-  \choice{Proposal P is the only active proposal awaiting a final vote.}
-  \choice{Friday's meeting may continue until every legal issue has been discussed.}
-  \choice{No proposal receives legal approval after the agenda containing it is published.}
-\end{enumerate}
-\bankitem{C.2.08}
-\emph{All ceramic pieces in the museum's regional display were made by local artists, though several local artists declined invitations to join the artists' cooperative. The blue bowl is a ceramic piece in that display and was made by one artist. The curator concludes that the bowl's maker belongs to the cooperative.}
-
-Which assumption is sufficient to justify the conclusion?
-\begin{enumerate}[label=(\alph*)]
-  \choice{The blue bowl is the oldest ceramic piece in the regional display.}
-  \choice{At least one cooperative member makes ceramic bowls for museum displays.}
-  \choice{Every local artist whose ceramic work appears in the regional display is a member of the artists' cooperative.}
-  \choice{Only local artists whose work is displayed may sell pieces in the museum shop.}
-  \choice{The cooperative selected the order in which pieces appear in the regional display.}
-\end{enumerate}
+\end{samepage}\par\smallskip
+\begin{samepage}
 \bankitem{C.2.09}
 \emph{Route N and Route P connect the same trailhead to the visitor center. N is shorter, but it includes an unpaved segment; P is paved but has several street crossings. Neither route is currently closed. The guide nevertheless concludes that N will take less time to walk than P.}
 
@@ -1005,19 +295,10 @@ Which assumption is sufficient to justify the conclusion?
   \choice{For N and P under their present conditions, whichever route is shorter also takes less time to walk.}
   \choice{Any route that is open to pedestrians can be walked in under an hour.}
 \end{enumerate}
-\bankitem{C.2.10}
-\emph{No file lacking an authorization token may enter the secure processing queue. Some token-bearing files are delayed while duplicate checks run, but File Q has a token and has already passed its duplicate check. The system administrator concludes that Q is permitted to enter the secure queue now.}
-
-Which assumption is sufficient to justify the conclusion?
-\begin{enumerate}[label=(\alph*)]
-  \choice{Every valid authorization token contains a unique file identifier.}
-  \choice{File Q entered a nonsecure processing queue yesterday.}
-  \choice{Files admitted to the secure queue are processed in their order of arrival.}
-  \choice{Any token-bearing file that fails its duplicate check is kept out of the secure queue.}
-  \choice{A token-bearing file that has passed its duplicate check is permitted to enter the secure queue immediately.}
-\end{enumerate}
+\end{samepage}\par\smallskip
 \subsection*{C.3 Diagnose the Flaw}
 Select the choice that most precisely describes the error in the argument's reasoning.
+\begin{samepage}
 \bankitem{C.3.01}
 \emph{Attendance at the courtyard concert series rose by one third during the summer after organizers added more benches. Ticket prices and the number of performances did not change, and surveys say that patrons value having a place to sit. The organizers conclude that the added benches caused the attendance increase.}
 
@@ -1029,50 +310,8 @@ Which choice most accurately describes the flaw?
   \choice{It shifts from the total number of tickets sold to the average attendance at each performance.}
   \choice{It treats patrons' stated preference for seating as evidence that no patron values any other feature of the series.}
 \end{enumerate}
-\bankitem{C.3.02}
-\emph{Every package that passes the full customs inspection receives a green seal before entering the warehouse. Packages cleared through a separate diplomatic procedure may also enter, and the record does not say which seals that procedure uses. Package Q is in the warehouse and bears a green seal. The manager concludes that Q passed the full customs inspection.}
-
-Which choice most accurately describes the flaw?
-\begin{enumerate}[label=(\alph*)]
-  \choice{It concludes that an inspected package can never lose or replace its green seal after entering the warehouse.}
-  \choice{It treats a green seal, which is guaranteed by full inspection, as though the seal could be obtained only through full inspection.}
-  \choice{It assumes that the diplomatic procedure always uses a seal whose color differs from green.}
-  \choice{It infers a universal rule governing all warehouse packages from the history of Package Q alone.}
-  \choice{It presumes that any customs inspection of Q occurred more recently than its diplomatic clearance.}
-\end{enumerate}
-\bankitem{C.3.03}
-\emph{At a free weekend bread-baking workshop, organizers surveyed 240 adult participants about converting an empty storefront into a shared commercial kitchen. Participants came from every postal district, and nearly all supported the proposal. The organizers conclude that nearly all adults in the town support the conversion.}
-
-Which choice most accurately describes the flaw?
-\begin{enumerate}[label=(\alph*)]
-  \choice{It assumes that no other empty storefront could accommodate a shared kitchen equally well.}
-  \choice{It fails to determine how frequently the surveyed participants bake outside the workshop.}
-  \choice{It generalizes from people who chose an activity that makes them unusually likely to favor the proposed kitchen.}
-  \choice{It treats broad support for the proposal as sufficient to show that the kitchen would operate successfully.}
-  \choice{It mistakes representation from every postal district for equal numbers of respondents from those districts.}
-\end{enumerate}
-\bankitem{C.3.04}
-\emph{Students need dependable places to study after evening classes. The library director claims that the university must therefore either keep the library open until midnight every day or admit that it does not care whether those students succeed. Since the university should care about student success, the director concludes that daily midnight hours are required.}
-
-Which choice most accurately describes the flaw?
-\begin{enumerate}[label=(\alph*)]
-  \choice{It presumes that students with evening classes never study in the library before midnight.}
-  \choice{It assumes in a premise that daily midnight hours are required and then merely restates that requirement.}
-  \choice{It infers what the university should do solely from the customary hours at other university libraries.}
-  \choice{It treats two alternatives as exhaustive even though other schedules or study spaces could express concern for student success.}
-  \choice{It concludes that daily midnight hours are affordable merely because some students would benefit from them.}
-\end{enumerate}
-\bankitem{C.3.05}
-\emph{During the year after a scheduling application doubled its number of active users, the company received twenty percent more complaints about delayed reminders than it had received the previous year. The product manager concludes that the newer version causes an individual user to encounter delayed reminders more often than the previous version did.}
-
-Which choice most accurately describes the flaw?
-\begin{enumerate}[label=(\alph*)]
-  \choice{It assumes that every complaint about a delayed reminder was submitted by a different active user.}
-  \choice{It mistakes an increase in delayed reminders for evidence that reminders are now sent later in the day.}
-  \choice{It assumes that the older and newer versions had exactly the same number of software features.}
-  \choice{It generalizes from users who complained to all users without establishing that most users noticed any delay.}
-  \choice{It compares total complaints despite a much larger user population, without comparing the complaint rate per user.}
-\end{enumerate}
+\end{samepage}\par\smallskip
+\begin{samepage}
 \bankitem{C.3.06}
 \emph{Only editors who complete standards training and receive authorization from the managing editor may approve a public report. Dev is an editor and completed the training last week. Because the authorization list is not publicly posted, the department head concludes that Dev may now approve a public report.}
 
@@ -1084,74 +323,10 @@ Which choice most accurately describes the flaw?
   \choice{It infers that every person authorized to approve a report must have completed training from a claim only about Dev.}
   \choice{It treats the authorization list's not being public as evidence that no such list exists.}
 \end{enumerate}
-\bankitem{C.3.07}
-\emph{A portable weather station contains eight sensor modules, and each module weighs less than one kilogram. The frame is marketed as lightweight, and none of the modules is difficult for one technician to carry. The manufacturer therefore claims that the fully assembled station, including all eight modules, weighs less than one kilogram.}
-
-Which choice most accurately describes the flaw?
-\begin{enumerate}[label=(\alph*)]
-  \choice{It assumes that all eight sensor modules have approximately the same individual weight.}
-  \choice{It transfers an upper bound true of each module separately to the total formed by assembling all of them.}
-  \choice{It presumes that a station described as portable must be assembled at the place where it is used.}
-  \choice{It overlooks the possibility that one module weighs exactly, rather than less than, one kilogram.}
-  \choice{It treats the frame's being marketed as lightweight as the cause of the modules' low weights.}
-\end{enumerate}
-\bankitem{C.3.08}
-\emph{The archive director says researchers can confidently depend on the new catalog because its descriptions are reliable. Asked for evidence of reliability, the director replies that the descriptions are trustworthy; asked why they are trustworthy, the director says that reliable descriptions are precisely the ones the archive regards as trustworthy. No comparison with the underlying records is offered.}
-
-Which choice most accurately describes the flaw?
-\begin{enumerate}[label=(\alph*)]
-  \choice{It infers that all researchers actually use the catalog merely from the claim that they may confidently depend on it.}
-  \choice{It assumes that accuracy of each included description would prove that the catalog contains every archived item.}
-  \choice{It treats trustworthiness as evidence of reliability while explaining trustworthiness only by appeal to the same reliability claim.}
-  \choice{It excludes comparisons with the underlying records because those records are not themselves part of the catalog.}
-  \choice{It projects the quality of descriptions already written onto every description that will be added in the future.}
-\end{enumerate}
-\bankitem{C.3.09}
-\emph{During the first week of a new reminder feature, the support desk received no report that a reminder failed to appear. Users were not asked to confirm successful reminders, and the application does not keep a delivery log. The project lead nevertheless concludes that the feature operated without a single failure during the week.}
-
-Which choice most accurately describes the flaw?
-\begin{enumerate}[label=(\alph*)]
-  \choice{It assumes that exactly the same number of users scheduled reminders on each day of the week.}
-  \choice{It extends a conclusion about the first week to every future week in which the feature remains available.}
-  \choice{It infers that users liked the feature from the absence of complaints about failed reminders.}
-  \choice{It treats the absence of reports as proof of no failures despite lacking a process that would reliably detect and report them.}
-  \choice{It overlooks the possibility that successful reminders appeared at several different times of day.}
-\end{enumerate}
-\bankitem{C.3.10}
-\emph{A paper calendar and a scheduling application both arrange numbered days in rows, group appointments by date, and allow users to mark recurring events. A paper calendar remains usable during a power outage. Because the two tools organize the same information in similar ways, the designer concludes that the application will also remain fully usable during any power outage.}
-
-Which choice most accurately describes the flaw?
-\begin{enumerate}[label=(\alph*)]
-  \choice{It assumes that rows in both tools must represent weeks rather than some other interval.}
-  \choice{It fails to establish that paper calendars are easier to read than scheduling applications under ordinary conditions.}
-  \choice{It concludes that two tools share every operational property merely because they contain exactly the same appointments.}
-  \choice{It confuses similarity in the arrangement of dates with agreement about whether each entered date is accurate.}
-  \choice{It relies on similarities in information layout while ignoring the application's dependence on electronic hardware and power.}
-\end{enumerate}
+\end{samepage}\par\smallskip
 \subsection*{C.4 Strengthen}
 Select the statement that, if true, provides the strongest additional support for the argument's conclusion.
-\bankitem{C.4.01}
-\emph{Litter collected from River Park fell during the month after signs reminding visitors to use waste bins were installed. The number and placement of bins and the park's cleaning schedule did not change. Although total attendance varied from week to week, litter per visitor also declined. The park manager concludes that the reminder signs caused the improvement.}
-
-Which statement, if true, most strengthens the argument?
-\begin{enumerate}[label=(\alph*)]
-  \choice{A nearby park with similar weather, attendance patterns, and cleaning practices but no new signs had no decline in litter per visitor that month.}
-  \choice{Most surveyed River Park visitors remembered the signs' two-color design, though they were not asked whether the signs changed their behavior.}
-  \choice{River Park has more waste bins now than it had five years ago, before the current placement was adopted.}
-  \choice{Visitors who already reported using waste bins said that visible litter makes a park unpleasant.}
-  \choice{Printing and installing the signs cost less than one month of the park's ordinary landscaping service.}
-\end{enumerate}
-\bankitem{C.4.02}
-\emph{The planning office mailed every household in the neighborhood a questionnaire about converting Oak Street into a pedestrian plaza. Only thirty percent returned it, and most respondents favored the conversion. Responses came from every block, so the office concludes that most neighborhood residents favor the plaza.}
-
-Which statement, if true, most strengthens the argument?
-\begin{enumerate}[label=(\alph*)]
-  \choice{The questionnaire included both a scale drawing of the plaza and an estimate of its construction cost.}
-  \choice{A random follow-up sample of residents who did not return the questionnaire favored the plaza at nearly the same rate as respondents did.}
-  \choice{Written comments from several respondents gave different reasons for favoring the plaza.}
-  \choice{A separate traffic count found that Oak Street carries less traffic than another street outside the proposed plaza.}
-  \choice{The questionnaire was delivered on a weekday but remained returnable for three weeks.}
-\end{enumerate}
+\begin{samepage}
 \bankitem{C.4.03}
 \emph{The four busiest unsheltered bus stops are exposed to direct afternoon sun. Riders can wait in nearby shops, but doing so sometimes causes them to miss a bus. The transit agency should install shaded shelters at those four stops because the shelters will make summer travel more usable without diverting money from essential service.}
 
@@ -1163,50 +338,8 @@ Which statement, if true, most strengthens the argument?
   \choice{Routes serving two of the stops operate less frequently in winter than in summer.}
   \choice{Benches installed at two other stops last year were used during both sunny and cloudy weather.}
 \end{enumerate}
-\bankitem{C.4.04}
-\emph{A storage room's label printer jams much more often on humid days, even when employees print roughly the same number of labels. The labels absorb some moisture from the air, but older printers elsewhere in the building use the same labels without frequent jams. The supervisor concludes that excess humidity in this room causes this printer to jam.}
-
-Which statement, if true, most strengthens the argument?
-\begin{enumerate}[label=(\alph*)]
-  \choice{The printer uses labels of several sizes, all made from the same moisture-absorbing material.}
-  \choice{Employees print somewhat more labels on Fridays, which are not usually the most humid days.}
-  \choice{Other powered equipment in the storage room produces a small amount of heat while operating.}
-  \choice{When a dehumidifier lowers the room's humidity, jams fall sharply while the printer, labels, operators, and volume remain unchanged.}
-  \choice{Most jams can be cleared within five minutes without replacing a printer component.}
-\end{enumerate}
-\bankitem{C.4.05}
-\emph{After an evening programming section added weekly peer tutoring, its completion rate increased relative to three earlier terms. A morning section has a lower withdrawal rate but has never offered tutoring. The department predicts that the same tutoring schedule will also improve completion in the morning section.}
-
-Which statement, if true, most strengthens the argument?
-\begin{enumerate}[label=(\alph*)]
-  \choice{The morning classroom receives more natural light than the evening classroom does.}
-  \choice{Students may enroll in only one section, so no student receives tutoring through both sections.}
-  \choice{The evening section introduced tutoring shortly before its first large programming assignment.}
-  \choice{The morning section's catalog title omits a subtitle used for the evening section.}
-  \choice{The sections use the same assignments and tutors and have similar student preparation and pretutoring completion rates.}
-\end{enumerate}
-\bankitem{C.4.06}
-\emph{The number of loans from a community tool library has increased in each of the last four months, even after adjusting for ordinary seasonal changes. Membership has remained stable, so the director predicts that borrowing will continue to increase during each of the next four months.}
-
-Which statement, if true, most strengthens the argument?
-\begin{enumerate}[label=(\alph*)]
-  \choice{A newly funded repair program will hold progressively larger weekly workshops for the next four months and direct every participant to this tool library.}
-  \choice{The library owns more hammers than saws, although both kinds were borrowed more often last month.}
-  \choice{Some members return tools early, allowing the same tool to be borrowed twice in one reporting period.}
-  \choice{The digital catalog records renewals separately from initial loans and has done so throughout the observed trend.}
-  \choice{Annual borrowing was lower two years ago than last year, but the increase was concentrated in a different season.}
-\end{enumerate}
-\bankitem{C.4.07}
-\emph{The fellowship publishes minimum service hours and examination scores, but its notice also refers to additional eligibility rules and possible disqualifications. Mei completed the required service hours and earned scores above every published minimum. Her adviser concludes that she will qualify for the fellowship.}
-
-Which statement, if true, most strengthens the argument?
-\begin{enumerate}[label=(\alph*)]
-  \choice{Mei divided her service hours between two organizations approved by the fellowship.}
-  \choice{Applicants meeting the service and score thresholds qualify unless disqualified, and Mei meets every other eligibility rule and has no disqualification.}
-  \choice{The number of fellowship applications varies from year to year even though the published minimums remain fixed.}
-  \choice{Several past fellows completed substantially more service hours than the minimum Mei completed.}
-  \choice{Mei learned about the fellowship from a former applicant who did not ultimately receive it.}
-\end{enumerate}
+\end{samepage}\par\smallskip
+\begin{samepage}
 \bankitem{C.4.08}
 \emph{A technical-support team's rate of incorrect case classifications fell after its members completed a checklist-training session. The software also received a minor visual update that week, but the classification rules displayed to employees did not change. The operations manager concludes that the training reduced the error rate.}
 
@@ -1218,74 +351,10 @@ Which statement, if true, most strengthens the argument?
   \choice{Employees who completed the session fastest did not necessarily have the lowest later error rates.}
   \choice{The manager chose the training date before learning when the visual software update would be released.}
 \end{enumerate}
-\bankitem{C.4.09}
-\emph{An equipment catalog contains several thousand entries created over twelve years by different employees. An auditor checked forty entries and found no incorrect serial numbers. Although forty entries form only a small portion of the catalog, the auditor concludes that its serial numbers are generally accurate.}
-
-Which statement, if true, most strengthens the argument?
-\begin{enumerate}[label=(\alph*)]
-  \choice{Most entries also contain model names, purchase dates, and locations, none of which the auditor checked.}
-  \choice{The auditor previously found very few serial-number errors in a different catalog maintained by another office.}
-  \choice{The catalogued equipment is distributed among several rooms whose inventories contain different kinds of devices.}
-  \choice{The forty entries were randomly selected from the entire catalog with every entry having an equal chance of selection.}
-  \choice{The auditor checked both the letters and digits in each selected serial number rather than only part of it.}
-\end{enumerate}
-\bankitem{C.4.10}
-\emph{Workers in a shipping office read destination labels while packages move past them on a conveyor. A supervisor proposes requiring larger, high-contrast labels, arguing that the change will reduce sorting errors enough to justify adopting it throughout the office.}
-
-Which statement, if true, most strengthens the argument?
-\begin{enumerate}[label=(\alph*)]
-  \choice{Some packages with hard-to-read labels contain more than one item, although sorting is based only on destination.}
-  \choice{The office can purchase the larger labels through the same bulk supplier it currently uses.}
-  \choice{Workers catch some sorting errors before packages leave, though corrections require additional handling.}
-  \choice{Most current labels use dark ink, but their backgrounds and type sizes vary substantially.}
-  \choice{In a month-long representative trial, the labels sharply reduced errors without slowing sorting or obscuring other required information.}
-\end{enumerate}
+\end{samepage}\par\smallskip
 \subsection*{C.5 Weaken}
 Select the statement that, if true, most undermines the support offered for the argument's conclusion.
-\bankitem{C.5.01}
-\emph{A service center's median customer wait fell immediately after it replaced receptionist check-in with an electronic kiosk. The mix of customer requests and the center's opening hours remained stable, and the kiosk recorded arrival times more precisely. The center director concludes that electronic check-in caused the shorter waits.}
-
-Which statement, if true, most weakens the argument?
-\begin{enumerate}[label=(\alph*)]
-  \choice{On the day kiosk check-in began, the center doubled the number of employees available to serve waiting customers.}
-  \choice{Some customers who used the kiosk said they would still prefer to greet a receptionist.}
-  \choice{The kiosk measures arrival time more consistently than the receptionist's handwritten log did.}
-  \choice{The center measured waiting times for six weeks before changing its check-in procedure.}
-  \choice{Although request categories remained stable, individual requests within each category varied in complexity.}
-\end{enumerate}
-\bankitem{C.5.02}
-\emph{A telephone survey conducted from 2:00 to 4:00 on weekdays reached residents in every neighborhood district. Most respondents supported expanding evening bus service, and the result was similar on each survey day. The transit board concludes that most adult residents support the expansion.}
-
-Which statement, if true, most weakens the argument?
-\begin{enumerate}[label=(\alph*)]
-  \choice{The survey also asked respondents how often they currently ride an evening bus.}
-  \choice{Residents working away from home during those hours were rarely reached, and a random sample of that group mostly opposes expansion.}
-  \choice{Existing evening buses stop at the same time each night in all districts covered by the survey.}
-  \choice{Respondents who favored and opposed expansion both supplied several different reasons for their answers.}
-  \choice{The proposed expansion would add weekend as well as weekday service, a detail stated before residents answered.}
-\end{enumerate}
-\bankitem{C.5.03}
-\emph{Many students use a campus learning center to print readings that are difficult to view on a phone. The center currently provides a modest free-printing allowance. Its director proposes unlimited free printing, arguing that this would make course materials easier for students to access overall.}
-
-Which statement, if true, most weakens the argument?
-\begin{enumerate}[label=(\alph*)]
-  \choice{Some students understand long readings better on paper than on the screens they own.}
-  \choice{The printers can use both sides of a page, although students must select that setting themselves.}
-  \choice{Unlimited printing would consume the funds used for evening hours, when many students rely on the center's computers to access materials.}
-  \choice{Several courses assign readings with diagrams that are difficult to interpret on a small screen.}
-  \choice{One printer was replaced last year, and the remaining printers are somewhat older.}
-\end{enumerate}
-\bankitem{C.5.04}
-\emph{After a quiet-room policy was introduced at a branch office, employees completed independent record reviews more quickly with no loss of accuracy. Management plans to impose the same policy at headquarters, predicting a similar productivity gain. Headquarters has ten times as many employees, but its workspace has comparable acoustics.}
-
-Which statement, if true, most weakens the argument?
-\begin{enumerate}[label=(\alph*)]
-  \choice{The branch and headquarters use the same payroll system and observe the same paid holidays.}
-  \choice{Some headquarters employees have completed independent record reviews while visiting the branch.}
-  \choice{The branch building is older, although measurements show that its rooms have comparable acoustics.}
-  \choice{Most headquarters tasks require frequent spoken coordination, whereas nearly all branch tasks are performed independently.}
-  \choice{Headquarters contains more rooms, but more employees on average share each room.}
-\end{enumerate}
+\begin{samepage}
 \bankitem{C.5.05}
 \emph{Every application reviewed by the compliance office receives a blue digital stamp that includes a date. Application T bears a current blue stamp and appears in the same portal used by the compliance office. The department therefore concludes that the compliance office reviewed T.}
 
@@ -1297,50 +366,8 @@ Which statement, if true, most weakens the argument?
   \choice{The date in T's blue stamp matches the date on which it was uploaded to the portal.}
   \choice{The portal automatically gives every uploaded application the same dated blue stamp before any compliance review occurs.}
 \end{enumerate}
-\bankitem{C.5.06}
-\emph{Attendance at the town's outdoor film night increased in each of the last three weeks, even though the films represented different genres and the ticket price stayed constant. Organizers therefore predict another increase next week, when the film will again be shown in the central park.}
-
-Which statement, if true, most weakens the argument?
-\begin{enumerate}[label=(\alph*)]
-  \choice{Next week's screening conflicts with the town's largest annual festival, which usually attracts much of the film series' audience.}
-  \choice{Each film begins shortly after sunset, which will occur earlier next week than it did at the last screening.}
-  \choice{Some regular attendees bring folding chairs while others use seating provided by the organizers.}
-  \choice{The most recent film was longer than the one shown the week before, despite attracting more people.}
-  \choice{Organizers list every screening on the same community calendar used during the recent increases.}
-\end{enumerate}
-\bankitem{C.5.07}
-\emph{In a laboratory drop trial, every handheld device that remained operational had a metal case. Several metal-cased devices nevertheless failed, and the tested nonmetal devices used older polymer designs. The researcher concludes that a metal case is necessary for any handheld device to survive a fall of that height.}
-
-Which statement, if true, most weakens the argument?
-\begin{enumerate}[label=(\alph*)]
-  \choice{Several metal-cased devices that remained operational were badly scratched during the trial.}
-  \choice{In a repeat at the same height, a device with a new nonmetal polymer case survived undamaged and operational.}
-  \choice{The laboratory recorded the weight and dimensions of each device before conducting the trial.}
-  \choice{The metal cases differed in thickness, and some enclosed older devices than others.}
-  \choice{Many handheld devices are unlikely ever to be dropped from the height used in the trial.}
-\end{enumerate}
-\bankitem{C.5.08}
-\emph{In an optional application survey, users who enabled night-display mode reported better sleep during the following month than users who left the ordinary display enabled. Both groups used the application for similar amounts of time. The developer concludes that enabling night mode improved the users' sleep.}
-
-Which statement, if true, most weakens the argument?
-\begin{enumerate}[label=(\alph*)]
-  \choice{Night-display mode changes both screen color and brightness rather than changing color alone.}
-  \choice{Some users enable night mode before sunset and continue using it throughout the evening.}
-  \choice{Before choosing a display mode, the users who later selected night mode already reported substantially better sleep.}
-  \choice{The application includes a daytime mode that automatically adjusts brightness in strong sunlight.}
-  \choice{Users may disable night mode at any time without deleting their other application settings.}
-\end{enumerate}
-\bankitem{C.5.09}
-\emph{Every volunteer recruited from an advanced puzzle club solved a scheduling puzzle in under five minutes. Volunteers ranged widely in age, and they had not seen that exact puzzle before. The test designer concludes that most adults in the city could also solve it within five minutes.}
-
-Which statement, if true, most weakens the argument?
-\begin{enumerate}[label=(\alph*)]
-  \choice{The puzzle contains both personal names and appointment times, as do many ordinary calendars.}
-  \choice{Some club volunteers finished considerably faster than the five-minute limit, while others used nearly all of it.}
-  \choice{The city contains far more adults than the advanced puzzle club has members.}
-  \choice{Admission to the club requires passing a timed test containing puzzles closely resembling the one used in the study.}
-  \choice{The volunteers used pencils and were allowed to make notes while solving the puzzle.}
-\end{enumerate}
+\end{samepage}\par\smallskip
+\begin{samepage}
 \bankitem{C.5.10}
 \emph{An application form contains several fields that first-time applicants often misunderstand. The agency proposes requiring every applicant to open an online tutorial before the submit button becomes active. Because the tutorial correctly explains every field, the agency concludes that this requirement will ensure that applicants complete the form correctly.}
 
@@ -1352,20 +379,11 @@ Which statement, if true, most weakens the argument?
   \choice{The tutorial and form use identical labels for every corresponding field.}
   \choice{Applicants may close the tutorial immediately without reading it and then activate the submit button as usual.}
 \end{enumerate}
+\end{samepage}\par\smallskip
 \section*{D. Logical Reasoning III: Principles and Explanations}
 \subsection*{D.1 Principle Support}
 Select the principle that most strongly supports the stated judgment, and briefly justify the application.
-\bankitem{D.1.01}
-\emph{A public library can afford to preserve only one of two collections this year. One contains unique local oral-history recordings used by relatively few patrons; the other contains popular novels that remain available from many other libraries. The director chooses the recordings.}
-
-Which principle most strongly supports the director's decision?
-\begin{enumerate}[label=(\alph*)]
-  \choice{When preservation resources are scarce, irreplaceable material should take priority over material readily obtainable elsewhere.}
-  \choice{A library should devote equal resources to every category of material it owns.}
-  \choice{The collection used by the greatest number of patrons should always be preserved first.}
-  \choice{Libraries should preserve only material created in their own region.}
-  \choice{Older material should be preserved before newer material, regardless of its availability.}
-\end{enumerate}
+\begin{samepage}
 \bankitem{D.1.02}
 \emph{A software cooperative promised users that it would promptly disclose defects that could seriously compromise their data. Engineers discover such a defect just before a major product demonstration. The cooperative's manager says it should disclose the defect now even though doing so may embarrass the organization.}
 
@@ -1377,50 +395,8 @@ Which principle most strongly supports the manager's judgment?
   \choice{Organizations should disclose information only when disclosure improves sales.}
   \choice{A promise may be ignored whenever circumstances make compliance inconvenient.}
 \end{enumerate}
-\bankitem{D.1.03}
-\emph{A scholarship application arrived six hours late because the submission website, which the scholarship committee alone operated, was unavailable during the final day. The application was otherwise complete. The committee chair recommends accepting it for review.}
-
-Which principle most strongly supports the chair's recommendation?
-\begin{enumerate}[label=(\alph*)]
-  \choice{Deadlines should be extended whenever an applicant says completion was difficult.}
-  \choice{A late application should be accepted whenever the applicant is highly qualified.}
-  \choice{A decision maker should not penalize a person for missing a procedural requirement when the decision maker's own failure prevented timely compliance.}
-  \choice{Online applications should never have fixed deadlines.}
-  \choice{All applicants should receive an automatic one-day extension.}
-\end{enumerate}
-\bankitem{D.1.04}
-\emph{Members of a community garden share both individual plots and common paths. A member repeatedly refuses scheduled path maintenance but asks for first choice of the newly available plots. The coordinators decide that members who completed their shared maintenance should choose first.}
-
-Which principle most strongly supports the coordinators' decision?
-\begin{enumerate}[label=(\alph*)]
-  \choice{Community resources should always be distributed by lottery.}
-  \choice{Anyone who requests a benefit first should receive it first.}
-  \choice{A volunteer who misses one task should permanently lose all community benefits.}
-  \choice{When a cooperative benefit is scarce, priority may be given to members who have fulfilled the responsibilities that sustain the shared project.}
-  \choice{Only coordinators should be eligible for desirable plots.}
-\end{enumerate}
-\bankitem{D.1.05}
-\emph{An instructor's project directions used the word 'source' in two incompatible ways. Several students followed the reasonable interpretation discussed in class and lost points under the other interpretation. The instructor decides to restore those points.}
-
-Which principle most strongly supports the instructor's decision?
-\begin{enumerate}[label=(\alph*)]
-  \choice{Every student who requests a higher mark should receive one.}
-  \choice{Assignments containing any ambiguity should be removed from a course.}
-  \choice{Students should receive credit for effort even when their work does not address an assignment.}
-  \choice{An evaluator should never revise a score after returning it.}
-  \choice{When an evaluator's materially ambiguous instructions reasonably produce a response, the evaluator should not penalize that response for choosing the unintended interpretation.}
-\end{enumerate}
-\bankitem{D.1.06}
-\emph{A transit agency is considering ending a late-evening route because it carries few riders. Those riders are night-shift workers, and no other public route serves the area after their shifts. The agency decides to keep the route while seeking a less expensive vehicle for it.}
-
-Which principle most strongly supports the agency's decision?
-\begin{enumerate}[label=(\alph*)]
-  \choice{A public service may deserve continued support despite low use when it provides essential access that its users cannot obtain through a reasonable alternative.}
-  \choice{Every transit route should use the largest vehicle in the agency's fleet.}
-  \choice{Routes with fewer riders should receive more funding than all other routes.}
-  \choice{No public service should ever be changed once people rely on it.}
-  \choice{Transit agencies should operate only routes that generate a profit.}
-\end{enumerate}
+\end{samepage}\par\smallskip
+\begin{samepage}
 \bankitem{D.1.07}
 \emph{A laboratory paper lists only researchers with faculty or student titles as authors. A technician designed a calibration procedure without which the reported measurements would not have been reliable. The lab director says the technician should also be credited as an author.}
 
@@ -1432,74 +408,10 @@ Which principle most strongly supports the director's judgment?
   \choice{Technical work should be credited only when it takes more time than the theoretical work.}
   \choice{Authorship should be assigned in order of seniority.}
 \end{enumerate}
-\bankitem{D.1.08}
-\emph{A majority of the student council favors reserving all tutoring appointments for students in honors programs. The council's charter guarantees equal eligibility for academic support to all enrolled students. The presiding officer rules the proposal out of order.}
-
-Which principle most strongly supports the officer's ruling?
-\begin{enumerate}[label=(\alph*)]
-  \choice{A proposal supported by a majority must always receive a vote.}
-  \choice{Honors students should receive every academic resource they request.}
-  \choice{A governing body should not adopt a majority preference that conflicts with a binding guarantee the body is obligated to follow.}
-  \choice{Rules governing student organizations should never be amended.}
-  \choice{Tutoring appointments should be assigned only by instructors.}
-\end{enumerate}
-\bankitem{D.1.09}
-\emph{A newspaper placed an unsupported accusation on its front page. After checking the records, the editors learn that the accusation was false. They decide that the correction should appear with prominence comparable to the original claim rather than in a small notice at the back.}
-
-Which principle most strongly supports the editors' decision?
-\begin{enumerate}[label=(\alph*)]
-  \choice{Corrections should be published only when the person criticized requests one.}
-  \choice{A publication should never report a disputed allegation.}
-  \choice{Any correction is adequate as long as it is eventually printed.}
-  \choice{A publication responsible for a consequential false impression should make its correction reasonably capable of reaching the audience exposed to that impression.}
-  \choice{Front pages should contain only positive news.}
-\end{enumerate}
-\bankitem{D.1.10}
-\emph{A debate moderator personally considers the environmental topic more important than the budget topic. Nevertheless, the moderator gives each side the same announced speaking time on both topics. One speaker asks for extra time because the environmental topic matters more to the moderator, but the request is denied.}
-
-Which principle most strongly supports the denial?
-\begin{enumerate}[label=(\alph*)]
-  \choice{Debates should avoid subjects on which moderators have opinions.}
-  \choice{More important topics should always receive unlimited discussion time.}
-  \choice{A moderator should allow the stronger speaker more time.}
-  \choice{Announced procedures may be changed whenever one participant requests it.}
-  \choice{A neutral administrator should apply announced procedural limits consistently rather than adjust them according to a personal view of a topic's importance.}
-\end{enumerate}
+\end{samepage}\par\smallskip
 \subsection*{D.2 Resolve the Discrepancy}
 Select the fact that best allows both reported observations to be true, and explain how it resolves the apparent conflict.
-\bankitem{D.2.01}
-\emph{A campus cafe completed fewer customer transactions this September than last September, yet revenue from food and drink was substantially higher. Individual menu-item prices and the number of days the cafe was open were unchanged. The cafe counted an order containing several items as one transaction in both years.}
-
-Which fact best resolves the apparent discrepancy?
-\begin{enumerate}[label=(\alph*)]
-  \choice{This September, many more customers bought multi-item meals, so the average number of items in each transaction increased sharply.}
-  \choice{The same menu board was displayed, but customers stood closer to it while waiting this September.}
-  \choice{Several experienced employees worked in both years and processed transactions somewhat faster this September.}
-  \choice{The cafe's rent rose before this September, though rent is not included in food-and-drink revenue.}
-  \choice{A larger share of customers paid by card, but the cafe received the same amount for an item regardless of payment method.}
-\end{enumerate}
-\bankitem{D.2.02}
-\emph{During a month of road construction, a campus shuttle's temporary route was two kilometers longer than its regular route, yet its average end-to-end trip was eight minutes shorter. The shuttle, driver schedule, number of passenger stops, and method for measuring trip time did not change.}
-
-Which fact best resolves the apparent discrepancy?
-\begin{enumerate}[label=(\alph*)]
-  \choice{The shuttle was repainted shortly before construction, making its route number easier to see from a distance.}
-  \choice{The temporary route used a bus-only lane and bypassed the two intersections responsible for most delays on the regular route.}
-  \choice{Students disliked construction noise near one stop, although the number of passengers boarding there was unchanged.}
-  \choice{The regular route's two-kilometer distance advantage was greatest near the middle of the trip.}
-  \choice{The assigned drivers received new uniforms but retained the same driving schedules and speed rules.}
-\end{enumerate}
-\bankitem{D.2.03}
-\emph{A department replaced an introductory online module with one containing longer and more demanding exercises. The deadline, enrollment rules, and credit for completion remained unchanged. Even so, a larger percentage of enrolled students completed the new module by the deadline.}
-
-Which fact best resolves the apparent discrepancy?
-\begin{enumerate}[label=(\alph*)]
-  \choice{The new module used a higher-contrast background color that students described as more comfortable to view.}
-  \choice{Both modules included diagrams, although the new module's diagrams contained more labels.}
-  \choice{Unlike the old module, the new one saved each response automatically and allowed interrupted students to resume without repeating work.}
-  \choice{Before the deadline, the department reminded students that the new exercises were more demanding.}
-  \choice{The deadline fell on the same weekday, but the calendar date differed between the two terms.}
-\end{enumerate}
+\begin{samepage}
 \bankitem{D.2.04}
 \emph{Electronic gate counts show that fewer people entered the library this winter than last winter, yet the catalog recorded more new loans of physical books. Loan periods, renewal rules, collection size, and the definition of a new loan were unchanged.}
 
@@ -1511,50 +423,8 @@ Which fact best resolves the apparent discrepancy?
   \choice{The library introduced outdoor lockers where patrons could initiate physical-book loans without entering the building.}
   \choice{The books borrowed this winter varied more in weight, but every book still counted as one loan.}
 \end{enumerate}
-\bankitem{D.2.05}
-\emph{A greenhouse's meter recorded less total water use this spring than last spring, but its tomato plants produced more new growth. The tomato varieties, planting density, growing period, and sunlight were comparable, and staff used the same method to measure both water and growth.}
-
-Which fact best resolves the apparent discrepancy?
-\begin{enumerate}[label=(\alph*)]
-  \choice{The same water meter remained near the entrance and measured water before it reached individual plants.}
-  \choice{Tomatoes were not the only plants, but their share of greenhouse floor space was unchanged.}
-  \choice{Staff measured growth weekly rather than relying only on one measurement at the end of spring.}
-  \choice{The tomatoes were harvested after the measurement period ended in both years.}
-  \choice{This spring drip lines delivered water directly to roots instead of losing much of it by spraying floors and paths.}
-\end{enumerate}
-\bankitem{D.2.06}
-\emph{A help desk employed fewer agents this month than last month, yet callers waited less time on average before reaching an agent. Operating hours, average call length, and the method for ordering callers in the queue were unchanged. The agents who left had handled approximately the same number of calls as their colleagues.}
-
-Which fact best resolves the apparent discrepancy?
-\begin{enumerate}[label=(\alph*)]
-  \choice{A software update eliminated the login error that had generated nearly half of the previous month's calls.}
-  \choice{Two of the remaining agents prefer tea to coffee during their scheduled breaks.}
-  \choice{All agents use the same headset model, which was introduced before either month being compared.}
-  \choice{The desk reports average wait in minutes rather than reporting the longest individual wait.}
-  \choice{The help-desk office has windows, but agents answer calls from the same assigned workstations.}
-\end{enumerate}
-\bankitem{D.2.07}
-\emph{A weekend workshop had fewer registered participants this year than last year, but more seats were occupied when the program began. The room, number of available seats, registration period, and policy against admitting unregistered visitors were unchanged.}
-
-Which fact best resolves the apparent discrepancy?
-\begin{enumerate}[label=(\alph*)]
-  \choice{Registration opened on a Tuesday in both years but closed one calendar date earlier this year.}
-  \choice{This year a refundable deposit was returned only to people who attended or canceled, and the no-show rate fell sharply.}
-  \choice{The workshop title contained one fewer word, while its description listed the same learning goals.}
-  \choice{Several attendees brought notebooks, though a notebook did not reserve an additional seat.}
-  \choice{The same number of chairs was available after the room was cleaned before each workshop.}
-\end{enumerate}
-\bankitem{D.2.08}
-\emph{One set of rechargeable batteries spent twice as long in storage as another set of the same model and age, yet the longer-stored batteries retained more charge when tested. Both sets were fully charged initially and measured with the same calibrated meter.}
-
-Which fact best resolves the apparent discrepancy?
-\begin{enumerate}[label=(\alph*)]
-  \choice{The sets contained equal numbers of batteries, and the report compared their average remaining charge.}
-  \choice{The meter displayed charge as a percentage rather than as an estimated remaining runtime.}
-  \choice{The longer-stored set was kept in a cooler, controlled cabinet that greatly slowed loss of charge.}
-  \choice{The shorter-stored set was tested first, but the interval between the two tests was only several minutes.}
-  \choice{Every battery had a serial number used to match it to the date on which storage began.}
-\end{enumerate}
+\end{samepage}\par\smallskip
+\begin{samepage}
 \bankitem{D.2.09}
 \emph{A journal accepted a smaller percentage of submitted articles this year than last year, but it accepted a larger number of articles. The journal used the same definition of an accepted article, counted revised resubmissions in the same way, and completed decisions on all submissions in each year.}
 
@@ -1566,19 +436,10 @@ Which fact best resolves the apparent discrepancy?
   \choice{Submissions increased enough that the smaller accepted percentage represented a larger number of articles.}
   \choice{Editors read every accepted article before publication but also read many articles they later rejected.}
 \end{enumerate}
-\bankitem{D.2.10}
-\emph{An intramural league reported fewer injuries per participant this season than last season, yet more injuries in total. The sports offered, season length, and rule for recording an injury were unchanged. A participant injured in two different games contributed two injuries to the total in both seasons.}
-
-Which fact best resolves the apparent discrepancy?
-\begin{enumerate}[label=(\alph*)]
-  \choice{The mix of sports shifted slightly toward activities with lower historical injury rates.}
-  \choice{Some participants played more than one sport in both seasons and were counted once in the participant total.}
-  \choice{The report included minor and major injuries under the unchanged recording rule.}
-  \choice{Registration opened one week earlier, but the season itself had the same length.}
-  \choice{Participation increased so greatly that the lower rate per participant applied to a much larger group.}
-\end{enumerate}
+\end{samepage}\par\smallskip
 \subsection*{D.3 Parallel Flaw}
 Select the argument whose reasoning contains the same flaw as the stimulus, and identify the shared invalid pattern.
+\begin{samepage}
 \bankitem{D.3.01}
 \emph{If every archive box has been cataloged and the search index has finished refreshing, every record can be found through the public search page. Staff can now find every record through that page. Therefore, every box has been cataloged and the index has finished refreshing.}
 
@@ -1590,50 +451,8 @@ Which argument contains the same flaw?
   \choice{The parcel is upstairs or downstairs but not both. It is not upstairs, so it is downstairs.}
   \choice{Every scanned and signed form is indexed. This form was scanned and signed, so it is indexed.}
 \end{enumerate}
-\bankitem{D.3.02}
-\emph{If either the research grant is renewed or reserve funding is released, the laboratory will hire an assistant. The grant was not renewed. Therefore, the laboratory will not hire an assistant.}
-
-Which argument contains the same flaw?
-\begin{enumerate}[label=(\alph*)]
-  \choice{If the exhibit is free or heavily discounted, attendance will be high. Attendance was not high, so the exhibit was neither free nor discounted.}
-  \choice{If the oven is preheated or the dough rests overnight, the bread will rise. The oven was not preheated, so the bread will not rise.}
-  \choice{If a file is encrypted or stored remotely, it requires a key. This file is encrypted, so it requires a key.}
-  \choice{The meeting is virtual or in Room 8 but not both. It is not virtual, so it is in Room 8.}
-  \choice{Every copper or silver token conducts electricity. This token does not conduct electricity, so it is neither copper nor silver.}
-\end{enumerate}
-\bankitem{D.3.03}
-\emph{Every prizewinning novel in the display has a complex plot. Every technical manual in the display also has a complex plot. Therefore, every prizewinning novel in the display is a technical manual.}
-
-Which argument contains the same flaw?
-\begin{enumerate}[label=(\alph*)]
-  \choice{Every elm in the courtyard is a tree. No bicycle is a tree. Therefore, no elm is a bicycle.}
-  \choice{Some ceramic cups are blue. Every blue object reflects some light. Therefore, some ceramic cups reflect some light.}
-  \choice{All violins in the cabinet are wooden. All pencils in the cabinet are wooden. Therefore, all those violins are pencils.}
-  \choice{No archived memo is editable. This file is editable. Therefore, this file is not an archived memo.}
-  \choice{Every mentor attends orientation. Lina is a mentor. Therefore, Lina attends orientation.}
-\end{enumerate}
-\bankitem{D.3.04}
-\emph{Every control module in a prototype passed a separate bench test under a steady electrical load. The completed prototype will subject the modules to fluctuating loads and require them to exchange data continuously. Since every module passed by itself, the engineer concludes that the assembled prototype is certain to operate reliably under those conditions.}
-
-Which argument contains the same flaw?
-\begin{enumerate}[label=(\alph*)]
-  \choice{A committee's recorded decision was unanimous, so every voting member supported the decision when the vote was taken.}
-  \choice{No ingredient used in a soup is expensive, so at least one of the ingredients is not expensive.}
-  \choice{A building has stood for a century, so every replacement brick currently in its walls must be a century old.}
-  \choice{Each musician can maintain the required tempo alone, so the entire orchestra will necessarily maintain it when the parts interact in performance.}
-  \choice{Every page of the report bears a page number, so the report contains pages bearing numbers.}
-\end{enumerate}
-\bankitem{D.3.05}
-\emph{Employees who chose standing desks took fewer sick days than employees who kept seated desks. Therefore, choosing a standing desk caused the reduction in sick days.}
-
-Which argument contains the same flaw?
-\begin{enumerate}[label=(\alph*)]
-  \choice{Whenever the sprinkler runs, the walkway becomes wet. The sprinkler ran, so the walkway became wet.}
-  \choice{The oldest printer breaks most often, so replacing that printer might reduce breakdowns.}
-  \choice{After the lighting was repaired, complaints decreased; the repair team checks whether any other policy changed at the same time.}
-  \choice{Two teams using the same checklist made similar errors, so the checklist may warrant investigation.}
-  \choice{Students who chose seats near the front earned higher scores, so choosing a front seat must have caused the higher scores.}
-\end{enumerate}
+\end{samepage}\par\smallskip
+\begin{samepage}
 \bankitem{D.3.06}
 \emph{A voluntary online poll posted by opponents of a proposed stadium found that 88 percent of respondents opposed the stadium. Therefore, 88 percent of all city residents oppose it.}
 
@@ -1645,74 +464,10 @@ Which argument contains the same flaw?
   \choice{A survey's response rate was low, so its author reports the result with a wide margin of uncertainty.}
   \choice{A club polls all of its members about club meeting times and reports only the preferences of those members.}
 \end{enumerate}
-\bankitem{D.3.07}
-\emph{This handbook is reliable because every claim it contains is trustworthy. We know every claim it contains is trustworthy because it appears in this reliable handbook.}
-
-Which argument contains the same flaw?
-\begin{enumerate}[label=(\alph*)]
-  \choice{The clock is accurate because it matched a reference clock on three independent tests.}
-  \choice{This map is accurate because all of its markings are correct, and we know its markings are correct because they appear on this accurate map.}
-  \choice{The witness is credible because her account matches two recordings made independently of her.}
-  \choice{The calculation is correct because substituting its result into the original equation makes both sides equal.}
-  \choice{The policy is effective because errors declined after it began and comparable offices without it saw no decline.}
-\end{enumerate}
-\bankitem{D.3.08}
-\emph{The proposal to redesign the loading zone should be rejected because its author received two parking tickets last year.}
-
-Which argument contains the same flaw?
-\begin{enumerate}[label=(\alph*)]
-  \choice{A budget estimate should be revised because it omits a required equipment cost.}
-  \choice{A witness's estimate of distance is doubtful because the witness could not see the relevant markers.}
-  \choice{The recycling plan must be unsound because the student presenting it was once fined for leaving trash outside a bin.}
-  \choice{A safety recommendation is questionable because the test supporting it used a defective sensor.}
-  \choice{The route proposal should be rejected because it would block the only wheelchair-accessible entrance.}
-\end{enumerate}
-\bankitem{D.3.09}
-\emph{The average commute of employees at a firm fell after several employees began working remotely. Therefore, every employee at the firm now has a shorter commute than before.}
-
-Which argument contains the same flaw?
-\begin{enumerate}[label=(\alph*)]
-  \choice{Every removed sapling was shorter than every tree that remained in the grove. Therefore, removing the saplings increased the grove's average tree height.}
-  \choice{Every late application misses the ordinary review. This application received ordinary review, so it was not late.}
-  \choice{A portable tool can be moved by one person. This tool is portable, so one person can move it.}
-  \choice{A class's average examination score rose after tutoring began. Therefore, every student in the class earned a higher score than before.}
-  \choice{Some bank accounts earn interest. This is a bank account, so it may earn interest.}
-\end{enumerate}
-\bankitem{D.3.10}
-\emph{Several routine inspections have found no indication that a bridge's strain sensors are inaccurate. Those inspections checked whether the sensors produced error messages but did not compare their measurements with a calibrated instrument. The maintenance director nevertheless concludes that the sensors are accurate and that no calibration test is needed.}
-
-Which argument contains the same flaw?
-\begin{enumerate}[label=(\alph*)]
-  \choice{A scale matched a calibrated reference across its full operating range, so a technician regards the scale as accurate within that range.}
-  \choice{Two sensors intended to measure the same stable condition disagree, so at least one sensor is inaccurate.}
-  \choice{No available test has determined whether a label is accurate, so the report treats the label's accuracy as unresolved.}
-  \choice{Three independent instruments agree within their stated tolerances, which is offered as some evidence---not proof---that each is stable.}
-  \choice{No survey designed only to record visible damage has shown that a remote trail is unsafe, so the trail must be completely safe.}
-\end{enumerate}
+\end{samepage}\par\smallskip
 \subsection*{D.4 Method of Reasoning}
 Select the most accurate description of how the argument proceeds, and point to the feature that establishes that description.
-\bankitem{D.4.01}
-\emph{A scheduling memo claims that every department meeting this term occurs after noon. But the chemistry department's required meeting is listed for 9:00 a.m. on October 2. Thus the memo's claim is false.}
-
-The argument proceeds by
-\begin{enumerate}[label=(\alph*)]
-  \choice{rejecting a universal claim by presenting a single case that violates it}
-  \choice{inferring a general rule from a representative sample}
-  \choice{showing that the memo's author has an improper motive}
-  \choice{deriving a prediction from a causal law}
-  \choice{concluding that two events are related because they occur together}
-\end{enumerate}
-\bankitem{D.4.02}
-\emph{A city allows food carts to operate in fixed curb spaces after a safety inspection. Mobile repair carts are similarly small, occupy the same kind of curb space, and present the same pedestrian-clearance concerns. Therefore, the city should allow repair carts under the same inspection requirement.}
-
-The argument proceeds by
-\begin{enumerate}[label=(\alph*)]
-  \choice{deducing the recommendation from a definition of a repair cart}
-  \choice{drawing an analogy between two activities on the basis of similarities relevant to the existing rule}
-  \choice{showing that the existing food-cart rule has produced harmful results}
-  \choice{rejecting the city's authority to regulate curb space}
-  \choice{inferring that repair carts are food carts because both are small}
-\end{enumerate}
+\begin{samepage}
 \bankitem{D.4.03}
 \emph{A student argues that possession of a campus identification card guarantees entry to the archive. The archivist replies: 'An identification card is required, but visitors must also have a confirmed appointment. So the card alone does not guarantee entry.'}
 
@@ -1724,50 +479,8 @@ The archivist responds by
   \choice{arguing that appointments guarantee entry even without identification}
   \choice{questioning whether the student actually possesses a card}
 \end{enumerate}
-\bankitem{D.4.04}
-\emph{The proposed courtyard trees will require watering during their first summer, as critics note. However, after establishment they need much less water than the lawn they will replace, and the plan includes stored rainwater for that first summer. The temporary demand therefore does not defeat the proposal.}
-
-The argument proceeds by
-\begin{enumerate}[label=(\alph*)]
-  \choice{denying that the trees will require water during their first summer}
-  \choice{claiming that any proposal with a long-term benefit should be adopted}
-  \choice{attacking the critics rather than addressing their concern}
-  \choice{conceding an objection but limiting its force with its duration and a planned response}
-  \choice{showing that replacing the lawn is the only possible use of the courtyard}
-\end{enumerate}
-\bankitem{D.4.05}
-\emph{The missing binder must be in the conference room, the records office, or the locked cabinet. The conference room was searched completely, and the access log shows that no one opened the cabinet today. Since the binder was used this morning, it must be in the records office.}
-
-The argument proceeds by
-\begin{enumerate}[label=(\alph*)]
-  \choice{generalizing from several binders to all office materials}
-  \choice{inferring a cause from a sequence of events}
-  \choice{supporting the conclusion by an analogy with an earlier search}
-  \choice{assuming that what is true of the office is true of every room}
-  \choice{listing an exhaustive set of possibilities and ruling out all but one}
-\end{enumerate}
-\bankitem{D.4.06}
-\emph{The review policy states that any application received through a committee-owned system failure must be considered timely if it was otherwise ready by the deadline. Dana's application was ready, and the committee's portal failure prevented its upload. Therefore, Dana's application must be considered timely.}
-
-The argument proceeds by
-\begin{enumerate}[label=(\alph*)]
-  \choice{applying a stated general rule to a case shown to satisfy each of the rule's conditions}
-  \choice{inferring that all late applications result from portal failures}
-  \choice{using Dana's case to prove that deadlines are never justified}
-  \choice{comparing Dana with an applicant whose submission was timely}
-  \choice{concluding that the portal failed because the application was late}
-\end{enumerate}
-\bankitem{D.4.07}
-\emph{Suppose, as the consultant claims, that every report generated by this program is error-free. Report 17 was generated by the program, yet it contains two totals that cannot both be correct. Therefore, the consultant's claim cannot be true.}
-
-The argument proceeds by
-\begin{enumerate}[label=(\alph*)]
-  \choice{accepting the consultant's authority in place of examining the report}
-  \choice{assuming the disputed universal claim and deriving a contradiction with an established case}
-  \choice{inferring that every program report contains exactly two errors}
-  \choice{rejecting Report 17 because it is unusual}
-  \choice{arguing that the program caused the consultant to make a claim}
-\end{enumerate}
+\end{samepage}\par\smallskip
+\begin{samepage}
 \bankitem{D.4.08}
 \emph{A researcher randomly selects 300 students, with the same proportion from each class year as in the university population. Sixty-four percent of the sample prefer later library hours. The researcher concludes that a majority of university students probably prefer later hours.}
 
@@ -1779,74 +492,10 @@ The argument proceeds by
   \choice{treating the conclusion as evidence for itself}
   \choice{showing that later hours are morally required}
 \end{enumerate}
-\bankitem{D.4.09}
-\emph{One committee member says the proposal is 'efficient' because it uses little staff time. Another rejects that description because the proposal uses too much electricity. The chair observes that the speakers are measuring different resources and asks them to compare both staff time and energy use.}
-
-The chair responds by
-\begin{enumerate}[label=(\alph*)]
-  \choice{proving that the proposal uses little electricity}
-  \choice{accepting the first member's definition as the only legitimate one}
-  \choice{claiming that staff time and electricity can never be compared}
-  \choice{identifying an ambiguity in a key evaluative term and separating the two standards hidden by it}
-  \choice{inferring that the proposal is inefficient in every respect}
-\end{enumerate}
-\bankitem{D.4.10}
-\emph{After quiet-study signs were installed, noise complaints fell. The dean cautions that the same week final examinations ended and building attendance dropped sharply; the lower attendance could explain the decline without the signs having any effect.}
-
-The dean responds by
-\begin{enumerate}[label=(\alph*)]
-  \choice{arguing that events occurring together can never be causally related}
-  \choice{showing that noise complaints did not actually decline}
-  \choice{deducing from a general law that signs increase noise}
-  \choice{questioning whether final examinations ended that week}
-  \choice{offering an alternative cause of the observed change that weakens the proposed causal inference}
-\end{enumerate}
+\end{samepage}\par\smallskip
 \subsection*{D.5 Complete the Argument}
 Select the claim that most logically completes the argument, and explain how the stated premises support it.
-\bankitem{D.5.01}
-\emph{Every proposal requiring external review takes at least three weeks to approve after its complete file is submitted. The Orion proposal requires external review, and its file became complete today. The scheduled launch is fourteen days away, and only approved proposals may be included. Therefore, \_\_\_\_.}
-
-Which choice most logically completes the argument?
-\begin{enumerate}[label=(\alph*)]
-  \choice{the Orion proposal cannot become eligible for inclusion in the launch on its scheduled date}
-  \choice{future proposals connected to a launch should never require external review}
-  \choice{the launch must be postponed until Orion's external review is complete}
-  \choice{the external reviewer will reject Orion because its file became complete too late}
-  \choice{every proposal not requiring external review can be approved within fourteen days}
-\end{enumerate}
-\bankitem{D.5.02}
-\emph{A department rule states that whenever attendance at a lecture is required, students must be offered either a live remote option or an equivalent recorded alternative. Friday's lecture will have neither, although the room will be open and the lecture will occur as scheduled. Assuming the rule is followed, \_\_\_\_.}
-
-Which choice most logically completes the argument?
-\begin{enumerate}[label=(\alph*)]
-  \choice{Friday's lecture must be canceled rather than delivered only in the room}
-  \choice{attendance at Friday's lecture cannot be required under the department's rule}
-  \choice{every student enrolled in the course will attend Friday's lecture in person}
-  \choice{the department's attendance rule applies only to lectures scheduled on Fridays}
-  \choice{a live remote option is never required when a lecture is offered in person}
-\end{enumerate}
-\bankitem{D.5.03}
-\emph{For emergency vehicles to reach a neighborhood during bridge repairs, at least one of the north and south access roads must remain open at all times. Inspectors have closed the north road for the rest of today, and no temporary third route can be opened. Hence, \_\_\_\_.}
-
-Which choice most logically completes the argument?
-\begin{enumerate}[label=(\alph*)]
-  \choice{inspectors should postpone every examination of the south road until bridge repairs are finished}
-  \choice{the north road must reopen before the end of today even if repairs remain incomplete}
-  \choice{the south road must remain open today if emergency access is to be maintained}
-  \choice{both roads must have been closed simultaneously at some point before today's inspection}
-  \choice{the neighborhood cannot require emergency access until the north road reopens}
-\end{enumerate}
-\bankitem{D.5.04}
-\emph{A survey about dining-hall satisfaction was sent only to students who had filed a dining complaint during the previous month. Nearly all recipients responded, and most respondents were dissatisfied. Since the selection method made recipients more likely than students generally to be dissatisfied, \_\_\_\_.}
-
-Which choice most logically completes the argument?
-\begin{enumerate}[label=(\alph*)]
-  \choice{each dissatisfied respondent must have filed more than one complaint during the previous month}
-  \choice{students who did not receive the survey are more likely than not to be satisfied}
-  \choice{the dining hall may disregard the complaints because the survey sample was biased}
-  \choice{the survey alone does not justify concluding that most students overall are dissatisfied}
-  \choice{a still larger survey restricted to complaint filers would probably show majority satisfaction}
-\end{enumerate}
+\begin{samepage}
 \bankitem{D.5.05}
 \emph{An archive's stated first priority is preventing the permanent loss of records that exist nowhere else; increasing access is important but secondary. Of this year's proposed projects, only digitizing the deteriorating field notebooks would preserve records with no duplicate. The other projects improve access to stable duplicated material. Therefore, \_\_\_\_.}
 
@@ -1858,50 +507,8 @@ Which choice most logically completes the argument?
   \choice{a preservation project is worthwhile only if it produces digital files for public access}
   \choice{digitizing the field notebooks should receive priority among this year's proposed projects}
 \end{enumerate}
-\bankitem{D.5.06}
-\emph{A geology field trip may proceed at the selected research site only if the site issues a written access permit and the department supplies a trained driver. The department has assigned a driver, but the site has definitively declined the permit and that requirement cannot be waived. Consequently, \_\_\_\_.}
-
-Which choice most logically completes the argument?
-\begin{enumerate}[label=(\alph*)]
-  \choice{the field trip may not proceed at the selected site as planned}
-  \choice{the site will never issue a permit for a field trip on any later date}
-  \choice{the written-permit requirement is unfair despite the assigned driver}
-  \choice{students may visit the selected site without an instructor because a driver is available}
-  \choice{every alternative site suitable for the trip also requires a written permit}
-\end{enumerate}
-\bankitem{D.5.07}
-\emph{Every recipient of the presentation award both delivered a talk during the conference and was present for the final session. Maya delivered a talk and was present on the first two days, but she was not present for the final session. It follows that \_\_\_\_.}
-
-Which choice most logically completes the argument?
-\begin{enumerate}[label=(\alph*)]
-  \choice{Maya did not deliver a talk during the conference}
-  \choice{Maya did not receive the presentation award}
-  \choice{everyone who presented and attended the final session received the award}
-  \choice{Maya was absent from every conference session after giving her talk}
-  \choice{the presentation award was not announced during the final session}
-\end{enumerate}
-\bankitem{D.5.08}
-\emph{A committee may choose a conference room only if the room is both within budget and wheelchair accessible. Room X is accessible and has better projection equipment but exceeds the budget. Room Y has ordinary equipment, is accessible, and is within budget. These are the only available rooms. Thus, \_\_\_\_.}
-
-Which choice most logically completes the argument?
-\begin{enumerate}[label=(\alph*)]
-  \choice{Room X should be chosen because its equipment outweighs the budget condition}
-  \choice{the committee cannot choose any available room under its stated restrictions}
-  \choice{Room Y is the only available room eligible to be chosen}
-  \choice{Room Y costs less than every conference room in the building}
-  \choice{Room X's better projection equipment makes it less accessible than Room Y}
-\end{enumerate}
-\bankitem{D.5.09}
-\emph{A program performed well on test cases created by the same team that designed it. Those cases cover every documented input format, but independent users routinely submit undocumented combinations unlike the team's cases. Because the reported error rate measures only performance on the team's cases, \_\_\_\_.}
-
-Which choice most logically completes the argument?
-\begin{enumerate}[label=(\alph*)]
-  \choice{the design team intentionally concealed errors involving undocumented input combinations}
-  \choice{the program will fail on every input submitted by an independent user}
-  \choice{test cases created by a program's designers are never useful for estimating performance}
-  \choice{the reported error rate may not predict performance on the unlike inputs independent users actually submit}
-  \choice{independent users should be prohibited from submitting undocumented combinations of inputs}
-\end{enumerate}
+\end{samepage}\par\smallskip
+\begin{samepage}
 \bankitem{D.5.10}
 \emph{A committee agreed in advance to adopt a new scheduling system if a representative pilot reduced average delays without increasing the rate of scheduling errors. The completed pilot was representative: average delays fell by 18 percent, while the error rate remained unchanged. No additional adoption condition was specified. Therefore, \_\_\_\_.}
 
@@ -1913,16 +520,11 @@ Which choice most logically completes the argument?
   \choice{the committee must add a cost condition before it can apply its prior decision rule}
   \choice{the committee should adopt the new scheduling system under its agreed rule}
 \end{enumerate}
+\end{samepage}\par\smallskip
 \section*{E. Integrated Evaluation and Revision}
 \subsection*{E.1 Causal Evaluation}
 Separate association from causation and say what additional evidence would matter.
-\bankitem{E.1.01}
-Students who enabled calendar reminders submitted more work on time than students who did not. Thus enabling calendar reminders causes timely submission.
-\begin{enumerate}[label=(\alph*)]
-  \item State the causal conclusion and the evidence offered for it.
-  \item Explain why that evidence does not by itself establish causation and give one plausible alternative explanation.
-  \item Describe one new finding that would strengthen the causal claim and one that would weaken it.
-\end{enumerate}
+\begin{samepage}
 \bankitem{E.1.02}
 Employees who used the optional standing desks completed more support tickets per week than employees who used ordinary desks. The standing desks therefore increased productivity.
 \begin{enumerate}[label=(\alph*)]
@@ -1930,34 +532,8 @@ Employees who used the optional standing desks completed more support tickets pe
   \item Explain why that evidence does not by itself establish causation and give one plausible alternative explanation.
   \item Describe one new finding that would strengthen the causal claim and one that would weaken it.
 \end{enumerate}
-\bankitem{E.1.03}
-After brighter lamps were installed in Riverside Park, reported thefts there fell by 30 percent. The brighter lamps caused the reduction in theft.
-\begin{enumerate}[label=(\alph*)]
-  \item State the causal conclusion and the evidence offered for it.
-  \item Explain why that evidence does not by itself establish causation and give one plausible alternative explanation.
-  \item Describe one new finding that would strengthen the causal claim and one that would weaken it.
-\end{enumerate}
-\bankitem{E.1.04}
-Patients who attended the clinic's nutrition workshop had lower blood pressure three months later than patients who skipped it. Attending the workshop lowers blood pressure.
-\begin{enumerate}[label=(\alph*)]
-  \item State the causal conclusion and the evidence offered for it.
-  \item Explain why that evidence does not by itself establish causation and give one plausible alternative explanation.
-  \item Describe one new finding that would strengthen the causal claim and one that would weaken it.
-\end{enumerate}
-\bankitem{E.1.05}
-Classes using weekly practice quizzes earned higher final-exam scores than classes without them. Weekly practice quizzes improve final-exam performance.
-\begin{enumerate}[label=(\alph*)]
-  \item State the causal conclusion and the evidence offered for it.
-  \item Explain why that evidence does not by itself establish causation and give one plausible alternative explanation.
-  \item Describe one new finding that would strengthen the causal claim and one that would weaken it.
-\end{enumerate}
-\bankitem{E.1.06}
-Neighborhoods with more street trees had lower summer electricity use. Planting street trees reduces household electricity consumption.
-\begin{enumerate}[label=(\alph*)]
-  \item State the causal conclusion and the evidence offered for it.
-  \item Explain why that evidence does not by itself establish causation and give one plausible alternative explanation.
-  \item Describe one new finding that would strengthen the causal claim and one that would weaken it.
-\end{enumerate}
+\end{samepage}\par\smallskip
+\begin{samepage}
 \bankitem{E.1.07}
 Users who turned off social-media notifications reported less stress one month later than users who left notifications on. Turning off notifications reduces stress.
 \begin{enumerate}[label=(\alph*)]
@@ -1965,62 +541,10 @@ Users who turned off social-media notifications reported less stress one month l
   \item Explain why that evidence does not by itself establish causation and give one plausible alternative explanation.
   \item Describe one new finding that would strengthen the causal claim and one that would weaken it.
 \end{enumerate}
-\bankitem{E.1.08}
-Plants given the new fertilizer were taller after six weeks than plants grown without it. The new fertilizer makes plants grow taller.
-\begin{enumerate}[label=(\alph*)]
-  \item State the causal conclusion and the evidence offered for it.
-  \item Explain why that evidence does not by itself establish causation and give one plausible alternative explanation.
-  \item Describe one new finding that would strengthen the causal claim and one that would weaken it.
-\end{enumerate}
-\bankitem{E.1.09}
-The software team adopted daily stand-up meetings in March. Its defect-resolution time declined in April. Daily stand-ups made the team resolve defects faster.
-\begin{enumerate}[label=(\alph*)]
-  \item State the causal conclusion and the evidence offered for it.
-  \item Explain why that evidence does not by itself establish causation and give one plausible alternative explanation.
-  \item Describe one new finding that would strengthen the causal claim and one that would weaken it.
-\end{enumerate}
-\bankitem{E.1.10}
-Residents who used home water filters reported fewer stomach illnesses than residents who did not. Using a home water filter prevents stomach illness.
-\begin{enumerate}[label=(\alph*)]
-  \item State the causal conclusion and the evidence offered for it.
-  \item Explain why that evidence does not by itself establish causation and give one plausible alternative explanation.
-  \item Describe one new finding that would strengthen the causal claim and one that would weaken it.
-\end{enumerate}
+\end{samepage}\par\smallskip
 \subsection*{E.2 Apply a Principle}
 Choose the judgment that satisfies every condition in the principle. Then map each condition to a stated fact.
-\bankitem{E.2.01}
-\emph{Principle: A school should not impose a serious burden that affected students cannot reasonably avoid merely to obtain a minor administrative benefit, especially when a substantially less burdensome practical alternative would obtain that benefit.}
-
-Which judgment most directly applies the principle?
-\begin{enumerate}[label=(\alph*)]
-  \choice{A school may require laboratory goggles because preventing serious eye injuries is more important than preserving students' choice of eyewear, although inexpensive loaners are available.}
-  \choice{A school should not require every student to buy a costly new device solely to simplify attendance entry when existing identification cards would work nearly as well and no loan program is offered.}
-  \choice{A school should retain a slightly slower registration system because any inconvenience to students outweighs every possible administrative benefit.}
-  \choice{A school should make an optional scheduling application available even though some students lack compatible phones, because students may continue to use the website.}
-  \choice{A school should reject a device requirement whenever even one student dislikes it, regardless of its cost, avoidability, alternatives, or expected benefit.}
-\end{enumerate}
-\bankitem{E.2.02}
-\emph{Principle: If an institution publicly promises to decide eligible submissions by a stated criterion, it should not replace that criterion with an unrelated one merely because the result would be unpopular; this does not require using a criterion that would make the institution violate a legal or safety obligation.}
-
-Which judgment most directly applies the principle?
-\begin{enumerate}[label=(\alph*)]
-  \choice{A museum that promised to select eligible works by artistic merit should not reject a safe, lawful sculpture that ranks highest on merit solely because trustees expect its message to be unpopular.}
-  \choice{A museum may exclude the highest-rated sculpture when its dimensions violate the safety limits stated in the call for submissions.}
-  \choice{A museum should display a lower-rated work when it expects that work to sell more tickets, even though artistic merit was the announced criterion, because revenue is relevant to every museum decision.}
-  \choice{A museum must use artistic merit forever after announcing it once, even for later exhibitions advertised under different criteria.}
-  \choice{A museum may secretly change from artistic merit to donor preference provided that it makes the change before the judges submit their scores.}
-\end{enumerate}
-\bankitem{E.2.03}
-\emph{Principle: A person who voluntarily creates or increases a foreseeable risk should take a reasonable precaution to protect people who cannot readily detect the risk, unless the precaution would itself create a comparably serious danger.}
-
-Which judgment most directly applies the principle?
-\begin{enumerate}[label=(\alph*)]
-  \choice{A tenant should warn a landlord about a loose stair the tenant noticed, although the tenant neither caused nor increased the defect and every visitor can see it.}
-  \choice{A cyclist should replace a worn tire before riding alone on a closed course because the cyclist created the tire's manufacturing defect.}
-  \choice{A restaurant should eliminate every possible kitchen hazard even when the proposed precaution would block its only fire exit.}
-  \choice{A contractor who removes a floor panel should place a visible barrier around the resulting opening because approaching visitors cannot see it and the barrier creates no comparable danger.}
-  \choice{A homeowner should repair a plainly visible cracked walkway whenever repair is possible, whether or not the homeowner created the crack or anyone has difficulty detecting it.}
-\end{enumerate}
+\begin{samepage}
 \bankitem{E.2.04}
 \emph{Principle: When officials have good evidence that two feasible policies would achieve the same important benefit, they should choose the one that restricts individual choice less, unless it would cost substantially more or create a distinct serious risk.}
 
@@ -2032,50 +556,8 @@ Which judgment most directly applies the principle?
   \choice{A city should choose a voluntary rebate that costs four times as much as the equally effective mandate because less restriction always controls.}
   \choice{A city should choose a rebate and ignore evidence that its disposal method creates a serious fire risk absent from the equally effective mandate.}
 \end{enumerate}
-\bankitem{E.2.05}
-\emph{Principle: A positive result from a method known to produce many false positives should not by itself justify a serious penalty, though it may justify a proportionate investigation or help support a penalty when reliable independent evidence corroborates it.}
-
-Which judgment most directly applies the principle?
-\begin{enumerate}[label=(\alph*)]
-  \choice{A university should ignore every alert from an error-prone plagiarism detector, including when deciding whether an instructor should compare the papers manually.}
-  \choice{A university may expel a student after an error-prone detector flags a paper, provided the vendor calls its output evidence rather than a conclusion.}
-  \choice{A university may expel a student when the only evidence is two alerts produced by the same error-prone detector on the same paper.}
-  \choice{A university must refuse to consider a detector alert even after an independent document history and the student's admissions reliably corroborate it.}
-  \choice{A university should not expel a student solely because one error-prone detector flags a paper, although the alert may prompt a fair review for independent evidence.}
-\end{enumerate}
-\bankitem{E.2.06}
-\emph{Principle: Before participating in a decision, a decision-maker should disclose a personal financial relationship that could reasonably cause an informed observer to doubt the decision-maker's impartiality; a remote interest shared in roughly equal measure with the general public does not by itself require disclosure.}
-
-Which judgment most directly applies the principle?
-\begin{enumerate}[label=(\alph*)]
-  \choice{A reviewer whose sibling owns one of three companies bidding for a contract should disclose that relationship before scoring the bids, even if the reviewer believes the scoring will be fair.}
-  \choice{A city council member must disclose owning the same broad index fund held by millions of residents before voting on an unrelated park schedule.}
-  \choice{A reviewer may wait until after bids are scored to disclose a direct investment in the winning company because disclosure cannot change the written scores.}
-  \choice{A reviewer should disclose disliking one proposal's font because every personal reaction is a financial relationship.}
-  \choice{A council member need not disclose a consulting contract with a developer seeking the council's approval if the member promises to use objective criteria.}
-\end{enumerate}
-\bankitem{E.2.07}
-\emph{Principle: When a temporary restriction is justified solely by an emergency risk, officials should end it once reliable current evidence shows that risk has ceased, unless they publicly establish an independent lawful justification for continuing it.}
-
-Which judgment most directly applies the principle?
-\begin{enumerate}[label=(\alph*)]
-  \choice{A trail closed for wildfire danger must reopen on its scheduled date even though current fire maps still show the danger that justified closure.}
-  \choice{A trail should remain closed after wildfire danger ends because visitors have become accustomed to using another trail, although officials identify no new legal basis.}
-  \choice{A trail closed for wildfire danger should remain closed permanently whenever reopening might create any ordinary hiking risk.}
-  \choice{A trail closed solely because of active wildfire danger should reopen after reliable inspection confirms that danger has ceased and officials identify no independent basis for closure.}
-  \choice{A trail closed for wildfire danger must reopen after the fire is contained even when officials publicly establish that a newly discovered bridge failure independently makes the trail unsafe.}
-\end{enumerate}
-\bankitem{E.2.08}
-\emph{Principle: If a person knowingly accepts a divisible benefit from a voluntary cooperative practice while deliberately refusing a fair share of its ordinary costs, the other participants may require that person either to contribute or to forgo the benefit, provided forgoing it is a practical option.}
-
-Which judgment most directly applies the principle?
-\begin{enumerate}[label=(\alph*)]
-  \choice{Roommates may charge a visitor for shared internet the visitor neither requested nor used because everyone in the apartment benefits from cooperation.}
-  \choice{A roommate who knowingly uses optional shared internet but deliberately refuses an equal share of its reasonable bill may be asked to pay or use an available private connection instead.}
-  \choice{Roommates may require a resident to pay for emergency structural repairs or leave immediately, even when leaving is not practical and the safety benefit cannot be divided.}
-  \choice{A roommate who paid the agreed share of internet costs may be barred from using it because the other roommates later decide that equal shares were unfair.}
-  \choice{Roommates may enroll everyone in a premium service and demand equal payment even from a resident who declined it in advance and receives no separable benefit.}
-\end{enumerate}
+\end{samepage}\par\smallskip
+\begin{samepage}
 \bankitem{E.2.09}
 \emph{Principle: A rule adopted to prevent a specified harm should not prohibit conduct shown not to create or increase that harm merely because the conduct resembles harmful conduct in a way irrelevant to the rule's purpose.}
 
@@ -2087,19 +569,10 @@ Which judgment most directly applies the principle?
   \choice{A park may ban a lightweight tripod solely because it is expensive, even though expense is unrelated to soil damage, because rules need not track their announced purposes.}
   \choice{A park rule should permit a heavy camera rig whenever it looks different from the equipment that originally caused erosion, even if it creates the same soil damage.}
 \end{enumerate}
-\bankitem{E.2.10}
-\emph{Principle: When a speaker relies on a prediction to recommend a costly action, the speaker should disclose assumptions that both materially affect the prediction and remain reasonably uncertain; assumptions already entailed by stated facts or immaterial to the forecast need not be listed.}
-
-Which judgment most directly applies the principle?
-\begin{enumerate}[label=(\alph*)]
-  \choice{A consultant recommending an expensive expansion should list every number in the forecasting software, including settings that do not change the result.}
-  \choice{A consultant may omit an uncertain enrollment assumption that determines whether the expansion breaks even because the final forecast is presented as a single number.}
-  \choice{A consultant must separately identify the assumption that the existing building has 20 rooms even though the report establishes that fact by direct measurement.}
-  \choice{A consultant need not disclose that the forecast assumes stable rents when changing that assumption reverses the recommendation, provided the consultant personally expects stability.}
-  \choice{A consultant relying on projected enrollment to recommend an expensive expansion should disclose that the projection materially depends on uncertain assumptions of stable rents and retention.}
-\end{enumerate}
+\end{samepage}\par\smallskip
 \subsection*{E.3 Integrated Op-Ed Analysis and Revision}
 Reconstruct and improve the argument while preserving what its evidence can genuinely support.
+\begin{samepage}
 \bankitem{E.3.01}
 Some students share rooms or equipment and lack a dependable place to run long programs at home. A pilot last spring kept one lab open late, and students used it steadily. Any resource that is steadily used is worth its cost. Students who used the pilot also completed more assignments on time than students who did not. Thus the university should keep one computer lab open overnight during the final two weeks, since the pilot proves that overnight access improves academic performance.
 \begin{enumerate}[label=(\alph*)]
@@ -2108,38 +581,8 @@ Some students share rooms or equipment and lack a dependable place to run long p
   \item Explain one alternative explanation for the reported association.
   \item Rewrite the final claim so it is appropriately qualified and supported.
 \end{enumerate}
-\bankitem{E.3.02}
-Downtown shops lose customers because drivers cannot find parking. Last month, sales rose on the same weekend that the city made curb parking free. Free parking plainly caused the increase. The city should therefore remove every downtown parking fee permanently; any policy that raises sales is good for the whole community.
-\begin{enumerate}[label=(\alph*)]
-  \item State the main conclusion and the strongest stated support.
-  \item Identify one ambiguity and one inferential gap.
-  \item Explain one alternative explanation for the reported association.
-  \item Rewrite the final claim so it is appropriately qualified and supported.
-\end{enumerate}
-\bankitem{E.3.03}
-The university's optional writing workshops are popular, and attendees earn higher essay grades than nonattendees. The workshops therefore teach every skill students need for college writing. Since effective instruction should be required, all first-year students should attend six workshops before registering for spring courses.
-\begin{enumerate}[label=(\alph*)]
-  \item State the main conclusion and the strongest stated support.
-  \item Identify one ambiguity and one inferential gap.
-  \item Explain one alternative explanation for the reported association.
-  \item Rewrite the final claim so it is appropriately qualified and supported.
-\end{enumerate}
-\bankitem{E.3.04}
-Our town installed public recycling bins in two parks, and litter complaints in those parks fell. Residents clearly became more environmentally responsible. Because responsible communities recycle everything, the town should replace half of all trash cans with recycling-only bins next month.
-\begin{enumerate}[label=(\alph*)]
-  \item State the main conclusion and the strongest stated support.
-  \item Identify one ambiguity and one inferential gap.
-  \item Explain one alternative explanation for the reported association.
-  \item Rewrite the final claim so it is appropriately qualified and supported.
-\end{enumerate}
-\bankitem{E.3.05}
-Employees working from home sent more messages than employees in the office. More messages mean more collaboration, and collaboration always improves quality. The company should close its office and require permanent remote work because the data prove remote teams produce better work.
-\begin{enumerate}[label=(\alph*)]
-  \item State the main conclusion and the strongest stated support.
-  \item Identify one ambiguity and one inferential gap.
-  \item Explain one alternative explanation for the reported association.
-  \item Rewrite the final claim so it is appropriately qualified and supported.
-\end{enumerate}
+\end{samepage}\par\smallskip
+\begin{samepage}
 \bankitem{E.3.06}
 The new introductory textbook has shorter chapters than the old one. Students in the first class to use it completed more assigned reading, and no instructor wants students to fall behind. The department should require the new textbook in every section because shorter books cause deeper learning.
 \begin{enumerate}[label=(\alph*)]
@@ -2148,37 +591,6 @@ The new introductory textbook has shorter chapters than the old one. Students in
   \item Explain one alternative explanation for the reported association.
   \item Rewrite the final claim so it is appropriately qualified and supported.
 \end{enumerate}
-\bankitem{E.3.07}
-A neighborhood camera system recorded dozens of license plates during its first week, and residents reported feeling safer. A policy that makes people feel safer necessarily prevents crime. The city should install cameras on every residential block immediately, since opponents care more about privacy than safety.
-\begin{enumerate}[label=(\alph*)]
-  \item State the main conclusion and the strongest stated support.
-  \item Identify one ambiguity and one inferential gap.
-  \item Identify one rhetorical move that does not supply relevant support.
-  \item Rewrite the final claim so it is appropriately qualified and supported.
-\end{enumerate}
-\bankitem{E.3.08}
-Students who handwrote notes in one lecture remembered more facts the next day than students who typed notes. Handwriting is therefore the best way to learn every subject. The college should disable wireless access in lecture halls so students cannot use laptops during class.
-\begin{enumerate}[label=(\alph*)]
-  \item State the main conclusion and the strongest stated support.
-  \item Identify one ambiguity and one inferential gap.
-  \item Explain one alternative explanation for the reported association.
-  \item Rewrite the final claim so it is appropriately qualified and supported.
-\end{enumerate}
-\bankitem{E.3.09}
-The city library eliminated overdue fines, and returned-book counts increased during the next quarter. Fines were the reason books stayed overdue. Anyone who supports access must therefore oppose every library fee, so the library should also eliminate charges for lost books.
-\begin{enumerate}[label=(\alph*)]
-  \item State the main conclusion and the strongest stated support.
-  \item Identify one ambiguity and one inferential gap.
-  \item Identify one rhetorical or logical error in the final support.
-  \item Rewrite the final claim so it is appropriately qualified and supported.
-\end{enumerate}
-\bankitem{E.3.10}
-A pilot bus lane shortened bus travel times on one avenue, and ridership there rose during the same month. The lane has solved congestion. Since anything that helps bus riders helps every traveler, the city should convert one lane on every major road into a bus-only lane this year.
-\begin{enumerate}[label=(\alph*)]
-  \item State the main conclusion and the strongest stated support.
-  \item Identify one ambiguity and one inferential gap.
-  \item Explain one alternative explanation for the reported association.
-  \item Rewrite the final claim so it is appropriately qualified and supported.
-\end{enumerate}
+\end{samepage}\par\smallskip
 \end{multicols}
 \end{document}

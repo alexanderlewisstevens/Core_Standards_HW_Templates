@@ -9,7 +9,7 @@ Assessment names are topic words rather than sequence numbers. This keeps the so
 | Teaching order | Canvas name | Canvas assignment | Source status |
 | --- | --- | --- | --- |
 | 1 | Logic | `2057866` | `2300/core_assessments/logic_assessment.tex` |
-| 2 | Arguments | `2057865` | `2300/core_assessments/arguments_assessment.tex`; five sections, 21 types, and at least 10 original problems per type |
+| 2 | Arguments | `2057865` | `arguments_assessment.tex`: six-page, 42-item Core; `arguments_extended_practice.tex`: all 210 practice problems |
 | 3 | Sets | `2057868` | `2300/core_assessments/sets_assessment.tex`; includes functions and relation targets |
 | 4 | Proofs | `2057867` | `2300/core_assessments/proofs_assessment.tex` |
 | 5 | Divisibility | `2057869` | `2300/core_assessments/divisibility_assessment.tex` |
