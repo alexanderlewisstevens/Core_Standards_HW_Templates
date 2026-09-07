@@ -1,0 +1,74 @@
+\documentclass[11pt]{article}
+\usepackage[letterpaper,margin=0.65in,includehead,includefoot,headheight=15pt]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{microtype}
+\usepackage[hidelinks]{hyperref}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt}
+\setlist[enumerate]{leftmargin=*,itemsep=4pt,topsep=3pt}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textbf{Induction Core — Long-Proof Version}}
+\fancyhead[R]{COMP 2300}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\begin{document}
+\textbf{Name:} \rule{3.2in}{0.4pt}\hfill
+\textbf{Attempt date:} \rule{1.55in}{0.4pt}
+
+\textbf{Time: 20 minutes.} Write one connected mathematical argument. State
+every claim and hypothesis precisely, justify each algebraic step, and make it
+clear exactly where the induction hypothesis is used.
+
+\section*{Long Inductive Proof}
+
+\textbf{Definition (Factorial).}
+For every integer $n\ge 0$,
+\[
+  n!=n(n-1)(n-2)\cdots 2\cdot 1,
+  \qquad 0!:=1.
+\]
+
+\textbf{Definition (Binomial Coefficient).}
+For integers $n\ge 0$ and $0\le k\le n$,
+\[
+  \binom{n}{k}=\frac{n!}{k!(n-k)!}.
+\]
+
+Complete both parts as one coherent proof.
+
+\begin{enumerate}[label=\textbf{(\alph*)}]
+  \item Prove Pascal's identity
+  \[
+    \binom{n}{k}=\binom{n-1}{k-1}+\binom{n-1}{k}
+    \qquad (n\ge 1,\ 1\le k\le n-1).
+  \]
+  You may use either a combinatorial argument or algebraic manipulation from
+  the factorial definition.
+
+  \item Use Pascal's identity to prove by mathematical induction on $n$ that
+  \[
+    \sum_{k=0}^{n}\binom{n}{k}=2^n
+    \qquad\text{for every }n\ge 0.
+  \]
+  Your proof must include the proposition $P(n)$, the base case, the induction
+  hypothesis, the complete induction step with reindexing, and the conclusion.
+\end{enumerate}
+
+\vfill
+\textbf{Work:}
+\vfill
+\vfill
+\vfill
+
+\newpage
+\textbf{Continuation of work:}
+\vfill
+\vfill
+\vfill
+\vfill
+
+\end{document}

@@ -37,5 +37,8 @@
 # Compiled PDFs from TeX builds
 *.pdf
 
+# Local visual-QA and scratch output
+tmp/
+
 # Private legacy material that may contain licensed question text
 in_progress/lsat_logical_reasoning_practice.tex

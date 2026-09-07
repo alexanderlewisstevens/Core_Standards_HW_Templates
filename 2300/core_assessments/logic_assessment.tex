@@ -1,253 +1,312 @@
 \documentclass{article}
 
-% --- Packing + layout ---
+% Canonical compact three-column source for the Logic Core.
+\usepackage[letterpaper,margin=0.3in,includehead,includefoot,headheight=14pt,headsep=6pt]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
 \usepackage{fancyhdr}
-% Header setup moved after \begin{document}
-\usepackage[letterpaper,margin=0.3in,includehead,includefoot,headheight=14pt,headsep=6pt]{geometry} % very small margins + header/footer space
-\setlength{\columnsep}{0.15in}                  % tighter gap between columns
-\usepackage{microtype}                           % better glyph packing
+\usepackage{microtype}
 \usepackage{multicol}
-%\pagestyle{empty}                                % no header/footer/page numbers
+\usepackage[compact,small]{titlesec}
+\usepackage[most]{tcolorbox}
+\usepackage[hidelinks]{hyperref}
+
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0pt}
-
-% Tighten section spacing
-\usepackage[compact,small]{titlesec}
+\setlength{\columnsep}{0.15in}
 \titlespacing*{\section}{0pt}{2pt}{1pt}
 \titlespacing*{\subsection}{0pt}{2pt}{1pt}
-
-% Tighten lists
-\usepackage{enumitem}
 \setlist{nosep,leftmargin=*}
 \setlist[itemize]{noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt,leftmargin=*}
 \setlist[enumerate]{noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt,leftmargin=*}
-% ---- Problem labeling helpers ----
-\newcommand{\exliststart}[1]{\begin{enumerate}[label=\textbf{(\Alph*)},leftmargin=*,itemsep=2pt,topsep=2pt]\def\currentex{#1}}
-\newcommand{\exitem}{\item \textit{[\currentex]} }
-
-% Tighten math spacing
 \setlength{\abovedisplayskip}{2pt}
 \setlength{\belowdisplayskip}{2pt}
 \setlength{\abovedisplayshortskip}{1pt}
 \setlength{\belowdisplayshortskip}{1pt}
 
-% Math + links
-\usepackage{amsmath,amssymb}
-\usepackage[hidelinks]{hyperref}
-
-% Callout boxes
-\usepackage[most]{tcolorbox}
-\tcbset{colback=white,colframe=black,boxrule=0.4pt,arc=2pt,left=6pt,right=6pt,top=4pt,bottom=4pt}
-\newtcolorbox{notebox}{title=Note}
-\newtcolorbox{solutionbox}{title=Solution}
-
-% --- Fancy header/footer (moved to preamble and applied to 'plain' pages too) ---
-\setlength{\headheight}{14pt}
 \pagestyle{fancy}
 \fancyhf{}
-\fancyhead[L]{\textbf{Logic Assessment}}
+\fancyhead[L]{\textbf{Logic Core}}
 \fancyfoot[C]{\thepage}
 \renewcommand{\headrulewidth}{0.4pt}
-\fancypagestyle{plain}{%
-  \fancyhf{}
-  \fancyhead[L]{\textbf{Logic Assessment}}
-  \fancyfoot[C]{\thepage}
-  \renewcommand{\headrulewidth}{0.4pt}
+
+\newcommand{\problem}[1]{%
+  \par
+  \subsection*{#1}%
 }
 
+\tcbset{
+  colback=white,
+  colframe=black,
+  boxrule=0.4pt,
+  arc=2pt,
+  left=5pt,right=5pt,top=3pt,bottom=3pt
+}
 
 \begin{document}
 
-The following Rosen problems form the practice pool for the \textbf{Logic assessment}.
-
-\textbf{Please practice these problems!}
+\begin{tcolorbox}
+\textbf{Time limit: 20 minutes.} Course staff will designate one problem in
+each section A--E. Complete all five designated problems. Show enough work to
+make your reasoning clear, define requested predicates and domains, and follow
+the directions for every lettered part. Approved testing accommodations apply.
+\end{tcolorbox}
 
 \begin{multicols}{3}
 
-\section*{Construct truth tables and verify logical identities (1.1, 1.3)}
+\section*{A. Construct and interpret truth tables}
 
-\subsection*{A.1 (1.1 Exercise 31)}
-Construct a truth table for each of these compound propositions.
-\begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
-  \item $p \lor \neg p$
-  \item $(p \lor \neg q) \to q$
+\textbf{Common directions for A.1--A.5.} Construct a complete eight-row truth
+table. Show useful intermediate columns and classify the final proposition as
+a tautology, contradiction, or contingency.
+
+\problem{A.1}
+\[
+  p\to(\neg q\lor r)
+\]
+
+\problem{A.2}
+\[
+  \neg p\to(q\to r)
+\]
+
+\problem{A.3}
+\[
+  (p\to q)\lor(\neg p\to r)
+\]
+
+\problem{A.4}
+\[
+  (p\to q)\land(\neg p\to r)
+\]
+
+\problem{A.5}
+\[
+  (p\leftrightarrow q)\lor(\neg q\leftrightarrow r)
+\]
+\section*{B. Translate meaning and diagnose translation errors}
+
+\textbf{Common directions for B.1--B.5.} Each problem has three parts:
+(a) translate conditional language into propositional logic; (b) translate
+between English and predicate logic; and (c) diagnose a proposed translation.
+Define every predicate and domain not already supplied. For part (c), say
+whether the proposal is correct, repair it if needed, and explain the error in
+one sentence.
+
+\problem{B.1}
+\begin{enumerate}[label=(\alph*)]
+  \item Let $e$ mean ``you can edit a protected encyclopedia entry'' and $a$
+        mean ``you are an administrator.'' Translate: ``You cannot edit a
+        protected entry unless you are an administrator.''
+  \item Let $Q(x,y)$ mean ``student $x$ sent a message to student $y$.''
+        Translate $\exists x\,\forall y\,Q(x,y)$ into ordinary English.
+  \item A student says the formula in (b) means ``Every student sent a message
+        to at least one student.'' Diagnose the claim.
+\end{enumerate}
+
+\columnbreak
+\problem{B.2}
+\begin{enumerate}[label=(\alph*)]
+  \item Let $m$ mean ``you can see the movie,'' $e$ mean ``you are over 18,''
+        and $p$ mean ``you have parental permission.'' Translate: ``You can
+        see the movie only if you are over 18 or have parental permission.''
+  \item With $Q(x,y)$ as in B.1, translate $\forall x\,\exists y\,Q(x,y)$
+        into ordinary English.
+  \item A student translates ``One student sent a message to every student''
+        as $\forall y\,\exists x\,Q(x,y)$. Diagnose the translation.
+\end{enumerate}
+
+\problem{B.3}
+\begin{enumerate}[label=(\alph*)]
+  \item Let $g$ mean ``you can graduate,'' $r$ mean ``you completed your major
+        requirements,'' $m$ mean ``you owe the university money,'' and $b$
+        mean ``you have an overdue library book.'' Translate: ``You can
+        graduate only if you completed the requirements, owe no money, and
+        have no overdue library book.''
+  \item Let $P(x,y)$ mean ``student $x$ has taken computer-science course
+        $y$.'' Translate $\exists y\,\forall x\,P(x,y)$ into English.
+  \item A student instead writes $\forall x\,\exists y\,P(x,y)$ for the
+        sentence in (b). Diagnose the change in meaning.
+\end{enumerate}
+
+\columnbreak
+\problem{B.4}
+\begin{enumerate}[label=(\alph*)]
+  \item Let $w$ mean ``you may use the airport wireless network,'' $d$ mean
+        ``you pay the daily fee,'' and $s$ mean ``you subscribe to the
+        service.'' Translate: ``To use the network, you must pay the daily fee
+        unless you are a subscriber.''
+  \item Let $L(x,y)$ mean ``person $x$ loves person $y$.'' Translate
+        ``Everybody loves somebody.''
+  \item A student claims that $\exists y\,\forall x\,L(x,y)$ is an equivalent
+        translation of (b). Diagnose the claim.
+\end{enumerate}
+
+\problem{B.5}
+\begin{enumerate}[label=(\alph*)]
+  \item Let $p$ mean ``the message is scanned for viruses'' and $q$ mean ``the
+        message came from an unknown system.'' Translate: ``It is necessary to
+        scan a message whenever it comes from an unknown system.''
+  \item Let $S(x)$ mean ``$x$ is a student,'' $F(y)$ mean ``$y$ is a faculty
+        member,'' and $A(x,y)$ mean ``$x$ asked $y$ a question.'' Translate:
+        ``Some student has asked every faculty member a question.''
+  \item A student uses $A(y,x)$ in place of $A(x,y)$ in (b). Diagnose what the
+        reversed argument order says.
+\end{enumerate}
+\section*{C. Negate quantified statements}
+
+\textbf{Common directions for C.1--C.5.} For (a), define predicates, symbolize
+the statement, negate it with no negation immediately before a quantifier, and
+translate the result into ordinary English. For (b), rewrite the given formula
+so that every negation appears immediately before a predicate.
+
+\problem{C.1}
+\begin{enumerate}[label=(\alph*)]
+  \item All dogs have fleas. The domain is all things.
+  \item $\neg\exists y\,\exists x\,P(x,y)$
+\end{enumerate}
+
+\problem{C.2}
+\begin{enumerate}[label=(\alph*)]
+  \item No monkey can speak French. The domain is all things.
+  \item $\neg\forall x\,\exists y\,P(x,y)$
+\end{enumerate}
+
+\columnbreak
+\problem{C.3}
+\begin{enumerate}[label=(\alph*)]
+  \item Some old dogs can learn new tricks. The domain is all things.
+  \item $\neg\forall x\,\forall y\,P(x,y)$
+\end{enumerate}
+
+\problem{C.4}
+\begin{enumerate}[label=(\alph*)]
+  \item No one in this class knows both French and Russian. The domain is all
+        people.
+  \item $\neg\forall y\,\exists x\,P(x,y)$
+\end{enumerate}
+
+\problem{C.5}
+\begin{enumerate}[label=(\alph*)]
+  \item All Swedish movies are serious. The domain is all things.
+  \item $\neg\forall y\,\forall x\bigl(P(x,y)\lor Q(x,y)\bigr)$
+\end{enumerate}
+\section*{D. Determine consistency and satisfiability}
+
+\textbf{Common directions for D.1--D.5.} Define one atomic proposition for
+each simple statement and translate every condition. Determine whether the
+conditions are consistent. Give a satisfying assignment when one exists; when
+none exists, give a short contradiction. Complete the additional balancing
+request in the final sentence of each problem.
+
+\problem{D.1}
+The system is in multiuser state if and only if it is operating normally. If
+the system is operating normally, the kernel is functioning. The kernel is not
+functioning or the system is in interrupt mode. If the system is not in
+multiuser state, it is in interrupt mode. The system is not in interrupt mode.
+If the conditions are inconsistent, identify a minimal collection of the given
+conditions that already forces the contradiction.
+
+\problem{D.2}
+Whenever system software is being upgraded, users cannot access the file
+system. If users can access the file system, they can save new files. If users
+cannot save new files, the software is not being upgraded. In addition to
+deciding consistency, list all satisfying assignments for the three atomic
+propositions.
+
+\columnbreak
+\problem{D.3}
+The router can send packets to the edge system only if it supports the new
+address space. Supporting the new address space requires the latest software
+release. If the latest software release is installed, the router can send
+packets to the edge system. The router does not support the new address space.
+In addition to deciding consistency, determine which truth values are forced.
+
+\problem{D.4}
+If the file system is not locked, new messages are queued. The file system is
+not locked if and only if the system is functioning normally. If messages are
+not queued, they are sent to the message buffer. If the file system is not
+locked, messages are sent to the buffer. Messages are not sent to the buffer.
+In addition to deciding consistency, explain which conclusions follow from the
+last condition.
+
+\problem{D.5}
+Jasmine becomes unhappy if she attends a party with Samir. Samir attends only
+if Kanti attends. Kanti will not attend unless Jasmine attends. Determine which
+subsets of Jasmine, Samir, and Kanti can be invited without violating these
+conditions. State every satisfying combination, including the possibility of
+inviting no one.
+\section*{E. Derive logical equivalences with cited rules}
+
+\begin{tcolorbox}[title=Permitted rules for E.1--E.5]
+Give a chain of equivalences from the left-hand expression to the right-hand
+expression. Cite exactly one rule at every step. Each rule may be used in either
+direction.
+\begin{itemize}
+  \item \textbf{Implication:} $a\to b\equiv\neg a\lor b$.
+  \item \textbf{Double Negation:} $\neg\neg a\equiv a$.
+  \item \textbf{De Morgan:}
+        $\neg(a\lor b)\equiv\neg a\land\neg b$ and
+        $\neg(a\land b)\equiv\neg a\lor\neg b$.
+  \item \textbf{Distributive:}
+        $a\lor(b\land c)\equiv(a\lor b)\land(a\lor c)$ and
+        $a\land(b\lor c)\equiv(a\land b)\lor(a\land c)$.
+  \item \textbf{Associative:}
+        $(a\lor b)\lor c\equiv a\lor(b\lor c)$ and
+        $(a\land b)\land c\equiv a\land(b\land c)$.
+  \item \textbf{Commutative:}
+        $a\lor b\equiv b\lor a$ and $a\land b\equiv b\land a$.
+  \item \textbf{Idempotent:}
+        $a\lor a\equiv a$ and $a\land a\equiv a$.
 \end{itemize}
+Changing parentheses requires Associative; changing order requires
+Commutative.
+\end{tcolorbox}
 
-\subsection*{A.2 (1.1 Exercise 31)}
-Construct a truth table for each of these compound propositions.
-\begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
-  \item $(p \to q) \leftrightarrow (\neg q \to \neg p)$
-  \item $(p \to q) \to (q \to p)$
-\end{itemize}
+\problem{E.1}
+Show that
+\[
+  (p\to q)\land(p\to r)
+  \quad\text{and}\quad
+  p\to(q\land r)
+\]
+are logically equivalent.
 
-\subsection*{A.3 (1.1 Exercise 35)}
-Construct a truth table for each of these compound propositions.
-\begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
-  \item $\neg p \leftrightarrow q$
-  \item $(p \to q) \lor (\neg p \to q)$
-\end{itemize}
+\problem{E.2}
+Show that
+\[
+  (p\to r)\land(q\to r)
+  \quad\text{and}\quad
+  (p\lor q)\to r
+\]
+are logically equivalent.
 
-\subsection*{A.4 (1.1 Exercise 35)}
-Construct a truth table for each of these compound propositions.
-\begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
-  \item $(p \leftrightarrow q) \lor (\neg p \leftrightarrow q)$
-  \item $(\neg p \leftrightarrow \neg q) \leftrightarrow (p \leftrightarrow q)$
-\end{itemize}
+\problem{E.3}
+Show that
+\[
+  (p\to q)\lor(p\to r)
+  \quad\text{and}\quad
+  p\to(q\lor r)
+\]
+are logically equivalent.
 
-\subsection*{A.5 (1.1 Exercise 37)}
-Construct a truth table for each of these compound propositions.
-\begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
-  \item $\neg p \to (q \to r)$
-  \item $(p \to q) \lor (\neg p \to r)$
-\end{itemize}
+\problem{E.4}
+Show that
+\[
+  (p\to r)\lor(q\to r)
+  \quad\text{and}\quad
+  (p\land q)\to r
+\]
+are logically equivalent.
 
-\subsection*{A.6 (1.1 Exercise 37)}
-Construct a truth table for each of these compound propositions.
-\begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
-  \item $(p \leftrightarrow q) \lor (\neg q \leftrightarrow r)$
-  \item $(\neg p \leftrightarrow \neg q) \leftrightarrow (q \leftrightarrow r)$
-\end{itemize}
-
-
-\section*{Translate between natural language statements and propositional/predicate logic (1.1, 1.4)}
-
-\subsection*{B.1 (1.4 Exercise 9)}
-Let $P(x)$ be the statement "x can speak Russian" and let $Q(x)$ be the statement "x knows the computer language C++." Express each of these sentences in terms of $P(x)$, $Q(x)$, quantifiers, and logical connectives. The domain for quantifiers consists of all students at your school.
-\begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
-  \item a) There is a student at your school who can speak Russian and who knows C++.
-  \item b) There is a student at your school who can speak Russian but who doesn’t know C++.
-  \item c) Every student at your school either can speak Russian or knows C++.
-  \item d) No student at your school can speak Russian or knows C++.
-\end{itemize}
-
-\subsection*{B.2 (1.4 Exercise 10)}
-Let $C(x)$ be the statement "x has a cat," let $D(x)$ be the statement "x has a dog," and let $F(x)$ be the statement "x has a ferret." Express each of these statements in terms of $C(x)$, $D(x)$, $F(x)$, quantifiers, and logical connectives. Let the domain consist of all students in your class.
-\begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
-  \item a) A student in your class has a cat, a dog, and a ferret.
-  \item b) All students in your class have a cat, a dog, or a ferret.
-  \item c) Some student in your class has a cat and a ferret, but not a dog.
-\end{itemize}
-\subsection*{B.3 (1.4 Exercise 23)}
-Translate in two ways each of these statements into logical expressions using predicates, quantifiers, and logical connectives. First, let the domain consist of the students in your class and second, let it consist of all people.
-\begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
-  \item a) There is a person in your class who was not born in California.
-  \item b) A student in your class has been in a movie.
-  \item c) No student in your class has taken a course in logic programming.
-\end{itemize}
-
-\subsection*{B.4 (1.4 Exercise 24)}
-Translate in two ways each of these statements into logical expressions using predicates, quantifiers, and logical connectives. First, let the domain consist of the students in your class and second, let it consist of all people.
-\begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
-  \item a) Everyone in your class has a cellular phone.
-  \item b) Somebody in your class has seen a foreign movie.
-  \item c) There is a person in your class who cannot swim.
-\end{itemize}
-
-\subsection*{B.5 (1.4 Exercise 30)}
-Suppose the domain of the propositional function $P(x, y)$ consists of pairs $x$ and $y$, where $x$ is 1, 2, or 3 and $y$ is 1, 2, or 3. Write out these propositions using disjunctions and conjunctions.
-\begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
-  \item a) $\exists x\, P(x, 3)$ 
-  \item b) $\forall y\, P(1, y)$
-  \item c) $\exists y\, \neg P(2, y)$ 
-  \item d) $\forall x\, \neg P(x, 2)$
-\end{itemize}
-
-\subsection*{B.6 (1.4 Exercise 59)}
-Let $P(x)$ be ``$x$ is a professor,'' let $I(x)$ be ``$x$ is ignorant,'' and let $V(x)$ be ``$x$ is vain.'' Express each of these statements using quantifiers, logical connectives, and $P(x)$, $I(x)$, and $V(x)$, where the domain consists of all people.
-\begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
-  \item a) No professors are ignorant.
-  \item b) All ignorant people are vain.
-  \item c) No professors are vain.
-\end{itemize}
-
-\subsection*{B.7 (1.4 Exercise 60)}
-Let $C(x)$ be ``$x$ is a clear explanation,'' let $S(x)$ be ``$x$ is satisfactory,'' and let $E(x)$ be ``$x$ is an excuse.'' Suppose that the domain for $x$ consists of all English text. Express each of these statements using quantifiers, logical connectives, and $C(x)$, $S(x)$, and $E(x)$.
-\begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
-  \item a) All clear explanations are satisfactory.
-  \item b) Some excuses are unsatisfactory.
-  \item c) Some excuses are not clear explanations.
-\end{itemize}
-
-\section*{Negate quantified statements (1.4)}
-
-\subsection*{C.1 (1.4 Exercise 32)}
-Express each of these statements using quantifiers. Then form the negation of the statement so that no negation is to the left of a quantifier. The domain for quantifiers consists of all things.
-\begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
-  \item \textbf{a)} All dogs have fleas.
-  \item \textbf{b)} There is a horse that can add.
-  \item \textbf{c)} Every koala can climb.
-  \item \textbf{d)} No monkey can speak French.
-  \item \textbf{e)} There exists a pig that can swim and catch fish.
-\end{itemize}
-
-\subsection*{C.2 (1.4 Exercise 33)}
-Express each of these statements using quantifiers. Then form the negation of the statement, so that no negation is to the left of a quantifier. The domain for quantifiers consists of all things.
-\begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
-  \item \textbf{a)} Some old dogs can learn new tricks.
-  \item \textbf{b)} No rabbit knows calculus.
-  \item \textbf{c)} Every bird can fly.
-  \item \textbf{d)} There is no dog that can talk.
-  \item \textbf{e)} There is no one in this class who knows French and Russian.
-\end{itemize}
-
-\subsection*{C.3 (1.4 Exercise 34)}
-Express the negation of each of these statements using quantifiers. Then form the negation of the statement, so that no negation is to the left of a quantifier. The domain for quantifiers consists of all things.
-
-\begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
-  \item \textbf{a)} Some drivers do not obey the speed limit.
-  \item \textbf{b)} All Swedish movies are serious.
-  \item \textbf{c)} No one can keep a secret.
-\end{itemize}
-
-\subsection*{C.4 (1.4 Exercise 35)}
-Find a counterexample, if possible, to these universally quantified statements, where the domain for all variables consists of all integers.
-\begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
-  \item \textbf{a)} $\forall x\, (x^2 \ge x)$
-  \item \textbf{b)} $\forall x\, (x > 0 \lor x < 0)$
-  \item \textbf{c)} $\forall x\, (x = 1)$
-\end{itemize}
-
-\section*{Recognize tautologies, contradictions, contingencies (1.2/1.3)}
-
-\subsection*{D.1 (1.2 Exercise 9)}
-Determine if the system is consistent or not. If it is consistent (satisfiable), state an assignment that satisfies all conditions.
-\newline
-"The system is in multiuser state if and only if it is operating normally. If the system is operating normally, the kernel is functioning. The kernel is not functioning or the system is in interrupt mode. If the system is not in multiuser state, then it is in interrupt mode. The system is not in interrupt mode."
-
-\subsection*{D.2 (1.2 Exercise 10)}
-Determine if the system is consistent (satisfiable) or not. If it is consistent, state an assignment that satisfies all conditions.
-\begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
-  \item "Whenever the system software is being upgraded, users cannot access the file system."
-  \item "If users can access the file system, then they can save new files."
-  \item "If users cannot save new files, then the system software is not being upgraded."
-\end{itemize}
-
-\subsection*{D.3 (1.2 Exercise 11)}
-Determine if the system is consistent (satisfiable) or not. If it is consistent, state an assignment that satisfies all conditions.
-\newline
-"The router can send packets to the edge system only if it supports the new address space. For the router to support the new address space, it is necessary that the latest software release be installed. The router does not support the new address space."
-
-\subsection*{D.4 (1.2 Exercise 12)}
-Determine if the system is consistent (satisfiable) or not. If it is consistent, state an assignment that satisfies all conditions.
-\begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
-  \item "If the file system is not locked, then new messages will be queued."
-  \item "If the file system is not locked, then the system is functioning normally, and conversely."
-  \item "If new messages are not queued, then they will be sent to the message buffer."
-  \item "If the file system is not locked, then new messages will be sent to the message buffer."
-  \item "New messages will not be sent to the message buffer."
-\end{itemize}
-
-\section*{Work with conditionals, biconditionals, and their equivalences (1.1, 1.3)}
-
-
-\subsection*{E.3 (1.3 Exercise 22)}
-Show that $(p \rightarrow q) \land (p \rightarrow r)$ and $p \rightarrow (q \land r)$ are logically equivalent using logical equivalences.
-
-\subsection*{E.4 (1.3 Exercise 23)}
-Show that $(p \rightarrow r) \land (q \rightarrow r)$ and $(p \lor q) \rightarrow r$ are logically equivalent using logical equivalences.
-
-\subsection*{E.5 (1.3 Exercise 24)}
-Show that $(p \rightarrow q) \lor (p \rightarrow r)$ and $p \rightarrow (q \lor r)$ are logically equivalent using logical equivalences.
-
+\problem{E.5}
+Show that
+\[
+  \neg p\to(q\to r)
+  \quad\text{and}\quad
+  q\to(p\lor r)
+\]
+are logically equivalent.
 \end{multicols}
 \end{document}

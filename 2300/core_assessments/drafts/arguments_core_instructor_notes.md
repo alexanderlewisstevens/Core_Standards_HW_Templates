@@ -37,16 +37,19 @@ longest bank prompts on a 20-minute form without shortening them.
   problem. Pilot every form before use; revise wording if a prepared student
   cannot finish comfortably in 20 minutes.
 
-## Current practice-bank key
+## Practice-bank controls
 
-- B: B.1 C; B.2 C; B.3 B; B.4 B; B.5 E.
-- C: C.1 E; C.2 C; C.3 A; C.4 B; C.5 C.
-- D: D.1 B; D.2 C; D.3 A; D.4 C; D.5 D.
-- E.2: B.
-
-The complete written reasoning for every A–E problem belongs on the matched
-Obsidian page, `2300_Arguments_Solutions.md`; keep its labels and order identical
-to `arguments_assessment.tex`.
+- The authoritative taxonomy contains 21 problem types: A.1--A.3, B.1--B.5,
+  C.1--C.5, D.1--D.5, and E.1--E.3.
+- Each type contains at least 10 substantively distinct, difficulty-aligned
+  problems. The first release therefore has 210 problems.
+- Item identifiers use the stable form `A.1.01` through `E.3.10` and must match
+  across the TeX, Obsidian solutions, and private grader guide.
+- The generated private grader guide is the compact answer key and essential-
+  criteria source. The published Obsidian page contains the complete written
+  solution for every item.
+- The build validator rejects missing solutions or rubrics, duplicate IDs,
+  obvious near-duplicates within a type, and imbalanced answer positions.
 
 ## Week 3 alignment
 
@@ -59,19 +62,19 @@ to `arguments_assessment.tex`.
   individual Core form. Each student handwrites at least one solution; students
   may copy a teammate's solution afterward for practice.
 - Randomly assign one of these five-problem practice packets to each group:
-  - Packet 1: A.1, B.1, C.3, D.2, E.2.
-  - Packet 2: A.2, B.4, C.1, D.4, E.1.
+  - Packet 1: A.1.01, B.1.01, C.3.01, D.2.01, E.2.01.
+  - Packet 2: A.2.01, B.4.01, C.1.01, D.4.01, E.1.01.
   Each packet has one prompt from every section and enough distinct work for as
   many as five students to handwrite one solution apiece. The concise-answer
-  keys are Packet 1: B.1 C, C.3 A, D.2 C, E.2 B; Packet 2: B.4 B, C.1 E,
-  D.4 C. Grade A.1, A.2, E.1, and all justifications against the complete
-  Obsidian worked solutions.
+  keys are Packet 1: B.1.01 C, C.3.01 A, D.2.01 A, E.2.01 B; Packet 2:
+  B.4.01 B, C.1.01 A, D.4.01 A. Grade A.1.01, A.2.01, E.1.01, and all
+  justifications against the complete Obsidian worked solutions.
 - The Canvas instructor page must include these exact packet selections and
   keys and must remain unpublished.
 
 ## Provenance
 
-Sections B–D are original LSAT-style analogues inspired by the problem-type
-distribution in LSAC's publicly disclosed January 2023, February 2024, and April
-2025 tests. They are not endorsed by LSAC. Keep official practice in LawHub and
-keep public course materials limited to original course-authored text.
+The entire bank is original course-authored material. Sections B–D use familiar
+Logical Reasoning problem families but do not copy or closely paraphrase LSAC or
+LawHub stimuli, prompts, answer choices, or explanations. Keep official practice
+in LawHub.

@@ -13,7 +13,7 @@ Assessment names are topic words rather than sequence numbers. This keeps the so
 | 3 | Sets | `2057868` | `2300/core_assessments/sets_assessment.tex`; includes functions and relation targets |
 | 4 | Proofs | `2057867` | `2300/core_assessments/proofs_assessment.tex` |
 | 5 | Divisibility | `2057869` | `2300/core_assessments/divisibility_assessment.tex` |
-| 6 | Induction | `2057870` | `2300/core_assessments/induction_assessment.tex` |
+| 6 | Induction | `2057870` | `2300/core_assessments/induction_assessment.tex`; retained alternative: `2300/core_assessments/induction_assessment_long_proof.tex` |
 | 7 | Counting | `2057871` | `2300/core_assessments/counting_assessment.tex`; includes elementary probability targets |
 
 Participation and Practice is a Canvas category, not a Core assessment or a
