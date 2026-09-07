@@ -2,7 +2,7 @@
 
 % --- Packing + layout ---
 \usepackage{fancyhdr}
-\usepackage[letterpaper,margin=0.3in,includehead,includefoot,headheight=14pt,headsep=6pt]{geometry}
+\usepackage[letterpaper,margin=0.25in,includehead,includefoot,headheight=14pt,headsep=4pt]{geometry}
 \setlength{\columnsep}{0.15in}
 \usepackage{microtype}
 \usepackage{multicol}
@@ -40,165 +40,158 @@
 \setlength{\headheight}{14pt}
 \pagestyle{fancy}
 \fancyhf{}
-\fancyhead[L]{\textbf{Proofs Assessment}}
+\fancyhead[L]{\textbf{Proofs Core}}
 \fancyfoot[C]{\thepage}
 \renewcommand{\headrulewidth}{0.4pt}
 \fancypagestyle{plain}{%
   \fancyhf{}
-  \fancyhead[L]{\textbf{Proofs Assessment}}
+  \fancyhead[L]{\textbf{Proofs Core}}
   \fancyfoot[C]{\thepage}
   \renewcommand{\headrulewidth}{0.4pt}
 }
 
 \begin{document}
 
-The following problems form the practice pool for the \textbf{Proofs assessment}. \textbf{Please practice these problems!}
+\textbf{Time: 20 minutes.} A supervised form contains five labeled problems,
+one from each section A--E; all lettered parts belong to that problem.
+\textbf{Meets} requires four fully correct problems and \textbf{Exceeds}
+requires all five. Every retake uses a new complete form. This bank lists
+practice variants; a live form uses one problem from each section.
 
 \begin{multicols}{2}
 
-\section*{Proof Techniques}
-\subsection*{Rules of Inference}
+\section*{Inference and Proof Structure (1.6)}
+
 \subsection*{A.1}
-For each of these sets of premises, what relevant conclusion or conclusions can be drawn?
-\begin{itemize}
-  \item (a) "If I take the day off, it either rains or snows." "I took Tuesday off or I took Thursday off." "It was sunny on Tuesday." "It did not snow on Thursday."
-  \item (b) "If I eat spicy foods, then I have strange dreams." "I have strange dreams if there is thunder while I sleep." "I did not have strange dreams."
-  \item (c) "I am either clever or lucky." "I am not lucky." "If I am lucky, then I will win the lottery."
-\end{itemize}
+Suppose that if the server is overloaded, requests are delayed; if requests are
+delayed, the monitoring system sends an alert; and the server is overloaded.
+Derive that the monitoring system sends an alert, naming the rule used at each
+step.
 
 \subsection*{A.2}
-For each of these sets of premises, what relevant conclusion or conclusions can be drawn?
+Determine whether each argument is valid. Name the valid inference rule or the invalid form.
 \begin{itemize}
-  \item (a) "Every computer science major has a personal computer." "Ralph does not have a personal computer." "Ann has a personal computer."
-  \item (b) "What is good for corporations is good for the United States." "What is good for the United States is good for you." "What is good for corporations is for you to buy lots of stuff."
-  \item (c) "All rodents gnaw their food." "Mice are rodents." "Rabbits do not gnaw their food." "Bats are not rodents."
+  \item (a) If the program compiles, then it has no syntax errors. It has no syntax errors. Therefore, it compiles.
+  \item (b) If the network is down, then the site is unavailable. The site is
+        available. Therefore, the network is not down.
 \end{itemize}
 
 \subsection*{A.3}
-For each of these sets of premises, what relevant conclusion or conclusions can be drawn?
-\begin{itemize}
-  \item (a) "If I play hockey, then I am sore the next day." "I use the whirlpool if I am sore." "I did not use the whirlpool."
-  \item (b) "If I work, it is either sunny or partly sunny." "I worked last Monday or I worked last Tuesday." "It rained on Tuesday." "It was not partly sunny on Monday."
-  \item (c) "All insects have six legs." "Dragonflies are insects." "Spiders do not have six legs." "Spiders eat dragonflies."
-\end{itemize}
+Over one common domain, identify the error in the proposed inference. Then give
+a two-element domain and interpretations of $P$ and $Q$ that make both premises
+true and the conclusion false.
+\[
+\exists x\,P(x),\qquad \exists x\,Q(x)
+\quad\therefore\quad
+\exists x\,(P(x)\land Q(x)).
+\]
 
 \subsection*{A.4}
-For each of these sets of premises, what relevant conclusion or conclusions can be drawn?
-\begin{itemize}
-  \item (a) "Every student has an Internet account." "Homer does not have an Internet account." "Maggie has an Internet account."
-  \item (b) "All foods that are healthy to eat do not taste good." "Tofu is healthy to eat." "You only eat what tastes good." "You do not eat tofu." "Cheeseburgers are not healthy to eat."
-  \item (c) "I am either dreaming or hallucinating." "I am not dreaming." "If I am hallucinating, I see elephants running down the road."
-\end{itemize}
+From $p\to q$, $q\to r$, and $\neg r$, derive $\neg p$. Name the rule used at
+each step.
 
 \subsection*{A.5}
-Determine whether each of these arguments is correct or incorrect.
-\begin{itemize}
-  \item (a) "Doug, a student in this class, knows how to write programs in JAVA. Everyone who knows how to write programs in JAVA can get a high-paying job. Therefore, everyone in this class can get a high-paying job."
-  \item (b) "Somebody in this class enjoys whale watching. Every person who enjoys whale watching cares about ocean pollution. Therefore, there is a person in this class who cares about ocean pollution."
-  \item (c) "Each of the 93 students in this class owns a personal computer. Someone who owns a personal computer can use a word processing program. Therefore, Zeke, a student in this class, can use a word processing program."
-  \item (d) "Everyone in New Jersey lives within 50 miles of the ocean. Someone in New Jersey has never seen the ocean. Therefore, someone who has never seen the ocean lives within 50 miles of the ocean."
-\end{itemize}
+Over a nonempty domain, use the premises
+$\forall x\,(P(x)\to Q(x))$ and $\forall x\,P(x)$ to derive
+$\forall x\,Q(x)$. Name the rule used at each step.
 
-\subsection*{A.6}
-Determine whether each of these arguments is correct or incorrect and explain why.
-\begin{itemize}
-  \item (a) "Linda, a student in this class, owns a red convertible. Everyone who owns a red convertible has gotten at least one speeding ticket. Therefore, someone in this class has gotten a speeding ticket."
-  \item (b) "Each of five roommates, Melissa, Aaron, Ralph, Veneesha, and Keeshawn, has taken a course in discrete mathematics. Every student who has taken a course in discrete mathematics can take a course in algorithms. Therefore, all five roommates can take a course in algorithms next year."
-  \item (c) "All movies produced by John Sayles are wonderful. John Sayles produced a movie about coal miners. Therefore, movies about coal miners are wonderful."
-  \item (d) "Everyone in this class has been to France. Someone who went to France visits the Louvre. Therefore, someone in this class has visited the Louvre."
-\end{itemize}
+\section*{Direct Proofs (1.7)}
 
-\subsection*{A.7}
-Determine whether each of these arguments is correct or incorrect and explain why.
-\begin{itemize}
-  \item (a) All students in this class understand logic. Xavier is a student in this class. Therefore, Xavier understands logic.
-  \item (b) Every computer science major takes discrete mathematics. Natasha is taking discrete mathematics. Therefore, Natasha is a computer science major.
-  \item (c) All parrots like fruit. My pet bird is not a parrot. Therefore, my pet bird does not like fruit.
-  \item (d) Everyone who eats granola every day is healthy. Linda is not healthy. Therefore, Linda does not eat granola every day.
-\end{itemize}
+\subsection*{B.1}
+Give a direct proof that if an integer $n$ is even, then $n^2$ is even.
 
+\subsection*{B.2}
+Give a direct proof that the sum of two rational numbers is rational.
 
+\subsection*{B.3}
+Give a direct proof that the sum of two odd integers is even.
 
-\section*{Number Theory Proofs}
-You Should use definitions of even, odd and rational.
+\subsection*{B.4}
+Give a direct proof that the difference of two even integers is even.
 
-\subsection*{B.1} For every integer \( n \), if \( n \) is even, then \( n^2 \) is even.
+\subsection*{B.5}
+Let $A,B,C$ be sets. Give a direct element proof that if $A\subseteq B$, then
+$A\cap C\subseteq B\cap C$.
 
-\subsection*{B.2}  For all integers \( a \) and \( b \), if \( a \mid b \), then \( a \mid (-b) \).
-
-\subsection*{B.3}  For all integers \( a, b, \) and \( c \), if \( a \mid b \) and \( a \mid c \), then \( a \mid (b + c) \).
-
-\subsection*{B.4}  For every integer \( n \), if \( n \) is odd, then \( n^2 \) is odd.
-
-\subsection*{B.5}  For all integers \( a \) and \( b \), if \( a \mid b \) and \( b \mid a \), then \( |a| = |b| \).
-
-\newpage
-\section*{Set Proofs}
+\section*{Contraposition and Contradiction (1.7)}
 
 \subsection*{C.1}
-For any sets \( A \) and \( B \), if \( x \in A \cap B \), then \( x \in A \).
+Let $m,n\in\mathbb Z$. Prove by contraposition that if $mn$ is odd, then both
+$m$ and $n$ are odd. Your proof must state the contrapositive explicitly and
+handle its disjunction by cases.
 
 \subsection*{C.2}
-For any sets \( A \) and \( B \), if \( A \subseteq B \), then \( A \setminus B = \varnothing \).
+Prove by contraposition that if $3n+2$ is odd, then the integer $n$ is odd.
 
 \subsection*{C.3}
-Suppose \( A \subseteq B \) and \( x \in A \).
-Prove that \( x \in B \).
+Prove by contradiction that there is no largest integer.
 
 \subsection*{C.4}
-Suppose \( A \cap C \subseteq B \) and \( x \in C \).
-Prove that if \( x \in A \), then \( x \in B \).
+Let $r$ be rational and $x$ irrational. Prove by contradiction that $r+x$ is irrational.
 
 \subsection*{C.5}
-Suppose \( A \setminus B \subseteq C \).
-Prove that if \( x \in A \setminus C \), then \( x \in B \).
+Prove by contraposition that if $n^2$ is even, then the integer $n$ is even.
 
-\subsection*{C.6}
-Suppose \( A \subseteq C \), and \( B \) and \( C \) are disjoint.
-Prove that if \( x \in A \), then \( x \notin B \).
-
-\columnbreak
-
-\section*{Proofs with functions}
+\section*{Cases, Existence, and Counterexamples (1.7, 1.8)}
 
 \subsection*{D.1}
-Prove that for all real numbers \( x \) and \( y \),
-\[
-\max(x,y) = \frac{x+y+|x-y|}{2}
-\quad\text{and}\quad
-\min(x,y) = \frac{x+y-|x-y|}{2}.
-\]
+Prove by cases that $n(n+1)$ is even for every integer $n$.
 
 \subsection*{D.2}
-Prove that for all real numbers \( x \) and \( y \),
-\[
-\max(x,y) - \min(x,y) = |x-y|.
-\]
+Prove by cases that $|x|\ge 0$ for every real number $x$, with equality exactly when $x=0$.
 
 \subsection*{D.3}
-Prove that for all real numbers \( x \),
-\[
-\lfloor x \rfloor + \lfloor x + \tfrac12 \rfloor
-\in \{2\lfloor x \rfloor,\; 2\lfloor x \rfloor + 1\}.
-\]
+Give a constructive existence proof that there are four consecutive composite
+positive integers. Verify explicitly that every integer in your example is
+composite.
 
 \subsection*{D.4}
-Prove that for all real numbers \( x \) and \( y \),
-\[
-\lfloor x \rfloor + \lfloor y \rfloor
-\le \lfloor x + y \rfloor
-\le \lfloor x \rfloor + \lfloor y \rfloor + 1.
-\]
+Disprove each universal statement by giving a counterexample.
+\begin{itemize}
+  \item (a) The sum of two irrational numbers is irrational.
+  \item (b) $n^2+n+41$ is prime for every nonnegative integer $n$.
+\end{itemize}
 
 \subsection*{D.5}
-Let \( x,y,z \in \mathbb{R} \). Prove that
-\[
-\max\!\bigl(x,\, \min(y,z)\bigr)
-\;=\;
-\min\!\bigl(\max(x,y),\, \max(x,z)\bigr).
-\]
+Give a constructive existence proof that there are two irrational real numbers
+whose product is rational.
 
+\section*{Strategy Choice and Proof Repair (1.8)}
 
+\subsection*{E.1}
+For each statement, choose a promising first strategy---direct proof,
+contraposition, contradiction, cases, constructive existence, or
+counterexample---and state the first substantive step. Do not write the full
+proofs.
+\begin{itemize}
+  \item (a) If $n^2$ is even, then the integer $n$ is even.
+  \item (b) There is no smallest positive real number.
+\end{itemize}
+
+\subsection*{E.2}
+The following proof is intended to show that the sum of two even integers is even. Identify the gap and repair it.
+
+``Let $a$ and $b$ be even. Then $a=2k$ and $b=2k$ for some integer $k$. Hence $a+b=4k$, which is even.''
+
+\subsection*{E.3}
+The following proof is intended to show that the product of a rational number
+and an irrational number is irrational. Identify why the argument fails when
+$r=0$. Add the weakest necessary restriction on $r$, state the corrected
+theorem, and prove it.
+
+``Let $r$ be rational and $x$ irrational. If $rx$ were rational, then $x=(rx)/r$ would be rational, a contradiction.''
+
+\subsection*{E.4}
+The following argument is circular. Explain the circularity, then replace it with a valid proof.
+
+``To prove that $n^2$ is odd whenever $n$ is odd, assume $n^2$ is odd. Thus
+$n^2=2k+1$ for some integer $k$, so $n^2$ is odd.''
+
+\subsection*{E.5}
+The following proof is intended to show that $A\subseteq B$ whenever
+$A\cap B=A$. Identify the gap and repair it.
+
+``Let $x\in A\cap B$. Then $x\in B$. Therefore $A\subseteq B$.''
 
 \end{multicols}
 \end{document}
