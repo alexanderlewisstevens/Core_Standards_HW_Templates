@@ -10,7 +10,7 @@ The current design places `Functions` within `Sets` and elementary `Probability`
 within `Counting`. Participation and Practice is a Canvas category rather than a
 LaTeX assessment.
 
-These files are public sources, not complete live paper forms. For Logic, staff
+These files are public sources, not complete live paper forms. For Logic and Sets, staff
 designate one problem from each section A--E for a five-problem, 20-minute live
 form. Other non-Arguments Cores ordinarily use a 6--8-problem live form assembled
 from their labeled source. `arguments_assessment.tex` is a balanced six-page Core
