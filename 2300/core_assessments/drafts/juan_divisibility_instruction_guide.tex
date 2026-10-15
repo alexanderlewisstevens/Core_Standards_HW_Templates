@@ -1,0 +1,403 @@
+\documentclass[10pt]{article}
+
+% Instructor-facing board plan and solutions for Juan Malaver.
+\usepackage[letterpaper,margin=0.58in,includehead,includefoot,
+  headheight=15pt,headsep=7pt,footskip=20pt]{geometry}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{microtype}
+\usepackage[dvipsnames,svgnames]{xcolor}
+\usepackage{enumitem}
+\usepackage{tabularx,booktabs,array}
+\usepackage[most]{tcolorbox}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage[hidelinks]{hyperref}
+
+\definecolor{INavy}{HTML}{18364A}
+\definecolor{ITeal}{HTML}{176B6B}
+\definecolor{IGold}{HTML}{9A6500}
+\definecolor{IRed}{HTML}{963D38}
+\definecolor{IBlueTint}{HTML}{EDF4F8}
+\definecolor{ITealTint}{HTML}{EDF8F6}
+\definecolor{IGoldTint}{HTML}{FFF7E5}
+\definecolor{IRedTint}{HTML}{FCEFED}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{3pt}
+\setlength{\emergencystretch}{1em}
+\setlength{\abovedisplayskip}{4pt}
+\setlength{\belowdisplayskip}{4pt}
+\setlist{leftmargin=*,itemsep=1.5pt,topsep=2pt,parsep=0pt}
+\raggedbottom
+\titleformat{\section}{\Large\bfseries\color{INavy}}{}{0pt}{}
+  [\vspace{-3pt}\color{INavy}\rule{\linewidth}{0.7pt}]
+\titleformat{\subsection}{\large\bfseries\color{ITeal}}{}{0pt}{}
+\titlespacing*{\section}{0pt}{4pt}{5pt}
+\titlespacing*{\subsection}{0pt}{5pt}{2pt}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textbf{COMP 2300}}
+\fancyhead[C]{\textbf{Divisibility: Board Plan and Solutions}}
+\fancyhead[R]{Instructor copy for Juan Malaver}
+\fancyfoot[L]{Tuesday, October 13, 2026}
+\fancyfoot[C]{\thepage}
+\fancyfoot[R]{Do not distribute with solutions}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0.3pt}
+\fancypagestyle{plain}{%
+  \fancyhf{}%
+  \fancyhead[L]{\textbf{COMP 2300}}%
+  \fancyhead[C]{\textbf{Divisibility: Board Plan and Solutions}}%
+  \fancyhead[R]{Instructor copy for Juan Malaver}%
+  \fancyfoot[L]{Tuesday, October 13, 2026}%
+  \fancyfoot[C]{\thepage}%
+  \fancyfoot[R]{Do not distribute with solutions}%
+  \renewcommand{\headrulewidth}{0.5pt}%
+  \renewcommand{\footrulewidth}{0.3pt}%
+}
+\makeatletter
+\let\ps@plain\ps@fancy
+\let\ps@empty\ps@fancy
+\makeatother
+
+\tcbset{enhanced,before skip=4pt,after skip=4pt,boxrule=0.6pt,arc=1.4mm,
+  left=6pt,right=6pt,top=4pt,bottom=4pt,fonttitle=\bfseries}
+\newtcolorbox{goalbox}[1]{title={#1},colback=IBlueTint,colframe=INavy,
+  colbacktitle=INavy,coltitle=white}
+\newtcolorbox{solutionbox}[1]{title={#1},colback=white,colframe=INavy,
+  colbacktitle=IBlueTint,coltitle=INavy}
+\newtcolorbox{promptbox}[1]{title={#1},colback=ITealTint,colframe=ITeal,
+  colbacktitle=ITeal,coltitle=white}
+\newtcolorbox{warningbox}[1]{title={#1},colback=IRedTint,colframe=IRed,
+  colbacktitle=IRed,coltitle=white}
+\newtcolorbox{timingbox}[1]{title={#1},colback=IGoldTint,colframe=IGold,
+  colbacktitle=IGold,coltitle=white}
+\newcommand{\Z}{\mathbb Z}
+
+\begin{document}
+\makeatletter
+\let\ps@plain\ps@fancy
+\let\ps@empty\ps@fancy
+\makeatother
+\pagestyle{fancy}
+
+\section*{Purpose and 60-Minute Teaching Sequence}
+
+\begin{goalbox}{Central message}
+Tell students: ``Today, every calculation comes from a definition, theorem,
+or rule. If you cannot name what licenses a step, pause and find it before
+continuing.'' The first 37 minutes cover the intended Tuesday Core A/B
+material. The last 21 minutes preview the D/E ideas that also appear on the
+current live quiz.
+\end{goalbox}
+
+\begin{timingbox}{Board plan}
+\begin{tabularx}{\linewidth}{@{}>{\bfseries}p{0.72in}X>{\raggedright\arraybackslash}p{1.45in}@{}}
+\toprule
+Time & Topic and board problem & Quiz coverage \\
+\midrule
+0--4 & Definition map and goals & Vocabulary \\
+4--15 & Problem 1: canonical division, negative dividends, congruence & \texttt{div}/\texttt{mod} \\
+15--23 & Problem 2: base shifts and $202_{10}$ to binary & Base conversion \\
+23--32 & Problem 3: hexadecimal, binary, and octal & Equivalent numerals \\
+32--37 & Problem 4: place-value remainders & Modulo $b^2$ \\
+37--48 & Problem 5: Euclidean algorithm & Remainder order and gcd \\
+48--52 & Problem 6: relative primality & Relatively prime pairs \\
+52--58 & Problem 7: congruence modulo a product & Modulus implication \\
+58--60 & Quiz directions and groups & Submission setup \\
+\bottomrule
+\end{tabularx}
+\end{timingbox}
+
+\begin{goalbox}{Definitions to keep visible}
+\begin{align*}
+d\mid n&\iff n=dk\text{ for some }k\in\Z,\\
+a&=bq+r,\quad b>0,\quad0\le r<b,\\
+a\,\mathrm{div}\,b&=q,\qquad a\bmod b=r,\\
+x\equiv y\pmod m&\iff m\mid(x-y),\\
+\gcd(a,b)&=\text{the greatest positive integer dividing both }a\text{ and }b,\\
+(a_k\cdots a_0)_b&=a_kb^k+\cdots+a_1b+a_0,\quad0\le a_i<b.
+\end{align*}
+\end{goalbox}
+
+\begin{warningbox}{Operational facts}
+The quiz opens at 11:00 a.m. for section 1 and 1:00 p.m. for section 2; it
+closes at 11:50 a.m. and 1:50 p.m., respectively, and has a 45-minute timer.
+Canvas currently is not configured as a group submission. Unless Alex changes
+that design, each student should submit their own response after the group has
+agreed. Otherwise only the submitting student may receive the Canvas score.
+\end{warningbox}
+
+\thispagestyle{fancy}
+\clearpage
+\pagestyle{fancy}
+\thispagestyle{fancy}
+\section*{Problems 1--3: Core A/B Foundations}
+\thispagestyle{fancy}
+
+\begin{promptbox}{Problem 1: canonical quotient, remainder, and congruence}
+For each $a$, find the unique $q,r$ satisfying $a=13q+r$ and $0\le r<13$.
+Then state $a\,\mathrm{div}\,13$, $a\bmod13$, and a congruence modulo $13$.
+\[
+\text{(a) }a=94\qquad\qquad\text{(b) }a=-94.
+\]
+\end{promptbox}
+
+\begin{solutionbox}{Solution and questions to ask}
+For $94$, $94=13(7)+3$, so
+\[
+94\,\mathrm{div}\,13=7,\qquad94\bmod13=3,\qquad94\equiv3\pmod{13}.
+\]
+For $-94$, do not truncate toward zero. The remainder must be nonnegative:
+\[
+-94=13(-8)+10,
+\]
+so
+\[
+-94\,\mathrm{div}\,13=-8,\qquad-94\bmod13=10,
+\qquad-94\equiv10\pmod{13}.
+\]
+Ask: Why does $-94=13(-7)-3$ fail the Division Algorithm convention? Is
+$-3$ still congruent to $-94$ modulo $13$? Why is it not $-94\bmod13$?
+\end{solutionbox}
+
+\begin{promptbox}{Problem 2: decimal to binary through repeated div/mod}
+Convert $202_{10}$ to binary, then verify the result using powers of two.
+\end{promptbox}
+
+\begin{goalbox}{Base-$b$ facts to establish before calculating}
+Start from place value, not from a memorized ``move the digits'' rule:
+\[
+(10)_b=b,\qquad (100)_b=b^2,\qquad
+(10)_b(10)_b=(100)_b.
+\]
+Both sides of the last identity equal $b^2$, and the same pattern continues:
+\[
+\bigl((10)_b\bigr)^k
+  =\bigl(1\underbrace{00\cdots0}_{k\text{ zeros}}\bigr)_b=b^k.
+\]
+More generally, if $N=(a_k\cdots a_0)_b$, then
+\[
+bN=(a_k\cdots a_0 0)_b,
+\qquad
+bN+r=(a_k\cdots a_0 r)_b\quad(0\le r<b).
+\]
+Equivalently,
+\[
+(a_k\cdots a_1a_0)_b=b(a_k\cdots a_1)_b+a_0.
+\]
+Thus multiplying by the base shifts every digit one place left, and adding a
+legal remainder appends that remainder as the new last digit. Conversely,
+$N\,\mathrm{div}\,b$ removes the last base-$b$ digit, while $N\bmod b$
+returns it. Say explicitly that $(10)_b$ has value $b$, not decimal ten.
+\end{goalbox}
+
+\begin{solutionbox}{Solution and questions to ask}
+\[
+\begin{array}{rcl@{\quad}rcl}
+202&=&2(101)+0&101&=&2(50)+1\\
+50&=&2(25)+0&25&=&2(12)+1\\
+12&=&2(6)+0&6&=&2(3)+0\\
+3&=&2(1)+1&1&=&2(0)+1
+\end{array}
+\]
+Each line $n=2q+r$ says: write $q$ in binary, multiply it by
+$(10)_2=2$ to shift left, and append the digit $r$. Reconstructing from the
+bottom row therefore gives
+\[
+\begin{gathered}
+(1)_2\longrightarrow(11)_2\longrightarrow(110)_2
+\longrightarrow(1100)_2\longrightarrow(11001)_2\\
+\longrightarrow(110010)_2\longrightarrow(1100101)_2
+\longrightarrow(11001010)_2.
+\end{gathered}
+\]
+Equivalently, the same reconstruction is Horner's nested form:
+\[
+202=\bigl(\bigl(\bigl(\bigl(\bigl(\bigl(\bigl(1\cdot2+1\bigr)\cdot2+0\bigr)
+\cdot2+0\bigr)\cdot2+1\bigr)\cdot2+0\bigr)\cdot2+1\bigr)\cdot2+0.
+\]
+Hence $(202)_{10}=(11001010)_2$. The first remainder found is the rightmost
+digit; reading the remainder column upward gives the digits from left to right.
+Check:
+\[
+(11001010)_2
+=1\cdot2^7+1\cdot2^6+0\cdot2^5+0\cdot2^4
+ +1\cdot2^3+0\cdot2^2+1\cdot2+0
+=128+64+8+2=202.
+\]
+Ask: Why can every remainder only be $0$ or $1$? Why do we read upward? How
+is this algorithm repeated use of the Division Algorithm? What goes wrong with
+the illegal binary numeral $(200)_2$?
+\end{solutionbox}
+
+\section*{Problem 3: Cross-Base Conversion}
+\begin{promptbox}{Problem 3: hexadecimal, binary, octal, and decimal}
+Write $(6D5)_{16}$ in binary, octal, and decimal.
+\end{promptbox}
+
+\begin{solutionbox}{Solution and questions to ask}
+Translate each hex digit into exactly four bits:
+\[
+6=0110_2,\qquad D=1101_2,\qquad5=0101_2.
+\]
+Thus $(6D5)_{16}=(0110\ 1101\ 0101)_2$. Regroup from the right in threes:
+\[
+011\ 011\ 010\ 101\quad\Longrightarrow\quad(3325)_8.
+\]
+In decimal,
+\[
+6(16^2)+13(16)+5=1536+208+5=1749.
+\]
+Check: $3(8^3)+3(8^2)+2(8)+5=1749$.
+Ask: Why four bits per hex digit and three per octal digit? Why group from the
+right? Why is $D$ the digit $13$ rather than a variable?
+\end{solutionbox}
+
+\thispagestyle{fancy}
+\clearpage
+\pagestyle{fancy}
+\thispagestyle{fancy}
+\section*{Problems 4--5: Place Value and the Euclidean Algorithm}
+
+\begin{promptbox}{Problem 4: remainder from the last two base-$b$ digits}
+Let $n=(24531)_6$. Find $n\bmod6^2$ without converting the entire number to
+decimal.
+\end{promptbox}
+
+\begin{solutionbox}{Solution and general principle}
+By base-six place value,
+\[
+n=2(6^4)+4(6^3)+5(6^2)+3(6)+1.
+\]
+Every term containing $6^2$ is divisible by $6^2=36$. Therefore
+\[
+n\equiv3(6)+1\pmod{36},\qquad n\bmod36=19.
+\]
+Equivalently, the remainder is the base-six numeral $(31)_6$. Emphasize that
+this is decimal $19$, not decimal $31$.
+
+General principle: if
+\[
+n=a_kb^k+\cdots+a_2b^2+a_1b+a_0,
+\]
+then $n\bmod b^2=a_1b+a_0$ because every earlier term contains a factor
+$b^2$.
+\end{solutionbox}
+
+\section*{Problem 5: Euclidean Algorithm}
+
+\begin{promptbox}{Problem 5: Euclidean algorithm and ordered remainders}
+Use the Euclidean algorithm to find $\gcd(391,153)$. Record every remainder
+in order, including the terminal zero. If time permits, find B\'ezout
+coefficients.
+\end{promptbox}
+
+\begin{solutionbox}{Solution}
+\[
+\begin{aligned}
+391&=2(153)+85,\\
+153&=1(85)+68,\\
+85&=1(68)+17,\\
+68&=4(17)+0.
+\end{aligned}
+\]
+The ordered remainder list is $85,68,17,0$. The last \emph{nonzero}
+remainder is $17$, so $\gcd(391,153)=17$.
+
+Why this works: if $a=bq+r$, then a number divides both $a$ and $b$ exactly
+when it divides both $b$ and $r=a-bq$. Thus
+$\gcd(a,b)=\gcd(b,r)$ at every line of the algorithm. Repeating that fact
+preserves the gcd until the final nonzero remainder; the next remainder is
+$0$, so that final nonzero remainder divides the preceding number as well.
+
+For the optional back-substitution,
+\[
+\begin{aligned}
+17&=85-68\\
+&=85-(153-85)=2(85)-153\\
+&=2(391-2(153))-153=2(391)-5(153).
+\end{aligned}
+\]
+Thus $17=2(391)-5(153)$.
+\end{solutionbox}
+
+\begin{promptbox}{Questions and misconceptions for Problem 5}
+Why must each remainder be smaller than the preceding divisor? Is $0$ the gcd
+because it is the final remainder? Why is the last nonzero remainder the gcd?
+Canvas asks for the complete remainder order, so include the terminal $0$.
+If time is short, put the completed equations for Problems 5--7 on the board
+and focus discussion on naming the definition that licenses each step.
+\end{promptbox}
+
+\thispagestyle{fancy}
+\clearpage
+\pagestyle{fancy}
+\thispagestyle{fancy}
+\section*{Problems 6--7: Quiz Preview and Proof}
+\thispagestyle{fancy}
+
+\begin{promptbox}{Problem 6: relative primality}
+Determine which pairs are relatively prime:
+\[
+(16,45),\qquad(22,35),\qquad(27,42),\qquad(28,70).
+\]
+\end{promptbox}
+
+\begin{solutionbox}{Solution}
+\[
+16=2^4,\quad45=3^2\cdot5,
+\]
+so $\gcd(16,45)=1$ and the pair is relatively prime. Likewise,
+$22=2\cdot11$ and $35=5\cdot7$ share no prime factor, so
+$\gcd(22,35)=1$.
+
+By contrast, $27=3^3$ and $42=2\cdot3\cdot7$ share $3$, so
+$\gcd(27,42)=3$. Also, $28=2^2\cdot7$ and $70=2\cdot5\cdot7$ have gcd
+$14$. Those two pairs are not relatively prime.
+
+Central misconception: relatively prime does not mean both numbers are prime.
+The relationship is about their shared factors.
+\end{solutionbox}
+
+\begin{promptbox}{Problem 7: congruence modulo a product}
+Suppose $p,q\ge2$, $d=pq$, and $x\equiv y\pmod d$. Prove
+\[
+x\equiv y\pmod p\qquad\text{and}\qquad x\equiv y\pmod q.
+\]
+Then illustrate the argument with $d=33$, $x=103$, and $y=4$.
+\end{promptbox}
+
+\begin{solutionbox}{General solution}
+The hypothesis $x\equiv y\pmod d$ means $d\mid(x-y)$. Thus there is a
+$k\in\Z$ such that
+\[
+x-y=kd=kpq.
+\]
+Regrouping gives $x-y=p(kq)$. Since $kq\in\Z$, we have $p\mid(x-y)$, hence
+$x\equiv y\pmod p$. Similarly, $x-y=q(kp)$, so $q\mid(x-y)$ and
+$x\equiv y\pmod q$.
+
+For the concrete case, $103-4=99=3(33)$. Thus $103\equiv4\pmod{33}$.
+Because $99=3(33)$ and $99=11(9)$, it is divisible by both $3$ and $11$;
+therefore $103\equiv4\pmod3$ and $103\equiv4\pmod{11}$.
+\end{solutionbox}
+
+\begin{warningbox}{What the proof does and does not use}
+The forward implication does not require $p$ and $q$ to be prime; it only uses
+that they are positive factors of $d$. Do not call the step ``canceling the modulus.''
+The witness for divisibility by $p$ is $kq$, and the witness for divisibility
+by $q$ is $kp$.
+\end{warningbox}
+
+\begin{goalbox}{Final coverage check}
+Problems 1--7 cover every skill presently on the live Canvas quiz: canonical
+division with a negative dividend; ordered Euclidean remainders; decimal to
+binary; hexadecimal/binary/octal equivalence; relative primality; gcd by the
+Euclidean algorithm; descent from modulus $pq$ to its factors; and the
+place-value remainder modulo $b^2$.
+\end{goalbox}
+
+\thispagestyle{fancy}
+\end{document}

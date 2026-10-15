@@ -1,0 +1,562 @@
+\documentclass[10pt]{article}
+
+% COMP 2300 Divisibility Core companion: student-facing reference.
+\usepackage[letterpaper,margin=0.56in,includehead,includefoot,
+  headheight=15pt,headsep=7pt,footskip=20pt]{geometry}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{microtype}
+\usepackage[dvipsnames,svgnames]{xcolor}
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage{tabularx,booktabs,array}
+\usepackage[most]{tcolorbox}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{needspace}
+\usepackage[hidelinks]{hyperref}
+
+\definecolor{DivNavy}{HTML}{18364A}
+\definecolor{DivTeal}{HTML}{176B6B}
+\definecolor{DivGold}{HTML}{9A6500}
+\definecolor{DivRed}{HTML}{963D38}
+\definecolor{DivBlueTint}{HTML}{EDF4F8}
+\definecolor{DivTealTint}{HTML}{EDF8F6}
+\definecolor{DivGoldTint}{HTML}{FFF7E5}
+\definecolor{DivRedTint}{HTML}{FCEFED}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{3pt}
+\setlength{\columnsep}{0.25in}
+\setlength{\columnseprule}{0.25pt}
+\setlength{\emergencystretch}{1em}
+\setlength{\abovedisplayskip}{4pt}
+\setlength{\belowdisplayskip}{4pt}
+\setlength{\abovedisplayshortskip}{2pt}
+\setlength{\belowdisplayshortskip}{2pt}
+\setlist{leftmargin=*,itemsep=1.5pt,topsep=2pt,parsep=0pt,partopsep=0pt}
+\raggedbottom
+
+\titleformat{\section}{\Large\bfseries\color{DivNavy}}{}{0pt}{}
+  [\vspace{-3pt}\color{DivNavy}\rule{\linewidth}{0.7pt}]
+\titleformat{\subsection}{\large\bfseries\color{DivTeal}}{}{0pt}{}
+\titlespacing*{\section}{0pt}{4pt}{5pt}
+\titlespacing*{\subsection}{0pt}{5pt}{2pt}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textbf{COMP 2300}}
+\fancyhead[C]{\textbf{Divisibility Core Companion}}
+\fancyhead[R]{Definitions and Worked Examples}
+\fancyfoot[L]{Core sections A--E}
+\fancyfoot[C]{\thepage}
+\fancyfoot[R]{Name the definition you use}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0.3pt}
+\fancypagestyle{plain}{%
+  \fancyhf{}%
+  \fancyhead[L]{\textbf{COMP 2300}}%
+  \fancyhead[C]{\textbf{Divisibility Core Companion}}%
+  \fancyhead[R]{Definitions and Worked Examples}%
+  \fancyfoot[L]{Core sections A--E}%
+  \fancyfoot[C]{\thepage}%
+  \fancyfoot[R]{Name the definition you use}%
+  \renewcommand{\headrulewidth}{0.5pt}%
+  \renewcommand{\footrulewidth}{0.3pt}%
+}
+\makeatletter
+\let\ps@plain\ps@fancy
+\let\ps@empty\ps@fancy
+\makeatother
+
+\tcbset{enhanced,before skip=4pt,after skip=4pt,boxrule=0.6pt,arc=1.4mm,
+  left=5pt,right=5pt,top=4pt,bottom=4pt,fonttitle=\bfseries}
+\newtcolorbox{definitionbox}[1]{title={#1},colback=DivBlueTint,
+  colframe=DivNavy,colbacktitle=DivNavy,coltitle=white}
+\newtcolorbox{methodbox}[1]{title={#1},colback=DivTealTint,
+  colframe=DivTeal,colbacktitle=DivTeal,coltitle=white}
+\newtcolorbox{workedbox}[1]{title={#1},colback=white,
+  colframe=DivNavy,colbacktitle=DivBlueTint,coltitle=DivNavy}
+\newtcolorbox{warningbox}[1]{title={#1},colback=DivRedTint,
+  colframe=DivRed,colbacktitle=DivRed,coltitle=white}
+\newtcolorbox{checklistbox}[1]{title={#1},colback=DivGoldTint,
+  colframe=DivGold,colbacktitle=DivGold,coltitle=white}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\term}[1]{\textbf{\color{DivNavy}#1}}
+\newcommand{\equivmod}[1]{\mathrel{\equiv_{#1}}}
+
+\begin{document}
+\makeatletter
+\let\ps@plain\ps@fancy
+\let\ps@empty\ps@fancy
+\makeatother
+\pagestyle{fancy}
+
+\section*{A. Division, Remainders, and Congruence}
+
+\begin{multicols}{2}
+\begin{definitionbox}{Divisibility}
+For integers $d$ and $n$,
+\[
+ d\mid n\quad\Longleftrightarrow\quad
+ \text{there is a }k\in\Z\text{ such that }n=dk.
+\]
+Here $\Z$ is the set of integers, $d$ is a \term{divisor} (or factor), $n$
+is a \term{multiple} of $d$, and $k$ is an integer \term{witness}. To prove
+$d\nmid n$, show that no integer witness can exist.
+\end{definitionbox}
+
+\begin{definitionbox}{Division Algorithm}
+For every $a\in\Z$ and positive integer $b$, there are unique integers $q,r$
+such that
+\[
+ a=bq+r,\qquad 0\le r<b.
+\]
+The integer $a$ is the \term{dividend}, $b$ the \term{divisor}, $q$ the
+\term{quotient}, and $r$ the \term{remainder}. We write
+$q=a\,\mathrm{div}\,b$ and $r=a\bmod b$. The bound on $r$ makes the answer
+canonical, even when $a$ is negative.
+\end{definitionbox}
+
+\begin{definitionbox}{Congruence}
+For $m\ge2$,
+\[
+ x\equiv y\pmod m
+ \quad\Longleftrightarrow\quad m\mid(x-y).
+\]
+The positive integer $m$ is the \term{modulus}; we may also write
+$x\equivmod{m}y$. Equivalently, $x=y+mk$ for some $k\in\Z$, or $x$ and $y$
+have the same least nonnegative remainder modulo $m$.
+\end{definitionbox}
+
+\begin{methodbox}{One relationship, three views}
+If $a=bq+r$ with $0\le r<b$, then
+\[
+ a\bmod b=r
+ \quad\text{and}\quad
+ a\equiv r\pmod b.
+\]
+The equation gives the quotient and remainder; congruence records only the
+remainder class.
+\end{methodbox}
+
+\begin{methodbox}{Basic divisibility laws}
+For integers of the indicated form:
+\[
+\begin{array}{ll}
+d\mid a,\ d\mid b &\Longrightarrow d\mid(ma+nb),\quad m,n\in\Z,\\
+d\mid a &\Longrightarrow d\mid ac,\quad c\in\Z,\\
+d\mid a,\ a\mid b &\Longrightarrow d\mid b.
+\end{array}
+\]
+Each follows by substituting integer witnesses and factoring out $d$.
+\end{methodbox}
+
+\columnbreak
+
+\begin{workedbox}{Worked example: a positive dividend}
+Find all three views for $263$ divided by $17$.
+\[
+263=17(15)+8,\qquad 0\le8<17.
+\]
+Therefore
+\[
+\begin{aligned}
+263\,\mathrm{div}\,17&=15, & 263\bmod17&=8,\\
+263&\equiv8\pmod{17}.
+\end{aligned}
+\]
+For the definition check,
+$263-8=255=17(15)$, so $17\mid(263-8)$.
+\end{workedbox}
+
+\begin{workedbox}{Worked example: a negative dividend}
+Find the canonical quotient and remainder for $-52$ divided by $9$.
+The tempting equation $-52=9(-5)-7$ has a negative remainder, so it is
+\emph{not} canonical. Instead,
+\[
+-52=9(-6)+2,\qquad 0\le2<9.
+\]
+Thus
+\[
+\begin{aligned}
+-52\,\mathrm{div}\,9&=-6, & -52\bmod9&=2,\\
+-52&\equiv2\pmod9.
+\end{aligned}
+\]
+\end{workedbox}
+
+\begin{warningbox}{Common mistake}
+Do not truncate a negative quotient toward zero. Choose the unique $q$ that
+makes $0\le r<b$. A negative number may be congruent to a negative residue,
+but $a\bmod b$ is the least nonnegative one.
+\end{warningbox}
+
+\begin{checklistbox}{Can you do this from the definitions?}
+Given $a$ and $b>0$, find $q,r$; verify the remainder bound; state
+$a\,\mathrm{div}\,b$, $a\bmod b$, and a congruence; justify the congruence by
+showing that $b$ divides a difference.
+\end{checklistbox}
+
+\begin{workedbox}{Recover a number; test a congruence}
+If $a\,\mathrm{div}\,13=-4$ and $a\bmod13=9$, then
+$a=13(-4)+9=-43$. To test $347\equiv-13\pmod{24}$, subtract:
+$347-(-13)=360=24(15)$, so the claim is true; the least nonnegative residue
+is $11$.
+\end{workedbox}
+\end{multicols}
+
+\thispagestyle{fancy}
+\clearpage
+\pagestyle{fancy}
+\thispagestyle{fancy}
+\section*{B. Base-$b$ Representations}
+\thispagestyle{fancy}
+
+\begingroup
+\tcbset{before skip=3pt,after skip=3pt}
+\begin{multicols}{2}\small
+\begin{definitionbox}{Base-$b$ expansion}
+For $b\ge2$, the numeral $(a_ka_{k-1}\cdots a_0)_b$ represents
+\[
+ a_kb^k+a_{k-1}b^{k-1}+\cdots+a_1b+a_0,
+ \qquad 0\le a_i<b.
+\]
+Binary uses digits $0,1$; octal uses $0$ through $7$; hexadecimal uses
+$0$ through $9$ and $A=10,\ldots,F=15$.
+\end{definitionbox}
+
+\begin{methodbox}{Place value, shifting, and digits}
+\[
+(10)_b=b,\qquad (100)_b=b^2,\qquad
+(10)_b(10)_b=(100)_b.
+\]
+More generally,
+\[
+\bigl((10)_b\bigr)^k
+=\bigl(1\underbrace{00\cdots0}_{k\text{ zeros}}\bigr)_b=b^k.
+\]
+If $N=(a_k\cdots a_0)_b$ and $0\le r<b$, then
+\[
+bN=(a_k\cdots a_00)_b,
+\qquad bN+r=(a_k\cdots a_0r)_b.
+\]
+Equivalently,
+\[
+(a_k\cdots a_1a_0)_b=b(a_k\cdots a_1)_b+a_0.
+\]
+Thus multiplying by $b$ shifts left, while dividing by $b$ removes the final
+digit: $\mathrm{div}\,b$ gives the remaining prefix and $\bmod b$ gives the
+removed digit.
+\end{methodbox}
+
+\begin{methodbox}{Decimal to another base}
+Repeatedly divide by the new base. Record each remainder. The digits are the
+remainders read from \emph{bottom to top}. Verify by expanding in powers of the
+base. Each line $n=bq+r$ reverses one shift-and-append step. In hexadecimal,
+remainders $10$--$15$ become $A$--$F$; for $1000_{10}$ the successive
+remainders are $8,E,3$, so $1000_{10}=(3E8)_{16}$.
+\end{methodbox}
+
+\begin{workedbox}{Worked example: $202_{10}$ to binary}
+\[
+\begin{array}{rcl@{\qquad}rcl}
+202&=&2(101)+0 & 101&=&2(50)+1\\
+50&=&2(25)+0 & 25&=&2(12)+1\\
+12&=&2(6)+0 & 6&=&2(3)+0\\
+3&=&2(1)+1 & 1&=&2(0)+1
+\end{array}
+\]
+Reading the remainders in reverse chronological order gives
+$202_{10}=11001010_2$. Rebuilding by shifting and
+appending gives
+\[
+\begin{aligned}
+(1)_2&\to(11)_2\to(110)_2\\
+&\to(1100)_2\to(11001)_2\to(110010)_2\\
+&\to(1100101)_2\to(11001010)_2.
+\end{aligned}
+\]
+Check: $128+64+8+2=202$.
+\end{workedbox}
+
+\columnbreak
+
+\begin{workedbox}{Worked example: evaluate a numeral}
+\[
+(2301)_5=2(5^3)+3(5^2)+0(5)+1=326.
+\]
+The subscript names the base; it is not a multiplier.
+\end{workedbox}
+
+\begin{methodbox}{Binary as a bridge}
+One hexadecimal digit equals exactly four binary bits; one octal digit equals
+exactly three. Pad with leading zeros, then regroup from the \emph{right}. For
+example,
+\[
+\begin{aligned}
+(725)_8&=(111\ 010\ 101)_2=469_{10},\\
+(101\ 101\ 011)_2&=(553)_8,\\
+(0001\ 0110\ 1011)_2&=(16B)_{16}.
+\end{aligned}
+\]
+\end{methodbox}
+
+\begin{workedbox}{Worked example: hexadecimal to binary and octal}
+Convert $(2D7)_{16}$.
+\[
+2=0010_2,\qquad D=1101_2,\qquad7=0111_2,
+\]
+so
+\[
+(2D7)_{16}=(0010\ 1101\ 0111)_2.
+\]
+Regrouping in threes,
+\[
+001\ 011\ 010\ 111
+\quad\Longrightarrow\quad (1327)_8.
+\]
+Decimal check:
+\[
+2(16^2)+13(16)+7=727.
+\]
+Leading zeros change grouping, not value.
+\end{workedbox}
+
+\begin{workedbox}{Worked example: the last two base-$b$ digits}
+Let $n=(25314)_7$. Then
+\[
+n=2(7^4)+5(7^3)+3(7^2)+1(7)+4.
+\]
+Every term containing $7^2$ is congruent to $0$ modulo $7^2$. Therefore
+\[
+n\bmod7^2=1(7)+4=11.
+\]
+The last two base-seven digits are $(14)_7$, whose decimal value is $11$, not
+$14$.
+\end{workedbox}
+
+\begin{checklistbox}{Conversion checks}
+Digits must be legal for the base. Binary/hex groups have four bits; binary/octal
+groups have three. Expand the final numeral to verify it represents the same
+integer.
+\end{checklistbox}
+\end{multicols}
+\endgroup
+
+\thispagestyle{fancy}
+\clearpage
+\pagestyle{fancy}
+\thispagestyle{fancy}
+\section*{C--D. Modular Arithmetic, GCD, and B\'ezout}
+\thispagestyle{fancy}
+
+\begingroup
+\tcbset{before skip=1.5pt,after skip=1.5pt}
+\begin{multicols}{2}\small
+\begin{definitionbox}{Arithmetic with congruences}
+If $a\equiv b\pmod m$ and $c\equiv d\pmod m$, then
+\[
+a+c\equiv b+d\pmod m,
+\qquad ac\equiv bd\pmod m.
+\]
+In particular, $a^n\equiv b^n\pmod m$ for every positive integer $n$.
+The exact remainder identities are
+\[
+\begin{aligned}
+(a+c)\bmod m&=((a\bmod m)+(c\bmod m))\bmod m,\\
+ac\bmod m&=((a\bmod m)(c\bmod m))\bmod m.
+\end{aligned}
+\]
+Reduce early; report a least nonnegative residue for $x\bmod m$.
+\end{definitionbox}
+
+\begin{workedbox}{Worked example: reduce early}
+Compute the least nonnegative residue of $(-47)\cdot38+19$ modulo $12$.
+\[
+-47\equiv1,\quad38\equiv2,\quad19\equiv7\pmod{12},
+\]
+so
+\[
+(-47)\cdot38+19\equiv1(2)+7\equiv9\pmod{12}.
+\]
+Hence $((-47)\cdot38+19)\bmod12=9$.
+\end{workedbox}
+
+\begin{methodbox}{Powers modulo $m$: cycles and squaring}
+\textbf{Cycle method.} Compute residues until they repeat. Since
+$3,9,7,1$ repeat for powers of $3$ modulo $10$, and $47\equiv3\pmod4$,
+\[
+3^{47}\equiv3^3\equiv7\pmod{10}.
+\]
+\textbf{Repeated squaring.} Square and reduce at every step. Modulo $13$,
+\[
+5^2\equiv-1,\qquad5^4\equiv1,
+\]
+so all powers $5^{4j}\equiv1$. Because
+$117=64+32+16+4+1$,
+\[
+5^{117}\equiv1\cdot1\cdot1\cdot1\cdot5\equiv5\pmod{13}.
+\]
+Always state the cycle length or the binary/power decomposition of the
+exponent.
+\end{methodbox}
+
+\begin{definitionbox}{GCD and relative primality}
+For integers $a,b$, not both zero, $\gcd(a,b)$ is the greatest positive
+integer dividing both. The numbers are \term{relatively prime} when
+$\gcd(a,b)=1$. The numbers themselves need not be prime.
+\end{definitionbox}
+
+\begin{methodbox}{Euclidean algorithm}
+Put the larger positive input first, then repeatedly use
+\[
+a=bq+r,\qquad0\le r<b,
+\]
+then replace $(a,b)$ by $(b,r)$. Stop when the remainder is $0$. The last
+\emph{nonzero} remainder is the gcd. This works because if $a=bq+r$, then a
+number divides both $a,b$ exactly when it divides both $b,r=a-bq$; hence
+$\gcd(a,b)=\gcd(b,r)$. If the inputs arrive smaller-first, swap them.
+\end{methodbox}
+
+\columnbreak
+
+\begin{workedbox}{Euclidean algorithm and B\'ezout coefficients}
+Find $\gcd(246,102)$ and express it as $246s+102t$.
+\[
+\begin{aligned}
+246&=2(102)+42,\\
+102&=2(42)+18,\\
+42&=2(18)+6,\\
+18&=3(6)+0.
+\end{aligned}
+\]
+The last nonzero remainder is $6$. B\'ezout's identity says that
+$\gcd(a,b)=sa+tb$ for some $s,t\in\Z$. Back-substitute:
+\[
+\begin{aligned}
+6&=42-2(18)\\
+ &=42-2\bigl(102-2(42)\bigr)\\
+ &=5(42)-2(102)\\
+ &=5\bigl(246-2(102)\bigr)-2(102)\\
+ &=5(246)-12(102).
+\end{aligned}
+\]
+Thus $s=5$ and $t=-12$. Check both conclusions:
+\[
+6\mid246,\quad6\mid102,\qquad5(246)-12(102)=6.
+\]
+\end{workedbox}
+
+\begin{methodbox}{B\'ezout and relative-prime checks}
+Back-substitute through every displayed Euclidean equation; preserve the
+original input order in the final identity. Coefficients are not unique, so
+verify them by substitution. For example,
+$16=2^4$ and $45=3^2\cdot5$ share no prime factor, so
+$\gcd(16,45)=1$: composite numbers can be relatively prime.
+\end{methodbox}
+\end{multicols}
+\endgroup
+
+\thispagestyle{fancy}
+\clearpage
+\pagestyle{fancy}
+\thispagestyle{fancy}
+\section*{E. Definition-Driven Proofs and Quiz Bridges}
+\thispagestyle{fancy}
+
+\begingroup
+\tcbset{before skip=3pt,after skip=3pt}
+\begin{multicols}{2}\small
+\begin{definitionbox}{Even, odd, prime, and composite}
+An integer is \term{even} if it is $2k$, and \term{odd} if it is $2k+1$,
+for some $k\in\Z$. A positive integer $p>1$ is \term{prime} if its only
+positive divisors are $1$ and $p$; an integer greater than $1$ that is not
+prime is \term{composite}.
+\end{definitionbox}
+
+\begin{workedbox}{Proof pattern: divisibility and linear combinations}
+Assume $d\mid a$ and $d\mid b$. By definition, $a=dr$ and $b=ds$ for some
+$r,s\in\Z$. For any $m,n\in\Z$,
+\[
+ma+nb=m(dr)+n(ds)=d(mr+ns).
+\]
+Since $mr+ns\in\Z$, the definition gives $d\mid(ma+nb)$.
+\end{workedbox}
+
+\begin{workedbox}{Proof pattern: a modulus that factors}
+Suppose $p,q\ge2$, $d=pq$, and $x\equiv y\pmod d$. By congruence,
+$d\mid(x-y)$, so $x-y=kd=kpq$ for some $k\in\Z$. Then
+\[
+x-y=p(kq)\quad\text{and}\quad x-y=q(kp).
+\]
+Therefore $p\mid(x-y)$ and $q\mid(x-y)$, giving
+\[
+x\equiv y\pmod p,\qquad x\equiv y\pmod q.
+\]
+This direction needs only positive moduli with $p\mid d$ and $q\mid d$;
+primality is not required. For instance, $103-4=99$ proves the same claim
+from modulus $33$ to moduli $3$ and $11$.
+\end{workedbox}
+
+\columnbreak
+
+\begin{methodbox}{A reliable proof skeleton}
+\begin{enumerate}
+  \item Translate each hypothesis using its definition.
+  \item Name the integer witnesses.
+  \item Manipulate the resulting equations.
+  \item Exhibit the witness required by the conclusion.
+  \item State why the witness is an integer.
+\end{enumerate}
+\end{methodbox}
+
+\begin{workedbox}{Proof pattern: products preserve congruence}
+Assume $a\equiv b\pmod m$ and $c\equiv d\pmod m$. Then
+$a=b+mk$ and $c=d+m\ell$ for some $k,\ell\in\Z$. Therefore
+\[
+ac-bd=m(b\ell+dk+mk\ell).
+\]
+The parenthesized expression is an integer, so $m\mid(ac-bd)$ and
+$ac\equiv bd\pmod m$.
+\end{workedbox}
+
+\begin{workedbox}{Proof pattern: odd squares modulo $8$}
+Let $n=2k+1$. Then
+\[
+n^2-1=4k(k+1).
+\]
+One of the consecutive integers $k,k+1$ is even, so $k(k+1)=2t$ for some
+$t\in\Z$. Hence $n^2-1=8t$, proving $n^2\equiv1\pmod8$.
+\end{workedbox}
+
+\begin{workedbox}{Two short divisibility arguments}
+If $a\mid b$ and $b\mid c$, write $b=ar$ and $c=bs$. Then
+$c=a(rs)$ with $rs\in\Z$, so $a\mid c$.
+
+For three consecutive integers $n,n+1,n+2$, one is divisible by $3$ and at
+least one is even. If these are different factors their product contains
+$(3r)(2s)=6rs$; if they are the same factor, it is already divisible by $6$.
+Multiplying by the remaining integer preserves divisibility by $6$.
+\end{workedbox}
+
+\begin{warningbox}{Claims that need an extra hypothesis}
+From $a\mid bc$, it does \emph{not} follow in general that $a\mid b$ or
+$a\mid c$: $6\mid2\cdot3$, but $6$ divides neither factor. The implication
+is valid when $a$ is prime (Euclid's lemma): if prime $p\mid bc$, then
+$p\mid b$ or $p\mid c$.
+\end{warningbox}
+
+\begin{checklistbox}{Core readiness and format}
+\textbf{A:} canonical division and congruence. \textbf{B:} base conversion.
+\textbf{C:} modular arithmetic, cycles, squaring, and congruence proofs.
+\textbf{D:} Euclidean algorithm and B\'ezout. \textbf{E:} direct proofs and
+counterexamples. A live Core designates one problem from each section A--E
+and lasts 20 minutes. Four fully correct problems earns \textbf{Meets}; all
+five earns \textbf{Exceeds}. Every retake is a complete new form. Show enough
+work for each answer and proof to be checked; approved accommodations apply.
+\end{checklistbox}
+\end{multicols}
+\endgroup
+
+\thispagestyle{fancy}
+\end{document}
