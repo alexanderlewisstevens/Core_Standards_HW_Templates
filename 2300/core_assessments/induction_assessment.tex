@@ -1,176 +1,131 @@
 \documentclass[11pt]{article}
-\usepackage[letterpaper,margin=0.65in,includehead,includefoot,headheight=15pt]{geometry}
+
+% Canonical two-page student form for the Induction Core.
+\usepackage[letterpaper,margin=0.48in,includehead,includefoot,headheight=14pt,headsep=6pt]{geometry}
+\usepackage[T1]{fontenc}
 \usepackage{amsmath,amssymb}
 \usepackage{enumitem}
 \usepackage{fancyhdr}
 \usepackage{microtype}
+\usepackage{multicol}
+\usepackage[compact,small]{titlesec}
+\usepackage[most]{tcolorbox}
 \usepackage[hidelinks]{hyperref}
+
 \setlength{\parindent}{0pt}
-\setlength{\parskip}{4pt}
-\setlist[enumerate]{leftmargin=*,itemsep=3pt,topsep=2pt}
+\setlength{\parskip}{0pt}
+\setlength{\columnsep}{0.22in}
+\setlength{\multicolsep}{3pt}
+\setlength{\premulticols}{0pt}
+\setlength{\postmulticols}{0pt}
+\setlength{\abovedisplayskip}{4pt}
+\setlength{\belowdisplayskip}{4pt}
+\setlist{nosep,leftmargin=*}
+\titlespacing*{\section}{0pt}{3pt}{2pt}
+
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[L]{\textbf{Induction Core}}
 \fancyhead[R]{COMP 2300}
 \fancyfoot[C]{\thepage}
 \renewcommand{\headrulewidth}{0.4pt}
-\fancypagestyle{plain}{\fancyhf{}\fancyhead[L]{\textbf{Induction Core}}\fancyhead[R]{COMP 2300}\fancyfoot[C]{\thepage}\renewcommand{\headrulewidth}{0.4pt}}
+
+\tcbset{
+  colback=white,
+  colframe=black,
+  boxrule=0.45pt,
+  arc=2pt,
+  left=6pt,right=6pt,top=5pt,bottom=5pt,
+  before skip=0pt,after skip=5pt
+}
+
+\newtcolorbox{responsebox}[1][]{
+  colframe=black!55,
+  boxrule=0.35pt,
+  arc=1pt,
+  left=5pt,right=5pt,top=4pt,bottom=4pt,
+  title={#1},
+  fonttitle=\small\bfseries,
+  colbacktitle=black!5,
+  coltitle=black
+}
 
 \begin{document}
-\textbf{Name:} \rule{3.2in}{0.4pt}\hfill
-\textbf{Attempt date:} \rule{1.55in}{0.4pt}
 
-\textbf{Time: 20 minutes.} A supervised form contains five labeled problems,
-one from each section A--E. Each label is one problem, including all of its
-parts. \emph{Meets} requires four fully correct problems; \emph{Exceeds}
-requires all five. Every retake uses a new complete form. The problems below
-are practice variants; a live form contains only one problem from each section.
+\begin{tcolorbox}
+\small
+\textbf{Name:} \rule{2.55in}{0.4pt}\hfill
+\textbf{Attempt date:} \rule{1.45in}{0.4pt}
 
-\textbf{Directions.} Use the requested proof method. State the proposition and
-the relevant hypothesis precisely, verify every required base case, and identify
-the exact line where the hypothesis advances the proof.
+\vspace{3pt}
+\textbf{Time limit: 20 minutes.} This Core has three problems. Each problem is
+evaluated as a whole. \textbf{Meets} requires a fully correct C.1 and one fully
+correct short problem (A.1 or B.1). \textbf{Exceeds} requires all three
+problems to be fully correct. Every retake uses a new complete form.
 
-\section*{A. Proof Architecture}
+\vspace{3pt}
+Use complete mathematical sentences and justify each inference. For C.1, state
+the proposition, verify the base case, state the induction hypothesis, show
+exactly where it is used, and conclude the proof. Use only materials or devices
+specifically authorized by the proctor. Approved testing accommodations apply.
+\end{tcolorbox}
 
-\subsection*{A.1 Summation Blueprint}
-For the claim $1+2+\cdots+n=n(n+1)/2$ for $n\ge1$, write: (i) $P(1)$,
-(ii) the induction hypothesis $P(k)$, and (iii) the exact statement $P(k+1)$
-that must be proved. Do not complete the algebra.
+\begin{multicols}{2}
 
-\subsection*{A.2 Divisibility Blueprint}
-For the claim $3\mid(n^3+2n)$ for every $n\ge1$, write the base case, the
-induction hypothesis using an integer witness, and the divisibility statement
-needed for the next case. Do not complete the algebra.
-
-\subsection*{A.3 Strong-Induction Blueprint}
-For the claim that every integer $n\ge2$ is a product of primes, state the base
-case, the strong induction hypothesis for an arbitrary $k\ge2$, and what must
-be proved for $k+1$. Explain in one sentence why ordinary induction is less
-natural here.
-
-\subsection*{A.4 Structural-Induction Blueprint}
-A full binary tree is either one leaf or a root joined to two smaller full
-binary trees. To prove that every full binary tree has one more leaf than
-internal vertex, state the basis case, the two structural induction hypotheses,
-and the statement required for the newly joined tree. Do not complete the count.
-
-\subsection*{A.5 Choose the Method}
-Choose ordinary, strong, or structural induction for each claim and give one
-sentence describing the hypothesis.
+\section*{A. Proof setup (short)}
+\textbf{A.1 Strong induction.}
+Consider the claim that every integer $n\ge2$ is a product of one or more
+primes. State:
 \begin{enumerate}[label=(\alph*)]
-  \item $1+3+\cdots+(2n-1)=n^2$.
-  \item Every amount $n\ge18$ can be made using 4-cent and 7-cent stamps.
-  \item Every recursively formed parenthesized expression has equally many
-        left and right parentheses.
+  \item the base case;
+  \item the strong induction hypothesis for an arbitrary $k\ge2$;
+  \item what must be proved for $k+1$; and
+  \item the two cases considered in the induction step.
 \end{enumerate}
+Do not complete the proof.
 
-\newpage
-\section*{B. Ordinary Induction}
+\begin{responsebox}[A.1 response]
+\vspace{1.45in}
+\end{responsebox}
 
-\subsection*{B.1 Odd-Number Sum}
-Prove by ordinary induction that
-$1+3+\cdots+(2n-1)=n^2$ for every $n\ge1$.
+\columnbreak
 
-\subsection*{B.2 Exponential Divisibility}
-Prove by ordinary induction that $7\mid(8^n-1)$ for every $n\ge0$.
+\section*{B. Diagnose and repair (short)}
+\textbf{B.1 Circular induction step.}
+A student tries to prove $2^n\ge n+1$ for every integer $n\ge0$. In the
+induction step, the student assumes $2^{k+1}\ge k+2$ and then declares
+$P(k+1)$ proved.
 
-\subsection*{B.3 Triangular Numbers}
-Prove by ordinary induction that
-$1+2+\cdots+n=n(n+1)/2$ for every $n\ge1$.
+Identify the error, state the correct induction hypothesis, and give a valid
+chain of inequalities that proves the next case.
 
-\subsection*{B.4 Consecutive Product}
-Prove by ordinary induction that $2\mid(n^2+n)$ for every $n\ge1$.
+\begin{responsebox}[B.1 response]
+\vspace{1.72in}
+\end{responsebox}
 
-\subsection*{B.5 Geometric Sum}
-Prove by ordinary induction that
+\end{multicols}
+
+\section*{C. Complete inductive proof}
+\textbf{C.1 Binomial sum.}
+You may use Pascal's identity and the endpoint identities
 \[
-  1+3+3^2+\cdots+3^n=\frac{3^{n+1}-1}{2}
+  \binom{k+1}{j}=\binom{k}{j}+\binom{k}{j-1}
+  \quad(1\le j\le k),
+  \qquad
+  \binom{n}{0}=\binom{n}{n}=1.
 \]
-for every $n\ge0$.
+Prove by mathematical induction that
+\[
+  \sum_{j=0}^{n}\binom{n}{j}=2^n
+  \qquad\text{for every integer }n\ge0.
+\]
+Your proof must include the proposition $P(n)$, the base case, the induction
+hypothesis, the complete next-case calculation (including reindexing), and the
+conclusion.
 
-\newpage
-\section*{C. Strong Induction}
-
-\subsection*{C.1 Postage}
-Using the verified base cases $18,19,20,21$, complete the strong-induction step
-showing that every amount $n\ge18$ can be made from 4-cent and 7-cent stamps.
-
-\subsection*{C.2 Prime Products}
-Prove by strong induction that every integer $n\ge2$ is a product of one or
-more primes. In the inductive step, separate the cases where $k+1$ is prime or
-composite.
-
-\subsection*{C.3 Distinct Powers of Two}
-Assume every integer from $1$ through $k$ is a sum of distinct nonnegative
-powers of $2$. Let $2^m$ be the largest power of $2$ not exceeding $k+1$.
-Complete the step proving the claim for $k+1$, including the zero-remainder case.
-
-\subsection*{C.4 Jigsaw Moves}
-A jigsaw puzzle is assembled by joining two existing blocks at each move. Use
-strong induction to prove that assembling $n\ge1$ pieces always takes exactly
-$n-1$ moves, regardless of the order of joins.
-
-\subsection*{C.5 Chocolate Breaks}
-A rectangular chocolate bar has $n$ unit squares. One move breaks one existing
-rectangular piece into two smaller rectangular pieces. Use strong induction to
-prove that separating all $n$ squares always takes exactly $n-1$ breaks.
-
-\newpage
-\section*{D. Recursive Objects}
-
-\subsection*{D.1 Linear Recurrence}
-Let $a_0=2$ and $a_{n+1}=3a_n+2$. Compute $a_1,a_2,a_3$, conjecture a closed
-formula, and verify only the induction step for that formula.
-
-\subsection*{D.2 Arithmetic Sequence}
-Give a recursive definition of $a_n=4n-2$ for $n\ge1$. Then state the
-induction hypothesis and verify the next-case algebra.
-
-\subsection*{D.3 Parenthesized Expressions}
-Variables belong to $\mathcal E$; if $u,v\in\mathcal E$, then $(u+v)$ and
-$(u\times v)$ belong to $\mathcal E$. Prove by structural induction that
-every expression in $\mathcal E$ has equally many left and right parentheses.
-
-\subsection*{D.4 Full Binary Trees}
-A full binary tree is one leaf or a root joined to two full binary trees. Prove
-by structural induction that every such tree has one more leaf than internal
-vertex.
-
-\subsection*{D.5 String Reversal}
-Let $\lambda^R=\lambda$ and $(wx)^R=xw^R$ for a string $w$ and symbol $x$.
-Using $\ell(\lambda)=0$ and $\ell(wx)=\ell(w)+1$, prove by structural
-induction that $\ell(w^R)=\ell(w)$ for every string $w$.
-
-\newpage
-\section*{E. Diagnosis and Synthesis}
-
-\subsection*{E.1 Circular Step}
-A student claims to prove $2^n\ge n+1$ for $n\ge0$ by assuming
-$2^{k+1}\ge k+2$ and declaring the next case complete. Identify the error,
-give the correct base case and induction hypothesis, and show the valid
-next-case inequality.
-
-\subsection*{E.2 Missing Base Case}
-A recurrence proof uses both $P(k)$ and $P(k-1)$ to establish $P(k+1)$ but
-checks only $P(0)$. Explain precisely what is missing and state a sufficient
-pair of base cases and strong induction hypothesis.
-
-\subsection*{E.3 A False Induction Proof}
-A student claims all positive integers are equal. The base case with one integer
-is true. In the step, the student applies the hypothesis to the first $k$ and
-last $k$ integers in a list of $k+1$ integers, then says the overlapping entries
-connect the two groups. Identify the first value of $k$ for which this overlap
-argument is needed and explain why the step fails there.
-
-\subsection*{E.4 Binomial-Sum Step}
-Assume $\sum_{j=0}^{k}\binom{k}{j}=2^k$. Use Pascal's identity
-$\binom{k+1}{j}=\binom{k}{j}+\binom{k}{j-1}$ to prove
-$\sum_{j=0}^{k+1}\binom{k+1}{j}=2^{k+1}$. Show how the two sums are reindexed.
-
-\subsection*{E.5 Repair Distinct-Powers Reasoning}
-A student tries to prove that every positive integer is a sum of distinct
-powers of $2$ by representing $k$ and then adding $1$. Give a concrete value
-of $k$ for which this repeats a power, and replace the step with a valid strong-
-induction argument using the largest power of $2$ not exceeding $k+1$.
+\clearpage
+\begin{responsebox}[C.1 complete proof]
+\vspace{8.25in}
+\end{responsebox}
 
 \end{document}

@@ -1,178 +1,1046 @@
-\documentclass[8pt]{article}
-\usepackage[letterpaper,margin=0.25in]{geometry}
-\usepackage{amsmath,amssymb}
+\documentclass[10pt]{article}
+
+% ------------------------------------------------------------
+% COMP 2300 Proofs Core companion
+% ------------------------------------------------------------
+\usepackage[letterpaper,margin=0.58in,includehead,includefoot,
+  headheight=15pt,headsep=8pt,footskip=22pt]{geometry}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{microtype}
+\usepackage[dvipsnames,svgnames]{xcolor}
 \usepackage{multicol}
 \usepackage{enumitem}
-\setlist{nosep,leftmargin=8pt}
+\usepackage{tabularx,booktabs,array}
+\usepackage[most]{tcolorbox}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{needspace}
+\usepackage[hidelinks]{hyperref}
+
+\definecolor{ProofNavy}{HTML}{17324D}
+\definecolor{ProofTeal}{HTML}{176B6B}
+\definecolor{ProofGold}{HTML}{A66B00}
+\definecolor{ProofRed}{HTML}{9A3C35}
+\definecolor{ProofBlueTint}{HTML}{EDF4F8}
+\definecolor{ProofTealTint}{HTML}{EDF8F6}
+\definecolor{ProofGoldTint}{HTML}{FFF7E5}
+\definecolor{ProofRedTint}{HTML}{FCEFED}
+
 \setlength{\parindent}{0pt}
-\setlength{\parskip}{1pt}
-\setlength{\columnsep}{0.12in}
-\usepackage[compact,small]{titlesec}
-\titlespacing*{\section}{0pt}{2pt}{1pt}
-\titlespacing*{\subsection}{0pt}{1pt}{0pt}
-\setlength{\abovedisplayskip}{1pt}
-\setlength{\belowdisplayskip}{1pt}
-\pagestyle{empty}
+\setlength{\parskip}{4pt}
+\setlength{\columnsep}{0.28in}
+\setlength{\columnseprule}{0.25pt}
+\setlength{\emergencystretch}{1em}
+\setlength{\abovedisplayskip}{5pt}
+\setlength{\belowdisplayskip}{5pt}
+\setlength{\abovedisplayshortskip}{3pt}
+\setlength{\belowdisplayshortskip}{3pt}
+\setlist{leftmargin=*,itemsep=2pt,topsep=3pt,parsep=0pt,partopsep=0pt}
+\setlist[enumerate]{label=\arabic*.,ref=\arabic*}
+
+\titleformat{\section}
+  {\Large\bfseries\color{ProofNavy}}{}{0pt}{}
+  [\vspace{-3pt}\color{ProofNavy}\rule{\linewidth}{0.7pt}]
+\titleformat{\subsection}
+  {\large\bfseries\color{ProofTeal}}{}{0pt}{}
+\titleformat{\subsubsection}
+  {\normalsize\bfseries\color{ProofNavy}}{}{0pt}{}
+\titlespacing*{\section}{0pt}{5pt}{6pt}
+\titlespacing*{\subsection}{0pt}{7pt}{3pt}
+\titlespacing*{\subsubsection}{0pt}{5pt}{2pt}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textbf{COMP 2300}}
+\fancyhead[C]{\textbf{Proofs Core Companion}}
+\fancyhead[R]{Definitions, Rules, and Worked Examples}
+\fancyfoot[L]{Core sections A--E}
+\fancyfoot[C]{\thepage}
+\fancyfoot[R]{Use definitions explicitly}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0.3pt}
+
+\tcbset{
+  enhanced,
+  before skip=5pt,
+  after skip=5pt,
+  boxrule=0.6pt,
+  arc=1.5mm,
+  left=6pt,right=6pt,top=5pt,bottom=5pt,
+  fonttitle=\bfseries
+}
+\newtcolorbox{definitionbox}[1]{
+  title={#1},colback=ProofBlueTint,colframe=ProofNavy,
+  colbacktitle=ProofNavy,coltitle=white
+}
+\newtcolorbox{methodbox}[1]{
+  title={#1},colback=ProofTealTint,colframe=ProofTeal,
+  colbacktitle=ProofTeal,coltitle=white
+}
+\newtcolorbox{workedbox}[1]{
+  title={#1},colback=white,colframe=ProofNavy,
+  colbacktitle=ProofBlueTint,coltitle=ProofNavy
+}
+\newtcolorbox{warningbox}[1]{
+  title={#1},colback=ProofRedTint,colframe=ProofRed,
+  colbacktitle=ProofRed,coltitle=white
+}
+\newtcolorbox{checklistbox}[1]{
+  title={#1},colback=ProofGoldTint,colframe=ProofGold,
+  colbacktitle=ProofGold,coltitle=white
+}
+
+\newcommand{\term}[1]{\textbf{\color{ProofNavy}#1}}
+\newcommand{\why}{\textit{Why this works.} }
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\newcommand{\N}{\mathbb N}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcolumntype{M}{>{\raggedright\arraybackslash}p{0.29\linewidth}}
 
 \begin{document}
+
 \begin{center}
-\textbf{\large Proof Techniques Cheat Sheet}
+  {\Huge\bfseries\color{ProofNavy} Proofs Core Companion}\par
+  \vspace{3pt}
+  {\large Definitions, rules of inference, proof methods, and complete worked examples}\par
+  \vspace{5pt}
+  \color{ProofTeal}\rule{0.88\linewidth}{1.1pt}
 \end{center}
-\vspace{-6pt}
 
-\begin{multicols}{3}
-\small
+\begin{checklistbox}{How to use this companion}
+The Proofs Core is organized into five skills: \textbf{A} inference and proof
+structure, \textbf{B} direct proofs, \textbf{C} contraposition and contradiction,
+\textbf{D} cases, existence, and counterexamples, and \textbf{E} strategy choice
+and proof repair. Study the vocabulary first, then cover a worked solution and
+try to reproduce its logic without looking. On any proof, name the objects,
+state their domains, unpack definitions, justify the central step, and finish
+with the exact requested conclusion.
+\end{checklistbox}
 
-\section*{Rules of Inference}
-\textbf{Propositional:}
-\begin{itemize}[nosep]
-\item \textbf{Modus Ponens:} $p, p \to q \therefore q$
-\item \textbf{Modus Tollens:} $\neg q, p \to q \therefore \neg p$
-\item \textbf{Hypothetical Syllogism:} $p \to q, q \to r \therefore p \to r$
-\item \textbf{Disjunctive Syllogism:} $p \lor q, \neg p \therefore q$
-\item \textbf{Addition:} $p \therefore p \lor q$
-\item \textbf{Simplification:} $p \land q \therefore p$
-\item \textbf{Conjunction:} $p, q \therefore p \land q$
-\item \textbf{Resolution:} $p \lor q, \neg p \lor r \therefore q \lor r$
+\section*{The Language of the Proofs Core}
+
+\begin{multicols}{2}
+\raggedcolumns
+\subsection*{Statements, arguments, and logic}
+
+\term{Statement (proposition).} A declarative sentence that is either true or
+false. A \term{compound statement} is built from simpler statements with
+logical connectives.
+
+\term{Predicate.} A sentence with one or more input variables, such as
+$P(x)$: ``$x$ is even.'' It becomes a statement after the variables are given
+values or quantified.
+
+\term{Domain (universe of discourse).} The collection of objects a variable is
+allowed to represent. A \term{nonempty domain} contains at least one object.
+
+\term{Variable; free and bound.} A variable is \emph{bound} when it lies within
+the scope of a quantifier, as $x$ does in $\forall x\,P(x)$. Otherwise it is
+\emph{free}. The \term{scope} of a quantifier is the expression it governs.
+
+\term{Negation.} $\neg p$ means ``not $p$.'' It reverses the truth value of
+$p$.
+
+\term{Conjunction.} $p\land q$ means ``$p$ and $q$'' and is true only when both
+parts are true.
+
+\term{Disjunction.} $p\lor q$ means inclusive ``or'': at least one part is
+true, possibly both.
+
+\term{Conditional (implication).} $p\to q$ means ``if $p$, then $q$.'' Here
+$p$ is the \term{hypothesis (antecedent)} and $q$ is the
+\term{conclusion (consequent)}. It is false only when $p$ is true and $q$ is
+false.
+
+\term{Biconditional.} $p\leftrightarrow q$ means both $p\to q$ and $q\to p$;
+it is read ``$p$ if and only if $q$.''
+
+\term{Argument.} A list of \term{premises} offered as reasons for a
+\term{conclusion}. The notation
+\[
+  P_1,P_2,\ldots,P_n\ \vdash\ C
+\]
+means that $C$ is derivable from the premises using valid rules.
+
+\term{Valid argument.} An argument in which it is impossible for every premise
+to be true while the conclusion is false. \term{Invalid} means such a situation
+is possible. A \term{countermodel} specifies a domain/interpretation that makes
+the premises true and the conclusion false.
+
+\term{Rule of inference.} A truth-preserving argument form licensed for moving
+from established statements to a new statement. A \term{derivation} is a
+sequence of such justified steps.
+
+\subsection*{Related conditionals}
+
+For $p\to q$:
+\begin{center}
+\begin{tabularx}{\linewidth}{@{}lY@{}}
+\toprule
+\textbf{Name} & \textbf{Form} \\
+\midrule
+Original & $p\to q$ \\
+Converse & $q\to p$ \\
+Inverse & $\neg p\to\neg q$ \\
+Contrapositive & $\neg q\to\neg p$ \\
+\bottomrule
+\end{tabularx}
+\end{center}
+Only the contrapositive is logically equivalent to the original conditional.
+
+\columnbreak
+\subsection*{Mathematical claims and proofs}
+
+\term{Axiom (postulate).} A starting statement accepted without proof in the
+mathematical system being used.
+
+\term{Definition.} A precise agreement about the meaning of a term. In a
+proof, a definition can be used in both directions.
+
+\term{Theorem (proposition).} A mathematical statement proved from definitions,
+axioms, and earlier results. A \term{lemma} is a supporting theorem; a
+\term{corollary} follows quickly from another result. A \term{conjecture} is a
+claim believed plausible but not yet proved.
+
+\term{Proof.} A finite, logically valid argument that establishes a claim for
+every object covered by the claim. An example can illustrate a universal claim,
+but cannot prove it.
+
+\term{Universal statement.} A claim of the form $\forall x\,P(x)$: every object
+in the domain has property $P$.
+
+\term{Existential statement.} A claim of the form $\exists x\,P(x)$: at least
+one object in the domain has property $P$.
+
+\term{Arbitrary object.} A representative object chosen with no special
+property beyond the stated hypotheses. Proving the conclusion for it permits
+universal generalization.
+
+\term{Witness.} A particular value or object that makes an existential claim
+true. A \term{fresh name} is a new symbol used temporarily for an existential
+witness, without assuming which object it names.
+
+\term{Direct proof.} To prove $p\to q$, assume $p$ and derive $q$.
+
+\term{Proof by contraposition.} To prove $p\to q$, prove the equivalent
+statement $\neg q\to\neg p$.
+
+\term{Proof by contradiction.} Assume the negation of the desired conclusion
+and derive an impossibility, such as $r\land\neg r$.
+
+\term{Proof by cases.} Divide all possibilities into \term{exhaustive} cases
+(cases that cover every allowed object), prove the claim in each case, and then
+combine the cases.
+
+\term{Existence proof.} A proof of $\exists x\,P(x)$. A
+\term{constructive existence proof} displays a witness and verifies it. A
+\term{nonconstructive existence proof} proves a witness must exist without
+identifying one.
+
+\term{Counterexample.} One allowed object for which a universal claim fails.
+It disproves the claim $\forall x\,P(x)$ by establishing $\neg P(c)$ for a
+specific $c$.
+
+\term{Circular reasoning.} Treating the desired conclusion (or an equivalent
+statement) as a premise. This does not prove the conclusion.
+
+\term{Gap.} A missing or unjustified step. A \term{proof repair} identifies the
+gap and supplies a valid replacement argument.
+
+\term{Strategy.} The overall method chosen for a proof. A
+\term{substantive step} is a mathematical move that begins the actual argument,
+not merely ``use contradiction'' or ``let $n$ be an integer.''
+
+\term{Restriction.} An added hypothesis that narrows the allowed inputs. The
+\term{weakest necessary restriction} removes exactly the cases that make a
+claim or proof fail, without excluding additional valid cases.
+\end{multicols}
+
+\clearpage
+\section*{Definitions Used in the Proofs Core}
+
+\begin{multicols}{2}
+\raggedcolumns
+\subsection*{Numbers and operations}
+
+\begin{definitionbox}{Number systems}
+\begin{itemize}
+  \item $\N=\{0,1,2,\ldots\}$: the natural numbers in this course.
+  \item $\Z=\{\ldots,-2,-1,0,1,2,\ldots\}$: the integers.
+  \item $\Q$: the rational numbers.
+  \item $\R$: the real numbers, consisting of rational and irrational numbers.
+  \item \term{Positive} means $>0$; \term{nonnegative} means $\ge 0$.
 \end{itemize}
+\end{definitionbox}
 
-\textbf{Quantified:}
-\begin{itemize}[nosep]
-\item \textbf{Universal Instantiation (UI):} $\forall x\, P(x) \therefore P(c)$ for any $c$
-\item \textbf{Universal Generalization (UG):} $P(c)$ for arbitrary $c \therefore \forall x\, P(x)$
-  \\ (must be arbitrary, not specific!)
-\item \textbf{Existential Instantiation (EI):} $\exists x\, P(x) \therefore P(c)$ for some $c$
-  \\ (use new name, can't reuse!)
-\item \textbf{Existential Generalization (EG):} $P(c) \therefore \exists x\, P(x)$
-\end{itemize}
+\term{Sum, difference, product.} For numbers $a,b$, these are respectively
+$a+b$, $a-b$, and $ab$.
 
-\textbf{Common Errors:}
-\begin{itemize}[nosep]
-\item Using same constant for multiple EI
-\item Universal generalization on specific element
-\item Can't simplify $\lor$ (only $\land$)
-\item Converse error: $q, p \to q \not\Rightarrow p$
-\item Inverse error: $\neg p, p \to q \not\Rightarrow \neg q$
-\end{itemize}
-\newcolumn
-\section*{Proof Techniques}
-\subsection*{Direct Proof}
-\textbf{Structure:} Assume $p$, show $q$ directly.
+\term{Consecutive integers.} Integers that occur one after another, such as
+$n,n+1,n+2,n+3$.
 
-\textbf{Template:}
-\begin{enumerate}[nosep]
-\item Assume $p$ is true
-\item Use definitions, axioms, proven theorems
-\item Chain of logical steps
-\item Conclude $q$ is true
+\term{Largest and smallest elements.} An element $L$ is largest in a set $S$
+if $L\in S$ and $x\le L$ for every $x\in S$. An element $s$ is smallest if
+$s\in S$ and $s\le x$ for every $x\in S$.
+
+\term{Even integer.} An integer $n$ for which
+\[
+ n=2k\quad\text{for some }k\in\Z.
+\]
+The integer $k$ is a witness to evenness.
+
+\term{Odd integer.} An integer $n$ for which
+\[
+ n=2k+1\quad\text{for some }k\in\Z.
+\]
+
+\term{Divisibility.} For integers $a,b$ with $a\ne0$, $a$ \term{divides}
+$b$, written $a\mid b$, when $b=ak$ for some $k\in\Z$. Then $a$ is a divisor
+(factor) of $b$.
+
+\term{Rational number.} A real number $r$ for which
+\[
+ r=\frac{a}{b}\quad\text{for some }a,b\in\Z\text{ with }b\ne0.
+\]
+Always state that the denominator is nonzero.
+
+\term{Irrational number.} A real number that is not rational.
+
+\term{Prime number.} An integer $p>1$ whose only positive divisors are $1$
+and $p$.
+
+\term{Composite number.} An integer $n>1$ that can be written $n=ab$ for
+integers $a,b$ satisfying $1<a<n$ and $1<b<n$. Equivalently, it has a positive
+divisor other than $1$ and itself.
+
+\term{Perfect square.} An integer of the form $m^2$ for some integer $m$.
+
+\term{Absolute value.} For $x\in\R$,
+\[
+ |x|=\begin{cases}
+ x,&x\ge0,\\
+ -x,&x<0.
+ \end{cases}
+\]
+The phrase \term{with equality exactly when} means both directions must hold:
+the equality holds if $x$ has the stated value, and only then.
+
+\subsection*{Closure facts often used in proofs}
+Integers are closed under addition, subtraction, and multiplication. Rational
+numbers are closed under addition, subtraction, multiplication, and division by
+a nonzero rational number. These facts justify claims such as ``$j-k\in\Z$''
+or ``$(ad+bc)/(bd)\in\Q$.''
+
+\columnbreak
+\subsection*{Sets}
+
+\term{Set.} A collection of objects. If $x$ is an object in $A$, write
+$x\in A$; otherwise write $x\notin A$.
+
+\term{Subset.} $A\subseteq B$ means every element of $A$ is also an element of
+$B$:
+\[
+ A\subseteq B\quad\Longleftrightarrow\quad
+ \forall x\,(x\in A\to x\in B).
+\]
+To prove an inclusion, begin with an arbitrary $x\in A$ and prove $x\in B$.
+
+\term{Set equality.} $A=B$ means the sets have exactly the same elements.
+Usually prove both $A\subseteq B$ and $B\subseteq A$.
+
+\term{Element proof.} A proof of a set inclusion or equality that begins with
+an arbitrary element, translates membership through set definitions, and ends
+by placing that element in the target set.
+
+\term{Intersection.} $A\cap B$ is the set of objects in both sets:
+\[
+ x\in A\cap B\quad\Longleftrightarrow\quad
+ (x\in A\land x\in B).
+\]
+
+\term{Union.} $A\cup B$ is the set of objects in at least one set:
+\[
+ x\in A\cup B\quad\Longleftrightarrow\quad
+ (x\in A\lor x\in B).
+\]
+
+\begin{workedbox}{Definition-writing model}
+\textbf{Claim.} The sum of an even integer and an odd integer is odd.
+
+\textbf{Solution.} Let $a$ be an arbitrary even integer and $b$ an arbitrary
+odd integer. By definition, there are integers $j,k$ such that
+$a=2j$ and $b=2k+1$. Then
+\[
+ a+b=2j+(2k+1)=2(j+k)+1.
+\]
+Because $j+k\in\Z$, the final expression has the defining form of an odd
+integer. Therefore $a+b$ is odd.
+
+\why Distinct arbitrary inputs receive distinct witnesses; the calculation
+constructs the witness $j+k$ required by the definition of odd.
+\end{workedbox}
+
+\begin{warningbox}{Definitions are not decorative}
+Do not write only ``$a$ and $b$ are even.'' Write $a=2j$ and $b=2k$ for
+possibly different $j,k\in\Z$. Do not stop at $a+b=2j+2k$; factor it into
+$2(j+k)$ and state that $j+k$ is an integer. The last sentence must match the
+definition of the property being proved.
+\end{warningbox}
+
+\begin{checklistbox}{Definition checklist}
+Before using a formula, ask:
+\begin{enumerate}
+  \item What is the domain of each object?
+  \item Which definition introduces a witness?
+  \item Are independently introduced witnesses allowed to be different?
+  \item Is a denominator or divisor known to be nonzero?
+  \item Does the final expression exactly match the target definition?
 \end{enumerate}
+\end{checklistbox}
+\end{multicols}
 
-\textbf{Key Definitions:}
-\begin{itemize}[nosep]
-\item Even: $n = 2k$ for some integer $k$
-\item Odd: $n = 2k+1$ for some integer $k$
-\item Divisible: $a|b$ means $b = ak$ for some integer $k$
-\item Perfect square: $n = m^2$ for some integer $m$
-\item Rational: $r = p/q$ where $p,q$ integers, $q \neq 0$
-\item Irrational: not rational
-\end{itemize}
+\clearpage
+\section*{A. Inference and Proof Structure}
 
-\subsection*{Proof by Contrapositive}
-\textbf{Structure:} To prove $p \to q$, prove $\neg q \to \neg p$.
+\begin{definitionbox}{Reading an inference rule}
+Expressions above the line are premises; the expression below is the licensed
+conclusion. A rule is a reusable valid form. Logical equivalences, by contrast,
+permit replacing an expression by an equivalent expression.
+\end{definitionbox}
 
-\textbf{When to use:}
-\begin{itemize}[nosep]
-\item Conclusion is negative ("not even", "not divisible")
-\item Hypothesis is disjunction: $p \lor q$
-  \\ Contrapositive: $\neg p \land \neg q$
-\item Direct proof seems difficult
-\end{itemize}
+\begin{multicols}{2}
+\raggedcolumns
+\subsection*{The eight propositional rules}
 
+\begin{center}
+\renewcommand{\arraystretch}{1.28}
+\begin{tabularx}{\linewidth}{@{}Y>{\centering\arraybackslash}p{0.42\linewidth}@{}}
+\toprule
+\textbf{Rule} & \textbf{Form} \\
+\midrule
+Modus Ponens (MP) & $p,\ p\to q\ \vdash\ q$ \\
+Modus Tollens (MT) & $p\to q,\ \neg q\ \vdash\ \neg p$ \\
+Hypothetical Syllogism (HS) & $p\to q,\ q\to r\ \vdash\ p\to r$ \\
+Disjunctive Syllogism (DS) & $p\lor q,\ \neg p\ \vdash\ q$ \\
+Addition (Add) & $p\ \vdash\ p\lor q$ \\
+Simplification (Simp) & $p\land q\ \vdash\ p$ \\
+Conjunction (Conj) & $p,\ q\ \vdash\ p\land q$ \\
+Resolution (Res) & $p\lor q,\ \neg p\lor r\ \vdash\ q\lor r$ \\
+\bottomrule
+\end{tabularx}
+\end{center}
 
-\subsection*{Proof by Contradiction}
-\textbf{Structure:} To prove $p$, assume $\neg p$ and derive contradiction.
+For DS and Simplification, the symmetric version is also valid. For example,
+$p\lor q$ and $\neg q$ yield $p$; $p\land q$ yields either conjunct.
 
-\textbf{When to use:}
-\begin{itemize}[nosep]
-\item Statement says something "doesn't exist"
-\item Proving irrationality
-\item Proving uniqueness
-\item No clear direct path
-\end{itemize}
+\begin{workedbox}{Worked derivation with named rules}
+\textbf{Premises:} $a\to b$, $b\to c$, $\neg c$. \quad
+\textbf{Target:} $\neg a$.
+\[
+\begin{array}{rll}
+1.&a\to b&\text{Premise}\\
+2.&b\to c&\text{Premise}\\
+3.&\neg c&\text{Premise}\\
+4.&\neg b&\text{MT, lines 2 and 3}\\
+5.&\neg a&\text{MT, lines 1 and 4}
+\end{array}
+\]
+Every new line cites earlier lines and the rule that licenses it.
+\end{workedbox}
 
-\textbf{Template:}
-\begin{enumerate}[nosep]
-\item Assume $\neg p$ (opposite of what we want)
-\item Derive logical consequences
-\item Reach contradiction ($r \land \neg r$)
-\item Conclude $p$ must be true
-\end{enumerate}
+\subsection*{Useful equivalences}
+\[
+\begin{aligned}
+p\to q&\equiv \neg p\lor q,\\
+p\to q&\equiv \neg q\to\neg p,\\
+\neg(p\land q)&\equiv\neg p\lor\neg q,\\
+\neg(p\lor q)&\equiv\neg p\land\neg q,\\
+\neg\neg p&\equiv p.
+\end{aligned}
+\]
+An equivalence is not itself one of the eight inference rules; label the law
+used when rewriting.
 
+\columnbreak
+\subsection*{Invalid look-alikes}
 
-\subsection*{Proof by Cases}
-\textbf{Structure:} Break into exhaustive cases, prove each.
+\begin{warningbox}{Affirming the consequent}
+\[
+ p\to q,\ q\ \nvdash\ p
+\]
+Knowing the consequence occurred does not show that this particular hypothesis
+caused it.
+\end{warningbox}
 
-\textbf{When to use:}
-\begin{itemize}[nosep]
-\item Natural divisions (even/odd, positive/negative/zero)
-\item Absolute values, max/min functions
-\item Disjunction in hypothesis
-\end{itemize}
+\begin{warningbox}{Denying the antecedent}
+\[
+ p\to q,\ \neg p\ \nvdash\ \neg q
+\]
+The conclusion may still hold for some other reason.
+\end{warningbox}
 
-\textbf{Template:}
-\begin{enumerate}[nosep]
-\item Identify exhaustive cases
-\item Prove statement for each case
-\item Conclude statement true overall
-\end{enumerate}
+\begin{warningbox}{Illegal disjunction simplification}
+\[
+ p\lor q\ \nvdash\ p
+\]
+A conjunction guarantees each part; a disjunction guarantees only that at
+least one part holds.
+\end{warningbox}
 
+\begin{workedbox}{Diagnosing validity}
+``If a file is encrypted, it is unreadable without a key. This file is readable
+without a key. Therefore it is not encrypted.''
 
+Let $e$ mean ``encrypted'' and $u$ mean ``unreadable without a key.'' The form
+is $e\to u$, $\neg u$, therefore $\neg e$: \textbf{modus tollens}, so the
+argument is valid.
 
-\subsection*{Biconditional Proofs (If and Only If)}
-\textbf{To prove $p \leftrightarrow q$:}
-\begin{itemize}[nosep]
-\item Prove $p \to q$ (forward direction)
-\item Prove $q \to p$ (backward direction)
-\end{itemize}
+If the second premise were instead ``the file is unreadable,'' the form would
+be $e\to u$, $u$, therefore $e$: affirming the consequent, so it would be
+invalid.
+\end{workedbox}
 
+\subsection*{Universal shortcuts}
+\term{Universal modus ponens:}
+\[
+\forall x(P(x)\to Q(x)),\quad P(a)\ \vdash\ Q(a).
+\]
+Use UI to obtain $P(a)\to Q(a)$, then MP.
 
-\subsection*{Counterexamples}
-\textbf{To disprove $\forall x\, P(x)$:} Find one $x$ where $P(x)$ false.
-
-\textbf{To disprove $p \to q$:} Find case where $p$ true but $q$ false.
-
-\section*{Proof Tricks}
-
-\subsection*{Without Loss of Generality (WLOG)}
-\textbf{Use when:} Cases are symmetric, can reduce work.
-
-
-\subsection*{Constructive vs Nonconstructive}
-\textbf{Constructive:} Explicitly find/build example.
-
-\textbf{Nonconstructive:} Prove existence without construction.
-
-
-\section*{Proof Strategy Guide}
-\textbf{Choose method based on:}
-
-\textbf{Direct:} Default choice, clear path from $p$ to $q$
-
-\textbf{Contrapositive:}
-\begin{itemize}[nosep]
-\item Conclusion is negative
-\item Hypothesis is disjunction ($p \lor q$)
-\item Easier to work with negations
-\end{itemize}
-
-\textbf{Contradiction:}
-\begin{itemize}[nosep]
-\item Proving irrationality
-\item Proving non-existence
-\item Proving uniqueness
-\item No direct or contrapositive path clear
-\end{itemize}
+\term{Universal modus tollens:}
+\[
+\forall x(P(x)\to Q(x)),\quad \neg Q(a)\ \vdash\ \neg P(a).
+\]
+Use UI, then MT.
 
 \end{multicols}
+
+\clearpage
+\section*{Universal and Existential Instantiation Are Different}
+
+\begin{checklistbox}{The central distinction}
+A universal premise is a reusable guarantee about \emph{every} object, so it
+may be instantiated at any chosen object. An existential premise promises only
+that \emph{some} witness exists, so it receives a fresh temporary name; you may
+not choose the witness or silently identify it with another existential
+witness.
+\end{checklistbox}
+
+\begin{multicols}{2}
+\raggedcolumns
+\subsection*{The four quantified rules}
+
+\begin{definitionbox}{Universal Instantiation (UI)}
+\[
+\forall x\,P(x)\ \vdash\ P(a)
+\]
+Here $a$ may be any particular object in the domain. A universal statement can
+be reused for $a$, $b$, or any other object.
+\end{definitionbox}
+
+\begin{definitionbox}{Universal Generalization (UG)}
+\[
+P(c)\text{ proved for arbitrary }c\ \vdash\ \forall x\,P(x)
+\]
+The object $c$ must be genuinely arbitrary: it cannot depend on a special
+example, an existential witness, or an extra assumption not shared by every
+object in the domain.
+\end{definitionbox}
+
+\begin{definitionbox}{Existential Instantiation (EI)}
+\[
+\exists x\,P(x)\ \vdash\ P(c)\text{ for a fresh }c
+\]
+The name $c$ stands for one fixed but unknown witness. It is local to the
+argument. Do not choose its value, reuse an existing name, or let the final
+conclusion depend on which witness $c$ is.
+\end{definitionbox}
+
+\begin{definitionbox}{Existential Generalization (EG)}
+\[
+P(a)\ \vdash\ \exists x\,P(x)
+\]
+One verified instance is enough to establish existence. The object $a$ is the
+witness.
+\end{definitionbox}
+
+\subsection*{Arbitrary object versus witness}
+\begin{center}
+\renewcommand{\arraystretch}{1.18}
+\begin{tabularx}{\linewidth}{@{}MYY@{}}
+\toprule
+& \textbf{Arbitrary object} & \textbf{Existential witness} \\
+\midrule
+Source & Chosen for a universal proof & Promised by $\exists$ \\
+Known? & Only general hypotheses & The existential property \\
+Choose it? & Any object in domain & No; value is unknown \\
+End move & UG may be possible & Remove fresh name from conclusion \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\columnbreak
+\subsection*{Complete valid derivation}
+
+\begin{workedbox}{$\forall x(P(x)\to Q(x)),\ \exists xP(x)\ \vdash\ \exists xQ(x)$}
+\[
+\begin{array}{rll}
+1.&\forall x(P(x)\to Q(x))&\text{Premise}\\
+2.&\exists x\,P(x)&\text{Premise}\\
+3.&P(c)&\text{EI from 2; fresh }c\\
+4.&P(c)\to Q(c)&\text{UI from 1 at the same }c\\
+5.&Q(c)&\text{MP from 3 and 4}\\
+6.&\exists x\,Q(x)&\text{EG from 5}
+\end{array}
+\]
+Line 4 uses the universal rule at the witness supplied on line 3. Line 6 removes
+the temporary name from the conclusion.
+\end{workedbox}
+
+\subsection*{Why two existentials may have different witnesses}
+
+\begin{warningbox}{Invalid inference}
+\[
+\exists xP(x),\quad \exists xQ(x)
+\ \nvdash\ \exists x(P(x)\land Q(x)).
+\]
+The first EI must receive (say) fresh name $a$; the second must receive a
+different fresh name $b$. Nothing says $a=b$.
+
+\textbf{Countermodel.} Let the domain be $\{1,2\}$. Let $P$ hold only for $1$
+and $Q$ hold only for $2$. Then both premises are true, but no object satisfies
+both predicates, so the conclusion is false.
+\end{warningbox}
+
+\subsection*{Order of quantifiers changes meaning}
+
+Over $\Z$,
+\[
+\forall x\,\exists y\,(y>x)
+\]
+is true: after an arbitrary $x$ is chosen, use witness $y=x+1$.
+But
+\[
+\exists y\,\forall x\,(y>x)
+\]
+is false: it asks for one fixed integer larger than every integer. Given any
+candidate $y$, the integer $y+1$ is larger.
+
+\subsection*{Negating quantified statements}
+\[
+\neg\forall xP(x)\equiv\exists x\neg P(x),\qquad
+\neg\exists xP(x)\equiv\forall x\neg P(x).
+\]
+Negation flips the quantifier and negates the predicate. For example, ``not
+every integer is even'' means ``some integer is not even.''
+\end{multicols}
+
+\clearpage
+\section*{B. Direct Proofs}
+
+\begin{methodbox}{Direct-proof architecture for $\forall x\,(P(x)\to Q(x))$}
+\begin{enumerate}
+  \item Let $x$ be an arbitrary object in the stated domain and assume $P(x)$.
+  \item Unpack $P(x)$ using definitions; introduce correctly scoped witnesses.
+  \item Use algebra, definitions, axioms, and earlier theorems to build the
+        defining form of $Q(x)$.
+  \item Verify that any new coefficient, denominator, or witness lies in the
+        required domain.
+  \item State that $Q(x)$ follows. Because $x$ was arbitrary, the conditional
+        holds for every allowed $x$.
+\end{enumerate}
+\end{methodbox}
+
+\begin{multicols}{2}
+\raggedcolumns
+\subsection*{Worked parity proof}
+
+\begin{workedbox}{The product of an even integer and any integer is even}
+Let $a$ be an arbitrary even integer and let $b\in\Z$. Because $a$ is even,
+$a=2k$ for some $k\in\Z$. Then
+\[
+ ab=(2k)b=2(kb).
+\]
+Because $k,b\in\Z$, closure of the integers under multiplication gives
+$kb\in\Z$. Thus $ab$ has the form $2m$ for the integer $m=kb$, so $ab$ is
+even.
+
+\why The last two sentences explicitly identify and verify the witness required
+by the definition of even.
+\end{workedbox}
+
+\subsection*{Worked rational-number proof}
+
+\begin{workedbox}{The difference of rational numbers is rational}
+Let $x,y\in\Q$. Then there are integers $a,b,c,d$ with $b\ne0$ and $d\ne0$
+such that $x=a/b$ and $y=c/d$. Therefore
+\[
+ x-y=\frac{a}{b}-\frac{c}{d}=\frac{ad-bc}{bd}.
+\]
+The numerator $ad-bc$ and denominator $bd$ are integers. Since $b\ne0$ and
+$d\ne0$, also $bd\ne0$. Hence the displayed fraction has the defining form of
+a rational number, so $x-y\in\Q$.
+\end{workedbox}
+
+\columnbreak
+\subsection*{Worked element proof}
+
+\begin{workedbox}{$A\cap(B\cap C)\subseteq B$}
+Let $x$ be an arbitrary element of $A\cap(B\cap C)$. By definition of
+intersection,
+\[
+ x\in A\quad\text{and}\quad x\in B\cap C.
+\]
+Applying the intersection definition again to $x\in B\cap C$ gives $x\in B$
+and $x\in C$. In particular, $x\in B$. Since every arbitrary element of
+$A\cap(B\cap C)$ belongs to $B$, we conclude
+$A\cap(B\cap C)\subseteq B$.
+
+\why To prove a subset claim, start in the set on the left and finish in the
+set on the right.
+\end{workedbox}
+
+\subsection*{Two-direction claims}
+To prove $p\leftrightarrow q$, prove both $p\to q$ and $q\to p$. To prove
+$A=B$, usually prove both inclusions. Never silently prove just one direction.
+
+\begin{warningbox}{Frequent direct-proof errors}
+\begin{itemize}
+  \item Checking examples instead of using an arbitrary object.
+  \item Reusing one witness for two independent inputs.
+  \item Treating the target conclusion as an assumption.
+  \item Producing $2k$ or $a/b$ without showing $k\in\Z$ or $b\ne0$.
+  \item Beginning an inclusion proof with an element already in the target.
+  \item Ending with algebra but not stating why it proves the requested property.
+\end{itemize}
+\end{warningbox}
+
+\begin{checklistbox}{B-problem finishing sentence}
+``Because \underline{\hspace{0.7in}} lies in the required domain, the final
+expression has the defining form of \underline{\hspace{0.7in}}. Therefore
+\underline{\hspace{0.8in}}.''
+\end{checklistbox}
+\end{multicols}
+
+\clearpage
+\section*{C. Contraposition and Contradiction}
+
+\begin{multicols}{2}
+\raggedcolumns
+\subsection*{Proof by contraposition}
+
+\begin{methodbox}{Template}
+To prove $p\to q$:
+\begin{enumerate}
+  \item Write the contrapositive $\neg q\to\neg p$ explicitly.
+  \item Assume $\neg q$.
+  \item Use a direct argument to derive $\neg p$.
+  \item State that the original implication follows because a conditional and
+        its contrapositive are equivalent.
+\end{enumerate}
+Contraposition is useful when negating the conclusion produces a more workable
+hypothesis. If that negation is a disjunction, handle both branches by cases.
+\end{methodbox}
+
+\begin{workedbox}{If $5n+1$ is even, then $n$ is odd}
+We prove the contrapositive: \emph{if $n$ is even, then $5n+1$ is odd}.
+Suppose $n$ is even. Then $n=2k$ for some $k\in\Z$. Hence
+\[
+ 5n+1=5(2k)+1=10k+1=2(5k)+1.
+\]
+Because $5k\in\Z$, the number $5n+1$ is odd. Thus the contrapositive is true,
+so the original implication is true.
+\end{workedbox}
+
+\subsection*{Negating compound conclusions}
+If the conclusion is ``$m$ and $n$ are odd,'' its negation is ``$m$ is even or
+$n$ is even'' (for integers). This disjunction naturally creates two cases.
+Do not negate $q\land r$ as $\neg q\land\neg r$; De Morgan gives
+$\neg q\lor\neg r$.
+
+\columnbreak
+\subsection*{Proof by contradiction}
+
+\begin{methodbox}{Template}
+To prove a statement $S$:
+\begin{enumerate}
+  \item Suppose, for contradiction, that $\neg S$.
+  \item Use that supposition together with known facts.
+  \item Derive an impossibility: $r\land\neg r$, an object both larger and not
+        larger than another, or a rational number shown irrational.
+  \item Conclude the supposition is false, so $S$ is true.
+\end{enumerate}
+For a conditional $p\to q$, a contradiction proof assumes $p\land\neg q$.
+\end{methodbox}
+
+\begin{workedbox}{There is no smallest positive rational number}
+Suppose, for contradiction, that $s$ is the smallest positive rational number.
+Then $s/2$ is rational because $s\in\Q$ and $2\ne0$. Also
+\[
+ 0<\frac{s}{2}<s.
+\]
+Thus $s/2$ is a positive rational number smaller than $s$, contradicting the
+choice of $s$. Therefore no smallest positive rational number exists.
+\end{workedbox}
+
+\begin{workedbox}{Rational plus irrational is irrational}
+Let $r\in\Q$ and let $x\in\R\setminus\Q$. Suppose, for contradiction, that
+$r+x\in\Q$. Rational numbers are closed under subtraction, so
+\[
+ x=(r+x)-r\in\Q.
+\]
+This contradicts the hypothesis that $x$ is irrational. Hence $r+x$ is
+irrational.
+\end{workedbox}
+
+\begin{warningbox}{What is not a contradiction proof}
+Repeating the conclusion, deriving something merely surprising, or writing
+``contradiction'' without naming incompatible statements is insufficient.
+State exactly which assumption conflicts with which established fact.
+\end{warningbox}
+\end{multicols}
+
+\clearpage
+\section*{D. Cases, Existence, and Counterexamples}
+
+\begin{multicols}{2}
+\raggedcolumns
+\subsection*{Proof by exhaustive cases}
+
+\begin{methodbox}{Template}
+Identify cases whose disjunction covers every object. Prove the target in each
+case under that case assumption. Then explicitly invoke exhaustiveness.
+Common exhaustive splits include even/odd and $x\ge0$/$x<0$.
+\end{methodbox}
+
+\begin{workedbox}{$n(n+3)$ is even for every $n\in\Z$}
+Every integer is even or odd.
+
+\textbf{Case 1: $n$ is even.} Write $n=2k$. Then
+$n(n+3)=2[k(n+3)]$, which is even because $k(n+3)\in\Z$.
+
+\textbf{Case 2: $n$ is odd.} Write $n=2k+1$. Then
+$n+3=2k+4=2(k+2)$, so $n(n+3)=2[n(k+2)]$, which is even.
+
+The cases are exhaustive, so $n(n+3)$ is even for every integer $n$.
+\end{workedbox}
+
+\begin{workedbox}{$|x|\ge x$ for every real $x$}
+\textbf{Case 1: $x\ge0$.} By definition, $|x|=x$, hence $|x|\ge x$.
+
+\textbf{Case 2: $x<0$.} Then $|x|=-x>0>x$, so again $|x|\ge x$.
+
+These cases cover every real number; therefore the claim holds for all
+$x\in\R$.
+\end{workedbox}
+
+\columnbreak
+\subsection*{Constructive existence}
+
+\begin{methodbox}{Construct and verify}
+For $\exists x\,P(x)$, provide a legal witness $c$ and check every part of
+$P(c)$. For several objects, verify that they are distinct/consecutive and that
+each has the required property.
+\end{methodbox}
+
+\begin{workedbox}{Three consecutive composite integers exist}
+Use witnesses $48,49,50$. They are consecutive, and
+\[
+48=6\cdot8,\qquad49=7\cdot7,\qquad50=5\cdot10.
+\]
+Each factorization uses factors strictly between $1$ and the number, so every
+witness is composite. Thus three consecutive composite positive integers exist.
+\end{workedbox}
+
+\subsection*{Counterexamples}
+
+\begin{methodbox}{Disprove, do not merely doubt}
+To disprove $\forall x\,P(x)$, choose one $c$ in the correct domain and verify
+$\neg P(c)$. To disprove $p\to q$, make $p$ true and $q$ false.
+\end{methodbox}
+
+\begin{workedbox}{A difference of irrational numbers need not be irrational}
+The universal claim ``the difference of two irrational numbers is irrational''
+is false. Take $x=y=\sqrt2$. Both inputs are irrational, but
+\[
+ x-y=\sqrt2-\sqrt2=0,
+\]
+which is rational. This one legal input pair disproves the universal statement.
+\end{workedbox}
+
+\begin{warningbox}{Examples prove existence, not universality}
+One successful example proves an existential claim. One failed example
+disproves a universal claim. No finite list of successful examples proves a
+universal claim unless an earlier theorem reduces the domain to those cases.
+\end{warningbox}
+\end{multicols}
+
+\clearpage
+\section*{E. Strategy Choice and Proof Repair}
+
+\subsection*{Choose a strategy from the logical form}
+\begin{center}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{0.96\linewidth}{@{}p{0.18\linewidth}YY@{}}
+\toprule
+\textbf{Method} & \textbf{Promising signals} & \textbf{First substantive step} \\
+\midrule
+Direct & Definitions turn the hypothesis into useful algebra or membership facts. & Assume the hypothesis and unpack its definition. \\
+Contraposition & Negating the conclusion gives a simpler defining form or useful cases. & State $\neg q\to\neg p$ exactly and assume $\neg q$. \\
+Contradiction & Nonexistence, irrationality, uniqueness, or a negated claim gives a useful hypothetical object. & Assume the precise negation of the target. \\
+Cases & Parity, signs, absolute value, or a disjunction naturally partitions the domain. & State an exhaustive case split. \\
+Constructive existence & A concrete object can be built and checked. & Display the witness, then verify every property. \\
+Counterexample & The claim is universal and appears false. & Choose a legal input that makes the conclusion fail. \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\begin{multicols}{2}
+\raggedcolumns
+\subsection*{Repair 1: reused witnesses}
+
+\begin{warningbox}{Flawed}
+``Let $a,b$ be odd. Then $a=2k+1$ and $b=2k+1$, so $a-b=0$ is even.''
+
+The same witness was imposed on independent arbitrary integers, falsely forcing
+$a=b$.
+\end{warningbox}
+
+\begin{workedbox}{Repair}
+Use possibly different $j,k\in\Z$: $a=2j+1$ and $b=2k+1$. Then
+\[
+ a-b=2j+1-(2k+1)=2(j-k).
+\]
+Since $j-k\in\Z$, the difference is even.
+\end{workedbox}
+
+\subsection*{Repair 2: division by zero}
+
+\begin{warningbox}{Flawed}
+``If $r$ is rational and $x$ irrational, then $rx$ is irrational, since
+$x=(rx)/r$.'' The proof divides by $r$ without knowing $r\ne0$, and the claim
+is false for $r=0$.
+\end{warningbox}
+
+\begin{workedbox}{Repair}
+Correct the theorem: if $r$ is a \emph{nonzero} rational number and $x$ is
+irrational, then $rx$ is irrational. If $rx$ were rational, then division by
+the nonzero rational $r$ would give $x=(rx)/r\in\Q$, a contradiction.
+\end{workedbox}
+
+\columnbreak
+\subsection*{Repair 3: circular reasoning}
+
+\begin{warningbox}{Flawed}
+To prove that the cube of an odd integer is odd, the writer begins ``Assume
+$n^3$ is odd.'' This assumes the conclusion instead of the hypothesis.
+\end{warningbox}
+
+\begin{workedbox}{Repair}
+Assume $n$ is odd, so $n=2k+1$ for some $k\in\Z$. Then
+\[
+n^3=(2k+1)^3
+=2(4k^3+6k^2+3k)+1.
+\]
+The coefficient is an integer, so $n^3$ is odd.
+\end{workedbox}
+
+\subsection*{Repair 4: wrong arbitrary element}
+
+\begin{warningbox}{Flawed}
+To prove $A\subseteq B$ from $A\cap B=A$, starting with $x\in A\cap B$ only
+proves something about elements already known to lie in $B$.
+\end{warningbox}
+
+\begin{workedbox}{Repair}
+Let $x\in A$ be arbitrary. Since $A=A\cap B$, we have $x\in A\cap B$.
+Therefore $x\in B$. Hence every element of $A$ lies in $B$, so $A\subseteq B$.
+\end{workedbox}
+\end{multicols}
+
+\clearpage
+\section*{One-Page Core Readiness Check}
+
+\begin{checklistbox}{A fully correct Proofs Core response}
+\small
+Before finishing, verify that the response:
+\begin{multicols}{3}
+\begin{enumerate}
+  \item states the hypotheses and begins with an arbitrary required object;
+  \item identifies every domain and scopes variables/witnesses correctly;
+  \item names inference rules when requested and justifies the central step;
+  \item treats all cases, directions, or lettered parts requested;
+  \item never divides without a nonzero condition or assumes the conclusion;
+  \item reaches the exact requested conclusion in a final sentence.
+\end{enumerate}
+\end{multicols}
+\end{checklistbox}
+
+\begin{multicols}{2}
+\raggedcolumns
+\subsection*{Rule names at a glance}
+\begin{center}
+\renewcommand{\arraystretch}{1.18}
+\begin{tabularx}{\linewidth}{@{}lY@{}}
+\toprule
+\textbf{Name} & \textbf{Recognize this move} \\
+\midrule
+MP & Use $p$ with $p\to q$ to obtain $q$. \\
+MT & Use $\neg q$ with $p\to q$ to obtain $\neg p$. \\
+HS & Chain $p\to q$ and $q\to r$. \\
+DS & Eliminate one option from a disjunction. \\
+Addition & Enlarge $p$ to $p\lor q$. \\
+Simplification & Extract one conjunct from $p\land q$. \\
+Conjunction & Combine established $p$ and $q$. \\
+Resolution & Cancel complementary disjuncts. \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\subsection*{Quantifier names at a glance}
+\begin{center}
+\renewcommand{\arraystretch}{1.18}
+\begin{tabularx}{\linewidth}{@{}lY@{}}
+\toprule
+UI & Every object $\Rightarrow$ a chosen object. \\
+UG & An arbitrary object $\Rightarrow$ every object. \\
+EI & Some object $\Rightarrow$ a fresh temporary witness. \\
+EG & One verified object $\Rightarrow$ some object exists. \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\columnbreak
+\subsection*{Definition forms at a glance}
+\[
+\begin{aligned}
+n\text{ even}&\iff n=2k\text{ for some }k\in\Z,\\
+n\text{ odd}&\iff n=2k+1\text{ for some }k\in\Z,\\
+a\mid b&\iff b=ak\text{ for some }k\in\Z,\\
+r\in\Q&\iff r=a/b,\ a,b\in\Z,\ b\ne0,\\
+A\subseteq B&\iff \forall x(x\in A\to x\in B),\\
+x\in A\cap B&\iff x\in A\land x\in B.
+\end{aligned}
+\]
+
+\subsection*{Thirty-second error scan}
+\begin{itemize}
+  \item Did independent objects receive independent witnesses?
+  \item Is an EI name fresh? Was a UG object genuinely arbitrary?
+  \item Are all cases exhaustive and all requested directions complete?
+  \item Is every division protected by a nonzero condition?
+  \item Does a counterexample satisfy the hypothesis and fail the conclusion?
+  \item Does the final sentence match the exact claim?
+\end{itemize}
+\end{multicols}
+
+\begin{center}
+\vfill
+{\large\bfseries\color{ProofNavy} Proof writing is controlled use of definitions.}\par
+{\small Choose objects carefully, preserve their scope, and make the final
+sentence match the claim.}
+\end{center}
 
 \end{document}

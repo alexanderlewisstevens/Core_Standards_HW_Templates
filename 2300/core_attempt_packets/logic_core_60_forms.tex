@@ -1,0 +1,3029 @@
+\documentclass[9pt]{extarticle}
+\usepackage{core_attempt_forms}
+
+\begin{document}
+
+\CoreHeader{Logic}{L01}{A--E}{\FivePartScoring}
+\begin{multicols}{2}
+\begin{CoreProblem}{A.4}{Truth tables}
+{\scriptsize\textit{Construct the complete eight-row table; show useful intermediate columns and classify the result.}\par}
+\[
+  (p\to q)\land(\neg p\to r)
+\]
+\end{CoreProblem}
+\begin{CoreProblem}{B.1}{Translation and meaning}
+{\scriptsize\textit{Define any predicates/domains requested; translate exactly and diagnose the proposed translation.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item Let $e$ mean ``you can edit a protected encyclopedia entry'' and $a$
+        mean ``you are an administrator.'' Translate: ``You cannot edit a
+        protected entry unless you are an administrator.''
+  \item Let $Q(x,y)$ mean ``student $x$ sent a message to student $y$.''
+        Translate $\exists x\,\forall y\,Q(x,y)$ into ordinary English.
+  \item A student says the formula in (b) means ``Every student sent a message
+        to at least one student.'' Diagnose the claim.
+\end{enumerate}
+\end{CoreProblem}
+\begin{CoreProblem}{C.3}{Quantifier negation}
+{\scriptsize\textit{Symbolize and negate as directed; move every negation directly before a predicate.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item Some old dogs can learn new tricks. The domain is all things.
+  \item $\neg\forall x\,\forall y\,P(x,y)$
+\end{enumerate}
+\end{CoreProblem}
+\columnbreak
+\begin{CoreProblem}{D.4}{Consistency and satisfiability}
+{\scriptsize\textit{Translate the conditions. Give a satisfying assignment or a short contradiction, then complete the final request.}\par}
+If the file system is not locked, new messages are queued. The file system is
+not locked if and only if the system is functioning normally. If messages are
+not queued, they are sent to the message buffer. If the file system is not
+locked, messages are sent to the buffer. Messages are not sent to the buffer.
+In addition to deciding consistency, explain which conclusions follow from the
+last condition.
+\end{CoreProblem}
+\begin{CoreProblem}{E.1}{Logical equivalence}
+{\scriptsize\textit{Give an equivalence chain and cite one permitted rule at every step: implication, double negation, De Morgan, distributive, associative, commutative, or idempotent.}\par}
+Show that
+\[
+  (p\to q)\land(p\to r)
+  \quad\text{and}\quad
+  p\to(q\land r)
+\]
+are logically equivalent.
+\end{CoreProblem}
+\end{multicols}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Logic}{L02}{A--E}{\FivePartScoring}
+\begin{multicols}{2}
+\begin{CoreProblem}{A.5}{Truth tables}
+{\scriptsize\textit{Construct the complete eight-row table; show useful intermediate columns and classify the result.}\par}
+\[
+  (p\leftrightarrow q)\lor(\neg q\leftrightarrow r)
+\]
+\end{CoreProblem}
+\begin{CoreProblem}{B.3}{Translation and meaning}
+{\scriptsize\textit{Define any predicates/domains requested; translate exactly and diagnose the proposed translation.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item Let $g$ mean ``you can graduate,'' $r$ mean ``you completed your major
+        requirements,'' $m$ mean ``you owe the university money,'' and $b$
+        mean ``you have an overdue library book.'' Translate: ``You can
+        graduate only if you completed the requirements, owe no money, and
+        have no overdue library book.''
+  \item Let $P(x,y)$ mean ``student $x$ has taken computer-science course
+        $y$.'' Translate $\exists y\,\forall x\,P(x,y)$ into English.
+  \item A student instead writes $\forall x\,\exists y\,P(x,y)$ for the
+        sentence in (b). Diagnose the change in meaning.
+\end{enumerate}
+\end{CoreProblem}
+\begin{CoreProblem}{C.2}{Quantifier negation}
+{\scriptsize\textit{Symbolize and negate as directed; move every negation directly before a predicate.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item No monkey can speak French. The domain is all things.
+  \item $\neg\forall x\,\exists y\,P(x,y)$
+\end{enumerate}
+\end{CoreProblem}
+\columnbreak
+\begin{CoreProblem}{D.2}{Consistency and satisfiability}
+{\scriptsize\textit{Translate the conditions. Give a satisfying assignment or a short contradiction, then complete the final request.}\par}
+Whenever system software is being upgraded, users cannot access the file
+system. If users can access the file system, they can save new files. If users
+cannot save new files, the software is not being upgraded. In addition to
+deciding consistency, list all satisfying assignments for the three atomic
+propositions.
+\end{CoreProblem}
+\begin{CoreProblem}{E.4}{Logical equivalence}
+{\scriptsize\textit{Give an equivalence chain and cite one permitted rule at every step: implication, double negation, De Morgan, distributive, associative, commutative, or idempotent.}\par}
+Show that
+\[
+  (p\to r)\lor(q\to r)
+  \quad\text{and}\quad
+  (p\land q)\to r
+\]
+are logically equivalent.
+\end{CoreProblem}
+\end{multicols}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Logic}{L03}{A--E}{\FivePartScoring}
+\begin{multicols}{2}
+\begin{CoreProblem}{A.5}{Truth tables}
+{\scriptsize\textit{Construct the complete eight-row table; show useful intermediate columns and classify the result.}\par}
+\[
+  (p\leftrightarrow q)\lor(\neg q\leftrightarrow r)
+\]
+\end{CoreProblem}
+\begin{CoreProblem}{B.2}{Translation and meaning}
+{\scriptsize\textit{Define any predicates/domains requested; translate exactly and diagnose the proposed translation.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item Let $m$ mean ``you can see the movie,'' $e$ mean ``you are over 18,''
+        and $p$ mean ``you have parental permission.'' Translate: ``You can
+        see the movie only if you are over 18 or have parental permission.''
+  \item With $Q(x,y)$ as in B.1, translate $\forall x\,\exists y\,Q(x,y)$
+        into ordinary English.
+  \item A student translates ``One student sent a message to every student''
+        as $\forall y\,\exists x\,Q(x,y)$. Diagnose the translation.
+\end{enumerate}
+\end{CoreProblem}
+\begin{CoreProblem}{C.2}{Quantifier negation}
+{\scriptsize\textit{Symbolize and negate as directed; move every negation directly before a predicate.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item No monkey can speak French. The domain is all things.
+  \item $\neg\forall x\,\exists y\,P(x,y)$
+\end{enumerate}
+\end{CoreProblem}
+\columnbreak
+\begin{CoreProblem}{D.5}{Consistency and satisfiability}
+{\scriptsize\textit{Translate the conditions. Give a satisfying assignment or a short contradiction, then complete the final request.}\par}
+Jasmine becomes unhappy if she attends a party with Samir. Samir attends only
+if Kanti attends. Kanti will not attend unless Jasmine attends. Determine which
+subsets of Jasmine, Samir, and Kanti can be invited without violating these
+conditions. State every satisfying combination, including the possibility of
+inviting no one.
+\end{CoreProblem}
+\begin{CoreProblem}{E.4}{Logical equivalence}
+{\scriptsize\textit{Give an equivalence chain and cite one permitted rule at every step: implication, double negation, De Morgan, distributive, associative, commutative, or idempotent.}\par}
+Show that
+\[
+  (p\to r)\lor(q\to r)
+  \quad\text{and}\quad
+  (p\land q)\to r
+\]
+are logically equivalent.
+\end{CoreProblem}
+\end{multicols}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Logic}{L04}{A--E}{\FivePartScoring}
+\begin{multicols}{2}
+\begin{CoreProblem}{A.5}{Truth tables}
+{\scriptsize\textit{Construct the complete eight-row table; show useful intermediate columns and classify the result.}\par}
+\[
+  (p\leftrightarrow q)\lor(\neg q\leftrightarrow r)
+\]
+\end{CoreProblem}
+\begin{CoreProblem}{B.3}{Translation and meaning}
+{\scriptsize\textit{Define any predicates/domains requested; translate exactly and diagnose the proposed translation.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item Let $g$ mean ``you can graduate,'' $r$ mean ``you completed your major
+        requirements,'' $m$ mean ``you owe the university money,'' and $b$
+        mean ``you have an overdue library book.'' Translate: ``You can
+        graduate only if you completed the requirements, owe no money, and
+        have no overdue library book.''
+  \item Let $P(x,y)$ mean ``student $x$ has taken computer-science course
+        $y$.'' Translate $\exists y\,\forall x\,P(x,y)$ into English.
+  \item A student instead writes $\forall x\,\exists y\,P(x,y)$ for the
+        sentence in (b). Diagnose the change in meaning.
+\end{enumerate}
+\end{CoreProblem}
+\begin{CoreProblem}{C.4}{Quantifier negation}
+{\scriptsize\textit{Symbolize and negate as directed; move every negation directly before a predicate.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item No one in this class knows both French and Russian. The domain is all
+        people.
+  \item $\neg\forall y\,\exists x\,P(x,y)$
+\end{enumerate}
+\end{CoreProblem}
+\columnbreak
+\begin{CoreProblem}{D.4}{Consistency and satisfiability}
+{\scriptsize\textit{Translate the conditions. Give a satisfying assignment or a short contradiction, then complete the final request.}\par}
+If the file system is not locked, new messages are queued. The file system is
+not locked if and only if the system is functioning normally. If messages are
+not queued, they are sent to the message buffer. If the file system is not
+locked, messages are sent to the buffer. Messages are not sent to the buffer.
+In addition to deciding consistency, explain which conclusions follow from the
+last condition.
+\end{CoreProblem}
+\begin{CoreProblem}{E.2}{Logical equivalence}
+{\scriptsize\textit{Give an equivalence chain and cite one permitted rule at every step: implication, double negation, De Morgan, distributive, associative, commutative, or idempotent.}\par}
+Show that
+\[
+  (p\to r)\land(q\to r)
+  \quad\text{and}\quad
+  (p\lor q)\to r
+\]
+are logically equivalent.
+\end{CoreProblem}
+\end{multicols}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Logic}{L05}{A--E}{\FivePartScoring}
+\begin{multicols}{2}
+\begin{CoreProblem}{A.5}{Truth tables}
+{\scriptsize\textit{Construct the complete eight-row table; show useful intermediate columns and classify the result.}\par}
+\[
+  (p\leftrightarrow q)\lor(\neg q\leftrightarrow r)
+\]
+\end{CoreProblem}
+\begin{CoreProblem}{B.4}{Translation and meaning}
+{\scriptsize\textit{Define any predicates/domains requested; translate exactly and diagnose the proposed translation.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item Let $w$ mean ``you may use the airport wireless network,'' $d$ mean
+        ``you pay the daily fee,'' and $s$ mean ``you subscribe to the
+        service.'' Translate: ``To use the network, you must pay the daily fee
+        unless you are a subscriber.''
+  \item Let $L(x,y)$ mean ``person $x$ loves person $y$.'' Translate
+        ``Everybody loves somebody.''
+  \item A student claims that $\exists y\,\forall x\,L(x,y)$ is an equivalent
+        translation of (b). Diagnose the claim.
+\end{enumerate}
+\end{CoreProblem}
+\begin{CoreProblem}{C.3}{Quantifier negation}
+{\scriptsize\textit{Symbolize and negate as directed; move every negation directly before a predicate.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item Some old dogs can learn new tricks. The domain is all things.
+  \item $\neg\forall x\,\forall y\,P(x,y)$
+\end{enumerate}
+\end{CoreProblem}
+\columnbreak
+\begin{CoreProblem}{D.2}{Consistency and satisfiability}
+{\scriptsize\textit{Translate the conditions. Give a satisfying assignment or a short contradiction, then complete the final request.}\par}
+Whenever system software is being upgraded, users cannot access the file
+system. If users can access the file system, they can save new files. If users
+cannot save new files, the software is not being upgraded. In addition to
+deciding consistency, list all satisfying assignments for the three atomic
+propositions.
+\end{CoreProblem}
+\begin{CoreProblem}{E.5}{Logical equivalence}
+{\scriptsize\textit{Give an equivalence chain and cite one permitted rule at every step: implication, double negation, De Morgan, distributive, associative, commutative, or idempotent.}\par}
+Show that
+\[
+  \neg p\to(q\to r)
+  \quad\text{and}\quad
+  q\to(p\lor r)
+\]
+are logically equivalent.
+\end{CoreProblem}
+\end{multicols}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Logic}{L06}{A--E}{\FivePartScoring}
+\begin{multicols}{2}
+\begin{CoreProblem}{A.2}{Truth tables}
+{\scriptsize\textit{Construct the complete eight-row table; show useful intermediate columns and classify the result.}\par}
+\[
+  \neg p\to(q\to r)
+\]
+\end{CoreProblem}
+\begin{CoreProblem}{B.2}{Translation and meaning}
+{\scriptsize\textit{Define any predicates/domains requested; translate exactly and diagnose the proposed translation.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item Let $m$ mean ``you can see the movie,'' $e$ mean ``you are over 18,''
+        and $p$ mean ``you have parental permission.'' Translate: ``You can
+        see the movie only if you are over 18 or have parental permission.''
+  \item With $Q(x,y)$ as in B.1, translate $\forall x\,\exists y\,Q(x,y)$
+        into ordinary English.
+  \item A student translates ``One student sent a message to every student''
+        as $\forall y\,\exists x\,Q(x,y)$. Diagnose the translation.
+\end{enumerate}
+\end{CoreProblem}
+\begin{CoreProblem}{C.5}{Quantifier negation}
+{\scriptsize\textit{Symbolize and negate as directed; move every negation directly before a predicate.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item All Swedish movies are serious. The domain is all things.
+  \item $\neg\forall y\,\forall x\bigl(P(x,y)\lor Q(x,y)\bigr)$
+\end{enumerate}
+\end{CoreProblem}
+\columnbreak
+\begin{CoreProblem}{D.5}{Consistency and satisfiability}
+{\scriptsize\textit{Translate the conditions. Give a satisfying assignment or a short contradiction, then complete the final request.}\par}
+Jasmine becomes unhappy if she attends a party with Samir. Samir attends only
+if Kanti attends. Kanti will not attend unless Jasmine attends. Determine which
+subsets of Jasmine, Samir, and Kanti can be invited without violating these
+conditions. State every satisfying combination, including the possibility of
+inviting no one.
+\end{CoreProblem}
+\begin{CoreProblem}{E.5}{Logical equivalence}
+{\scriptsize\textit{Give an equivalence chain and cite one permitted rule at every step: implication, double negation, De Morgan, distributive, associative, commutative, or idempotent.}\par}
+Show that
+\[
+  \neg p\to(q\to r)
+  \quad\text{and}\quad
+  q\to(p\lor r)
+\]
+are logically equivalent.
+\end{CoreProblem}
+\end{multicols}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Logic}{L07}{A--E}{\FivePartScoring}
+\begin{multicols}{2}
+\begin{CoreProblem}{A.3}{Truth tables}
+{\scriptsize\textit{Construct the complete eight-row table; show useful intermediate columns and classify the result.}\par}
+\[
+  (p\to q)\lor(\neg p\to r)
+\]
+\end{CoreProblem}
+\begin{CoreProblem}{B.2}{Translation and meaning}
+{\scriptsize\textit{Define any predicates/domains requested; translate exactly and diagnose the proposed translation.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item Let $m$ mean ``you can see the movie,'' $e$ mean ``you are over 18,''
+        and $p$ mean ``you have parental permission.'' Translate: ``You can
+        see the movie only if you are over 18 or have parental permission.''
+  \item With $Q(x,y)$ as in B.1, translate $\forall x\,\exists y\,Q(x,y)$
+        into ordinary English.
+  \item A student translates ``One student sent a message to every student''
+        as $\forall y\,\exists x\,Q(x,y)$. Diagnose the translation.
+\end{enumerate}
+\end{CoreProblem}
+\begin{CoreProblem}{C.4}{Quantifier negation}
+{\scriptsize\textit{Symbolize and negate as directed; move every negation directly before a predicate.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item No one in this class knows both French and Russian. The domain is all
+        people.
+  \item $\neg\forall y\,\exists x\,P(x,y)$
+\end{enumerate}
+\end{CoreProblem}
+\columnbreak
+\begin{CoreProblem}{D.1}{Consistency and satisfiability}
+{\scriptsize\textit{Translate the conditions. Give a satisfying assignment or a short contradiction, then complete the final request.}\par}
+The system is in multiuser state if and only if it is operating normally. If
+the system is operating normally, the kernel is functioning. The kernel is not
+functioning or the system is in interrupt mode. If the system is not in
+multiuser state, it is in interrupt mode. The system is not in interrupt mode.
+If the conditions are inconsistent, identify a minimal collection of the given
+conditions that already forces the contradiction.
+\end{CoreProblem}
+\begin{CoreProblem}{E.1}{Logical equivalence}
+{\scriptsize\textit{Give an equivalence chain and cite one permitted rule at every step: implication, double negation, De Morgan, distributive, associative, commutative, or idempotent.}\par}
+Show that
+\[
+  (p\to q)\land(p\to r)
+  \quad\text{and}\quad
+  p\to(q\land r)
+\]
+are logically equivalent.
+\end{CoreProblem}
+\end{multicols}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Logic}{L08}{A--E}{\FivePartScoring}
+\begin{multicols}{2}
+\begin{CoreProblem}{A.2}{Truth tables}
+{\scriptsize\textit{Construct the complete eight-row table; show useful intermediate columns and classify the result.}\par}
+\[
+  \neg p\to(q\to r)
+\]
+\end{CoreProblem}
+\begin{CoreProblem}{B.4}{Translation and meaning}
+{\scriptsize\textit{Define any predicates/domains requested; translate exactly and diagnose the proposed translation.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item Let $w$ mean ``you may use the airport wireless network,'' $d$ mean
+        ``you pay the daily fee,'' and $s$ mean ``you subscribe to the
+        service.'' Translate: ``To use the network, you must pay the daily fee
+        unless you are a subscriber.''
+  \item Let $L(x,y)$ mean ``person $x$ loves person $y$.'' Translate
+        ``Everybody loves somebody.''
+  \item A student claims that $\exists y\,\forall x\,L(x,y)$ is an equivalent
+        translation of (b). Diagnose the claim.
+\end{enumerate}
+\end{CoreProblem}
+\begin{CoreProblem}{C.5}{Quantifier negation}
+{\scriptsize\textit{Symbolize and negate as directed; move every negation directly before a predicate.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item All Swedish movies are serious. The domain is all things.
+  \item $\neg\forall y\,\forall x\bigl(P(x,y)\lor Q(x,y)\bigr)$
+\end{enumerate}
+\end{CoreProblem}
+\columnbreak
+\begin{CoreProblem}{D.5}{Consistency and satisfiability}
+{\scriptsize\textit{Translate the conditions. Give a satisfying assignment or a short contradiction, then complete the final request.}\par}
+Jasmine becomes unhappy if she attends a party with Samir. Samir attends only
+if Kanti attends. Kanti will not attend unless Jasmine attends. Determine which
+subsets of Jasmine, Samir, and Kanti can be invited without violating these
+conditions. State every satisfying combination, including the possibility of
+inviting no one.
+\end{CoreProblem}
+\begin{CoreProblem}{E.3}{Logical equivalence}
+{\scriptsize\textit{Give an equivalence chain and cite one permitted rule at every step: implication, double negation, De Morgan, distributive, associative, commutative, or idempotent.}\par}
+Show that
+\[
+  (p\to q)\lor(p\to r)
+  \quad\text{and}\quad
+  p\to(q\lor r)
+\]
+are logically equivalent.
+\end{CoreProblem}
+\end{multicols}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Logic}{L09}{A--E}{\FivePartScoring}
+\begin{multicols}{2}
+\begin{CoreProblem}{A.2}{Truth tables}
+{\scriptsize\textit{Construct the complete eight-row table; show useful intermediate columns and classify the result.}\par}
+\[
+  \neg p\to(q\to r)
+\]
+\end{CoreProblem}
+\begin{CoreProblem}{B.2}{Translation and meaning}
+{\scriptsize\textit{Define any predicates/domains requested; translate exactly and diagnose the proposed translation.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item Let $m$ mean ``you can see the movie,'' $e$ mean ``you are over 18,''
+        and $p$ mean ``you have parental permission.'' Translate: ``You can
+        see the movie only if you are over 18 or have parental permission.''
+  \item With $Q(x,y)$ as in B.1, translate $\forall x\,\exists y\,Q(x,y)$
+        into ordinary English.
+  \item A student translates ``One student sent a message to every student''
+        as $\forall y\,\exists x\,Q(x,y)$. Diagnose the translation.
+\end{enumerate}
+\end{CoreProblem}
+\begin{CoreProblem}{C.1}{Quantifier negation}
+{\scriptsize\textit{Symbolize and negate as directed; move every negation directly before a predicate.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item All dogs have fleas. The domain is all things.
+  \item $\neg\exists y\,\exists x\,P(x,y)$
+\end{enumerate}
+\end{CoreProblem}
+\columnbreak
+\begin{CoreProblem}{D.5}{Consistency and satisfiability}
+{\scriptsize\textit{Translate the conditions. Give a satisfying assignment or a short contradiction, then complete the final request.}\par}
+Jasmine becomes unhappy if she attends a party with Samir. Samir attends only
+if Kanti attends. Kanti will not attend unless Jasmine attends. Determine which
+subsets of Jasmine, Samir, and Kanti can be invited without violating these
+conditions. State every satisfying combination, including the possibility of
+inviting no one.
+\end{CoreProblem}
+\begin{CoreProblem}{E.5}{Logical equivalence}
+{\scriptsize\textit{Give an equivalence chain and cite one permitted rule at every step: implication, double negation, De Morgan, distributive, associative, commutative, or idempotent.}\par}
+Show that
+\[
+  \neg p\to(q\to r)
+  \quad\text{and}\quad
+  q\to(p\lor r)
+\]
+are logically equivalent.
+\end{CoreProblem}
+\end{multicols}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Logic}{L10}{A--E}{\FivePartScoring}
+\begin{multicols}{2}
+\begin{CoreProblem}{A.3}{Truth tables}
+{\scriptsize\textit{Construct the complete eight-row table; show useful intermediate columns and classify the result.}\par}
+\[
+  (p\to q)\lor(\neg p\to r)
+\]
+\end{CoreProblem}
+\begin{CoreProblem}{B.5}{Translation and meaning}
+{\scriptsize\textit{Define any predicates/domains requested; translate exactly and diagnose the proposed translation.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item Let $p$ mean ``the message is scanned for viruses'' and $q$ mean ``the
+        message came from an unknown system.'' Translate: ``It is necessary to
+        scan a message whenever it comes from an unknown system.''
+  \item Let $S(x)$ mean ``$x$ is a student,'' $F(y)$ mean ``$y$ is a faculty
+        member,'' and $A(x,y)$ mean ``$x$ asked $y$ a question.'' Translate:
+        ``Some student has asked every faculty member a question.''
+  \item A student uses $A(y,x)$ in place of $A(x,y)$ in (b). Diagnose what the
+        reversed argument order says.
+\end{enumerate}
+\end{CoreProblem}
+\begin{CoreProblem}{C.3}{Quantifier negation}
+{\scriptsize\textit{Symbolize and negate as directed; move every negation directly before a predicate.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item Some old dogs can learn new tricks. The domain is all things.
+  \item $\neg\forall x\,\forall y\,P(x,y)$
+\end{enumerate}
+\end{CoreProblem}
+\columnbreak
+\begin{CoreProblem}{D.1}{Consistency and satisfiability}
+{\scriptsize\textit{Translate the conditions. Give a satisfying assignment or a short contradiction, then complete the final request.}\par}
+The system is in multiuser state if and only if it is operating normally. If
+the system is operating normally, the kernel is functioning. The kernel is not
+functioning or the system is in interrupt mode. If the system is not in
+multiuser state, it is in interrupt mode. The system is not in interrupt mode.
+If the conditions are inconsistent, identify a minimal collection of the given
+conditions that already forces the contradiction.
+\end{CoreProblem}
+\begin{CoreProblem}{E.3}{Logical equivalence}
+{\scriptsize\textit{Give an equivalence chain and cite one permitted rule at every step: implication, double negation, De Morgan, distributive, associative, commutative, or idempotent.}\par}
+Show that
+\[
+  (p\to q)\lor(p\to r)
+  \quad\text{and}\quad
+  p\to(q\lor r)
+\]
+are logically equivalent.
+\end{CoreProblem}
+\end{multicols}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Logic}{L11}{A--E}{\FivePartScoring}
+\begin{multicols}{2}
+\begin{CoreProblem}{A.4}{Truth tables}
+{\scriptsize\textit{Construct the complete eight-row table; show useful intermediate columns and classify the result.}\par}
+\[
+  (p\to q)\land(\neg p\to r)
+\]
+\end{CoreProblem}
+\begin{CoreProblem}{B.5}{Translation and meaning}
+{\scriptsize\textit{Define any predicates/domains requested; translate exactly and diagnose the proposed translation.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item Let $p$ mean ``the message is scanned for viruses'' and $q$ mean ``the
+        message came from an unknown system.'' Translate: ``It is necessary to
+        scan a message whenever it comes from an unknown system.''
+  \item Let $S(x)$ mean ``$x$ is a student,'' $F(y)$ mean ``$y$ is a faculty
+        member,'' and $A(x,y)$ mean ``$x$ asked $y$ a question.'' Translate:
+        ``Some student has asked every faculty member a question.''
+  \item A student uses $A(y,x)$ in place of $A(x,y)$ in (b). Diagnose what the
+        reversed argument order says.
+\end{enumerate}
+\end{CoreProblem}
+\begin{CoreProblem}{C.1}{Quantifier negation}
+{\scriptsize\textit{Symbolize and negate as directed; move every negation directly before a predicate.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item All dogs have fleas. The domain is all things.
+  \item $\neg\exists y\,\exists x\,P(x,y)$
+\end{enumerate}
+\end{CoreProblem}
+\columnbreak
+\begin{CoreProblem}{D.4}{Consistency and satisfiability}
+{\scriptsize\textit{Translate the conditions. Give a satisfying assignment or a short contradiction, then complete the final request.}\par}
+If the file system is not locked, new messages are queued. The file system is
+not locked if and only if the system is functioning normally. If messages are
+not queued, they are sent to the message buffer. If the file system is not
+locked, messages are sent to the buffer. Messages are not sent to the buffer.
+In addition to deciding consistency, explain which conclusions follow from the
+last condition.
+\end{CoreProblem}
+\begin{CoreProblem}{E.1}{Logical equivalence}
+{\scriptsize\textit{Give an equivalence chain and cite one permitted rule at every step: implication, double negation, De Morgan, distributive, associative, commutative, or idempotent.}\par}
+Show that
+\[
+  (p\to q)\land(p\to r)
+  \quad\text{and}\quad
+  p\to(q\land r)
+\]
+are logically equivalent.
+\end{CoreProblem}
+\end{multicols}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Logic}{L12}{A--E}{\FivePartScoring}
+\begin{multicols}{2}
+\begin{CoreProblem}{A.1}{Truth tables}
+{\scriptsize\textit{Construct the complete eight-row table; show useful intermediate columns and classify the result.}\par}
+\[
+  p\to(\neg q\lor r)
+\]
+\end{CoreProblem}
+\begin{CoreProblem}{B.1}{Translation and meaning}
+{\scriptsize\textit{Define any predicates/domains requested; translate exactly and diagnose the proposed translation.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item Let $e$ mean ``you can edit a protected encyclopedia entry'' and $a$
+        mean ``you are an administrator.'' Translate: ``You cannot edit a
+        protected entry unless you are an administrator.''
+  \item Let $Q(x,y)$ mean ``student $x$ sent a message to student $y$.''
+        Translate $\exists x\,\forall y\,Q(x,y)$ into ordinary English.
+  \item A student says the formula in (b) means ``Every student sent a message
+        to at least one student.'' Diagnose the claim.
+\end{enumerate}
+\end{CoreProblem}
+\begin{CoreProblem}{C.5}{Quantifier negation}
+{\scriptsize\textit{Symbolize and negate as directed; move every negation directly before a predicate.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item All Swedish movies are serious. The domain is all things.
+  \item $\neg\forall y\,\forall x\bigl(P(x,y)\lor Q(x,y)\bigr)$
+\end{enumerate}
+\end{CoreProblem}
+\columnbreak
+\begin{CoreProblem}{D.3}{Consistency and satisfiability}
+{\scriptsize\textit{Translate the conditions. Give a satisfying assignment or a short contradiction, then complete the final request.}\par}
+The router can send packets to the edge system only if it supports the new
+address space. Supporting the new address space requires the latest software
+release. If the latest software release is installed, the router can send
+packets to the edge system. The router does not support the new address space.
+In addition to deciding consistency, determine which truth values are forced.
+\end{CoreProblem}
+\begin{CoreProblem}{E.4}{Logical equivalence}
+{\scriptsize\textit{Give an equivalence chain and cite one permitted rule at every step: implication, double negation, De Morgan, distributive, associative, commutative, or idempotent.}\par}
+Show that
+\[
+  (p\to r)\lor(q\to r)
+  \quad\text{and}\quad
+  (p\land q)\to r
+\]
+are logically equivalent.
+\end{CoreProblem}
+\end{multicols}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Logic}{L13}{A--E}{\FivePartScoring}
+\begin{multicols}{2}
+\begin{CoreProblem}{A.4}{Truth tables}
+{\scriptsize\textit{Construct the complete eight-row table; show useful intermediate columns and classify the result.}\par}
+\[
+  (p\to q)\land(\neg p\to r)
+\]
+\end{CoreProblem}
+\begin{CoreProblem}{B.2}{Translation and meaning}
+{\scriptsize\textit{Define any predicates/domains requested; translate exactly and diagnose the proposed translation.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item Let $m$ mean ``you can see the movie,'' $e$ mean ``you are over 18,''
+        and $p$ mean ``you have parental permission.'' Translate: ``You can
+        see the movie only if you are over 18 or have parental permission.''
+  \item With $Q(x,y)$ as in B.1, translate $\forall x\,\exists y\,Q(x,y)$
+        into ordinary English.
+  \item A student translates ``One student sent a message to every student''
+        as $\forall y\,\exists x\,Q(x,y)$. Diagnose the translation.
+\end{enumerate}
+\end{CoreProblem}
+\begin{CoreProblem}{C.4}{Quantifier negation}
+{\scriptsize\textit{Symbolize and negate as directed; move every negation directly before a predicate.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item No one in this class knows both French and Russian. The domain is all
+        people.
+  \item $\neg\forall y\,\exists x\,P(x,y)$
+\end{enumerate}
+\end{CoreProblem}
+\columnbreak
+\begin{CoreProblem}{D.4}{Consistency and satisfiability}
+{\scriptsize\textit{Translate the conditions. Give a satisfying assignment or a short contradiction, then complete the final request.}\par}
+If the file system is not locked, new messages are queued. The file system is
+not locked if and only if the system is functioning normally. If messages are
+not queued, they are sent to the message buffer. If the file system is not
+locked, messages are sent to the buffer. Messages are not sent to the buffer.
+In addition to deciding consistency, explain which conclusions follow from the
+last condition.
+\end{CoreProblem}
+\begin{CoreProblem}{E.1}{Logical equivalence}
+{\scriptsize\textit{Give an equivalence chain and cite one permitted rule at every step: implication, double negation, De Morgan, distributive, associative, commutative, or idempotent.}\par}
+Show that
+\[
+  (p\to q)\land(p\to r)
+  \quad\text{and}\quad
+  p\to(q\land r)
+\]
+are logically equivalent.
+\end{CoreProblem}
+\end{multicols}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Logic}{L14}{A--E}{\FivePartScoring}
+\begin{multicols}{2}
+\begin{CoreProblem}{A.2}{Truth tables}
+{\scriptsize\textit{Construct the complete eight-row table; show useful intermediate columns and classify the result.}\par}
+\[
+  \neg p\to(q\to r)
+\]
+\end{CoreProblem}
+\begin{CoreProblem}{B.5}{Translation and meaning}
+{\scriptsize\textit{Define any predicates/domains requested; translate exactly and diagnose the proposed translation.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item Let $p$ mean ``the message is scanned for viruses'' and $q$ mean ``the
+        message came from an unknown system.'' Translate: ``It is necessary to
+        scan a message whenever it comes from an unknown system.''
+  \item Let $S(x)$ mean ``$x$ is a student,'' $F(y)$ mean ``$y$ is a faculty
+        member,'' and $A(x,y)$ mean ``$x$ asked $y$ a question.'' Translate:
+        ``Some student has asked every faculty member a question.''
+  \item A student uses $A(y,x)$ in place of $A(x,y)$ in (b). Diagnose what the
+        reversed argument order says.
+\end{enumerate}
+\end{CoreProblem}
+\begin{CoreProblem}{C.2}{Quantifier negation}
+{\scriptsize\textit{Symbolize and negate as directed; move every negation directly before a predicate.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item No monkey can speak French. The domain is all things.
+  \item $\neg\forall x\,\exists y\,P(x,y)$
+\end{enumerate}
+\end{CoreProblem}
+\columnbreak
+\begin{CoreProblem}{D.2}{Consistency and satisfiability}
+{\scriptsize\textit{Translate the conditions. Give a satisfying assignment or a short contradiction, then complete the final request.}\par}
+Whenever system software is being upgraded, users cannot access the file
+system. If users can access the file system, they can save new files. If users
+cannot save new files, the software is not being upgraded. In addition to
+deciding consistency, list all satisfying assignments for the three atomic
+propositions.
+\end{CoreProblem}
+\begin{CoreProblem}{E.4}{Logical equivalence}
+{\scriptsize\textit{Give an equivalence chain and cite one permitted rule at every step: implication, double negation, De Morgan, distributive, associative, commutative, or idempotent.}\par}
+Show that
+\[
+  (p\to r)\lor(q\to r)
+  \quad\text{and}\quad
+  (p\land q)\to r
+\]
+are logically equivalent.
+\end{CoreProblem}
+\end{multicols}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Logic}{L15}{A--E}{\FivePartScoring}
+\begin{multicols}{2}
+\begin{CoreProblem}{A.3}{Truth tables}
+{\scriptsize\textit{Construct the complete eight-row table; show useful intermediate columns and classify the result.}\par}
+\[
+  (p\to q)\lor(\neg p\to r)
+\]
+\end{CoreProblem}
+\begin{CoreProblem}{B.4}{Translation and meaning}
+{\scriptsize\textit{Define any predicates/domains requested; translate exactly and diagnose the proposed translation.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item Let $w$ mean ``you may use the airport wireless network,'' $d$ mean
+        ``you pay the daily fee,'' and $s$ mean ``you subscribe to the
+        service.'' Translate: ``To use the network, you must pay the daily fee
+        unless you are a subscriber.''
+  \item Let $L(x,y)$ mean ``person $x$ loves person $y$.'' Translate
+        ``Everybody loves somebody.''
+  \item A student claims that $\exists y\,\forall x\,L(x,y)$ is an equivalent
+        translation of (b). Diagnose the claim.
+\end{enumerate}
+\end{CoreProblem}
+\begin{CoreProblem}{C.3}{Quantifier negation}
+{\scriptsize\textit{Symbolize and negate as directed; move every negation directly before a predicate.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item Some old dogs can learn new tricks. The domain is all things.
+  \item $\neg\forall x\,\forall y\,P(x,y)$
+\end{enumerate}
+\end{CoreProblem}
+\columnbreak
+\begin{CoreProblem}{D.5}{Consistency and satisfiability}
+{\scriptsize\textit{Translate the conditions. Give a satisfying assignment or a short contradiction, then complete the final request.}\par}
+Jasmine becomes unhappy if she attends a party with Samir. Samir attends only
+if Kanti attends. Kanti will not attend unless Jasmine attends. Determine which
+subsets of Jasmine, Samir, and Kanti can be invited without violating these
+conditions. State every satisfying combination, including the possibility of
+inviting no one.
+\end{CoreProblem}
+\begin{CoreProblem}{E.3}{Logical equivalence}
+{\scriptsize\textit{Give an equivalence chain and cite one permitted rule at every step: implication, double negation, De Morgan, distributive, associative, commutative, or idempotent.}\par}
+Show that
+\[
+  (p\to q)\lor(p\to r)
+  \quad\text{and}\quad
+  p\to(q\lor r)
+\]
+are logically equivalent.
+\end{CoreProblem}
+\end{multicols}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Logic}{L16}{A--E}{\FivePartScoring}
+\begin{multicols}{2}
+\begin{CoreProblem}{A.4}{Truth tables}
+{\scriptsize\textit{Construct the complete eight-row table; show useful intermediate columns and classify the result.}\par}
+\[
+  (p\to q)\land(\neg p\to r)
+\]
+\end{CoreProblem}
+\begin{CoreProblem}{B.1}{Translation and meaning}
+{\scriptsize\textit{Define any predicates/domains requested; translate exactly and diagnose the proposed translation.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item Let $e$ mean ``you can edit a protected encyclopedia entry'' and $a$
+        mean ``you are an administrator.'' Translate: ``You cannot edit a
+        protected entry unless you are an administrator.''
+  \item Let $Q(x,y)$ mean ``student $x$ sent a message to student $y$.''
+        Translate $\exists x\,\forall y\,Q(x,y)$ into ordinary English.
+  \item A student says the formula in (b) means ``Every student sent a message
+        to at least one student.'' Diagnose the claim.
+\end{enumerate}
+\end{CoreProblem}
+\begin{CoreProblem}{C.5}{Quantifier negation}
+{\scriptsize\textit{Symbolize and negate as directed; move every negation directly before a predicate.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item All Swedish movies are serious. The domain is all things.
+  \item $\neg\forall y\,\forall x\bigl(P(x,y)\lor Q(x,y)\bigr)$
+\end{enumerate}
+\end{CoreProblem}
+\columnbreak
+\begin{CoreProblem}{D.5}{Consistency and satisfiability}
+{\scriptsize\textit{Translate the conditions. Give a satisfying assignment or a short contradiction, then complete the final request.}\par}
+Jasmine becomes unhappy if she attends a party with Samir. Samir attends only
+if Kanti attends. Kanti will not attend unless Jasmine attends. Determine which
+subsets of Jasmine, Samir, and Kanti can be invited without violating these
+conditions. State every satisfying combination, including the possibility of
+inviting no one.
+\end{CoreProblem}
+\begin{CoreProblem}{E.5}{Logical equivalence}
+{\scriptsize\textit{Give an equivalence chain and cite one permitted rule at every step: implication, double negation, De Morgan, distributive, associative, commutative, or idempotent.}\par}
+Show that
+\[
+  \neg p\to(q\to r)
+  \quad\text{and}\quad
+  q\to(p\lor r)
+\]
+are logically equivalent.
+\end{CoreProblem}
+\end{multicols}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Logic}{L17}{A--E}{\FivePartScoring}
+\begin{multicols}{2}
+\begin{CoreProblem}{A.2}{Truth tables}
+{\scriptsize\textit{Construct the complete eight-row table; show useful intermediate columns and classify the result.}\par}
+\[
+  \neg p\to(q\to r)
+\]
+\end{CoreProblem}
+\begin{CoreProblem}{B.5}{Translation and meaning}
+{\scriptsize\textit{Define any predicates/domains requested; translate exactly and diagnose the proposed translation.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item Let $p$ mean ``the message is scanned for viruses'' and $q$ mean ``the
+        message came from an unknown system.'' Translate: ``It is necessary to
+        scan a message whenever it comes from an unknown system.''
+  \item Let $S(x)$ mean ``$x$ is a student,'' $F(y)$ mean ``$y$ is a faculty
+        member,'' and $A(x,y)$ mean ``$x$ asked $y$ a question.'' Translate:
+        ``Some student has asked every faculty member a question.''
+  \item A student uses $A(y,x)$ in place of $A(x,y)$ in (b). Diagnose what the
+        reversed argument order says.
+\end{enumerate}
+\end{CoreProblem}
+\begin{CoreProblem}{C.1}{Quantifier negation}
+{\scriptsize\textit{Symbolize and negate as directed; move every negation directly before a predicate.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item All dogs have fleas. The domain is all things.
+  \item $\neg\exists y\,\exists x\,P(x,y)$
+\end{enumerate}
+\end{CoreProblem}
+\columnbreak
+\begin{CoreProblem}{D.1}{Consistency and satisfiability}
+{\scriptsize\textit{Translate the conditions. Give a satisfying assignment or a short contradiction, then complete the final request.}\par}
+The system is in multiuser state if and only if it is operating normally. If
+the system is operating normally, the kernel is functioning. The kernel is not
+functioning or the system is in interrupt mode. If the system is not in
+multiuser state, it is in interrupt mode. The system is not in interrupt mode.
+If the conditions are inconsistent, identify a minimal collection of the given
+conditions that already forces the contradiction.
+\end{CoreProblem}
+\begin{CoreProblem}{E.5}{Logical equivalence}
+{\scriptsize\textit{Give an equivalence chain and cite one permitted rule at every step: implication, double negation, De Morgan, distributive, associative, commutative, or idempotent.}\par}
+Show that
+\[
+  \neg p\to(q\to r)
+  \quad\text{and}\quad
+  q\to(p\lor r)
+\]
+are logically equivalent.
+\end{CoreProblem}
+\end{multicols}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Logic}{L18}{A--E}{\FivePartScoring}
+\begin{multicols}{2}
+\begin{CoreProblem}{A.1}{Truth tables}
+{\scriptsize\textit{Construct the complete eight-row table; show useful intermediate columns and classify the result.}\par}
+\[
+  p\to(\neg q\lor r)
+\]
+\end{CoreProblem}
+\begin{CoreProblem}{B.3}{Translation and meaning}
+{\scriptsize\textit{Define any predicates/domains requested; translate exactly and diagnose the proposed translation.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item Let $g$ mean ``you can graduate,'' $r$ mean ``you completed your major
+        requirements,'' $m$ mean ``you owe the university money,'' and $b$
+        mean ``you have an overdue library book.'' Translate: ``You can
+        graduate only if you completed the requirements, owe no money, and
+        have no overdue library book.''
+  \item Let $P(x,y)$ mean ``student $x$ has taken computer-science course
+        $y$.'' Translate $\exists y\,\forall x\,P(x,y)$ into English.
+  \item A student instead writes $\forall x\,\exists y\,P(x,y)$ for the
+        sentence in (b). Diagnose the change in meaning.
+\end{enumerate}
+\end{CoreProblem}
+\begin{CoreProblem}{C.4}{Quantifier negation}
+{\scriptsize\textit{Symbolize and negate as directed; move every negation directly before a predicate.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item No one in this class knows both French and Russian. The domain is all
+        people.
+  \item $\neg\forall y\,\exists x\,P(x,y)$
+\end{enumerate}
+\end{CoreProblem}
+\columnbreak
+\begin{CoreProblem}{D.2}{Consistency and satisfiability}
+{\scriptsize\textit{Translate the conditions. Give a satisfying assignment or a short contradiction, then complete the final request.}\par}
+Whenever system software is being upgraded, users cannot access the file
+system. If users can access the file system, they can save new files. If users
+cannot save new files, the software is not being upgraded. In addition to
+deciding consistency, list all satisfying assignments for the three atomic
+propositions.
+\end{CoreProblem}
+\begin{CoreProblem}{E.1}{Logical equivalence}
+{\scriptsize\textit{Give an equivalence chain and cite one permitted rule at every step: implication, double negation, De Morgan, distributive, associative, commutative, or idempotent.}\par}
+Show that
+\[
+  (p\to q)\land(p\to r)
+  \quad\text{and}\quad
+  p\to(q\land r)
+\]
+are logically equivalent.
+\end{CoreProblem}
+\end{multicols}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Logic}{L19}{A--E}{\FivePartScoring}
+\begin{multicols}{2}
+\begin{CoreProblem}{A.3}{Truth tables}
+{\scriptsize\textit{Construct the complete eight-row table; show useful intermediate columns and classify the result.}\par}
+\[
+  (p\to q)\lor(\neg p\to r)
+\]
+\end{CoreProblem}
+\begin{CoreProblem}{B.4}{Translation and meaning}
+{\scriptsize\textit{Define any predicates/domains requested; translate exactly and diagnose the proposed translation.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item Let $w$ mean ``you may use the airport wireless network,'' $d$ mean
+        ``you pay the daily fee,'' and $s$ mean ``you subscribe to the
+        service.'' Translate: ``To use the network, you must pay the daily fee
+        unless you are a subscriber.''
+  \item Let $L(x,y)$ mean ``person $x$ loves person $y$.'' Translate
+        ``Everybody loves somebody.''
+  \item A student claims that $\exists y\,\forall x\,L(x,y)$ is an equivalent
+        translation of (b). Diagnose the claim.
+\end{enumerate}
+\end{CoreProblem}
+\begin{CoreProblem}{C.3}{Quantifier negation}
+{\scriptsize\textit{Symbolize and negate as directed; move every negation directly before a predicate.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item Some old dogs can learn new tricks. The domain is all things.
+  \item $\neg\forall x\,\forall y\,P(x,y)$
+\end{enumerate}
+\end{CoreProblem}
+\columnbreak
+\begin{CoreProblem}{D.4}{Consistency and satisfiability}
+{\scriptsize\textit{Translate the conditions. Give a satisfying assignment or a short contradiction, then complete the final request.}\par}
+If the file system is not locked, new messages are queued. The file system is
+not locked if and only if the system is functioning normally. If messages are
+not queued, they are sent to the message buffer. If the file system is not
+locked, messages are sent to the buffer. Messages are not sent to the buffer.
+In addition to deciding consistency, explain which conclusions follow from the
+last condition.
+\end{CoreProblem}
+\begin{CoreProblem}{E.3}{Logical equivalence}
+{\scriptsize\textit{Give an equivalence chain and cite one permitted rule at every step: implication, double negation, De Morgan, distributive, associative, commutative, or idempotent.}\par}
+Show that
+\[
+  (p\to q)\lor(p\to r)
+  \quad\text{and}\quad
+  p\to(q\lor r)
+\]
+are logically equivalent.
+\end{CoreProblem}
+\end{multicols}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Logic}{L20}{A--E}{\FivePartScoring}
+\begin{multicols}{2}
+\begin{CoreProblem}{A.5}{Truth tables}
+{\scriptsize\textit{Construct the complete eight-row table; show useful intermediate columns and classify the result.}\par}
+\[
+  (p\leftrightarrow q)\lor(\neg q\leftrightarrow r)
+\]
+\end{CoreProblem}
+\begin{CoreProblem}{B.3}{Translation and meaning}
+{\scriptsize\textit{Define any predicates/domains requested; translate exactly and diagnose the proposed translation.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item Let $g$ mean ``you can graduate,'' $r$ mean ``you completed your major
+        requirements,'' $m$ mean ``you owe the university money,'' and $b$
+        mean ``you have an overdue library book.'' Translate: ``You can
+        graduate only if you completed the requirements, owe no money, and
+        have no overdue library book.''
+  \item Let $P(x,y)$ mean ``student $x$ has taken computer-science course
+        $y$.'' Translate $\exists y\,\forall x\,P(x,y)$ into English.
+  \item A student instead writes $\forall x\,\exists y\,P(x,y)$ for the
+        sentence in (b). Diagnose the change in meaning.
+\end{enumerate}
+\end{CoreProblem}
+\begin{CoreProblem}{C.1}{Quantifier negation}
+{\scriptsize\textit{Symbolize and negate as directed; move every negation directly before a predicate.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item All dogs have fleas. The domain is all things.
+  \item $\neg\exists y\,\exists x\,P(x,y)$
+\end{enumerate}
+\end{CoreProblem}
+\columnbreak
+\begin{CoreProblem}{D.2}{Consistency and satisfiability}
+{\scriptsize\textit{Translate the conditions. Give a satisfying assignment or a short contradiction, then complete the final request.}\par}
+Whenever system software is being upgraded, users cannot access the file
+system. If users can access the file system, they can save new files. If users
+cannot save new files, the software is not being upgraded. In addition to
+deciding consistency, list all satisfying assignments for the three atomic
+propositions.
+\end{CoreProblem}
+\begin{CoreProblem}{E.4}{Logical equivalence}
+{\scriptsize\textit{Give an equivalence chain and cite one permitted rule at every step: implication, double negation, De Morgan, distributive, associative, commutative, or idempotent.}\par}
+Show that
+\[
+  (p\to r)\lor(q\to r)
+  \quad\text{and}\quad
+  (p\land q)\to r
+\]
+are logically equivalent.
+\end{CoreProblem}
+\end{multicols}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Logic}{L21}{A--E}{\FivePartScoring}
+\begin{multicols}{2}
+\begin{CoreProblem}{A.3}{Truth tables}
+{\scriptsize\textit{Construct the complete eight-row table; show useful intermediate columns and classify the result.}\par}
+\[
+  (p\to q)\lor(\neg p\to r)
+\]
+\end{CoreProblem}
+\begin{CoreProblem}{B.4}{Translation and meaning}
+{\scriptsize\textit{Define any predicates/domains requested; translate exactly and diagnose the proposed translation.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item Let $w$ mean ``you may use the airport wireless network,'' $d$ mean
+        ``you pay the daily fee,'' and $s$ mean ``you subscribe to the
+        service.'' Translate: ``To use the network, you must pay the daily fee
+        unless you are a subscriber.''
+  \item Let $L(x,y)$ mean ``person $x$ loves person $y$.'' Translate
+        ``Everybody loves somebody.''
+  \item A student claims that $\exists y\,\forall x\,L(x,y)$ is an equivalent
+        translation of (b). Diagnose the claim.
+\end{enumerate}
+\end{CoreProblem}
+\begin{CoreProblem}{C.5}{Quantifier negation}
+{\scriptsize\textit{Symbolize and negate as directed; move every negation directly before a predicate.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item All Swedish movies are serious. The domain is all things.
+  \item $\neg\forall y\,\forall x\bigl(P(x,y)\lor Q(x,y)\bigr)$
+\end{enumerate}
+\end{CoreProblem}
+\columnbreak
+\begin{CoreProblem}{D.5}{Consistency and satisfiability}
+{\scriptsize\textit{Translate the conditions. Give a satisfying assignment or a short contradiction, then complete the final request.}\par}
+Jasmine becomes unhappy if she attends a party with Samir. Samir attends only
+if Kanti attends. Kanti will not attend unless Jasmine attends. Determine which
+subsets of Jasmine, Samir, and Kanti can be invited without violating these
+conditions. State every satisfying combination, including the possibility of
+inviting no one.
+\end{CoreProblem}
+\begin{CoreProblem}{E.2}{Logical equivalence}
+{\scriptsize\textit{Give an equivalence chain and cite one permitted rule at every step: implication, double negation, De Morgan, distributive, associative, commutative, or idempotent.}\par}
+Show that
+\[
+  (p\to r)\land(q\to r)
+  \quad\text{and}\quad
+  (p\lor q)\to r
+\]
+are logically equivalent.
+\end{CoreProblem}
+\end{multicols}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Logic}{L22}{A--E}{\FivePartScoring}
+\begin{multicols}{2}
+\begin{CoreProblem}{A.1}{Truth tables}
+{\scriptsize\textit{Construct the complete eight-row table; show useful intermediate columns and classify the result.}\par}
+\[
+  p\to(\neg q\lor r)
+\]
+\end{CoreProblem}
+\begin{CoreProblem}{B.5}{Translation and meaning}
+{\scriptsize\textit{Define any predicates/domains requested; translate exactly and diagnose the proposed translation.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item Let $p$ mean ``the message is scanned for viruses'' and $q$ mean ``the
+        message came from an unknown system.'' Translate: ``It is necessary to
+        scan a message whenever it comes from an unknown system.''
+  \item Let $S(x)$ mean ``$x$ is a student,'' $F(y)$ mean ``$y$ is a faculty
+        member,'' and $A(x,y)$ mean ``$x$ asked $y$ a question.'' Translate:
+        ``Some student has asked every faculty member a question.''
+  \item A student uses $A(y,x)$ in place of $A(x,y)$ in (b). Diagnose what the
+        reversed argument order says.
+\end{enumerate}
+\end{CoreProblem}
+\begin{CoreProblem}{C.2}{Quantifier negation}
+{\scriptsize\textit{Symbolize and negate as directed; move every negation directly before a predicate.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item No monkey can speak French. The domain is all things.
+  \item $\neg\forall x\,\exists y\,P(x,y)$
+\end{enumerate}
+\end{CoreProblem}
+\columnbreak
+\begin{CoreProblem}{D.3}{Consistency and satisfiability}
+{\scriptsize\textit{Translate the conditions. Give a satisfying assignment or a short contradiction, then complete the final request.}\par}
+The router can send packets to the edge system only if it supports the new
+address space. Supporting the new address space requires the latest software
+release. If the latest software release is installed, the router can send
+packets to the edge system. The router does not support the new address space.
+In addition to deciding consistency, determine which truth values are forced.
+\end{CoreProblem}
+\begin{CoreProblem}{E.4}{Logical equivalence}
+{\scriptsize\textit{Give an equivalence chain and cite one permitted rule at every step: implication, double negation, De Morgan, distributive, associative, commutative, or idempotent.}\par}
+Show that
+\[
+  (p\to r)\lor(q\to r)
+  \quad\text{and}\quad
+  (p\land q)\to r
+\]
+are logically equivalent.
+\end{CoreProblem}
+\end{multicols}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Logic}{L23}{A--E}{\FivePartScoring}
+\begin{multicols}{2}
+\begin{CoreProblem}{A.4}{Truth tables}
+{\scriptsize\textit{Construct the complete eight-row table; show useful intermediate columns and classify the result.}\par}
+\[
+  (p\to q)\land(\neg p\to r)
+\]
+\end{CoreProblem}
+\begin{CoreProblem}{B.3}{Translation and meaning}
+{\scriptsize\textit{Define any predicates/domains requested; translate exactly and diagnose the proposed translation.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item Let $g$ mean ``you can graduate,'' $r$ mean ``you completed your major
+        requirements,'' $m$ mean ``you owe the university money,'' and $b$
+        mean ``you have an overdue library book.'' Translate: ``You can
+        graduate only if you completed the requirements, owe no money, and
+        have no overdue library book.''
+  \item Let $P(x,y)$ mean ``student $x$ has taken computer-science course
+        $y$.'' Translate $\exists y\,\forall x\,P(x,y)$ into English.
+  \item A student instead writes $\forall x\,\exists y\,P(x,y)$ for the
+        sentence in (b). Diagnose the change in meaning.
+\end{enumerate}
+\end{CoreProblem}
+\begin{CoreProblem}{C.4}{Quantifier negation}
+{\scriptsize\textit{Symbolize and negate as directed; move every negation directly before a predicate.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item No one in this class knows both French and Russian. The domain is all
+        people.
+  \item $\neg\forall y\,\exists x\,P(x,y)$
+\end{enumerate}
+\end{CoreProblem}
+\columnbreak
+\begin{CoreProblem}{D.3}{Consistency and satisfiability}
+{\scriptsize\textit{Translate the conditions. Give a satisfying assignment or a short contradiction, then complete the final request.}\par}
+The router can send packets to the edge system only if it supports the new
+address space. Supporting the new address space requires the latest software
+release. If the latest software release is installed, the router can send
+packets to the edge system. The router does not support the new address space.
+In addition to deciding consistency, determine which truth values are forced.
+\end{CoreProblem}
+\begin{CoreProblem}{E.2}{Logical equivalence}
+{\scriptsize\textit{Give an equivalence chain and cite one permitted rule at every step: implication, double negation, De Morgan, distributive, associative, commutative, or idempotent.}\par}
+Show that
+\[
+  (p\to r)\land(q\to r)
+  \quad\text{and}\quad
+  (p\lor q)\to r
+\]
+are logically equivalent.
+\end{CoreProblem}
+\end{multicols}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Logic}{L24}{A--E}{\FivePartScoring}
+\begin{multicols}{2}
+\begin{CoreProblem}{A.5}{Truth tables}
+{\scriptsize\textit{Construct the complete eight-row table; show useful intermediate columns and classify the result.}\par}
+\[
+  (p\leftrightarrow q)\lor(\neg q\leftrightarrow r)
+\]
+\end{CoreProblem}
+\begin{CoreProblem}{B.5}{Translation and meaning}
+{\scriptsize\textit{Define any predicates/domains requested; translate exactly and diagnose the proposed translation.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item Let $p$ mean ``the message is scanned for viruses'' and $q$ mean ``the
+        message came from an unknown system.'' Translate: ``It is necessary to
+        scan a message whenever it comes from an unknown system.''
+  \item Let $S(x)$ mean ``$x$ is a student,'' $F(y)$ mean ``$y$ is a faculty
+        member,'' and $A(x,y)$ mean ``$x$ asked $y$ a question.'' Translate:
+        ``Some student has asked every faculty member a question.''
+  \item A student uses $A(y,x)$ in place of $A(x,y)$ in (b). Diagnose what the
+        reversed argument order says.
+\end{enumerate}
+\end{CoreProblem}
+\begin{CoreProblem}{C.1}{Quantifier negation}
+{\scriptsize\textit{Symbolize and negate as directed; move every negation directly before a predicate.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item All dogs have fleas. The domain is all things.
+  \item $\neg\exists y\,\exists x\,P(x,y)$
+\end{enumerate}
+\end{CoreProblem}
+\columnbreak
+\begin{CoreProblem}{D.3}{Consistency and satisfiability}
+{\scriptsize\textit{Translate the conditions. Give a satisfying assignment or a short contradiction, then complete the final request.}\par}
+The router can send packets to the edge system only if it supports the new
+address space. Supporting the new address space requires the latest software
+release. If the latest software release is installed, the router can send
+packets to the edge system. The router does not support the new address space.
+In addition to deciding consistency, determine which truth values are forced.
+\end{CoreProblem}
+\begin{CoreProblem}{E.4}{Logical equivalence}
+{\scriptsize\textit{Give an equivalence chain and cite one permitted rule at every step: implication, double negation, De Morgan, distributive, associative, commutative, or idempotent.}\par}
+Show that
+\[
+  (p\to r)\lor(q\to r)
+  \quad\text{and}\quad
+  (p\land q)\to r
+\]
+are logically equivalent.
+\end{CoreProblem}
+\end{multicols}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Logic}{L25}{A--E}{\FivePartScoring}
+\begin{multicols}{2}
+\begin{CoreProblem}{A.1}{Truth tables}
+{\scriptsize\textit{Construct the complete eight-row table; show useful intermediate columns and classify the result.}\par}
+\[
+  p\to(\neg q\lor r)
+\]
+\end{CoreProblem}
+\begin{CoreProblem}{B.1}{Translation and meaning}
+{\scriptsize\textit{Define any predicates/domains requested; translate exactly and diagnose the proposed translation.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item Let $e$ mean ``you can edit a protected encyclopedia entry'' and $a$
+        mean ``you are an administrator.'' Translate: ``You cannot edit a
+        protected entry unless you are an administrator.''
+  \item Let $Q(x,y)$ mean ``student $x$ sent a message to student $y$.''
+        Translate $\exists x\,\forall y\,Q(x,y)$ into ordinary English.
+  \item A student says the formula in (b) means ``Every student sent a message
+        to at least one student.'' Diagnose the claim.
+\end{enumerate}
+\end{CoreProblem}
+\begin{CoreProblem}{C.1}{Quantifier negation}
+{\scriptsize\textit{Symbolize and negate as directed; move every negation directly before a predicate.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item All dogs have fleas. The domain is all things.
+  \item $\neg\exists y\,\exists x\,P(x,y)$
+\end{enumerate}
+\end{CoreProblem}
+\columnbreak
+\begin{CoreProblem}{D.3}{Consistency and satisfiability}
+{\scriptsize\textit{Translate the conditions. Give a satisfying assignment or a short contradiction, then complete the final request.}\par}
+The router can send packets to the edge system only if it supports the new
+address space. Supporting the new address space requires the latest software
+release. If the latest software release is installed, the router can send
+packets to the edge system. The router does not support the new address space.
+In addition to deciding consistency, determine which truth values are forced.
+\end{CoreProblem}
+\begin{CoreProblem}{E.5}{Logical equivalence}
+{\scriptsize\textit{Give an equivalence chain and cite one permitted rule at every step: implication, double negation, De Morgan, distributive, associative, commutative, or idempotent.}\par}
+Show that
+\[
+  \neg p\to(q\to r)
+  \quad\text{and}\quad
+  q\to(p\lor r)
+\]
+are logically equivalent.
+\end{CoreProblem}
+\end{multicols}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Logic}{L26}{A--E}{\FivePartScoring}
+\begin{multicols}{2}
+\begin{CoreProblem}{A.2}{Truth tables}
+{\scriptsize\textit{Construct the complete eight-row table; show useful intermediate columns and classify the result.}\par}
+\[
+  \neg p\to(q\to r)
+\]
+\end{CoreProblem}
+\begin{CoreProblem}{B.2}{Translation and meaning}
+{\scriptsize\textit{Define any predicates/domains requested; translate exactly and diagnose the proposed translation.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item Let $m$ mean ``you can see the movie,'' $e$ mean ``you are over 18,''
+        and $p$ mean ``you have parental permission.'' Translate: ``You can
+        see the movie only if you are over 18 or have parental permission.''
+  \item With $Q(x,y)$ as in B.1, translate $\forall x\,\exists y\,Q(x,y)$
+        into ordinary English.
+  \item A student translates ``One student sent a message to every student''
+        as $\forall y\,\exists x\,Q(x,y)$. Diagnose the translation.
+\end{enumerate}
+\end{CoreProblem}
+\begin{CoreProblem}{C.1}{Quantifier negation}
+{\scriptsize\textit{Symbolize and negate as directed; move every negation directly before a predicate.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item All dogs have fleas. The domain is all things.
+  \item $\neg\exists y\,\exists x\,P(x,y)$
+\end{enumerate}
+\end{CoreProblem}
+\columnbreak
+\begin{CoreProblem}{D.5}{Consistency and satisfiability}
+{\scriptsize\textit{Translate the conditions. Give a satisfying assignment or a short contradiction, then complete the final request.}\par}
+Jasmine becomes unhappy if she attends a party with Samir. Samir attends only
+if Kanti attends. Kanti will not attend unless Jasmine attends. Determine which
+subsets of Jasmine, Samir, and Kanti can be invited without violating these
+conditions. State every satisfying combination, including the possibility of
+inviting no one.
+\end{CoreProblem}
+\begin{CoreProblem}{E.3}{Logical equivalence}
+{\scriptsize\textit{Give an equivalence chain and cite one permitted rule at every step: implication, double negation, De Morgan, distributive, associative, commutative, or idempotent.}\par}
+Show that
+\[
+  (p\to q)\lor(p\to r)
+  \quad\text{and}\quad
+  p\to(q\lor r)
+\]
+are logically equivalent.
+\end{CoreProblem}
+\end{multicols}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Logic}{L27}{A--E}{\FivePartScoring}
+\begin{multicols}{2}
+\begin{CoreProblem}{A.3}{Truth tables}
+{\scriptsize\textit{Construct the complete eight-row table; show useful intermediate columns and classify the result.}\par}
+\[
+  (p\to q)\lor(\neg p\to r)
+\]
+\end{CoreProblem}
+\begin{CoreProblem}{B.5}{Translation and meaning}
+{\scriptsize\textit{Define any predicates/domains requested; translate exactly and diagnose the proposed translation.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item Let $p$ mean ``the message is scanned for viruses'' and $q$ mean ``the
+        message came from an unknown system.'' Translate: ``It is necessary to
+        scan a message whenever it comes from an unknown system.''
+  \item Let $S(x)$ mean ``$x$ is a student,'' $F(y)$ mean ``$y$ is a faculty
+        member,'' and $A(x,y)$ mean ``$x$ asked $y$ a question.'' Translate:
+        ``Some student has asked every faculty member a question.''
+  \item A student uses $A(y,x)$ in place of $A(x,y)$ in (b). Diagnose what the
+        reversed argument order says.
+\end{enumerate}
+\end{CoreProblem}
+\begin{CoreProblem}{C.5}{Quantifier negation}
+{\scriptsize\textit{Symbolize and negate as directed; move every negation directly before a predicate.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item All Swedish movies are serious. The domain is all things.
+  \item $\neg\forall y\,\forall x\bigl(P(x,y)\lor Q(x,y)\bigr)$
+\end{enumerate}
+\end{CoreProblem}
+\columnbreak
+\begin{CoreProblem}{D.1}{Consistency and satisfiability}
+{\scriptsize\textit{Translate the conditions. Give a satisfying assignment or a short contradiction, then complete the final request.}\par}
+The system is in multiuser state if and only if it is operating normally. If
+the system is operating normally, the kernel is functioning. The kernel is not
+functioning or the system is in interrupt mode. If the system is not in
+multiuser state, it is in interrupt mode. The system is not in interrupt mode.
+If the conditions are inconsistent, identify a minimal collection of the given
+conditions that already forces the contradiction.
+\end{CoreProblem}
+\begin{CoreProblem}{E.3}{Logical equivalence}
+{\scriptsize\textit{Give an equivalence chain and cite one permitted rule at every step: implication, double negation, De Morgan, distributive, associative, commutative, or idempotent.}\par}
+Show that
+\[
+  (p\to q)\lor(p\to r)
+  \quad\text{and}\quad
+  p\to(q\lor r)
+\]
+are logically equivalent.
+\end{CoreProblem}
+\end{multicols}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Logic}{L28}{A--E}{\FivePartScoring}
+\begin{multicols}{2}
+\begin{CoreProblem}{A.3}{Truth tables}
+{\scriptsize\textit{Construct the complete eight-row table; show useful intermediate columns and classify the result.}\par}
+\[
+  (p\to q)\lor(\neg p\to r)
+\]
+\end{CoreProblem}
+\begin{CoreProblem}{B.5}{Translation and meaning}
+{\scriptsize\textit{Define any predicates/domains requested; translate exactly and diagnose the proposed translation.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item Let $p$ mean ``the message is scanned for viruses'' and $q$ mean ``the
+        message came from an unknown system.'' Translate: ``It is necessary to
+        scan a message whenever it comes from an unknown system.''
+  \item Let $S(x)$ mean ``$x$ is a student,'' $F(y)$ mean ``$y$ is a faculty
+        member,'' and $A(x,y)$ mean ``$x$ asked $y$ a question.'' Translate:
+        ``Some student has asked every faculty member a question.''
+  \item A student uses $A(y,x)$ in place of $A(x,y)$ in (b). Diagnose what the
+        reversed argument order says.
+\end{enumerate}
+\end{CoreProblem}
+\begin{CoreProblem}{C.1}{Quantifier negation}
+{\scriptsize\textit{Symbolize and negate as directed; move every negation directly before a predicate.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item All dogs have fleas. The domain is all things.
+  \item $\neg\exists y\,\exists x\,P(x,y)$
+\end{enumerate}
+\end{CoreProblem}
+\columnbreak
+\begin{CoreProblem}{D.2}{Consistency and satisfiability}
+{\scriptsize\textit{Translate the conditions. Give a satisfying assignment or a short contradiction, then complete the final request.}\par}
+Whenever system software is being upgraded, users cannot access the file
+system. If users can access the file system, they can save new files. If users
+cannot save new files, the software is not being upgraded. In addition to
+deciding consistency, list all satisfying assignments for the three atomic
+propositions.
+\end{CoreProblem}
+\begin{CoreProblem}{E.4}{Logical equivalence}
+{\scriptsize\textit{Give an equivalence chain and cite one permitted rule at every step: implication, double negation, De Morgan, distributive, associative, commutative, or idempotent.}\par}
+Show that
+\[
+  (p\to r)\lor(q\to r)
+  \quad\text{and}\quad
+  (p\land q)\to r
+\]
+are logically equivalent.
+\end{CoreProblem}
+\end{multicols}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Logic}{L29}{A--E}{\FivePartScoring}
+\begin{multicols}{2}
+\begin{CoreProblem}{A.3}{Truth tables}
+{\scriptsize\textit{Construct the complete eight-row table; show useful intermediate columns and classify the result.}\par}
+\[
+  (p\to q)\lor(\neg p\to r)
+\]
+\end{CoreProblem}
+\begin{CoreProblem}{B.3}{Translation and meaning}
+{\scriptsize\textit{Define any predicates/domains requested; translate exactly and diagnose the proposed translation.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item Let $g$ mean ``you can graduate,'' $r$ mean ``you completed your major
+        requirements,'' $m$ mean ``you owe the university money,'' and $b$
+        mean ``you have an overdue library book.'' Translate: ``You can
+        graduate only if you completed the requirements, owe no money, and
+        have no overdue library book.''
+  \item Let $P(x,y)$ mean ``student $x$ has taken computer-science course
+        $y$.'' Translate $\exists y\,\forall x\,P(x,y)$ into English.
+  \item A student instead writes $\forall x\,\exists y\,P(x,y)$ for the
+        sentence in (b). Diagnose the change in meaning.
+\end{enumerate}
+\end{CoreProblem}
+\begin{CoreProblem}{C.3}{Quantifier negation}
+{\scriptsize\textit{Symbolize and negate as directed; move every negation directly before a predicate.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item Some old dogs can learn new tricks. The domain is all things.
+  \item $\neg\forall x\,\forall y\,P(x,y)$
+\end{enumerate}
+\end{CoreProblem}
+\columnbreak
+\begin{CoreProblem}{D.1}{Consistency and satisfiability}
+{\scriptsize\textit{Translate the conditions. Give a satisfying assignment or a short contradiction, then complete the final request.}\par}
+The system is in multiuser state if and only if it is operating normally. If
+the system is operating normally, the kernel is functioning. The kernel is not
+functioning or the system is in interrupt mode. If the system is not in
+multiuser state, it is in interrupt mode. The system is not in interrupt mode.
+If the conditions are inconsistent, identify a minimal collection of the given
+conditions that already forces the contradiction.
+\end{CoreProblem}
+\begin{CoreProblem}{E.2}{Logical equivalence}
+{\scriptsize\textit{Give an equivalence chain and cite one permitted rule at every step: implication, double negation, De Morgan, distributive, associative, commutative, or idempotent.}\par}
+Show that
+\[
+  (p\to r)\land(q\to r)
+  \quad\text{and}\quad
+  (p\lor q)\to r
+\]
+are logically equivalent.
+\end{CoreProblem}
+\end{multicols}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Logic}{L30}{A--E}{\FivePartScoring}
+\begin{multicols}{2}
+\begin{CoreProblem}{A.1}{Truth tables}
+{\scriptsize\textit{Construct the complete eight-row table; show useful intermediate columns and classify the result.}\par}
+\[
+  p\to(\neg q\lor r)
+\]
+\end{CoreProblem}
+\begin{CoreProblem}{B.4}{Translation and meaning}
+{\scriptsize\textit{Define any predicates/domains requested; translate exactly and diagnose the proposed translation.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item Let $w$ mean ``you may use the airport wireless network,'' $d$ mean
+        ``you pay the daily fee,'' and $s$ mean ``you subscribe to the
+        service.'' Translate: ``To use the network, you must pay the daily fee
+        unless you are a subscriber.''
+  \item Let $L(x,y)$ mean ``person $x$ loves person $y$.'' Translate
+        ``Everybody loves somebody.''
+  \item A student claims that $\exists y\,\forall x\,L(x,y)$ is an equivalent
+        translation of (b). Diagnose the claim.
+\end{enumerate}
+\end{CoreProblem}
+\begin{CoreProblem}{C.3}{Quantifier negation}
+{\scriptsize\textit{Symbolize and negate as directed; move every negation directly before a predicate.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item Some old dogs can learn new tricks. The domain is all things.
+  \item $\neg\forall x\,\forall y\,P(x,y)$
+\end{enumerate}
+\end{CoreProblem}
+\columnbreak
+\begin{CoreProblem}{D.1}{Consistency and satisfiability}
+{\scriptsize\textit{Translate the conditions. Give a satisfying assignment or a short contradiction, then complete the final request.}\par}
+The system is in multiuser state if and only if it is operating normally. If
+the system is operating normally, the kernel is functioning. The kernel is not
+functioning or the system is in interrupt mode. If the system is not in
+multiuser state, it is in interrupt mode. The system is not in interrupt mode.
+If the conditions are inconsistent, identify a minimal collection of the given
+conditions that already forces the contradiction.
+\end{CoreProblem}
+\begin{CoreProblem}{E.3}{Logical equivalence}
+{\scriptsize\textit{Give an equivalence chain and cite one permitted rule at every step: implication, double negation, De Morgan, distributive, associative, commutative, or idempotent.}\par}
+Show that
+\[
+  (p\to q)\lor(p\to r)
+  \quad\text{and}\quad
+  p\to(q\lor r)
+\]
+are logically equivalent.
+\end{CoreProblem}
+\end{multicols}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Logic}{L31}{A--E}{\FivePartScoring}
+\begin{multicols}{2}
+\begin{CoreProblem}{A.3}{Truth tables}
+{\scriptsize\textit{Construct the complete eight-row table; show useful intermediate columns and classify the result.}\par}
+\[
+  (p\to q)\lor(\neg p\to r)
+\]
+\end{CoreProblem}
+\begin{CoreProblem}{B.5}{Translation and meaning}
+{\scriptsize\textit{Define any predicates/domains requested; translate exactly and diagnose the proposed translation.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item Let $p$ mean ``the message is scanned for viruses'' and $q$ mean ``the
+        message came from an unknown system.'' Translate: ``It is necessary to
+        scan a message whenever it comes from an unknown system.''
+  \item Let $S(x)$ mean ``$x$ is a student,'' $F(y)$ mean ``$y$ is a faculty
+        member,'' and $A(x,y)$ mean ``$x$ asked $y$ a question.'' Translate:
+        ``Some student has asked every faculty member a question.''
+  \item A student uses $A(y,x)$ in place of $A(x,y)$ in (b). Diagnose what the
+        reversed argument order says.
+\end{enumerate}
+\end{CoreProblem}
+\begin{CoreProblem}{C.5}{Quantifier negation}
+{\scriptsize\textit{Symbolize and negate as directed; move every negation directly before a predicate.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item All Swedish movies are serious. The domain is all things.
+  \item $\neg\forall y\,\forall x\bigl(P(x,y)\lor Q(x,y)\bigr)$
+\end{enumerate}
+\end{CoreProblem}
+\columnbreak
+\begin{CoreProblem}{D.1}{Consistency and satisfiability}
+{\scriptsize\textit{Translate the conditions. Give a satisfying assignment or a short contradiction, then complete the final request.}\par}
+The system is in multiuser state if and only if it is operating normally. If
+the system is operating normally, the kernel is functioning. The kernel is not
+functioning or the system is in interrupt mode. If the system is not in
+multiuser state, it is in interrupt mode. The system is not in interrupt mode.
+If the conditions are inconsistent, identify a minimal collection of the given
+conditions that already forces the contradiction.
+\end{CoreProblem}
+\begin{CoreProblem}{E.2}{Logical equivalence}
+{\scriptsize\textit{Give an equivalence chain and cite one permitted rule at every step: implication, double negation, De Morgan, distributive, associative, commutative, or idempotent.}\par}
+Show that
+\[
+  (p\to r)\land(q\to r)
+  \quad\text{and}\quad
+  (p\lor q)\to r
+\]
+are logically equivalent.
+\end{CoreProblem}
+\end{multicols}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Logic}{L32}{A--E}{\FivePartScoring}
+\begin{multicols}{2}
+\begin{CoreProblem}{A.5}{Truth tables}
+{\scriptsize\textit{Construct the complete eight-row table; show useful intermediate columns and classify the result.}\par}
+\[
+  (p\leftrightarrow q)\lor(\neg q\leftrightarrow r)
+\]
+\end{CoreProblem}
+\begin{CoreProblem}{B.2}{Translation and meaning}
+{\scriptsize\textit{Define any predicates/domains requested; translate exactly and diagnose the proposed translation.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item Let $m$ mean ``you can see the movie,'' $e$ mean ``you are over 18,''
+        and $p$ mean ``you have parental permission.'' Translate: ``You can
+        see the movie only if you are over 18 or have parental permission.''
+  \item With $Q(x,y)$ as in B.1, translate $\forall x\,\exists y\,Q(x,y)$
+        into ordinary English.
+  \item A student translates ``One student sent a message to every student''
+        as $\forall y\,\exists x\,Q(x,y)$. Diagnose the translation.
+\end{enumerate}
+\end{CoreProblem}
+\begin{CoreProblem}{C.4}{Quantifier negation}
+{\scriptsize\textit{Symbolize and negate as directed; move every negation directly before a predicate.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item No one in this class knows both French and Russian. The domain is all
+        people.
+  \item $\neg\forall y\,\exists x\,P(x,y)$
+\end{enumerate}
+\end{CoreProblem}
+\columnbreak
+\begin{CoreProblem}{D.3}{Consistency and satisfiability}
+{\scriptsize\textit{Translate the conditions. Give a satisfying assignment or a short contradiction, then complete the final request.}\par}
+The router can send packets to the edge system only if it supports the new
+address space. Supporting the new address space requires the latest software
+release. If the latest software release is installed, the router can send
+packets to the edge system. The router does not support the new address space.
+In addition to deciding consistency, determine which truth values are forced.
+\end{CoreProblem}
+\begin{CoreProblem}{E.1}{Logical equivalence}
+{\scriptsize\textit{Give an equivalence chain and cite one permitted rule at every step: implication, double negation, De Morgan, distributive, associative, commutative, or idempotent.}\par}
+Show that
+\[
+  (p\to q)\land(p\to r)
+  \quad\text{and}\quad
+  p\to(q\land r)
+\]
+are logically equivalent.
+\end{CoreProblem}
+\end{multicols}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Logic}{L33}{A--E}{\FivePartScoring}
+\begin{multicols}{2}
+\begin{CoreProblem}{A.2}{Truth tables}
+{\scriptsize\textit{Construct the complete eight-row table; show useful intermediate columns and classify the result.}\par}
+\[
+  \neg p\to(q\to r)
+\]
+\end{CoreProblem}
+\begin{CoreProblem}{B.3}{Translation and meaning}
+{\scriptsize\textit{Define any predicates/domains requested; translate exactly and diagnose the proposed translation.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item Let $g$ mean ``you can graduate,'' $r$ mean ``you completed your major
+        requirements,'' $m$ mean ``you owe the university money,'' and $b$
+        mean ``you have an overdue library book.'' Translate: ``You can
+        graduate only if you completed the requirements, owe no money, and
+        have no overdue library book.''
+  \item Let $P(x,y)$ mean ``student $x$ has taken computer-science course
+        $y$.'' Translate $\exists y\,\forall x\,P(x,y)$ into English.
+  \item A student instead writes $\forall x\,\exists y\,P(x,y)$ for the
+        sentence in (b). Diagnose the change in meaning.
+\end{enumerate}
+\end{CoreProblem}
+\begin{CoreProblem}{C.4}{Quantifier negation}
+{\scriptsize\textit{Symbolize and negate as directed; move every negation directly before a predicate.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item No one in this class knows both French and Russian. The domain is all
+        people.
+  \item $\neg\forall y\,\exists x\,P(x,y)$
+\end{enumerate}
+\end{CoreProblem}
+\columnbreak
+\begin{CoreProblem}{D.5}{Consistency and satisfiability}
+{\scriptsize\textit{Translate the conditions. Give a satisfying assignment or a short contradiction, then complete the final request.}\par}
+Jasmine becomes unhappy if she attends a party with Samir. Samir attends only
+if Kanti attends. Kanti will not attend unless Jasmine attends. Determine which
+subsets of Jasmine, Samir, and Kanti can be invited without violating these
+conditions. State every satisfying combination, including the possibility of
+inviting no one.
+\end{CoreProblem}
+\begin{CoreProblem}{E.3}{Logical equivalence}
+{\scriptsize\textit{Give an equivalence chain and cite one permitted rule at every step: implication, double negation, De Morgan, distributive, associative, commutative, or idempotent.}\par}
+Show that
+\[
+  (p\to q)\lor(p\to r)
+  \quad\text{and}\quad
+  p\to(q\lor r)
+\]
+are logically equivalent.
+\end{CoreProblem}
+\end{multicols}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Logic}{L34}{A--E}{\FivePartScoring}
+\begin{multicols}{2}
+\begin{CoreProblem}{A.2}{Truth tables}
+{\scriptsize\textit{Construct the complete eight-row table; show useful intermediate columns and classify the result.}\par}
+\[
+  \neg p\to(q\to r)
+\]
+\end{CoreProblem}
+\begin{CoreProblem}{B.2}{Translation and meaning}
+{\scriptsize\textit{Define any predicates/domains requested; translate exactly and diagnose the proposed translation.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item Let $m$ mean ``you can see the movie,'' $e$ mean ``you are over 18,''
+        and $p$ mean ``you have parental permission.'' Translate: ``You can
+        see the movie only if you are over 18 or have parental permission.''
+  \item With $Q(x,y)$ as in B.1, translate $\forall x\,\exists y\,Q(x,y)$
+        into ordinary English.
+  \item A student translates ``One student sent a message to every student''
+        as $\forall y\,\exists x\,Q(x,y)$. Diagnose the translation.
+\end{enumerate}
+\end{CoreProblem}
+\begin{CoreProblem}{C.2}{Quantifier negation}
+{\scriptsize\textit{Symbolize and negate as directed; move every negation directly before a predicate.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item No monkey can speak French. The domain is all things.
+  \item $\neg\forall x\,\exists y\,P(x,y)$
+\end{enumerate}
+\end{CoreProblem}
+\columnbreak
+\begin{CoreProblem}{D.3}{Consistency and satisfiability}
+{\scriptsize\textit{Translate the conditions. Give a satisfying assignment or a short contradiction, then complete the final request.}\par}
+The router can send packets to the edge system only if it supports the new
+address space. Supporting the new address space requires the latest software
+release. If the latest software release is installed, the router can send
+packets to the edge system. The router does not support the new address space.
+In addition to deciding consistency, determine which truth values are forced.
+\end{CoreProblem}
+\begin{CoreProblem}{E.1}{Logical equivalence}
+{\scriptsize\textit{Give an equivalence chain and cite one permitted rule at every step: implication, double negation, De Morgan, distributive, associative, commutative, or idempotent.}\par}
+Show that
+\[
+  (p\to q)\land(p\to r)
+  \quad\text{and}\quad
+  p\to(q\land r)
+\]
+are logically equivalent.
+\end{CoreProblem}
+\end{multicols}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Logic}{L35}{A--E}{\FivePartScoring}
+\begin{multicols}{2}
+\begin{CoreProblem}{A.1}{Truth tables}
+{\scriptsize\textit{Construct the complete eight-row table; show useful intermediate columns and classify the result.}\par}
+\[
+  p\to(\neg q\lor r)
+\]
+\end{CoreProblem}
+\begin{CoreProblem}{B.2}{Translation and meaning}
+{\scriptsize\textit{Define any predicates/domains requested; translate exactly and diagnose the proposed translation.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item Let $m$ mean ``you can see the movie,'' $e$ mean ``you are over 18,''
+        and $p$ mean ``you have parental permission.'' Translate: ``You can
+        see the movie only if you are over 18 or have parental permission.''
+  \item With $Q(x,y)$ as in B.1, translate $\forall x\,\exists y\,Q(x,y)$
+        into ordinary English.
+  \item A student translates ``One student sent a message to every student''
+        as $\forall y\,\exists x\,Q(x,y)$. Diagnose the translation.
+\end{enumerate}
+\end{CoreProblem}
+\begin{CoreProblem}{C.2}{Quantifier negation}
+{\scriptsize\textit{Symbolize and negate as directed; move every negation directly before a predicate.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item No monkey can speak French. The domain is all things.
+  \item $\neg\forall x\,\exists y\,P(x,y)$
+\end{enumerate}
+\end{CoreProblem}
+\columnbreak
+\begin{CoreProblem}{D.4}{Consistency and satisfiability}
+{\scriptsize\textit{Translate the conditions. Give a satisfying assignment or a short contradiction, then complete the final request.}\par}
+If the file system is not locked, new messages are queued. The file system is
+not locked if and only if the system is functioning normally. If messages are
+not queued, they are sent to the message buffer. If the file system is not
+locked, messages are sent to the buffer. Messages are not sent to the buffer.
+In addition to deciding consistency, explain which conclusions follow from the
+last condition.
+\end{CoreProblem}
+\begin{CoreProblem}{E.1}{Logical equivalence}
+{\scriptsize\textit{Give an equivalence chain and cite one permitted rule at every step: implication, double negation, De Morgan, distributive, associative, commutative, or idempotent.}\par}
+Show that
+\[
+  (p\to q)\land(p\to r)
+  \quad\text{and}\quad
+  p\to(q\land r)
+\]
+are logically equivalent.
+\end{CoreProblem}
+\end{multicols}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Logic}{L36}{A--E}{\FivePartScoring}
+\begin{multicols}{2}
+\begin{CoreProblem}{A.3}{Truth tables}
+{\scriptsize\textit{Construct the complete eight-row table; show useful intermediate columns and classify the result.}\par}
+\[
+  (p\to q)\lor(\neg p\to r)
+\]
+\end{CoreProblem}
+\begin{CoreProblem}{B.1}{Translation and meaning}
+{\scriptsize\textit{Define any predicates/domains requested; translate exactly and diagnose the proposed translation.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item Let $e$ mean ``you can edit a protected encyclopedia entry'' and $a$
+        mean ``you are an administrator.'' Translate: ``You cannot edit a
+        protected entry unless you are an administrator.''
+  \item Let $Q(x,y)$ mean ``student $x$ sent a message to student $y$.''
+        Translate $\exists x\,\forall y\,Q(x,y)$ into ordinary English.
+  \item A student says the formula in (b) means ``Every student sent a message
+        to at least one student.'' Diagnose the claim.
+\end{enumerate}
+\end{CoreProblem}
+\begin{CoreProblem}{C.1}{Quantifier negation}
+{\scriptsize\textit{Symbolize and negate as directed; move every negation directly before a predicate.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item All dogs have fleas. The domain is all things.
+  \item $\neg\exists y\,\exists x\,P(x,y)$
+\end{enumerate}
+\end{CoreProblem}
+\columnbreak
+\begin{CoreProblem}{D.5}{Consistency and satisfiability}
+{\scriptsize\textit{Translate the conditions. Give a satisfying assignment or a short contradiction, then complete the final request.}\par}
+Jasmine becomes unhappy if she attends a party with Samir. Samir attends only
+if Kanti attends. Kanti will not attend unless Jasmine attends. Determine which
+subsets of Jasmine, Samir, and Kanti can be invited without violating these
+conditions. State every satisfying combination, including the possibility of
+inviting no one.
+\end{CoreProblem}
+\begin{CoreProblem}{E.5}{Logical equivalence}
+{\scriptsize\textit{Give an equivalence chain and cite one permitted rule at every step: implication, double negation, De Morgan, distributive, associative, commutative, or idempotent.}\par}
+Show that
+\[
+  \neg p\to(q\to r)
+  \quad\text{and}\quad
+  q\to(p\lor r)
+\]
+are logically equivalent.
+\end{CoreProblem}
+\end{multicols}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Logic}{L37}{A--E}{\FivePartScoring}
+\begin{multicols}{2}
+\begin{CoreProblem}{A.4}{Truth tables}
+{\scriptsize\textit{Construct the complete eight-row table; show useful intermediate columns and classify the result.}\par}
+\[
+  (p\to q)\land(\neg p\to r)
+\]
+\end{CoreProblem}
+\begin{CoreProblem}{B.3}{Translation and meaning}
+{\scriptsize\textit{Define any predicates/domains requested; translate exactly and diagnose the proposed translation.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item Let $g$ mean ``you can graduate,'' $r$ mean ``you completed your major
+        requirements,'' $m$ mean ``you owe the university money,'' and $b$
+        mean ``you have an overdue library book.'' Translate: ``You can
+        graduate only if you completed the requirements, owe no money, and
+        have no overdue library book.''
+  \item Let $P(x,y)$ mean ``student $x$ has taken computer-science course
+        $y$.'' Translate $\exists y\,\forall x\,P(x,y)$ into English.
+  \item A student instead writes $\forall x\,\exists y\,P(x,y)$ for the
+        sentence in (b). Diagnose the change in meaning.
+\end{enumerate}
+\end{CoreProblem}
+\begin{CoreProblem}{C.4}{Quantifier negation}
+{\scriptsize\textit{Symbolize and negate as directed; move every negation directly before a predicate.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item No one in this class knows both French and Russian. The domain is all
+        people.
+  \item $\neg\forall y\,\exists x\,P(x,y)$
+\end{enumerate}
+\end{CoreProblem}
+\columnbreak
+\begin{CoreProblem}{D.1}{Consistency and satisfiability}
+{\scriptsize\textit{Translate the conditions. Give a satisfying assignment or a short contradiction, then complete the final request.}\par}
+The system is in multiuser state if and only if it is operating normally. If
+the system is operating normally, the kernel is functioning. The kernel is not
+functioning or the system is in interrupt mode. If the system is not in
+multiuser state, it is in interrupt mode. The system is not in interrupt mode.
+If the conditions are inconsistent, identify a minimal collection of the given
+conditions that already forces the contradiction.
+\end{CoreProblem}
+\begin{CoreProblem}{E.2}{Logical equivalence}
+{\scriptsize\textit{Give an equivalence chain and cite one permitted rule at every step: implication, double negation, De Morgan, distributive, associative, commutative, or idempotent.}\par}
+Show that
+\[
+  (p\to r)\land(q\to r)
+  \quad\text{and}\quad
+  (p\lor q)\to r
+\]
+are logically equivalent.
+\end{CoreProblem}
+\end{multicols}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Logic}{L38}{A--E}{\FivePartScoring}
+\begin{multicols}{2}
+\begin{CoreProblem}{A.1}{Truth tables}
+{\scriptsize\textit{Construct the complete eight-row table; show useful intermediate columns and classify the result.}\par}
+\[
+  p\to(\neg q\lor r)
+\]
+\end{CoreProblem}
+\begin{CoreProblem}{B.2}{Translation and meaning}
+{\scriptsize\textit{Define any predicates/domains requested; translate exactly and diagnose the proposed translation.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item Let $m$ mean ``you can see the movie,'' $e$ mean ``you are over 18,''
+        and $p$ mean ``you have parental permission.'' Translate: ``You can
+        see the movie only if you are over 18 or have parental permission.''
+  \item With $Q(x,y)$ as in B.1, translate $\forall x\,\exists y\,Q(x,y)$
+        into ordinary English.
+  \item A student translates ``One student sent a message to every student''
+        as $\forall y\,\exists x\,Q(x,y)$. Diagnose the translation.
+\end{enumerate}
+\end{CoreProblem}
+\begin{CoreProblem}{C.4}{Quantifier negation}
+{\scriptsize\textit{Symbolize and negate as directed; move every negation directly before a predicate.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item No one in this class knows both French and Russian. The domain is all
+        people.
+  \item $\neg\forall y\,\exists x\,P(x,y)$
+\end{enumerate}
+\end{CoreProblem}
+\columnbreak
+\begin{CoreProblem}{D.4}{Consistency and satisfiability}
+{\scriptsize\textit{Translate the conditions. Give a satisfying assignment or a short contradiction, then complete the final request.}\par}
+If the file system is not locked, new messages are queued. The file system is
+not locked if and only if the system is functioning normally. If messages are
+not queued, they are sent to the message buffer. If the file system is not
+locked, messages are sent to the buffer. Messages are not sent to the buffer.
+In addition to deciding consistency, explain which conclusions follow from the
+last condition.
+\end{CoreProblem}
+\begin{CoreProblem}{E.4}{Logical equivalence}
+{\scriptsize\textit{Give an equivalence chain and cite one permitted rule at every step: implication, double negation, De Morgan, distributive, associative, commutative, or idempotent.}\par}
+Show that
+\[
+  (p\to r)\lor(q\to r)
+  \quad\text{and}\quad
+  (p\land q)\to r
+\]
+are logically equivalent.
+\end{CoreProblem}
+\end{multicols}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Logic}{L39}{A--E}{\FivePartScoring}
+\begin{multicols}{2}
+\begin{CoreProblem}{A.1}{Truth tables}
+{\scriptsize\textit{Construct the complete eight-row table; show useful intermediate columns and classify the result.}\par}
+\[
+  p\to(\neg q\lor r)
+\]
+\end{CoreProblem}
+\begin{CoreProblem}{B.2}{Translation and meaning}
+{\scriptsize\textit{Define any predicates/domains requested; translate exactly and diagnose the proposed translation.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item Let $m$ mean ``you can see the movie,'' $e$ mean ``you are over 18,''
+        and $p$ mean ``you have parental permission.'' Translate: ``You can
+        see the movie only if you are over 18 or have parental permission.''
+  \item With $Q(x,y)$ as in B.1, translate $\forall x\,\exists y\,Q(x,y)$
+        into ordinary English.
+  \item A student translates ``One student sent a message to every student''
+        as $\forall y\,\exists x\,Q(x,y)$. Diagnose the translation.
+\end{enumerate}
+\end{CoreProblem}
+\begin{CoreProblem}{C.2}{Quantifier negation}
+{\scriptsize\textit{Symbolize and negate as directed; move every negation directly before a predicate.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item No monkey can speak French. The domain is all things.
+  \item $\neg\forall x\,\exists y\,P(x,y)$
+\end{enumerate}
+\end{CoreProblem}
+\columnbreak
+\begin{CoreProblem}{D.2}{Consistency and satisfiability}
+{\scriptsize\textit{Translate the conditions. Give a satisfying assignment or a short contradiction, then complete the final request.}\par}
+Whenever system software is being upgraded, users cannot access the file
+system. If users can access the file system, they can save new files. If users
+cannot save new files, the software is not being upgraded. In addition to
+deciding consistency, list all satisfying assignments for the three atomic
+propositions.
+\end{CoreProblem}
+\begin{CoreProblem}{E.1}{Logical equivalence}
+{\scriptsize\textit{Give an equivalence chain and cite one permitted rule at every step: implication, double negation, De Morgan, distributive, associative, commutative, or idempotent.}\par}
+Show that
+\[
+  (p\to q)\land(p\to r)
+  \quad\text{and}\quad
+  p\to(q\land r)
+\]
+are logically equivalent.
+\end{CoreProblem}
+\end{multicols}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Logic}{L40}{A--E}{\FivePartScoring}
+\begin{multicols}{2}
+\begin{CoreProblem}{A.4}{Truth tables}
+{\scriptsize\textit{Construct the complete eight-row table; show useful intermediate columns and classify the result.}\par}
+\[
+  (p\to q)\land(\neg p\to r)
+\]
+\end{CoreProblem}
+\begin{CoreProblem}{B.5}{Translation and meaning}
+{\scriptsize\textit{Define any predicates/domains requested; translate exactly and diagnose the proposed translation.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item Let $p$ mean ``the message is scanned for viruses'' and $q$ mean ``the
+        message came from an unknown system.'' Translate: ``It is necessary to
+        scan a message whenever it comes from an unknown system.''
+  \item Let $S(x)$ mean ``$x$ is a student,'' $F(y)$ mean ``$y$ is a faculty
+        member,'' and $A(x,y)$ mean ``$x$ asked $y$ a question.'' Translate:
+        ``Some student has asked every faculty member a question.''
+  \item A student uses $A(y,x)$ in place of $A(x,y)$ in (b). Diagnose what the
+        reversed argument order says.
+\end{enumerate}
+\end{CoreProblem}
+\begin{CoreProblem}{C.2}{Quantifier negation}
+{\scriptsize\textit{Symbolize and negate as directed; move every negation directly before a predicate.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item No monkey can speak French. The domain is all things.
+  \item $\neg\forall x\,\exists y\,P(x,y)$
+\end{enumerate}
+\end{CoreProblem}
+\columnbreak
+\begin{CoreProblem}{D.4}{Consistency and satisfiability}
+{\scriptsize\textit{Translate the conditions. Give a satisfying assignment or a short contradiction, then complete the final request.}\par}
+If the file system is not locked, new messages are queued. The file system is
+not locked if and only if the system is functioning normally. If messages are
+not queued, they are sent to the message buffer. If the file system is not
+locked, messages are sent to the buffer. Messages are not sent to the buffer.
+In addition to deciding consistency, explain which conclusions follow from the
+last condition.
+\end{CoreProblem}
+\begin{CoreProblem}{E.4}{Logical equivalence}
+{\scriptsize\textit{Give an equivalence chain and cite one permitted rule at every step: implication, double negation, De Morgan, distributive, associative, commutative, or idempotent.}\par}
+Show that
+\[
+  (p\to r)\lor(q\to r)
+  \quad\text{and}\quad
+  (p\land q)\to r
+\]
+are logically equivalent.
+\end{CoreProblem}
+\end{multicols}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Logic}{L41}{A--E}{\FivePartScoring}
+\begin{multicols}{2}
+\begin{CoreProblem}{A.1}{Truth tables}
+{\scriptsize\textit{Construct the complete eight-row table; show useful intermediate columns and classify the result.}\par}
+\[
+  p\to(\neg q\lor r)
+\]
+\end{CoreProblem}
+\begin{CoreProblem}{B.4}{Translation and meaning}
+{\scriptsize\textit{Define any predicates/domains requested; translate exactly and diagnose the proposed translation.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item Let $w$ mean ``you may use the airport wireless network,'' $d$ mean
+        ``you pay the daily fee,'' and $s$ mean ``you subscribe to the
+        service.'' Translate: ``To use the network, you must pay the daily fee
+        unless you are a subscriber.''
+  \item Let $L(x,y)$ mean ``person $x$ loves person $y$.'' Translate
+        ``Everybody loves somebody.''
+  \item A student claims that $\exists y\,\forall x\,L(x,y)$ is an equivalent
+        translation of (b). Diagnose the claim.
+\end{enumerate}
+\end{CoreProblem}
+\begin{CoreProblem}{C.4}{Quantifier negation}
+{\scriptsize\textit{Symbolize and negate as directed; move every negation directly before a predicate.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item No one in this class knows both French and Russian. The domain is all
+        people.
+  \item $\neg\forall y\,\exists x\,P(x,y)$
+\end{enumerate}
+\end{CoreProblem}
+\columnbreak
+\begin{CoreProblem}{D.3}{Consistency and satisfiability}
+{\scriptsize\textit{Translate the conditions. Give a satisfying assignment or a short contradiction, then complete the final request.}\par}
+The router can send packets to the edge system only if it supports the new
+address space. Supporting the new address space requires the latest software
+release. If the latest software release is installed, the router can send
+packets to the edge system. The router does not support the new address space.
+In addition to deciding consistency, determine which truth values are forced.
+\end{CoreProblem}
+\begin{CoreProblem}{E.1}{Logical equivalence}
+{\scriptsize\textit{Give an equivalence chain and cite one permitted rule at every step: implication, double negation, De Morgan, distributive, associative, commutative, or idempotent.}\par}
+Show that
+\[
+  (p\to q)\land(p\to r)
+  \quad\text{and}\quad
+  p\to(q\land r)
+\]
+are logically equivalent.
+\end{CoreProblem}
+\end{multicols}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Logic}{L42}{A--E}{\FivePartScoring}
+\begin{multicols}{2}
+\begin{CoreProblem}{A.3}{Truth tables}
+{\scriptsize\textit{Construct the complete eight-row table; show useful intermediate columns and classify the result.}\par}
+\[
+  (p\to q)\lor(\neg p\to r)
+\]
+\end{CoreProblem}
+\begin{CoreProblem}{B.2}{Translation and meaning}
+{\scriptsize\textit{Define any predicates/domains requested; translate exactly and diagnose the proposed translation.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item Let $m$ mean ``you can see the movie,'' $e$ mean ``you are over 18,''
+        and $p$ mean ``you have parental permission.'' Translate: ``You can
+        see the movie only if you are over 18 or have parental permission.''
+  \item With $Q(x,y)$ as in B.1, translate $\forall x\,\exists y\,Q(x,y)$
+        into ordinary English.
+  \item A student translates ``One student sent a message to every student''
+        as $\forall y\,\exists x\,Q(x,y)$. Diagnose the translation.
+\end{enumerate}
+\end{CoreProblem}
+\begin{CoreProblem}{C.2}{Quantifier negation}
+{\scriptsize\textit{Symbolize and negate as directed; move every negation directly before a predicate.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item No monkey can speak French. The domain is all things.
+  \item $\neg\forall x\,\exists y\,P(x,y)$
+\end{enumerate}
+\end{CoreProblem}
+\columnbreak
+\begin{CoreProblem}{D.1}{Consistency and satisfiability}
+{\scriptsize\textit{Translate the conditions. Give a satisfying assignment or a short contradiction, then complete the final request.}\par}
+The system is in multiuser state if and only if it is operating normally. If
+the system is operating normally, the kernel is functioning. The kernel is not
+functioning or the system is in interrupt mode. If the system is not in
+multiuser state, it is in interrupt mode. The system is not in interrupt mode.
+If the conditions are inconsistent, identify a minimal collection of the given
+conditions that already forces the contradiction.
+\end{CoreProblem}
+\begin{CoreProblem}{E.2}{Logical equivalence}
+{\scriptsize\textit{Give an equivalence chain and cite one permitted rule at every step: implication, double negation, De Morgan, distributive, associative, commutative, or idempotent.}\par}
+Show that
+\[
+  (p\to r)\land(q\to r)
+  \quad\text{and}\quad
+  (p\lor q)\to r
+\]
+are logically equivalent.
+\end{CoreProblem}
+\end{multicols}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Logic}{L43}{A--E}{\FivePartScoring}
+\begin{multicols}{2}
+\begin{CoreProblem}{A.4}{Truth tables}
+{\scriptsize\textit{Construct the complete eight-row table; show useful intermediate columns and classify the result.}\par}
+\[
+  (p\to q)\land(\neg p\to r)
+\]
+\end{CoreProblem}
+\begin{CoreProblem}{B.1}{Translation and meaning}
+{\scriptsize\textit{Define any predicates/domains requested; translate exactly and diagnose the proposed translation.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item Let $e$ mean ``you can edit a protected encyclopedia entry'' and $a$
+        mean ``you are an administrator.'' Translate: ``You cannot edit a
+        protected entry unless you are an administrator.''
+  \item Let $Q(x,y)$ mean ``student $x$ sent a message to student $y$.''
+        Translate $\exists x\,\forall y\,Q(x,y)$ into ordinary English.
+  \item A student says the formula in (b) means ``Every student sent a message
+        to at least one student.'' Diagnose the claim.
+\end{enumerate}
+\end{CoreProblem}
+\begin{CoreProblem}{C.3}{Quantifier negation}
+{\scriptsize\textit{Symbolize and negate as directed; move every negation directly before a predicate.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item Some old dogs can learn new tricks. The domain is all things.
+  \item $\neg\forall x\,\forall y\,P(x,y)$
+\end{enumerate}
+\end{CoreProblem}
+\columnbreak
+\begin{CoreProblem}{D.4}{Consistency and satisfiability}
+{\scriptsize\textit{Translate the conditions. Give a satisfying assignment or a short contradiction, then complete the final request.}\par}
+If the file system is not locked, new messages are queued. The file system is
+not locked if and only if the system is functioning normally. If messages are
+not queued, they are sent to the message buffer. If the file system is not
+locked, messages are sent to the buffer. Messages are not sent to the buffer.
+In addition to deciding consistency, explain which conclusions follow from the
+last condition.
+\end{CoreProblem}
+\begin{CoreProblem}{E.2}{Logical equivalence}
+{\scriptsize\textit{Give an equivalence chain and cite one permitted rule at every step: implication, double negation, De Morgan, distributive, associative, commutative, or idempotent.}\par}
+Show that
+\[
+  (p\to r)\land(q\to r)
+  \quad\text{and}\quad
+  (p\lor q)\to r
+\]
+are logically equivalent.
+\end{CoreProblem}
+\end{multicols}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Logic}{L44}{A--E}{\FivePartScoring}
+\begin{multicols}{2}
+\begin{CoreProblem}{A.4}{Truth tables}
+{\scriptsize\textit{Construct the complete eight-row table; show useful intermediate columns and classify the result.}\par}
+\[
+  (p\to q)\land(\neg p\to r)
+\]
+\end{CoreProblem}
+\begin{CoreProblem}{B.3}{Translation and meaning}
+{\scriptsize\textit{Define any predicates/domains requested; translate exactly and diagnose the proposed translation.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item Let $g$ mean ``you can graduate,'' $r$ mean ``you completed your major
+        requirements,'' $m$ mean ``you owe the university money,'' and $b$
+        mean ``you have an overdue library book.'' Translate: ``You can
+        graduate only if you completed the requirements, owe no money, and
+        have no overdue library book.''
+  \item Let $P(x,y)$ mean ``student $x$ has taken computer-science course
+        $y$.'' Translate $\exists y\,\forall x\,P(x,y)$ into English.
+  \item A student instead writes $\forall x\,\exists y\,P(x,y)$ for the
+        sentence in (b). Diagnose the change in meaning.
+\end{enumerate}
+\end{CoreProblem}
+\begin{CoreProblem}{C.3}{Quantifier negation}
+{\scriptsize\textit{Symbolize and negate as directed; move every negation directly before a predicate.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item Some old dogs can learn new tricks. The domain is all things.
+  \item $\neg\forall x\,\forall y\,P(x,y)$
+\end{enumerate}
+\end{CoreProblem}
+\columnbreak
+\begin{CoreProblem}{D.1}{Consistency and satisfiability}
+{\scriptsize\textit{Translate the conditions. Give a satisfying assignment or a short contradiction, then complete the final request.}\par}
+The system is in multiuser state if and only if it is operating normally. If
+the system is operating normally, the kernel is functioning. The kernel is not
+functioning or the system is in interrupt mode. If the system is not in
+multiuser state, it is in interrupt mode. The system is not in interrupt mode.
+If the conditions are inconsistent, identify a minimal collection of the given
+conditions that already forces the contradiction.
+\end{CoreProblem}
+\begin{CoreProblem}{E.1}{Logical equivalence}
+{\scriptsize\textit{Give an equivalence chain and cite one permitted rule at every step: implication, double negation, De Morgan, distributive, associative, commutative, or idempotent.}\par}
+Show that
+\[
+  (p\to q)\land(p\to r)
+  \quad\text{and}\quad
+  p\to(q\land r)
+\]
+are logically equivalent.
+\end{CoreProblem}
+\end{multicols}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Logic}{L45}{A--E}{\FivePartScoring}
+\begin{multicols}{2}
+\begin{CoreProblem}{A.2}{Truth tables}
+{\scriptsize\textit{Construct the complete eight-row table; show useful intermediate columns and classify the result.}\par}
+\[
+  \neg p\to(q\to r)
+\]
+\end{CoreProblem}
+\begin{CoreProblem}{B.3}{Translation and meaning}
+{\scriptsize\textit{Define any predicates/domains requested; translate exactly and diagnose the proposed translation.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item Let $g$ mean ``you can graduate,'' $r$ mean ``you completed your major
+        requirements,'' $m$ mean ``you owe the university money,'' and $b$
+        mean ``you have an overdue library book.'' Translate: ``You can
+        graduate only if you completed the requirements, owe no money, and
+        have no overdue library book.''
+  \item Let $P(x,y)$ mean ``student $x$ has taken computer-science course
+        $y$.'' Translate $\exists y\,\forall x\,P(x,y)$ into English.
+  \item A student instead writes $\forall x\,\exists y\,P(x,y)$ for the
+        sentence in (b). Diagnose the change in meaning.
+\end{enumerate}
+\end{CoreProblem}
+\begin{CoreProblem}{C.3}{Quantifier negation}
+{\scriptsize\textit{Symbolize and negate as directed; move every negation directly before a predicate.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item Some old dogs can learn new tricks. The domain is all things.
+  \item $\neg\forall x\,\forall y\,P(x,y)$
+\end{enumerate}
+\end{CoreProblem}
+\columnbreak
+\begin{CoreProblem}{D.5}{Consistency and satisfiability}
+{\scriptsize\textit{Translate the conditions. Give a satisfying assignment or a short contradiction, then complete the final request.}\par}
+Jasmine becomes unhappy if she attends a party with Samir. Samir attends only
+if Kanti attends. Kanti will not attend unless Jasmine attends. Determine which
+subsets of Jasmine, Samir, and Kanti can be invited without violating these
+conditions. State every satisfying combination, including the possibility of
+inviting no one.
+\end{CoreProblem}
+\begin{CoreProblem}{E.2}{Logical equivalence}
+{\scriptsize\textit{Give an equivalence chain and cite one permitted rule at every step: implication, double negation, De Morgan, distributive, associative, commutative, or idempotent.}\par}
+Show that
+\[
+  (p\to r)\land(q\to r)
+  \quad\text{and}\quad
+  (p\lor q)\to r
+\]
+are logically equivalent.
+\end{CoreProblem}
+\end{multicols}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Logic}{L46}{A--E}{\FivePartScoring}
+\begin{multicols}{2}
+\begin{CoreProblem}{A.2}{Truth tables}
+{\scriptsize\textit{Construct the complete eight-row table; show useful intermediate columns and classify the result.}\par}
+\[
+  \neg p\to(q\to r)
+\]
+\end{CoreProblem}
+\begin{CoreProblem}{B.1}{Translation and meaning}
+{\scriptsize\textit{Define any predicates/domains requested; translate exactly and diagnose the proposed translation.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item Let $e$ mean ``you can edit a protected encyclopedia entry'' and $a$
+        mean ``you are an administrator.'' Translate: ``You cannot edit a
+        protected entry unless you are an administrator.''
+  \item Let $Q(x,y)$ mean ``student $x$ sent a message to student $y$.''
+        Translate $\exists x\,\forall y\,Q(x,y)$ into ordinary English.
+  \item A student says the formula in (b) means ``Every student sent a message
+        to at least one student.'' Diagnose the claim.
+\end{enumerate}
+\end{CoreProblem}
+\begin{CoreProblem}{C.5}{Quantifier negation}
+{\scriptsize\textit{Symbolize and negate as directed; move every negation directly before a predicate.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item All Swedish movies are serious. The domain is all things.
+  \item $\neg\forall y\,\forall x\bigl(P(x,y)\lor Q(x,y)\bigr)$
+\end{enumerate}
+\end{CoreProblem}
+\columnbreak
+\begin{CoreProblem}{D.2}{Consistency and satisfiability}
+{\scriptsize\textit{Translate the conditions. Give a satisfying assignment or a short contradiction, then complete the final request.}\par}
+Whenever system software is being upgraded, users cannot access the file
+system. If users can access the file system, they can save new files. If users
+cannot save new files, the software is not being upgraded. In addition to
+deciding consistency, list all satisfying assignments for the three atomic
+propositions.
+\end{CoreProblem}
+\begin{CoreProblem}{E.5}{Logical equivalence}
+{\scriptsize\textit{Give an equivalence chain and cite one permitted rule at every step: implication, double negation, De Morgan, distributive, associative, commutative, or idempotent.}\par}
+Show that
+\[
+  \neg p\to(q\to r)
+  \quad\text{and}\quad
+  q\to(p\lor r)
+\]
+are logically equivalent.
+\end{CoreProblem}
+\end{multicols}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Logic}{L47}{A--E}{\FivePartScoring}
+\begin{multicols}{2}
+\begin{CoreProblem}{A.2}{Truth tables}
+{\scriptsize\textit{Construct the complete eight-row table; show useful intermediate columns and classify the result.}\par}
+\[
+  \neg p\to(q\to r)
+\]
+\end{CoreProblem}
+\begin{CoreProblem}{B.1}{Translation and meaning}
+{\scriptsize\textit{Define any predicates/domains requested; translate exactly and diagnose the proposed translation.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item Let $e$ mean ``you can edit a protected encyclopedia entry'' and $a$
+        mean ``you are an administrator.'' Translate: ``You cannot edit a
+        protected entry unless you are an administrator.''
+  \item Let $Q(x,y)$ mean ``student $x$ sent a message to student $y$.''
+        Translate $\exists x\,\forall y\,Q(x,y)$ into ordinary English.
+  \item A student says the formula in (b) means ``Every student sent a message
+        to at least one student.'' Diagnose the claim.
+\end{enumerate}
+\end{CoreProblem}
+\begin{CoreProblem}{C.1}{Quantifier negation}
+{\scriptsize\textit{Symbolize and negate as directed; move every negation directly before a predicate.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item All dogs have fleas. The domain is all things.
+  \item $\neg\exists y\,\exists x\,P(x,y)$
+\end{enumerate}
+\end{CoreProblem}
+\columnbreak
+\begin{CoreProblem}{D.2}{Consistency and satisfiability}
+{\scriptsize\textit{Translate the conditions. Give a satisfying assignment or a short contradiction, then complete the final request.}\par}
+Whenever system software is being upgraded, users cannot access the file
+system. If users can access the file system, they can save new files. If users
+cannot save new files, the software is not being upgraded. In addition to
+deciding consistency, list all satisfying assignments for the three atomic
+propositions.
+\end{CoreProblem}
+\begin{CoreProblem}{E.3}{Logical equivalence}
+{\scriptsize\textit{Give an equivalence chain and cite one permitted rule at every step: implication, double negation, De Morgan, distributive, associative, commutative, or idempotent.}\par}
+Show that
+\[
+  (p\to q)\lor(p\to r)
+  \quad\text{and}\quad
+  p\to(q\lor r)
+\]
+are logically equivalent.
+\end{CoreProblem}
+\end{multicols}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Logic}{L48}{A--E}{\FivePartScoring}
+\begin{multicols}{2}
+\begin{CoreProblem}{A.4}{Truth tables}
+{\scriptsize\textit{Construct the complete eight-row table; show useful intermediate columns and classify the result.}\par}
+\[
+  (p\to q)\land(\neg p\to r)
+\]
+\end{CoreProblem}
+\begin{CoreProblem}{B.1}{Translation and meaning}
+{\scriptsize\textit{Define any predicates/domains requested; translate exactly and diagnose the proposed translation.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item Let $e$ mean ``you can edit a protected encyclopedia entry'' and $a$
+        mean ``you are an administrator.'' Translate: ``You cannot edit a
+        protected entry unless you are an administrator.''
+  \item Let $Q(x,y)$ mean ``student $x$ sent a message to student $y$.''
+        Translate $\exists x\,\forall y\,Q(x,y)$ into ordinary English.
+  \item A student says the formula in (b) means ``Every student sent a message
+        to at least one student.'' Diagnose the claim.
+\end{enumerate}
+\end{CoreProblem}
+\begin{CoreProblem}{C.4}{Quantifier negation}
+{\scriptsize\textit{Symbolize and negate as directed; move every negation directly before a predicate.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item No one in this class knows both French and Russian. The domain is all
+        people.
+  \item $\neg\forall y\,\exists x\,P(x,y)$
+\end{enumerate}
+\end{CoreProblem}
+\columnbreak
+\begin{CoreProblem}{D.4}{Consistency and satisfiability}
+{\scriptsize\textit{Translate the conditions. Give a satisfying assignment or a short contradiction, then complete the final request.}\par}
+If the file system is not locked, new messages are queued. The file system is
+not locked if and only if the system is functioning normally. If messages are
+not queued, they are sent to the message buffer. If the file system is not
+locked, messages are sent to the buffer. Messages are not sent to the buffer.
+In addition to deciding consistency, explain which conclusions follow from the
+last condition.
+\end{CoreProblem}
+\begin{CoreProblem}{E.2}{Logical equivalence}
+{\scriptsize\textit{Give an equivalence chain and cite one permitted rule at every step: implication, double negation, De Morgan, distributive, associative, commutative, or idempotent.}\par}
+Show that
+\[
+  (p\to r)\land(q\to r)
+  \quad\text{and}\quad
+  (p\lor q)\to r
+\]
+are logically equivalent.
+\end{CoreProblem}
+\end{multicols}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Logic}{L49}{A--E}{\FivePartScoring}
+\begin{multicols}{2}
+\begin{CoreProblem}{A.5}{Truth tables}
+{\scriptsize\textit{Construct the complete eight-row table; show useful intermediate columns and classify the result.}\par}
+\[
+  (p\leftrightarrow q)\lor(\neg q\leftrightarrow r)
+\]
+\end{CoreProblem}
+\begin{CoreProblem}{B.1}{Translation and meaning}
+{\scriptsize\textit{Define any predicates/domains requested; translate exactly and diagnose the proposed translation.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item Let $e$ mean ``you can edit a protected encyclopedia entry'' and $a$
+        mean ``you are an administrator.'' Translate: ``You cannot edit a
+        protected entry unless you are an administrator.''
+  \item Let $Q(x,y)$ mean ``student $x$ sent a message to student $y$.''
+        Translate $\exists x\,\forall y\,Q(x,y)$ into ordinary English.
+  \item A student says the formula in (b) means ``Every student sent a message
+        to at least one student.'' Diagnose the claim.
+\end{enumerate}
+\end{CoreProblem}
+\begin{CoreProblem}{C.1}{Quantifier negation}
+{\scriptsize\textit{Symbolize and negate as directed; move every negation directly before a predicate.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item All dogs have fleas. The domain is all things.
+  \item $\neg\exists y\,\exists x\,P(x,y)$
+\end{enumerate}
+\end{CoreProblem}
+\columnbreak
+\begin{CoreProblem}{D.2}{Consistency and satisfiability}
+{\scriptsize\textit{Translate the conditions. Give a satisfying assignment or a short contradiction, then complete the final request.}\par}
+Whenever system software is being upgraded, users cannot access the file
+system. If users can access the file system, they can save new files. If users
+cannot save new files, the software is not being upgraded. In addition to
+deciding consistency, list all satisfying assignments for the three atomic
+propositions.
+\end{CoreProblem}
+\begin{CoreProblem}{E.5}{Logical equivalence}
+{\scriptsize\textit{Give an equivalence chain and cite one permitted rule at every step: implication, double negation, De Morgan, distributive, associative, commutative, or idempotent.}\par}
+Show that
+\[
+  \neg p\to(q\to r)
+  \quad\text{and}\quad
+  q\to(p\lor r)
+\]
+are logically equivalent.
+\end{CoreProblem}
+\end{multicols}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Logic}{L50}{A--E}{\FivePartScoring}
+\begin{multicols}{2}
+\begin{CoreProblem}{A.5}{Truth tables}
+{\scriptsize\textit{Construct the complete eight-row table; show useful intermediate columns and classify the result.}\par}
+\[
+  (p\leftrightarrow q)\lor(\neg q\leftrightarrow r)
+\]
+\end{CoreProblem}
+\begin{CoreProblem}{B.3}{Translation and meaning}
+{\scriptsize\textit{Define any predicates/domains requested; translate exactly and diagnose the proposed translation.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item Let $g$ mean ``you can graduate,'' $r$ mean ``you completed your major
+        requirements,'' $m$ mean ``you owe the university money,'' and $b$
+        mean ``you have an overdue library book.'' Translate: ``You can
+        graduate only if you completed the requirements, owe no money, and
+        have no overdue library book.''
+  \item Let $P(x,y)$ mean ``student $x$ has taken computer-science course
+        $y$.'' Translate $\exists y\,\forall x\,P(x,y)$ into English.
+  \item A student instead writes $\forall x\,\exists y\,P(x,y)$ for the
+        sentence in (b). Diagnose the change in meaning.
+\end{enumerate}
+\end{CoreProblem}
+\begin{CoreProblem}{C.2}{Quantifier negation}
+{\scriptsize\textit{Symbolize and negate as directed; move every negation directly before a predicate.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item No monkey can speak French. The domain is all things.
+  \item $\neg\forall x\,\exists y\,P(x,y)$
+\end{enumerate}
+\end{CoreProblem}
+\columnbreak
+\begin{CoreProblem}{D.2}{Consistency and satisfiability}
+{\scriptsize\textit{Translate the conditions. Give a satisfying assignment or a short contradiction, then complete the final request.}\par}
+Whenever system software is being upgraded, users cannot access the file
+system. If users can access the file system, they can save new files. If users
+cannot save new files, the software is not being upgraded. In addition to
+deciding consistency, list all satisfying assignments for the three atomic
+propositions.
+\end{CoreProblem}
+\begin{CoreProblem}{E.5}{Logical equivalence}
+{\scriptsize\textit{Give an equivalence chain and cite one permitted rule at every step: implication, double negation, De Morgan, distributive, associative, commutative, or idempotent.}\par}
+Show that
+\[
+  \neg p\to(q\to r)
+  \quad\text{and}\quad
+  q\to(p\lor r)
+\]
+are logically equivalent.
+\end{CoreProblem}
+\end{multicols}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Logic}{L51}{A--E}{\FivePartScoring}
+\begin{multicols}{2}
+\begin{CoreProblem}{A.1}{Truth tables}
+{\scriptsize\textit{Construct the complete eight-row table; show useful intermediate columns and classify the result.}\par}
+\[
+  p\to(\neg q\lor r)
+\]
+\end{CoreProblem}
+\begin{CoreProblem}{B.4}{Translation and meaning}
+{\scriptsize\textit{Define any predicates/domains requested; translate exactly and diagnose the proposed translation.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item Let $w$ mean ``you may use the airport wireless network,'' $d$ mean
+        ``you pay the daily fee,'' and $s$ mean ``you subscribe to the
+        service.'' Translate: ``To use the network, you must pay the daily fee
+        unless you are a subscriber.''
+  \item Let $L(x,y)$ mean ``person $x$ loves person $y$.'' Translate
+        ``Everybody loves somebody.''
+  \item A student claims that $\exists y\,\forall x\,L(x,y)$ is an equivalent
+        translation of (b). Diagnose the claim.
+\end{enumerate}
+\end{CoreProblem}
+\begin{CoreProblem}{C.4}{Quantifier negation}
+{\scriptsize\textit{Symbolize and negate as directed; move every negation directly before a predicate.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item No one in this class knows both French and Russian. The domain is all
+        people.
+  \item $\neg\forall y\,\exists x\,P(x,y)$
+\end{enumerate}
+\end{CoreProblem}
+\columnbreak
+\begin{CoreProblem}{D.3}{Consistency and satisfiability}
+{\scriptsize\textit{Translate the conditions. Give a satisfying assignment or a short contradiction, then complete the final request.}\par}
+The router can send packets to the edge system only if it supports the new
+address space. Supporting the new address space requires the latest software
+release. If the latest software release is installed, the router can send
+packets to the edge system. The router does not support the new address space.
+In addition to deciding consistency, determine which truth values are forced.
+\end{CoreProblem}
+\begin{CoreProblem}{E.4}{Logical equivalence}
+{\scriptsize\textit{Give an equivalence chain and cite one permitted rule at every step: implication, double negation, De Morgan, distributive, associative, commutative, or idempotent.}\par}
+Show that
+\[
+  (p\to r)\lor(q\to r)
+  \quad\text{and}\quad
+  (p\land q)\to r
+\]
+are logically equivalent.
+\end{CoreProblem}
+\end{multicols}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Logic}{L52}{A--E}{\FivePartScoring}
+\begin{multicols}{2}
+\begin{CoreProblem}{A.4}{Truth tables}
+{\scriptsize\textit{Construct the complete eight-row table; show useful intermediate columns and classify the result.}\par}
+\[
+  (p\to q)\land(\neg p\to r)
+\]
+\end{CoreProblem}
+\begin{CoreProblem}{B.4}{Translation and meaning}
+{\scriptsize\textit{Define any predicates/domains requested; translate exactly and diagnose the proposed translation.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item Let $w$ mean ``you may use the airport wireless network,'' $d$ mean
+        ``you pay the daily fee,'' and $s$ mean ``you subscribe to the
+        service.'' Translate: ``To use the network, you must pay the daily fee
+        unless you are a subscriber.''
+  \item Let $L(x,y)$ mean ``person $x$ loves person $y$.'' Translate
+        ``Everybody loves somebody.''
+  \item A student claims that $\exists y\,\forall x\,L(x,y)$ is an equivalent
+        translation of (b). Diagnose the claim.
+\end{enumerate}
+\end{CoreProblem}
+\begin{CoreProblem}{C.3}{Quantifier negation}
+{\scriptsize\textit{Symbolize and negate as directed; move every negation directly before a predicate.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item Some old dogs can learn new tricks. The domain is all things.
+  \item $\neg\forall x\,\forall y\,P(x,y)$
+\end{enumerate}
+\end{CoreProblem}
+\columnbreak
+\begin{CoreProblem}{D.3}{Consistency and satisfiability}
+{\scriptsize\textit{Translate the conditions. Give a satisfying assignment or a short contradiction, then complete the final request.}\par}
+The router can send packets to the edge system only if it supports the new
+address space. Supporting the new address space requires the latest software
+release. If the latest software release is installed, the router can send
+packets to the edge system. The router does not support the new address space.
+In addition to deciding consistency, determine which truth values are forced.
+\end{CoreProblem}
+\begin{CoreProblem}{E.2}{Logical equivalence}
+{\scriptsize\textit{Give an equivalence chain and cite one permitted rule at every step: implication, double negation, De Morgan, distributive, associative, commutative, or idempotent.}\par}
+Show that
+\[
+  (p\to r)\land(q\to r)
+  \quad\text{and}\quad
+  (p\lor q)\to r
+\]
+are logically equivalent.
+\end{CoreProblem}
+\end{multicols}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Logic}{L53}{A--E}{\FivePartScoring}
+\begin{multicols}{2}
+\begin{CoreProblem}{A.5}{Truth tables}
+{\scriptsize\textit{Construct the complete eight-row table; show useful intermediate columns and classify the result.}\par}
+\[
+  (p\leftrightarrow q)\lor(\neg q\leftrightarrow r)
+\]
+\end{CoreProblem}
+\begin{CoreProblem}{B.4}{Translation and meaning}
+{\scriptsize\textit{Define any predicates/domains requested; translate exactly and diagnose the proposed translation.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item Let $w$ mean ``you may use the airport wireless network,'' $d$ mean
+        ``you pay the daily fee,'' and $s$ mean ``you subscribe to the
+        service.'' Translate: ``To use the network, you must pay the daily fee
+        unless you are a subscriber.''
+  \item Let $L(x,y)$ mean ``person $x$ loves person $y$.'' Translate
+        ``Everybody loves somebody.''
+  \item A student claims that $\exists y\,\forall x\,L(x,y)$ is an equivalent
+        translation of (b). Diagnose the claim.
+\end{enumerate}
+\end{CoreProblem}
+\begin{CoreProblem}{C.5}{Quantifier negation}
+{\scriptsize\textit{Symbolize and negate as directed; move every negation directly before a predicate.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item All Swedish movies are serious. The domain is all things.
+  \item $\neg\forall y\,\forall x\bigl(P(x,y)\lor Q(x,y)\bigr)$
+\end{enumerate}
+\end{CoreProblem}
+\columnbreak
+\begin{CoreProblem}{D.2}{Consistency and satisfiability}
+{\scriptsize\textit{Translate the conditions. Give a satisfying assignment or a short contradiction, then complete the final request.}\par}
+Whenever system software is being upgraded, users cannot access the file
+system. If users can access the file system, they can save new files. If users
+cannot save new files, the software is not being upgraded. In addition to
+deciding consistency, list all satisfying assignments for the three atomic
+propositions.
+\end{CoreProblem}
+\begin{CoreProblem}{E.3}{Logical equivalence}
+{\scriptsize\textit{Give an equivalence chain and cite one permitted rule at every step: implication, double negation, De Morgan, distributive, associative, commutative, or idempotent.}\par}
+Show that
+\[
+  (p\to q)\lor(p\to r)
+  \quad\text{and}\quad
+  p\to(q\lor r)
+\]
+are logically equivalent.
+\end{CoreProblem}
+\end{multicols}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Logic}{L54}{A--E}{\FivePartScoring}
+\begin{multicols}{2}
+\begin{CoreProblem}{A.1}{Truth tables}
+{\scriptsize\textit{Construct the complete eight-row table; show useful intermediate columns and classify the result.}\par}
+\[
+  p\to(\neg q\lor r)
+\]
+\end{CoreProblem}
+\begin{CoreProblem}{B.4}{Translation and meaning}
+{\scriptsize\textit{Define any predicates/domains requested; translate exactly and diagnose the proposed translation.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item Let $w$ mean ``you may use the airport wireless network,'' $d$ mean
+        ``you pay the daily fee,'' and $s$ mean ``you subscribe to the
+        service.'' Translate: ``To use the network, you must pay the daily fee
+        unless you are a subscriber.''
+  \item Let $L(x,y)$ mean ``person $x$ loves person $y$.'' Translate
+        ``Everybody loves somebody.''
+  \item A student claims that $\exists y\,\forall x\,L(x,y)$ is an equivalent
+        translation of (b). Diagnose the claim.
+\end{enumerate}
+\end{CoreProblem}
+\begin{CoreProblem}{C.2}{Quantifier negation}
+{\scriptsize\textit{Symbolize and negate as directed; move every negation directly before a predicate.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item No monkey can speak French. The domain is all things.
+  \item $\neg\forall x\,\exists y\,P(x,y)$
+\end{enumerate}
+\end{CoreProblem}
+\columnbreak
+\begin{CoreProblem}{D.3}{Consistency and satisfiability}
+{\scriptsize\textit{Translate the conditions. Give a satisfying assignment or a short contradiction, then complete the final request.}\par}
+The router can send packets to the edge system only if it supports the new
+address space. Supporting the new address space requires the latest software
+release. If the latest software release is installed, the router can send
+packets to the edge system. The router does not support the new address space.
+In addition to deciding consistency, determine which truth values are forced.
+\end{CoreProblem}
+\begin{CoreProblem}{E.1}{Logical equivalence}
+{\scriptsize\textit{Give an equivalence chain and cite one permitted rule at every step: implication, double negation, De Morgan, distributive, associative, commutative, or idempotent.}\par}
+Show that
+\[
+  (p\to q)\land(p\to r)
+  \quad\text{and}\quad
+  p\to(q\land r)
+\]
+are logically equivalent.
+\end{CoreProblem}
+\end{multicols}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Logic}{L55}{A--E}{\FivePartScoring}
+\begin{multicols}{2}
+\begin{CoreProblem}{A.5}{Truth tables}
+{\scriptsize\textit{Construct the complete eight-row table; show useful intermediate columns and classify the result.}\par}
+\[
+  (p\leftrightarrow q)\lor(\neg q\leftrightarrow r)
+\]
+\end{CoreProblem}
+\begin{CoreProblem}{B.5}{Translation and meaning}
+{\scriptsize\textit{Define any predicates/domains requested; translate exactly and diagnose the proposed translation.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item Let $p$ mean ``the message is scanned for viruses'' and $q$ mean ``the
+        message came from an unknown system.'' Translate: ``It is necessary to
+        scan a message whenever it comes from an unknown system.''
+  \item Let $S(x)$ mean ``$x$ is a student,'' $F(y)$ mean ``$y$ is a faculty
+        member,'' and $A(x,y)$ mean ``$x$ asked $y$ a question.'' Translate:
+        ``Some student has asked every faculty member a question.''
+  \item A student uses $A(y,x)$ in place of $A(x,y)$ in (b). Diagnose what the
+        reversed argument order says.
+\end{enumerate}
+\end{CoreProblem}
+\begin{CoreProblem}{C.1}{Quantifier negation}
+{\scriptsize\textit{Symbolize and negate as directed; move every negation directly before a predicate.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item All dogs have fleas. The domain is all things.
+  \item $\neg\exists y\,\exists x\,P(x,y)$
+\end{enumerate}
+\end{CoreProblem}
+\columnbreak
+\begin{CoreProblem}{D.5}{Consistency and satisfiability}
+{\scriptsize\textit{Translate the conditions. Give a satisfying assignment or a short contradiction, then complete the final request.}\par}
+Jasmine becomes unhappy if she attends a party with Samir. Samir attends only
+if Kanti attends. Kanti will not attend unless Jasmine attends. Determine which
+subsets of Jasmine, Samir, and Kanti can be invited without violating these
+conditions. State every satisfying combination, including the possibility of
+inviting no one.
+\end{CoreProblem}
+\begin{CoreProblem}{E.4}{Logical equivalence}
+{\scriptsize\textit{Give an equivalence chain and cite one permitted rule at every step: implication, double negation, De Morgan, distributive, associative, commutative, or idempotent.}\par}
+Show that
+\[
+  (p\to r)\lor(q\to r)
+  \quad\text{and}\quad
+  (p\land q)\to r
+\]
+are logically equivalent.
+\end{CoreProblem}
+\end{multicols}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Logic}{L56}{A--E}{\FivePartScoring}
+\begin{multicols}{2}
+\begin{CoreProblem}{A.2}{Truth tables}
+{\scriptsize\textit{Construct the complete eight-row table; show useful intermediate columns and classify the result.}\par}
+\[
+  \neg p\to(q\to r)
+\]
+\end{CoreProblem}
+\begin{CoreProblem}{B.1}{Translation and meaning}
+{\scriptsize\textit{Define any predicates/domains requested; translate exactly and diagnose the proposed translation.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item Let $e$ mean ``you can edit a protected encyclopedia entry'' and $a$
+        mean ``you are an administrator.'' Translate: ``You cannot edit a
+        protected entry unless you are an administrator.''
+  \item Let $Q(x,y)$ mean ``student $x$ sent a message to student $y$.''
+        Translate $\exists x\,\forall y\,Q(x,y)$ into ordinary English.
+  \item A student says the formula in (b) means ``Every student sent a message
+        to at least one student.'' Diagnose the claim.
+\end{enumerate}
+\end{CoreProblem}
+\begin{CoreProblem}{C.5}{Quantifier negation}
+{\scriptsize\textit{Symbolize and negate as directed; move every negation directly before a predicate.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item All Swedish movies are serious. The domain is all things.
+  \item $\neg\forall y\,\forall x\bigl(P(x,y)\lor Q(x,y)\bigr)$
+\end{enumerate}
+\end{CoreProblem}
+\columnbreak
+\begin{CoreProblem}{D.1}{Consistency and satisfiability}
+{\scriptsize\textit{Translate the conditions. Give a satisfying assignment or a short contradiction, then complete the final request.}\par}
+The system is in multiuser state if and only if it is operating normally. If
+the system is operating normally, the kernel is functioning. The kernel is not
+functioning or the system is in interrupt mode. If the system is not in
+multiuser state, it is in interrupt mode. The system is not in interrupt mode.
+If the conditions are inconsistent, identify a minimal collection of the given
+conditions that already forces the contradiction.
+\end{CoreProblem}
+\begin{CoreProblem}{E.5}{Logical equivalence}
+{\scriptsize\textit{Give an equivalence chain and cite one permitted rule at every step: implication, double negation, De Morgan, distributive, associative, commutative, or idempotent.}\par}
+Show that
+\[
+  \neg p\to(q\to r)
+  \quad\text{and}\quad
+  q\to(p\lor r)
+\]
+are logically equivalent.
+\end{CoreProblem}
+\end{multicols}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Logic}{L57}{A--E}{\FivePartScoring}
+\begin{multicols}{2}
+\begin{CoreProblem}{A.5}{Truth tables}
+{\scriptsize\textit{Construct the complete eight-row table; show useful intermediate columns and classify the result.}\par}
+\[
+  (p\leftrightarrow q)\lor(\neg q\leftrightarrow r)
+\]
+\end{CoreProblem}
+\begin{CoreProblem}{B.5}{Translation and meaning}
+{\scriptsize\textit{Define any predicates/domains requested; translate exactly and diagnose the proposed translation.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item Let $p$ mean ``the message is scanned for viruses'' and $q$ mean ``the
+        message came from an unknown system.'' Translate: ``It is necessary to
+        scan a message whenever it comes from an unknown system.''
+  \item Let $S(x)$ mean ``$x$ is a student,'' $F(y)$ mean ``$y$ is a faculty
+        member,'' and $A(x,y)$ mean ``$x$ asked $y$ a question.'' Translate:
+        ``Some student has asked every faculty member a question.''
+  \item A student uses $A(y,x)$ in place of $A(x,y)$ in (b). Diagnose what the
+        reversed argument order says.
+\end{enumerate}
+\end{CoreProblem}
+\begin{CoreProblem}{C.2}{Quantifier negation}
+{\scriptsize\textit{Symbolize and negate as directed; move every negation directly before a predicate.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item No monkey can speak French. The domain is all things.
+  \item $\neg\forall x\,\exists y\,P(x,y)$
+\end{enumerate}
+\end{CoreProblem}
+\columnbreak
+\begin{CoreProblem}{D.3}{Consistency and satisfiability}
+{\scriptsize\textit{Translate the conditions. Give a satisfying assignment or a short contradiction, then complete the final request.}\par}
+The router can send packets to the edge system only if it supports the new
+address space. Supporting the new address space requires the latest software
+release. If the latest software release is installed, the router can send
+packets to the edge system. The router does not support the new address space.
+In addition to deciding consistency, determine which truth values are forced.
+\end{CoreProblem}
+\begin{CoreProblem}{E.5}{Logical equivalence}
+{\scriptsize\textit{Give an equivalence chain and cite one permitted rule at every step: implication, double negation, De Morgan, distributive, associative, commutative, or idempotent.}\par}
+Show that
+\[
+  \neg p\to(q\to r)
+  \quad\text{and}\quad
+  q\to(p\lor r)
+\]
+are logically equivalent.
+\end{CoreProblem}
+\end{multicols}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Logic}{L58}{A--E}{\FivePartScoring}
+\begin{multicols}{2}
+\begin{CoreProblem}{A.3}{Truth tables}
+{\scriptsize\textit{Construct the complete eight-row table; show useful intermediate columns and classify the result.}\par}
+\[
+  (p\to q)\lor(\neg p\to r)
+\]
+\end{CoreProblem}
+\begin{CoreProblem}{B.1}{Translation and meaning}
+{\scriptsize\textit{Define any predicates/domains requested; translate exactly and diagnose the proposed translation.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item Let $e$ mean ``you can edit a protected encyclopedia entry'' and $a$
+        mean ``you are an administrator.'' Translate: ``You cannot edit a
+        protected entry unless you are an administrator.''
+  \item Let $Q(x,y)$ mean ``student $x$ sent a message to student $y$.''
+        Translate $\exists x\,\forall y\,Q(x,y)$ into ordinary English.
+  \item A student says the formula in (b) means ``Every student sent a message
+        to at least one student.'' Diagnose the claim.
+\end{enumerate}
+\end{CoreProblem}
+\begin{CoreProblem}{C.5}{Quantifier negation}
+{\scriptsize\textit{Symbolize and negate as directed; move every negation directly before a predicate.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item All Swedish movies are serious. The domain is all things.
+  \item $\neg\forall y\,\forall x\bigl(P(x,y)\lor Q(x,y)\bigr)$
+\end{enumerate}
+\end{CoreProblem}
+\columnbreak
+\begin{CoreProblem}{D.4}{Consistency and satisfiability}
+{\scriptsize\textit{Translate the conditions. Give a satisfying assignment or a short contradiction, then complete the final request.}\par}
+If the file system is not locked, new messages are queued. The file system is
+not locked if and only if the system is functioning normally. If messages are
+not queued, they are sent to the message buffer. If the file system is not
+locked, messages are sent to the buffer. Messages are not sent to the buffer.
+In addition to deciding consistency, explain which conclusions follow from the
+last condition.
+\end{CoreProblem}
+\begin{CoreProblem}{E.3}{Logical equivalence}
+{\scriptsize\textit{Give an equivalence chain and cite one permitted rule at every step: implication, double negation, De Morgan, distributive, associative, commutative, or idempotent.}\par}
+Show that
+\[
+  (p\to q)\lor(p\to r)
+  \quad\text{and}\quad
+  p\to(q\lor r)
+\]
+are logically equivalent.
+\end{CoreProblem}
+\end{multicols}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Logic}{L59}{A--E}{\FivePartScoring}
+\begin{multicols}{2}
+\begin{CoreProblem}{A.1}{Truth tables}
+{\scriptsize\textit{Construct the complete eight-row table; show useful intermediate columns and classify the result.}\par}
+\[
+  p\to(\neg q\lor r)
+\]
+\end{CoreProblem}
+\begin{CoreProblem}{B.3}{Translation and meaning}
+{\scriptsize\textit{Define any predicates/domains requested; translate exactly and diagnose the proposed translation.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item Let $g$ mean ``you can graduate,'' $r$ mean ``you completed your major
+        requirements,'' $m$ mean ``you owe the university money,'' and $b$
+        mean ``you have an overdue library book.'' Translate: ``You can
+        graduate only if you completed the requirements, owe no money, and
+        have no overdue library book.''
+  \item Let $P(x,y)$ mean ``student $x$ has taken computer-science course
+        $y$.'' Translate $\exists y\,\forall x\,P(x,y)$ into English.
+  \item A student instead writes $\forall x\,\exists y\,P(x,y)$ for the
+        sentence in (b). Diagnose the change in meaning.
+\end{enumerate}
+\end{CoreProblem}
+\begin{CoreProblem}{C.3}{Quantifier negation}
+{\scriptsize\textit{Symbolize and negate as directed; move every negation directly before a predicate.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item Some old dogs can learn new tricks. The domain is all things.
+  \item $\neg\forall x\,\forall y\,P(x,y)$
+\end{enumerate}
+\end{CoreProblem}
+\columnbreak
+\begin{CoreProblem}{D.4}{Consistency and satisfiability}
+{\scriptsize\textit{Translate the conditions. Give a satisfying assignment or a short contradiction, then complete the final request.}\par}
+If the file system is not locked, new messages are queued. The file system is
+not locked if and only if the system is functioning normally. If messages are
+not queued, they are sent to the message buffer. If the file system is not
+locked, messages are sent to the buffer. Messages are not sent to the buffer.
+In addition to deciding consistency, explain which conclusions follow from the
+last condition.
+\end{CoreProblem}
+\begin{CoreProblem}{E.2}{Logical equivalence}
+{\scriptsize\textit{Give an equivalence chain and cite one permitted rule at every step: implication, double negation, De Morgan, distributive, associative, commutative, or idempotent.}\par}
+Show that
+\[
+  (p\to r)\land(q\to r)
+  \quad\text{and}\quad
+  (p\lor q)\to r
+\]
+are logically equivalent.
+\end{CoreProblem}
+\end{multicols}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Logic}{L60}{A--E}{\FivePartScoring}
+\begin{multicols}{2}
+\begin{CoreProblem}{A.4}{Truth tables}
+{\scriptsize\textit{Construct the complete eight-row table; show useful intermediate columns and classify the result.}\par}
+\[
+  (p\to q)\land(\neg p\to r)
+\]
+\end{CoreProblem}
+\begin{CoreProblem}{B.4}{Translation and meaning}
+{\scriptsize\textit{Define any predicates/domains requested; translate exactly and diagnose the proposed translation.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item Let $w$ mean ``you may use the airport wireless network,'' $d$ mean
+        ``you pay the daily fee,'' and $s$ mean ``you subscribe to the
+        service.'' Translate: ``To use the network, you must pay the daily fee
+        unless you are a subscriber.''
+  \item Let $L(x,y)$ mean ``person $x$ loves person $y$.'' Translate
+        ``Everybody loves somebody.''
+  \item A student claims that $\exists y\,\forall x\,L(x,y)$ is an equivalent
+        translation of (b). Diagnose the claim.
+\end{enumerate}
+\end{CoreProblem}
+\begin{CoreProblem}{C.5}{Quantifier negation}
+{\scriptsize\textit{Symbolize and negate as directed; move every negation directly before a predicate.}\par}
+\begin{enumerate}[label=(\alph*)]
+  \item All Swedish movies are serious. The domain is all things.
+  \item $\neg\forall y\,\forall x\bigl(P(x,y)\lor Q(x,y)\bigr)$
+\end{enumerate}
+\end{CoreProblem}
+\columnbreak
+\begin{CoreProblem}{D.1}{Consistency and satisfiability}
+{\scriptsize\textit{Translate the conditions. Give a satisfying assignment or a short contradiction, then complete the final request.}\par}
+The system is in multiuser state if and only if it is operating normally. If
+the system is operating normally, the kernel is functioning. The kernel is not
+functioning or the system is in interrupt mode. If the system is not in
+multiuser state, it is in interrupt mode. The system is not in interrupt mode.
+If the conditions are inconsistent, identify a minimal collection of the given
+conditions that already forces the contradiction.
+\end{CoreProblem}
+\begin{CoreProblem}{E.3}{Logical equivalence}
+{\scriptsize\textit{Give an equivalence chain and cite one permitted rule at every step: implication, double negation, De Morgan, distributive, associative, commutative, or idempotent.}\par}
+Show that
+\[
+  (p\to q)\lor(p\to r)
+  \quad\text{and}\quad
+  p\to(q\lor r)
+\]
+are logically equivalent.
+\end{CoreProblem}
+\end{multicols}
+\CoreWorkArea
+\end{document}

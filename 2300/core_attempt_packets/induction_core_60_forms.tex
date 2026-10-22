@@ -1,0 +1,1445 @@
+\documentclass[9pt]{extarticle}
+\usepackage{core_attempt_forms}
+
+\begin{document}
+
+\CoreHeader{Induction}{I01}{A--C}{\ThreePartScoring}
+\begin{multicols}{2}
+\begin{CompactCoreProblem}{A.1}{Proof setup}
+For the claim that every integer $n\ge2$ is a product of one or more primes, state (i) the base case, (ii) the strong induction hypothesis for an arbitrary $k\ge2$, (iii) what must be proved for $k+1$, and (iv) the two cases used in the induction step. Do not complete the proof.
+\end{CompactCoreProblem}
+\begin{CompactCoreProblem}{B.1}{Diagnose and repair}
+A student tries to prove $2^n\ge n+1$ for $n\ge0$ by assuming $2^{k+1}\ge k+2$ in the induction step. Identify the circularity, state the correct induction hypothesis, and give a valid chain of inequalities for the next case.
+\end{CompactCoreProblem}
+\end{multicols}
+\begin{CompactCoreProblem}{C.3}{Complete inductive proof}
+You may use Pascal's identity
+\[
+\binom{k+1}{j}=\binom{k}{j}+\binom{k}{j-1}
+\quad(1\le j\le k),\qquad
+\binom{n}{0}=\binom{n}{n}=1.
+\]
+Prove by mathematical induction that
+\[
+\sum_{j=0}^{n} 3^{n-j}\binom{n}{j}=4^n\qquad\text{for every integer }n\ge0.
+\]
+State $P(n)$, verify the base case, state the induction hypothesis, show the complete next-case calculation including reindexing, and conclude the proof.
+\end{CompactCoreProblem}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Induction}{I02}{A--C}{\ThreePartScoring}
+\begin{multicols}{2}
+\begin{CompactCoreProblem}{A.3}{Proof setup}
+For the claim $7\mid(8^n-1)$ for every integer $n\ge0$, state $P(n)$, the base case, the induction hypothesis using an integer witness, and the divisibility statement required for $k+1$. Do not complete the algebra.
+\end{CompactCoreProblem}
+\begin{CompactCoreProblem}{B.5}{Diagnose and repair}
+A student proving $7\mid(8^n-1)$ says, “Assume $7\mid(8^{k+1}-1)$; therefore the next case holds.” Identify the error, replace it with the correct induction hypothesis, and show an algebraic decomposition that proves the $k+1$ case.
+\end{CompactCoreProblem}
+\end{multicols}
+\begin{CompactCoreProblem}{C.3}{Complete inductive proof}
+You may use Pascal's identity
+\[
+\binom{k+1}{j}=\binom{k}{j}+\binom{k}{j-1}
+\quad(1\le j\le k),\qquad
+\binom{n}{0}=\binom{n}{n}=1.
+\]
+Prove by mathematical induction that
+\[
+\sum_{j=0}^{n} 3^{n-j}\binom{n}{j}=4^n\qquad\text{for every integer }n\ge0.
+\]
+State $P(n)$, verify the base case, state the induction hypothesis, show the complete next-case calculation including reindexing, and conclude the proof.
+\end{CompactCoreProblem}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Induction}{I03}{A--C}{\ThreePartScoring}
+\begin{multicols}{2}
+\begin{CompactCoreProblem}{A.4}{Proof setup}
+For the claim that every amount $n\ge18$ can be made using 4-cent and 7-cent stamps, list sufficient base cases, state a strong induction hypothesis through $k$, and explain which earlier amount is used to construct $k+1$. Do not complete the proof.
+\end{CompactCoreProblem}
+\begin{CompactCoreProblem}{B.2}{Diagnose and repair}
+A recurrence proof uses both $P(k)$ and $P(k-1)$ to prove $P(k+1)$ but verifies only $P(0)$. Explain what is missing. State sufficient base cases and a valid strong induction hypothesis.
+\end{CompactCoreProblem}
+\end{multicols}
+\begin{CompactCoreProblem}{C.2}{Complete inductive proof}
+You may use Pascal's identity
+\[
+\binom{k+1}{j}=\binom{k}{j}+\binom{k}{j-1}
+\quad(1\le j\le k),\qquad
+\binom{n}{0}=\binom{n}{n}=1.
+\]
+Prove by mathematical induction that
+\[
+\sum_{j=0}^{n} 2^{n-j}\binom{n}{j}=3^n\qquad\text{for every integer }n\ge0.
+\]
+State $P(n)$, verify the base case, state the induction hypothesis, show the complete next-case calculation including reindexing, and conclude the proof.
+\end{CompactCoreProblem}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Induction}{I04}{A--C}{\ThreePartScoring}
+\begin{multicols}{2}
+\begin{CompactCoreProblem}{A.2}{Proof setup}
+For $1+2+\cdots+n=n(n+1)/2$ for every $n\ge1$, state $P(n)$, verify the base case, state the induction hypothesis $P(k)$, and state exactly what must be shown for $P(k+1)$. Do not complete the next-case algebra.
+\end{CompactCoreProblem}
+\begin{CompactCoreProblem}{B.3}{Diagnose and repair}
+In the false proof that all positive integers in any finite list are equal, the step applies the hypothesis to the first $k$ and last $k$ entries and claims the groups overlap. Identify the first $k$ for which overlap is needed and explain precisely why the step fails.
+\end{CompactCoreProblem}
+\end{multicols}
+\begin{CompactCoreProblem}{C.1}{Complete inductive proof}
+You may use Pascal's identity
+\[
+\binom{k+1}{j}=\binom{k}{j}+\binom{k}{j-1}
+\quad(1\le j\le k),\qquad
+\binom{n}{0}=\binom{n}{n}=1.
+\]
+Prove by mathematical induction that
+\[
+\sum_{j=0}^{n}\binom{n}{j}=2^n\qquad\text{for every integer }n\ge0.
+\]
+State $P(n)$, verify the base case, state the induction hypothesis, show the complete next-case calculation including reindexing, and conclude the proof.
+\end{CompactCoreProblem}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Induction}{I05}{A--C}{\ThreePartScoring}
+\begin{multicols}{2}
+\begin{CompactCoreProblem}{A.2}{Proof setup}
+For $1+2+\cdots+n=n(n+1)/2$ for every $n\ge1$, state $P(n)$, verify the base case, state the induction hypothesis $P(k)$, and state exactly what must be shown for $P(k+1)$. Do not complete the next-case algebra.
+\end{CompactCoreProblem}
+\begin{CompactCoreProblem}{B.2}{Diagnose and repair}
+A recurrence proof uses both $P(k)$ and $P(k-1)$ to prove $P(k+1)$ but verifies only $P(0)$. Explain what is missing. State sufficient base cases and a valid strong induction hypothesis.
+\end{CompactCoreProblem}
+\end{multicols}
+\begin{CompactCoreProblem}{C.1}{Complete inductive proof}
+You may use Pascal's identity
+\[
+\binom{k+1}{j}=\binom{k}{j}+\binom{k}{j-1}
+\quad(1\le j\le k),\qquad
+\binom{n}{0}=\binom{n}{n}=1.
+\]
+Prove by mathematical induction that
+\[
+\sum_{j=0}^{n}\binom{n}{j}=2^n\qquad\text{for every integer }n\ge0.
+\]
+State $P(n)$, verify the base case, state the induction hypothesis, show the complete next-case calculation including reindexing, and conclude the proof.
+\end{CompactCoreProblem}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Induction}{I06}{A--C}{\ThreePartScoring}
+\begin{multicols}{2}
+\begin{CompactCoreProblem}{A.2}{Proof setup}
+For $1+2+\cdots+n=n(n+1)/2$ for every $n\ge1$, state $P(n)$, verify the base case, state the induction hypothesis $P(k)$, and state exactly what must be shown for $P(k+1)$. Do not complete the next-case algebra.
+\end{CompactCoreProblem}
+\begin{CompactCoreProblem}{B.4}{Diagnose and repair}
+A student proving $1+3+\cdots+(2n-1)=n^2$ writes $k^2+(2k-1)=(k+1)^2$. Identify the incorrect next term, repair the calculation, and state where the induction hypothesis is used.
+\end{CompactCoreProblem}
+\end{multicols}
+\begin{CompactCoreProblem}{C.1}{Complete inductive proof}
+You may use Pascal's identity
+\[
+\binom{k+1}{j}=\binom{k}{j}+\binom{k}{j-1}
+\quad(1\le j\le k),\qquad
+\binom{n}{0}=\binom{n}{n}=1.
+\]
+Prove by mathematical induction that
+\[
+\sum_{j=0}^{n}\binom{n}{j}=2^n\qquad\text{for every integer }n\ge0.
+\]
+State $P(n)$, verify the base case, state the induction hypothesis, show the complete next-case calculation including reindexing, and conclude the proof.
+\end{CompactCoreProblem}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Induction}{I07}{A--C}{\ThreePartScoring}
+\begin{multicols}{2}
+\begin{CompactCoreProblem}{A.1}{Proof setup}
+For the claim that every integer $n\ge2$ is a product of one or more primes, state (i) the base case, (ii) the strong induction hypothesis for an arbitrary $k\ge2$, (iii) what must be proved for $k+1$, and (iv) the two cases used in the induction step. Do not complete the proof.
+\end{CompactCoreProblem}
+\begin{CompactCoreProblem}{B.2}{Diagnose and repair}
+A recurrence proof uses both $P(k)$ and $P(k-1)$ to prove $P(k+1)$ but verifies only $P(0)$. Explain what is missing. State sufficient base cases and a valid strong induction hypothesis.
+\end{CompactCoreProblem}
+\end{multicols}
+\begin{CompactCoreProblem}{C.3}{Complete inductive proof}
+You may use Pascal's identity
+\[
+\binom{k+1}{j}=\binom{k}{j}+\binom{k}{j-1}
+\quad(1\le j\le k),\qquad
+\binom{n}{0}=\binom{n}{n}=1.
+\]
+Prove by mathematical induction that
+\[
+\sum_{j=0}^{n} 3^{n-j}\binom{n}{j}=4^n\qquad\text{for every integer }n\ge0.
+\]
+State $P(n)$, verify the base case, state the induction hypothesis, show the complete next-case calculation including reindexing, and conclude the proof.
+\end{CompactCoreProblem}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Induction}{I08}{A--C}{\ThreePartScoring}
+\begin{multicols}{2}
+\begin{CompactCoreProblem}{A.4}{Proof setup}
+For the claim that every amount $n\ge18$ can be made using 4-cent and 7-cent stamps, list sufficient base cases, state a strong induction hypothesis through $k$, and explain which earlier amount is used to construct $k+1$. Do not complete the proof.
+\end{CompactCoreProblem}
+\begin{CompactCoreProblem}{B.1}{Diagnose and repair}
+A student tries to prove $2^n\ge n+1$ for $n\ge0$ by assuming $2^{k+1}\ge k+2$ in the induction step. Identify the circularity, state the correct induction hypothesis, and give a valid chain of inequalities for the next case.
+\end{CompactCoreProblem}
+\end{multicols}
+\begin{CompactCoreProblem}{C.5}{Complete inductive proof}
+You may use Pascal's identity
+\[
+\binom{k+1}{j}=\binom{k}{j}+\binom{k}{j-1}
+\quad(1\le j\le k),\qquad
+\binom{n}{0}=\binom{n}{n}=1.
+\]
+Prove by mathematical induction that
+\[
+\sum_{j=0}^{n} 5^{n-j}\binom{n}{j}=6^n\qquad\text{for every integer }n\ge0.
+\]
+State $P(n)$, verify the base case, state the induction hypothesis, show the complete next-case calculation including reindexing, and conclude the proof.
+\end{CompactCoreProblem}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Induction}{I09}{A--C}{\ThreePartScoring}
+\begin{multicols}{2}
+\begin{CompactCoreProblem}{A.4}{Proof setup}
+For the claim that every amount $n\ge18$ can be made using 4-cent and 7-cent stamps, list sufficient base cases, state a strong induction hypothesis through $k$, and explain which earlier amount is used to construct $k+1$. Do not complete the proof.
+\end{CompactCoreProblem}
+\begin{CompactCoreProblem}{B.4}{Diagnose and repair}
+A student proving $1+3+\cdots+(2n-1)=n^2$ writes $k^2+(2k-1)=(k+1)^2$. Identify the incorrect next term, repair the calculation, and state where the induction hypothesis is used.
+\end{CompactCoreProblem}
+\end{multicols}
+\begin{CompactCoreProblem}{C.3}{Complete inductive proof}
+You may use Pascal's identity
+\[
+\binom{k+1}{j}=\binom{k}{j}+\binom{k}{j-1}
+\quad(1\le j\le k),\qquad
+\binom{n}{0}=\binom{n}{n}=1.
+\]
+Prove by mathematical induction that
+\[
+\sum_{j=0}^{n} 3^{n-j}\binom{n}{j}=4^n\qquad\text{for every integer }n\ge0.
+\]
+State $P(n)$, verify the base case, state the induction hypothesis, show the complete next-case calculation including reindexing, and conclude the proof.
+\end{CompactCoreProblem}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Induction}{I10}{A--C}{\ThreePartScoring}
+\begin{multicols}{2}
+\begin{CompactCoreProblem}{A.5}{Proof setup}
+For $2^n\ge n+1$ for every integer $n\ge0$, state $P(n)$, verify the base case, state the induction hypothesis, and write the first equality and inequality that should begin the $k+1$ step. Do not finish the proof.
+\end{CompactCoreProblem}
+\begin{CompactCoreProblem}{B.1}{Diagnose and repair}
+A student tries to prove $2^n\ge n+1$ for $n\ge0$ by assuming $2^{k+1}\ge k+2$ in the induction step. Identify the circularity, state the correct induction hypothesis, and give a valid chain of inequalities for the next case.
+\end{CompactCoreProblem}
+\end{multicols}
+\begin{CompactCoreProblem}{C.1}{Complete inductive proof}
+You may use Pascal's identity
+\[
+\binom{k+1}{j}=\binom{k}{j}+\binom{k}{j-1}
+\quad(1\le j\le k),\qquad
+\binom{n}{0}=\binom{n}{n}=1.
+\]
+Prove by mathematical induction that
+\[
+\sum_{j=0}^{n}\binom{n}{j}=2^n\qquad\text{for every integer }n\ge0.
+\]
+State $P(n)$, verify the base case, state the induction hypothesis, show the complete next-case calculation including reindexing, and conclude the proof.
+\end{CompactCoreProblem}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Induction}{I11}{A--C}{\ThreePartScoring}
+\begin{multicols}{2}
+\begin{CompactCoreProblem}{A.5}{Proof setup}
+For $2^n\ge n+1$ for every integer $n\ge0$, state $P(n)$, verify the base case, state the induction hypothesis, and write the first equality and inequality that should begin the $k+1$ step. Do not finish the proof.
+\end{CompactCoreProblem}
+\begin{CompactCoreProblem}{B.3}{Diagnose and repair}
+In the false proof that all positive integers in any finite list are equal, the step applies the hypothesis to the first $k$ and last $k$ entries and claims the groups overlap. Identify the first $k$ for which overlap is needed and explain precisely why the step fails.
+\end{CompactCoreProblem}
+\end{multicols}
+\begin{CompactCoreProblem}{C.3}{Complete inductive proof}
+You may use Pascal's identity
+\[
+\binom{k+1}{j}=\binom{k}{j}+\binom{k}{j-1}
+\quad(1\le j\le k),\qquad
+\binom{n}{0}=\binom{n}{n}=1.
+\]
+Prove by mathematical induction that
+\[
+\sum_{j=0}^{n} 3^{n-j}\binom{n}{j}=4^n\qquad\text{for every integer }n\ge0.
+\]
+State $P(n)$, verify the base case, state the induction hypothesis, show the complete next-case calculation including reindexing, and conclude the proof.
+\end{CompactCoreProblem}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Induction}{I12}{A--C}{\ThreePartScoring}
+\begin{multicols}{2}
+\begin{CompactCoreProblem}{A.5}{Proof setup}
+For $2^n\ge n+1$ for every integer $n\ge0$, state $P(n)$, verify the base case, state the induction hypothesis, and write the first equality and inequality that should begin the $k+1$ step. Do not finish the proof.
+\end{CompactCoreProblem}
+\begin{CompactCoreProblem}{B.3}{Diagnose and repair}
+In the false proof that all positive integers in any finite list are equal, the step applies the hypothesis to the first $k$ and last $k$ entries and claims the groups overlap. Identify the first $k$ for which overlap is needed and explain precisely why the step fails.
+\end{CompactCoreProblem}
+\end{multicols}
+\begin{CompactCoreProblem}{C.4}{Complete inductive proof}
+You may use Pascal's identity
+\[
+\binom{k+1}{j}=\binom{k}{j}+\binom{k}{j-1}
+\quad(1\le j\le k),\qquad
+\binom{n}{0}=\binom{n}{n}=1.
+\]
+Prove by mathematical induction that
+\[
+\sum_{j=0}^{n} 4^{n-j}\binom{n}{j}=5^n\qquad\text{for every integer }n\ge0.
+\]
+State $P(n)$, verify the base case, state the induction hypothesis, show the complete next-case calculation including reindexing, and conclude the proof.
+\end{CompactCoreProblem}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Induction}{I13}{A--C}{\ThreePartScoring}
+\begin{multicols}{2}
+\begin{CompactCoreProblem}{A.1}{Proof setup}
+For the claim that every integer $n\ge2$ is a product of one or more primes, state (i) the base case, (ii) the strong induction hypothesis for an arbitrary $k\ge2$, (iii) what must be proved for $k+1$, and (iv) the two cases used in the induction step. Do not complete the proof.
+\end{CompactCoreProblem}
+\begin{CompactCoreProblem}{B.3}{Diagnose and repair}
+In the false proof that all positive integers in any finite list are equal, the step applies the hypothesis to the first $k$ and last $k$ entries and claims the groups overlap. Identify the first $k$ for which overlap is needed and explain precisely why the step fails.
+\end{CompactCoreProblem}
+\end{multicols}
+\begin{CompactCoreProblem}{C.1}{Complete inductive proof}
+You may use Pascal's identity
+\[
+\binom{k+1}{j}=\binom{k}{j}+\binom{k}{j-1}
+\quad(1\le j\le k),\qquad
+\binom{n}{0}=\binom{n}{n}=1.
+\]
+Prove by mathematical induction that
+\[
+\sum_{j=0}^{n}\binom{n}{j}=2^n\qquad\text{for every integer }n\ge0.
+\]
+State $P(n)$, verify the base case, state the induction hypothesis, show the complete next-case calculation including reindexing, and conclude the proof.
+\end{CompactCoreProblem}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Induction}{I14}{A--C}{\ThreePartScoring}
+\begin{multicols}{2}
+\begin{CompactCoreProblem}{A.1}{Proof setup}
+For the claim that every integer $n\ge2$ is a product of one or more primes, state (i) the base case, (ii) the strong induction hypothesis for an arbitrary $k\ge2$, (iii) what must be proved for $k+1$, and (iv) the two cases used in the induction step. Do not complete the proof.
+\end{CompactCoreProblem}
+\begin{CompactCoreProblem}{B.2}{Diagnose and repair}
+A recurrence proof uses both $P(k)$ and $P(k-1)$ to prove $P(k+1)$ but verifies only $P(0)$. Explain what is missing. State sufficient base cases and a valid strong induction hypothesis.
+\end{CompactCoreProblem}
+\end{multicols}
+\begin{CompactCoreProblem}{C.4}{Complete inductive proof}
+You may use Pascal's identity
+\[
+\binom{k+1}{j}=\binom{k}{j}+\binom{k}{j-1}
+\quad(1\le j\le k),\qquad
+\binom{n}{0}=\binom{n}{n}=1.
+\]
+Prove by mathematical induction that
+\[
+\sum_{j=0}^{n} 4^{n-j}\binom{n}{j}=5^n\qquad\text{for every integer }n\ge0.
+\]
+State $P(n)$, verify the base case, state the induction hypothesis, show the complete next-case calculation including reindexing, and conclude the proof.
+\end{CompactCoreProblem}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Induction}{I15}{A--C}{\ThreePartScoring}
+\begin{multicols}{2}
+\begin{CompactCoreProblem}{A.3}{Proof setup}
+For the claim $7\mid(8^n-1)$ for every integer $n\ge0$, state $P(n)$, the base case, the induction hypothesis using an integer witness, and the divisibility statement required for $k+1$. Do not complete the algebra.
+\end{CompactCoreProblem}
+\begin{CompactCoreProblem}{B.4}{Diagnose and repair}
+A student proving $1+3+\cdots+(2n-1)=n^2$ writes $k^2+(2k-1)=(k+1)^2$. Identify the incorrect next term, repair the calculation, and state where the induction hypothesis is used.
+\end{CompactCoreProblem}
+\end{multicols}
+\begin{CompactCoreProblem}{C.5}{Complete inductive proof}
+You may use Pascal's identity
+\[
+\binom{k+1}{j}=\binom{k}{j}+\binom{k}{j-1}
+\quad(1\le j\le k),\qquad
+\binom{n}{0}=\binom{n}{n}=1.
+\]
+Prove by mathematical induction that
+\[
+\sum_{j=0}^{n} 5^{n-j}\binom{n}{j}=6^n\qquad\text{for every integer }n\ge0.
+\]
+State $P(n)$, verify the base case, state the induction hypothesis, show the complete next-case calculation including reindexing, and conclude the proof.
+\end{CompactCoreProblem}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Induction}{I16}{A--C}{\ThreePartScoring}
+\begin{multicols}{2}
+\begin{CompactCoreProblem}{A.3}{Proof setup}
+For the claim $7\mid(8^n-1)$ for every integer $n\ge0$, state $P(n)$, the base case, the induction hypothesis using an integer witness, and the divisibility statement required for $k+1$. Do not complete the algebra.
+\end{CompactCoreProblem}
+\begin{CompactCoreProblem}{B.4}{Diagnose and repair}
+A student proving $1+3+\cdots+(2n-1)=n^2$ writes $k^2+(2k-1)=(k+1)^2$. Identify the incorrect next term, repair the calculation, and state where the induction hypothesis is used.
+\end{CompactCoreProblem}
+\end{multicols}
+\begin{CompactCoreProblem}{C.4}{Complete inductive proof}
+You may use Pascal's identity
+\[
+\binom{k+1}{j}=\binom{k}{j}+\binom{k}{j-1}
+\quad(1\le j\le k),\qquad
+\binom{n}{0}=\binom{n}{n}=1.
+\]
+Prove by mathematical induction that
+\[
+\sum_{j=0}^{n} 4^{n-j}\binom{n}{j}=5^n\qquad\text{for every integer }n\ge0.
+\]
+State $P(n)$, verify the base case, state the induction hypothesis, show the complete next-case calculation including reindexing, and conclude the proof.
+\end{CompactCoreProblem}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Induction}{I17}{A--C}{\ThreePartScoring}
+\begin{multicols}{2}
+\begin{CompactCoreProblem}{A.5}{Proof setup}
+For $2^n\ge n+1$ for every integer $n\ge0$, state $P(n)$, verify the base case, state the induction hypothesis, and write the first equality and inequality that should begin the $k+1$ step. Do not finish the proof.
+\end{CompactCoreProblem}
+\begin{CompactCoreProblem}{B.2}{Diagnose and repair}
+A recurrence proof uses both $P(k)$ and $P(k-1)$ to prove $P(k+1)$ but verifies only $P(0)$. Explain what is missing. State sufficient base cases and a valid strong induction hypothesis.
+\end{CompactCoreProblem}
+\end{multicols}
+\begin{CompactCoreProblem}{C.2}{Complete inductive proof}
+You may use Pascal's identity
+\[
+\binom{k+1}{j}=\binom{k}{j}+\binom{k}{j-1}
+\quad(1\le j\le k),\qquad
+\binom{n}{0}=\binom{n}{n}=1.
+\]
+Prove by mathematical induction that
+\[
+\sum_{j=0}^{n} 2^{n-j}\binom{n}{j}=3^n\qquad\text{for every integer }n\ge0.
+\]
+State $P(n)$, verify the base case, state the induction hypothesis, show the complete next-case calculation including reindexing, and conclude the proof.
+\end{CompactCoreProblem}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Induction}{I18}{A--C}{\ThreePartScoring}
+\begin{multicols}{2}
+\begin{CompactCoreProblem}{A.4}{Proof setup}
+For the claim that every amount $n\ge18$ can be made using 4-cent and 7-cent stamps, list sufficient base cases, state a strong induction hypothesis through $k$, and explain which earlier amount is used to construct $k+1$. Do not complete the proof.
+\end{CompactCoreProblem}
+\begin{CompactCoreProblem}{B.5}{Diagnose and repair}
+A student proving $7\mid(8^n-1)$ says, “Assume $7\mid(8^{k+1}-1)$; therefore the next case holds.” Identify the error, replace it with the correct induction hypothesis, and show an algebraic decomposition that proves the $k+1$ case.
+\end{CompactCoreProblem}
+\end{multicols}
+\begin{CompactCoreProblem}{C.3}{Complete inductive proof}
+You may use Pascal's identity
+\[
+\binom{k+1}{j}=\binom{k}{j}+\binom{k}{j-1}
+\quad(1\le j\le k),\qquad
+\binom{n}{0}=\binom{n}{n}=1.
+\]
+Prove by mathematical induction that
+\[
+\sum_{j=0}^{n} 3^{n-j}\binom{n}{j}=4^n\qquad\text{for every integer }n\ge0.
+\]
+State $P(n)$, verify the base case, state the induction hypothesis, show the complete next-case calculation including reindexing, and conclude the proof.
+\end{CompactCoreProblem}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Induction}{I19}{A--C}{\ThreePartScoring}
+\begin{multicols}{2}
+\begin{CompactCoreProblem}{A.3}{Proof setup}
+For the claim $7\mid(8^n-1)$ for every integer $n\ge0$, state $P(n)$, the base case, the induction hypothesis using an integer witness, and the divisibility statement required for $k+1$. Do not complete the algebra.
+\end{CompactCoreProblem}
+\begin{CompactCoreProblem}{B.3}{Diagnose and repair}
+In the false proof that all positive integers in any finite list are equal, the step applies the hypothesis to the first $k$ and last $k$ entries and claims the groups overlap. Identify the first $k$ for which overlap is needed and explain precisely why the step fails.
+\end{CompactCoreProblem}
+\end{multicols}
+\begin{CompactCoreProblem}{C.4}{Complete inductive proof}
+You may use Pascal's identity
+\[
+\binom{k+1}{j}=\binom{k}{j}+\binom{k}{j-1}
+\quad(1\le j\le k),\qquad
+\binom{n}{0}=\binom{n}{n}=1.
+\]
+Prove by mathematical induction that
+\[
+\sum_{j=0}^{n} 4^{n-j}\binom{n}{j}=5^n\qquad\text{for every integer }n\ge0.
+\]
+State $P(n)$, verify the base case, state the induction hypothesis, show the complete next-case calculation including reindexing, and conclude the proof.
+\end{CompactCoreProblem}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Induction}{I20}{A--C}{\ThreePartScoring}
+\begin{multicols}{2}
+\begin{CompactCoreProblem}{A.4}{Proof setup}
+For the claim that every amount $n\ge18$ can be made using 4-cent and 7-cent stamps, list sufficient base cases, state a strong induction hypothesis through $k$, and explain which earlier amount is used to construct $k+1$. Do not complete the proof.
+\end{CompactCoreProblem}
+\begin{CompactCoreProblem}{B.5}{Diagnose and repair}
+A student proving $7\mid(8^n-1)$ says, “Assume $7\mid(8^{k+1}-1)$; therefore the next case holds.” Identify the error, replace it with the correct induction hypothesis, and show an algebraic decomposition that proves the $k+1$ case.
+\end{CompactCoreProblem}
+\end{multicols}
+\begin{CompactCoreProblem}{C.4}{Complete inductive proof}
+You may use Pascal's identity
+\[
+\binom{k+1}{j}=\binom{k}{j}+\binom{k}{j-1}
+\quad(1\le j\le k),\qquad
+\binom{n}{0}=\binom{n}{n}=1.
+\]
+Prove by mathematical induction that
+\[
+\sum_{j=0}^{n} 4^{n-j}\binom{n}{j}=5^n\qquad\text{for every integer }n\ge0.
+\]
+State $P(n)$, verify the base case, state the induction hypothesis, show the complete next-case calculation including reindexing, and conclude the proof.
+\end{CompactCoreProblem}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Induction}{I21}{A--C}{\ThreePartScoring}
+\begin{multicols}{2}
+\begin{CompactCoreProblem}{A.5}{Proof setup}
+For $2^n\ge n+1$ for every integer $n\ge0$, state $P(n)$, verify the base case, state the induction hypothesis, and write the first equality and inequality that should begin the $k+1$ step. Do not finish the proof.
+\end{CompactCoreProblem}
+\begin{CompactCoreProblem}{B.5}{Diagnose and repair}
+A student proving $7\mid(8^n-1)$ says, “Assume $7\mid(8^{k+1}-1)$; therefore the next case holds.” Identify the error, replace it with the correct induction hypothesis, and show an algebraic decomposition that proves the $k+1$ case.
+\end{CompactCoreProblem}
+\end{multicols}
+\begin{CompactCoreProblem}{C.2}{Complete inductive proof}
+You may use Pascal's identity
+\[
+\binom{k+1}{j}=\binom{k}{j}+\binom{k}{j-1}
+\quad(1\le j\le k),\qquad
+\binom{n}{0}=\binom{n}{n}=1.
+\]
+Prove by mathematical induction that
+\[
+\sum_{j=0}^{n} 2^{n-j}\binom{n}{j}=3^n\qquad\text{for every integer }n\ge0.
+\]
+State $P(n)$, verify the base case, state the induction hypothesis, show the complete next-case calculation including reindexing, and conclude the proof.
+\end{CompactCoreProblem}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Induction}{I22}{A--C}{\ThreePartScoring}
+\begin{multicols}{2}
+\begin{CompactCoreProblem}{A.3}{Proof setup}
+For the claim $7\mid(8^n-1)$ for every integer $n\ge0$, state $P(n)$, the base case, the induction hypothesis using an integer witness, and the divisibility statement required for $k+1$. Do not complete the algebra.
+\end{CompactCoreProblem}
+\begin{CompactCoreProblem}{B.5}{Diagnose and repair}
+A student proving $7\mid(8^n-1)$ says, “Assume $7\mid(8^{k+1}-1)$; therefore the next case holds.” Identify the error, replace it with the correct induction hypothesis, and show an algebraic decomposition that proves the $k+1$ case.
+\end{CompactCoreProblem}
+\end{multicols}
+\begin{CompactCoreProblem}{C.1}{Complete inductive proof}
+You may use Pascal's identity
+\[
+\binom{k+1}{j}=\binom{k}{j}+\binom{k}{j-1}
+\quad(1\le j\le k),\qquad
+\binom{n}{0}=\binom{n}{n}=1.
+\]
+Prove by mathematical induction that
+\[
+\sum_{j=0}^{n}\binom{n}{j}=2^n\qquad\text{for every integer }n\ge0.
+\]
+State $P(n)$, verify the base case, state the induction hypothesis, show the complete next-case calculation including reindexing, and conclude the proof.
+\end{CompactCoreProblem}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Induction}{I23}{A--C}{\ThreePartScoring}
+\begin{multicols}{2}
+\begin{CompactCoreProblem}{A.4}{Proof setup}
+For the claim that every amount $n\ge18$ can be made using 4-cent and 7-cent stamps, list sufficient base cases, state a strong induction hypothesis through $k$, and explain which earlier amount is used to construct $k+1$. Do not complete the proof.
+\end{CompactCoreProblem}
+\begin{CompactCoreProblem}{B.5}{Diagnose and repair}
+A student proving $7\mid(8^n-1)$ says, “Assume $7\mid(8^{k+1}-1)$; therefore the next case holds.” Identify the error, replace it with the correct induction hypothesis, and show an algebraic decomposition that proves the $k+1$ case.
+\end{CompactCoreProblem}
+\end{multicols}
+\begin{CompactCoreProblem}{C.2}{Complete inductive proof}
+You may use Pascal's identity
+\[
+\binom{k+1}{j}=\binom{k}{j}+\binom{k}{j-1}
+\quad(1\le j\le k),\qquad
+\binom{n}{0}=\binom{n}{n}=1.
+\]
+Prove by mathematical induction that
+\[
+\sum_{j=0}^{n} 2^{n-j}\binom{n}{j}=3^n\qquad\text{for every integer }n\ge0.
+\]
+State $P(n)$, verify the base case, state the induction hypothesis, show the complete next-case calculation including reindexing, and conclude the proof.
+\end{CompactCoreProblem}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Induction}{I24}{A--C}{\ThreePartScoring}
+\begin{multicols}{2}
+\begin{CompactCoreProblem}{A.5}{Proof setup}
+For $2^n\ge n+1$ for every integer $n\ge0$, state $P(n)$, verify the base case, state the induction hypothesis, and write the first equality and inequality that should begin the $k+1$ step. Do not finish the proof.
+\end{CompactCoreProblem}
+\begin{CompactCoreProblem}{B.5}{Diagnose and repair}
+A student proving $7\mid(8^n-1)$ says, “Assume $7\mid(8^{k+1}-1)$; therefore the next case holds.” Identify the error, replace it with the correct induction hypothesis, and show an algebraic decomposition that proves the $k+1$ case.
+\end{CompactCoreProblem}
+\end{multicols}
+\begin{CompactCoreProblem}{C.3}{Complete inductive proof}
+You may use Pascal's identity
+\[
+\binom{k+1}{j}=\binom{k}{j}+\binom{k}{j-1}
+\quad(1\le j\le k),\qquad
+\binom{n}{0}=\binom{n}{n}=1.
+\]
+Prove by mathematical induction that
+\[
+\sum_{j=0}^{n} 3^{n-j}\binom{n}{j}=4^n\qquad\text{for every integer }n\ge0.
+\]
+State $P(n)$, verify the base case, state the induction hypothesis, show the complete next-case calculation including reindexing, and conclude the proof.
+\end{CompactCoreProblem}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Induction}{I25}{A--C}{\ThreePartScoring}
+\begin{multicols}{2}
+\begin{CompactCoreProblem}{A.4}{Proof setup}
+For the claim that every amount $n\ge18$ can be made using 4-cent and 7-cent stamps, list sufficient base cases, state a strong induction hypothesis through $k$, and explain which earlier amount is used to construct $k+1$. Do not complete the proof.
+\end{CompactCoreProblem}
+\begin{CompactCoreProblem}{B.4}{Diagnose and repair}
+A student proving $1+3+\cdots+(2n-1)=n^2$ writes $k^2+(2k-1)=(k+1)^2$. Identify the incorrect next term, repair the calculation, and state where the induction hypothesis is used.
+\end{CompactCoreProblem}
+\end{multicols}
+\begin{CompactCoreProblem}{C.5}{Complete inductive proof}
+You may use Pascal's identity
+\[
+\binom{k+1}{j}=\binom{k}{j}+\binom{k}{j-1}
+\quad(1\le j\le k),\qquad
+\binom{n}{0}=\binom{n}{n}=1.
+\]
+Prove by mathematical induction that
+\[
+\sum_{j=0}^{n} 5^{n-j}\binom{n}{j}=6^n\qquad\text{for every integer }n\ge0.
+\]
+State $P(n)$, verify the base case, state the induction hypothesis, show the complete next-case calculation including reindexing, and conclude the proof.
+\end{CompactCoreProblem}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Induction}{I26}{A--C}{\ThreePartScoring}
+\begin{multicols}{2}
+\begin{CompactCoreProblem}{A.5}{Proof setup}
+For $2^n\ge n+1$ for every integer $n\ge0$, state $P(n)$, verify the base case, state the induction hypothesis, and write the first equality and inequality that should begin the $k+1$ step. Do not finish the proof.
+\end{CompactCoreProblem}
+\begin{CompactCoreProblem}{B.3}{Diagnose and repair}
+In the false proof that all positive integers in any finite list are equal, the step applies the hypothesis to the first $k$ and last $k$ entries and claims the groups overlap. Identify the first $k$ for which overlap is needed and explain precisely why the step fails.
+\end{CompactCoreProblem}
+\end{multicols}
+\begin{CompactCoreProblem}{C.5}{Complete inductive proof}
+You may use Pascal's identity
+\[
+\binom{k+1}{j}=\binom{k}{j}+\binom{k}{j-1}
+\quad(1\le j\le k),\qquad
+\binom{n}{0}=\binom{n}{n}=1.
+\]
+Prove by mathematical induction that
+\[
+\sum_{j=0}^{n} 5^{n-j}\binom{n}{j}=6^n\qquad\text{for every integer }n\ge0.
+\]
+State $P(n)$, verify the base case, state the induction hypothesis, show the complete next-case calculation including reindexing, and conclude the proof.
+\end{CompactCoreProblem}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Induction}{I27}{A--C}{\ThreePartScoring}
+\begin{multicols}{2}
+\begin{CompactCoreProblem}{A.1}{Proof setup}
+For the claim that every integer $n\ge2$ is a product of one or more primes, state (i) the base case, (ii) the strong induction hypothesis for an arbitrary $k\ge2$, (iii) what must be proved for $k+1$, and (iv) the two cases used in the induction step. Do not complete the proof.
+\end{CompactCoreProblem}
+\begin{CompactCoreProblem}{B.1}{Diagnose and repair}
+A student tries to prove $2^n\ge n+1$ for $n\ge0$ by assuming $2^{k+1}\ge k+2$ in the induction step. Identify the circularity, state the correct induction hypothesis, and give a valid chain of inequalities for the next case.
+\end{CompactCoreProblem}
+\end{multicols}
+\begin{CompactCoreProblem}{C.1}{Complete inductive proof}
+You may use Pascal's identity
+\[
+\binom{k+1}{j}=\binom{k}{j}+\binom{k}{j-1}
+\quad(1\le j\le k),\qquad
+\binom{n}{0}=\binom{n}{n}=1.
+\]
+Prove by mathematical induction that
+\[
+\sum_{j=0}^{n}\binom{n}{j}=2^n\qquad\text{for every integer }n\ge0.
+\]
+State $P(n)$, verify the base case, state the induction hypothesis, show the complete next-case calculation including reindexing, and conclude the proof.
+\end{CompactCoreProblem}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Induction}{I28}{A--C}{\ThreePartScoring}
+\begin{multicols}{2}
+\begin{CompactCoreProblem}{A.3}{Proof setup}
+For the claim $7\mid(8^n-1)$ for every integer $n\ge0$, state $P(n)$, the base case, the induction hypothesis using an integer witness, and the divisibility statement required for $k+1$. Do not complete the algebra.
+\end{CompactCoreProblem}
+\begin{CompactCoreProblem}{B.3}{Diagnose and repair}
+In the false proof that all positive integers in any finite list are equal, the step applies the hypothesis to the first $k$ and last $k$ entries and claims the groups overlap. Identify the first $k$ for which overlap is needed and explain precisely why the step fails.
+\end{CompactCoreProblem}
+\end{multicols}
+\begin{CompactCoreProblem}{C.5}{Complete inductive proof}
+You may use Pascal's identity
+\[
+\binom{k+1}{j}=\binom{k}{j}+\binom{k}{j-1}
+\quad(1\le j\le k),\qquad
+\binom{n}{0}=\binom{n}{n}=1.
+\]
+Prove by mathematical induction that
+\[
+\sum_{j=0}^{n} 5^{n-j}\binom{n}{j}=6^n\qquad\text{for every integer }n\ge0.
+\]
+State $P(n)$, verify the base case, state the induction hypothesis, show the complete next-case calculation including reindexing, and conclude the proof.
+\end{CompactCoreProblem}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Induction}{I29}{A--C}{\ThreePartScoring}
+\begin{multicols}{2}
+\begin{CompactCoreProblem}{A.2}{Proof setup}
+For $1+2+\cdots+n=n(n+1)/2$ for every $n\ge1$, state $P(n)$, verify the base case, state the induction hypothesis $P(k)$, and state exactly what must be shown for $P(k+1)$. Do not complete the next-case algebra.
+\end{CompactCoreProblem}
+\begin{CompactCoreProblem}{B.3}{Diagnose and repair}
+In the false proof that all positive integers in any finite list are equal, the step applies the hypothesis to the first $k$ and last $k$ entries and claims the groups overlap. Identify the first $k$ for which overlap is needed and explain precisely why the step fails.
+\end{CompactCoreProblem}
+\end{multicols}
+\begin{CompactCoreProblem}{C.3}{Complete inductive proof}
+You may use Pascal's identity
+\[
+\binom{k+1}{j}=\binom{k}{j}+\binom{k}{j-1}
+\quad(1\le j\le k),\qquad
+\binom{n}{0}=\binom{n}{n}=1.
+\]
+Prove by mathematical induction that
+\[
+\sum_{j=0}^{n} 3^{n-j}\binom{n}{j}=4^n\qquad\text{for every integer }n\ge0.
+\]
+State $P(n)$, verify the base case, state the induction hypothesis, show the complete next-case calculation including reindexing, and conclude the proof.
+\end{CompactCoreProblem}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Induction}{I30}{A--C}{\ThreePartScoring}
+\begin{multicols}{2}
+\begin{CompactCoreProblem}{A.1}{Proof setup}
+For the claim that every integer $n\ge2$ is a product of one or more primes, state (i) the base case, (ii) the strong induction hypothesis for an arbitrary $k\ge2$, (iii) what must be proved for $k+1$, and (iv) the two cases used in the induction step. Do not complete the proof.
+\end{CompactCoreProblem}
+\begin{CompactCoreProblem}{B.4}{Diagnose and repair}
+A student proving $1+3+\cdots+(2n-1)=n^2$ writes $k^2+(2k-1)=(k+1)^2$. Identify the incorrect next term, repair the calculation, and state where the induction hypothesis is used.
+\end{CompactCoreProblem}
+\end{multicols}
+\begin{CompactCoreProblem}{C.5}{Complete inductive proof}
+You may use Pascal's identity
+\[
+\binom{k+1}{j}=\binom{k}{j}+\binom{k}{j-1}
+\quad(1\le j\le k),\qquad
+\binom{n}{0}=\binom{n}{n}=1.
+\]
+Prove by mathematical induction that
+\[
+\sum_{j=0}^{n} 5^{n-j}\binom{n}{j}=6^n\qquad\text{for every integer }n\ge0.
+\]
+State $P(n)$, verify the base case, state the induction hypothesis, show the complete next-case calculation including reindexing, and conclude the proof.
+\end{CompactCoreProblem}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Induction}{I31}{A--C}{\ThreePartScoring}
+\begin{multicols}{2}
+\begin{CompactCoreProblem}{A.4}{Proof setup}
+For the claim that every amount $n\ge18$ can be made using 4-cent and 7-cent stamps, list sufficient base cases, state a strong induction hypothesis through $k$, and explain which earlier amount is used to construct $k+1$. Do not complete the proof.
+\end{CompactCoreProblem}
+\begin{CompactCoreProblem}{B.2}{Diagnose and repair}
+A recurrence proof uses both $P(k)$ and $P(k-1)$ to prove $P(k+1)$ but verifies only $P(0)$. Explain what is missing. State sufficient base cases and a valid strong induction hypothesis.
+\end{CompactCoreProblem}
+\end{multicols}
+\begin{CompactCoreProblem}{C.3}{Complete inductive proof}
+You may use Pascal's identity
+\[
+\binom{k+1}{j}=\binom{k}{j}+\binom{k}{j-1}
+\quad(1\le j\le k),\qquad
+\binom{n}{0}=\binom{n}{n}=1.
+\]
+Prove by mathematical induction that
+\[
+\sum_{j=0}^{n} 3^{n-j}\binom{n}{j}=4^n\qquad\text{for every integer }n\ge0.
+\]
+State $P(n)$, verify the base case, state the induction hypothesis, show the complete next-case calculation including reindexing, and conclude the proof.
+\end{CompactCoreProblem}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Induction}{I32}{A--C}{\ThreePartScoring}
+\begin{multicols}{2}
+\begin{CompactCoreProblem}{A.2}{Proof setup}
+For $1+2+\cdots+n=n(n+1)/2$ for every $n\ge1$, state $P(n)$, verify the base case, state the induction hypothesis $P(k)$, and state exactly what must be shown for $P(k+1)$. Do not complete the next-case algebra.
+\end{CompactCoreProblem}
+\begin{CompactCoreProblem}{B.4}{Diagnose and repair}
+A student proving $1+3+\cdots+(2n-1)=n^2$ writes $k^2+(2k-1)=(k+1)^2$. Identify the incorrect next term, repair the calculation, and state where the induction hypothesis is used.
+\end{CompactCoreProblem}
+\end{multicols}
+\begin{CompactCoreProblem}{C.3}{Complete inductive proof}
+You may use Pascal's identity
+\[
+\binom{k+1}{j}=\binom{k}{j}+\binom{k}{j-1}
+\quad(1\le j\le k),\qquad
+\binom{n}{0}=\binom{n}{n}=1.
+\]
+Prove by mathematical induction that
+\[
+\sum_{j=0}^{n} 3^{n-j}\binom{n}{j}=4^n\qquad\text{for every integer }n\ge0.
+\]
+State $P(n)$, verify the base case, state the induction hypothesis, show the complete next-case calculation including reindexing, and conclude the proof.
+\end{CompactCoreProblem}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Induction}{I33}{A--C}{\ThreePartScoring}
+\begin{multicols}{2}
+\begin{CompactCoreProblem}{A.5}{Proof setup}
+For $2^n\ge n+1$ for every integer $n\ge0$, state $P(n)$, verify the base case, state the induction hypothesis, and write the first equality and inequality that should begin the $k+1$ step. Do not finish the proof.
+\end{CompactCoreProblem}
+\begin{CompactCoreProblem}{B.5}{Diagnose and repair}
+A student proving $7\mid(8^n-1)$ says, “Assume $7\mid(8^{k+1}-1)$; therefore the next case holds.” Identify the error, replace it with the correct induction hypothesis, and show an algebraic decomposition that proves the $k+1$ case.
+\end{CompactCoreProblem}
+\end{multicols}
+\begin{CompactCoreProblem}{C.1}{Complete inductive proof}
+You may use Pascal's identity
+\[
+\binom{k+1}{j}=\binom{k}{j}+\binom{k}{j-1}
+\quad(1\le j\le k),\qquad
+\binom{n}{0}=\binom{n}{n}=1.
+\]
+Prove by mathematical induction that
+\[
+\sum_{j=0}^{n}\binom{n}{j}=2^n\qquad\text{for every integer }n\ge0.
+\]
+State $P(n)$, verify the base case, state the induction hypothesis, show the complete next-case calculation including reindexing, and conclude the proof.
+\end{CompactCoreProblem}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Induction}{I34}{A--C}{\ThreePartScoring}
+\begin{multicols}{2}
+\begin{CompactCoreProblem}{A.3}{Proof setup}
+For the claim $7\mid(8^n-1)$ for every integer $n\ge0$, state $P(n)$, the base case, the induction hypothesis using an integer witness, and the divisibility statement required for $k+1$. Do not complete the algebra.
+\end{CompactCoreProblem}
+\begin{CompactCoreProblem}{B.5}{Diagnose and repair}
+A student proving $7\mid(8^n-1)$ says, “Assume $7\mid(8^{k+1}-1)$; therefore the next case holds.” Identify the error, replace it with the correct induction hypothesis, and show an algebraic decomposition that proves the $k+1$ case.
+\end{CompactCoreProblem}
+\end{multicols}
+\begin{CompactCoreProblem}{C.2}{Complete inductive proof}
+You may use Pascal's identity
+\[
+\binom{k+1}{j}=\binom{k}{j}+\binom{k}{j-1}
+\quad(1\le j\le k),\qquad
+\binom{n}{0}=\binom{n}{n}=1.
+\]
+Prove by mathematical induction that
+\[
+\sum_{j=0}^{n} 2^{n-j}\binom{n}{j}=3^n\qquad\text{for every integer }n\ge0.
+\]
+State $P(n)$, verify the base case, state the induction hypothesis, show the complete next-case calculation including reindexing, and conclude the proof.
+\end{CompactCoreProblem}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Induction}{I35}{A--C}{\ThreePartScoring}
+\begin{multicols}{2}
+\begin{CompactCoreProblem}{A.1}{Proof setup}
+For the claim that every integer $n\ge2$ is a product of one or more primes, state (i) the base case, (ii) the strong induction hypothesis for an arbitrary $k\ge2$, (iii) what must be proved for $k+1$, and (iv) the two cases used in the induction step. Do not complete the proof.
+\end{CompactCoreProblem}
+\begin{CompactCoreProblem}{B.3}{Diagnose and repair}
+In the false proof that all positive integers in any finite list are equal, the step applies the hypothesis to the first $k$ and last $k$ entries and claims the groups overlap. Identify the first $k$ for which overlap is needed and explain precisely why the step fails.
+\end{CompactCoreProblem}
+\end{multicols}
+\begin{CompactCoreProblem}{C.4}{Complete inductive proof}
+You may use Pascal's identity
+\[
+\binom{k+1}{j}=\binom{k}{j}+\binom{k}{j-1}
+\quad(1\le j\le k),\qquad
+\binom{n}{0}=\binom{n}{n}=1.
+\]
+Prove by mathematical induction that
+\[
+\sum_{j=0}^{n} 4^{n-j}\binom{n}{j}=5^n\qquad\text{for every integer }n\ge0.
+\]
+State $P(n)$, verify the base case, state the induction hypothesis, show the complete next-case calculation including reindexing, and conclude the proof.
+\end{CompactCoreProblem}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Induction}{I36}{A--C}{\ThreePartScoring}
+\begin{multicols}{2}
+\begin{CompactCoreProblem}{A.5}{Proof setup}
+For $2^n\ge n+1$ for every integer $n\ge0$, state $P(n)$, verify the base case, state the induction hypothesis, and write the first equality and inequality that should begin the $k+1$ step. Do not finish the proof.
+\end{CompactCoreProblem}
+\begin{CompactCoreProblem}{B.1}{Diagnose and repair}
+A student tries to prove $2^n\ge n+1$ for $n\ge0$ by assuming $2^{k+1}\ge k+2$ in the induction step. Identify the circularity, state the correct induction hypothesis, and give a valid chain of inequalities for the next case.
+\end{CompactCoreProblem}
+\end{multicols}
+\begin{CompactCoreProblem}{C.2}{Complete inductive proof}
+You may use Pascal's identity
+\[
+\binom{k+1}{j}=\binom{k}{j}+\binom{k}{j-1}
+\quad(1\le j\le k),\qquad
+\binom{n}{0}=\binom{n}{n}=1.
+\]
+Prove by mathematical induction that
+\[
+\sum_{j=0}^{n} 2^{n-j}\binom{n}{j}=3^n\qquad\text{for every integer }n\ge0.
+\]
+State $P(n)$, verify the base case, state the induction hypothesis, show the complete next-case calculation including reindexing, and conclude the proof.
+\end{CompactCoreProblem}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Induction}{I37}{A--C}{\ThreePartScoring}
+\begin{multicols}{2}
+\begin{CompactCoreProblem}{A.1}{Proof setup}
+For the claim that every integer $n\ge2$ is a product of one or more primes, state (i) the base case, (ii) the strong induction hypothesis for an arbitrary $k\ge2$, (iii) what must be proved for $k+1$, and (iv) the two cases used in the induction step. Do not complete the proof.
+\end{CompactCoreProblem}
+\begin{CompactCoreProblem}{B.2}{Diagnose and repair}
+A recurrence proof uses both $P(k)$ and $P(k-1)$ to prove $P(k+1)$ but verifies only $P(0)$. Explain what is missing. State sufficient base cases and a valid strong induction hypothesis.
+\end{CompactCoreProblem}
+\end{multicols}
+\begin{CompactCoreProblem}{C.2}{Complete inductive proof}
+You may use Pascal's identity
+\[
+\binom{k+1}{j}=\binom{k}{j}+\binom{k}{j-1}
+\quad(1\le j\le k),\qquad
+\binom{n}{0}=\binom{n}{n}=1.
+\]
+Prove by mathematical induction that
+\[
+\sum_{j=0}^{n} 2^{n-j}\binom{n}{j}=3^n\qquad\text{for every integer }n\ge0.
+\]
+State $P(n)$, verify the base case, state the induction hypothesis, show the complete next-case calculation including reindexing, and conclude the proof.
+\end{CompactCoreProblem}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Induction}{I38}{A--C}{\ThreePartScoring}
+\begin{multicols}{2}
+\begin{CompactCoreProblem}{A.2}{Proof setup}
+For $1+2+\cdots+n=n(n+1)/2$ for every $n\ge1$, state $P(n)$, verify the base case, state the induction hypothesis $P(k)$, and state exactly what must be shown for $P(k+1)$. Do not complete the next-case algebra.
+\end{CompactCoreProblem}
+\begin{CompactCoreProblem}{B.3}{Diagnose and repair}
+In the false proof that all positive integers in any finite list are equal, the step applies the hypothesis to the first $k$ and last $k$ entries and claims the groups overlap. Identify the first $k$ for which overlap is needed and explain precisely why the step fails.
+\end{CompactCoreProblem}
+\end{multicols}
+\begin{CompactCoreProblem}{C.4}{Complete inductive proof}
+You may use Pascal's identity
+\[
+\binom{k+1}{j}=\binom{k}{j}+\binom{k}{j-1}
+\quad(1\le j\le k),\qquad
+\binom{n}{0}=\binom{n}{n}=1.
+\]
+Prove by mathematical induction that
+\[
+\sum_{j=0}^{n} 4^{n-j}\binom{n}{j}=5^n\qquad\text{for every integer }n\ge0.
+\]
+State $P(n)$, verify the base case, state the induction hypothesis, show the complete next-case calculation including reindexing, and conclude the proof.
+\end{CompactCoreProblem}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Induction}{I39}{A--C}{\ThreePartScoring}
+\begin{multicols}{2}
+\begin{CompactCoreProblem}{A.2}{Proof setup}
+For $1+2+\cdots+n=n(n+1)/2$ for every $n\ge1$, state $P(n)$, verify the base case, state the induction hypothesis $P(k)$, and state exactly what must be shown for $P(k+1)$. Do not complete the next-case algebra.
+\end{CompactCoreProblem}
+\begin{CompactCoreProblem}{B.5}{Diagnose and repair}
+A student proving $7\mid(8^n-1)$ says, “Assume $7\mid(8^{k+1}-1)$; therefore the next case holds.” Identify the error, replace it with the correct induction hypothesis, and show an algebraic decomposition that proves the $k+1$ case.
+\end{CompactCoreProblem}
+\end{multicols}
+\begin{CompactCoreProblem}{C.5}{Complete inductive proof}
+You may use Pascal's identity
+\[
+\binom{k+1}{j}=\binom{k}{j}+\binom{k}{j-1}
+\quad(1\le j\le k),\qquad
+\binom{n}{0}=\binom{n}{n}=1.
+\]
+Prove by mathematical induction that
+\[
+\sum_{j=0}^{n} 5^{n-j}\binom{n}{j}=6^n\qquad\text{for every integer }n\ge0.
+\]
+State $P(n)$, verify the base case, state the induction hypothesis, show the complete next-case calculation including reindexing, and conclude the proof.
+\end{CompactCoreProblem}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Induction}{I40}{A--C}{\ThreePartScoring}
+\begin{multicols}{2}
+\begin{CompactCoreProblem}{A.2}{Proof setup}
+For $1+2+\cdots+n=n(n+1)/2$ for every $n\ge1$, state $P(n)$, verify the base case, state the induction hypothesis $P(k)$, and state exactly what must be shown for $P(k+1)$. Do not complete the next-case algebra.
+\end{CompactCoreProblem}
+\begin{CompactCoreProblem}{B.2}{Diagnose and repair}
+A recurrence proof uses both $P(k)$ and $P(k-1)$ to prove $P(k+1)$ but verifies only $P(0)$. Explain what is missing. State sufficient base cases and a valid strong induction hypothesis.
+\end{CompactCoreProblem}
+\end{multicols}
+\begin{CompactCoreProblem}{C.2}{Complete inductive proof}
+You may use Pascal's identity
+\[
+\binom{k+1}{j}=\binom{k}{j}+\binom{k}{j-1}
+\quad(1\le j\le k),\qquad
+\binom{n}{0}=\binom{n}{n}=1.
+\]
+Prove by mathematical induction that
+\[
+\sum_{j=0}^{n} 2^{n-j}\binom{n}{j}=3^n\qquad\text{for every integer }n\ge0.
+\]
+State $P(n)$, verify the base case, state the induction hypothesis, show the complete next-case calculation including reindexing, and conclude the proof.
+\end{CompactCoreProblem}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Induction}{I41}{A--C}{\ThreePartScoring}
+\begin{multicols}{2}
+\begin{CompactCoreProblem}{A.3}{Proof setup}
+For the claim $7\mid(8^n-1)$ for every integer $n\ge0$, state $P(n)$, the base case, the induction hypothesis using an integer witness, and the divisibility statement required for $k+1$. Do not complete the algebra.
+\end{CompactCoreProblem}
+\begin{CompactCoreProblem}{B.1}{Diagnose and repair}
+A student tries to prove $2^n\ge n+1$ for $n\ge0$ by assuming $2^{k+1}\ge k+2$ in the induction step. Identify the circularity, state the correct induction hypothesis, and give a valid chain of inequalities for the next case.
+\end{CompactCoreProblem}
+\end{multicols}
+\begin{CompactCoreProblem}{C.4}{Complete inductive proof}
+You may use Pascal's identity
+\[
+\binom{k+1}{j}=\binom{k}{j}+\binom{k}{j-1}
+\quad(1\le j\le k),\qquad
+\binom{n}{0}=\binom{n}{n}=1.
+\]
+Prove by mathematical induction that
+\[
+\sum_{j=0}^{n} 4^{n-j}\binom{n}{j}=5^n\qquad\text{for every integer }n\ge0.
+\]
+State $P(n)$, verify the base case, state the induction hypothesis, show the complete next-case calculation including reindexing, and conclude the proof.
+\end{CompactCoreProblem}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Induction}{I42}{A--C}{\ThreePartScoring}
+\begin{multicols}{2}
+\begin{CompactCoreProblem}{A.3}{Proof setup}
+For the claim $7\mid(8^n-1)$ for every integer $n\ge0$, state $P(n)$, the base case, the induction hypothesis using an integer witness, and the divisibility statement required for $k+1$. Do not complete the algebra.
+\end{CompactCoreProblem}
+\begin{CompactCoreProblem}{B.1}{Diagnose and repair}
+A student tries to prove $2^n\ge n+1$ for $n\ge0$ by assuming $2^{k+1}\ge k+2$ in the induction step. Identify the circularity, state the correct induction hypothesis, and give a valid chain of inequalities for the next case.
+\end{CompactCoreProblem}
+\end{multicols}
+\begin{CompactCoreProblem}{C.1}{Complete inductive proof}
+You may use Pascal's identity
+\[
+\binom{k+1}{j}=\binom{k}{j}+\binom{k}{j-1}
+\quad(1\le j\le k),\qquad
+\binom{n}{0}=\binom{n}{n}=1.
+\]
+Prove by mathematical induction that
+\[
+\sum_{j=0}^{n}\binom{n}{j}=2^n\qquad\text{for every integer }n\ge0.
+\]
+State $P(n)$, verify the base case, state the induction hypothesis, show the complete next-case calculation including reindexing, and conclude the proof.
+\end{CompactCoreProblem}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Induction}{I43}{A--C}{\ThreePartScoring}
+\begin{multicols}{2}
+\begin{CompactCoreProblem}{A.4}{Proof setup}
+For the claim that every amount $n\ge18$ can be made using 4-cent and 7-cent stamps, list sufficient base cases, state a strong induction hypothesis through $k$, and explain which earlier amount is used to construct $k+1$. Do not complete the proof.
+\end{CompactCoreProblem}
+\begin{CompactCoreProblem}{B.4}{Diagnose and repair}
+A student proving $1+3+\cdots+(2n-1)=n^2$ writes $k^2+(2k-1)=(k+1)^2$. Identify the incorrect next term, repair the calculation, and state where the induction hypothesis is used.
+\end{CompactCoreProblem}
+\end{multicols}
+\begin{CompactCoreProblem}{C.2}{Complete inductive proof}
+You may use Pascal's identity
+\[
+\binom{k+1}{j}=\binom{k}{j}+\binom{k}{j-1}
+\quad(1\le j\le k),\qquad
+\binom{n}{0}=\binom{n}{n}=1.
+\]
+Prove by mathematical induction that
+\[
+\sum_{j=0}^{n} 2^{n-j}\binom{n}{j}=3^n\qquad\text{for every integer }n\ge0.
+\]
+State $P(n)$, verify the base case, state the induction hypothesis, show the complete next-case calculation including reindexing, and conclude the proof.
+\end{CompactCoreProblem}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Induction}{I44}{A--C}{\ThreePartScoring}
+\begin{multicols}{2}
+\begin{CompactCoreProblem}{A.1}{Proof setup}
+For the claim that every integer $n\ge2$ is a product of one or more primes, state (i) the base case, (ii) the strong induction hypothesis for an arbitrary $k\ge2$, (iii) what must be proved for $k+1$, and (iv) the two cases used in the induction step. Do not complete the proof.
+\end{CompactCoreProblem}
+\begin{CompactCoreProblem}{B.4}{Diagnose and repair}
+A student proving $1+3+\cdots+(2n-1)=n^2$ writes $k^2+(2k-1)=(k+1)^2$. Identify the incorrect next term, repair the calculation, and state where the induction hypothesis is used.
+\end{CompactCoreProblem}
+\end{multicols}
+\begin{CompactCoreProblem}{C.2}{Complete inductive proof}
+You may use Pascal's identity
+\[
+\binom{k+1}{j}=\binom{k}{j}+\binom{k}{j-1}
+\quad(1\le j\le k),\qquad
+\binom{n}{0}=\binom{n}{n}=1.
+\]
+Prove by mathematical induction that
+\[
+\sum_{j=0}^{n} 2^{n-j}\binom{n}{j}=3^n\qquad\text{for every integer }n\ge0.
+\]
+State $P(n)$, verify the base case, state the induction hypothesis, show the complete next-case calculation including reindexing, and conclude the proof.
+\end{CompactCoreProblem}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Induction}{I45}{A--C}{\ThreePartScoring}
+\begin{multicols}{2}
+\begin{CompactCoreProblem}{A.1}{Proof setup}
+For the claim that every integer $n\ge2$ is a product of one or more primes, state (i) the base case, (ii) the strong induction hypothesis for an arbitrary $k\ge2$, (iii) what must be proved for $k+1$, and (iv) the two cases used in the induction step. Do not complete the proof.
+\end{CompactCoreProblem}
+\begin{CompactCoreProblem}{B.4}{Diagnose and repair}
+A student proving $1+3+\cdots+(2n-1)=n^2$ writes $k^2+(2k-1)=(k+1)^2$. Identify the incorrect next term, repair the calculation, and state where the induction hypothesis is used.
+\end{CompactCoreProblem}
+\end{multicols}
+\begin{CompactCoreProblem}{C.3}{Complete inductive proof}
+You may use Pascal's identity
+\[
+\binom{k+1}{j}=\binom{k}{j}+\binom{k}{j-1}
+\quad(1\le j\le k),\qquad
+\binom{n}{0}=\binom{n}{n}=1.
+\]
+Prove by mathematical induction that
+\[
+\sum_{j=0}^{n} 3^{n-j}\binom{n}{j}=4^n\qquad\text{for every integer }n\ge0.
+\]
+State $P(n)$, verify the base case, state the induction hypothesis, show the complete next-case calculation including reindexing, and conclude the proof.
+\end{CompactCoreProblem}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Induction}{I46}{A--C}{\ThreePartScoring}
+\begin{multicols}{2}
+\begin{CompactCoreProblem}{A.1}{Proof setup}
+For the claim that every integer $n\ge2$ is a product of one or more primes, state (i) the base case, (ii) the strong induction hypothesis for an arbitrary $k\ge2$, (iii) what must be proved for $k+1$, and (iv) the two cases used in the induction step. Do not complete the proof.
+\end{CompactCoreProblem}
+\begin{CompactCoreProblem}{B.2}{Diagnose and repair}
+A recurrence proof uses both $P(k)$ and $P(k-1)$ to prove $P(k+1)$ but verifies only $P(0)$. Explain what is missing. State sufficient base cases and a valid strong induction hypothesis.
+\end{CompactCoreProblem}
+\end{multicols}
+\begin{CompactCoreProblem}{C.1}{Complete inductive proof}
+You may use Pascal's identity
+\[
+\binom{k+1}{j}=\binom{k}{j}+\binom{k}{j-1}
+\quad(1\le j\le k),\qquad
+\binom{n}{0}=\binom{n}{n}=1.
+\]
+Prove by mathematical induction that
+\[
+\sum_{j=0}^{n}\binom{n}{j}=2^n\qquad\text{for every integer }n\ge0.
+\]
+State $P(n)$, verify the base case, state the induction hypothesis, show the complete next-case calculation including reindexing, and conclude the proof.
+\end{CompactCoreProblem}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Induction}{I47}{A--C}{\ThreePartScoring}
+\begin{multicols}{2}
+\begin{CompactCoreProblem}{A.2}{Proof setup}
+For $1+2+\cdots+n=n(n+1)/2$ for every $n\ge1$, state $P(n)$, verify the base case, state the induction hypothesis $P(k)$, and state exactly what must be shown for $P(k+1)$. Do not complete the next-case algebra.
+\end{CompactCoreProblem}
+\begin{CompactCoreProblem}{B.5}{Diagnose and repair}
+A student proving $7\mid(8^n-1)$ says, “Assume $7\mid(8^{k+1}-1)$; therefore the next case holds.” Identify the error, replace it with the correct induction hypothesis, and show an algebraic decomposition that proves the $k+1$ case.
+\end{CompactCoreProblem}
+\end{multicols}
+\begin{CompactCoreProblem}{C.3}{Complete inductive proof}
+You may use Pascal's identity
+\[
+\binom{k+1}{j}=\binom{k}{j}+\binom{k}{j-1}
+\quad(1\le j\le k),\qquad
+\binom{n}{0}=\binom{n}{n}=1.
+\]
+Prove by mathematical induction that
+\[
+\sum_{j=0}^{n} 3^{n-j}\binom{n}{j}=4^n\qquad\text{for every integer }n\ge0.
+\]
+State $P(n)$, verify the base case, state the induction hypothesis, show the complete next-case calculation including reindexing, and conclude the proof.
+\end{CompactCoreProblem}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Induction}{I48}{A--C}{\ThreePartScoring}
+\begin{multicols}{2}
+\begin{CompactCoreProblem}{A.4}{Proof setup}
+For the claim that every amount $n\ge18$ can be made using 4-cent and 7-cent stamps, list sufficient base cases, state a strong induction hypothesis through $k$, and explain which earlier amount is used to construct $k+1$. Do not complete the proof.
+\end{CompactCoreProblem}
+\begin{CompactCoreProblem}{B.1}{Diagnose and repair}
+A student tries to prove $2^n\ge n+1$ for $n\ge0$ by assuming $2^{k+1}\ge k+2$ in the induction step. Identify the circularity, state the correct induction hypothesis, and give a valid chain of inequalities for the next case.
+\end{CompactCoreProblem}
+\end{multicols}
+\begin{CompactCoreProblem}{C.1}{Complete inductive proof}
+You may use Pascal's identity
+\[
+\binom{k+1}{j}=\binom{k}{j}+\binom{k}{j-1}
+\quad(1\le j\le k),\qquad
+\binom{n}{0}=\binom{n}{n}=1.
+\]
+Prove by mathematical induction that
+\[
+\sum_{j=0}^{n}\binom{n}{j}=2^n\qquad\text{for every integer }n\ge0.
+\]
+State $P(n)$, verify the base case, state the induction hypothesis, show the complete next-case calculation including reindexing, and conclude the proof.
+\end{CompactCoreProblem}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Induction}{I49}{A--C}{\ThreePartScoring}
+\begin{multicols}{2}
+\begin{CompactCoreProblem}{A.3}{Proof setup}
+For the claim $7\mid(8^n-1)$ for every integer $n\ge0$, state $P(n)$, the base case, the induction hypothesis using an integer witness, and the divisibility statement required for $k+1$. Do not complete the algebra.
+\end{CompactCoreProblem}
+\begin{CompactCoreProblem}{B.3}{Diagnose and repair}
+In the false proof that all positive integers in any finite list are equal, the step applies the hypothesis to the first $k$ and last $k$ entries and claims the groups overlap. Identify the first $k$ for which overlap is needed and explain precisely why the step fails.
+\end{CompactCoreProblem}
+\end{multicols}
+\begin{CompactCoreProblem}{C.2}{Complete inductive proof}
+You may use Pascal's identity
+\[
+\binom{k+1}{j}=\binom{k}{j}+\binom{k}{j-1}
+\quad(1\le j\le k),\qquad
+\binom{n}{0}=\binom{n}{n}=1.
+\]
+Prove by mathematical induction that
+\[
+\sum_{j=0}^{n} 2^{n-j}\binom{n}{j}=3^n\qquad\text{for every integer }n\ge0.
+\]
+State $P(n)$, verify the base case, state the induction hypothesis, show the complete next-case calculation including reindexing, and conclude the proof.
+\end{CompactCoreProblem}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Induction}{I50}{A--C}{\ThreePartScoring}
+\begin{multicols}{2}
+\begin{CompactCoreProblem}{A.5}{Proof setup}
+For $2^n\ge n+1$ for every integer $n\ge0$, state $P(n)$, verify the base case, state the induction hypothesis, and write the first equality and inequality that should begin the $k+1$ step. Do not finish the proof.
+\end{CompactCoreProblem}
+\begin{CompactCoreProblem}{B.2}{Diagnose and repair}
+A recurrence proof uses both $P(k)$ and $P(k-1)$ to prove $P(k+1)$ but verifies only $P(0)$. Explain what is missing. State sufficient base cases and a valid strong induction hypothesis.
+\end{CompactCoreProblem}
+\end{multicols}
+\begin{CompactCoreProblem}{C.1}{Complete inductive proof}
+You may use Pascal's identity
+\[
+\binom{k+1}{j}=\binom{k}{j}+\binom{k}{j-1}
+\quad(1\le j\le k),\qquad
+\binom{n}{0}=\binom{n}{n}=1.
+\]
+Prove by mathematical induction that
+\[
+\sum_{j=0}^{n}\binom{n}{j}=2^n\qquad\text{for every integer }n\ge0.
+\]
+State $P(n)$, verify the base case, state the induction hypothesis, show the complete next-case calculation including reindexing, and conclude the proof.
+\end{CompactCoreProblem}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Induction}{I51}{A--C}{\ThreePartScoring}
+\begin{multicols}{2}
+\begin{CompactCoreProblem}{A.2}{Proof setup}
+For $1+2+\cdots+n=n(n+1)/2$ for every $n\ge1$, state $P(n)$, verify the base case, state the induction hypothesis $P(k)$, and state exactly what must be shown for $P(k+1)$. Do not complete the next-case algebra.
+\end{CompactCoreProblem}
+\begin{CompactCoreProblem}{B.4}{Diagnose and repair}
+A student proving $1+3+\cdots+(2n-1)=n^2$ writes $k^2+(2k-1)=(k+1)^2$. Identify the incorrect next term, repair the calculation, and state where the induction hypothesis is used.
+\end{CompactCoreProblem}
+\end{multicols}
+\begin{CompactCoreProblem}{C.5}{Complete inductive proof}
+You may use Pascal's identity
+\[
+\binom{k+1}{j}=\binom{k}{j}+\binom{k}{j-1}
+\quad(1\le j\le k),\qquad
+\binom{n}{0}=\binom{n}{n}=1.
+\]
+Prove by mathematical induction that
+\[
+\sum_{j=0}^{n} 5^{n-j}\binom{n}{j}=6^n\qquad\text{for every integer }n\ge0.
+\]
+State $P(n)$, verify the base case, state the induction hypothesis, show the complete next-case calculation including reindexing, and conclude the proof.
+\end{CompactCoreProblem}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Induction}{I52}{A--C}{\ThreePartScoring}
+\begin{multicols}{2}
+\begin{CompactCoreProblem}{A.5}{Proof setup}
+For $2^n\ge n+1$ for every integer $n\ge0$, state $P(n)$, verify the base case, state the induction hypothesis, and write the first equality and inequality that should begin the $k+1$ step. Do not finish the proof.
+\end{CompactCoreProblem}
+\begin{CompactCoreProblem}{B.2}{Diagnose and repair}
+A recurrence proof uses both $P(k)$ and $P(k-1)$ to prove $P(k+1)$ but verifies only $P(0)$. Explain what is missing. State sufficient base cases and a valid strong induction hypothesis.
+\end{CompactCoreProblem}
+\end{multicols}
+\begin{CompactCoreProblem}{C.5}{Complete inductive proof}
+You may use Pascal's identity
+\[
+\binom{k+1}{j}=\binom{k}{j}+\binom{k}{j-1}
+\quad(1\le j\le k),\qquad
+\binom{n}{0}=\binom{n}{n}=1.
+\]
+Prove by mathematical induction that
+\[
+\sum_{j=0}^{n} 5^{n-j}\binom{n}{j}=6^n\qquad\text{for every integer }n\ge0.
+\]
+State $P(n)$, verify the base case, state the induction hypothesis, show the complete next-case calculation including reindexing, and conclude the proof.
+\end{CompactCoreProblem}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Induction}{I53}{A--C}{\ThreePartScoring}
+\begin{multicols}{2}
+\begin{CompactCoreProblem}{A.2}{Proof setup}
+For $1+2+\cdots+n=n(n+1)/2$ for every $n\ge1$, state $P(n)$, verify the base case, state the induction hypothesis $P(k)$, and state exactly what must be shown for $P(k+1)$. Do not complete the next-case algebra.
+\end{CompactCoreProblem}
+\begin{CompactCoreProblem}{B.2}{Diagnose and repair}
+A recurrence proof uses both $P(k)$ and $P(k-1)$ to prove $P(k+1)$ but verifies only $P(0)$. Explain what is missing. State sufficient base cases and a valid strong induction hypothesis.
+\end{CompactCoreProblem}
+\end{multicols}
+\begin{CompactCoreProblem}{C.4}{Complete inductive proof}
+You may use Pascal's identity
+\[
+\binom{k+1}{j}=\binom{k}{j}+\binom{k}{j-1}
+\quad(1\le j\le k),\qquad
+\binom{n}{0}=\binom{n}{n}=1.
+\]
+Prove by mathematical induction that
+\[
+\sum_{j=0}^{n} 4^{n-j}\binom{n}{j}=5^n\qquad\text{for every integer }n\ge0.
+\]
+State $P(n)$, verify the base case, state the induction hypothesis, show the complete next-case calculation including reindexing, and conclude the proof.
+\end{CompactCoreProblem}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Induction}{I54}{A--C}{\ThreePartScoring}
+\begin{multicols}{2}
+\begin{CompactCoreProblem}{A.4}{Proof setup}
+For the claim that every amount $n\ge18$ can be made using 4-cent and 7-cent stamps, list sufficient base cases, state a strong induction hypothesis through $k$, and explain which earlier amount is used to construct $k+1$. Do not complete the proof.
+\end{CompactCoreProblem}
+\begin{CompactCoreProblem}{B.4}{Diagnose and repair}
+A student proving $1+3+\cdots+(2n-1)=n^2$ writes $k^2+(2k-1)=(k+1)^2$. Identify the incorrect next term, repair the calculation, and state where the induction hypothesis is used.
+\end{CompactCoreProblem}
+\end{multicols}
+\begin{CompactCoreProblem}{C.4}{Complete inductive proof}
+You may use Pascal's identity
+\[
+\binom{k+1}{j}=\binom{k}{j}+\binom{k}{j-1}
+\quad(1\le j\le k),\qquad
+\binom{n}{0}=\binom{n}{n}=1.
+\]
+Prove by mathematical induction that
+\[
+\sum_{j=0}^{n} 4^{n-j}\binom{n}{j}=5^n\qquad\text{for every integer }n\ge0.
+\]
+State $P(n)$, verify the base case, state the induction hypothesis, show the complete next-case calculation including reindexing, and conclude the proof.
+\end{CompactCoreProblem}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Induction}{I55}{A--C}{\ThreePartScoring}
+\begin{multicols}{2}
+\begin{CompactCoreProblem}{A.3}{Proof setup}
+For the claim $7\mid(8^n-1)$ for every integer $n\ge0$, state $P(n)$, the base case, the induction hypothesis using an integer witness, and the divisibility statement required for $k+1$. Do not complete the algebra.
+\end{CompactCoreProblem}
+\begin{CompactCoreProblem}{B.1}{Diagnose and repair}
+A student tries to prove $2^n\ge n+1$ for $n\ge0$ by assuming $2^{k+1}\ge k+2$ in the induction step. Identify the circularity, state the correct induction hypothesis, and give a valid chain of inequalities for the next case.
+\end{CompactCoreProblem}
+\end{multicols}
+\begin{CompactCoreProblem}{C.2}{Complete inductive proof}
+You may use Pascal's identity
+\[
+\binom{k+1}{j}=\binom{k}{j}+\binom{k}{j-1}
+\quad(1\le j\le k),\qquad
+\binom{n}{0}=\binom{n}{n}=1.
+\]
+Prove by mathematical induction that
+\[
+\sum_{j=0}^{n} 2^{n-j}\binom{n}{j}=3^n\qquad\text{for every integer }n\ge0.
+\]
+State $P(n)$, verify the base case, state the induction hypothesis, show the complete next-case calculation including reindexing, and conclude the proof.
+\end{CompactCoreProblem}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Induction}{I56}{A--C}{\ThreePartScoring}
+\begin{multicols}{2}
+\begin{CompactCoreProblem}{A.4}{Proof setup}
+For the claim that every amount $n\ge18$ can be made using 4-cent and 7-cent stamps, list sufficient base cases, state a strong induction hypothesis through $k$, and explain which earlier amount is used to construct $k+1$. Do not complete the proof.
+\end{CompactCoreProblem}
+\begin{CompactCoreProblem}{B.1}{Diagnose and repair}
+A student tries to prove $2^n\ge n+1$ for $n\ge0$ by assuming $2^{k+1}\ge k+2$ in the induction step. Identify the circularity, state the correct induction hypothesis, and give a valid chain of inequalities for the next case.
+\end{CompactCoreProblem}
+\end{multicols}
+\begin{CompactCoreProblem}{C.4}{Complete inductive proof}
+You may use Pascal's identity
+\[
+\binom{k+1}{j}=\binom{k}{j}+\binom{k}{j-1}
+\quad(1\le j\le k),\qquad
+\binom{n}{0}=\binom{n}{n}=1.
+\]
+Prove by mathematical induction that
+\[
+\sum_{j=0}^{n} 4^{n-j}\binom{n}{j}=5^n\qquad\text{for every integer }n\ge0.
+\]
+State $P(n)$, verify the base case, state the induction hypothesis, show the complete next-case calculation including reindexing, and conclude the proof.
+\end{CompactCoreProblem}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Induction}{I57}{A--C}{\ThreePartScoring}
+\begin{multicols}{2}
+\begin{CompactCoreProblem}{A.5}{Proof setup}
+For $2^n\ge n+1$ for every integer $n\ge0$, state $P(n)$, verify the base case, state the induction hypothesis, and write the first equality and inequality that should begin the $k+1$ step. Do not finish the proof.
+\end{CompactCoreProblem}
+\begin{CompactCoreProblem}{B.5}{Diagnose and repair}
+A student proving $7\mid(8^n-1)$ says, “Assume $7\mid(8^{k+1}-1)$; therefore the next case holds.” Identify the error, replace it with the correct induction hypothesis, and show an algebraic decomposition that proves the $k+1$ case.
+\end{CompactCoreProblem}
+\end{multicols}
+\begin{CompactCoreProblem}{C.5}{Complete inductive proof}
+You may use Pascal's identity
+\[
+\binom{k+1}{j}=\binom{k}{j}+\binom{k}{j-1}
+\quad(1\le j\le k),\qquad
+\binom{n}{0}=\binom{n}{n}=1.
+\]
+Prove by mathematical induction that
+\[
+\sum_{j=0}^{n} 5^{n-j}\binom{n}{j}=6^n\qquad\text{for every integer }n\ge0.
+\]
+State $P(n)$, verify the base case, state the induction hypothesis, show the complete next-case calculation including reindexing, and conclude the proof.
+\end{CompactCoreProblem}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Induction}{I58}{A--C}{\ThreePartScoring}
+\begin{multicols}{2}
+\begin{CompactCoreProblem}{A.1}{Proof setup}
+For the claim that every integer $n\ge2$ is a product of one or more primes, state (i) the base case, (ii) the strong induction hypothesis for an arbitrary $k\ge2$, (iii) what must be proved for $k+1$, and (iv) the two cases used in the induction step. Do not complete the proof.
+\end{CompactCoreProblem}
+\begin{CompactCoreProblem}{B.1}{Diagnose and repair}
+A student tries to prove $2^n\ge n+1$ for $n\ge0$ by assuming $2^{k+1}\ge k+2$ in the induction step. Identify the circularity, state the correct induction hypothesis, and give a valid chain of inequalities for the next case.
+\end{CompactCoreProblem}
+\end{multicols}
+\begin{CompactCoreProblem}{C.4}{Complete inductive proof}
+You may use Pascal's identity
+\[
+\binom{k+1}{j}=\binom{k}{j}+\binom{k}{j-1}
+\quad(1\le j\le k),\qquad
+\binom{n}{0}=\binom{n}{n}=1.
+\]
+Prove by mathematical induction that
+\[
+\sum_{j=0}^{n} 4^{n-j}\binom{n}{j}=5^n\qquad\text{for every integer }n\ge0.
+\]
+State $P(n)$, verify the base case, state the induction hypothesis, show the complete next-case calculation including reindexing, and conclude the proof.
+\end{CompactCoreProblem}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Induction}{I59}{A--C}{\ThreePartScoring}
+\begin{multicols}{2}
+\begin{CompactCoreProblem}{A.2}{Proof setup}
+For $1+2+\cdots+n=n(n+1)/2$ for every $n\ge1$, state $P(n)$, verify the base case, state the induction hypothesis $P(k)$, and state exactly what must be shown for $P(k+1)$. Do not complete the next-case algebra.
+\end{CompactCoreProblem}
+\begin{CompactCoreProblem}{B.3}{Diagnose and repair}
+In the false proof that all positive integers in any finite list are equal, the step applies the hypothesis to the first $k$ and last $k$ entries and claims the groups overlap. Identify the first $k$ for which overlap is needed and explain precisely why the step fails.
+\end{CompactCoreProblem}
+\end{multicols}
+\begin{CompactCoreProblem}{C.5}{Complete inductive proof}
+You may use Pascal's identity
+\[
+\binom{k+1}{j}=\binom{k}{j}+\binom{k}{j-1}
+\quad(1\le j\le k),\qquad
+\binom{n}{0}=\binom{n}{n}=1.
+\]
+Prove by mathematical induction that
+\[
+\sum_{j=0}^{n} 5^{n-j}\binom{n}{j}=6^n\qquad\text{for every integer }n\ge0.
+\]
+State $P(n)$, verify the base case, state the induction hypothesis, show the complete next-case calculation including reindexing, and conclude the proof.
+\end{CompactCoreProblem}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Induction}{I60}{A--C}{\ThreePartScoring}
+\begin{multicols}{2}
+\begin{CompactCoreProblem}{A.3}{Proof setup}
+For the claim $7\mid(8^n-1)$ for every integer $n\ge0$, state $P(n)$, the base case, the induction hypothesis using an integer witness, and the divisibility statement required for $k+1$. Do not complete the algebra.
+\end{CompactCoreProblem}
+\begin{CompactCoreProblem}{B.1}{Diagnose and repair}
+A student tries to prove $2^n\ge n+1$ for $n\ge0$ by assuming $2^{k+1}\ge k+2$ in the induction step. Identify the circularity, state the correct induction hypothesis, and give a valid chain of inequalities for the next case.
+\end{CompactCoreProblem}
+\end{multicols}
+\begin{CompactCoreProblem}{C.5}{Complete inductive proof}
+You may use Pascal's identity
+\[
+\binom{k+1}{j}=\binom{k}{j}+\binom{k}{j-1}
+\quad(1\le j\le k),\qquad
+\binom{n}{0}=\binom{n}{n}=1.
+\]
+Prove by mathematical induction that
+\[
+\sum_{j=0}^{n} 5^{n-j}\binom{n}{j}=6^n\qquad\text{for every integer }n\ge0.
+\]
+State $P(n)$, verify the base case, state the induction hypothesis, show the complete next-case calculation including reindexing, and conclude the proof.
+\end{CompactCoreProblem}
+\CoreWorkArea
+\end{document}

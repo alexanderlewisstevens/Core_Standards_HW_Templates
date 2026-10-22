@@ -1,0 +1,637 @@
+\documentclass[9pt]{extarticle}
+\usepackage{core_attempt_forms}
+\newcommand{\equivmod}[1]{\mathrel{\equiv_{#1}}}
+\begin{document}
+
+\CoreHeader{Divisibility}{D01}{A--E}{\FivePartScoring}
+\begin{multicols}{2}
+\begin{CoreProblem}{A}{Division and congruence}
+{\scriptsize\textit{Use the division algorithm and least nonnegative remainder; justify congruences from the definition.}\par}
+For each pair $(a,b)$, find $a\,\mathrm{div}\,b$ and $a\bmod b$, then write
+$a=bq+r$: (a) $(137,12)$; (b) $(-47,9)$.
+\end{CoreProblem}
+\begin{CoreProblem}{B}{Integer representations}
+{\scriptsize\textit{Show place values, grouping, or repeated division, and check all digits.}\par}
+Convert $(11010110)_2$ to decimal, and convert $173$ from decimal to binary.
+\end{CoreProblem}
+\begin{CoreProblem}{C}{Modular arithmetic}
+{\scriptsize\textit{Give least nonnegative residues and show efficient reductions.}\par}
+Compute (a) $\bigl((-38)(27)+15\bigr)\bmod11$ and
+(b) $3^{47}\bmod10$.
+\end{CoreProblem}
+\columnbreak
+\begin{CoreProblem}{D}{GCD and B\'ezout coefficients}
+{\scriptsize\textit{Display the Euclidean algorithm and back-substitution.}\par}
+Find $\gcd(252,198)$ and integers $s,t$ such that
+$252s+198t=\gcd(252,198)$.
+\end{CoreProblem}
+\begin{CoreProblem}{E}{Proof from definitions}
+{\scriptsize\textit{State arbitrary integers and witnesses explicitly; end by matching the definition.}\par}
+Let $d,a,b,m,n\in\mathbb Z$. Suppose $d\mid a$ and $d\mid b$. Prove directly
+from the definition that $d\mid(ma+nb)$. State where each hypothesis is used.
+\end{CoreProblem}
+\end{multicols}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Divisibility}{D02}{A--E}{\FivePartScoring}
+\begin{multicols}{2}
+\begin{CoreProblem}{A}{Division and congruence}
+{\scriptsize\textit{Use the division algorithm and least nonnegative remainder; justify congruences from the definition.}\par}
+Complete the three equivalent descriptions and verify $0\le r<23$:
+\[
+\begin{gathered}
+418=23q+r,\qquad 418\bmod 23=r,\\
+418\equiv r\pmod{23}.
+\end{gathered}
+\]
+\end{CoreProblem}
+\begin{CoreProblem}{B}{Integer representations}
+{\scriptsize\textit{Show place values, grouping, or repeated division, and check all digits.}\par}
+Convert $(\mathrm{3AF})_{16}$ to binary and decimal. Keep four binary digits
+for each hexadecimal digit.
+\end{CoreProblem}
+\begin{CoreProblem}{C}{Modular arithmetic}
+{\scriptsize\textit{Give least nonnegative residues and show efficient reductions.}\par}
+Compute the residues of $784+519$ and $784\cdot519$ modulo $17$. Reduce the
+factors before combining them.
+\end{CoreProblem}
+\columnbreak
+\begin{CoreProblem}{D}{GCD and B\'ezout coefficients}
+{\scriptsize\textit{Display the Euclidean algorithm and back-substitution.}\par}
+Find $\gcd(414,662)$ and express it as $414s+662t$.
+\end{CoreProblem}
+\begin{CoreProblem}{E}{Proof from definitions}
+{\scriptsize\textit{State arbitrary integers and witnesses explicitly; end by matching the definition.}\par}
+Prove that if $n$ is odd, then $n^2\equiv1\pmod{8}$. Begin with the definition
+of odd and end by exhibiting an integer multiplier of $8$.
+\end{CoreProblem}
+\end{multicols}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Divisibility}{D03}{A--E}{\FivePartScoring}
+\begin{multicols}{2}
+\begin{CoreProblem}{A}{Division and congruence}
+{\scriptsize\textit{Use the division algorithm and least nonnegative remainder; justify congruences from the definition.}\par}
+Find $q,r$ such that $-83=7q+r$ and $0\le r<7$. State
+$-83\,\mathrm{div}\,7$, $-83\bmod7$, and the corresponding congruence.
+\end{CoreProblem}
+\begin{CoreProblem}{B}{Integer representations}
+{\scriptsize\textit{Show place values, grouping, or repeated division, and check all digits.}\par}
+Convert $(725)_8$ to binary and decimal. Keep three binary digits for each
+octal digit.
+\end{CoreProblem}
+\begin{CoreProblem}{C}{Modular arithmetic}
+{\scriptsize\textit{Give least nonnegative residues and show efficient reductions.}\par}
+Compute $7^{103}\bmod10$. Identify the cycle and explain how the exponent
+selects the answer.
+\end{CoreProblem}
+\columnbreak
+\begin{CoreProblem}{D}{GCD and B\'ezout coefficients}
+{\scriptsize\textit{Display the Euclidean algorithm and back-substitution.}\par}
+Find $\gcd(119,544)$ and express it as $119s+544t$.
+\end{CoreProblem}
+\begin{CoreProblem}{E}{Proof from definitions}
+{\scriptsize\textit{State arbitrary integers and witnesses explicitly; end by matching the definition.}\par}
+Prove directly that if $a\mid b$ and $b\mid c$, then $a\mid c$. Use distinct
+integer witnesses for the two hypotheses.
+\end{CoreProblem}
+\end{multicols}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Divisibility}{D04}{A--E}{\FivePartScoring}
+\begin{multicols}{2}
+\begin{CoreProblem}{A}{Division and congruence}
+{\scriptsize\textit{Use the division algorithm and least nonnegative remainder; justify congruences from the definition.}\par}
+An integer $a$ satisfies $a\,\mathrm{div}\,13=-4$ and $a\bmod13=9$.
+Find $a$ and verify the required remainder bound.
+\end{CoreProblem}
+\begin{CoreProblem}{B}{Integer representations}
+{\scriptsize\textit{Show place values, grouping, or repeated division, and check all digits.}\par}
+Convert $1000$ from decimal to hexadecimal using repeated division. Check by
+expanding the result in powers of $16$.
+\end{CoreProblem}
+\begin{CoreProblem}{C}{Modular arithmetic}
+{\scriptsize\textit{Give least nonnegative residues and show efficient reductions.}\par}
+Compute $5^{117}\bmod13$ by repeated squaring. Display the powers used in the
+final product.
+\end{CoreProblem}
+\columnbreak
+\begin{CoreProblem}{D}{GCD and B\'ezout coefficients}
+{\scriptsize\textit{Display the Euclidean algorithm and back-substitution.}\par}
+Find $\gcd(391,299)$ and express it as $391s+299t$.
+\end{CoreProblem}
+\begin{CoreProblem}{E}{Proof from definitions}
+{\scriptsize\textit{State arbitrary integers and witnesses explicitly; end by matching the definition.}\par}
+Give a numerical counterexample to ``if $a\mid bc$, then $a\mid b$ or
+$a\mid c$.'' Then state the corrected theorem under the extra hypothesis that
+$a$ is prime.
+\end{CoreProblem}
+\end{multicols}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Divisibility}{D05}{A--E}{\FivePartScoring}
+\begin{multicols}{2}
+\begin{CoreProblem}{A}{Division and congruence}
+{\scriptsize\textit{Use the division algorithm and least nonnegative remainder; justify congruences from the definition.}\par}
+Decide whether $347\equiv-13\pmod{24}$. Justify directly from the definition,
+then give the least nonnegative residue of $347$ modulo $24$.
+\end{CoreProblem}
+\begin{CoreProblem}{B}{Integer representations}
+{\scriptsize\textit{Show place values, grouping, or repeated division, and check all digits.}\par}
+Convert $(101101011)_2$ to octal and hexadecimal without first converting the
+whole number to decimal. Explain the grouping rule.
+\end{CoreProblem}
+\begin{CoreProblem}{C}{Modular arithmetic}
+{\scriptsize\textit{Give least nonnegative residues and show efficient reductions.}\par}
+Suppose $a\equiv b\pmod m$ and $c\equiv d\pmod m$, where
+$a,b,c,d\in\mathbb Z$ and $m\ge2$. Prove from the definition that
+$ac\equiv bd\pmod m$.
+\end{CoreProblem}
+\columnbreak
+\begin{CoreProblem}{D}{GCD and B\'ezout coefficients}
+{\scriptsize\textit{Display the Euclidean algorithm and back-substitution.}\par}
+Find $\gcd(527,341)$ and express it as $527s+341t$.
+\end{CoreProblem}
+\begin{CoreProblem}{E}{Proof from definitions}
+{\scriptsize\textit{State arbitrary integers and witnesses explicitly; end by matching the definition.}\par}
+Prove that the product of any three consecutive integers is divisible by $6$.
+Exhibit factors of $2$ and $3$, then combine their integer witnesses to
+produce an integer factor of $6$.
+\end{CoreProblem}
+\end{multicols}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Divisibility}{D06}{A--E}{\FivePartScoring}
+\begin{multicols}{2}
+\begin{CoreProblem}{A}{Division and congruence}
+{\scriptsize\textit{Use the division algorithm and least nonnegative remainder; justify congruences from the definition.}\par}
+For each pair $(a,b)$, find $a\,\mathrm{div}\,b$ and $a\bmod b$, then write
+$a=bq+r$: (a) $(137,12)$; (b) $(-47,9)$.
+\end{CoreProblem}
+\begin{CoreProblem}{B}{Integer representations}
+{\scriptsize\textit{Show place values, grouping, or repeated division, and check all digits.}\par}
+Convert $(\mathrm{3AF})_{16}$ to binary and decimal. Keep four binary digits
+for each hexadecimal digit.
+\end{CoreProblem}
+\begin{CoreProblem}{C}{Modular arithmetic}
+{\scriptsize\textit{Give least nonnegative residues and show efficient reductions.}\par}
+Compute $7^{103}\bmod10$. Identify the cycle and explain how the exponent
+selects the answer.
+\end{CoreProblem}
+\columnbreak
+\begin{CoreProblem}{D}{GCD and B\'ezout coefficients}
+{\scriptsize\textit{Display the Euclidean algorithm and back-substitution.}\par}
+Find $\gcd(391,299)$ and express it as $391s+299t$.
+\end{CoreProblem}
+\begin{CoreProblem}{E}{Proof from definitions}
+{\scriptsize\textit{State arbitrary integers and witnesses explicitly; end by matching the definition.}\par}
+Prove that the product of any three consecutive integers is divisible by $6$.
+Exhibit factors of $2$ and $3$, then combine their integer witnesses to
+produce an integer factor of $6$.
+\end{CoreProblem}
+\end{multicols}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Divisibility}{D07}{A--E}{\FivePartScoring}
+\begin{multicols}{2}
+\begin{CoreProblem}{A}{Division and congruence}
+{\scriptsize\textit{Use the division algorithm and least nonnegative remainder; justify congruences from the definition.}\par}
+Complete the three equivalent descriptions and verify $0\le r<23$:
+\[
+\begin{gathered}
+418=23q+r,\qquad 418\bmod 23=r,\\
+418\equiv r\pmod{23}.
+\end{gathered}
+\]
+\end{CoreProblem}
+\begin{CoreProblem}{B}{Integer representations}
+{\scriptsize\textit{Show place values, grouping, or repeated division, and check all digits.}\par}
+Convert $(725)_8$ to binary and decimal. Keep three binary digits for each
+octal digit.
+\end{CoreProblem}
+\begin{CoreProblem}{C}{Modular arithmetic}
+{\scriptsize\textit{Give least nonnegative residues and show efficient reductions.}\par}
+Compute $5^{117}\bmod13$ by repeated squaring. Display the powers used in the
+final product.
+\end{CoreProblem}
+\columnbreak
+\begin{CoreProblem}{D}{GCD and B\'ezout coefficients}
+{\scriptsize\textit{Display the Euclidean algorithm and back-substitution.}\par}
+Find $\gcd(527,341)$ and express it as $527s+341t$.
+\end{CoreProblem}
+\begin{CoreProblem}{E}{Proof from definitions}
+{\scriptsize\textit{State arbitrary integers and witnesses explicitly; end by matching the definition.}\par}
+Let $d,a,b,m,n\in\mathbb Z$. Suppose $d\mid a$ and $d\mid b$. Prove directly
+from the definition that $d\mid(ma+nb)$. State where each hypothesis is used.
+\end{CoreProblem}
+\end{multicols}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Divisibility}{D08}{A--E}{\FivePartScoring}
+\begin{multicols}{2}
+\begin{CoreProblem}{A}{Division and congruence}
+{\scriptsize\textit{Use the division algorithm and least nonnegative remainder; justify congruences from the definition.}\par}
+Find $q,r$ such that $-83=7q+r$ and $0\le r<7$. State
+$-83\,\mathrm{div}\,7$, $-83\bmod7$, and the corresponding congruence.
+\end{CoreProblem}
+\begin{CoreProblem}{B}{Integer representations}
+{\scriptsize\textit{Show place values, grouping, or repeated division, and check all digits.}\par}
+Convert $1000$ from decimal to hexadecimal using repeated division. Check by
+expanding the result in powers of $16$.
+\end{CoreProblem}
+\begin{CoreProblem}{C}{Modular arithmetic}
+{\scriptsize\textit{Give least nonnegative residues and show efficient reductions.}\par}
+Suppose $a\equiv b\pmod m$ and $c\equiv d\pmod m$, where
+$a,b,c,d\in\mathbb Z$ and $m\ge2$. Prove from the definition that
+$ac\equiv bd\pmod m$.
+\end{CoreProblem}
+\columnbreak
+\begin{CoreProblem}{D}{GCD and B\'ezout coefficients}
+{\scriptsize\textit{Display the Euclidean algorithm and back-substitution.}\par}
+Find $\gcd(252,198)$ and integers $s,t$ such that
+$252s+198t=\gcd(252,198)$.
+\end{CoreProblem}
+\begin{CoreProblem}{E}{Proof from definitions}
+{\scriptsize\textit{State arbitrary integers and witnesses explicitly; end by matching the definition.}\par}
+Prove that if $n$ is odd, then $n^2\equiv1\pmod{8}$. Begin with the definition
+of odd and end by exhibiting an integer multiplier of $8$.
+\end{CoreProblem}
+\end{multicols}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Divisibility}{D09}{A--E}{\FivePartScoring}
+\begin{multicols}{2}
+\begin{CoreProblem}{A}{Division and congruence}
+{\scriptsize\textit{Use the division algorithm and least nonnegative remainder; justify congruences from the definition.}\par}
+An integer $a$ satisfies $a\,\mathrm{div}\,13=-4$ and $a\bmod13=9$.
+Find $a$ and verify the required remainder bound.
+\end{CoreProblem}
+\begin{CoreProblem}{B}{Integer representations}
+{\scriptsize\textit{Show place values, grouping, or repeated division, and check all digits.}\par}
+Convert $(101101011)_2$ to octal and hexadecimal without first converting the
+whole number to decimal. Explain the grouping rule.
+\end{CoreProblem}
+\begin{CoreProblem}{C}{Modular arithmetic}
+{\scriptsize\textit{Give least nonnegative residues and show efficient reductions.}\par}
+Compute (a) $\bigl((-38)(27)+15\bigr)\bmod11$ and
+(b) $3^{47}\bmod10$.
+\end{CoreProblem}
+\columnbreak
+\begin{CoreProblem}{D}{GCD and B\'ezout coefficients}
+{\scriptsize\textit{Display the Euclidean algorithm and back-substitution.}\par}
+Find $\gcd(414,662)$ and express it as $414s+662t$.
+\end{CoreProblem}
+\begin{CoreProblem}{E}{Proof from definitions}
+{\scriptsize\textit{State arbitrary integers and witnesses explicitly; end by matching the definition.}\par}
+Prove directly that if $a\mid b$ and $b\mid c$, then $a\mid c$. Use distinct
+integer witnesses for the two hypotheses.
+\end{CoreProblem}
+\end{multicols}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Divisibility}{D10}{A--E}{\FivePartScoring}
+\begin{multicols}{2}
+\begin{CoreProblem}{A}{Division and congruence}
+{\scriptsize\textit{Use the division algorithm and least nonnegative remainder; justify congruences from the definition.}\par}
+Decide whether $347\equiv-13\pmod{24}$. Justify directly from the definition,
+then give the least nonnegative residue of $347$ modulo $24$.
+\end{CoreProblem}
+\begin{CoreProblem}{B}{Integer representations}
+{\scriptsize\textit{Show place values, grouping, or repeated division, and check all digits.}\par}
+Convert $(11010110)_2$ to decimal, and convert $173$ from decimal to binary.
+\end{CoreProblem}
+\begin{CoreProblem}{C}{Modular arithmetic}
+{\scriptsize\textit{Give least nonnegative residues and show efficient reductions.}\par}
+Compute the residues of $784+519$ and $784\cdot519$ modulo $17$. Reduce the
+factors before combining them.
+\end{CoreProblem}
+\columnbreak
+\begin{CoreProblem}{D}{GCD and B\'ezout coefficients}
+{\scriptsize\textit{Display the Euclidean algorithm and back-substitution.}\par}
+Find $\gcd(119,544)$ and express it as $119s+544t$.
+\end{CoreProblem}
+\begin{CoreProblem}{E}{Proof from definitions}
+{\scriptsize\textit{State arbitrary integers and witnesses explicitly; end by matching the definition.}\par}
+Give a numerical counterexample to ``if $a\mid bc$, then $a\mid b$ or
+$a\mid c$.'' Then state the corrected theorem under the extra hypothesis that
+$a$ is prime.
+\end{CoreProblem}
+\end{multicols}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Divisibility}{D11}{A--E}{\FivePartScoring}
+\begin{multicols}{2}
+\begin{CoreProblem}{A}{Division and congruence}
+{\scriptsize\textit{Use the division algorithm and least nonnegative remainder; justify congruences from the definition.}\par}
+For each pair $(a,b)$, find $a\,\mathrm{div}\,b$ and $a\bmod b$, then write
+$a=bq+r$: (a) $(137,12)$; (b) $(-47,9)$.
+\end{CoreProblem}
+\begin{CoreProblem}{B}{Integer representations}
+{\scriptsize\textit{Show place values, grouping, or repeated division, and check all digits.}\par}
+Convert $(725)_8$ to binary and decimal. Keep three binary digits for each
+octal digit.
+\end{CoreProblem}
+\begin{CoreProblem}{C}{Modular arithmetic}
+{\scriptsize\textit{Give least nonnegative residues and show efficient reductions.}\par}
+Suppose $a\equiv b\pmod m$ and $c\equiv d\pmod m$, where
+$a,b,c,d\in\mathbb Z$ and $m\ge2$. Prove from the definition that
+$ac\equiv bd\pmod m$.
+\end{CoreProblem}
+\columnbreak
+\begin{CoreProblem}{D}{GCD and B\'ezout coefficients}
+{\scriptsize\textit{Display the Euclidean algorithm and back-substitution.}\par}
+Find $\gcd(414,662)$ and express it as $414s+662t$.
+\end{CoreProblem}
+\begin{CoreProblem}{E}{Proof from definitions}
+{\scriptsize\textit{State arbitrary integers and witnesses explicitly; end by matching the definition.}\par}
+Give a numerical counterexample to ``if $a\mid bc$, then $a\mid b$ or
+$a\mid c$.'' Then state the corrected theorem under the extra hypothesis that
+$a$ is prime.
+\end{CoreProblem}
+\end{multicols}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Divisibility}{D12}{A--E}{\FivePartScoring}
+\begin{multicols}{2}
+\begin{CoreProblem}{A}{Division and congruence}
+{\scriptsize\textit{Use the division algorithm and least nonnegative remainder; justify congruences from the definition.}\par}
+Complete the three equivalent descriptions and verify $0\le r<23$:
+\[
+\begin{gathered}
+418=23q+r,\qquad 418\bmod 23=r,\\
+418\equiv r\pmod{23}.
+\end{gathered}
+\]
+\end{CoreProblem}
+\begin{CoreProblem}{B}{Integer representations}
+{\scriptsize\textit{Show place values, grouping, or repeated division, and check all digits.}\par}
+Convert $1000$ from decimal to hexadecimal using repeated division. Check by
+expanding the result in powers of $16$.
+\end{CoreProblem}
+\begin{CoreProblem}{C}{Modular arithmetic}
+{\scriptsize\textit{Give least nonnegative residues and show efficient reductions.}\par}
+Compute (a) $\bigl((-38)(27)+15\bigr)\bmod11$ and
+(b) $3^{47}\bmod10$.
+\end{CoreProblem}
+\columnbreak
+\begin{CoreProblem}{D}{GCD and B\'ezout coefficients}
+{\scriptsize\textit{Display the Euclidean algorithm and back-substitution.}\par}
+Find $\gcd(119,544)$ and express it as $119s+544t$.
+\end{CoreProblem}
+\begin{CoreProblem}{E}{Proof from definitions}
+{\scriptsize\textit{State arbitrary integers and witnesses explicitly; end by matching the definition.}\par}
+Prove that the product of any three consecutive integers is divisible by $6$.
+Exhibit factors of $2$ and $3$, then combine their integer witnesses to
+produce an integer factor of $6$.
+\end{CoreProblem}
+\end{multicols}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Divisibility}{D13}{A--E}{\FivePartScoring}
+\begin{multicols}{2}
+\begin{CoreProblem}{A}{Division and congruence}
+{\scriptsize\textit{Use the division algorithm and least nonnegative remainder; justify congruences from the definition.}\par}
+Find $q,r$ such that $-83=7q+r$ and $0\le r<7$. State
+$-83\,\mathrm{div}\,7$, $-83\bmod7$, and the corresponding congruence.
+\end{CoreProblem}
+\begin{CoreProblem}{B}{Integer representations}
+{\scriptsize\textit{Show place values, grouping, or repeated division, and check all digits.}\par}
+Convert $(101101011)_2$ to octal and hexadecimal without first converting the
+whole number to decimal. Explain the grouping rule.
+\end{CoreProblem}
+\begin{CoreProblem}{C}{Modular arithmetic}
+{\scriptsize\textit{Give least nonnegative residues and show efficient reductions.}\par}
+Compute the residues of $784+519$ and $784\cdot519$ modulo $17$. Reduce the
+factors before combining them.
+\end{CoreProblem}
+\columnbreak
+\begin{CoreProblem}{D}{GCD and B\'ezout coefficients}
+{\scriptsize\textit{Display the Euclidean algorithm and back-substitution.}\par}
+Find $\gcd(391,299)$ and express it as $391s+299t$.
+\end{CoreProblem}
+\begin{CoreProblem}{E}{Proof from definitions}
+{\scriptsize\textit{State arbitrary integers and witnesses explicitly; end by matching the definition.}\par}
+Let $d,a,b,m,n\in\mathbb Z$. Suppose $d\mid a$ and $d\mid b$. Prove directly
+from the definition that $d\mid(ma+nb)$. State where each hypothesis is used.
+\end{CoreProblem}
+\end{multicols}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Divisibility}{D14}{A--E}{\FivePartScoring}
+\begin{multicols}{2}
+\begin{CoreProblem}{A}{Division and congruence}
+{\scriptsize\textit{Use the division algorithm and least nonnegative remainder; justify congruences from the definition.}\par}
+An integer $a$ satisfies $a\,\mathrm{div}\,13=-4$ and $a\bmod13=9$.
+Find $a$ and verify the required remainder bound.
+\end{CoreProblem}
+\begin{CoreProblem}{B}{Integer representations}
+{\scriptsize\textit{Show place values, grouping, or repeated division, and check all digits.}\par}
+Convert $(11010110)_2$ to decimal, and convert $173$ from decimal to binary.
+\end{CoreProblem}
+\begin{CoreProblem}{C}{Modular arithmetic}
+{\scriptsize\textit{Give least nonnegative residues and show efficient reductions.}\par}
+Compute $7^{103}\bmod10$. Identify the cycle and explain how the exponent
+selects the answer.
+\end{CoreProblem}
+\columnbreak
+\begin{CoreProblem}{D}{GCD and B\'ezout coefficients}
+{\scriptsize\textit{Display the Euclidean algorithm and back-substitution.}\par}
+Find $\gcd(527,341)$ and express it as $527s+341t$.
+\end{CoreProblem}
+\begin{CoreProblem}{E}{Proof from definitions}
+{\scriptsize\textit{State arbitrary integers and witnesses explicitly; end by matching the definition.}\par}
+Prove that if $n$ is odd, then $n^2\equiv1\pmod{8}$. Begin with the definition
+of odd and end by exhibiting an integer multiplier of $8$.
+\end{CoreProblem}
+\end{multicols}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Divisibility}{D15}{A--E}{\FivePartScoring}
+\begin{multicols}{2}
+\begin{CoreProblem}{A}{Division and congruence}
+{\scriptsize\textit{Use the division algorithm and least nonnegative remainder; justify congruences from the definition.}\par}
+Decide whether $347\equiv-13\pmod{24}$. Justify directly from the definition,
+then give the least nonnegative residue of $347$ modulo $24$.
+\end{CoreProblem}
+\begin{CoreProblem}{B}{Integer representations}
+{\scriptsize\textit{Show place values, grouping, or repeated division, and check all digits.}\par}
+Convert $(\mathrm{3AF})_{16}$ to binary and decimal. Keep four binary digits
+for each hexadecimal digit.
+\end{CoreProblem}
+\begin{CoreProblem}{C}{Modular arithmetic}
+{\scriptsize\textit{Give least nonnegative residues and show efficient reductions.}\par}
+Compute $5^{117}\bmod13$ by repeated squaring. Display the powers used in the
+final product.
+\end{CoreProblem}
+\columnbreak
+\begin{CoreProblem}{D}{GCD and B\'ezout coefficients}
+{\scriptsize\textit{Display the Euclidean algorithm and back-substitution.}\par}
+Find $\gcd(252,198)$ and integers $s,t$ such that
+$252s+198t=\gcd(252,198)$.
+\end{CoreProblem}
+\begin{CoreProblem}{E}{Proof from definitions}
+{\scriptsize\textit{State arbitrary integers and witnesses explicitly; end by matching the definition.}\par}
+Prove directly that if $a\mid b$ and $b\mid c$, then $a\mid c$. Use distinct
+integer witnesses for the two hypotheses.
+\end{CoreProblem}
+\end{multicols}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Divisibility}{D16}{A--E}{\FivePartScoring}
+\begin{multicols}{2}
+\begin{CoreProblem}{A}{Division and congruence}
+{\scriptsize\textit{Use the division algorithm and least nonnegative remainder; justify congruences from the definition.}\par}
+For each pair $(a,b)$, find $a\,\mathrm{div}\,b$ and $a\bmod b$, then write
+$a=bq+r$: (a) $(137,12)$; (b) $(-47,9)$.
+\end{CoreProblem}
+\begin{CoreProblem}{B}{Integer representations}
+{\scriptsize\textit{Show place values, grouping, or repeated division, and check all digits.}\par}
+Convert $1000$ from decimal to hexadecimal using repeated division. Check by
+expanding the result in powers of $16$.
+\end{CoreProblem}
+\begin{CoreProblem}{C}{Modular arithmetic}
+{\scriptsize\textit{Give least nonnegative residues and show efficient reductions.}\par}
+Compute the residues of $784+519$ and $784\cdot519$ modulo $17$. Reduce the
+factors before combining them.
+\end{CoreProblem}
+\columnbreak
+\begin{CoreProblem}{D}{GCD and B\'ezout coefficients}
+{\scriptsize\textit{Display the Euclidean algorithm and back-substitution.}\par}
+Find $\gcd(527,341)$ and express it as $527s+341t$.
+\end{CoreProblem}
+\begin{CoreProblem}{E}{Proof from definitions}
+{\scriptsize\textit{State arbitrary integers and witnesses explicitly; end by matching the definition.}\par}
+Prove directly that if $a\mid b$ and $b\mid c$, then $a\mid c$. Use distinct
+integer witnesses for the two hypotheses.
+\end{CoreProblem}
+\end{multicols}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Divisibility}{D17}{A--E}{\FivePartScoring}
+\begin{multicols}{2}
+\begin{CoreProblem}{A}{Division and congruence}
+{\scriptsize\textit{Use the division algorithm and least nonnegative remainder; justify congruences from the definition.}\par}
+Complete the three equivalent descriptions and verify $0\le r<23$:
+\[
+\begin{gathered}
+418=23q+r,\qquad 418\bmod 23=r,\\
+418\equiv r\pmod{23}.
+\end{gathered}
+\]
+\end{CoreProblem}
+\begin{CoreProblem}{B}{Integer representations}
+{\scriptsize\textit{Show place values, grouping, or repeated division, and check all digits.}\par}
+Convert $(101101011)_2$ to octal and hexadecimal without first converting the
+whole number to decimal. Explain the grouping rule.
+\end{CoreProblem}
+\begin{CoreProblem}{C}{Modular arithmetic}
+{\scriptsize\textit{Give least nonnegative residues and show efficient reductions.}\par}
+Compute $7^{103}\bmod10$. Identify the cycle and explain how the exponent
+selects the answer.
+\end{CoreProblem}
+\columnbreak
+\begin{CoreProblem}{D}{GCD and B\'ezout coefficients}
+{\scriptsize\textit{Display the Euclidean algorithm and back-substitution.}\par}
+Find $\gcd(252,198)$ and integers $s,t$ such that
+$252s+198t=\gcd(252,198)$.
+\end{CoreProblem}
+\begin{CoreProblem}{E}{Proof from definitions}
+{\scriptsize\textit{State arbitrary integers and witnesses explicitly; end by matching the definition.}\par}
+Give a numerical counterexample to ``if $a\mid bc$, then $a\mid b$ or
+$a\mid c$.'' Then state the corrected theorem under the extra hypothesis that
+$a$ is prime.
+\end{CoreProblem}
+\end{multicols}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Divisibility}{D18}{A--E}{\FivePartScoring}
+\begin{multicols}{2}
+\begin{CoreProblem}{A}{Division and congruence}
+{\scriptsize\textit{Use the division algorithm and least nonnegative remainder; justify congruences from the definition.}\par}
+Find $q,r$ such that $-83=7q+r$ and $0\le r<7$. State
+$-83\,\mathrm{div}\,7$, $-83\bmod7$, and the corresponding congruence.
+\end{CoreProblem}
+\begin{CoreProblem}{B}{Integer representations}
+{\scriptsize\textit{Show place values, grouping, or repeated division, and check all digits.}\par}
+Convert $(11010110)_2$ to decimal, and convert $173$ from decimal to binary.
+\end{CoreProblem}
+\begin{CoreProblem}{C}{Modular arithmetic}
+{\scriptsize\textit{Give least nonnegative residues and show efficient reductions.}\par}
+Compute $5^{117}\bmod13$ by repeated squaring. Display the powers used in the
+final product.
+\end{CoreProblem}
+\columnbreak
+\begin{CoreProblem}{D}{GCD and B\'ezout coefficients}
+{\scriptsize\textit{Display the Euclidean algorithm and back-substitution.}\par}
+Find $\gcd(414,662)$ and express it as $414s+662t$.
+\end{CoreProblem}
+\begin{CoreProblem}{E}{Proof from definitions}
+{\scriptsize\textit{State arbitrary integers and witnesses explicitly; end by matching the definition.}\par}
+Prove that the product of any three consecutive integers is divisible by $6$.
+Exhibit factors of $2$ and $3$, then combine their integer witnesses to
+produce an integer factor of $6$.
+\end{CoreProblem}
+\end{multicols}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Divisibility}{D19}{A--E}{\FivePartScoring}
+\begin{multicols}{2}
+\begin{CoreProblem}{A}{Division and congruence}
+{\scriptsize\textit{Use the division algorithm and least nonnegative remainder; justify congruences from the definition.}\par}
+An integer $a$ satisfies $a\,\mathrm{div}\,13=-4$ and $a\bmod13=9$.
+Find $a$ and verify the required remainder bound.
+\end{CoreProblem}
+\begin{CoreProblem}{B}{Integer representations}
+{\scriptsize\textit{Show place values, grouping, or repeated division, and check all digits.}\par}
+Convert $(\mathrm{3AF})_{16}$ to binary and decimal. Keep four binary digits
+for each hexadecimal digit.
+\end{CoreProblem}
+\begin{CoreProblem}{C}{Modular arithmetic}
+{\scriptsize\textit{Give least nonnegative residues and show efficient reductions.}\par}
+Suppose $a\equiv b\pmod m$ and $c\equiv d\pmod m$, where
+$a,b,c,d\in\mathbb Z$ and $m\ge2$. Prove from the definition that
+$ac\equiv bd\pmod m$.
+\end{CoreProblem}
+\columnbreak
+\begin{CoreProblem}{D}{GCD and B\'ezout coefficients}
+{\scriptsize\textit{Display the Euclidean algorithm and back-substitution.}\par}
+Find $\gcd(119,544)$ and express it as $119s+544t$.
+\end{CoreProblem}
+\begin{CoreProblem}{E}{Proof from definitions}
+{\scriptsize\textit{State arbitrary integers and witnesses explicitly; end by matching the definition.}\par}
+Let $d,a,b,m,n\in\mathbb Z$. Suppose $d\mid a$ and $d\mid b$. Prove directly
+from the definition that $d\mid(ma+nb)$. State where each hypothesis is used.
+\end{CoreProblem}
+\end{multicols}
+\CoreWorkArea
+\FormBreak
+\CoreHeader{Divisibility}{D20}{A--E}{\FivePartScoring}
+\begin{multicols}{2}
+\begin{CoreProblem}{A}{Division and congruence}
+{\scriptsize\textit{Use the division algorithm and least nonnegative remainder; justify congruences from the definition.}\par}
+Decide whether $347\equiv-13\pmod{24}$. Justify directly from the definition,
+then give the least nonnegative residue of $347$ modulo $24$.
+\end{CoreProblem}
+\begin{CoreProblem}{B}{Integer representations}
+{\scriptsize\textit{Show place values, grouping, or repeated division, and check all digits.}\par}
+Convert $(725)_8$ to binary and decimal. Keep three binary digits for each
+octal digit.
+\end{CoreProblem}
+\begin{CoreProblem}{C}{Modular arithmetic}
+{\scriptsize\textit{Give least nonnegative residues and show efficient reductions.}\par}
+Compute (a) $\bigl((-38)(27)+15\bigr)\bmod11$ and
+(b) $3^{47}\bmod10$.
+\end{CoreProblem}
+\columnbreak
+\begin{CoreProblem}{D}{GCD and B\'ezout coefficients}
+{\scriptsize\textit{Display the Euclidean algorithm and back-substitution.}\par}
+Find $\gcd(391,299)$ and express it as $391s+299t$.
+\end{CoreProblem}
+\begin{CoreProblem}{E}{Proof from definitions}
+{\scriptsize\textit{State arbitrary integers and witnesses explicitly; end by matching the definition.}\par}
+Prove that if $n$ is odd, then $n^2\equiv1\pmod{8}$. Begin with the definition
+of odd and end by exhibiting an integer multiplier of $8$.
+\end{CoreProblem}
+\end{multicols}
+\CoreWorkArea
+\end{document}

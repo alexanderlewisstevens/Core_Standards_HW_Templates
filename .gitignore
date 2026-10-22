@@ -39,6 +39,8 @@
 
 # Local visual-QA and scratch output
 tmp/
+__pycache__/
+*.pyc
 
 # Private legacy material that may contain licensed question text
 in_progress/lsat_logical_reasoning_practice.tex

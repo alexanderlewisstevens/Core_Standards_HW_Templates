@@ -1,0 +1,97 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{core_attempt_forms}[2026/10/21 COMP 2300 supervised Core forms]
+
+\RequirePackage[letterpaper,margin=0.32in]{geometry}
+\RequirePackage[T1]{fontenc}
+\RequirePackage{amsmath,amssymb}
+\RequirePackage{enumitem}
+\RequirePackage{microtype}
+\RequirePackage{multicol}
+\RequirePackage[most]{tcolorbox}
+\RequirePackage{graphicx}
+\RequirePackage[export]{adjustbox}
+\RequirePackage{tikz}
+\RequirePackage[hidelinks]{hyperref}
+\usetikzlibrary{calc}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\columnsep}{0.18in}
+\setlength{\multicolsep}{3pt}
+\setlength{\premulticols}{0pt}
+\setlength{\postmulticols}{0pt}
+\setlength{\abovedisplayskip}{2pt}
+\setlength{\belowdisplayskip}{2pt}
+\setlength{\abovedisplayshortskip}{1pt}
+\setlength{\belowdisplayshortskip}{1pt}
+\setlist{nosep,leftmargin=*}
+\setlist[itemize]{topsep=0pt,itemsep=0pt,parsep=0pt,partopsep=0pt}
+\setlist[enumerate]{topsep=0pt,itemsep=0pt,parsep=0pt,partopsep=0pt}
+
+\tcbset{
+  corebox/.style={
+    enhanced,
+    colback=white,
+    colframe=black!65,
+    boxrule=0.42pt,
+    arc=1.5pt,
+    left=4pt,right=4pt,top=3pt,bottom=3pt,
+    before skip=2pt,after skip=2pt
+  }
+}
+
+\newcommand{\CoreHeader}[4]{%
+  {\Large\bfseries COMP 2300 --- #1 Core}\hfill
+  {\normalsize\bfseries Form #2}\par
+  \vspace{2pt}\hrule\vspace{3pt}
+  \textbf{Name:}\ \rule{2.55in}{0.4pt}\hfill
+  \textbf{Section:}\ \rule{0.62in}{0.4pt}\hfill
+  \textbf{Date:}\ \rule{0.92in}{0.4pt}\par
+  \begin{tcolorbox}[corebox]
+    \footnotesize
+    \textbf{20 minutes.} Complete one labeled problem from each section (#3). Use the work area
+    and attach extra paper if needed; label every response clearly. Every requested
+    part belongs to that problem. Show enough reasoning to make each answer checkable. #4\space
+    Use only materials authorized by the proctor. Approved accommodations apply.
+  \end{tcolorbox}
+}
+
+\newcommand{\FivePartScoring}{%
+  \textbf{Meets} is four fully correct problems; \textbf{Exceeds} is all five.\space}
+
+\newcommand{\ThreePartScoring}{%
+  C is essential. \textbf{Meets} requires C and either A or B fully correct;
+  \textbf{Exceeds} requires all three.\space}
+
+\newenvironment{CoreProblem}[2]{%
+  \begin{tcolorbox}[corebox,title={\textbf{#1. #2}},
+    colbacktitle=black!6,coltitle=black,fonttitle=\normalsize\bfseries]
+  \normalsize
+}{\end{tcolorbox}}
+
+\newenvironment{CompactCoreProblem}[2]{%
+  \begin{tcolorbox}[corebox,title={\textbf{#1. #2}},
+    colbacktitle=black!6,coltitle=black,fonttitle=\footnotesize\bfseries,
+    left=3pt,right=3pt,top=2pt,bottom=2pt]
+  \footnotesize
+}{\end{tcolorbox}}
+
+\newenvironment{DenseCoreProblem}[2]{%
+  \begin{tcolorbox}[corebox,title={\textbf{#1. #2}},
+    colbacktitle=black!6,coltitle=black,fonttitle=\footnotesize\bfseries,
+    left=2.5pt,right=2.5pt,top=1.5pt,bottom=1.5pt,
+    before skip=1pt,after skip=1pt]
+  \fontsize{8.2}{8.9}\selectfont
+}{\end{tcolorbox}}
+
+\newcommand{\CoreWorkArea}{%
+  \begin{tcolorbox}[corebox,height fill,
+    title={\textbf{Work area --- label responses clearly}},
+    colbacktitle=black!6,coltitle=black,fonttitle=\small\bfseries,
+    left=5pt,right=5pt,top=4pt,bottom=4pt]
+    \footnotesize\textit{Attach additional paper if needed.}
+  \end{tcolorbox}%
+}
+
+\newcommand{\FormBreak}{\clearpage}
