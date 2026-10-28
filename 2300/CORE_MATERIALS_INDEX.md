@@ -49,13 +49,55 @@ Regenerate packets only through the script so item IDs, original numbering,
 seeds, and answer-key alignment remain reproducible. A single-Core run writes
 a Core-specific manifest and cannot overwrite a shared all-Core manifest.
 
+Do not distribute the repository-root `output/pdf/arguments_core_practice_bank.pdf`: it is an
+obsolete 30-page build dated September 6. The canonical Arguments assessment is
+`core_assessments/arguments_assessment.tex` /
+`core_assessments/pdfs/arguments_assessment.pdf` (6 pages); the preserved
+`core_assessments/arguments_extended_practice.tex` builds to 29 pages
+and contains all 210 practice items. Neither is the obsolete 30-page PDF.
+
 ## Validation and delivery record — 2026-10-28
 
 The seven companion PDFs were compiled with TeX Live 2025 and visually checked
-as four US-letter pages each. A second substantive review is correcting stale
-explanations and explicit-assumption gaps. Rebuilt copies must replace the
-stable PDFs whenever sources change. The alignment audit checks 350 full
-question/solution records (including all 210 extended Arguments items).
+as four US-letter pages each. The substantive second review is complete, and
+the reviewed sources and rebuilt stable PDFs are committed. Rebuilt copies
+must replace the stable PDFs whenever sources change.
+
+Final checks passed after merging the existing Overleaf commits:
+
+- Solution alignment: all 350 full question/solution records, including all
+  210 extended Arguments items; Divisibility C.5 ends before the next page's
+  shared definitions, and all five Sets relation images are included.
+- QTI: seven single-Core packages plus the combined package; 420 keyed items,
+  60 items and 3 points per quiz, with the original Canvas identities retained.
+- QTI regression tests: all four pass, covering reproducibility, saved identity
+  reuse, clean-course identifiers, and invalid identity/options detection.
+- Arguments packets: reproducible 20-form and both 60-form seed manifests,
+  with current packet TeX verified where applicable.
+- Git whitespace checks: passed. No student records or bulk `output/` artifacts
+  were committed.
+
+### Verified GitHub delivery
+
+Reviewed content commit: `048180e`. Both existing Overleaf commits were merged
+without conflicts. The pushed material revision
+`827c011a4dab41294c18903de9dd120af043a181` was verified against the live remote
+`main` reference and fetched file blobs. This proves GitHub delivery, not a
+pull into the live Overleaf project, Obsidian Publish, or Canvas.
+
+All seven public raw PDF URLs below returned valid PDFs byte-for-byte identical
+to the reviewed local copies. Each is four US-letter pages, with readable text
+on every page and no replacement characters in text extraction.
+
+| Companion | Verified public PDF | Bytes | Page/text check |
+| --- | --- | ---: | --- |
+| Logic | [PDF](https://raw.githubusercontent.com/alexanderlewisstevens/Core_Standards_HW_Templates/main/2300/cheat_sheets/companion_pdfs/logic_core_companion.pdf) | 208208 | 4 pages; passed |
+| Arguments | [PDF](https://raw.githubusercontent.com/alexanderlewisstevens/Core_Standards_HW_Templates/main/2300/cheat_sheets/companion_pdfs/arguments_core_companion.pdf) | 236308 | 4 pages; passed |
+| Sets | [PDF](https://raw.githubusercontent.com/alexanderlewisstevens/Core_Standards_HW_Templates/main/2300/cheat_sheets/companion_pdfs/sets_core_companion.pdf) | 202015 | 4 pages; passed |
+| Proofs | [PDF](https://raw.githubusercontent.com/alexanderlewisstevens/Core_Standards_HW_Templates/main/2300/cheat_sheets/companion_pdfs/proofs_core_companion.pdf) | 192978 | 4 pages; passed |
+| Divisibility | [PDF](https://raw.githubusercontent.com/alexanderlewisstevens/Core_Standards_HW_Templates/main/2300/cheat_sheets/companion_pdfs/divisibility_core_companion.pdf) | 232337 | 4 pages; passed |
+| Induction | [PDF](https://raw.githubusercontent.com/alexanderlewisstevens/Core_Standards_HW_Templates/main/2300/cheat_sheets/companion_pdfs/induction_core_companion.pdf) | 197108 | 4 pages; passed |
+| Counting | [PDF](https://raw.githubusercontent.com/alexanderlewisstevens/Core_Standards_HW_Templates/main/2300/cheat_sheets/companion_pdfs/counting_core_companion.pdf) | 246627 | 4 pages; passed |
 
 ### Syntax and definitions practice
 
@@ -66,12 +108,15 @@ proposition as written, answer feedback, and minimal repairs for malformed
 items. Intended total: 3 Participation and Practice points, unlimited attempts,
 highest score retained. Run `audit_core_syntax_qti.py` before import.
 
-Live Chrome audit on October 28 found two prior sets of seven imports:
+An earlier Chrome audit on October 28 found two prior sets of seven imports:
 unpublished raw-notation archives, and unpublished Unicode practice quizzes
-still displaying 60 points. Download the later source ZIPs through Canvas and
-reuse their identifiers with the overwrite option; do not create another set
-of active quizzes. Publication, module placement, grading category, and dates
-must be read back after the corrected import. No Student View or Canvas API.
+still displaying 60 points. The corrected packages now reuse the downloaded
+Unicode import identities through the committed course-213452 identifier map.
+Use the overwrite option; do not create another set of active quizzes. Live
+import completion, publication, module placement, grading category, and dates
+remain pending read-back verification in the course audit; local package tests
+do not establish these. See `homework_templates/CORE_SYNTAX_CANVAS_IMPORT_CHECKLIST.md`.
+No Student View or Canvas API.
 
 ### Required student entry points
 
@@ -87,11 +132,11 @@ material unpublished. Do not expose a private instructor key with a companion.
 
 | Destination | Verified state | Remaining work |
 | --- | --- | --- |
-| Local source | Saved; substantive second review in progress | Finish audit; rebuild changed PDFs; commit only reviewed materials |
-| GitHub | Fetched; local branch behind two commits; remote changes inspected | Incorporate existing Overleaf edits without losing local work, push and verify |
-| Overleaf | Project identified, not yet verified against this revision | Pull synchronized GitHub commit and verify files/compile |
-| Active Obsidian vault | Earlier staged full-question revision exists | Resync final audited solutions/assets; batch publish; verify public pages |
-| Canvas 213452 | Existing syntax imports verified unpublished | Overwrite matching quiz IDs, verify settings, attach resources in correct modules |
+| Local source | Final substantive review, 350-record alignment, QTI audits/regressions, packet reproducibility, and stable PDF checks passed | Rebuild and re-audit after any later source changes |
+| GitHub | Material revision `827c011a4dab41294c18903de9dd120af043a181` pushed and remote-verified; seven raw companion PDFs byte-verified | This manifest update records the delivery evidence; no live-platform completion inferred |
+| Overleaf | Pending live verification against the synchronized GitHub revision | Pull synchronized GitHub commit and verify files/compile |
+| Active Obsidian vault / Publish | Pending final resync and public read-back verification | Resync final audited solutions/assets; batch publish; verify public pages |
+| Canvas 213452 | Pending final corrected-import/settings/resource read-back verification | Overwrite matching quiz IDs, verify settings, attach resources in correct modules |
 
 The current user-authorized goal includes these in-scope synchronization,
 publication, and Canvas delivery actions. Do not publish unrelated material or
