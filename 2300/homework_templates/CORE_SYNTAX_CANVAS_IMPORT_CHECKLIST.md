@@ -8,6 +8,10 @@ SHA-256: `7aec132e14c38ee97b2e8f288c7b8732f711b3eef5e42c916c1044daf51e5022`
 
 ## Saved stopping point — 2026-10-28
 
+Alex explicitly chose **Keep unpublished for scheduling** for all seven new
+practice quizzes. Do not release them as optional review or publish them without
+subsequent direction. Final release and deadline dates remain undecided.
+
 All seven final local packages and the combined package pass the offline audit;
 all 12 regression tests pass. The final review covered all 420 keys, notation,
 feedback, and minimal repairs. The original Canvas identities remain intact.

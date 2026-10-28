@@ -65,6 +65,8 @@ resource entry point are delivered as recorded below. The final 420-question
 quiz package is saved and audited, but its corrected live overwrite import is
 not verified. The seven existing quizzes remain unpublished pending final
 instructions, module placement, approved dates, and saved read-back.
+Alex explicitly confirmed **Keep unpublished for scheduling**; do not publish
+them as optional review. This decision does not resume the paused work.
 
 Resume from `homework_templates/CORE_SYNTAX_CANVAS_IMPORT_CHECKLIST.md`, which
 contains the final package checksum, seven existing quiz URLs, and exact next
