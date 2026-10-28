@@ -149,77 +149,119 @@ def reused_identifiers(directory: Path) -> dict[str, ReusedIdentifiers]:
     return result
 
 
-def math_to_unicode(source: str) -> str:
-    """Render the bank's small TeX vocabulary as portable Unicode.
+MATH_SYMBOLS = {
+    "leftrightarrow": "↔", "Rightarrow": "⇒", "therefore": "∴",
+    "because": "∵", "subseteq": "⊆", "setminus": "∖", "varnothing": "∅",
+    "models": "⊨", "equiv": "≡", "forall": "∀", "exists": "∃",
+    "nmid": "∤", "mid": "∣", "land": "∧", "lor": "∨", "neg": "¬",
+    "to": "→", "in": "∈", "cup": "∪", "cap": "∩", "le": "≤",
+    "ge": "≥", "ne": "≠", "cdot": "·", "times": "×", "bot": "⊥",
+    "sum": "∑", "ldots": "…", "cdots": "…", "Gamma": "Γ",
+    "Omega": "Ω", "Box": "□", "uparrow": "↑", "gcd": "gcd", "Pr": "Pr",
+    "bmod": " mod ", "iff": " iff ",
+}
+BLACKBOARD_SYMBOLS = {"Z": "ℤ", "N": "ℕ", "Q": "ℚ", "R": "ℝ", "E": "𝔼"}
+NEGATED_SYMBOLS = {"∈": "∉", "≡": "≢", "∣": "∤", "⊆": "⊈", "=": "≠"}
 
-    Canvas does not run its equation renderer on arbitrary QTI ``mattext``
-    during import, so literal ``\\(...\\)`` delimiters remain visible.  The
-    bank only needs a compact discrete-mathematics vocabulary; Unicode is both
-    more reliable in Classic Quizzes and easier to read on phones.
+
+class _MathRenderer:
+    r"""Read TeX tokens instead of replacing prefixes or dropping commands.
+
+    A single unbraced token is an argument in TeX: \frac12 and \binom nr
+    are not the numbers 12 and nr. Unknown commands fail the build instead
+    of silently changing a question's meaning. Intentionally malformed math
+    (missing operands, literal set braces, blank boxes) stays malformed.
     """
 
-    source = source.replace(r"\{", "\x00LBRACE\x00").replace(r"\}", "\x00RBRACE\x00")
-    source = re.sub(r"\\mathbb\{Z\}", "ℤ", source)
-    source = re.sub(r"\\mathbb\{N\}", "ℕ", source)
-    source = re.sub(r"\\mathbb\{Q\}", "ℚ", source)
-    source = re.sub(r"\\mathbb\{R\}", "ℝ", source)
-    source = re.sub(r"\\mathcal\s*\{?P\}?", "P", source)
-    source = re.sub(r"\\operatorname\{([^{}]+)\}", r"\1", source)
-    source = re.sub(r"\\pmod\{([^{}]+)\}", r"(mod \1)", source)
-    source = re.sub(r"\\binom\{([^{}]+)\}\{([^{}]+)\}", r"C(\1, \2)", source)
-    source = re.sub(r"\\frac\{([^{}]+)\}\{([^{}]+)\}", r"(\1)/(\2)", source)
-    source = re.sub(r"\\sqrt\{([^{}]+)\}", r"√(\1)", source)
+    def __init__(self, source: str, *, html_output: bool = False):
+        self.source = source
+        self.position = 0
+        self.html_output = html_output
 
-    replacements = (
-        (r"\not\in", "∉"),
-        (r"\leftrightarrow", "↔"),
-        (r"\Rightarrow", "⇒"),
-        (r"\therefore", "∴"),
-        (r"\because", "∵"),
-        (r"\subseteq", "⊆"),
-        (r"\setminus", "∖"),
-        (r"\varnothing", "∅"),
-        (r"\models", "⊨"),
-        (r"\equiv", "≡"),
-        (r"\forall", "∀"),
-        (r"\exists", "∃"),
-        (r"\nmid", "∤"),
-        (r"\mid", "∣"),
-        (r"\land", "∧"),
-        (r"\lor", "∨"),
-        (r"\neg", "¬"),
-        (r"\to", "→"),
-        (r"\in", "∈"),
-        (r"\cup", "∪"),
-        (r"\cap", "∩"),
-        (r"\le", "≤"),
-        (r"\ge", "≥"),
-        (r"\ne", "≠"),
-        (r"\cdot", "·"),
-        (r"\times", "×"),
-        (r"\bot", "⊥"),
-        (r"\sum", "∑"),
-        (r"\ldots", "…"),
-        (r"\cdots", "…"),
-        (r"\Gamma", "Γ"),
-        (r"\Omega", "Ω"),
-        (r"\Box", "□"),
-        (r"\uparrow", "↑"),
-        (r"\gcd", "gcd"),
-        (r"\Pr", "Pr"),
-        (r"\bmod", "mod"),
-        (r"\iff", "iff"),
-    )
-    for tex, unicode_text in replacements:
-        source = source.replace(tex, unicode_text)
+    def literal(self, value: str) -> str:
+        return html.escape(value, quote=False) if self.html_output else value
 
-    source = source.replace(r"\,", " ").replace(r"\;", " ").replace(r"\!", "")
-    source = source.replace("\\ ", " ")
-    source = source.replace(r"\%", "%")
-    source = re.sub(r"\\[A-Za-z]+", "", source)
-    source = source.replace("{", "").replace("}", "")
-    source = source.replace("\x00LBRACE\x00", "{").replace("\x00RBRACE\x00", "}")
-    return re.sub(r"\s+", " ", source).strip()
+    def argument(self) -> str:
+        while self.position < len(self.source) and self.source[self.position].isspace():
+            self.position += 1
+        if self.position == len(self.source) or self.source[self.position] == "}":
+            raise ValueError(f"Missing TeX argument in {self.source!r}")
+        return self.atom()
+
+    def atom(self) -> str:
+        character = self.source[self.position]
+        self.position += 1
+        if character == "{":
+            return self.render(group=True)
+        if character != "\\":
+            return self.literal(character)
+        match = re.match(r"[A-Za-z]+|.", self.source[self.position:])
+        if match is None:
+            raise ValueError(f"Unfinished TeX command in {self.source!r}")
+        command = match.group()
+        self.position += len(command)
+        if command in MATH_SYMBOLS:
+            return self.literal(MATH_SYMBOLS[command])
+        if command in {",", ";", " ", "!"}:
+            return "" if command == "!" else " "
+        if command in {"{", "}", "%"}:
+            return self.literal(command)
+        if command in {"frac", "binom"}:
+            first, second = self.argument().strip(), self.argument().strip()
+            return (f"({first})/({second})" if command == "frac"
+                    else f"C({first}, {second})")
+        if command == "sqrt":
+            return f"√({self.argument()})"
+        if command == "pmod":
+            return f" (mod {self.argument()})"
+        if command == "operatorname":
+            return self.argument()
+        if command in {"mathbb", "mathcal"}:
+            argument = self.argument()
+            symbols = BLACKBOARD_SYMBOLS if command == "mathbb" else {"P": "𝒫"}
+            if argument not in symbols:
+                raise ValueError(f"Unsupported \\{command} argument {argument!r}")
+            return self.literal(symbols[argument])
+        if command == "not":
+            relation = self.argument()
+            if relation not in NEGATED_SYMBOLS:
+                raise ValueError(f"Unsupported negated relation {relation!r}")
+            return self.literal(NEGATED_SYMBOLS[relation])
+        raise ValueError(f"Unsupported TeX command \\{command} in {self.source!r}")
+
+    def render(self, *, group: bool = False) -> str:
+        output: list[str] = []
+        while self.position < len(self.source):
+            character = self.source[self.position]
+            if character == "}":
+                if not group:
+                    raise ValueError(f"Unmatched TeX group in {self.source!r}")
+                self.position += 1
+                return "".join(output)
+            if character in "_^":
+                self.position += 1
+                argument = self.argument()
+                if self.html_output:
+                    tag = "sub" if character == "_" else "sup"
+                    output.append(f"<{tag}>{argument}</{tag}>")
+                else:
+                    # a_(n+1) is not a_n + 1; 2^(k+1) is not 2^k + 1.
+                    output.append(character + (argument if len(argument) == 1 else f"({argument})"))
+            else:
+                output.append(self.atom())
+        if group:
+            raise ValueError(f"Unclosed TeX group in {self.source!r}")
+        return "".join(output)
+
+
+def math_to_unicode(source: str) -> str:
+    """Render the bank's TeX as unambiguous portable Unicode plain text."""
+    return re.sub(r"\s+", " ", _MathRenderer(source).render()).strip()
+
+
+def math_to_html(source: str) -> str:
+    """Use the same token parser, with safe HTML for subscripts/superscripts."""
+    return re.sub(r"\s+", " ", _MathRenderer(source, html_output=True).render()).strip()
 
 
 def tex_fragment_to_html(source: str) -> str:
@@ -233,17 +275,22 @@ def tex_fragment_to_html(source: str) -> str:
         source,
     )
     parts = source.split("$")
+    if len(parts) % 2 == 0:
+        raise ValueError(f"Unbalanced inline-math delimiters in {source!r}")
     rendered: list[str] = []
     for index, part in enumerate(parts):
         if index % 2:
-            rendered.append(html.escape(math_to_unicode(part), quote=False))
+            rendered.append(math_to_html(part))
         else:
             rendered.append(html.escape(part, quote=False))
-    return (
+    result = (
         "".join(rendered)
         .replace("\x00EMOPEN\x00", "<em>")
         .replace("\x00EMCLOSE\x00", "</em>")
     )
+    if re.search(r"\\[A-Za-z]+", result):
+        raise ValueError(f"Unconverted prose command in {source!r}")
+    return result
 
 
 def qti_html(fragment: str) -> str:

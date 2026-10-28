@@ -4,7 +4,48 @@ Local audit: **2026-10-28 — passed.** This records package readiness, not proo
 
 Combined upload: `output/qti/Core_All_Syntax_Practice_Canvas_QTI.zip` (repository root).
 
-SHA-256: `6409390dcca0cb93cbf351ce0bcd67bffadecc810aba83b4cbb6d2f7e99325da`
+SHA-256: `7aec132e14c38ee97b2e8f288c7b8732f711b3eef5e42c916c1044daf51e5022`
+
+## Saved stopping point — 2026-10-28
+
+All seven final local packages and the combined package pass the offline audit;
+all 12 regression tests pass. The final review covered all 420 keys, notation,
+feedback, and minimal repairs. The original Canvas identities remain intact.
+Seven ready-to-paste student instruction blocks are saved in
+`canvas_instructions/`; QTI import does not reliably preserve those descriptions.
+
+The earlier combined import completed at 12:43 PM, before the final notation
+and feedback repairs. **The final corrected overwrite import is not verified.**
+Do not infer success from a prepared import form or a mouse click. Browser focus
+changed during the attempted final import. Before retrying, check Import Course
+Content for a later completed job to avoid a duplicate import.
+
+The last saved quiz read-back showed the following existing records, each
+unpublished, with 60 questions, 3 points, unlimited attempts/highest score,
+Participation and Practice assignment group, and no assigned dates. These are
+the targets to update, not a reason to create new copies.
+
+| Core | Existing Canvas quiz | Description / module / schedule |
+| --- | --- | --- |
+| Logic | https://canvas.du.edu/courses/213452/quizzes/277965 | Final instructions, placement, and dates pending |
+| Arguments | https://canvas.du.edu/courses/213452/quizzes/277966 | Final instructions, placement, and dates pending |
+| Sets | https://canvas.du.edu/courses/213452/quizzes/277960 | Final instructions, placement, and dates pending |
+| Proofs | https://canvas.du.edu/courses/213452/quizzes/277968 | Final instructions, placement, and dates pending |
+| Divisibility | https://canvas.du.edu/courses/213452/quizzes/277962 | Final instructions, placement, and dates pending |
+| Induction | https://canvas.du.edu/courses/213452/quizzes/277970 | Final instructions, placement, and dates pending |
+| Counting | https://canvas.du.edu/courses/213452/quizzes/277964 | Final instructions, placement, and dates pending |
+
+At the stopping check, no open Chrome tab was a Canvas editing page or import
+form. There are no known unsaved Canvas content edits. Local sources and the
+generated ZIP are saved; the final generator/HTML/checklist changes are a local
+checkpoint and still need their next GitHub push and Overleaf synchronization.
+
+Resume in this order: verify/import the final ZIP once; paste and save the seven
+instruction blocks; inspect True/False/third-choice samples and complex notation
+in instructor editing mode; place quizzes beside the relevant Core materials;
+obtain an approved release/due-date plan; read back and publish only when ready.
+Do not use Student View, change course publication, invent dates, or publish
+private keys. This is a safe pause, not a completed live quiz rollout.
 
 ## Expected quizzes
 
@@ -50,4 +91,4 @@ python3 2300/homework_templates/audit_core_syntax_qti.py
 python3 2300/homework_templates/test_core_syntax_qti.py
 ```
 
-Normal builds use the saved course-213452 identities without Downloads. The audit checks all seven single packages plus the combined ZIP; four regression tests check reproducibility, saved-ID reuse, explicit clean-course IDs, corruption detection, and conflicting identity options. **Do not use `--new-identifiers` to update this course**: that option intentionally produces a separate stable identity set for clean-course imports. Retest and refresh the checksum after changing content.
+Normal builds use the saved course-213452 identities without Downloads. The audit checks all seven single packages plus the combined ZIP; 12 regression tests check reproducibility, saved-ID reuse, explicit clean-course IDs, corruption detection, conflicting identity options, and notation/feedback conversion. **Do not use `--new-identifiers` to update this course**: that option intentionally produces a separate stable identity set for clean-course imports. Retest and refresh the checksum after changing content.

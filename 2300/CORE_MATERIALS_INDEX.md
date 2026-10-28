@@ -58,6 +58,25 @@ and contains all 210 practice items. Neither is the obsolete 30-page PDF.
 
 ## Validation and delivery record — 2026-10-28
 
+### Safe stopping point
+
+The reviewed seven-Core solution set, companion PDFs, and published Canvas
+resource entry point are delivered as recorded below. The final 420-question
+quiz package is saved and audited, but its corrected live overwrite import is
+not verified. The seven existing quizzes remain unpublished pending final
+instructions, module placement, approved dates, and saved read-back.
+
+Resume from `homework_templates/CORE_SYNTAX_CANVAS_IMPORT_CHECKLIST.md`, which
+contains the final package checksum, seven existing quiz URLs, and exact next
+steps. There were no open Canvas editing/import tabs at the stopping check.
+Do not repeat completed Obsidian publication or rebuild reviewed companions
+merely to resume the unfinished Canvas quiz rollout.
+
+The latest quiz-generator fixes, regression tests, student instruction HTML,
+resource-page source, and this handoff are saved in a local checkpoint; they
+have not yet received their next GitHub push / Overleaf pull. This does not
+undo the already verified delivery of the companion PDFs and solutions.
+
 The seven companion PDFs were compiled with TeX Live 2025 and visually checked
 as four US-letter pages each. The substantive second review is complete, and
 the reviewed sources and rebuilt stable PDFs are committed. Rebuilt copies
@@ -70,8 +89,10 @@ Final checks passed after merging the existing Overleaf commits:
   shared definitions, and all five Sets relation images are included.
 - QTI: seven single-Core packages plus the combined package; 420 keyed items,
   60 items and 3 points per quiz, with the original Canvas identities retained.
-- QTI regression tests: all four pass, covering reproducibility, saved identity
-  reuse, clean-course identifiers, and invalid identity/options detection.
+- QTI regression tests: all 12 pass, including reproducibility, saved identity
+  reuse, clean-course identifiers, invalid identity/options detection, and
+  notation/feedback conversion. Final combined and individual package audits
+  also pass; these are local package checks, not Canvas import verification.
 - Arguments packets: reproducible 20-form and both 60-form seed manifests,
   with current packet TeX verified where applicable.
 - Git whitespace checks: passed. No student records or bulk `output/` artifacts
@@ -80,10 +101,12 @@ Final checks passed after merging the existing Overleaf commits:
 ### Verified GitHub delivery
 
 Reviewed content commit: `048180e`. Both existing Overleaf commits were merged
-without conflicts. The pushed material revision
-`827c011a4dab41294c18903de9dd120af043a181` was verified against the live remote
-`main` reference and fetched file blobs. This proves GitHub delivery, not a
-pull into the live Overleaf project, Obsidian Publish, or Canvas.
+without conflicts. The latest verified pushed revision is
+`45acbbbe98b6b23ab55c9569dc8ba955bbb055e8`. The earlier material revision
+`827c011a4dab41294c18903de9dd120af043a181` was also verified against the live
+remote `main` reference and fetched file blobs. GitHub delivery alone does not
+establish delivery on the other platforms; their separate read-back evidence
+is recorded below.
 
 All seven public raw PDF URLs below returned valid PDFs byte-for-byte identical
 to the reviewed local copies. Each is four US-letter pages, with readable text
@@ -99,6 +122,23 @@ on every page and no replacement characters in text extraction.
 | Induction | [PDF](https://raw.githubusercontent.com/alexanderlewisstevens/Core_Standards_HW_Templates/main/2300/cheat_sheets/companion_pdfs/induction_core_companion.pdf) | 197108 | 4 pages; passed |
 | Counting | [PDF](https://raw.githubusercontent.com/alexanderlewisstevens/Core_Standards_HW_Templates/main/2300/cheat_sheets/companion_pdfs/counting_core_companion.pdf) | 246627 | 4 pages; passed |
 
+### Verified Overleaf synchronization
+
+The live project `68cc44fe290b01ea1636acd8` pulled all three available GitHub
+commits. Its GitHub integration then reported no new commits to pull. The
+Logic companion compiled live to four pages with zero errors and one harmless
+`showhyphens`-changed warning. This verifies the project synchronization and
+that live Logic compile, not a live compile of every other document.
+
+### Verified Obsidian Publish delivery
+
+All eight solution Markdown pages and five Sets relation JPG assets were
+published. Public GETs of the actual served Markdown were byte-for-byte
+identical to the reviewed sources, with 350 full-question callouts across the
+solution pages. All seven companion PDF links and all five JPG assets were
+also fetched as genuine file bytes, rather than just successful landing-page
+responses. The companion PDF byte checks are listed above.
+
 ### Syntax and definitions practice
 
 `homework_templates/generate_core_syntax_bank.py` is the content source;
@@ -113,9 +153,12 @@ unpublished raw-notation archives, and unpublished Unicode practice quizzes
 still displaying 60 points. The corrected packages now reuse the downloaded
 Unicode import identities through the committed course-213452 identifier map.
 Use the overwrite option; do not create another set of active quizzes. Live
-import completion, publication, module placement, grading category, and dates
-remain pending read-back verification in the course audit; local package tests
-do not establish these. See `homework_templates/CORE_SYNTAX_CANVAS_IMPORT_CHECKLIST.md`.
+import of the final corrected packages remains in progress. Import completion,
+publication, module placement, grading category, and dates remain pending
+read-back verification in the course audit; local package tests do not
+establish these. No availability/due-date matrix for these seven new quizzes
+has been approved; do not invent retrospective dates. See
+`homework_templates/CORE_SYNTAX_CANVAS_IMPORT_CHECKLIST.md`.
 No Student View or Canvas API.
 
 ### Required student entry points
@@ -128,15 +171,25 @@ bank and solutions. The book home is
 Keep grader guides, answer keys, attempt manifests, and intentionally unused
 material unpublished. Do not expose a private instructor key with a companion.
 
+The published [Core Study Resources](https://canvas.du.edu/courses/213452/pages/core-study-resources)
+page is verified as the first item in the published **Core Assessments** module
+(`831530`). It links all seven public companions and exact Obsidian solution
+permalinks, the book home, and the read-only Overleaf project. It excludes
+private grading guides and explicitly identifies the companions as study
+references, not permitted live-Core materials absent an accommodation.
+The source is `canvas_resources/core_study_resources.html`. This completed
+shared entry point does not establish the unfinished quiz rollout or every
+individual weekly-module/Core-assignment link.
+
 ### Live rollout status
 
 | Destination | Verified state | Remaining work |
 | --- | --- | --- |
 | Local source | Final substantive review, 350-record alignment, QTI audits/regressions, packet reproducibility, and stable PDF checks passed | Rebuild and re-audit after any later source changes |
-| GitHub | Material revision `827c011a4dab41294c18903de9dd120af043a181` pushed and remote-verified; seven raw companion PDFs byte-verified | This manifest update records the delivery evidence; no live-platform completion inferred |
-| Overleaf | Pending live verification against the synchronized GitHub revision | Pull synchronized GitHub commit and verify files/compile |
-| Active Obsidian vault / Publish | Pending final resync and public read-back verification | Resync final audited solutions/assets; batch publish; verify public pages |
-| Canvas 213452 | Pending final corrected-import/settings/resource read-back verification | Overwrite matching quiz IDs, verify settings, attach resources in correct modules |
+| GitHub | Latest verified pushed revision `45acbbbe98b6b23ab55c9569dc8ba955bbb055e8`; seven public companion PDFs byte-verified | Push the later local quiz-generator/HTML/handoff checkpoint; bulk `output/` stays local |
+| Overleaf | Material commits pulled into project `68cc44fe290b01ea1636acd8`; Logic companion live compile: 4 pages, 0 errors, 1 harmless warning | Pull the later checkpoint after its GitHub push; other live document compiles not claimed |
+| Active Obsidian vault / Publish | Eight Markdown pages and five Sets JPGs published; actual served Markdown byte-identical; 350 question callouts, seven companion PDFs, and five genuine JPGs verified | Re-publish and recheck if reviewed content changes |
+| Canvas 213452 | Core Study Resources page published and first in published Core Assessments module `831530`; companion, solution, book, and read-only Overleaf links verified | Final corrected quiz import/settings/publication/module read-back still pending; obtain approved availability/due dates; verify remaining per-Core entry points |
 
 The current user-authorized goal includes these in-scope synchronization,
 publication, and Canvas delivery actions. Do not publish unrelated material or
