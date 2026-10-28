@@ -155,28 +155,30 @@ Each follows by substituting integer witnesses and factoring out $d$.
 
 \begin{workedbox}{Worked example: a positive dividend}
 Find all three views for $263$ divided by $17$.
+\textbf{Choose $q$:} $17(15)=255$ is the largest multiple not exceeding $263$.
+\textbf{Compute $r$:} $263-255=8$, so
 \[
 263=17(15)+8,\qquad 0\le8<17.
 \]
-Therefore
+The bound $0\le8<17$ makes this canonical. Therefore
 \[
 \begin{aligned}
 263\,\mathrm{div}\,17&=15, & 263\bmod17&=8,\\
 263&\equiv8\pmod{17}.
 \end{aligned}
 \]
-For the definition check,
+\textbf{Congruence check:}
 $263-8=255=17(15)$, so $17\mid(263-8)$.
 \end{workedbox}
 
 \begin{workedbox}{Worked example: a negative dividend}
 Find the canonical quotient and remainder for $-52$ divided by $9$.
-The tempting equation $-52=9(-5)-7$ has a negative remainder, so it is
-\emph{not} canonical. Instead,
+\textbf{Reject the first try:} $-52=9(-5)-7$ has a negative remainder.
+\textbf{Adjust:} decrease the quotient by $1$ and add $9$ to the remainder:
 \[
 -52=9(-6)+2,\qquad 0\le2<9.
 \]
-Thus
+Now $0\le2<9$. Thus
 \[
 \begin{aligned}
 -52\,\mathrm{div}\,9&=-6, & -52\bmod9&=2,\\
@@ -198,10 +200,11 @@ showing that $b$ divides a difference.
 \end{checklistbox}
 
 \begin{workedbox}{Recover a number; test a congruence}
-If $a\,\mathrm{div}\,13=-4$ and $a\bmod13=9$, then
-$a=13(-4)+9=-43$. To test $347\equiv-13\pmod{24}$, subtract:
-$347-(-13)=360=24(15)$, so the claim is true; the least nonnegative residue
-is $11$.
+\textbf{Recover:} insert $q=-4,r=9$ into $a=13q+r$ to get
+$a=13(-4)+9=-43$; $0\le9<13$ verifies the remainder.
+\textbf{Test:} subtract in $347\equiv-13\pmod{24}$:
+$347-(-13)=360=24(15)$, so the congruence is true. Finally,
+$347=24(14)+11$, so the least nonnegative residue is $11$.
 \end{workedbox}
 \end{multicols}
 
@@ -258,6 +261,7 @@ remainders are $8,E,3$, so $1000_{10}=(3E8)_{16}$.
 \end{methodbox}
 
 \begin{workedbox}{Worked example: $202_{10}$ to binary}
+\textbf{Divide and record remainders:}
 \[
 \begin{array}{rcl@{\qquad}rcl}
 202&=&2(101)+0 & 101&=&2(50)+1\\
@@ -266,9 +270,9 @@ remainders are $8,E,3$, so $1000_{10}=(3E8)_{16}$.
 3&=&2(1)+1 & 1&=&2(0)+1
 \end{array}
 \]
-Reading the remainders in reverse chronological order gives
+\textbf{Read upward:} the remainders in reverse chronological order give
 $202_{10}=11001010_2$. Rebuilding by shifting and
-appending gives
+appending verifies the digit order:
 \[
 \begin{aligned}
 (1)_2&\to(11)_2\to(110)_2\\
@@ -276,16 +280,18 @@ appending gives
 &\to(1100101)_2\to(11001010)_2.
 \end{aligned}
 \]
-Check: $128+64+8+2=202$.
+\textbf{Place-value check:} $128+64+8+2=202$.
 \end{workedbox}
 
 \columnbreak
 
 \begin{workedbox}{Worked example: evaluate a numeral}
+Multiply each digit by the matching power of $5$:
 \[
 (2301)_5=2(5^3)+3(5^2)+0(5)+1=326.
 \]
-The subscript names the base; it is not a multiplier.
+Thus the value is $326_{10}$. The subscript names the base; it is not a
+multiplier.
 \end{workedbox}
 
 \begin{methodbox}{Binary as a bridge}
@@ -303,6 +309,7 @@ example,
 
 \begin{workedbox}{Worked example: hexadecimal to binary and octal}
 Convert $(2D7)_{16}$.
+\textbf{Hex to binary:} replace each digit with four bits:
 \[
 2=0010_2,\qquad D=1101_2,\qquad7=0111_2,
 \]
@@ -310,12 +317,12 @@ so
 \[
 (2D7)_{16}=(0010\ 1101\ 0111)_2.
 \]
-Regrouping in threes,
+\textbf{Binary to octal:} regroup from the right in threes,
 \[
 001\ 011\ 010\ 111
 \quad\Longrightarrow\quad (1327)_8.
 \]
-Decimal check:
+\textbf{Decimal check:}
 \[
 2(16^2)+13(16)+7=727.
 \]
@@ -327,12 +334,13 @@ Let $n=(25314)_7$. Then
 \[
 n=2(7^4)+5(7^3)+3(7^2)+1(7)+4.
 \]
-Every term containing $7^2$ is congruent to $0$ modulo $7^2$. Therefore
+\textbf{Discard higher places:} every term containing $7^2$ is congruent to
+$0$ modulo $7^2$. Therefore
 \[
 n\bmod7^2=1(7)+4=11.
 \]
-The last two base-seven digits are $(14)_7$, whose decimal value is $11$, not
-$14$.
+\textbf{Interpret:} the last two base-seven digits are $(14)_7$, whose decimal
+value is $1(7)+4=11$, not $14$.
 \end{workedbox}
 
 \begin{checklistbox}{Conversion checks}
@@ -351,7 +359,9 @@ integer.
 \thispagestyle{fancy}
 
 \begingroup
-\tcbset{before skip=1.5pt,after skip=1.5pt}
+\tcbset{before skip=0.5pt,after skip=0.5pt}
+\setlength{\abovedisplayskip}{3pt}
+\setlength{\belowdisplayskip}{3pt}
 \begin{multicols}{2}\small
 \begin{definitionbox}{Arithmetic with congruences}
 If $a\equiv b\pmod m$ and $c\equiv d\pmod m$, then
@@ -372,14 +382,15 @@ Reduce early; report a least nonnegative residue for $x\bmod m$.
 
 \begin{workedbox}{Worked example: reduce early}
 Compute the least nonnegative residue of $(-47)\cdot38+19$ modulo $12$.
+\textbf{Reduce each input:}
 \[
 -47\equiv1,\quad38\equiv2,\quad19\equiv7\pmod{12},
 \]
-so
+\textbf{Operate on the small representatives:}
 \[
 (-47)\cdot38+19\equiv1(2)+7\equiv9\pmod{12}.
 \]
-Hence $((-47)\cdot38+19)\bmod12=9$.
+Since $0\le9<12$, $((-47)\cdot38+19)\bmod12=9$.
 \end{workedbox}
 
 \begin{methodbox}{Powers modulo $m$: cycles and squaring}
@@ -397,9 +408,10 @@ $117=64+32+16+4+1$,
 \[
 5^{117}\equiv1\cdot1\cdot1\cdot1\cdot5\equiv5\pmod{13}.
 \]
-Always state the cycle length or the binary/power decomposition of the
-exponent.
+State the cycle length or the exponent decomposition you used.
 \end{methodbox}
+
+\columnbreak
 
 \begin{definitionbox}{GCD and relative primality}
 For integers $a,b$, not both zero, $\gcd(a,b)$ is the greatest positive
@@ -413,15 +425,14 @@ Put the larger positive input first, then repeatedly use
 a=bq+r,\qquad0\le r<b,
 \]
 then replace $(a,b)$ by $(b,r)$. Stop when the remainder is $0$. The last
-\emph{nonzero} remainder is the gcd. This works because if $a=bq+r$, then a
-number divides both $a,b$ exactly when it divides both $b,r=a-bq$; hence
-$\gcd(a,b)=\gcd(b,r)$. If the inputs arrive smaller-first, swap them.
+\emph{nonzero} remainder is the gcd. Indeed, from $a=bq+r$, the common
+divisors of $a,b$ are exactly those of $b,r=a-bq$, so
+$\gcd(a,b)=\gcd(b,r)$. Swap the inputs first if necessary.
 \end{methodbox}
-
-\columnbreak
 
 \begin{workedbox}{Euclidean algorithm and B\'ezout coefficients}
 Find $\gcd(246,102)$ and express it as $246s+102t$.
+\textbf{Step 1: run the Euclidean algorithm.}
 \[
 \begin{aligned}
 246&=2(102)+42,\\
@@ -430,7 +441,8 @@ Find $\gcd(246,102)$ and express it as $246s+102t$.
 18&=3(6)+0.
 \end{aligned}
 \]
-The last nonzero remainder is $6$. B\'ezout's identity says that
+The last nonzero remainder is $6$, so it is the gcd. \textbf{Step 2:
+back-substitute.} B\'ezout's identity says that
 $\gcd(a,b)=sa+tb$ for some $s,t\in\Z$. Back-substitute:
 \[
 \begin{aligned}
@@ -441,7 +453,7 @@ $\gcd(a,b)=sa+tb$ for some $s,t\in\Z$. Back-substitute:
  &=5(246)-12(102).
 \end{aligned}
 \]
-Thus $s=5$ and $t=-12$. Check both conclusions:
+Thus $s=5$ and $t=-12$. \textbf{Step 3: verify both conclusions:}
 \[
 6\mid246,\quad6\mid102,\qquad5(246)-12(102)=6.
 \]
@@ -475,21 +487,22 @@ prime is \term{composite}.
 \end{definitionbox}
 
 \begin{workedbox}{Proof pattern: divisibility and linear combinations}
-Assume $d\mid a$ and $d\mid b$. By definition, $a=dr$ and $b=ds$ for some
-$r,s\in\Z$. For any $m,n\in\Z$,
+\textbf{Unpack:} assume $d\mid a$ and $d\mid b$, so $a=dr$ and $b=ds$ for
+some $r,s\in\Z$. \textbf{Substitute and factor:} for any $m,n\in\Z$,
 \[
 ma+nb=m(dr)+n(ds)=d(mr+ns).
 \]
-Since $mr+ns\in\Z$, the definition gives $d\mid(ma+nb)$.
+\textbf{Close:} $mr+ns\in\Z$, so the display gives the required witness and
+$d\mid(ma+nb)$.
 \end{workedbox}
 
 \begin{workedbox}{Proof pattern: a modulus that factors}
-Suppose $p,q\ge2$, $d=pq$, and $x\equiv y\pmod d$. By congruence,
-$d\mid(x-y)$, so $x-y=kd=kpq$ for some $k\in\Z$. Then
+\textbf{Unpack:} suppose $p,q\ge2$, $d=pq$, and $x\equiv y\pmod d$. Then
+$d\mid(x-y)$, so $x-y=kd=kpq$ for some $k\in\Z$. \textbf{Refactor:}
 \[
 x-y=p(kq)\quad\text{and}\quad x-y=q(kp).
 \]
-Therefore $p\mid(x-y)$ and $q\mid(x-y)$, giving
+\textbf{Close:} $kq,kp\in\Z$, so $p\mid(x-y)$ and $q\mid(x-y)$, giving
 \[
 x\equiv y\pmod p,\qquad x\equiv y\pmod q.
 \]
@@ -511,32 +524,36 @@ from modulus $33$ to moduli $3$ and $11$.
 \end{methodbox}
 
 \begin{workedbox}{Proof pattern: products preserve congruence}
-Assume $a\equiv b\pmod m$ and $c\equiv d\pmod m$. Then
-$a=b+mk$ and $c=d+m\ell$ for some $k,\ell\in\Z$. Therefore
+\textbf{Unpack:} assume $a\equiv b\pmod m$ and $c\equiv d\pmod m$. Then
+$a=b+mk$ and $c=d+m\ell$ for some $k,\ell\in\Z$. \textbf{Expand and factor:}
 \[
 ac-bd=m(b\ell+dk+mk\ell).
 \]
-The parenthesized expression is an integer, so $m\mid(ac-bd)$ and
-$ac\equiv bd\pmod m$.
+\textbf{Close:} the parenthesized expression is an integer, so
+$m\mid(ac-bd)$ and $ac\equiv bd\pmod m$.
 \end{workedbox}
 
 \begin{workedbox}{Proof pattern: odd squares modulo $8$}
-Let $n=2k+1$. Then
+\textbf{Represent the odd integer:} let $n=2k+1$. \textbf{Expand:}
 \[
 n^2-1=4k(k+1).
 \]
-One of the consecutive integers $k,k+1$ is even, so $k(k+1)=2t$ for some
-$t\in\Z$. Hence $n^2-1=8t$, proving $n^2\equiv1\pmod8$.
+\textbf{Find the extra factor of $2$:} one of $k,k+1$ is even, so
+$k(k+1)=2t$ for some $t\in\Z$. Hence $n^2-1=8t$. Thus
+$8\mid(n^2-1)$, proving $n^2\equiv1\pmod8$.
 \end{workedbox}
 
 \begin{workedbox}{Two short divisibility arguments}
-If $a\mid b$ and $b\mid c$, write $b=ar$ and $c=bs$. Then
-$c=a(rs)$ with $rs\in\Z$, so $a\mid c$.
+\textbf{Transitivity:} if $a\mid b$ and $b\mid c$, write $b=ar$ and $c=bs$.
+Substitution gives $c=(ar)s=a(rs)$; since $rs\in\Z$, $a\mid c$.
 
-For three consecutive integers $n,n+1,n+2$, one is divisible by $3$ and at
-least one is even. If these are different factors their product contains
-$(3r)(2s)=6rs$; if they are the same factor, it is already divisible by $6$.
-Multiplying by the remaining integer preserves divisibility by $6$.
+\textbf{Three consecutive integers:} let $P=n(n+1)(n+2)$. One factor is
+even, so $P=2r$ for some $r\in\Z$. One factor is divisible by $3$, so
+$P=3s$ for some $s\in\Z$. Combine these witnesses:
+\[
+P=3P-2P=3(2r)-2(3s)=6(r-s).
+\]
+Since $r-s\in\Z$, the definition gives $6\mid P$.
 \end{workedbox}
 
 \begin{warningbox}{Claims that need an extra hypothesis}

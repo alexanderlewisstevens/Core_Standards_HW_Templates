@@ -126,7 +126,8 @@ substantially longer or shorter than the other packet.
   complete solutions, Rosen 2.1--2.3 links, and the aligned videos/handouts.
 - Section-specific availability controls access. Do not use module prerequisites
   or requirements to unlock work.
-- The course shell and instructor-only material remain unpublished.
+- The course is published; do not change its publication state here. All
+  instructor-only pages and packet keys remain unpublished.
 
 ## Deferred enrichment bank
 
@@ -134,3 +135,26 @@ The previous four closure/test-coverage problems are suitable for optional
 group work after students understand Cartesian products and element chasing.
 Keep them out of the scored live-form rotation unless the Core's mastery targets
 are deliberately revised later.
+
+## Grader handoff: minimum evidence and alternatives
+
+- **A:** the constructed set, power set, or Cartesian product is complete and
+  uses membership/subset notation correctly. Set order is irrelevant; any
+  ordering that contains exactly the correct elements is acceptable.
+- **B:** the set expression and shaded/membership region describe exactly the
+  same points. Logically equivalent set identities are acceptable.
+- **C:** the relation is read with ordered-pair orientation intact, quantified
+  claims receive correct witnesses or counterexamples, and function status is
+  justified by the declared domain/codomain. Any valid witness is acceptable.
+- **D:** images and preimages contain exactly the required elements, and
+  injective/surjective judgments use the correct domain and codomain. Equivalent
+  witness choices are acceptable.
+- **E:** a true claim receives a two-inclusion or element-chasing proof; a false
+  claim receives a counterexample that satisfies every hypothesis and falsifies
+  the conclusion. Any smaller or differently labeled valid counterexample is
+  acceptable.
+
+Each live label remains all-or-nothing. Minor ordering or variable-name changes
+are harmless; confusing element with subset, image with preimage, relation with
+function, or example with universal proof is essential. A retake uses a new
+complete A--E form with no problem credit carried forward.

@@ -27,12 +27,13 @@ is not student-facing material.
 The public Core is a practice bank, not a single live form. Do not place the
 longest bank prompts on a 20-minute form without shortening them.
 
-- A: use one reconstruction, conditional-classification, or validity task.
-  If adapting A.3, use one or at most two of its four arguments, not all four.
-- B–D: use one concise Logical Reasoning problem from each section. Require both
-  the selected answer and a brief justification.
-- E: use a focused evaluation or revision task. If adapting E.3, ask no more
-  than two tightly related subparts on one live form.
+- A: use one short structure, conditional, or validity task. The complete
+  response is at most two compact results: conclusion labels; a translation and
+  consequence; or a validity judgment plus a rule/countermodel.
+- B–D: use one concise Logical Reasoning problem from each section. The selected
+  answer is the complete response; do not require written justification.
+- E: use one focused evaluation, principle, or revision task. The complete
+  response is an answer plus one brief reason, or two short labeled results.
 - Target roughly 3–4 minutes for each B–D problem and 4–5 minutes for each A/E
   problem. Pilot every form before use; revise wording if a prepared student
   cannot finish comfortably in 20 minutes.
@@ -67,8 +68,10 @@ longest bank prompts on a 20-minute form without shortening them.
   Each packet has one prompt from every section and enough distinct work for as
   many as five students to handwrite one solution apiece. The concise-answer
   keys are Packet 1: B.1.01 C, C.3.01 A, D.2.01 A, E.2.01 B; Packet 2:
-  B.4.01 B, C.1.01 A, D.4.01 A. Grade A.1.01, A.2.01, E.1.01, and all
-  justifications against the complete Obsidian worked solutions.
+  B.4.01 B, C.1.01 A, D.4.01 A. Grade A.1.01, A.2.01, and E.1.01 against
+  the complete Obsidian worked solutions. For A and E, accept a correct compact
+  response with no more than one or two explanatory sentences; B–D require only
+  the correct selected answer.
 - The Canvas instructor page must include these exact packet selections and
   keys and must remain unpublished.
 
@@ -78,3 +81,26 @@ The entire bank is original course-authored material. Sections B–D use familia
 Logical Reasoning problem families but do not copy or closely paraphrase LSAC or
 LawHub stimuli, prompts, answer choices, or explanations. Keep official practice
 in LawHub.
+
+## Grader handoff: minimum evidence and alternatives
+
+- **A.1:** require only the main conclusion and intermediate conclusion.
+- **A.2:** require only the requested symbolic translation and the one named
+  consequence or classification. No prose derivation is required.
+- **A.3:** require only `valid` plus the decisive rule, or `invalid` plus one
+  true-premise/false-conclusion countermodel. Do not require a full
+  formalization or repair.
+- **B, C, and D:** the keyed answer selection alone is a complete response.
+  Never deduct for omitting justification and never require students to copy an
+  explanation from the public solution page.
+- **E.1:** require the causal flaw and one plausible alternative explanation in
+  one sentence. **E.2:** require the letter and one sentence naming the decisive
+  condition match. **E.3:** require the main conclusion and one
+  evidence-supported revision. Equivalent concise wording is acceptable.
+- For A and E, do not invent an additional required subpart beyond the printed
+  prompt. For B--D, grade the selected answer only. Use the generated private
+  guide for the key, and consult the full Obsidian solution only when an A/E
+  alternative is not already anticipated.
+
+Every retake is a complete new A--E form and is judged under the same response
+rules. Do not carry individual problem credit forward from an earlier attempt.

@@ -1,0 +1,431 @@
+\documentclass[10pt]{article}
+
+% COMP 2300 Counting Core companion: student-facing reference and practice.
+\usepackage[letterpaper,margin=0.56in,includehead,includefoot,
+  headheight=15pt,headsep=7pt,footskip=20pt]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{microtype}
+\usepackage[dvipsnames,svgnames]{xcolor}
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage{tabularx,booktabs,array}
+\usepackage[most]{tcolorbox}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage[hidelinks]{hyperref}
+
+\definecolor{CoreNavy}{HTML}{18364A}
+\definecolor{CoreTeal}{HTML}{176B6B}
+\definecolor{CoreGold}{HTML}{9A6500}
+\definecolor{CoreRed}{HTML}{963D38}
+\definecolor{CoreBlueTint}{HTML}{EDF4F8}
+\definecolor{CoreTealTint}{HTML}{EDF8F6}
+\definecolor{CoreGoldTint}{HTML}{FFF7E5}
+\definecolor{CoreRedTint}{HTML}{FCEFED}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{2.5pt}
+\setlength{\columnsep}{0.25in}
+\setlength{\columnseprule}{0.25pt}
+\setlength{\emergencystretch}{1.2em}
+\setlength{\abovedisplayskip}{3pt}
+\setlength{\belowdisplayskip}{3pt}
+\setlist{leftmargin=*,itemsep=1pt,topsep=1.5pt,parsep=0pt,partopsep=0pt}
+\raggedbottom
+
+\titleformat{\section}{\Large\bfseries\color{CoreNavy}}{}{0pt}{}
+  [\vspace{-3pt}\color{CoreNavy}\rule{\linewidth}{0.7pt}]
+\titlespacing*{\section}{0pt}{3pt}{4pt}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textbf{COMP 2300}}
+\fancyhead[C]{\textbf{Counting Core Companion}}
+\fancyhead[R]{Definitions and Worked Examples}
+\fancyfoot[L]{Core sections A--E}
+\fancyfoot[C]{\thepage}
+\fancyfoot[R]{Study reference---not used during a Core}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0.3pt}
+
+\tcbset{enhanced,before skip=2.5pt,after skip=2.5pt,boxrule=0.55pt,arc=1.2mm,
+  left=4pt,right=4pt,top=3pt,bottom=3pt,fonttitle=\bfseries}
+\newtcolorbox{definitionbox}[1]{title={#1},colback=CoreBlueTint,
+  colframe=CoreNavy,colbacktitle=CoreNavy,coltitle=white}
+\newtcolorbox{methodbox}[1]{title={#1},colback=CoreTealTint,
+  colframe=CoreTeal,colbacktitle=CoreTeal,coltitle=white}
+\newtcolorbox{workedbox}[1]{title={#1},colback=white,
+  colframe=CoreNavy,colbacktitle=CoreBlueTint,coltitle=CoreNavy}
+\newtcolorbox{warningbox}[1]{title={#1},colback=CoreRedTint,
+  colframe=CoreRed,colbacktitle=CoreRed,coltitle=white}
+\newtcolorbox{checklistbox}[1]{title={#1},colback=CoreGoldTint,
+  colframe=CoreGold,colbacktitle=CoreGold,coltitle=white}
+\newcommand{\term}[1]{\textbf{\color{CoreNavy}#1}}
+
+\begin{document}
+\small
+
+\section*{A--B. Counting Rules, Arrangements, and Selections}
+\begin{multicols}{2}
+\begin{definitionbox}{Sum and product rules}
+Use the \term{sum rule} for disjoint alternatives: $m+n$ ways to do one of
+two tasks. Use the \term{product rule} for a sequence of choices: $mn$ ways
+when every first choice is followed by $n$ second choices. If alternatives
+overlap, use inclusion--exclusion:
+\[
+|A\cup B|=|A|+|B|-|A\cap B|.
+\]
+\end{definitionbox}
+
+\begin{workedbox}{A.1--A.4 worked examples}
+\textbf{Disjoint alternatives:} five soups or four salads give $5+4=9$
+lunches. \textbf{Successive positions:} two letters followed by three digits
+give $26\cdot26\cdot10\cdot10\cdot10=26^2 10^3$ strings when repetition is
+allowed. \textbf{Functions:} choose one of eight images for each of five
+labeled inputs, giving $8^5$. \textbf{Overlap:} if $|A|=19$, $|B|=20$, and
+$|A\cap B|=8$, add both sets and remove the duplicate intersection:
+$|A\cup B|=19+20-8=31$.
+\end{workedbox}
+
+\begin{definitionbox}{Generalized pigeonhole principle}
+Placing $N$ objects into $k$ boxes guarantees some box contains at least
+\[
+\left\lceil\frac Nk\right\rceil
+\]
+objects. Forty keys mapped to twenty hash values guarantee occupancy at least
+$\lceil40/20\rceil=2$. They do not guarantee $3$: two keys per bucket is
+possible.
+\end{definitionbox}
+
+\columnbreak
+
+\begin{definitionbox}{Permutations and combinations}
+When order matters, select and arrange:
+\[
+P(n,r)=n(n-1)\cdots(n-r+1)=\frac{n!}{(n-r)!}.
+\]
+When order does not matter, select:
+\[
+\binom nr=\frac{n!}{r!(n-r)!}.
+\]
+For repeated object types with multiplicities $n_1,\ldots,n_t$ totaling $n$,
+the number of distinct arrangements is $n!/(n_1!\cdots n_t!)$.
+\end{definitionbox}
+
+\begin{workedbox}{B worked examples}
+A committee is unordered, so three people from ten give $\binom{10}{3}$.
+Offices are labeled, so president then vice president give
+$P(10,2)=10\cdot9$. For \texttt{BANANA}, begin with $6!$ arrangements, then
+remove the duplicate permutations of the three A's and two N's:
+\[
+\frac{6!}{3!2!}
+\]
+An eight-bit string with exactly three $1$s is determined by choosing the three
+$1$-positions; the other five positions are forced, giving $\binom83$.
+\end{workedbox}
+
+\begin{definitionbox}{Binomial theorem}
+\[
+(x+y)^n=\sum_{k=0}^{n}\binom nk x^{n-k}y^k.
+\]
+The coefficient of $x^3$ in $(1+x)^8$ is $\binom83$: choose the three factors
+that contribute $x$.
+\end{definitionbox}
+
+\begin{warningbox}{Frequent A--B errors}
+Do not add sequential choices or multiply overlapping alternatives. Decide
+whether changing order creates a new outcome before choosing $P(n,r)$ or
+$\binom nr$. Divide only for genuinely indistinguishable repetitions.
+\end{warningbox}
+
+\begin{checklistbox}{A--B readiness}
+Can I name the rule, show an unsimplified expression, explain order, and state
+what each factor or selected position represents?
+\end{checklistbox}
+\end{multicols}
+
+\clearpage
+\section*{C. Constrained Counting}
+\begin{multicols}{2}
+\begin{methodbox}{Four reliable strategies}
+\begin{enumerate}
+  \item \term{Build directly}: multiply successive legal choices.
+  \item \term{Split into disjoint cases}: count each case, then add.
+  \item \term{Use a complement}: total minus the forbidden cases.
+  \item \term{Choose positions or members}: use binomial coefficients, then
+  fill remaining roles.
+\end{enumerate}
+State the sample objects and why the cases neither overlap nor leave gaps.
+\end{methodbox}
+
+\begin{workedbox}{C.1: exact composition}
+\textbf{1. Translate ``exactly'':} a five-card hand with exactly two hearts has
+two hearts and three nonhearts. \textbf{2. Choose within each category:}
+\[
+\binom{13}{2}\binom{39}{3}.
+\]
+\textbf{3. Justify the product:} each qualifying hand has one unique pair of
+hearts and triple of nonhearts, so multiply the two unordered selections.
+\end{workedbox}
+
+\begin{workedbox}{C.2: count by complement}
+\textbf{1. Count all:} there are $2^8$ eight-bit strings.
+\textbf{2. Identify the complement:} ``at least two $1$s'' fails only for zero
+or one $1$. \textbf{3. Subtract the disjoint forbidden cases:}
+\[
+2^8-\binom80-\binom81.
+\]
+The complement is shorter because it has only these two cases.
+\end{workedbox}
+
+\begin{workedbox}{C.3: mixed committee}
+A five-person group uses disjoint pools of twelve CS majors and eight math
+majors. Exactly three CS majors therefore requires two math majors. Choose
+the two unordered subsets in
+\[
+\binom{12}{3}\binom82
+\]
+ways. ``Exactly'' fixes both category counts.
+\end{workedbox}
+
+\columnbreak
+
+\begin{workedbox}{C.4: injective functions}
+For $f:A\to B$ with $|A|=5$ and $|B|=8$, \textbf{1. label the five inputs.}
+\textbf{2. Enforce injectivity:} after an output is used, it is unavailable.
+The successive choices are
+\[
+8\cdot7\cdot6\cdot5\cdot4=P(8,5).
+\]
+\textbf{3. Check overcounting:} input labels already distinguish the positions,
+so do not divide by $5!$.
+\end{workedbox}
+
+\begin{workedbox}{C.5: codes with a first-position rule}
+\textbf{1. Enforce the special position first:} a six-letter code beginning
+with a vowel has five first-character choices. \textbf{2. Remove that letter:}
+without repetition, the remaining ordered choices are $25,24,23,22,21$:
+\[
+5\cdot25\cdot24\cdot23\cdot22\cdot21.
+\]
+Each factor now has a visible job: the first enforces the vowel rule, and the
+others enforce no repetition.
+\end{workedbox}
+
+\begin{definitionbox}{Avoiding overcounting}
+A counting method is valid only if each desired object is generated exactly
+once. Ask:
+\begin{itemize}
+  \item Can the same outcome arise from two different choices or cases?
+  \item Did I assign an order to an unordered object?
+  \item Did I forget labels that make positions distinct?
+  \item Are my cases exhaustive and disjoint?
+\end{itemize}
+\end{definitionbox}
+
+\begin{warningbox}{Frequent C errors}
+``At least'' usually needs several cases or a complement. ``Without
+replacement'' changes later factors. A restriction on the first character
+must be enforced before counting unrestricted remaining positions. Never use
+$n^r$ for an injective function unless $r\le1$.
+\end{warningbox}
+
+\begin{checklistbox}{C readiness}
+Can I construct the count two ways, identify possible overlap, justify every
+factor, and leave a correct unsimplified expression?
+\end{checklistbox}
+\end{multicols}
+
+\clearpage
+\section*{D. Probability Models}
+\begin{multicols}{2}
+\begin{definitionbox}{Sample spaces and events}
+A \term{sample space} $\Omega$ lists all possible outcomes; an \term{event}
+is a subset of $\Omega$. For equally likely outcomes,
+\[
+P(A)=\frac{|A|}{|\Omega|}.
+\]
+Always justify equal likelihood. Useful identities are
+\begin{align*}
+P(A^c)&=1-P(A),\\
+P(A\cup B)&=P(A)+P(B)-P(A\cap B),\\
+P(A\cap B)&=P(A)P(B\mid A).
+\end{align*}
+\end{definitionbox}
+
+\begin{workedbox}{D.1: coin and die}
+\textbf{Model:} toss a fair coin and roll a fair die independently.
+\textbf{Sample space:} there are $2\cdot6=12$ equally likely coin--die pairs.
+\textbf{Favorable count:} heads gives $6$, an even die gives $6$, and their
+intersection gives $3$. Hence $6+6-3=9$ favorable outcomes and
+$P=9/12=3/4$. The subtraction removes the duplicate intersection.
+\end{workedbox}
+
+\begin{workedbox}{D.2: probability identities}
+If $P(A)=0.55$, $P(B)=0.40$, and $P(A\cap B)=0.25$, then
+\[
+P(A\cup B)=0.55+0.40-0.25=0.70.
+\]
+Also $B=(A\cap B)\mathbin{\dot\cup}(A^c\cap B)$, so
+$P(A^c\cap B)=0.40-0.25=0.15$.
+\end{workedbox}
+
+\begin{workedbox}{D.3: uniform bit strings}
+\textbf{Denominator:} $2^8$ equally likely eight-bit strings.
+\textbf{Numerator:} choose the three positions containing $1$s, so $\binom83$
+strings qualify. Thus
+\[
+P(\text{exactly three }1\text{s})=\frac{\binom83}{2^8}.
+\]
+The numerator and denominator must describe the same sample space.
+\end{workedbox}
+
+\columnbreak
+
+\begin{definitionbox}{Conditional probability and independence}
+For $P(B)>0$,
+\[
+P(A\mid B)=\frac{P(A\cap B)}{P(B)}.
+\]
+$A$ and $B$ are independent exactly when
+$P(A\cap B)=P(A)P(B)$, equivalently $P(A\mid B)=P(A)$ when defined.
+Independence is a claim to test, not a default assumption.
+\end{definitionbox}
+
+\begin{workedbox}{D.4: without replacement}
+A bag has four red and six blue tokens. \textbf{First draw:} red has
+probability $4/10$. \textbf{Update:} after removing a red, nine tokens remain
+and all six blue tokens remain. Therefore
+\[
+\frac4{10}\cdot\frac69.
+\]
+The second factor is conditional on the first draw; keeping denominator $10$
+would describe replacement, not this experiment.
+\end{workedbox}
+
+\begin{workedbox}{D.5: two different conditionals}
+If $24$ students use Python, $18$ use Java, and $10$ use both, then
+\[
+P(P\mid J)=\frac{10}{18},\qquad
+P(J\mid P)=\frac{10}{24}.
+\]
+The shared numerator is the intersection. The event after the conditioning bar
+determines the denominator, so reversing the conditional usually changes the
+value.
+\end{workedbox}
+
+\begin{warningbox}{Frequent D errors}
+Do not add probabilities for a non-disjoint ``or'' without subtracting the
+overlap. Do not keep a denominator unchanged after sampling without
+replacement. Do not confuse $P(A\mid B)$ with $P(B\mid A)$ or infer
+independence from informal wording.
+\end{warningbox}
+
+\begin{checklistbox}{D readiness}
+Can I name the sample space, choose the correct denominator, use a complement
+or overlap identity, and distinguish conditional probability from
+independence?
+\end{checklistbox}
+\end{multicols}
+
+\clearpage
+\section*{E. Modeling, Bayes, Expectation, and Interpretation}
+\begin{multicols}{2}
+\begin{definitionbox}{Total probability and Bayes' rule}
+If $B_1,\ldots,B_m$ partition the sample space, then
+\[
+P(A)=\sum_i P(A\mid B_i)P(B_i).
+\]
+Bayes' rule reverses the condition:
+\[
+P(B_j\mid A)=\frac{P(A\mid B_j)P(B_j)}{P(A)}.
+\]
+The prior or base rate $P(B_j)$ remains part of the numerator.
+\end{definitionbox}
+
+\begin{workedbox}{E.1: numerical independence test}
+If $P(A)=0.6$, $P(B)=0.5$, and $P(A\cap B)=0.3$, then
+$P(A)P(B)=0.3=P(A\cap B)$, so the events are independent. Consequently
+$P(A\mid B)=0.3/0.5=0.6=P(A)$.
+\end{workedbox}
+
+\begin{workedbox}{E.2: screening and base rates}
+Let $C$ be the condition and $+$ a positive test. Then
+\[
+\underbrace{0.95(0.01)}_{\text{true positives}}=0.0095,
+\qquad
+\underbrace{0.08(0.99)}_{\text{false positives}}=0.0792.
+\]
+Add the two disjoint routes: $P(+)=0.0095+0.0792=0.0887$. Then Bayes' rule
+keeps the true-positive route in the numerator:
+\[
+P(C\mid +)=\frac{0.0095}{0.0887}\approx0.107.
+\]
+Even a sensitive test can yield many false positives when the condition is
+rare; the denominator includes both true and false positives.
+\end{workedbox}
+
+\begin{workedbox}{E.3: factory Bayes model}
+Factory A supplies $40\%$ with defect rate $3\%$; B supplies $60\%$ with rate
+$1\%$. First compute both joint routes:
+\[
+\begin{aligned}
+P(A\cap D)&=0.40(0.03)=0.012,\\
+P(B\cap D)&=0.60(0.01)=0.006.
+\end{aligned}
+\]
+Thus $P(D)=0.018$ and $P(A\mid D)=0.012/0.018=2/3$.
+\end{workedbox}
+
+\columnbreak
+
+\begin{definitionbox}{Expected value}
+For numerical outcomes $x_i$ with probabilities $p_i$,
+\[
+E[X]=\sum_i x_i p_i.
+\]
+Use \emph{net} outcomes when a cost is paid. Expected value is a long-run
+average, not a guaranteed result from one trial.
+\end{definitionbox}
+
+\begin{workedbox}{E.4: expected net value}
+A fair die pays $10$ on a $6$, $2$ on a $4$ or $5$, and $0$ otherwise. With a
+$2$ cost, first convert payouts to net outcomes: $8,0,-2$, with probabilities
+$1/6,2/6,3/6$. Therefore
+\[
+E[X]=8\left(\frac16\right)+0\left(\frac26\right)
+-2\left(\frac36\right)=\frac13.
+\]
+The positive sign means an average gain of $\$1/3$ per play over many plays.
+\end{workedbox}
+
+\begin{definitionbox}{Aggregation reversal}
+A treatment can have the higher success rate in every subgroup but a lower
+overall rate when the groups receive treatments in very different proportions.
+Compute each within-group rate and each pooled rate separately. Then explain
+which high- or low-success group dominates each pooled denominator; do not say
+that arithmetic is contradictory.
+\end{definitionbox}
+
+\begin{methodbox}{Twenty-minute model-selection routine}
+For one problem from each A--E section: name the rule or model first, write an
+exact unsimplified expression, then calculate or interpret. Check that each
+denominator matches its condition and that each counted outcome appears once.
+\end{methodbox}
+
+\begin{warningbox}{Frequent E errors}
+Do not ignore base rates, reverse a conditional, or assume independence. In
+expected value, subtract costs from every applicable outcome. In aggregated
+tables, compare rates rather than raw success counts.
+\end{warningbox}
+
+\begin{checklistbox}{Whole-Core readiness}
+I can choose among sum, product, cases, complement, permutation, and
+combination; justify a probability denominator; compute conditional and Bayes
+probabilities; test independence; calculate net expected value; and explain an
+aggregation reversal. A live form contains one problem from each A--E section.
+\end{checklistbox}
+\end{multicols}
+
+\end{document}

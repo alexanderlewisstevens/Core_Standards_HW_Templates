@@ -75,3 +75,25 @@ Keep exact exercise-number claims out of student-facing material unless they hav
 - Use date/time availability only; do not require module-item completion to unlock work.
 - Confirm section-specific midpoint-to-class-end windows for the workshop and Group Core activity.
 - Confirm the individual Core uses the same Canvas assignment type and `0/4/5` entry convention as the other six Cores.
+
+## Grader handoff: minimum evidence and alternatives
+
+- **A.1:** the response gives the correct base case, the strong hypothesis over
+  every integer from `2` through an arbitrary `k`, the exact `k+1` goal, and the
+  prime/composite case split. Equivalent variable names are acceptable.
+- **B.1:** the response identifies the circular use of `P(k+1)`, states
+  `2^k >= k+1` as the correct hypothesis, and gives a forward chain such as
+  `2^(k+1) = 2*2^k >= 2(k+1) >= k+2`, including why the last inequality holds.
+  Any equivalent valid chain is acceptable.
+- **C.1:** the response states `P(n)`, verifies `n=0`, states the arbitrary-`k`
+  hypothesis, separates the endpoint terms, applies Pascal's identity on its
+  valid range, reindexes correctly, obtains two complete copies of the `k`-row
+  sum, cites the hypothesis, and concludes by induction. Algebraically
+  equivalent reindexing or a correct combinatorial proof is acceptable only if
+  the live prompt does not explicitly require induction; the current prompt
+  does require induction.
+
+Minor dummy-variable changes are harmless. A missing base, assumed next case,
+lost endpoint, invalid reindexing, or failure to show where the hypothesis is
+used is essential. Each retake is a complete new A.1/B.1/C.1 form and uses the
+same essential-C `0/4/5` rule.

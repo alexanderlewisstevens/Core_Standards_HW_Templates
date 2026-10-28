@@ -1,0 +1,434 @@
+\documentclass[10pt]{article}
+
+% COMP 2300 Logic Core companion: student-facing reference and practice.
+\usepackage[letterpaper,margin=0.56in,includehead,includefoot,
+  headheight=15pt,headsep=7pt,footskip=20pt]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{microtype}
+\usepackage[dvipsnames,svgnames]{xcolor}
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage{tabularx,booktabs,array}
+\usepackage[most]{tcolorbox}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage[hidelinks]{hyperref}
+
+\definecolor{CoreNavy}{HTML}{18364A}
+\definecolor{CoreTeal}{HTML}{176B6B}
+\definecolor{CoreGold}{HTML}{9A6500}
+\definecolor{CoreRed}{HTML}{963D38}
+\definecolor{CoreBlueTint}{HTML}{EDF4F8}
+\definecolor{CoreTealTint}{HTML}{EDF8F6}
+\definecolor{CoreGoldTint}{HTML}{FFF7E5}
+\definecolor{CoreRedTint}{HTML}{FCEFED}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{2.5pt}
+\setlength{\columnsep}{0.25in}
+\setlength{\columnseprule}{0.25pt}
+\setlength{\emergencystretch}{1.2em}
+\setlength{\abovedisplayskip}{3pt}
+\setlength{\belowdisplayskip}{3pt}
+\setlist{leftmargin=*,itemsep=1pt,topsep=1.5pt,parsep=0pt,partopsep=0pt}
+\raggedbottom
+
+\titleformat{\section}{\Large\bfseries\color{CoreNavy}}{}{0pt}{}
+  [\vspace{-3pt}\color{CoreNavy}\rule{\linewidth}{0.7pt}]
+\titlespacing*{\section}{0pt}{3pt}{4pt}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textbf{COMP 2300}}
+\fancyhead[C]{\textbf{Logic Core Companion}}
+\fancyhead[R]{Definitions and Worked Examples}
+\fancyfoot[L]{Core sections A--E}
+\fancyfoot[C]{\thepage}
+\fancyfoot[R]{Study reference---not used during a Core}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0.3pt}
+
+\tcbset{enhanced,before skip=2.5pt,after skip=2.5pt,boxrule=0.55pt,arc=1.2mm,
+  left=4pt,right=4pt,top=3pt,bottom=3pt,fonttitle=\bfseries}
+\newtcolorbox{definitionbox}[1]{title={#1},colback=CoreBlueTint,
+  colframe=CoreNavy,colbacktitle=CoreNavy,coltitle=white}
+\newtcolorbox{methodbox}[1]{title={#1},colback=CoreTealTint,
+  colframe=CoreTeal,colbacktitle=CoreTeal,coltitle=white}
+\newtcolorbox{workedbox}[1]{title={#1},colback=white,
+  colframe=CoreNavy,colbacktitle=CoreBlueTint,coltitle=CoreNavy}
+\newtcolorbox{warningbox}[1]{title={#1},colback=CoreRedTint,
+  colframe=CoreRed,colbacktitle=CoreRed,coltitle=white}
+\newtcolorbox{checklistbox}[1]{title={#1},colback=CoreGoldTint,
+  colframe=CoreGold,colbacktitle=CoreGold,coltitle=white}
+\newcommand{\term}[1]{\textbf{\color{CoreNavy}#1}}
+
+\begin{document}
+\small
+
+\section*{A. Truth Tables and Connectives}
+\begin{multicols}{2}
+\begin{definitionbox}{Core vocabulary}
+A \term{proposition} has a truth value. A \term{valuation} assigns T or F to
+each atomic proposition. A \term{tautology} is true on every row, a
+\term{contradiction} on none, and a \term{contingency} on some but not all.
+Two expressions are \term{logically equivalent} when their final columns match
+on every valuation.
+\end{definitionbox}
+
+\begin{definitionbox}{Connective meanings}
+\[
+\begin{array}{c|c|c|c|c}
+p&q&\neg p&p\land q&p\lor q\\\hline
+T&T&F&T&T\\T&F&F&F&T\\F&T&T&F&T\\F&F&T&F&F
+\end{array}
+\]
+$p\to q$ is false only when $p$ is T and $q$ is F. $p\leftrightarrow q$
+is true exactly when $p$ and $q$ match. ``$p$ only if $q$'' and ``$q$ is
+necessary for $p$'' both mean $p\to q$.
+\end{definitionbox}
+
+\begin{methodbox}{Building an eight-row table}
+For atoms $p,q,r$, list rows in a fixed binary pattern:
+\[
+\begin{array}{c|c|c}
+p&q&r\\\hline
+T&T&T\\T&T&F\\T&F&T\\T&F&F\\
+F&T&T\\F&T&F\\F&F&T\\F&F&F
+\end{array}
+\]
+Add one column for each useful subexpression, working from the innermost
+connectives outward. Classify only the final column.
+\end{methodbox}
+
+\columnbreak
+
+\begin{workedbox}{A worked example}
+Classify $(p\to q)\lor(\neg p\to r)$.
+\begin{enumerate}
+\item Make the eight rows for $p,q,r$.
+\item Compute $p\to q$ and $\neg p\to r$ in separate columns.
+\item Join those columns with $\lor$.
+\end{enumerate}
+As a check,
+\[
+(p\to q)\lor(\neg p\to r)
+\equiv(\neg p\lor q)\lor(p\lor r).
+\]
+Reorder the disjuncts to expose $\neg p\lor p$, which is always T. Therefore
+the final column must be all T, so the proposition is a \term{tautology}. On an
+assessment, the equivalence checks the complete table; it does not replace it.
+\end{workedbox}
+
+\begin{workedbox}{Interpreting a row}
+Evaluate $(p\to q)\land(\neg q\lor r)$ when $p=F,q=T,r=F$:
+\[
+\begin{aligned}
+p\to q&=F\to T=T,\\
+\neg q\lor r&=F\lor F=F,\\
+(p\to q)\land(\neg q\lor r)&=T\land F=F.
+\end{aligned}
+\]
+Compute the inner pieces first and the main connective last. That dependency
+order should match the table's columns.
+\end{workedbox}
+
+\begin{warningbox}{Common errors}
+Do not read $p\to q$ as a causal claim or as $q\to p$. Do not omit rows,
+change row order midway, or classify from a few sample rows. In
+$\neg(p\land q)$ the negation applies to the entire parenthesized expression.
+\end{warningbox}
+
+\begin{checklistbox}{A readiness check}
+Can you make all eight rows; compute $\neg,\land,\lor,\to,\leftrightarrow$;
+show intermediate columns; and classify the final proposition correctly?
+\end{checklistbox}
+\end{multicols}
+
+\clearpage
+\section*{B--C. Translation, Quantifiers, and Negation}
+\begin{multicols}{2}
+\begin{definitionbox}{Conditionals in ordinary language}
+\begin{tabularx}{\linewidth}{@{}lX@{}}
+``$p$ if $q$'' & $q\to p$\\
+``$p$ only if $q$'' & $p\to q$\\
+``$p$ iff $q$'' & $p\leftrightarrow q$\\
+``$p$ unless $q$'' & $\neg q\to p$, equivalently $p\lor q$\\
+``$p$ whenever $q$'' & $q\to p$
+\end{tabularx}
+The antecedent is sufficient; the consequent is necessary.
+\end{definitionbox}
+
+\begin{workedbox}{B: conditional translation}
+Let $e$ mean ``the account may edit'' and $a$ mean ``the account is an
+administrator.'' ``The account may edit only if it is an administrator'' is
+$e\to a$. Here editing is the claim and administrator status is necessary.
+Check the direction by reading it back: if editing occurs, administrator
+status must hold. Writing $a\to e$ instead says every administrator may edit.
+\end{workedbox}
+
+\begin{definitionbox}{Predicates and quantifiers}
+A \term{predicate} becomes a proposition after its variables are assigned or
+quantified. State the domain. Then
+\begin{align*}
+\forall x\,P(x)&:\ P\text{ holds for every }x,\\
+\exists x\,P(x)&:\ P\text{ holds for at least one }x.
+\end{align*}
+The order matters: $\exists x\forall y\,R(x,y)$ uses one $x$ for every $y$;
+$\forall y\exists x\,R(x,y)$ may use a different $x$ for each $y$.
+\end{definitionbox}
+
+\begin{workedbox}{B: nested quantifiers and argument order}
+Let $M(x,y)$ mean ``student $x$ messaged student $y$.'' Then
+\[
+\exists x\underbrace{\forall y\,M(x,y)}_{\text{same }x\text{ messages every }y}
+\]
+says one student messaged every student. By contrast,
+$\forall y\exists x\,M(x,y)$ allows a different sender $x$ for each recipient
+$y$. Finally, replacing $M(x,y)$ by $M(y,x)$ reverses sender and recipient.
+Check both the quantifier order and the predicate's argument order.
+\end{workedbox}
+
+\columnbreak
+
+\begin{definitionbox}{Restricting an all-things domain}
+If the domain is all things, use predicates to restrict types:
+\[
+\begin{aligned}
+\text{Every }A\text{ is }B &: \forall x(A(x)\to B(x)),\\
+\text{Some }A\text{ is }B &: \exists x(A(x)\land B(x)),\\
+\text{No }A\text{ is }B &: \forall x(A(x)\to\neg B(x)).
+\end{aligned}
+\]
+Use implication with a universal restriction and conjunction with an
+existential restriction.
+\end{definitionbox}
+
+\begin{methodbox}{C: push a negation inward}
+\[
+\neg\forall x\,P\equiv\exists x\,\neg P,
+\qquad
+\neg\exists x\,P\equiv\forall x\,\neg P.
+\]
+Work from left to right: (1) flip the first quantifier crossed by the negation,
+(2) keep the remaining quantified formula in the same order, and (3) repeat.
+Then use De Morgan's laws and conditional elimination until each negation is
+immediately before a predicate.
+\end{methodbox}
+
+\begin{workedbox}{C: a complete negation}
+Domain: all things. Let $D(x)$ mean ``$x$ is a dog'' and $F(x)$ mean ``$x$
+has fleas.''
+\[
+\begin{aligned}
+\text{Every dog has fleas}&:\ \forall x(D(x)\to F(x)),\\
+\text{negate }\forall&:\ \exists x\neg(D(x)\to F(x)),\\
+\text{negate the implication}&:\ \exists x(D(x)\land\neg F(x)).
+\end{aligned}
+\]
+The final formula gives a counterexample to the original. English: some dog
+does not have fleas.
+\end{workedbox}
+
+\begin{workedbox}{C: nested negation}
+\[
+\begin{aligned}
+\neg\forall x\exists y\,P(x,y)
+&\equiv\exists x\neg\exists y\,P(x,y)\\
+&\equiv\exists x\forall y\neg P(x,y).
+\end{aligned}
+\]
+The first step flips $\forall x$ to $\exists x$; the second flips
+$\exists y$ to $\forall y$. The variables stay in their original order.
+\end{workedbox}
+
+\begin{warningbox}{Common errors}
+Do not swap $\forall$ and $\exists$ without moving a negation through them.
+Do not reuse a single existential witness unless the formula requires one.
+Define both predicate meanings and argument order.
+\end{warningbox}
+
+\begin{checklistbox}{B--C readiness}
+Can you translate ``if,'' ``only if,'' and ``unless''; distinguish nested
+quantifier orders; diagnose reversed arguments; symbolize, negate, simplify,
+and translate back to English?
+\end{checklistbox}
+\end{multicols}
+
+\clearpage
+\section*{D. Consistency and Satisfiability}
+\begin{multicols}{2}
+\begin{definitionbox}{What the question asks}
+A collection of formulas is \term{consistent} or \term{satisfiable} when at
+least one truth assignment makes all formulas true. It is
+\term{inconsistent} when no such assignment exists. A satisfying assignment
+is a witness; a contradiction is a proof that no witness exists.
+\end{definitionbox}
+
+\begin{methodbox}{A reliable workflow}
+\begin{enumerate}
+\item Define one atom for each simple statement.
+\item Translate every sentence before reasoning.
+\item Start with facts and implications whose antecedents are forced.
+\item Propagate consequences using valid inference rules.
+\item If no contradiction appears, finish a complete assignment and check
+every condition.
+\item If a contradiction appears, cite a small subset that forces both $p$
+and $\neg p$.
+\end{enumerate}
+\end{methodbox}
+
+\begin{definitionbox}{Useful inference rules}
+\begin{align*}
+p,\ p\to q&\therefore q &&\text{Modus Ponens}\tag{MP}\\
+\neg q,\ p\to q&\therefore\neg p &&\text{Modus Tollens}\tag{MT}\\
+p\to q,\ q\to r&\therefore p\to r &&\text{Hypothetical Syllogism}\\
+p\lor q,\ \neg p&\therefore q &&\text{Disjunctive Syllogism}
+\end{align*}
+From $p\leftrightarrow q$, use both $p\to q$ and $q\to p$.
+\end{definitionbox}
+
+\begin{workedbox}{D: prove inconsistency}
+Let $m$ = multiuser, $n$ = normal, $k$ = kernel works, $i$ = interrupt.
+Suppose
+\[
+m\leftrightarrow n,\ n\to k,\ \neg k\lor i,\ \neg m\to i,\ \neg i.
+\]
+\begin{enumerate}
+\item $\neg k$ follows from $\neg k\lor i$ and $\neg i$ (DS).
+\item $\neg n$ follows from $n\to k$ and $\neg k$ (MT).
+\item $\neg m$ follows from $m\to n$ and $\neg n$ (MT).
+\item $i$ follows from $\neg m\to i$ and $\neg m$ (MP).
+\end{enumerate}
+Now $i$ contradicts the given $\neg i$, so the collection is inconsistent.
+\end{workedbox}
+
+\columnbreak
+
+\begin{workedbox}{D: prove consistency by a witness}
+Let $u$ = software upgraded, $a$ = users have access, $s$ = users can save.
+Translate:
+\[
+u\to\neg a,\qquad a\to s,\qquad\neg s\to\neg u.
+\]
+Try $(u,a,s)=(T,F,T)$:
+\[
+T\to T=T,\qquad F\to T=T,\qquad F\to F=T.
+\]
+All three formulas are true, so this checked witness proves consistency. To
+list all models, test all eight rows or give a complete case split.
+\end{workedbox}
+
+\begin{workedbox}{D: find a minimal contradiction}
+Suppose $p\to q$, $q\to r$, $p$, and $\neg r$. From $p$ and $p\to q$, infer
+$q$; from $q$ and $q\to r$, infer $r$, contradicting $\neg r$. All four are
+needed for this chain, so they form a minimal inconsistent subset. A larger
+list that contains them proves inconsistency but does not answer a
+``minimal collection'' request.
+\end{workedbox}
+
+\begin{methodbox}{Listing all models}
+For three atoms, a truth table has eight rows. Translate each condition into a
+column, conjoin the condition columns, and keep exactly the rows where the
+conjunction is T. When reasoning by cases, state why each branch is complete.
+\end{methodbox}
+
+\begin{warningbox}{Invalid shortcuts}
+Affirming the consequent ($p\to q,q\therefore p$) and denying the antecedent
+($p\to q,\neg p\therefore\neg q$) are invalid. ``Only if'' points toward the
+necessary condition. A conditional with false antecedent is true.
+\end{warningbox}
+
+\begin{checklistbox}{D readiness}
+Can you define atoms, translate every condition, give a checked satisfying
+assignment or a short contradiction, list all models when asked, identify
+forced values, and isolate a minimal contradictory subset?
+\end{checklistbox}
+\end{multicols}
+
+\clearpage
+\section*{E. Equivalence Derivations with Cited Rules}
+\begin{multicols}{2}
+\begin{definitionbox}{Permitted rules}
+Each may be used in either direction:
+\begin{align*}
+a\to b&\equiv\neg a\lor b &&\text{Implication}\tag{Imp}\\
+\neg\neg a&\equiv a &&\text{Double Negation}\tag{DN}\\
+\neg(a\lor b)&\equiv\neg a\land\neg b &&\text{De Morgan}\tag{DM}\\
+\neg(a\land b)&\equiv\neg a\lor\neg b &&\text{De Morgan}\tag{DM}\\
+a\lor(b\land c)&\equiv(a\lor b)\land(a\lor c) &&\text{Distributive}\tag{Dist}\\
+a\land(b\lor c)&\equiv(a\land b)\lor(a\land c) &&\text{Distributive}\tag{Dist}\\
+(a\circ b)\circ c&\equiv a\circ(b\circ c) &&\text{Associative}\tag{Assoc}\\
+a\circ b&\equiv b\circ a &&\text{Commutative}\tag{Comm}\\
+a\circ a&\equiv a &&\text{Idempotent}\tag{Idem}
+\end{align*}
+Here $\circ$ is either $\land$ or $\lor$ where appropriate. Reparenthesizing
+requires Associative; reordering requires Commutative.
+\end{definitionbox}
+
+\begin{methodbox}{How to plan the chain}
+Eliminate implications first. Compare the connective shape of the two sides.
+Use Distributive to factor or expand, De Morgan plus Double Negation to move a
+negation, and then clean up order or duplicates. Change only one justified
+feature per line and cite exactly one rule.
+\end{methodbox}
+
+\begin{workedbox}{E worked example: factor a common term}
+Show $(p\to q)\land(p\to r)\equiv p\to(q\land r)$.
+\begin{align*}
+(p\to q)\land(p\to r)
+&\equiv(\neg p\lor q)\land(p\to r) &&\text{Implication}\\
+&\equiv(\neg p\lor q)\land(\neg p\lor r) &&\text{Implication}\\
+&\equiv\neg p\lor(q\land r) &&\text{Distributive}\\
+&\equiv p\to(q\land r) &&\text{Implication}.
+\end{align*}
+The common disjunct $\neg p$ is what makes the Distributive step possible.
+\end{workedbox}
+
+\columnbreak
+
+\begin{workedbox}{E worked example: De Morgan structure}
+Show $(p\to r)\land(q\to r)\equiv(p\lor q)\to r$.
+\begin{align*}
+(p\to r)\land(q\to r)
+&\equiv(\neg p\lor r)\land(q\to r) &&\text{Implication}\\
+&\equiv(\neg p\lor r)\land(\neg q\lor r) &&\text{Implication}\\
+&\equiv(r\lor\neg p)\land(\neg q\lor r) &&\text{Commutative}\\
+&\equiv(r\lor\neg p)\land(r\lor\neg q) &&\text{Commutative}\\
+&\equiv r\lor(\neg p\land\neg q) &&\text{Distributive}\\
+&\equiv(\neg p\land\neg q)\lor r &&\text{Commutative}\\
+&\equiv\neg(p\lor q)\lor r &&\text{De Morgan}\\
+&\equiv(p\lor q)\to r &&\text{Implication}.
+\end{align*}
+The two Commutative steps place the common $r$ where Distributive can factor it.
+\end{workedbox}
+
+\begin{workedbox}{E worked example: nested implication}
+\begin{align*}
+\neg p\to(q\to r)
+&\equiv\neg\neg p\lor(q\to r) &&\text{Implication}\\
+&\equiv p\lor(q\to r) &&\text{Double Negation}\\
+&\equiv p\lor(\neg q\lor r) &&\text{Implication}\\
+&\equiv(p\lor\neg q)\lor r &&\text{Associative}\\
+&\equiv(\neg q\lor p)\lor r &&\text{Commutative}\\
+&\equiv\neg q\lor(p\lor r) &&\text{Associative}\\
+&\equiv q\to(p\lor r) &&\text{Implication}.
+\end{align*}
+Each line changes exactly one feature and cites exactly one permitted rule.
+\end{workedbox}
+
+\begin{warningbox}{Common errors}
+Do not cite ``algebra'' or ``simplify.'' Do not silently move parentheses or
+terms. Do not use a truth table when a rule-by-rule derivation is requested.
+Make sure every intermediate expression is equivalent to the preceding one.
+\end{warningbox}
+
+\begin{checklistbox}{Whole-Core readiness}
+Can you complete a truth table; translate conditional and quantified language;
+negate nested quantifiers; prove consistency or inconsistency; and write an
+equivalence chain with one named rule per step? A live form selects one problem
+from each section A--E and is designed for 20 minutes.
+\end{checklistbox}
+\end{multicols}
+
+\end{document}

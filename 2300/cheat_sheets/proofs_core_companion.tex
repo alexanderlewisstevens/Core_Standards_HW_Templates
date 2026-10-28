@@ -1,0 +1,415 @@
+\documentclass[10pt]{article}
+
+% COMP 2300 Proofs Core companion: student-facing reference and practice.
+% The longer proofs_cheat_sheet.tex remains the extended reference.
+\usepackage[letterpaper,margin=0.56in,includehead,includefoot,
+  headheight=15pt,headsep=7pt,footskip=20pt]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{microtype}
+\usepackage[dvipsnames,svgnames]{xcolor}
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage{tabularx,booktabs,array}
+\usepackage[most]{tcolorbox}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage[hidelinks]{hyperref}
+
+\definecolor{CoreNavy}{HTML}{18364A}
+\definecolor{CoreTeal}{HTML}{176B6B}
+\definecolor{CoreGold}{HTML}{9A6500}
+\definecolor{CoreRed}{HTML}{963D38}
+\definecolor{CoreBlueTint}{HTML}{EDF4F8}
+\definecolor{CoreTealTint}{HTML}{EDF8F6}
+\definecolor{CoreGoldTint}{HTML}{FFF7E5}
+\definecolor{CoreRedTint}{HTML}{FCEFED}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{2.5pt}
+\setlength{\columnsep}{0.25in}
+\setlength{\columnseprule}{0.25pt}
+\setlength{\emergencystretch}{1.2em}
+\setlength{\abovedisplayskip}{3pt}
+\setlength{\belowdisplayskip}{3pt}
+\setlist{leftmargin=*,itemsep=1pt,topsep=1.5pt,parsep=0pt,partopsep=0pt}
+\raggedbottom
+
+\titleformat{\section}{\Large\bfseries\color{CoreNavy}}{}{0pt}{}
+  [\vspace{-3pt}\color{CoreNavy}\rule{\linewidth}{0.7pt}]
+\titlespacing*{\section}{0pt}{3pt}{4pt}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textbf{COMP 2300}}
+\fancyhead[C]{\textbf{Proofs Core Companion}}
+\fancyhead[R]{Definitions and Worked Examples}
+\fancyfoot[L]{Core sections A--E}
+\fancyfoot[C]{\thepage}
+\fancyfoot[R]{Study reference---not used during a Core}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0.3pt}
+
+\tcbset{enhanced,before skip=2.5pt,after skip=2.5pt,boxrule=0.55pt,arc=1.2mm,
+  left=4pt,right=4pt,top=3pt,bottom=3pt,fonttitle=\bfseries}
+\newtcolorbox{definitionbox}[1]{title={#1},colback=CoreBlueTint,
+  colframe=CoreNavy,colbacktitle=CoreNavy,coltitle=white}
+\newtcolorbox{methodbox}[1]{title={#1},colback=CoreTealTint,
+  colframe=CoreTeal,colbacktitle=CoreTeal,coltitle=white}
+\newtcolorbox{workedbox}[1]{title={#1},colback=white,
+  colframe=CoreNavy,colbacktitle=CoreBlueTint,coltitle=CoreNavy}
+\newtcolorbox{warningbox}[1]{title={#1},colback=CoreRedTint,
+  colframe=CoreRed,colbacktitle=CoreRed,coltitle=white}
+\newtcolorbox{checklistbox}[1]{title={#1},colback=CoreGoldTint,
+  colframe=CoreGold,colbacktitle=CoreGold,coltitle=white}
+\newcommand{\term}[1]{\textbf{\color{CoreNavy}#1}}
+
+\begin{document}
+\small
+
+\section*{A. Inference and Proof Structure}
+\begin{multicols}{2}
+\begin{definitionbox}{Argument, validity, and countermodel}
+An \term{argument} consists of premises and a conclusion. It is \term{valid}
+when every valuation or interpretation that makes all premises true also makes
+the conclusion true. A \term{countermodel} makes every premise true and the
+conclusion false; one countermodel proves invalidity.
+\end{definitionbox}
+
+\begin{definitionbox}{Propositional rules of inference}
+\begin{align*}
+p,\ p\to q&\therefore q &&\text{Modus Ponens (MP)}\\
+\neg q,\ p\to q&\therefore\neg p &&\text{Modus Tollens (MT)}\\
+p\to q,\ q\to r&\therefore p\to r &&\text{Hypothetical Syllogism}\\
+p\lor q,\ \neg p&\therefore q &&\text{Disjunctive Syllogism}\\
+p,\ q&\therefore p\land q &&\text{Conjunction}\\
+p\land q&\therefore p &&\text{Simplification}\\
+p&\therefore p\lor q &&\text{Addition}\\
+p\lor q,\ p\to r,\ q\to r&\therefore r &&\text{Proof by cases}
+\end{align*}
+\end{definitionbox}
+
+\begin{workedbox}{A propositional derivation}
+\textbf{Target:} derive $\neg p$ from $p\to q$, $q\to r$, and $\neg r$.
+Start at $\neg r$ and move backward through the conditional chain:
+\[
+\begin{array}{rll}
+1.&p\to q&\text{premise}\\
+2.&q\to r&\text{premise}\\
+3.&\neg r&\text{premise}\\
+4.&\neg q&\text{MT, 2 and 3}\\
+5.&\neg p&\text{MT, 1 and 4.}
+\end{array}
+\]
+Line 4 removes the possibility of $q$; line 5 then removes the possibility of
+$p$. Name both the rule and the lines used.
+\end{workedbox}
+
+\columnbreak
+
+\begin{definitionbox}{Quantifier rules}
+\term{Universal instantiation (UI):} from $\forall x\,P(x)$ infer $P(c)$ for
+any named object $c$ in the domain.
+
+\term{Universal generalization (UG):} after proving $P(c)$ for a completely
+arbitrary $c$, infer $\forall x\,P(x)$.
+
+\term{Existential instantiation (EI):} from $\exists x\,P(x)$ introduce a
+fresh name $a$ with $P(a)$. It denotes some witness, not an arbitrary object.
+
+\term{Existential generalization (EG):} from $P(c)$ infer $\exists x\,P(x)$.
+\end{definitionbox}
+
+\begin{methodbox}{Universal and existential witnesses differ}
+\textbf{Universal route:} from $\forall x(P(x)\to Q(x))$ and $\forall xP(x)$,
+(1) let $c$ be arbitrary; (2) UI gives $P(c)\to Q(c)$ and $P(c)$; (3) MP
+gives $Q(c)$; (4) because $c$ was arbitrary, UG gives $\forall xQ(x)$.
+
+\textbf{Existential warning:} from $\exists xP(x)$ and $\exists xQ(x)$, EI may
+introduce different witnesses $a$ and $b$. You may not conclude
+$P(a)\land Q(a)$ or
+$\exists x(P(x)\land Q(x))$ without evidence that the witnesses coincide.
+\end{methodbox}
+
+\begin{workedbox}{A countermodel for reused witnesses}
+\textbf{Build:} use domain $\{1,2\}$; let $P$ hold only of $1$ and $Q$ only of
+$2$. \textbf{Check premises:} $1$ witnesses $\exists xP(x)$, and $2$ witnesses
+$\exists xQ(x)$. \textbf{Check conclusion:} neither object satisfies both
+predicates, so $\exists x(P(x)\land Q(x))$ is false. True premises and a false
+conclusion prove invalidity.
+\end{workedbox}
+
+\begin{warningbox}{Invalid forms}
+$p\to q,q\therefore p$ affirms the consequent. $p\to q,\neg p\therefore
+\neg q$ denies the antecedent. Neither is valid. A conclusion may be true even
+when the displayed argument for it is invalid.
+\end{warningbox}
+
+\begin{checklistbox}{A readiness}
+Can you execute a short derivation with named rules, recognize invalid forms,
+use UI/EI with correct scopes, and construct a small countermodel when an
+existential witness has been reused?
+\end{checklistbox}
+\end{multicols}
+
+\clearpage
+\section*{B. Direct Proofs from Definitions}
+\begin{multicols}{2}
+\begin{definitionbox}{Definitions used on this Core}
+For integers $n$:
+\[
+\begin{array}{ll}
+n\text{ is even}&\Longleftrightarrow n=2k\text{ for some }k\in\mathbb Z,\\
+n\text{ is odd}&\Longleftrightarrow n=2k+1\text{ for some }k\in\mathbb Z,\\
+d\mid n&\Longleftrightarrow n=dk\text{ for some }k\in\mathbb Z.
+\end{array}
+\]
+A real $r$ is \term{rational} iff $r=a/b$ for integers $a,b$ with $b\ne0$;
+otherwise it is \term{irrational}. $A\subseteq B$ means
+$\forall x(x\in A\to x\in B)$.
+\end{definitionbox}
+
+\begin{methodbox}{Direct-proof template}
+For ``if $P$, then $Q$'':
+\begin{enumerate}
+\item Let the objects be arbitrary subject to the stated domain.
+\item Assume $P$.
+\item Unpack $P$ using definitions and introduce correctly scoped witnesses.
+\item Calculate or reason to the defining form of $Q$.
+\item State why the new witness belongs to the required domain.
+\end{enumerate}
+\end{methodbox}
+
+\begin{workedbox}{B: an even-square proof}
+\textbf{Set up:} let arbitrary $n\in\mathbb Z$ be even, so $n=2k$ for some
+$k\in\mathbb Z$. \textbf{Calculate and expose a factor of $2$:}
+\[
+n^2=(2k)^2=4k^2=2(2k^2).
+\]
+\textbf{Close:} $2k^2\in\mathbb Z$, so the display has form
+$2(\text{integer})$. Thus $n^2$ is even. The new witness is $2k^2$.
+\end{workedbox}
+
+\begin{workedbox}{B: two odd integers}
+\textbf{Set up:} let arbitrary odd integers $a,b$ satisfy $a=2j+1$ and
+$b=2k+1$ for some $j,k\in\mathbb Z$. Use different witnesses. \textbf{Combine:}
+\[
+a+b=2j+1+2k+1=2(j+k+1).
+\]
+\textbf{Close:} $j+k+1\in\mathbb Z$, so $a+b$ is twice an integer and is even.
+\end{workedbox}
+
+\columnbreak
+
+\begin{workedbox}{B: sum of rational numbers}
+\textbf{Set up:} let $r,s\in\mathbb Q$. Choose integers $a,b,c,d$ with
+$b,d\ne0$, $r=a/b$, and $s=c/d$. \textbf{Use a common denominator:}
+\[
+r+s=\frac{ad+bc}{bd}.
+\]
+\textbf{Close:} $ad+bc,bd\in\mathbb Z$, and $bd\ne0$. The displayed fraction
+satisfies the definition of rational; lowest terms are not required.
+\end{workedbox}
+
+\begin{workedbox}{B: direct element proof}
+Assume $A\subseteq B$. \textbf{Start on the left:} let arbitrary
+$x\in A\cap C$. \textbf{Unpack:} $x\in A$ and $x\in C$. \textbf{Use the
+hypothesis:} $x\in A$ and $A\subseteq B$ give $x\in B$. \textbf{Repack:}
+$x\in B$ and $x\in C$ give $x\in B\cap C$. Since $x$ was arbitrary, the
+subset claim follows.
+\end{workedbox}
+
+\begin{definitionbox}{Necessary proof language}
+\term{Arbitrary} means no special property beyond the hypotheses was chosen.
+A \term{witness} is a specific object whose existence establishes an
+existential claim. A \term{lemma} is a proved supporting result. A
+\term{counterexample} satisfies a universal claim's hypotheses but violates
+its conclusion.
+\end{definitionbox}
+
+\begin{warningbox}{Common errors}
+Do not write $a=2k$ and $b=2k$ merely because both are even; their witnesses
+may differ. Do not divide by a variable without knowing it is nonzero. Do not
+give an example when the claim is universal. End by connecting the algebra to
+the exact definition requested.
+\end{warningbox}
+
+\begin{checklistbox}{B readiness}
+Can you identify the target definition, introduce independent witnesses,
+perform the central algebraic or element-chasing step, verify the new witness,
+and state the conclusion for arbitrary inputs?
+\end{checklistbox}
+\end{multicols}
+
+\clearpage
+\section*{C--D. Indirect Methods, Cases, Existence, and Refutation}
+\begin{multicols}{2}
+\begin{definitionbox}{Contrapositive and contradiction}
+The contrapositive of $P\to Q$ is $\neg Q\to\neg P$ and is logically
+equivalent to the original. A \term{proof by contradiction} assumes the
+negation of the desired conclusion and derives an impossibility such as
+$R\land\neg R$. State which method you are using.
+\end{definitionbox}
+
+\begin{methodbox}{C: contraposition workflow}
+Write the contrapositive explicitly, assume its antecedent, and prove its
+consequent. If the antecedent is a disjunction, use cases. Do not assume the
+original conclusion.
+\end{methodbox}
+
+\begin{workedbox}{C: product odd implies both factors odd}
+\textbf{Step 1:} write the contrapositive: if $m$ is even or $n$ is even, then
+$mn$ is even. \textbf{Step 2:} use cases. If $m=2k$, then $mn=2(kn)$; if
+$n=2\ell$, then $mn=2(m\ell)$. \textbf{Step 3:} in either case the quantity in
+parentheses is an integer, so $mn$ is even. The contrapositive, hence the
+original claim, is true.
+\end{workedbox}
+
+\begin{workedbox}{C: no largest integer}
+\textbf{Assume the opposite:} let $N$ be a largest integer. \textbf{Construct:}
+$N+1$ is an integer and $N+1>N$. \textbf{Contradiction:} maximality requires
+$N+1\le N$, while arithmetic gives $N+1>N$. Therefore no largest integer
+exists.
+\end{workedbox}
+
+\begin{workedbox}{C: rational plus irrational}
+Let $r\in\mathbb Q$ and $x\notin\mathbb Q$. \textbf{Assume the opposite:}
+$r+x\in\mathbb Q$. \textbf{Isolate the irrational number:} rationals are closed
+under subtraction, so $x=(r+x)-r\in\mathbb Q$. This contradicts the hypothesis
+$x\notin\mathbb Q$; hence $r+x$ is irrational.
+\end{workedbox}
+
+\columnbreak
+
+\begin{definitionbox}{Proof by cases and existence}
+A \term{proof by cases} partitions all possibilities and proves the claim in
+each exhaustive case. A \term{constructive existence proof} gives an explicit
+witness and verifies every required property. A \term{nonconstructive proof}
+establishes existence without identifying a witness.
+\end{definitionbox}
+
+\begin{workedbox}{D: cases on parity}
+\textbf{Exhaustive split:} every integer $n$ has form $2k$ or $2k+1$.
+\textbf{Even case:} $n(n+1)=2[k(n+1)]$. \textbf{Odd case:}
+\[
+n(n+1)=(2k+1)(2k+2)=2[(2k+1)(k+1)].
+\]
+Both bracketed quantities are integers. Since all integers occur in one case,
+$n(n+1)$ is always even.
+\end{workedbox}
+
+\begin{workedbox}{D: constructive existence}
+\textbf{Witnesses:} $24,25,26,27$ are consecutive and positive.
+\textbf{Verification:}
+\[
+24=2\cdot12,\quad25=5\cdot5,\quad26=2\cdot13,\quad27=3\cdot9.
+\]
+Each factorization is nontrivial, so all four are composite. Listing numbers
+without checking the required property would not finish the proof.
+\end{workedbox}
+
+\begin{workedbox}{D: counterexamples}
+\textbf{Irrational sum claim:} choose $\sqrt2$ and $-\sqrt2$ (both irrational).
+Their sum is $0$ (rational), so the hypothesis holds and the conclusion fails.
+
+\textbf{Prime-output claim:} choose the allowed input $n=40$:
+$40^2+40+41=41^2$, which is composite. One checked counterexample refutes a
+universal claim.
+\end{workedbox}
+
+\begin{warningbox}{Common errors}
+Cases must be exhaustive. A counterexample must obey every domain restriction.
+In contradiction, do not merely restate the assumed negation; derive a genuine
+conflict. In contraposition, negate both sides correctly and reverse the arrow.
+\end{warningbox}
+
+\begin{checklistbox}{C--D readiness}
+Can you state a contrapositive, run a contradiction, split an exhaustive case,
+verify a constructive witness, and refute a universal claim with a complete
+counterexample?
+\end{checklistbox}
+\end{multicols}
+
+\clearpage
+\section*{E. Strategy Choice and Proof Repair}
+\begin{multicols}{2}
+\begin{methodbox}{Choose a promising method}
+\begin{tabularx}{\linewidth}{@{}lX@{}}
+Direct & Definitions turn the hypothesis into the target form.\\
+Contrapositive & The negated conclusion has a useful structural definition.\\
+Contradiction & The conclusion denies existence or involves irrationality.\\
+Cases & The domain naturally partitions (parity, sign, membership).\\
+Constructive & The claim asks only that an example exists.\\
+Counterexample & The universal claim looks too strong.
+\end{tabularx}
+State the first substantive step, not merely the method name.
+\end{methodbox}
+
+\begin{workedbox}{E: repair reused witnesses}
+\textbf{Gap:} ``$a=2k$ and $b=2k$'' forces $a=b$; a shared witness was not
+justified. \textbf{Repair:} choose $j,k\in\mathbb Z$ with $a=2j$ and $b=2k$.
+Then $a+b=2(j+k)$, and $j+k\in\mathbb Z$, so the sum is even.
+\end{workedbox}
+
+\begin{workedbox}{E: repair division by zero}
+\textbf{Gap:} the original claim fails for $r=0$, and dividing by $r$ may be
+illegal. \textbf{Correct statement:} if $r\in\mathbb Q\setminus\{0\}$ and $x$
+is irrational, then $rx$ is irrational. \textbf{Proof:} if $rx$ were rational,
+division by nonzero rational $r$ would give $x=(rx)/r\in\mathbb Q$, a
+contradiction.
+\end{workedbox}
+
+\begin{workedbox}{E: repair circular reasoning}
+\textbf{Gap:} assuming $n^2$ is odd assumes the conclusion. \textbf{Repair:}
+start with the hypothesis $n=2k+1$. Then
+\[
+n^2=4k^2+4k+1=2(2k^2+2k)+1,
+\]
+The parenthesized quantity is an integer, so the result has form
+$2(\text{integer})+1$ and $n^2$ is odd.
+\end{workedbox}
+
+\columnbreak
+
+\begin{workedbox}{E: repair a bad starting element}
+\textbf{Gap:} starting with $x\in A\cap B$ does not cover arbitrary $x\in A$.
+\textbf{Repair:} let arbitrary $x\in A$. The equality $A=A\cap B$ gives
+$x\in A\cap B$, so $x\in B$. Since $x$ was arbitrary, $A\subseteq B$.
+\end{workedbox}
+
+\begin{definitionbox}{Essential versus minor errors}
+An \term{essential error} breaks the proof: assuming the conclusion, reversing
+an implication, using an unjustified common witness, dividing by a possible
+zero, omitting a case, or giving an example instead of a universal proof.
+Minor notation is repairable when scope and reasoning remain unambiguous.
+\end{definitionbox}
+
+\begin{methodbox}{A proof-repair checklist}
+Ask:
+\begin{enumerate}
+\item Did the proof start with the correct arbitrary object or hypothesis?
+\item Are every witness and variable scoped correctly?
+\item Is any implication reversed or invalid inference used?
+\item Is division known to be legal?
+\item Are cases exhaustive and conclusions exact?
+\item Does the final line invoke the requested definition?
+\end{enumerate}
+Name the gap before replacing it.
+\end{methodbox}
+
+\begin{warningbox}{Presentation matters}
+A proof is a readable argument, not a stack of equations. State assumptions,
+connect equations with words, identify the witness produced, and finish with
+the exact conclusion. A correct idea with a missing essential justification is
+not a complete proof.
+\end{warningbox}
+
+\begin{checklistbox}{Whole-Core readiness}
+Can you perform an inference, write a direct proof, use contraposition or
+contradiction, handle cases/existence/counterexamples, and select or repair a
+strategy? A live 20-minute form selects one complete problem from each section
+A--E; four fully correct problems earn Meets and five earn Exceeds.
+\end{checklistbox}
+\end{multicols}
+
+\end{document}

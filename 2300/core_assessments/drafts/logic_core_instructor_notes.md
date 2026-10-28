@@ -13,9 +13,44 @@ construction directions.
   unsuccessful section.
 - Meets means four of the five designated problems are fully correct. Exceeds
   means all five are fully correct.
+- Record the holistic Canvas result as `0` (Not Yet), `4` (Meets), or `5`
+  (Exceeds); do not enter a percentage or create a separate retake assignment.
 - Before using a combination live, solve it under time and confirm that a
   prepared student can complete it in 20 minutes. The B and C variants have
   multiple lettered parts and therefore need particular timing scrutiny.
+- A student may attempt this Core once per calendar day. A second, different
+  Core on the same day is allowed only after the first Core attempted that day
+  is passed. All attempts close at the final-exam deadline.
+
+## Course sequence and grader handoff
+
+Logic is the first formal-symbolic Core. Teach it before Arguments: begin with
+truth tables and conditional language, then quantifiers and negation, then
+consistency, and finish with equivalence chains. Use the companion's examples
+for lecture and a distinct A--E practice packet for group work; never reveal a
+live individual form in advance.
+
+Minimum full-credit evidence and acceptable alternatives:
+
+- **A:** every required truth-table row and intermediate column is correct, and
+  the final classification follows. Any consistently labeled row order is
+  acceptable.
+- **B:** the formalization preserves conditional direction, quantifier order,
+  domain restrictions, and predicate argument order. Equivalent notation,
+  variable names, and logically equivalent parenthesization are acceptable.
+- **C:** the negation moves through every quantifier and connective and the
+  English translation matches it. Equivalent simplified forms are acceptable.
+- **D:** a consistency answer supplies one complete satisfying interpretation;
+  an inconsistency answer supplies a genuine contradiction forced by a small
+  subset. Any correct witness or minimal contradictory subset is acceptable.
+- **E:** each equality is logically equivalent to the previous line and cites
+  a permitted rule. Different valid chains and harmless reordering by
+  commutativity or associativity are acceptable; an uncited leap is not.
+
+Minor notation that preserves scope and meaning may be corrected without making
+the problem incorrect. Reversing an implication, changing quantifier order,
+using an invalid inference, or skipping an essential equivalence step is not a
+minor error.
 
 ## Rosen provenance
 

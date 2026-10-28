@@ -20,7 +20,9 @@ Participation and Practice is a Canvas category, not a Core assessment or a
 LaTeX source. The Canvas assignment IDs above identify the Autumn 2026 course
 records; the one-word names remain the durable identifiers across terms.
 
-The private Obsidian vault contains solution notes. Do not add solution keys to this public repository.
+The public worked solutions are maintained under `2300/obsidian_solutions/`
+and mirrored to the active Obsidian Publish vault. Private instructor notes,
+grading guides, and live-form manifests are not student handouts.
 
 Official LSAT/LawHub question text is not a public repository asset. Keep licensed
 questions in LawHub and use only instructor-authored analogous problems in these
@@ -36,10 +38,15 @@ form, and Canvas records the holistic result as 0/4/5 for Not Yet/Meets/Exceeds.
 - `2300/core_assessments/`: standalone assessment sources
 - `2300/counting_problem_sections/`: sections included by the Counting assessment
 - `2300/cheat_sheets/`: student reference sheets
+- `2300/CORE_MATERIALS_INDEX.md`: authoritative seven-Core companion,
+  assessment, solution, grader-guide, packet, and rollout map
 - `2300/homework_templates/`: reusable homework scaffolds
 - `3004/`: COMP 3004 practice materials
 - `course_highlights/`: chapter summaries, definitions, and quiz templates
 - `in_progress/`: drafts that are not ready for student use
 - `archive/`: retained historical source snapshots
 
-LaTeX build products, PDFs, macOS metadata, and editor workspace files are intentionally ignored.
+LaTeX build products, macOS metadata, and editor workspace files are intentionally
+ignored. The seven stable student companion PDFs under
+`2300/cheat_sheets/companion_pdfs/` are the explicit PDF exception for Overleaf
+delivery; rebuild and verify them whenever their TeX sources change.

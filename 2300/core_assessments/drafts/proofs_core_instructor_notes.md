@@ -58,3 +58,29 @@ universal proof is an essential error.
 - The LaTeX Formal Solutions assignment should ask students to typeset a revised
   proof after mathematical feedback, emphasizing structure and readable notation
   rather than LaTeX tricks.
+
+## Grader handoff: minimum evidence and alternatives
+
+- **A:** the conclusion follows by valid propositional or quantified inference,
+  with the central rules named and existential witnesses kept distinct unless
+  equality is proved. Any valid derivation or genuine countermodel is
+  acceptable.
+- **B:** a direct proof starts from arbitrary objects satisfying the hypotheses,
+  expands the relevant definitions, supplies required integer or set witnesses,
+  and reaches the exact conclusion. Algebraically equivalent witnesses are
+  acceptable.
+- **C:** contraposition or contradiction must be announced or unmistakable,
+  assume the logically correct statement, and produce the requested conclusion
+  or a genuine contradiction. A different valid indirect method is acceptable
+  unless the prompt names the method.
+- **D:** cases must be exhaustive; constructive existence needs an explicit
+  witness; refutation needs a counterexample satisfying every hypothesis. Any
+  valid partition, witness, or counterexample is acceptable.
+- **E:** the response identifies a defensible method or the first essential
+  flaw and supplies a repair that removes it without assuming the conclusion.
+  Different correct repairs are acceptable.
+
+Use the shortest argument that demonstrates every essential target; do not
+require a particular prose style or the same intermediate algebra as the key.
+Do not carry section credit across attempts: each retake is a complete new A--E
+form scored again as `0`, `4`, or `5`.

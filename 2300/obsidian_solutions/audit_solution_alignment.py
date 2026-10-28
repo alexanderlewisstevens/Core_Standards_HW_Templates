@@ -8,11 +8,14 @@ import sys
 from collections import Counter
 from pathlib import Path
 
+from insert_full_questions import standard_questions
+
 
 ROOT = Path(__file__).resolve().parents[1]
 SOLUTIONS = Path(__file__).resolve().parent
 ASSESSMENTS = ROOT / "core_assessments"
 COUNTING = ROOT / "counting_problem_sections"
+ASSETS = SOLUTIONS / "assets"
 
 
 def expected_standard() -> set[str]:
@@ -59,6 +62,80 @@ def check_page_basics(path: Path) -> bool:
     return True
 
 
+def check_full_questions(path: Path, found: list[str], *, arguments: bool = False) -> bool:
+    width = r"\d+\.\d{2}" if arguments else r"\d+"
+    text = path.read_text()
+    blocks = {
+        match.group(1): match.group(2).strip()
+        for match in re.finditer(
+            rf"(?ms)^###{{1,2}} ([A-E]\.{width})[^\n]*$\n(.*?)"
+            rf"(?=^###{{1,2}} [A-E]\.{width}[^\n]*$|\Z)",
+            text,
+        )
+    }
+    missing = sorted(
+        label
+        for label in found
+        if "[!QUESTION]- Full question statement" not in blocks.get(label, "")
+    )
+    too_short = sorted(
+        label
+        for label in found
+        if (question := re.search(
+            r"(?ms)> \[!QUESTION\]- Full question statement\n(.*?)(?=\n(?!>)|\Z)",
+            blocks.get(label, ""),
+        ))
+        and len(re.sub(r"(?m)^> ?", "", question.group(1)).strip()) < 25
+    )
+    leaked_patterns = {
+        r"\\end\{document\}": r"\end{document}",
+        r"\\vennworkspace\b": r"\vennworkspace",
+        r"\\includegraphics\b": r"\includegraphics",
+        r"\\hfill\b": r"\hfill",
+        r"\\small\b": r"\small",
+        r"\\\\item\b": r"\\item",
+    }
+    question_text = "\n".join(
+        question.group(1)
+        for block in blocks.values()
+        if (question := re.search(
+            r"(?ms)> \[!QUESTION\]- Full question statement\n(.*?)(?=\n(?!>)|\Z)",
+            block,
+        ))
+    )
+    leaked = [label for pattern, label in leaked_patterns.items() if re.search(pattern, question_text)]
+    if missing or too_short or leaked:
+        print(f"FAIL {path.stem:12} has incomplete question callouts")
+        if missing:
+            print(f"     missing callouts: {', '.join(missing)}")
+        if too_short:
+            print(f"     unusually short prompts: {', '.join(too_short)}")
+        if leaked:
+            print(f"     leaked TeX layout commands: {', '.join(leaked)}")
+        return False
+    print(f"PASS {path.stem:12} {len(found)} full question statements")
+    return True
+
+
+def check_divisibility_page_boundary(path: Path) -> bool:
+    """Catch next-page reference material accidentally appended to C.5."""
+    block = re.search(
+        r"(?ms)^### C\.5[^\n]*\n(.*?)(?=^### [A-E]\.\d+|\Z)",
+        path.read_text(),
+    )
+    question = re.search(
+        r"(?ms)> \[!QUESTION\]- Full question statement\n(.*?)(?=\n(?!>)|\Z)",
+        block.group(1) if block else "",
+    )
+    actual = re.sub(r"(?m)^> ?", "", question.group(1)).strip() if question else ""
+    expected = standard_questions("divisibility_assessment.tex")["C.5"]
+    if actual != expected:
+        print("FAIL Divisibility C.5 full question differs from source or includes next-page material")
+        return False
+    print("PASS Divisibility C.5 question ends before next-page definitions")
+    return True
+
+
 def main() -> int:
     okay = True
     standard_sources = {
@@ -73,6 +150,22 @@ def main() -> int:
         okay &= expected == expected_standard()
         okay &= report_alignment(name, expected, solution_ids(page))
         okay &= check_page_basics(page)
+        okay &= check_full_questions(page, solution_ids(page))
+
+    okay &= check_divisibility_page_boundary(SOLUTIONS / "2300_Divisibility_Solutions.md")
+
+    sets_text = (SOLUTIONS / "2300_Sets_Solutions.md").read_text()
+    missing_set_plots = [
+        number
+        for number in range(1, 6)
+        if f"![[assets/set_plot{number}.jpg]]" not in sets_text
+        or not (ASSETS / f"set_plot{number}.jpg").is_file()
+    ]
+    if missing_set_plots:
+        print(f"FAIL Sets is missing relation plot assets: {missing_set_plots}")
+        okay = False
+    else:
+        print("PASS Sets          five relation plot prompts have local publishable images")
 
     counting_items = 0
     for path in COUNTING.glob("*.tex"):
@@ -84,6 +177,7 @@ def main() -> int:
     counting_page = SOLUTIONS / "2300_Counting_Solutions.md"
     okay &= report_alignment("Counting", counting_expected, solution_ids(counting_page))
     okay &= check_page_basics(counting_page)
+    okay &= check_full_questions(counting_page, solution_ids(counting_page))
 
     arguments_source = (ASSESSMENTS / "arguments_extended_practice.tex").read_text()
     arguments_expected = set(re.findall(r"\\bankitem\{([A-E]\.\d\.\d{2})\}", arguments_source))
@@ -93,6 +187,9 @@ def main() -> int:
         "Arguments", arguments_expected, solution_ids(arguments_page, arguments=True)
     )
     okay &= check_page_basics(arguments_page)
+    okay &= check_full_questions(
+        arguments_page, solution_ids(arguments_page, arguments=True), arguments=True
+    )
     argument_blocks = {
         match.group(1): match.group(2).strip()
         for match in re.finditer(
@@ -135,6 +232,7 @@ def main() -> int:
     induction_text = induction_page.read_text()
     okay &= report_alignment("Induction", induction_expected, solution_ids(induction_page))
     okay &= check_page_basics(induction_page)
+    okay &= check_full_questions(induction_page, solution_ids(induction_page))
     stale_phrases = ("one from each section A–E", "exactly five problems")
     stale = [phrase for phrase in stale_phrases if phrase in induction_text]
     if stale:

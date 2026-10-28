@@ -54,3 +54,26 @@ Private planning document. Do not publish or link for students.
 - Verify arithmetic and Bézout coefficients before printing.
 - Require canonical remainders `0 <= r < b` whenever the divisor is positive.
 - For section E, require an explicit integer witness or divisibility definition when the prompt requests it.
+
+## Grader handoff: minimum evidence and alternatives
+
+- **A:** quotient and remainder satisfy both $a=bq+r$ and $0\le r<b$ for a
+  positive divisor, and congruence/divisibility statements use the correct
+  modulus. Any equivalent division-algorithm calculation is acceptable.
+- **B:** the final numeral has legal digits and the correct value. Repeated
+  division, place-value expansion, binary bridging, or another fully shown
+  valid conversion method is acceptable unless a method is requested.
+- **C:** each modular operation preserves congruence and the least nonnegative
+  residue is correct. A correct cycle, repeated squaring, or direct reduction is
+  acceptable when its arithmetic can be checked.
+- **D:** the Euclidean chain reaches the correct gcd and back-substitution gives
+  coefficients whose displayed linear combination equals that gcd. Any valid
+  Bézout pair is acceptable; it need not match the key's pair.
+- **E:** a proof translates the hypotheses through definitions, names or
+  constructs the needed integer witnesses, and reaches the exact divisibility
+  or congruence conclusion. Any valid proof or counterexample satisfying all
+  hypotheses is acceptable.
+
+Arithmetic slips are minor only when they do not change the requested result or
+break an essential witness. Every retake is a new complete A--E form; earlier
+problem credit is not retained.

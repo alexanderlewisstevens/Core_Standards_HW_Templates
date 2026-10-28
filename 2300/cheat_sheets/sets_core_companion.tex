@@ -1,0 +1,432 @@
+\documentclass[10pt]{article}
+
+% COMP 2300 Sets Core companion: student-facing reference and practice.
+\usepackage[letterpaper,margin=0.56in,includehead,includefoot,
+  headheight=15pt,headsep=7pt,footskip=20pt]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{microtype}
+\usepackage[dvipsnames,svgnames]{xcolor}
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage{tabularx,booktabs,array}
+\usepackage[most]{tcolorbox}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage[hidelinks]{hyperref}
+
+\definecolor{CoreNavy}{HTML}{18364A}
+\definecolor{CoreTeal}{HTML}{176B6B}
+\definecolor{CoreGold}{HTML}{9A6500}
+\definecolor{CoreRed}{HTML}{963D38}
+\definecolor{CoreBlueTint}{HTML}{EDF4F8}
+\definecolor{CoreTealTint}{HTML}{EDF8F6}
+\definecolor{CoreGoldTint}{HTML}{FFF7E5}
+\definecolor{CoreRedTint}{HTML}{FCEFED}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{2.5pt}
+\setlength{\columnsep}{0.25in}
+\setlength{\columnseprule}{0.25pt}
+\setlength{\emergencystretch}{1.2em}
+\setlength{\abovedisplayskip}{3pt}
+\setlength{\belowdisplayskip}{3pt}
+\setlist{leftmargin=*,itemsep=1pt,topsep=1.5pt,parsep=0pt,partopsep=0pt}
+\raggedbottom
+
+\titleformat{\section}{\Large\bfseries\color{CoreNavy}}{}{0pt}{}
+  [\vspace{-3pt}\color{CoreNavy}\rule{\linewidth}{0.7pt}]
+\titlespacing*{\section}{0pt}{3pt}{4pt}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textbf{COMP 2300}}
+\fancyhead[C]{\textbf{Sets Core Companion}}
+\fancyhead[R]{Definitions and Worked Examples}
+\fancyfoot[L]{Core sections A--E}
+\fancyfoot[C]{\thepage}
+\fancyfoot[R]{Study reference---not used during a Core}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0.3pt}
+\makeatletter
+\let\ps@plain\ps@fancy
+\let\ps@empty\ps@fancy
+\makeatother
+
+\tcbset{enhanced,before skip=2.5pt,after skip=2.5pt,boxrule=0.55pt,arc=1.2mm,
+  left=4pt,right=4pt,top=3pt,bottom=3pt,fonttitle=\bfseries}
+\newtcolorbox{definitionbox}[1]{title={#1},colback=CoreBlueTint,
+  colframe=CoreNavy,colbacktitle=CoreNavy,coltitle=white}
+\newtcolorbox{methodbox}[1]{title={#1},colback=CoreTealTint,
+  colframe=CoreTeal,colbacktitle=CoreTeal,coltitle=white}
+\newtcolorbox{workedbox}[1]{title={#1},colback=white,
+  colframe=CoreNavy,colbacktitle=CoreBlueTint,coltitle=CoreNavy}
+\newtcolorbox{warningbox}[1]{title={#1},colback=CoreRedTint,
+  colframe=CoreRed,colbacktitle=CoreRed,coltitle=white}
+\newtcolorbox{checklistbox}[1]{title={#1},colback=CoreGoldTint,
+  colframe=CoreGold,colbacktitle=CoreGold,coltitle=white}
+\newcommand{\term}[1]{\textbf{\color{CoreNavy}#1}}
+\newcommand{\U}{\mathfrak U}
+
+\begin{document}
+\small
+
+\section*{A--B. Set Language, Constructions, and Regions}
+\begin{multicols}{2}
+\begin{definitionbox}{Elements, subsets, and equality}
+$x\in A$ means $x$ is an element of $A$; $A\subseteq B$ means every element
+of $A$ belongs to $B$. A proper subset $A\subset B$ also requires $A\ne B$.
+Sets are equal exactly when $A\subseteq B$ and $B\subseteq A$. Order and
+repetition do not matter inside a set.
+\end{definitionbox}
+
+\begin{definitionbox}{Roster and set-builder notation}
+Roster notation lists elements; set-builder notation states a domain and a
+property. For example,
+\[
+\{x\in\mathbb Z:-2\le x<3\}=\{-2,-1,0,1,2\}.
+\]
+Read the colon as ``such that.'' Always enforce the declared domain.
+\end{definitionbox}
+
+\begin{definitionbox}{Power sets and Cartesian products}
+$\mathcal P(A)$ is the set of all subsets of $A$. If $|A|=n$, then
+$|\mathcal P(A)|=2^n$. The empty set and $A$ itself are included.
+\[
+A\times B=\{(a,b):a\in A\text{ and }b\in B\}.
+\]
+Ordered pairs preserve order; generally $(a,b)\ne(b,a)$.
+\end{definitionbox}
+
+\begin{workedbox}{A worked construction}
+Let $S=\{x\in\mathbb Z:|x|\le2\}$ and $T=\{-1,1\}$. Then
+\[
+S=\{-2,-1,0,1,2\},\quad T\subseteq S,\quad T\notin S,
+\]
+and
+\[
+\mathcal P(T)=\{\varnothing,\{-1\},\{1\},\{-1,1\}\}.
+\]
+\textbf{Step 1:} solve $|x|\le2$ in the declared integer domain.
+\textbf{Step 2:} both elements of $T$ occur in $S$, so $T\subseteq S$.
+\textbf{Step 3:} the elements of $S$ are integers, so the set $T$ is not itself
+an element: $T\notin S$. \textbf{Step 4:} list subsets of $T$ by size
+(zero, one, then two elements); the count $4=2^2$ checks the power set.
+\end{workedbox}
+
+\columnbreak
+
+\begin{definitionbox}{Set operations}
+Relative to universe $\U$,
+\begin{align*}
+A\cup B&=\{x:x\in A\text{ or }x\in B\},\\
+A\cap B&=\{x:x\in A\text{ and }x\in B\},\\
+A\setminus B&=\{x:x\in A\text{ and }x\notin B\},\\
+\overline A&=\U\setminus A.
+\end{align*}
+Membership formulas and set formulas describe the same regions.
+\end{definitionbox}
+
+\begin{methodbox}{Translate logic into a Venn region}
+Replace $x\in A$ by $A$, $\lor$ by union, $\land$ by intersection, and
+$\neg$ by complement. First eliminate conditionals:
+\[
+P\to Q\equiv\neg P\lor Q,
+\qquad
+P\leftrightarrow Q\equiv(P\land Q)\lor(\neg P\land\neg Q).
+\]
+Then shade exactly the resulting region.
+\end{methodbox}
+
+\begin{workedbox}{B worked translations}
+\begin{align*}
+(x\in A\setminus B)\lor(x\in C)
+&\longleftrightarrow (A\setminus B)\cup C,\\
+(x\in A\cup B)\to(x\in C)
+&\longleftrightarrow \overline{A\cup B}\cup C,\\
+(x\in A)\leftrightarrow(x\in B\setminus C)
+&\longleftrightarrow [A\cap(B\setminus C)]\\
+&\quad\cup[\overline A\cap\overline{(B\setminus C)}].
+\end{align*}
+\textbf{Procedure:} (1) eliminate $\to$ or $\leftrightarrow$; (2) replace
+$\neg,\land,\lor$ by complement, intersection, and union; (3) simplify.
+For the biconditional, the first term is the region where both sides are true;
+the second is where both are false. Shade both.
+\end{workedbox}
+
+\begin{warningbox}{Common errors}
+$\{x\}\in\mathcal P(A)$ is equivalent to $x\in A$, but $\{x\}\in A$ is a
+different claim. Include $\varnothing$ in every power set. Do not treat a
+Cartesian product as unordered.
+\end{warningbox}
+
+\begin{checklistbox}{A--B readiness}
+Can you move between roster and set-builder notation; distinguish $\in$ from
+$\subseteq$; build $\mathcal P(A)$ and $A\times B$; and convert a compound
+membership formula into a set expression and Venn region?
+\end{checklistbox}
+\end{multicols}
+
+\clearpage
+\section*{C. Relations as Subsets of Cartesian Products}
+\begin{multicols}{2}
+\begin{definitionbox}{Relations and plots}
+A relation from $X$ to $Y$ is any subset $R\subseteq X\times Y$. A plotted
+point at horizontal coordinate $x$ and vertical coordinate $y$ represents
+$(x,y)\in R$. The \term{domain of the relation} is the set of first
+coordinates that occur; its \term{range} is the set of second coordinates.
+\end{definitionbox}
+
+\begin{definitionbox}{When a relation is a function}
+A relation $R\subseteq X\times Y$ is a function $X\to Y$ exactly when
+\[
+\forall x\in X\;\exists!y\in Y\;((x,y)\in R).
+\]
+Every input must have exactly one output. An input with no point or with two
+points proves the relation is not a function.
+\end{definitionbox}
+
+\begin{definitionbox}{Injective and surjective}
+For a function $f:X\to Y$:
+\begin{align*}
+\text{injective}&:\quad f(x_1)=f(x_2)\Rightarrow x_1=x_2,\\
+\text{surjective}&:\quad \forall y\in Y\;\exists x\in X\;(f(x)=y),\\
+\text{bijective}&:\quad \text{both injective and surjective.}
+\end{align*}
+On a finite plot, injective means no two inputs share an output; surjective
+means every codomain value is hit.
+\end{definitionbox}
+
+\begin{workedbox}{C worked plot-to-pairs example}
+Let $X=Y=\{1,2,3\}$ and suppose the plot has points
+\[
+R=\{(1,2),(2,3),(3,2)\}.
+\]
+\textbf{Function check:} columns $x=1,2,3$ each contain exactly one point, so
+$R$ is a function $X\to Y$. \textbf{Injective check:} inputs $1$ and $3$ both
+map to $2$, so it is not injective. \textbf{Surjective check:} codomain value
+$1\in Y$ is never hit, so it is not surjective.
+\end{workedbox}
+
+\columnbreak
+
+\begin{methodbox}{Read quantified plot statements}
+\begin{align*}
+\forall x\exists y\,R(x,y)&:\ \text{every column has a point},\\
+\forall x\exists!y\,R(x,y)&:\ \text{every column has exactly one},\\
+\forall y\exists x\,R(x,y)&:\ \text{every row has a point},\\
+\forall y\exists!x\,R(x,y)&:\ \text{every row has exactly one},\\
+\exists x\forall y\,R(x,y)&:\ \text{some column is full},\\
+\exists y\forall x\,R(x,y)&:\ \text{some row is full}.
+\end{align*}
+The first variable is the horizontal coordinate in $(x,y)$.
+\end{methodbox}
+
+\begin{workedbox}{C quantified evaluation}
+For $R=\{(1,2),(2,3),(3,2)\}$:
+\begin{itemize}
+\item $\forall x\exists!y\,R(x,y)$: scan every column; each has one point, so true.
+\item $\forall y\exists x\,R(x,y)$: row $y=1$ is empty, a counterexample, so false.
+\item $\exists y\forall x\,R(x,y)$: test each row; none contains all three
+inputs, so false.
+\end{itemize}
+For a false universal, name the missing row or column; for a true existential,
+name the row or column that is the witness.
+\end{workedbox}
+
+\begin{workedbox}{C nonfunction diagnosis}
+If
+$S=\{(1,1),(1,3),(2,2),(3,3)\}$, then input $1$ has two outputs. Thus $S$ is
+not a function $X\to Y$, even though every input has at least one output.
+Classification as injective or surjective is requested only after the relation
+passes the function test.
+\end{workedbox}
+
+\begin{warningbox}{Common errors}
+Do not confuse ``exactly one output for each input'' with ``exactly one input
+for each output.'' A function may be many-to-one. Surjectivity is always
+relative to the declared codomain, not merely the values visible in a formula.
+\end{warningbox}
+
+\begin{checklistbox}{C readiness}
+Can you list a plotted relation as ordered pairs, evaluate each quantifier
+pattern, identify a missing or duplicated output, and classify a valid function
+as injective, surjective, both, or neither?
+\end{checklistbox}
+\end{multicols}
+
+\clearpage
+\thispagestyle{fancy}
+\section*{D. Functions, Images, and Preimages}
+\begin{multicols}{2}
+\begin{definitionbox}{Domain, codomain, range}
+In $f:X\to Y$, $X$ is the domain and $Y$ the codomain. The range is
+$f(X)=\{f(x):x\in X\}$ and may be smaller than $Y$. The same formula can have
+different injectivity or surjectivity behavior when its declared domain or
+codomain changes.
+\end{definitionbox}
+
+\begin{definitionbox}{Images and preimages of sets}
+For $U\subseteq X$ and $P\subseteq Y$,
+\[
+f(U)=\{f(x):x\in U\},
+\qquad
+f^{-1}(P)=\{x\in X:f(x)\in P\}.
+\]
+$f^{-1}(P)$ is preimage notation and does not require $f$ to have an inverse
+function.
+\end{definitionbox}
+
+\begin{workedbox}{D finite-function example}
+Let $A=\{1,2,3,4\}$, $B=\{a,b,c\}$, and
+$f(1)=a,f(2)=b,f(3)=b,f(4)=c$. Then
+\[
+f(\{1,3,4\})=\{a,b,c\},
+\quad
+f^{-1}(\{a,b\})=\{1,2,3\}.
+\]
+\textbf{Image:} evaluate inputs $1,3,4$ to get $a,b,c$.
+\textbf{Preimage:} collect all inputs whose outputs lie in $\{a,b\}$, namely
+$1,2,3$. \textbf{Classification:} every element of $B$ is hit, so $f$ is
+surjective; $f(2)=f(3)=b$ with $2\ne3$, so it is not injective.
+\end{workedbox}
+
+\begin{methodbox}{Proving or disproving injectivity}
+To prove injective, start with arbitrary $x_1,x_2$ and assume
+$f(x_1)=f(x_2)$; derive $x_1=x_2$. To disprove it, give distinct inputs with
+the same output.
+\end{methodbox}
+
+\columnbreak
+
+\begin{methodbox}{Proving or disproving surjectivity}
+To prove surjective, let arbitrary $y$ lie in the codomain and solve
+$f(x)=y$ for an allowed $x$ in the domain. To disprove it, identify one
+codomain element with no preimage.
+\end{methodbox}
+
+\begin{workedbox}{D integer formula examples}
+For $g:\mathbb Z\to\mathbb Z$, $g(n)=n+5$:
+\[
+g(\{-1,0,2\})=\{4,5,7\},\quad
+g^{-1}(\{4,7\})=\{-1,2\}.
+\]
+\textbf{Injective:} assume $g(n_1)=g(n_2)$; then
+$n_1+5=n_2+5$, hence $n_1=n_2$. \textbf{Surjective:} let arbitrary
+$y\in\mathbb Z$; choosing $n=y-5\in\mathbb Z$ gives
+$g(n)=(y-5)+5=y$. Thus $g$ is bijective.
+\end{workedbox}
+
+\begin{workedbox}{Domain and codomain matter}
+For $h:\mathbb Z\to\mathbb Z$, $h(n)=n^2$, the inputs $-1$ and $1$ collide,
+so $h$ is not injective. No integer squares to $-1$, so it is not surjective.
+For $q:\mathbb N_0\to\{m^2:m\in\mathbb N_0\}$, $q(n)=n^2$, the domain removes
+the $n,-n$ collisions. Every declared codomain value has the form $m^2=q(m)$
+for an allowed input. Thus $q$ is injective and surjective. The formula did not
+change; the declared domain and codomain did.
+\end{workedbox}
+
+\begin{warningbox}{Common errors}
+An image removes duplicate outputs. A preimage collects inputs, not output
+values. Never classify a function without reading both domain and codomain.
+Do not claim surjectivity by saying ``the formula has outputs''; construct a
+preimage for an arbitrary codomain element.
+\end{warningbox}
+
+\begin{checklistbox}{D readiness}
+Can you compute images and preimages; distinguish range from codomain; prove or
+disprove injectivity and surjectivity with the correct witnesses; and explain
+how changing the domain or codomain changes the classification?
+\end{checklistbox}
+\end{multicols}
+
+\clearpage
+\section*{E. Prove or Refute Set and Function Claims}
+\begin{multicols}{2}
+\begin{methodbox}{Element-chasing proof template}
+To prove $S=T$, prove both inclusions. For $S\subseteq T$:
+\begin{enumerate}
+\item Let $z\in S$ be arbitrary.
+\item Unpack membership in $S$ using definitions.
+\item Apply the relevant set/function definitions.
+\item Conclude $z\in T$.
+\end{enumerate}
+Do not begin by assuming the desired equality.
+\end{methodbox}
+
+\begin{workedbox}{True claim: image of a union}
+For $f:X\to Y$ and $U,V\subseteq X$,
+$f(U\cup V)=f(U)\cup f(V)$.
+
+\textbf{Forward inclusion:} if $y\in f(U\cup V)$, then $y=f(x)$ for some
+$x\in U\cup V$. Thus
+$x\in U$ or $x\in V$, so $y\in f(U)$ or $y\in f(V)$. This proves one
+inclusion. \textbf{Reverse inclusion:} if $y\in f(U)\cup f(V)$, then $y=f(x)$ for some
+$x\in U$ or some $x\in V$; in either case $x\in U\cup V$, so
+$y\in f(U\cup V)$. Both inclusions prove equality.
+\end{workedbox}
+
+\begin{workedbox}{False claim: image of an intersection}
+In general, $f(U\cap V)\ne f(U)\cap f(V)$. Let
+$X=\{1,2\}$, $Y=\{a\}$, $f(1)=f(2)=a$, $U=\{1\}$, and $V=\{2\}$. Then
+\[
+f(U\cap V)=f(\varnothing)=\varnothing,
+\quad
+f(U)\cap f(V)=\{a\}.
+\]
+\textbf{Verification:} the hypotheses hold, but the left side is empty and the
+right side is not, so the proposed universal equality is false. It fails because
+two different inputs may have the same output.
+\end{workedbox}
+
+\columnbreak
+
+\begin{workedbox}{True claim: preimage preserves intersection}
+For $P,Q\subseteq Y$,
+\[
+f^{-1}(P\cap Q)=f^{-1}(P)\cap f^{-1}(Q).
+\]
+Indeed, for arbitrary $x\in X$,
+\begin{align*}
+x\in f^{-1}(P\cap Q)
+&\Longleftrightarrow f(x)\in P\cap Q\\
+&\Longleftrightarrow f(x)\in P\text{ and }f(x)\in Q\\
+&\Longleftrightarrow x\in f^{-1}(P)\cap f^{-1}(Q).
+\end{align*}
+The chain proves both inclusions at once.
+\end{workedbox}
+
+\begin{workedbox}{True claim: product distributes over union}
+For arbitrary $(x,y)$,
+\begin{align*}
+(x,y)\in(A\cup B)\times C
+&\Longleftrightarrow (x\in A\text{ or }x\in B)\text{ and }y\in C\\
+&\Longleftrightarrow [(x\in A\text{ and }y\in C)\text{ or}\\
+&\hspace{3.4em}(x\in B\text{ and }y\in C)]\\
+&\Longleftrightarrow (x,y)\in(A\times C)\cup(B\times C).
+\end{align*}
+\end{workedbox}
+
+\begin{workedbox}{False cancellation claim}
+$A\cup B=A\cup C$ need not imply $B=C$. Take
+$A=\{1,2\}$, $B=\{1\}$, and $C=\{2\}$. Then both unions equal
+$\{1,2\}$, so the hypothesis is true, but $B\ne C$, so the conclusion is
+false. Union with $A$ hides differences already contained in $A$. A valid
+counterexample must pass both of these checks.
+\end{workedbox}
+
+\begin{warningbox}{Common errors}
+Examples do not prove universal claims. For a false equality, compute both
+sides of a concrete finite example. In an image proof, different witnesses may
+map to the same output; do not silently identify them.
+\end{warningbox}
+
+\begin{checklistbox}{Whole-Core readiness}
+Can you construct finite sets, translate Venn regions, interpret relations,
+compute and classify functions, and choose between an arbitrary-element proof
+and a concrete counterexample? A live 20-minute form selects one complete
+problem from each section A--E.
+\end{checklistbox}
+\end{multicols}
+
+\end{document}

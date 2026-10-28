@@ -1,0 +1,524 @@
+\documentclass[10pt]{extarticle}
+
+% COMP 2300 Arguments Core companion: student-facing reference and practice.
+\usepackage[letterpaper,margin=0.50in,includehead,includefoot,
+  headheight=14pt,headsep=5pt,footskip=17pt]{geometry}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{microtype}
+\usepackage[dvipsnames,svgnames]{xcolor}
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage[most]{tcolorbox}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage[hidelinks]{hyperref}
+
+\definecolor{ArgNavy}{HTML}{17324D}
+\definecolor{ArgBlue}{HTML}{245A75}
+\definecolor{ArgGold}{HTML}{956A16}
+\definecolor{ArgRed}{HTML}{963D38}
+\definecolor{ArgBlueTint}{HTML}{EDF4F8}
+\definecolor{ArgGreenTint}{HTML}{EDF7F1}
+\definecolor{ArgGoldTint}{HTML}{FFF7E5}
+\definecolor{ArgRedTint}{HTML}{FCEFED}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{2pt}
+\setlength{\columnsep}{0.22in}
+\setlength{\columnseprule}{0.25pt}
+\setlength{\emergencystretch}{1em}
+\setlength{\abovedisplayskip}{2pt}
+\setlength{\belowdisplayskip}{2pt}
+\setlist{leftmargin=*,itemsep=0.5pt,topsep=1pt,parsep=0pt,partopsep=0pt}
+\raggedbottom
+
+\titleformat{\section}{\Large\bfseries\color{ArgNavy}}{}{0pt}{}
+  [\vspace{-3pt}\color{ArgNavy}\rule{\linewidth}{0.7pt}]
+\titleformat{\subsection}{\large\bfseries\color{ArgBlue}}{}{0pt}{}
+\titlespacing*{\section}{0pt}{2pt}{3pt}
+\titlespacing*{\subsection}{0pt}{3pt}{1pt}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\footnotesize\textbf{COMP 2300}}
+\fancyhead[C]{\footnotesize\textbf{Arguments Core Companion}}
+\fancyhead[R]{\footnotesize Definitions and Worked Examples}
+\fancyfoot[L]{Core sections A--E}
+\fancyfoot[C]{\thepage}
+\fancyfoot[R]{Study reference --- not used during a Core}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0.3pt}
+\makeatletter
+\let\ps@plain\ps@fancy
+\let\ps@empty\ps@fancy
+\makeatother
+
+\tcbset{enhanced,before skip=2.5pt,after skip=2.5pt,boxrule=0.55pt,arc=1.2mm,
+  left=4pt,right=4pt,top=3pt,bottom=3pt,fonttitle=\bfseries}
+\newtcolorbox{definitionbox}[1]{title={#1},colback=ArgBlueTint,
+  colframe=ArgNavy,colbacktitle=ArgNavy,coltitle=white}
+\newtcolorbox{methodbox}[1]{title={#1},colback=ArgGreenTint,
+  colframe=ArgBlue,colbacktitle=ArgBlue,coltitle=white}
+\newtcolorbox{workedbox}[1]{title={#1},colback=white,
+  colframe=ArgNavy,colbacktitle=ArgBlueTint,coltitle=ArgNavy}
+\newtcolorbox{warningbox}[1]{title={#1},colback=ArgRedTint,
+  colframe=ArgRed,colbacktitle=ArgRed,coltitle=white}
+\newtcolorbox{checklistbox}[1]{title={#1},colback=ArgGoldTint,
+  colframe=ArgGold,colbacktitle=ArgGold,coltitle=white}
+\newcommand{\term}[1]{\textbf{\color{ArgNavy}#1}}
+
+\begin{document}
+\small
+
+\section*{A. Reconstruct and Challenge Natural-Language Arguments}
+\begin{multicols}{2}
+\begin{definitionbox}{Core vocabulary and response rule}
+An \term{argument} contains \term{premises} offered in support of a
+\term{conclusion}. An \term{intermediate conclusion} is supported by earlier
+claims and then supports a later conclusion. A \term{bridge premise} supplies a
+missing link. An argument is \term{valid} exactly when no interpretation makes
+all premises true and the conclusion false.
+
+On the Core, complete all requested parts in A, but any requested explanation
+or justification must be only one or two sentences. Symbols, labels, and compact
+argument maps are encouraged.
+\end{definitionbox}
+
+\begin{methodbox}{A.1 Argument structure}
+Mark indicator words (\emph{because, since, therefore, so}), then ask:
+\begin{enumerate}[label=\arabic*.]
+  \item What is the author ultimately trying to establish?
+  \item Which claim is supported and then reused as support?
+  \item Which claims are evidence, concessions, or background?
+  \item What bridge would make the last support step reasonable?
+\end{enumerate}
+An argument map such as $P_1+P_2\Rightarrow I$ and $I+P_3\Rightarrow C$
+records convergent or linked support without extra prose.
+\end{methodbox}
+
+\begin{workedbox}{A.1 worked example}
+\emph{Encrypted backups can be restored after device loss. The lab's archives
+are encrypted backups. Recoverable records reduce interruption after a failure.
+Therefore the lab should archive every final data set.}
+
+\textbf{1. Endpoint:} $C$ = archive every final data set. \textbf{2. Chain:}
+$P_1$ = encrypted backups are recoverable; $P_2$ = the archives are encrypted
+backups; therefore $I$ = the archives are recoverable. \textbf{3. Value:}
+$P_3$ = recoverability reduces interruption. \textbf{4. Gap:} $I$ and $P_3$
+describe a benefit but do not yet imply a policy. Bridge: if an affordable
+archive protects final data and reduces interruption, the lab should use it.
+Thus $P_1+P_2\Rightarrow I$ and $I+P_3+\text{bridge}\Rightarrow C$.
+\end{workedbox}
+
+\begin{definitionbox}{A.2 Conditionals in English}
+\begin{align*}
+P\text{ only if }Q&: P\to Q &&(Q\text{ necessary for }P),\\
+P\text{ if }Q&: Q\to P &&(Q\text{ sufficient for }P),\\
+P\text{ iff }Q&: (P\to Q)\land(Q\to P),\\
+P\text{ unless }Q&: \neg Q\to P\quad\text{or}\quad P\lor Q.
+\end{align*}
+The \term{contrapositive} $\neg Q\to\neg P$ is equivalent to $P\to Q$.
+The converse $Q\to P$ and inverse $\neg P\to\neg Q$ are not.
+\end{definitionbox}
+
+\columnbreak
+
+\begin{workedbox}{A.2 worked example}
+Let $A$ = access is granted, $T$ = training is complete, and $S$ = a supervisor
+is present.
+\begin{itemize}
+  \item ``Access only if trained'': $A\to T$.
+  \item ``Training and supervision are enough'': $(T\land S)\to A$.
+  \item ``Access exactly when both hold'': $A\leftrightarrow(T\land S)$.
+\end{itemize}
+\textbf{Step 1:} Translate each sentence before combining them. \textbf{Step 2:}
+from $A\leftrightarrow(T\land S)$, both $T$ and $S$ are individually necessary
+for $A$, while $T\land S$ is sufficient. \textbf{Step 3:} from the necessary
+direction $A\to T$, reverse and negate to get $\neg T\to\neg A$. Merely reversing the
+arrow gives $T\to A$, an unsupported converse because supervision may be absent.
+\end{workedbox}
+
+\begin{methodbox}{A.3 Validity, countermodels, and repair}
+\term{Valid rules}: modus ponens ($P\to Q,P\therefore Q$), modus tollens
+($P\to Q,\neg Q\therefore\neg P$), hypothetical syllogism, disjunctive
+syllogism, conjunction, simplification, and resolution.
+
+For an invalid argument, give a \term{countermodel}: one assignment making all
+premises true and the conclusion false. A \term{minimal repair} adds or changes
+only what is needed to block that countermodel.
+\end{methodbox}
+
+\begin{workedbox}{A.3 worked example}
+\emph{If the cache is stale, the test fails. The test failed. Therefore the
+cache is stale.} \textbf{1. Translate:} $S\to F,F\therefore S$.
+\textbf{2. Compare with a rule:} modus ponens would require $S$, not $F$; this
+instead affirms the consequent. \textbf{3. Disprove validity:} set
+$S=\mathrm F$ and $F=\mathrm T$. Both premises are true while the conclusion is
+false. \textbf{4. Repair:} add $F\to S$, or replace the first premise with
+$S\leftrightarrow F$. Either repair preserves the original conclusion $S$.
+\end{workedbox}
+
+\begin{warningbox}{Frequent A errors}
+Do not reverse ``only if.'' Do not call evidence the main conclusion. A
+countermodel must make \emph{every} premise true and the conclusion false. A
+repair should close the identified gap, not merely restate the conclusion.
+\end{warningbox}
+
+\begin{checklistbox}{A readiness}
+I can map premises, intermediate conclusions, and the main conclusion; translate
+necessary and sufficient conditions; use contraposition without using a converse;
+and test validity with a rule or a true-premise/false-conclusion countermodel.
+\end{checklistbox}
+\end{multicols}
+
+\clearpage
+\small
+\section*{B. Logical Reasoning I: Anatomy and Inference}
+\begin{multicols}{2}
+\begin{definitionbox}{How B is graded}
+For every B problem, choose one answer only. \textbf{No written justification is
+required.} The worked explanations here teach a repeatable selection method.
+\end{definitionbox}
+
+\begin{methodbox}{B.1 Main conclusion}
+The \term{main conclusion} is the claim the author ultimately wants accepted.
+Ask ``Why believe this?'' Evidence answers that question; an intermediate
+conclusion is both supported and reused. A concession often begins with
+\emph{although} or \emph{admittedly}.
+\end{methodbox}
+
+\begin{workedbox}{B.1 worked example}
+\emph{Weekday appointments occur when many hourly workers cannot attend. Recent
+evening clinics filled immediately. A nurse and funding are now available.
+Therefore the clinic should offer Saturday appointments.}
+
+\textbf{Step 1:} ask which claim the others answer \emph{Why believe that?}
+\textbf{Step 2:} the timing and full evening clinics show demand; the nurse and
+funding remove objections. \textbf{Answer:} the Saturday recommendation is the
+endpoint. The other claims support it and are not themselves the main conclusion.
+\end{workedbox}
+
+\begin{methodbox}{B.2 Role of a statement}
+Describe what the statement \emph{does}: premise, intermediate conclusion,
+main conclusion, concession, objection, reply, example, or background. Read one
+sentence before and after it and identify the claim it supports or qualifies.
+\end{methodbox}
+
+\begin{workedbox}{B.2 worked example}
+\emph{Digitizing the archive will interrupt access for two weeks. However, it
+prevents irreversible loss, and the interruption can be reduced by scanning in
+batches. The archive should be digitized.}
+
+\textbf{Step 1:} the final sentence is the recommendation. \textbf{Step 2:} the
+first sentence counts against it. \textbf{Step 3:} \emph{however} introduces the
+author's reply. Thus the first sentence is a \textbf{concession}: an acknowledged
+cost that the author answers while defending digitization.
+\end{workedbox}
+
+\begin{methodbox}{B.3 Point at issue}
+Find one exact proposition $P$ such that one speaker accepts $P$ and the other
+accepts $\neg P$. Agreement about background facts is not disagreement about the
+inference drawn from them.
+\end{methodbox}
+
+\begin{workedbox}{B.3 worked example}
+Mina: ``A random sample of twelve is enough to estimate majority support.''
+Omar: ``Random selection helps, but twelve is too uncertain to determine a
+majority.'' \textbf{Step 1:} both can accept that selection was random.
+\textbf{Step 2:} Mina accepts and Omar rejects the sufficiency claim. They
+disagree whether \textbf{this sample is sufficient to determine majority support}.
+\end{workedbox}
+
+\columnbreak
+
+\begin{methodbox}{B.4 Must follow}
+A correct answer is true in \emph{every} situation satisfying the facts. Chain
+conditionals, apply contrapositives, and respect quantifiers. Reject choices that
+are merely possible, likely, or stronger than the premises.
+\end{methodbox}
+
+\begin{workedbox}{B.4 worked example}
+Facts: every certified device was inspected; no inspected device lacks a seal;
+unit K is certified. \textbf{Chain:} certified $\to$ inspected and inspected
+$\to$ sealed, so K is inspected and then sealed. It does \emph{not} follow that
+every sealed device is certified: that conclusion reverses the chain.
+\end{workedbox}
+
+\begin{methodbox}{B.5 Parallel reasoning}
+Abstract the structure before comparing topics. Preserve arrow direction,
+negations, conjunction/disjunction, and quantifier strength.
+\end{methodbox}
+
+\begin{workedbox}{B.5 worked example}
+Stimulus: $P\to Q$, $P\lor R$, $\neg Q$, therefore $R$.
+\textbf{Step 1:} modus tollens yields $\neg P$. \textbf{Step 2:} disjunctive
+syllogism on $P\lor R$ and $\neg P$ yields $R$.
+
+Parallel: ``If the pump runs, water flows. The pump runs or the valve is closed.
+No water flows. Therefore the valve is closed.'' A choice using $Q\to P$ or
+$\neg P\lor R$ does not match.
+\end{workedbox}
+
+\begin{definitionbox}{Useful distinctions}
+\begin{itemize}
+  \item \term{Entailed}: cannot be false when the premises are true.
+  \item \term{Supported}: made more credible, but not guaranteed.
+  \item \term{Consistent}: can be true together; neither must imply the other.
+  \item \term{Scope}: words such as \emph{all, some, most, only, unless} control
+  how strong a claim is.
+\end{itemize}
+\end{definitionbox}
+
+\begin{warningbox}{Frequent B errors}
+Do not choose a vivid detail instead of the conclusion. For point-at-issue
+questions, both speakers must take opposite positions on the exact claim. For
+must-follow questions, do not add ordinary-world assumptions. For parallel
+reasoning, match form rather than subject matter.
+\end{warningbox}
+
+\begin{checklistbox}{B readiness}
+I can distinguish conclusion, evidence, concession, and role; isolate a precise
+disagreement; identify what must follow; and match an argument's logical form.
+On the Core I record only the selected answer.
+\end{checklistbox}
+\end{multicols}
+
+\clearpage
+\small
+\section*{C. Logical Reasoning II: Assumptions and Evidence}
+\begin{multicols}{2}
+\begin{definitionbox}{How C is graded}
+For every C problem, choose one answer only. \textbf{No written justification is
+required.} Use the tests below privately to select the answer.
+\end{definitionbox}
+
+\begin{methodbox}{C.1 Necessary assumption}
+A necessary assumption is a condition the argument \emph{requires}. Use the
+\term{negation test}: negate a candidate precisely. If the reasoning collapses,
+the candidate was necessary. The assumption need not prove the conclusion.
+\end{methodbox}
+
+\begin{workedbox}{C.1 worked example}
+Argument: encrypted backups can restore any file in the latest completed backup;
+therefore every current project file could be restored tonight. \textbf{Gap:}
+the premise covers backed-up files, while the conclusion covers every current
+file. Candidate assumption: \textbf{every current file is included in that
+completed backup}. \textbf{Negation test:} some current file is absent. The
+stated restore ability then does not cover that file, so this reasoning no
+longer establishes the conclusion; another recovery method might still exist.
+\end{workedbox}
+
+\begin{methodbox}{C.2 Sufficient assumption}
+A sufficient assumption, when added, makes the conclusion follow. Test by
+inserting the choice into the premises and completing a valid chain. It may be
+stronger than necessary, but it must not leave a gap.
+\end{methodbox}
+
+\begin{workedbox}{C.2 worked example}
+Facts: Plan K is the only plan meeting both budget and deadline. Conclusion:
+choose K. \textbf{Gap:} feasibility alone does not imply that a choice must be
+made. Add: \textbf{whenever at least one plan meets both constraints, choose a
+plan that meets both}. K meets them and no other plan does, so this principle
+requires choosing K. A rule saying only that acceptable plans must meet the
+constraints would not establish that K is acceptable.
+\end{workedbox}
+
+\begin{methodbox}{C.3 Diagnose the flaw}
+State the gap specifically. Common flaws include converse error; confusing
+correlation with causation; unrepresentative sample; circular reasoning; part-to-
+whole or whole-to-part error; false dilemma; equivocation; and treating lack of
+evidence as evidence of absence.
+\end{methodbox}
+
+\begin{workedbox}{C.3 worked example}
+The argument observes that benches were installed and attendance later rose,
+then concludes that the benches caused the increase. \textbf{Step 1:} the
+evidence establishes sequence and association. \textbf{Step 2:} causation would
+require ruling out other changes or comparing with a control. The flaw is
+inferring causation from an uncontrolled before--after pattern.
+\end{workedbox}
+
+\columnbreak
+
+\begin{methodbox}{C.4 Strengthen}
+Find the conclusion and its weakest support link. A strengthener may rule out an
+alternative explanation, validate a measurement, make a sample representative,
+establish a missing connection, or show the proposed mechanism operates.
+It need not prove the conclusion.
+\end{methodbox}
+
+\begin{workedbox}{C.4 worked example}
+Claim: high-contrast labels reduce sorting errors. Evidence: one office improved
+after adopting them. \textbf{Weak link:} some other change may explain the drop.
+\textbf{Best strengthener:} comparable lines were randomly assigned old or
+high-contrast labels, and only the latter showed a sustained error drop. The
+control and random assignment directly support the proposed causal link.
+\end{workedbox}
+
+\begin{methodbox}{C.5 Weaken}
+A weakener damages the inference, not necessarily the conclusion. Look for a
+confounder, selection effect, bad proxy, reversed causation, missing necessary
+step, or evidence that the mechanism will not operate.
+\end{methodbox}
+
+\begin{workedbox}{C.5 worked example}
+Claim: forcing applicants to open an accurate tutorial ensures correct forms.
+\textbf{Proposed mechanism:} opening $\to$ reading and understanding $\to$
+correct completion. \textbf{Best weakener:} applicants can close the tutorial
+immediately without reading it. That breaks the first link; accuracy alone does
+not ensure exposure, understanding, or use.
+\end{workedbox}
+
+\begin{definitionbox}{Necessary versus sufficient}
+A necessary assumption $N$ is required by the \emph{argument's support link}:
+negating $N$ undermines that reasoning. This need not make the conclusion false;
+it might be true for a different reason. A sufficient assumption $S$ supplies
+enough for $C$: premises plus $S$ imply $C$. Do not confuse a condition needed
+by this argument with a condition needed for the conclusion to be true at all.
+\end{definitionbox}
+
+\begin{warningbox}{Frequent C errors}
+The negation of ``all'' is ``at least one not,'' not ``none.'' A necessary
+assumption can be modest; a sufficient assumption can be strong. Strengtheners
+and weakeners target the support link, not whether you personally agree with the
+conclusion. Name the passage-specific flaw, not only a memorized label.
+\end{warningbox}
+
+\begin{checklistbox}{C readiness}
+I can apply the negation test; distinguish necessary from sufficient assumptions;
+name a precise inferential gap; and choose evidence that changes the actual
+support link. On the Core I record only the selected answer.
+\end{checklistbox}
+\end{multicols}
+
+\clearpage
+\footnotesize
+\tcbset{before skip=2pt,after skip=2pt}
+\section*{D. Principles and Explanations \hfill E. Evaluation and Revision}
+\begin{multicols}{2}
+\begin{definitionbox}{How D and E are graded}
+In D, choose one answer only; \textbf{no written justification is required}.
+In E, complete every requested part, but keep any requested explanation or
+justification to \textbf{one or two sentences}. Concise labels and bullets count.
+\end{definitionbox}
+
+\begin{methodbox}{D.1 Principle support}
+Translate each principle as conditions $\to$ judgment. Match \emph{every}
+operative condition to a stated fact; reject rules that are too broad, too narrow,
+or point toward the opposite judgment.
+\end{methodbox}
+\begin{workedbox}{D.1 example}
+A fee may be waived when a person took every reasonable step but an agency outage
+prevented timely filing. \textbf{Conditions:} reasonable effort and an external
+outage. \textbf{Case check:} logs establish both for Mira. \textbf{Result:} the
+matching principle permits a waiver because reasonable compliance was blocked
+by circumstances outside the applicant's control.
+\end{workedbox}
+
+\begin{methodbox}{D.2 Resolve the discrepancy}
+Treat both observations as true. Find a third fact that separates the measures,
+groups, or time periods so the apparent conflict disappears.
+\end{methodbox}
+\begin{workedbox}{D.2 example}
+Fewer people registered, yet more seats were occupied. \textbf{Step 1:} keep
+both facts. \textbf{Step 2:} distinguish registration from attendance.
+\textbf{Resolution:} the new group had a much lower no-show rate, so a smaller
+registered group can still produce more occupied seats.
+\end{workedbox}
+
+\begin{methodbox}{D.3 Parallel flaw}
+Abstract the invalid move. Example: ``certified $\to$ inspected; inspected;
+therefore certified'' affirms the consequent. The correct answer must repeat
+$P\to Q,Q\therefore P$, not merely reach a dubious conclusion.
+\end{methodbox}
+
+\begin{methodbox}{D.4 Method of reasoning}
+Describe the argument's actual operation: applies a rule, eliminates alternatives,
+uses an analogy, gives a counterexample, distinguishes cases, concedes then
+responds, or shows that a proposal defeats its own goal.
+\end{methodbox}
+\begin{workedbox}{D.4 example}
+An author rejects a claim that deadlines are never fair by presenting a deadline
+needed to coordinate emergency staffing. \textbf{Pattern:} the original claim is
+universal, while one fair deadline makes it false. Method: \textbf{counterexample
+to a universal claim}, not proof that every deadline is fair.
+\end{workedbox}
+
+\begin{methodbox}{D.5 Complete the argument}
+Insert a claim that connects established facts to the stated conclusion. Prefer
+the weakest answer that closes the exact gap; avoid a new topic or an unnecessary
+universal rule.
+\end{methodbox}
+\begin{workedbox}{D.5 example}
+Facts: a sample contains only early riders, while later riders face different
+service. Conclusion: the survey cannot justify system-wide cuts. \textbf{Gap:}
+the evidence represents only one systematically different subgroup.
+\textbf{Completion:} a sample limited to such a subgroup cannot support a
+system-wide estimate. That sentence connects the sample fact directly to the
+scope of the conclusion.
+\end{workedbox}
+
+\columnbreak
+
+\begin{methodbox}{E.1 Causal evaluation}
+Separate \term{association} from \term{causation}. Name the conclusion, evidence,
+and a plausible confounder, selection effect, reverse cause, or measurement
+problem. Strong evidence uses random assignment, a valid comparison group,
+baseline measures, or converging mechanisms.
+\end{methodbox}
+\begin{workedbox}{E.1 compact full-credit model}
+Claim: reminders cause timely submission; evidence: students who enabled them
+submitted more often. \textbf{Step 1:} this is observational and self-selected.
+\textbf{Step 2:} already-organized students may both enable reminders and submit
+on time. \textbf{Step 3:} randomly assign comparable students to reminders or no
+reminders and compare submission rates. The original evidence supports an
+association, not yet the causal claim.
+\end{workedbox}
+
+\begin{methodbox}{E.2 Apply a principle}
+List the rule's conditions, compare each with the case, then state the result.
+Do not silently add an exception. If a term is ambiguous, state one reasonable
+interpretation in a short sentence.
+\end{methodbox}
+\begin{workedbox}{E.2 compact full-credit model}
+Principle: a penalty based on a high-false-positive method requires reliable
+independent corroboration. \textbf{Conditions:} proposed penalty; unreliable
+screen; independent corroboration required. \textbf{Case check:} only the screen
+is positive, so corroboration is absent. \textbf{Result:} the penalty is not
+justified, although a proportionate investigation may still be justified.
+\end{workedbox}
+
+\begin{methodbox}{E.3 Integrated Op-Ed analysis and revision}
+State the main conclusion; map the strongest support; identify the most important
+gap; then revise the conclusion to the strength the evidence warrants. A good
+revision preserves useful evidence while adding scope, comparison, or uncertainty.
+\end{methodbox}
+\begin{workedbox}{E.3 compact full-credit model}
+Evidence: one bus-lane pilot reduced corridor travel time and coincided with
+higher ridership. Claim: convert every city road. \textbf{Step 1:} the evidence
+comes from one corridor and does not rule out other causes of ridership.
+\textbf{Step 2:} the conclusion jumps from one pilot to every road.
+\textbf{Revision:} test comparable corridors and measure travel, safety, and
+spillovers before deciding whether broader conversion is warranted.
+\end{workedbox}
+
+\begin{warningbox}{Frequent D--E errors}
+Do not choose a principle missing one stated condition. Resolve a discrepancy
+without denying either observation. Match a flaw's form, not its topic. In E,
+do not write an essay: identify the decisive gap and the evidence or revision
+that addresses it in one or two sentences.
+\end{warningbox}
+
+\begin{checklistbox}{Final readiness check}
+\begin{itemize}
+  \item A: I can reconstruct, translate, test, countermodel, and repair.
+  \item B--D: I can select the answer using the named test; I know no written
+  justification is required.
+  \item E: I can evaluate causation, apply a principle, or revise an argument in
+  a complete but compact one- or two-sentence response.
+  \item I can distinguish what is entailed, merely supported, and merely possible.
+\end{itemize}
+\end{checklistbox}
+\end{multicols}
+
+\end{document}

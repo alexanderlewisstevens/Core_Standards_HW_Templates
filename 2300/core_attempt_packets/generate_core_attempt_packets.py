@@ -256,11 +256,17 @@ def write_arguments_packet(form_count: int, seed: str) -> list[dict[str, str]]:
         "E": "Evaluate and revise",
     }
     directions = {
-        "A": "Complete every requested part.",
-        "B": "Choose one answer and justify it briefly; a letter alone is incomplete.",
-        "C": "Choose one answer and justify it briefly; a letter alone is incomplete.",
-        "D": "Choose one answer and justify it briefly; a letter alone is incomplete.",
-        "E": "Complete every requested part and state any assumption you add.",
+        "A": (
+            "Give only the short response requested: no more than two compact "
+            "results and no extra justification."
+        ),
+        "B": "Choose one answer only. No written justification is required.",
+        "C": "Choose one answer only. No written justification is required.",
+        "D": "Choose one answer only. No written justification is required.",
+        "E": (
+            "Give only the requested answer and one brief reason. One sentence "
+            "is enough for any explanation."
+        ),
     }
     problem_banks = {
         section: [BankProblem(code, bank[code]) for code in section_codes]
@@ -572,7 +578,13 @@ def write_manifest(
     manifests: dict[str, list[dict[str, str]]], form_count: int, seed: str
 ) -> Path:
     safe_seed = re.sub(r"[^A-Za-z0-9_-]+", "-", seed).strip("-") or "seed"
-    path = HERE / f"core_attempt_form_manifest_{form_count}_seed_{safe_seed}.md"
+    if len(manifests) == 1:
+        only_core = next(iter(manifests)).lower()
+        path = HERE / (
+            f"{only_core}_core_{form_count}_forms_manifest_seed_{safe_seed}.md"
+        )
+    else:
+        path = HERE / f"core_attempt_form_manifest_{form_count}_seed_{safe_seed}.md"
     parts = [
         f"# COMP 2300 Core Attempt Form Manifest — {form_count} forms",
         "",
@@ -586,7 +598,7 @@ def write_manifest(
     for name in ("Logic", "Arguments", "Sets", "Proofs", "Divisibility", "Induction", "Counting"):
         if name in manifests:
             parts.append(manifest_table(name, manifests[name]))
-    path.write_text("\n".join(parts) + "\n")
+    path.write_text("\n".join(parts).rstrip() + "\n")
     return path
 
 

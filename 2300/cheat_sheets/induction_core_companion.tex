@@ -1,0 +1,402 @@
+\documentclass[10pt]{article}
+
+% COMP 2300 Induction Core companion: student-facing reference and practice.
+\usepackage[letterpaper,margin=0.56in,includehead,includefoot,
+  headheight=15pt,headsep=7pt,footskip=20pt]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{microtype}
+\usepackage[dvipsnames,svgnames]{xcolor}
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage{tabularx,booktabs,array}
+\usepackage[most]{tcolorbox}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage[hidelinks]{hyperref}
+
+\definecolor{CoreNavy}{HTML}{18364A}
+\definecolor{CoreTeal}{HTML}{176B6B}
+\definecolor{CoreGold}{HTML}{9A6500}
+\definecolor{CoreRed}{HTML}{963D38}
+\definecolor{CoreBlueTint}{HTML}{EDF4F8}
+\definecolor{CoreTealTint}{HTML}{EDF8F6}
+\definecolor{CoreGoldTint}{HTML}{FFF7E5}
+\definecolor{CoreRedTint}{HTML}{FCEFED}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{2.5pt}
+\setlength{\columnsep}{0.25in}
+\setlength{\columnseprule}{0.25pt}
+\setlength{\emergencystretch}{1.2em}
+\setlength{\abovedisplayskip}{3pt}
+\setlength{\belowdisplayskip}{3pt}
+\setlist{leftmargin=*,itemsep=1pt,topsep=1.5pt,parsep=0pt,partopsep=0pt}
+\raggedbottom
+
+\titleformat{\section}{\Large\bfseries\color{CoreNavy}}{}{0pt}{}
+  [\vspace{-3pt}\color{CoreNavy}\rule{\linewidth}{0.7pt}]
+\titlespacing*{\section}{0pt}{3pt}{4pt}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textbf{COMP 2300}}
+\fancyhead[C]{\textbf{Induction Core Companion}}
+\fancyhead[R]{Definitions and Worked Examples}
+\fancyfoot[L]{Compact Core sections A--C}
+\fancyfoot[C]{\thepage}
+\fancyfoot[R]{Study reference---not used during a Core}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0.3pt}
+
+\tcbset{enhanced,before skip=2.5pt,after skip=2.5pt,boxrule=0.55pt,arc=1.2mm,
+  left=4pt,right=4pt,top=3pt,bottom=3pt,fonttitle=\bfseries}
+\newtcolorbox{definitionbox}[1]{title={#1},colback=CoreBlueTint,
+  colframe=CoreNavy,colbacktitle=CoreNavy,coltitle=white}
+\newtcolorbox{methodbox}[1]{title={#1},colback=CoreTealTint,
+  colframe=CoreTeal,colbacktitle=CoreTeal,coltitle=white}
+\newtcolorbox{workedbox}[1]{title={#1},colback=white,
+  colframe=CoreNavy,colbacktitle=CoreBlueTint,coltitle=CoreNavy}
+\newtcolorbox{warningbox}[1]{title={#1},colback=CoreRedTint,
+  colframe=CoreRed,colbacktitle=CoreRed,coltitle=white}
+\newtcolorbox{checklistbox}[1]{title={#1},colback=CoreGoldTint,
+  colframe=CoreGold,colbacktitle=CoreGold,coltitle=white}
+\newcommand{\term}[1]{\textbf{\color{CoreNavy}#1}}
+
+\begin{document}
+\small
+
+\section*{A. Build a Valid Induction Plan}
+\begin{multicols}{2}
+\begin{definitionbox}{The five required pieces}
+An induction proof establishes a proposition $P(n)$ for every integer
+$n\ge n_0$ by giving:
+\begin{enumerate}
+  \item a precise statement of $P(n)$ and its domain;
+  \item a verified \term{base case} $P(n_0)$;
+  \item an \term{induction hypothesis} for an arbitrary $k\ge n_0$;
+  \item an \term{induction step} deriving $P(k+1)$ from the hypothesis; and
+  \item a conclusion invoking induction.
+\end{enumerate}
+The hypothesis is temporary: it may be used only while proving the next case.
+\end{definitionbox}
+
+\begin{definitionbox}{Ordinary versus strong induction}
+\term{Ordinary induction} assumes only $P(k)$ and proves $P(k+1)$.
+\term{Strong induction} assumes every case
+\[
+P(n_0),P(n_0+1),\ldots,P(k)
+\]
+and proves $P(k+1)$. The two principles are logically equivalent; choose the
+form that naturally supplies the earlier cases needed in the step.
+\end{definitionbox}
+
+\begin{methodbox}{A planning template}
+Before calculating, write:
+\begin{enumerate}
+  \item $P(n)$: the exact claim with the variable visible;
+  \item Base: substitute the first permitted value;
+  \item IH: ``Fix arbitrary $k\ge n_0$ and assume \ldots'';
+  \item Goal: write $P(k+1)$ explicitly;
+  \item Bridge: identify the expression where the IH will enter.
+\end{enumerate}
+For strong induction, state the entire range of assumed cases.
+\end{methodbox}
+
+\columnbreak
+
+\begin{workedbox}{A.1: prime factorization setup}
+Claim: every integer $n\ge2$ is a product of one or more primes.
+
+\textbf{Base.} $P(2)$ holds because $2$ is prime.
+
+\textbf{Strong IH.} Fix arbitrary $k\ge2$ and assume $P(j)$ holds for every
+integer $j$ with $2\le j\le k$.
+
+\textbf{Goal.} Prove $P(k+1)$: that $k+1$ is a product of primes.
+
+\textbf{Cases.} If $k+1$ is prime, it is already a product of one prime. If
+it is composite, write $k+1=ab$ with $2\le a,b\le k$; the strong IH applies
+to both factors. These are the two cases the short Core problem asks you to
+identify; do not assume a factorization before entering the composite case.
+\end{workedbox}
+
+\begin{workedbox}{A similar ordinary-induction plan}
+\textbf{1. State and start.} For
+$P(n):1+3+\cdots+(2n-1)=n^2$, use base $n=1$.
+\textbf{2. Assume the $k$ case:}
+\[
+1+3+\cdots+(2k-1)=k^2.
+\]
+\textbf{3. Write the target.} The next new term is
+$2(k+1)-1=2k+1$. \textbf{4. Build the bridge:}
+\[
+k^2+(2k+1)=(k+1)^2.
+\]
+The equality $k^2=1+\cdots+(2k-1)$ is the exact point where the hypothesis
+enters; then the display reaches the $k+1$ formula.
+\end{workedbox}
+
+\begin{warningbox}{Frequent A errors}
+Do not write ``assume the claim is true'' without naming the case(s). Do not
+assume $P(k+1)$. For strong induction, do not omit the lower and upper limits
+of the assumed range. Verify every needed initial case for a multi-step
+recurrence.
+\end{warningbox}
+
+\begin{checklistbox}{A readiness}
+Can I state the base, hypothesis, next-case goal, and useful case split without
+silently assuming the conclusion?
+\end{checklistbox}
+\end{multicols}
+
+\clearpage
+\section*{B. Diagnose and Repair an Induction Step}
+\begin{multicols}{2}
+\begin{definitionbox}{Circular reasoning}
+An induction step must begin from the induction hypothesis $P(k)$ (or the
+strong range through $k$) and derive $P(k+1)$. Beginning with $P(k+1)$ and
+manipulating it is circular unless every step is a reversible equivalence and
+the proof is explicitly reorganized into a forward derivation.
+\end{definitionbox}
+
+\begin{methodbox}{A repair workflow}
+\begin{enumerate}
+  \item Write the actual $P(k)$ and $P(k+1)$ side by side.
+  \item Delete any use of the target $P(k+1)$ as a premise.
+  \item Start with the left side or defining object in $P(k+1)$.
+  \item Isolate a copy of the $k$-case and cite the IH exactly there.
+  \item Finish the algebra or inequality, then state the conclusion.
+\end{enumerate}
+\end{methodbox}
+
+\begin{workedbox}{B.1: repair the exponential inequality}
+Claim: $2^n\ge n+1$ for every $n\ge0$. The faulty step assumes
+$2^{k+1}\ge k+2$, which is exactly the target. \textbf{Step 1: delete that
+assumption.}
+
+\textbf{Step 2: use the correct hypothesis} $2^k\ge k+1$.
+\textbf{Step 3: start from the next-case expression and move forward:}
+\begin{align*}
+2^{k+1}&=2\cdot2^k\\
+       &\ge2(k+1) &&\text{by the IH}\\
+       &\ge k+2 &&\text{because }k\ge0.
+\end{align*}
+\textbf{Step 4: close.} Thus $P(k+1)$ follows. Notice that the IH is used once and its direction is
+preserved when multiplying by the positive number $2$.
+\end{workedbox}
+
+\columnbreak
+
+\begin{definitionbox}{Other structural failures}
+\begin{itemize}
+  \item \term{Missing base case}: the step alone starts no chain.
+  \item \term{Too few bases}: a recurrence using two earlier terms needs enough
+  initial cases.
+  \item \term{Wrong next term}: the added term must be computed at $k+1$.
+  \item \term{Unjustified strengthening}: proving a stronger statement is fine,
+  but it needs its own base and step.
+  \item \term{Domain drift}: divisibility, inequalities, or recurrences may
+  require a restricted integer domain.
+\end{itemize}
+\end{definitionbox}
+
+\begin{workedbox}{Repair a wrong next term}
+Suppose $P(n)$ is $1+3+\cdots+(2n-1)=n^2$. After assuming $P(k)$, the next
+term is $2(k+1)-1=2k+1$, not $2k-1$. Hence
+\[
+1+3+\cdots+(2k-1)+(2k+1)
+=k^2+2k+1=(k+1)^2.
+\]
+The index, not visual pattern-matching, determines the new term.
+\end{workedbox}
+
+\begin{workedbox}{Two-step recurrences need two bases}
+If $a_n=a_{n-1}+a_{n-2}$ and a property of $a_n$ is proved using the two
+previous cases, verify both initial values. In a strong-induction version,
+the hypothesis must include enough earlier indices for the recurrence to be
+defined. One base case cannot support the first step that needs two values.
+\end{workedbox}
+
+\begin{warningbox}{Invalid shortcuts}
+Do not ``cancel'' an inequality without checking signs. Do not replace the
+induction hypothesis with the desired conclusion. Do not test several values
+and call that an induction proof. A pattern suggests a claim; the proof must
+cover every allowed integer.
+\end{warningbox}
+
+\begin{checklistbox}{B readiness}
+Can I point to the first circular or unsupported line, state the correct IH,
+and replace the broken step with a forward chain that explicitly cites it?
+\end{checklistbox}
+\end{multicols}
+
+\clearpage
+\section*{C. The Essential Binomial-Sum Proof}
+\begin{multicols}{2}
+\begin{definitionbox}{Binomial coefficients and Pascal's identity}
+$\binom{n}{j}$ counts the $j$-element subsets of an $n$-element set. The
+endpoints satisfy $\binom n0=\binom nn=1$. Pascal's identity is
+\[
+\binom{k+1}{j}=\binom{k}{j}+\binom{k}{j-1}
+\quad(1\le j\le k).
+\]
+On the Core, these identities are supplied. Your job is to use them with
+correct endpoints and indexing.
+\end{definitionbox}
+
+\begin{methodbox}{How to manage the endpoints}
+For the $(k+1)$-row, separate $j=0$ and $j=k+1$, then apply Pascal's identity
+only to $1\le j\le k$:
+\[
+\sum_{j=0}^{k+1}\binom{k+1}{j}
+=1+\sum_{j=1}^{k}\left[\binom{k}{j}+\binom{k}{j-1}\right]+1.
+\]
+Reindex the second interior sum with $i=j-1$; its range becomes
+$0\le i\le k-1$.
+\end{methodbox}
+
+\begin{workedbox}{C.1 complete proof: statement and base}
+Let
+\[
+P(n):\quad \sum_{j=0}^{n}\binom nj=2^n,
+\qquad n\ge0.
+\]
+\textbf{Base case.} At $n=0$,
+\[
+\sum_{j=0}^{0}\binom0j=\binom00=1=2^0,
+\]
+so $P(0)$ holds.
+
+\textbf{Induction hypothesis.} Fix arbitrary $k\ge0$ and assume
+\[
+\sum_{j=0}^{k}\binom kj=2^k.
+\]
+We must prove the corresponding identity for $k+1$.
+\end{workedbox}
+
+\columnbreak
+
+\begin{workedbox}{C.1 complete proof: induction step}
+\textbf{Step 1: split endpoints and use Pascal.}
+\begin{align*}
+\sum_{j=0}^{k+1}\binom{k+1}{j}
+&=1+\sum_{j=1}^{k}
+ \left(\binom kj+\binom{k}{j-1}\right)+1\\
+&=1+\sum_{j=1}^{k}\binom kj
+ +\sum_{i=0}^{k-1}\binom ki+1\\
+&=\sum_{j=0}^{k}\binom kj
+ +\sum_{i=0}^{k}\binom ki\\
+&=2^k+2^k &&\text{by the IH}\\
+&=2^{k+1}.
+\end{align*}
+The second line uses $i=j-1$ in the second interior sum. The third line
+restores the missing endpoint in each copy, so the induction hypothesis can
+be used on the fourth line. Thus $P(k+1)$ holds. By mathematical induction,
+$\sum_{j=0}^{n}\binom nj=2^n$ for every integer $n\ge0$.
+\end{workedbox}
+
+\begin{definitionbox}{Why the reindexing is valid}
+When $i=j-1$, the first old index $j=1$ becomes $i=0$, and the last old
+index $j=k$ becomes $i=k-1$. The letter itself is a dummy variable; the
+limits and summand must change together. Adding the two endpoint $1$s restores
+the missing $j=0$ and $j=k$ terms so that two complete $k$-row sums appear.
+\end{definitionbox}
+
+\begin{warningbox}{Frequent C errors}
+Do not apply Pascal's identity at endpoints where the supplied version does
+not apply. Do not change $j$ to $i$ without changing both limits. Do not cite
+the IH until the expression is a complete copy of the $k$-case sum. Do not
+omit the final induction conclusion.
+\end{warningbox}
+
+\begin{checklistbox}{C readiness}
+Can I reproduce the proposition, base, IH, endpoint split, reindexing, two
+complete sums, explicit IH use, and final conclusion without a missing term?
+\end{checklistbox}
+\end{multicols}
+
+\clearpage
+\section*{More Worked Practice and Whole-Core Readiness}
+\begin{multicols}{2}
+\begin{workedbox}{Divisibility by induction}
+Prove $3\mid(4^n-1)$ for every $n\ge0$.
+
+\textbf{Base.} $4^0-1=0$, divisible by $3$.
+
+\textbf{IH.} Assume $4^k-1=3q$ for some integer $q$. Then
+\[
+4^{k+1}-1=4(4^k-1)+3=4(3q)+3=3(4q+1).
+\]
+Because $4q+1$ is an integer, the next expression is divisible by $3$. This
+example shows how a definition supplies the usable form of the IH.
+\end{workedbox}
+
+\begin{workedbox}{A finite-sum proof}
+Prove $1+2+\cdots+n=n(n+1)/2$ for $n\ge1$.
+
+Base: $1=1(2)/2$. Assume
+$1+\cdots+k=k(k+1)/2$. Then
+\begin{align*}
+1+\cdots+k+(k+1)
+&=\frac{k(k+1)}2+(k+1)\\
+&=\frac{(k+1)(k+2)}2.
+\end{align*}
+This is the formula with $n=k+1$, so induction completes the proof.
+\end{workedbox}
+
+\begin{workedbox}{An inequality with a domain check}
+To prove $n!\ge2^{n-1}$ for $n\ge1$, the base is $1=1$. Assuming
+$k!\ge2^{k-1}$ for $k\ge1$,
+\[
+(k+1)!=(k+1)k!\ge2\cdot2^{k-1}=2^k,
+\]
+because $k+1\ge2$. The domain supplies the comparison needed after the IH.
+\end{workedbox}
+
+\columnbreak
+
+\begin{definitionbox}{What the compact Core certifies}
+The live Core deliberately has only three problems:
+\begin{itemize}
+  \item A: a short induction or strong-induction setup;
+  \item B: diagnosis and repair of a faulty step;
+  \item C: one complete binomial-sum proof.
+\end{itemize}
+C is essential. Meets requires a fully correct C and one fully correct short
+problem. Exceeds requires all three. A retake is a new complete form.
+\end{definitionbox}
+
+\begin{methodbox}{Twenty-minute strategy}
+\begin{enumerate}
+  \item Read all three prompts and write the exact $P(n)$ for C.
+  \item Complete A or B cleanly in about 3--4 minutes.
+  \item Reserve 12--13 minutes for C.
+  \item Use the last minutes to check base values, index limits, where the IH
+  was cited, and the final conclusion.
+\end{enumerate}
+Do not sacrifice the essential C proof to over-polish a short response.
+\end{methodbox}
+
+\begin{warningbox}{Proof language that matters}
+``Assume true for $n$'' is ambiguous; name the arbitrary index and exact
+hypothesis. ``Therefore true'' is incomplete; state that $P(k+1)$ follows and
+invoke induction over the stated domain. Algebra alone does not replace the
+logical structure.
+\end{warningbox}
+
+\begin{checklistbox}{Whole-Core readiness}
+I can:
+\begin{itemize}
+  \item distinguish ordinary from strong induction;
+  \item state every component of a valid plan;
+  \item find and repair circular use of the target;
+  \item calculate the correct next term;
+  \item separate endpoints and reindex a binomial sum;
+  \item show exactly where the induction hypothesis is used; and
+  \item finish with a correctly scoped induction conclusion.
+\end{itemize}
+\end{checklistbox}
+\end{multicols}
+
+\end{document}

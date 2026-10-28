@@ -1,0 +1,32 @@
+# COMP 2300 Core Attempt Form Manifest — 20 forms
+
+> Private instructor artifact. Do not publish or distribute with the student forms.
+
+Reproducible random seed: `2300-core-forms`.
+Each PDF contains one single-sided question sheet per form, with source-bank IDs printed in every problem heading.
+Forms are unique and problem use is balanced within each section.
+
+## Arguments
+
+| Form | A | B | C | D | E |
+|---|---|---|---|---|---|
+| A01 | A.2.01 | B.3.01 | C.2.04 | D.3.01 | E.1.05 |
+| A02 | A.3.10 | B.3.02 | C.2.03 | D.3.04 | E.1.10 |
+| A03 | A.2.08 | B.5.02 | C.4.01 | D.2.01 | E.1.09 |
+| A04 | A.2.06 | B.1.01 | C.3.03 | D.1.04 | E.2.04 |
+| A05 | A.3.05 | B.5.03 | C.4.03 | D.2.04 | E.1.07 |
+| A06 | A.2.09 | B.1.04 | C.3.01 | D.2.03 | E.1.06 |
+| A07 | A.3.03 | B.4.04 | C.5.01 | D.4.01 | E.2.06 |
+| A08 | A.2.10 | B.3.04 | C.4.02 | D.4.03 | E.1.04 |
+| A09 | A.3.09 | B.1.02 | C.2.02 | D.4.02 | E.2.01 |
+| A10 | A.2.03 | B.2.04 | C.1.04 | D.3.03 | E.2.02 |
+| A11 | A.3.02 | B.2.01 | C.4.04 | D.1.01 | E.2.03 |
+| A12 | A.3.07 | B.4.03 | C.1.03 | D.5.04 | E.2.07 |
+| A13 | A.2.02 | B.2.02 | C.5.02 | D.4.04 | E.1.01 |
+| A14 | A.3.01 | B.1.03 | C.2.01 | D.5.03 | E.1.08 |
+| A15 | A.2.05 | B.4.01 | C.3.04 | D.1.02 | E.1.03 |
+| A16 | A.3.06 | B.2.03 | C.5.03 | D.5.01 | E.2.09 |
+| A17 | A.3.04 | B.5.04 | C.3.02 | D.2.02 | E.2.08 |
+| A18 | A.2.07 | B.4.02 | C.1.01 | D.1.03 | E.2.05 |
+| A19 | A.2.04 | B.5.01 | C.5.04 | D.5.02 | E.1.02 |
+| A20 | A.3.08 | B.3.03 | C.1.02 | D.3.02 | E.2.10 |

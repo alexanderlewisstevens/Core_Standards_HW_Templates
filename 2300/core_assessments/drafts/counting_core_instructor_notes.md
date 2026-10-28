@@ -48,7 +48,33 @@
 
 ## Canvas checks
 
-- Keep all instructor pages unpublished and keep the course shell unpublished.
+- Keep all instructor pages unpublished. The course is published; do not change
+  its publication state here.
 - Use section-specific date/time availability only; no module-completion prerequisites.
 - Second-half activities open at 11:00 a.m. for Section 1 and 1:00 p.m. for Section 2, then close at class end.
 - Use the same Canvas assignment type and `0/4/5` grade-entry convention as the other six individual Cores.
+
+## Grader handoff: minimum evidence and alternatives
+
+- **A:** the response names and correctly applies the sum, product,
+  inclusion--exclusion, function-counting, or generalized-pigeonhole rule, with
+  an expression whose factors/cases match the objects. Equivalent unsimplified
+  products are acceptable.
+- **B:** the response correctly decides whether order matters and uses a
+  permutation, combination, repeated-object, fixed-position, or binomial-term
+  model. Algebraically equivalent factorial or product forms are acceptable.
+- **C:** restrictions are enforced exactly once and cases are exhaustive and
+  disjoint. A direct count, complement, or case split is acceptable when it
+  generates each desired object exactly once.
+- **D:** the sample space or probability identity is correct, conditioning and
+  without-replacement denominators are updated, and an exact probability is
+  supplied. Equivalent favorable-outcome and probability-law methods are
+  acceptable.
+- **E:** independence is numerically tested; Bayes/total probability includes
+  base rates; expected value uses net outcomes; and aggregation comparisons use
+  rates with a correct interpretation. Equivalent probability-tree, table, or
+  formula methods are acceptable.
+
+A correct unsimplified expression is full credit unless the prompt explicitly
+requests a decimal or interpretation. A retake is a complete new A--E form;
+never carry individual problem credit forward.
