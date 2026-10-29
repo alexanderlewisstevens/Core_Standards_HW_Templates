@@ -89,8 +89,10 @@ p\lor q,\ p\to r,\ q\to r&\therefore r &&\text{Proof by cases}
 \end{align*}
 \end{definitionbox}
 
-\begin{workedbox}{A propositional derivation}
-\textbf{Target:} derive $\neg p$ from $p\to q$, $q\to r$, and $\neg r$.
+\begin{workedbox}{A.4: propositional derivation}
+\textbf{Problem.} From $p\to q$, $q\to r$, and $\neg r$, derive $\neg p$. Name the rule used at each step.
+
+\textbf{Worked solution.} \textbf{Target:} derive $\neg p$ from $p\to q$, $q\to r$, and $\neg r$.
 Start at $\neg r$ and move backward through the conditional chain:
 \[
 \begin{array}{rll}
@@ -103,9 +105,10 @@ Start at $\neg r$ and move backward through the conditional chain:
 \]
 Line 4 removes the possibility of $q$; line 5 then removes the possibility of
 $p$. Name both the rule and the lines used.
+
+\textbf{Conclusion.} $\neg p$, obtained by two applications of modus tollens.
 \end{workedbox}
 
-\columnbreak
 
 \begin{definitionbox}{Quantifier rules}
 \term{Universal instantiation (UI):} from $\forall x\,P(x)$ infer $P(c)$ for
@@ -121,9 +124,10 @@ fresh name $a$ with $P(a)$. It denotes some witness, not an arbitrary object.
 \end{definitionbox}
 
 \begin{methodbox}{Universal and existential witnesses differ}
-\textbf{Universal route:} from $\forall x(P(x)\to Q(x))$ and $\forall xP(x)$,
+\textbf{Problem (A.5).} Over a nonempty domain, derive $\forall xQ(x)$ from $\forall x(P(x)\to Q(x))$ and $\forall xP(x)$, naming each rule.\par\textbf{Worked solution:}
 (1) let $c$ be arbitrary; (2) UI gives $P(c)\to Q(c)$ and $P(c)$; (3) MP
 gives $Q(c)$; (4) because $c$ was arbitrary, UG gives $\forall xQ(x)$.
+\textbf{Conclusion:} the desired universal statement follows.
 
 \textbf{Existential warning:} from $\exists xP(x)$ and $\exists xQ(x)$, EI may
 introduce different witnesses $a$ and $b$. You may not conclude
@@ -131,12 +135,16 @@ $P(a)\land Q(a)$ or
 $\exists x(P(x)\land Q(x))$ without evidence that the witnesses coincide.
 \end{methodbox}
 
-\begin{workedbox}{A countermodel for reused witnesses}
-\textbf{Build:} use domain $\{1,2\}$; let $P$ hold only of $1$ and $Q$ only of
+\begin{workedbox}{A.3: countermodel for reused witnesses}
+\textbf{Problem.} Over one common domain, identify the error in the proposed inference below. Then give a two-element domain and interpretations of $P,Q$ making both premises true and the conclusion false: $\exists xP(x)$, $\exists xQ(x)$, therefore $\exists x(P(x)\land Q(x))$.
+
+\textbf{Worked solution.} The error is reusing an existential witness without justification; the two premises may have different witnesses. \textbf{Build:} use domain $\{1,2\}$; let $P$ hold only of $1$ and $Q$ only of
 $2$. \textbf{Check premises:} $1$ witnesses $\exists xP(x)$, and $2$ witnesses
 $\exists xQ(x)$. \textbf{Check conclusion:} neither object satisfies both
 predicates, so $\exists x(P(x)\land Q(x))$ is false. True premises and a false
 conclusion prove invalidity.
+
+\textbf{Conclusion.} The witnesses need not be the same: $P$ holds only at $1$, and $Q$ only at $2$.
 \end{workedbox}
 
 \begin{warningbox}{Invalid forms}
@@ -180,43 +188,58 @@ For ``if $P$, then $Q$'':
 \end{enumerate}
 \end{methodbox}
 
-\begin{workedbox}{B: an even-square proof}
-\textbf{Set up:} let arbitrary $n\in\mathbb Z$ be even, so $n=2k$ for some
+\begin{workedbox}{B.1: an even-square proof}
+\textbf{Problem.} Give a direct proof that if an integer $n$ is even, then $n^2$ is even.
+
+\textbf{Worked solution.} \textbf{Set up:} let arbitrary $n\in\mathbb Z$ be even, so $n=2k$ for some
 $k\in\mathbb Z$. \textbf{Calculate and expose a factor of $2$:}
 \[
 n^2=(2k)^2=4k^2=2(2k^2).
 \]
 \textbf{Close:} $2k^2\in\mathbb Z$, so the display has form
 $2(\text{integer})$. Thus $n^2$ is even. The new witness is $2k^2$.
+
+\textbf{Conclusion.} $n^2=2(2k^2)$ is even because $2k^2\in\mathbb Z$.
 \end{workedbox}
 
-\begin{workedbox}{B: two odd integers}
-\textbf{Set up:} let arbitrary odd integers $a,b$ satisfy $a=2j+1$ and
+\begin{workedbox}{B.3: two odd integers}
+\textbf{Problem.} Give a direct proof that the sum of two odd integers is even.
+
+\textbf{Worked solution.} \textbf{Set up:} let arbitrary odd integers $a,b$ satisfy $a=2j+1$ and
 $b=2k+1$ for some $j,k\in\mathbb Z$. Use different witnesses. \textbf{Combine:}
 \[
 a+b=2j+1+2k+1=2(j+k+1).
 \]
 \textbf{Close:} $j+k+1\in\mathbb Z$, so $a+b$ is twice an integer and is even.
+
+\textbf{Conclusion.} $a+b=2(j+k+1)$, with integer witness $j+k+1$.
 \end{workedbox}
 
-\columnbreak
 
-\begin{workedbox}{B: sum of rational numbers}
-\textbf{Set up:} let $r,s\in\mathbb Q$. Choose integers $a,b,c,d$ with
+\begin{workedbox}{B.2: sum of rational numbers}
+\textbf{Problem.} Give a direct proof that the sum of two rational numbers is rational.
+
+\textbf{Worked solution.} \textbf{Set up:} let $r,s\in\mathbb Q$. Choose integers $a,b,c,d$ with
 $b,d\ne0$, $r=a/b$, and $s=c/d$. \textbf{Use a common denominator:}
 \[
 r+s=\frac{ad+bc}{bd}.
 \]
 \textbf{Close:} $ad+bc,bd\in\mathbb Z$, and $bd\ne0$. The displayed fraction
 satisfies the definition of rational; lowest terms are not required.
+
+\textbf{Conclusion.} $r+s=(ad+bc)/(bd)\in\mathbb Q$, since numerator and denominator are integers and $bd\ne0$.
 \end{workedbox}
 
-\begin{workedbox}{B: direct element proof}
-Assume $A\subseteq B$. \textbf{Start on the left:} let arbitrary
+\begin{workedbox}{B.5: direct element proof}
+\textbf{Problem.} Let $A,B,C$ be sets. Give a direct element proof that if $A\subseteq B$, then $A\cap C\subseteq B\cap C$.
+
+\textbf{Worked solution.} Assume $A\subseteq B$. \textbf{Start on the left:} let arbitrary
 $x\in A\cap C$. \textbf{Unpack:} $x\in A$ and $x\in C$. \textbf{Use the
 hypothesis:} $x\in A$ and $A\subseteq B$ give $x\in B$. \textbf{Repack:}
 $x\in B$ and $x\in C$ give $x\in B\cap C$. Since $x$ was arbitrary, the
 subset claim follows.
+
+\textbf{Conclusion.} Every $x\in A\cap C$ belongs to $B\cap C$, so $A\cap C\subseteq B\cap C$.
 \end{workedbox}
 
 \begin{definitionbox}{Necessary proof language}
@@ -257,29 +280,40 @@ consequent. If the antecedent is a disjunction, use cases. Do not assume the
 original conclusion.
 \end{methodbox}
 
-\begin{workedbox}{C: product odd implies both factors odd}
-\textbf{Step 1:} write the contrapositive: if $m$ is even or $n$ is even, then
+\begin{workedbox}{C.1: product odd implies both factors odd}
+\textbf{Problem.} Let $m,n\in\mathbb Z$. Prove by contraposition that if $mn$ is odd, then both $m$ and $n$ are odd. State the contrapositive explicitly and handle its disjunction by cases.
+
+\textbf{Worked solution.} \textbf{Step 1:} write the contrapositive: if $m$ is even or $n$ is even, then
 $mn$ is even. \textbf{Step 2:} use cases. If $m=2k$, then $mn=2(kn)$; if
 $n=2\ell$, then $mn=2(m\ell)$. \textbf{Step 3:} in either case the quantity in
 parentheses is an integer, so $mn$ is even. The contrapositive, hence the
 original claim, is true.
+
+\textbf{Conclusion.} The contrapositive holds in both cases; therefore an odd product has two odd factors.
 \end{workedbox}
 
-\begin{workedbox}{C: no largest integer}
-\textbf{Assume the opposite:} let $N$ be a largest integer. \textbf{Construct:}
+\begin{workedbox}{C.3: no largest integer}
+\textbf{Problem.} Prove by contradiction that there is no largest integer.
+
+\textbf{Worked solution.} \textbf{Assume the opposite:} let $N$ be a largest integer. \textbf{Construct:}
 $N+1$ is an integer and $N+1>N$. \textbf{Contradiction:} maximality requires
 $N+1\le N$, while arithmetic gives $N+1>N$. Therefore no largest integer
 exists.
+
+\textbf{Conclusion.} No largest integer exists, because $N+1$ contradicts any proposed largest integer $N$.
 \end{workedbox}
 
-\begin{workedbox}{C: rational plus irrational}
-Let $r\in\mathbb Q$ and $x\notin\mathbb Q$. \textbf{Assume the opposite:}
+\begin{workedbox}{C.4: rational plus irrational}
+\textbf{Problem.} Let $r$ be rational and $x$ irrational. Prove by contradiction that $r+x$ is irrational.
+
+\textbf{Worked solution.} Let $r\in\mathbb Q$ and $x\notin\mathbb Q$. \textbf{Assume the opposite:}
 $r+x\in\mathbb Q$. \textbf{Isolate the irrational number:} rationals are closed
 under subtraction, so $x=(r+x)-r\in\mathbb Q$. This contradicts the hypothesis
 $x\notin\mathbb Q$; hence $r+x$ is irrational.
+
+\textbf{Conclusion.} $r+x$ is irrational; otherwise subtracting $r$ makes $x$ rational.
 \end{workedbox}
 
-\columnbreak
 
 \begin{definitionbox}{Proof by cases and existence}
 A \term{proof by cases} partitions all possibilities and proves the claim in
@@ -288,33 +322,45 @@ witness and verifies every required property. A \term{nonconstructive proof}
 establishes existence without identifying a witness.
 \end{definitionbox}
 
-\begin{workedbox}{D: cases on parity}
-\textbf{Exhaustive split:} every integer $n$ has form $2k$ or $2k+1$.
+\begin{workedbox}{D.1: cases on parity}
+\textbf{Problem.} Prove by cases that $n(n+1)$ is even for every integer $n$.
+
+\textbf{Worked solution.} \textbf{Exhaustive split:} every integer $n$ has form $2k$ or $2k+1$.
 \textbf{Even case:} $n(n+1)=2[k(n+1)]$. \textbf{Odd case:}
 \[
 n(n+1)=(2k+1)(2k+2)=2[(2k+1)(k+1)].
 \]
 Both bracketed quantities are integers. Since all integers occur in one case,
 $n(n+1)$ is always even.
+
+\textbf{Conclusion.} In either parity case the product is twice an integer; hence it is even for every $n\in\mathbb Z$.
 \end{workedbox}
 
-\begin{workedbox}{D: constructive existence}
-\textbf{Witnesses:} $24,25,26,27$ are consecutive and positive.
+\begin{workedbox}{D.3: constructive existence}
+\textbf{Problem.} Give a constructive existence proof that there are four consecutive composite positive integers. Verify explicitly that every integer in your example is composite.
+
+\textbf{Worked solution.} \textbf{Witnesses:} $24,25,26,27$ are consecutive and positive.
 \textbf{Verification:}
 \[
 24=2\cdot12,\quad25=5\cdot5,\quad26=2\cdot13,\quad27=3\cdot9.
 \]
 Each factorization is nontrivial, so all four are composite. Listing numbers
 without checking the required property would not finish the proof.
+
+\textbf{Conclusion.} $24,25,26,27$ are four consecutive composite positive integers.
 \end{workedbox}
 
-\begin{workedbox}{D: counterexamples}
-\textbf{Irrational sum claim:} choose $\sqrt2$ and $-\sqrt2$ (both irrational).
+\begin{workedbox}{D.4: counterexamples}
+\textbf{Problem.} Disprove each universal statement by a counterexample: (a) the sum of two irrational numbers is irrational; (b) $n^2+n+41$ is prime for every nonnegative integer $n$.
+
+\textbf{Worked solution.} \textbf{Irrational sum claim:} choose $\sqrt2$ and $-\sqrt2$ (both irrational).
 Their sum is $0$ (rational), so the hypothesis holds and the conclusion fails.
 
 \textbf{Prime-output claim:} choose the allowed input $n=40$:
 $40^2+40+41=41^2$, which is composite. One checked counterexample refutes a
 universal claim.
+
+\textbf{Conclusion.} (a) $\sqrt2+(-\sqrt2)=0$; (b) at $n=40$, the value is $41^2$.
 \end{workedbox}
 
 \begin{warningbox}{Common errors}
@@ -345,36 +391,67 @@ Counterexample & The universal claim looks too strong.
 State the first substantive step, not merely the method name.
 \end{methodbox}
 
-\begin{workedbox}{E: repair reused witnesses}
-\textbf{Gap:} ``$a=2k$ and $b=2k$'' forces $a=b$; a shared witness was not
+\begin{workedbox}{E.2: repair reused witnesses}
+\textbf{Problem.} The following proof is intended to show that the sum of two even integers is even. Identify the gap and repair it.
+
+``Let $a$ and $b$ be even. Then $a=2k$ and $b=2k$ for some integer $k$. Hence $a+b=4k$, which is even.''
+
+\textbf{Worked solution.} \textbf{Gap:} ``$a=2k$ and $b=2k$'' forces $a=b$; a shared witness was not
 justified. \textbf{Repair:} choose $j,k\in\mathbb Z$ with $a=2j$ and $b=2k$.
 Then $a+b=2(j+k)$, and $j+k\in\mathbb Z$, so the sum is even.
+
+\textbf{Conclusion.} Use independent integer witnesses: $a=2j$, $b=2k$, and $a+b=2(j+k)$.
 \end{workedbox}
 
-\begin{workedbox}{E: repair division by zero}
-\textbf{Gap:} the original claim fails for $r=0$, and dividing by $r$ may be
-illegal. \textbf{Correct statement:} if $r\in\mathbb Q\setminus\{0\}$ and $x$
+\begin{workedbox}{E.3: repair division by zero}
+\textbf{Problem.} The following proof claims that the product of a rational number and an irrational number is irrational. Explain why it fails when $r=0$. Add the weakest necessary restriction on $r$, state the corrected theorem, and prove it.
+
+``Let $r$ be rational and $x$ irrational. If $rx$ were rational, then $x=(rx)/r$ would be rational, a contradiction.''
+
+\textbf{Worked solution.} \textbf{Gap:} the original claim fails for $r=0$, and dividing by $r$ may be
+illegal: for instance, $r=0$ and $x=\sqrt2$ give $rx=0$, which is rational. \textbf{Correct statement:} if $r\in\mathbb Q\setminus\{0\}$ and $x$
 is irrational, then $rx$ is irrational. \textbf{Proof:} if $rx$ were rational,
 division by nonzero rational $r$ would give $x=(rx)/r\in\mathbb Q$, a
 contradiction.
+
+\textbf{Conclusion.} Require $r\ne0$: a nonzero rational times an irrational is irrational.
 \end{workedbox}
 
-\begin{workedbox}{E: repair circular reasoning}
-\textbf{Gap:} assuming $n^2$ is odd assumes the conclusion. \textbf{Repair:}
+\begin{checklistbox}{Whole-Core readiness}
+Can you perform an inference, write a direct proof, use contraposition or
+contradiction, handle cases/existence/counterexamples, and select or repair a
+strategy? A live 20-minute form selects one complete problem from each section
+A--E; four fully correct problems earn Meets and five earn Exceeds.
+\end{checklistbox}
+
+\columnbreak
+\begin{workedbox}{E.4: repair circular reasoning}
+\textbf{Problem.} The following argument is circular. Explain the circularity, then replace it with a valid proof.
+
+``To prove that $n^2$ is odd whenever the integer $n$ is odd, assume $n^2$ is odd. Thus $n^2=2k+1$ for some integer $k$, so $n^2$ is odd.''
+
+\textbf{Worked solution.} \textbf{Gap:} assuming $n^2$ is odd assumes the conclusion. \textbf{Repair:}
 start with the hypothesis $n=2k+1$. Then
 \[
 n^2=4k^2+4k+1=2(2k^2+2k)+1,
 \]
 The parenthesized quantity is an integer, so the result has form
 $2(\text{integer})+1$ and $n^2$ is odd.
+
+\textbf{Conclusion.} Begin with $n=2k+1$, not with the conclusion; $n^2=2(2k^2+2k)+1$ is odd.
 \end{workedbox}
 
-\columnbreak
 
-\begin{workedbox}{E: repair a bad starting element}
-\textbf{Gap:} starting with $x\in A\cap B$ does not cover arbitrary $x\in A$.
+\begin{workedbox}{E.5: repair a bad starting element}
+\textbf{Problem.} The following proof is intended to show that $A\subseteq B$ whenever $A\cap B=A$. Identify the gap and repair it.
+
+``Let $x\in A\cap B$. Then $x\in B$. Therefore $A\subseteq B$.''
+
+\textbf{Worked solution.} \textbf{Gap:} starting with $x\in A\cap B$ does not cover arbitrary $x\in A$.
 \textbf{Repair:} let arbitrary $x\in A$. The equality $A=A\cap B$ gives
 $x\in A\cap B$, so $x\in B$. Since $x$ was arbitrary, $A\subseteq B$.
+
+\textbf{Conclusion.} Start with arbitrary $x\in A$, then use $A=A\cap B$ to obtain $x\in B$.
 \end{workedbox}
 
 \begin{definitionbox}{Essential versus minor errors}
@@ -404,12 +481,6 @@ the exact conclusion. A correct idea with a missing essential justification is
 not a complete proof.
 \end{warningbox}
 
-\begin{checklistbox}{Whole-Core readiness}
-Can you perform an inference, write a direct proof, use contraposition or
-contradiction, handle cases/existence/counterexamples, and select or repair a
-strategy? A live 20-minute form selects one complete problem from each section
-A--E; four fully correct problems earn Meets and five earn Exceeds.
-\end{checklistbox}
 \end{multicols}
 
 \end{document}

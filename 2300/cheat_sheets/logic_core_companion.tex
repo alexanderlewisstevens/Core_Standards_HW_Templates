@@ -101,27 +101,44 @@ Add one column for each useful subexpression, working from the innermost
 connectives outward. Classify only the final column.
 \end{methodbox}
 
-\columnbreak
 
-\begin{workedbox}{A worked example}
-Classify $(p\to q)\lor(\neg p\to r)$.
-\begin{enumerate}
-\item Make the eight rows for $p,q,r$.
-\item Compute $p\to q$ and $\neg p\to r$ in separate columns.
-\item Join those columns with $\lor$.
-\end{enumerate}
-As a check,
+\begin{workedbox}{A.3: a complete truth table}
+\textbf{Problem.} Construct a complete eight-row truth table for
+$\Phi=(p\to q)\lor(\neg p\to r)$. Show useful intermediate columns and
+classify $\Phi$ as a tautology, contradiction, or contingency.
+
+\textbf{Worked solution.} List every valuation once. Compute each implication
+before applying the final $\lor$:
+\[
+\begin{array}{ccc|c|c|c|c}
+p&q&r&\neg p&p\to q&\neg p\to r&\Phi\\\hline
+T&T&T&F&T&T&T\\
+T&T&F&F&T&T&T\\
+T&F&T&F&F&T&T\\
+T&F&F&F&F&T&T\\
+F&T&T&T&T&T&T\\
+F&T&F&T&T&F&T\\
+F&F&T&T&T&T&T\\
+F&F&F&T&T&F&T
+\end{array}
+\]
+As an independent check,
 \[
 (p\to q)\lor(\neg p\to r)
 \equiv(\neg p\lor q)\lor(p\lor r).
 \]
-Reorder the disjuncts to expose $\neg p\lor p$, which is always T. Therefore
-the final column must be all T, so the proposition is a \term{tautology}. On an
-assessment, the equivalence checks the complete table; it does not replace it.
+Reordering exposes $\neg p\lor p$, which is always true. This checks the
+complete table; it does not replace a requested table.
+
+\textbf{Answer.} Every entry in the final column is T, so $\Phi$ is a
+\term{tautology}.
 \end{workedbox}
 
-\begin{workedbox}{Interpreting a row}
-Evaluate $(p\to q)\land(\neg q\lor r)$ when $p=F,q=T,r=F$:
+\begin{workedbox}{Similar example: interpreting one row}
+\textbf{Problem.} Let $p=F$, $q=T$, and $r=F$. Evaluate
+$(p\to q)\land(\neg q\lor r)$, showing the intermediate values.
+
+\textbf{Worked solution.}
 \[
 \begin{aligned}
 p\to q&=F\to T=T,\\
@@ -130,7 +147,9 @@ p\to q&=F\to T=T,\\
 \end{aligned}
 \]
 Compute the inner pieces first and the main connective last. That dependency
-order should match the table's columns.
+order should match a truth table's columns.
+
+\textbf{Answer.} The proposition is false on this valuation.
 \end{workedbox}
 
 \begin{warningbox}{Common errors}
@@ -159,12 +178,17 @@ show intermediate columns; and classify the final proposition correctly?
 The antecedent is sufficient; the consequent is necessary.
 \end{definitionbox}
 
-\begin{workedbox}{B: conditional translation}
-Let $e$ mean ``the account may edit'' and $a$ mean ``the account is an
-administrator.'' ``The account may edit only if it is an administrator'' is
-$e\to a$. Here editing is the claim and administrator status is necessary.
-Check the direction by reading it back: if editing occurs, administrator
-status must hold. Writing $a\to e$ instead says every administrator may edit.
+\begin{workedbox}{Similar example: conditional translation}
+\textbf{Problem.} Let $e$ mean ``the account may edit'' and $a$ mean ``the
+account is an administrator.'' Translate ``The account may edit only if it is
+an administrator'' into propositional logic. Explain the direction of the arrow.
+
+\textbf{Worked solution.} Editing is the claim, and administrator status is a
+necessary condition. If editing occurs, administrator status must hold. Thus
+$e$ is the antecedent and $a$ is the consequent. Writing $a\to e$ instead
+would say every administrator may edit, which the sentence does not promise.
+
+\textbf{Answer.} $e\to a$.
 \end{workedbox}
 
 \begin{definitionbox}{Predicates and quantifiers}
@@ -178,18 +202,31 @@ The order matters: $\exists x\forall y\,R(x,y)$ uses one $x$ for every $y$;
 $\forall y\exists x\,R(x,y)$ may use a different $x$ for each $y$.
 \end{definitionbox}
 
-\begin{workedbox}{B: nested quantifiers and argument order}
-Let $M(x,y)$ mean ``student $x$ messaged student $y$.'' Then
+\begin{workedbox}{Similar example: quantifiers and argument order}
+\textbf{Problem.} Both variables range over the students in a class. Let
+$M(x,y)$ mean ``student $x$ messaged student $y$.'' Translate each formula into
+English and explain how its meaning differs from the first:
 \[
-\exists x\underbrace{\forall y\,M(x,y)}_{\text{same }x\text{ messages every }y}
+\exists x\forall y\,M(x,y),\quad
+\forall y\exists x\,M(x,y),\quad
+\exists x\forall y\,M(y,x).
 \]
-says one student messaged every student. By contrast,
-$\forall y\exists x\,M(x,y)$ allows a different sender $x$ for each recipient
-$y$. Finally, replacing $M(x,y)$ by $M(y,x)$ reverses sender and recipient.
-Check both the quantifier order and the predicate's argument order.
+
+\textbf{Worked solution.} In the first formula, choose $x$ once, before
+checking every $y$. In the second, choose a sender $x$ after each recipient
+$y$ is specified; the sender may change. In the third, the quantifier order is
+the same as the first but the predicate's arguments reverse sender and recipient.
+
+\textbf{Answers.}
+\begin{enumerate}
+\item One student messaged every student.
+\item Every student received a message from at least one student.
+\item One student received a message from every student.
+\end{enumerate}
+Check both quantifier order and predicate argument order. These statements
+allow a student to message themself; excluding that requires an explicit condition.
 \end{workedbox}
 
-\columnbreak
 
 \begin{definitionbox}{Restricting an all-things domain}
 If the domain is all things, use predicates to restrict types:
@@ -216,21 +253,35 @@ Then use De Morgan's laws and conditional elimination until each negation is
 immediately before a predicate.
 \end{methodbox}
 
-\begin{workedbox}{C: a complete negation}
-Domain: all things. Let $D(x)$ mean ``$x$ is a dog'' and $F(x)$ mean ``$x$
-has fleas.''
+\begin{workedbox}{C.1(a): a complete negation}
+\textbf{Problem.} The domain is all things. Define predicates, symbolize
+``All dogs have fleas,'' negate it with no negation before a quantifier, and
+translate the negation into ordinary English.
+
+\textbf{Worked solution.} Let $D(x)$ mean ``$x$ is a dog'' and $F(x)$ mean
+``$x$ has fleas.'' The universal claim restricts attention to dogs with an
+implication:
 \[
 \begin{aligned}
-\text{Every dog has fleas}&:\ \forall x(D(x)\to F(x)),\\
-\text{negate }\forall&:\ \exists x\neg(D(x)\to F(x)),\\
-\text{negate the implication}&:\ \exists x(D(x)\land\neg F(x)).
+&\forall x(D(x)\to F(x));\\
+&\neg\forall x(D(x)\to F(x))\\
+&\quad\equiv\exists x\neg(D(x)\to F(x))\\
+&\quad\equiv\exists x(D(x)\land\neg F(x)).
 \end{aligned}
 \]
-The final formula gives a counterexample to the original. English: some dog
-does not have fleas.
+The last step uses $\neg(P\to Q)\equiv P\land\neg Q$. A counterexample must
+be a dog \emph{and} lack fleas, so the existential restriction uses conjunction.
+
+\textbf{Answer.} $\exists x(D(x)\land\neg F(x))$: some dog does not have fleas.
 \end{workedbox}
 
-\begin{workedbox}{C: nested negation}
+\begin{workedbox}{C.2(b): nested negation}
+\textbf{Problem.} Let $P$ be a predicate on two variables over declared,
+nonempty domains $X$ and $Y$. Rewrite $\neg\forall x\exists y\,P(x,y)$ so
+every negation appears immediately before a predicate. Here $x\in X$ and
+$y\in Y$ throughout.
+
+\textbf{Worked solution.}
 \[
 \begin{aligned}
 \neg\forall x\exists y\,P(x,y)
@@ -239,7 +290,10 @@ does not have fleas.
 \end{aligned}
 \]
 The first step flips $\forall x$ to $\exists x$; the second flips
-$\exists y$ to $\forall y$. The variables stay in their original order.
+$\exists y$ to $\forall y$. Variables remain in their original order.
+
+\textbf{Answer.} $\exists x\forall y\neg P(x,y)$: some $x$ is unrelated by
+$P$ to every $y$.
 \end{workedbox}
 
 \begin{warningbox}{Common errors}
@@ -255,7 +309,7 @@ and translate back to English?
 \end{checklistbox}
 \end{multicols}
 
-\clearpage
+\bigskip
 \section*{D. Consistency and Satisfiability}
 \begin{multicols}{2}
 \begin{definitionbox}{What the question asks}
@@ -288,9 +342,16 @@ p\lor q,\ \neg p&\therefore q &&\text{Disjunctive Syllogism}
 From $p\leftrightarrow q$, use both $p\to q$ and $q\to p$.
 \end{definitionbox}
 
-\begin{workedbox}{D: prove inconsistency}
-Let $m$ = multiuser, $n$ = normal, $k$ = kernel works, $i$ = interrupt.
-Suppose
+\begin{workedbox}{D.1: inconsistency and minimality}
+\textbf{Problem.} The system is in multiuser state iff it operates normally.
+Normal operation implies a functioning kernel. The kernel is not functioning
+or the system is in interrupt mode. If the system is not in multiuser state,
+it is in interrupt mode. The system is not in interrupt mode. Define atoms,
+translate all five conditions, decide consistency, and identify a minimal
+inconsistent collection if one exists.
+
+\textbf{Worked solution.} Let $m$ mean multiuser, $n$ normal operation,
+$k$ kernel functioning, and $i$ interrupt mode. The conditions are
 \[
 m\leftrightarrow n,\ n\to k,\ \neg k\lor i,\ \neg m\to i,\ \neg i.
 \]
@@ -298,33 +359,66 @@ m\leftrightarrow n,\ n\to k,\ \neg k\lor i,\ \neg m\to i,\ \neg i.
 \item $\neg k$ follows from $\neg k\lor i$ and $\neg i$ (DS).
 \item $\neg n$ follows from $n\to k$ and $\neg k$ (MT).
 \item $\neg m$ follows from $m\to n$ and $\neg n$ (MT).
-\item $i$ follows from $\neg m\to i$ and $\neg m$ (MP).
+\item $i$ follows from $\neg m\to i$ and $\neg m$ (MP), contradicting $\neg i$.
 \end{enumerate}
-Now $i$ contradicts the given $\neg i$, so the collection is inconsistent.
+All five conditions are needed. The following valuations satisfy the other
+four conditions when the indicated one is removed:
+\[
+\begin{array}{l|cccc}
+\text{Removed condition}&m&n&k&i\\\hline
+m\leftrightarrow n&T&F&F&F\\
+n\to k&T&T&F&F\\
+\neg k\lor i&T&T&T&F\\
+\neg m\to i&F&F&F&F\\
+\neg i&T&T&T&T
+\end{array}
+\]
+\textbf{Answer.} The conditions are inconsistent; the full five-condition
+collection is minimal because deleting any one makes it satisfiable.
 \end{workedbox}
 
-\columnbreak
 
-\begin{workedbox}{D: prove consistency by a witness}
-Let $u$ = software upgraded, $a$ = users have access, $s$ = users can save.
-Translate:
+\begin{workedbox}{Similar example: one satisfying witness}
+\textbf{Problem.} Whenever software is being upgraded, users cannot access
+the file system. If users can access it, they can save new files. If users
+cannot save new files, the software is not being upgraded. Define atoms,
+translate the conditions, and give \emph{one} checked satisfying assignment.
+
+\textbf{Worked solution.} Let $u$ mean software upgraded, $a$ users have
+access, and $s$ users can save. The translations are
 \[
 u\to\neg a,\qquad a\to s,\qquad\neg s\to\neg u.
 \]
-Try $(u,a,s)=(T,F,T)$:
+Try $(u,a,s)=(T,F,T)$. The three formulas evaluate to
 \[
-T\to T=T,\qquad F\to T=T,\qquad F\to F=T.
+T\to T=T,\quad F\to T=T,\quad F\to F=T.
 \]
-All three formulas are true, so this checked witness proves consistency. To
-list all models, test all eight rows or give a complete case split.
+\textbf{Answer.} The collection is consistent, witnessed by $(T,F,T)$.
+This task asks for one model. If asked to list \emph{all} models, test all
+eight rows or give a complete case split; one witness would be insufficient.
 \end{workedbox}
 
-\begin{workedbox}{D: find a minimal contradiction}
-Suppose $p\to q$, $q\to r$, $p$, and $\neg r$. From $p$ and $p\to q$, infer
-$q$; from $q$ and $q\to r$, infer $r$, contradicting $\neg r$. All four are
-needed for this chain, so they form a minimal inconsistent subset. A larger
-list that contains them proves inconsistency but does not answer a
-``minimal collection'' request.
+\begin{workedbox}{Similar example: a minimal contradiction}
+\textbf{Problem.} Decide whether $p\to q$, $q\to r$, $p$, and $\neg r$ are
+consistent. Identify a minimal inconsistent subset and justify minimality.
+
+\textbf{Worked solution.} From $p$ and $p\to q$, infer $q$ by MP. From
+$q$ and $q\to r$, infer $r$ by MP, contradicting $\neg r$. To check that
+every premise is needed, remove one at a time:
+\[
+\begin{array}{l|ccc}
+\text{Removed}&p&q&r\\\hline
+p\to q&T&F&F\\
+q\to r&T&T&F\\
+p&F&F&F\\
+\neg r&T&T&T
+\end{array}
+\]
+Each row satisfies all remaining premises.
+
+\textbf{Answer.} The four-premise set is inconsistent and minimal. A larger
+list containing these premises would prove inconsistency but would not itself
+answer a request for a minimal collection.
 \end{workedbox}
 
 \begin{methodbox}{Listing all models}
@@ -373,48 +467,60 @@ negation, and then clean up order or duplicates. Change only one justified
 feature per line and cite exactly one rule.
 \end{methodbox}
 
-\begin{workedbox}{E worked example: factor a common term}
-Show $(p\to q)\land(p\to r)\equiv p\to(q\land r)$.
+\begin{workedbox}{E.1: factor a common term}
+\textbf{Problem.} Show $(p\to q)\land(p\to r)\equiv p\to(q\land r)$. Cite exactly one permitted rule per step.
+
+\textbf{Worked solution.} Rule abbreviations are listed above.
 \begin{align*}
 (p\to q)\land(p\to r)
-&\equiv(\neg p\lor q)\land(p\to r) &&\text{Implication}\\
-&\equiv(\neg p\lor q)\land(\neg p\lor r) &&\text{Implication}\\
-&\equiv\neg p\lor(q\land r) &&\text{Distributive}\\
-&\equiv p\to(q\land r) &&\text{Implication}.
+&\equiv(\neg p\lor q)\land(p\to r) &&\text{Imp}\\
+&\equiv(\neg p\lor q)\land(\neg p\lor r) &&\text{Imp}\\
+&\equiv\neg p\lor(q\land r) &&\text{Dist}\\
+&\equiv p\to(q\land r) &&\text{Imp}.
 \end{align*}
 The common disjunct $\neg p$ is what makes the Distributive step possible.
+
+\textbf{Conclusion.} The expressions are equivalent; factoring the common $\neg p$ is the key step.
 \end{workedbox}
 
-\columnbreak
 
-\begin{workedbox}{E worked example: De Morgan structure}
-Show $(p\to r)\land(q\to r)\equiv(p\lor q)\to r$.
+\begin{workedbox}{E.2: De Morgan structure}
+\textbf{Problem.} Show $(p\to r)\land(q\to r)\equiv(p\lor q)\to r$. Cite exactly one permitted rule per step.
+
+\textbf{Worked solution.} Rule abbreviations are listed above.
 \begin{align*}
 (p\to r)\land(q\to r)
-&\equiv(\neg p\lor r)\land(q\to r) &&\text{Implication}\\
-&\equiv(\neg p\lor r)\land(\neg q\lor r) &&\text{Implication}\\
-&\equiv(r\lor\neg p)\land(\neg q\lor r) &&\text{Commutative}\\
-&\equiv(r\lor\neg p)\land(r\lor\neg q) &&\text{Commutative}\\
-&\equiv r\lor(\neg p\land\neg q) &&\text{Distributive}\\
-&\equiv(\neg p\land\neg q)\lor r &&\text{Commutative}\\
-&\equiv\neg(p\lor q)\lor r &&\text{De Morgan}\\
-&\equiv(p\lor q)\to r &&\text{Implication}.
+&\equiv(\neg p\lor r)\land(q\to r) &&\text{Imp}\\
+&\equiv(\neg p\lor r)\land(\neg q\lor r) &&\text{Imp}\\
+&\equiv(r\lor\neg p)\land(\neg q\lor r) &&\text{Comm}\\
+&\equiv(r\lor\neg p)\land(r\lor\neg q) &&\text{Comm}\\
+&\equiv r\lor(\neg p\land\neg q) &&\text{Dist}\\
+&\equiv(\neg p\land\neg q)\lor r &&\text{Comm}\\
+&\equiv\neg(p\lor q)\lor r &&\text{DM}\\
+&\equiv(p\lor q)\to r &&\text{Imp}.
 \end{align*}
 The two Commutative steps place the common $r$ where Distributive can factor it.
+
+\textbf{Conclusion.} The expressions are equivalent. The common $r$ is factored before applying De Morgan.
 \end{workedbox}
 
-\begin{workedbox}{E worked example: nested implication}
+\begin{workedbox}{E.5: nested implication}
+\textbf{Problem.} Show $\neg p\to(q\to r)\equiv q\to(p\lor r)$. Cite exactly one permitted rule per step.
+
+\textbf{Worked solution.} Rule abbreviations are listed above.
 \begin{align*}
 \neg p\to(q\to r)
-&\equiv\neg\neg p\lor(q\to r) &&\text{Implication}\\
-&\equiv p\lor(q\to r) &&\text{Double Negation}\\
-&\equiv p\lor(\neg q\lor r) &&\text{Implication}\\
-&\equiv(p\lor\neg q)\lor r &&\text{Associative}\\
-&\equiv(\neg q\lor p)\lor r &&\text{Commutative}\\
-&\equiv\neg q\lor(p\lor r) &&\text{Associative}\\
-&\equiv q\to(p\lor r) &&\text{Implication}.
+&\equiv\neg\neg p\lor(q\to r) &&\text{Imp}\\
+&\equiv p\lor(q\to r) &&\text{DN}\\
+&\equiv p\lor(\neg q\lor r) &&\text{Imp}\\
+&\equiv(p\lor\neg q)\lor r &&\text{Assoc}\\
+&\equiv(\neg q\lor p)\lor r &&\text{Comm}\\
+&\equiv\neg q\lor(p\lor r) &&\text{Assoc}\\
+&\equiv q\to(p\lor r) &&\text{Imp}.
 \end{align*}
 Each line changes exactly one feature and cites exactly one permitted rule.
+
+\textbf{Conclusion.} The expressions are equivalent, with one cited permitted rule at each step.
 \end{workedbox}
 
 \begin{warningbox}{Common errors}

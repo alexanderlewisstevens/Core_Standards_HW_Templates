@@ -1,0 +1,111 @@
+{
+  "review_date": "2026-10-29",
+  "status": "compiled and visually reviewed; remote delivery verified separately",
+  "toolchain": {
+    "distribution": "TeX Live 2025",
+    "engine": "pdfTeX 3.141592653-2.6-1.40.27",
+    "latexmk": "4.86a"
+  },
+  "total_example_groups": 120,
+  "total_pages": 37,
+  "companions": [
+    {
+      "core": "Logic",
+      "example_groups": 12,
+      "pages": 5,
+      "source": "2300/cheat_sheets/logic_core_companion.tex",
+      "source_sha256": "a9a6d5fcf1f3a66110f05a859d40fe808c985d011f6cf7adfbee2a807837da5d",
+      "pdf": "2300/cheat_sheets/companion_pdfs/logic_core_companion.pdf",
+      "pdf_sha256": "7113f1f8417afe8a0f22e1420756dc3721a0505294150e87a95ecf2493e10ff0",
+      "paper_size": "US Letter (612 x 792 pt)",
+      "tex_log_issues": [],
+      "every_page_visually_reviewed": true,
+      "final_render_matches_reviewed_pages": true,
+      "stable_pdf_matches_build": true
+    },
+    {
+      "core": "Arguments",
+      "example_groups": 21,
+      "pages": 8,
+      "source": "2300/cheat_sheets/arguments_core_companion.tex",
+      "source_sha256": "33082c6f95bdcae427be04d8081c62382b041fa1a09a9ad353cc1cc14931ed41",
+      "pdf": "2300/cheat_sheets/companion_pdfs/arguments_core_companion.pdf",
+      "pdf_sha256": "3d07c40bbdf12c6cd680b671fa6384d578deb1b88f049a6d65f1337001ce72a8",
+      "paper_size": "US Letter (612 x 792 pt)",
+      "tex_log_issues": [],
+      "every_page_visually_reviewed": true,
+      "final_render_matches_reviewed_pages": true,
+      "stable_pdf_matches_build": true
+    },
+    {
+      "core": "Sets",
+      "example_groups": 15,
+      "pages": 5,
+      "source": "2300/cheat_sheets/sets_core_companion.tex",
+      "source_sha256": "7e12841aad26615f87ee6778d40c528c198f22ea2b22f7947785903730077f87",
+      "pdf": "2300/cheat_sheets/companion_pdfs/sets_core_companion.pdf",
+      "pdf_sha256": "b1561a6d625846352b3130926024de6d6495a90bd422d9d7af19651bd6fbe8d8",
+      "paper_size": "US Letter (612 x 792 pt)",
+      "tex_log_issues": [],
+      "every_page_visually_reviewed": true,
+      "final_render_matches_reviewed_pages": true,
+      "stable_pdf_matches_build": true
+    },
+    {
+      "core": "Proofs",
+      "example_groups": 17,
+      "pages": 4,
+      "source": "2300/cheat_sheets/proofs_core_companion.tex",
+      "source_sha256": "9e75216c9a72dff4a5409d5e2005a0e4805dc6a35842e4ecd675105e351bbaf4",
+      "pdf": "2300/cheat_sheets/companion_pdfs/proofs_core_companion.pdf",
+      "pdf_sha256": "29d6df4222d3db45d16c4737b05021a7d2d4863e25a817068231b5ad0314b609",
+      "paper_size": "US Letter (612 x 792 pt)",
+      "tex_log_issues": [],
+      "every_page_visually_reviewed": true,
+      "final_render_matches_reviewed_pages": true,
+      "stable_pdf_matches_build": true
+    },
+    {
+      "core": "Divisibility",
+      "example_groups": 22,
+      "pages": 6,
+      "source": "2300/cheat_sheets/divisibility_reference_and_worked_examples.tex",
+      "source_sha256": "f7ec78894c56cd5c8d389b1daf5326a53b7bd0024d938adaf77172b6f25b5812",
+      "pdf": "2300/cheat_sheets/companion_pdfs/divisibility_core_companion.pdf",
+      "pdf_sha256": "7401faad4b69e8dbffbeabe600ae801fabf3f396553ad9bcec3ddfd4b76fa37c",
+      "paper_size": "US Letter (612 x 792 pt)",
+      "tex_log_issues": [],
+      "every_page_visually_reviewed": true,
+      "final_render_matches_reviewed_pages": true,
+      "stable_pdf_matches_build": true
+    },
+    {
+      "core": "Induction",
+      "example_groups": 9,
+      "pages": 4,
+      "source": "2300/cheat_sheets/induction_core_companion.tex",
+      "source_sha256": "2ea46d08f0b83ee4723e70cd24db3ab02006ebf1d837cea20f5ee703241a83f6",
+      "pdf": "2300/cheat_sheets/companion_pdfs/induction_core_companion.pdf",
+      "pdf_sha256": "097e6337ac812932fb92c24a99bedb4d57bc79eb5e1ca54877e2fc13d61a6b96",
+      "paper_size": "US Letter (612 x 792 pt)",
+      "tex_log_issues": [],
+      "every_page_visually_reviewed": true,
+      "final_render_matches_reviewed_pages": true,
+      "stable_pdf_matches_build": true
+    },
+    {
+      "core": "Counting",
+      "example_groups": 24,
+      "pages": 5,
+      "source": "2300/cheat_sheets/counting_core_companion.tex",
+      "source_sha256": "86ca22ff584a8f09dfe29e52b8be240c1769d634906dc97bfa8ad625d5025ce2",
+      "pdf": "2300/cheat_sheets/companion_pdfs/counting_core_companion.pdf",
+      "pdf_sha256": "4ee70f3ec8308d3502caa0ee843e2e7cfd2bf2aef2ef6ebdf64a95bda9c17fe9",
+      "paper_size": "US Letter (612 x 792 pt)",
+      "tex_log_issues": [],
+      "every_page_visually_reviewed": true,
+      "final_render_matches_reviewed_pages": true,
+      "stable_pdf_matches_build": true
+    }
+  ]
+}

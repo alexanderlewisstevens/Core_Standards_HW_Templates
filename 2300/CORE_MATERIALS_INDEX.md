@@ -9,7 +9,7 @@ sources with the repository's TeX Live 2025 workflow after source edits.
 
 ## Authoritative sources
 
-| Order | Core | Student companion (exactly 4 pages) | Assessment / practice bank | Complete solutions | Private instructor / grader guide | Preserved extended material |
+| Order | Core | Student companion (flexible page count) | Assessment / practice bank | Complete solutions | Private instructor / grader guide | Preserved extended material |
 | --- | --- | --- | --- | --- | --- | --- |
 | 1 | Logic | `cheat_sheets/logic_core_companion.tex` | `core_assessments/logic_assessment.tex` | `obsidian_solutions/2300_Logic_Solutions.md` | `core_assessments/drafts/logic_core_instructor_notes.md` | `cheat_sheets/logic_cheat_sheet.tex`; `cheat_sheets/relevant_logic_definitions_reference.tex` |
 | 2 | Arguments | `cheat_sheets/arguments_core_companion.tex` | `core_assessments/arguments_assessment.tex` (six-page selected bank) | `obsidian_solutions/2300_Arguments_Solutions.md` | `core_assessments/drafts/arguments_core_instructor_notes.md` | `core_assessments/arguments_extended_practice.tex` (all 210 items) |
@@ -18,6 +18,21 @@ sources with the repository's TeX Live 2025 workflow after source edits.
 | 5 | Divisibility | `cheat_sheets/divisibility_reference_and_worked_examples.tex` | `core_assessments/divisibility_assessment.tex` | `obsidian_solutions/2300_Divisibility_Solutions.md` | `core_assessments/drafts/divisibility_core_instructor_notes.md` | `core_assessments/drafts/juan_divisibility_instruction_guide.tex` |
 | 6 | Induction | `cheat_sheets/induction_core_companion.tex` | `core_assessments/induction_assessment.tex` (authoritative three-part exception) | `obsidian_solutions/2300_Induction_Solutions.md` | `core_assessments/drafts/induction_core_instructor_notes.md` | `core_assessments/drafts/induction_extended_problem_bank.tex`; `core_assessments/induction_assessment_long_proof.tex` |
 | 7 | Counting | `cheat_sheets/counting_core_companion.tex` | `core_assessments/counting_assessment.tex` plus `counting_problem_sections/` | `obsidian_solutions/2300_Counting_Solutions.md` | `core_assessments/drafts/counting_core_instructor_notes.md` | Counting and probability chapters under `../course_highlights/` |
+
+## Self-contained companion revision — 2026-10-29
+
+The companion page budget is now flexible. Include a complete problem statement
+before every existing worked example, followed by a worked solution and an answer
+or conclusion. Retain the representative study-guide role, readable typography,
+and original numbers only for exact assessment matches. Adapted examples must be
+identified as similar examples. The earlier four-page build records below are
+historical and no longer impose a page limit.
+
+The local revision, page counts, example coverage, and verification record are
+tracked in `cheat_sheets/COMPANION_SELF_CONTAINED_COVERAGE.md`. Alex approved
+GitHub/Overleaf synchronization on 2026-10-29; remote delivery is verified
+separately from the build record. Canvas uploads and Obsidian publication are
+outside this companion revision.
 
 ## Live-form and grade-entry rules
 

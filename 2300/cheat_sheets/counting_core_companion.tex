@@ -33,6 +33,7 @@
 \setlength{\belowdisplayskip}{3pt}
 \setlist{leftmargin=*,itemsep=1pt,topsep=1.5pt,parsep=0pt,partopsep=0pt}
 \raggedbottom
+\raggedcolumns
 
 \titleformat{\section}{\Large\bfseries\color{CoreNavy}}{}{0pt}{}
   [\vspace{-3pt}\color{CoreNavy}\rule{\linewidth}{0.7pt}]
@@ -78,14 +79,36 @@ overlap, use inclusion--exclusion:
 \]
 \end{definitionbox}
 
-\begin{workedbox}{A.1--A.4 worked examples}
-\textbf{Disjoint alternatives:} five soups or four salads give $5+4=9$
-lunches. \textbf{Successive positions:} two letters followed by three digits
-give $26\cdot26\cdot10\cdot10\cdot10=26^2 10^3$ strings when repetition is
-allowed. \textbf{Functions:} choose one of eight images for each of five
-labeled inputs, giving $8^5$. \textbf{Overlap:} if $|A|=19$, $|B|=20$, and
-$|A\cap B|=8$, add both sets and remove the duplicate intersection:
-$|A\cup B|=19+20-8=31$.
+\begin{workedbox}{A.1: disjoint alternatives}
+\textbf{Problem.} A cafe offers $5$ soups and $4$ salads. A lunch includes either one soup or one salad, but not both. How many lunches are possible? Name the counting rule.
+
+\textbf{Worked solution.} The soup lunches and salad lunches are disjoint alternatives. By the sum rule, add their counts: $5+4$.
+
+\textbf{Answer.} $9$ lunches, by the sum rule.
+\end{workedbox}
+
+\begin{workedbox}{A.2: successive positions}
+\textbf{Problem.} A password contains two uppercase English letters followed by three decimal digits. Repetition is allowed. How many passwords are possible? Give an unsimplified product and name the counting rule.
+
+\textbf{Worked solution.} There are $26$ choices for each letter and $10$ for each digit. Each choice can follow every earlier choice, so the product rule gives $26\cdot26\cdot10\cdot10\cdot10$.
+
+\textbf{Answer.} $26^2 10^3$ passwords, by the product rule.
+\end{workedbox}
+
+\begin{workedbox}{A.3: functions}
+\textbf{Problem.} Let $A=\{1,2,3,4,5\}$ and $B=\{1,2,\ldots,8\}$. How many functions $f:A\to B$ exist? Identify the sequence of choices being counted.
+
+\textbf{Worked solution.} For each of the five labeled inputs, choose any one of the eight images in $B$. Images may repeat: an arbitrary function need not be injective. Multiply the five independent choices.
+
+\textbf{Answer.} $8^5$ functions; the five choices specify $f(1),\ldots,f(5)$.
+\end{workedbox}
+
+\begin{workedbox}{A.4: overlap}
+\textbf{Problem.} If finite sets satisfy $|A|=19$, $|B|=20$, and $|A\cap B|=8$, find $|A\cup B|$. Write the formula and name the principle.
+
+\textbf{Worked solution.} Adding $|A|+|B|$ counts every element of $A\cap B$ twice. Inclusion--exclusion removes one copy: $|A\cup B|=|A|+|B|-|A\cap B|=19+20-8$.
+
+\textbf{Answer.} $|A\cup B|=31$, by inclusion--exclusion.
 \end{workedbox}
 
 \begin{definitionbox}{Generalized pigeonhole principle}
@@ -93,12 +116,15 @@ Placing $N$ objects into $k$ boxes guarantees some box contains at least
 \[
 \left\lceil\frac Nk\right\rceil
 \]
-objects. Forty keys mapped to twenty hash values guarantee occupancy at least
-$\lceil40/20\rceil=2$. They do not guarantee $3$: two keys per bucket is
-possible.
+objects.
+
+\textbf{Problem (A.5).} A hash table maps $40$ distinct keys to $20$ possible hash values. What bucket occupancy is guaranteed? State the generalized pigeonhole calculation and explain why no larger occupancy is guaranteed.
+
+\textbf{Worked solution.} Treat keys as objects and hash values as boxes. The guaranteed occupancy is $\lceil40/20\rceil=2$. Two keys per bucket is a possible distribution, so occupancy $3$ is not forced.
+
+\textbf{Answer.} At least one bucket contains at least $2$ keys; no larger bound is guaranteed.
 \end{definitionbox}
 
-\columnbreak
 
 \begin{definitionbox}{Permutations and combinations}
 When order matters, select and arrange:
@@ -113,24 +139,47 @@ For repeated object types with multiplicities $n_1,\ldots,n_t$ totaling $n$,
 the number of distinct arrangements is $n!/(n_1!\cdots n_t!)$.
 \end{definitionbox}
 
-\begin{workedbox}{B worked examples}
-A committee is unordered, so three people from ten give $\binom{10}{3}$.
-Offices are labeled, so president then vice president give
-$P(10,2)=10\cdot9$. For \texttt{BANANA}, begin with $6!$ arrangements, then
-remove the duplicate permutations of the three A's and two N's:
-\[
-\frac{6!}{3!2!}
-\]
-An eight-bit string with exactly three $1$s is determined by choosing the three
-$1$-positions; the other five positions are forced, giving $\binom83$.
+\begin{workedbox}{B.1: committees}
+\textbf{Problem.} A committee of $3$ students is selected from $10$ students. How many committees are possible? Give a binomial-coefficient expression and explain why order does not matter.
+
+\textbf{Worked solution.} A committee is a three-element subset. Listing its members in a different order does not create another committee. Thus choose three of ten without assigning roles.
+
+\textbf{Answer.} $\binom{10}{3}$ committees.
+\end{workedbox}
+
+\begin{workedbox}{B.2: labeled offices}
+\textbf{Problem.} A president and a vice president are selected from $10$ students, with no student holding both offices. How many outcomes are possible? Give a permutation or product expression and explain why order matters.
+
+\textbf{Worked solution.} Choose the president in $10$ ways, then a different vice president in $9$ ways. Exchanging their offices changes the outcome, so the roles are ordered.
+
+\textbf{Answer.} $P(10,2)=10\cdot9=90$ outcomes.
+\end{workedbox}
+
+\begin{workedbox}{B.3: repeated letters}
+\textbf{Problem.} How many distinct strings can be made by reordering the letters of \texttt{BANANA}? Give the appropriate multinomial expression.
+
+\textbf{Worked solution.} First pretend the six letters are distinct, giving $6!$ orders. The three A's can be permuted in $3!$ ways and the two N's in $2!$ ways without changing the visible string. Divide by these duplicate counts.
+
+\textbf{Answer.} $6!/(3!2!)=60$ strings.
+\end{workedbox}
+
+\begin{workedbox}{B.4: choosing positions}
+\textbf{Problem.} How many bit strings of length $8$ contain exactly three $1$s? Give a binomial-coefficient expression and identify what is being selected.
+
+\textbf{Worked solution.} Choose the three positions occupied by $1$s. Every remaining position is forced to be $0$, and each position subset determines exactly one string.
+
+\textbf{Answer.} $\binom83=56$ strings.
 \end{workedbox}
 
 \begin{definitionbox}{Binomial theorem}
 \[
 (x+y)^n=\sum_{k=0}^{n}\binom nk x^{n-k}y^k.
 \]
-The coefficient of $x^3$ in $(1+x)^8$ is $\binom83$: choose the three factors
-that contribute $x$.
+\textbf{Problem (B.5).} Find the coefficient of $x^3$ in $(1+x)^8$. State the binomial-theorem term that determines your answer.
+
+\textbf{Worked solution.} The term with $k=3$ is $\binom83 1^5x^3$. Equivalently, choose the three factors that contribute $x$; all other factors contribute $1$.
+
+\textbf{Answer.} The coefficient is $\binom83=56$.
 \end{definitionbox}
 
 \begin{warningbox}{Frequent A--B errors}
@@ -145,7 +194,6 @@ what each factor or selected position represents?
 \end{checklistbox}
 \end{multicols}
 
-\clearpage
 \section*{C. Constrained Counting}
 \begin{multicols}{2}
 \begin{methodbox}{Four reliable strategies}
@@ -160,39 +208,52 @@ State the sample objects and why the cases neither overlap nor leave gaps.
 \end{methodbox}
 
 \begin{workedbox}{C.1: exact composition}
-\textbf{1. Translate ``exactly'':} a five-card hand with exactly two hearts has
+\textbf{Problem.} How many five-card hands from a standard $52$-card deck contain exactly two hearts? A hand is an unordered selection without replacement; the deck has $13$ hearts and $39$ nonhearts. Give an unsimplified product of binomial coefficients.
+
+\textbf{Worked solution.} \textbf{1. Translate ``exactly'':} a five-card hand with exactly two hearts has
 two hearts and three nonhearts. \textbf{2. Choose within each category:}
 \[
 \binom{13}{2}\binom{39}{3}.
 \]
 \textbf{3. Justify the product:} each qualifying hand has one unique pair of
 hearts and triple of nonhearts, so multiply the two unordered selections.
+
+\textbf{Answer.} $\binom{13}{2}\binom{39}{3}$ hands.
 \end{workedbox}
 
 \begin{workedbox}{C.2: count by complement}
-\textbf{1. Count all:} there are $2^8$ eight-bit strings.
+\textbf{Problem.} How many bit strings of length $8$ contain at least two $1$s? Use a complement and show the subtracted cases.
+
+\textbf{Worked solution.} \textbf{1. Count all:} there are $2^8$ eight-bit strings.
 \textbf{2. Identify the complement:} ``at least two $1$s'' fails only for zero
 or one $1$. \textbf{3. Subtract the disjoint forbidden cases:}
 \[
 2^8-\binom80-\binom81.
 \]
 The complement is shorter because it has only these two cases.
+
+\textbf{Answer.} $2^8-\binom80-\binom81=247$ strings.
 \end{workedbox}
 
 \begin{workedbox}{C.3: mixed committee}
-A five-person group uses disjoint pools of twelve CS majors and eight math
+\textbf{Problem.} A group of $5$ students is selected from disjoint pools of $12$ computer-science majors and $8$ mathematics majors. How many groups contain exactly $3$ computer-science majors? Give an unsimplified product of binomial coefficients.
+
+\textbf{Worked solution.} A five-person group uses disjoint pools of twelve CS majors and eight math
 majors. Exactly three CS majors therefore requires two math majors. Choose
 the two unordered subsets in
 \[
 \binom{12}{3}\binom82
 \]
 ways. ``Exactly'' fixes both category counts.
+
+\textbf{Answer.} $\binom{12}{3}\binom82$ groups.
 \end{workedbox}
 
-\columnbreak
 
 \begin{workedbox}{C.4: injective functions}
-For $f:A\to B$ with $|A|=5$ and $|B|=8$, \textbf{1. label the five inputs.}
+\textbf{Problem.} Let $A,B$ be finite sets with $|A|=5$ and $|B|=8$. How many injective functions $f:A\to B$ exist? Give a permutation or product expression and explain the restriction.
+
+\textbf{Worked solution.} For $f:A\to B$ with $|A|=5$ and $|B|=8$, \textbf{1. label the five inputs.}
 \textbf{2. Enforce injectivity:} after an output is used, it is unavailable.
 The successive choices are
 \[
@@ -200,10 +261,14 @@ The successive choices are
 \]
 \textbf{3. Check overcounting:} input labels already distinguish the positions,
 so do not divide by $5!$.
+
+\textbf{Answer.} $P(8,5)=8\cdot7\cdot6\cdot5\cdot4$ injective functions.
 \end{workedbox}
 
 \begin{workedbox}{C.5: codes with a first-position rule}
-\textbf{1. Enforce the special position first:} a six-letter code beginning
+\textbf{Problem.} A six-character code uses uppercase English letters without repetition and must begin with a vowel. Treat $A,E,I,O,U$ as the five vowels. How many codes are possible? Give an unsimplified product.
+
+\textbf{Worked solution.} \textbf{1. Enforce the special position first:} a six-letter code beginning
 with a vowel has five first-character choices. \textbf{2. Remove that letter:}
 without repetition, the remaining ordered choices are $25,24,23,22,21$:
 \[
@@ -211,6 +276,8 @@ without repetition, the remaining ordered choices are $25,24,23,22,21$:
 \]
 Each factor now has a visible job: the first enforces the vowel rule, and the
 others enforce no repetition.
+
+\textbf{Answer.} $5\cdot25\cdot24\cdot23\cdot22\cdot21$ codes.
 \end{workedbox}
 
 \begin{definitionbox}{Avoiding overcounting}
@@ -237,7 +304,6 @@ factor, and leave a correct unsimplified expression?
 \end{checklistbox}
 \end{multicols}
 
-\clearpage
 \section*{D. Probability Models}
 \begin{multicols}{2}
 \begin{definitionbox}{Sample spaces and events}
@@ -255,33 +321,44 @@ P(A\cap B)&=P(A)P(B\mid A).
 \end{definitionbox}
 
 \begin{workedbox}{D.1: coin and die}
-\textbf{Model:} toss a fair coin and roll a fair die independently.
+\textbf{Problem.} A fair coin is tossed independently of a fair six-sided die roll. Find the probability that the coin is heads or the die is even (or both). Show the favorable-outcome count or an equivalent probability calculation.
+
+\textbf{Worked solution.} \textbf{Model:} toss a fair coin and roll a fair die independently.
 \textbf{Sample space:} there are $2\cdot6=12$ equally likely coin--die pairs.
 \textbf{Favorable count:} heads gives $6$, an even die gives $6$, and their
 intersection gives $3$. Hence $6+6-3=9$ favorable outcomes and
 $P=9/12=3/4$. The subtraction removes the duplicate intersection.
+
+\textbf{Answer.} $3/4$.
 \end{workedbox}
 
 \begin{workedbox}{D.2: probability identities}
-If $P(A)=0.55$, $P(B)=0.40$, and $P(A\cap B)=0.25$, then
+\textbf{Problem.} Events $A,B$ satisfy $P(A)=0.55$, $P(B)=0.40$, and $P(A\cap B)=0.25$. Find $P(A\cup B)$ and $P(A^c\cap B)$, showing the identities used.
+
+\textbf{Worked solution.} If $P(A)=0.55$, $P(B)=0.40$, and $P(A\cap B)=0.25$, then
 \[
 P(A\cup B)=0.55+0.40-0.25=0.70.
 \]
 Also $B=(A\cap B)\mathbin{\dot\cup}(A^c\cap B)$, so
 $P(A^c\cap B)=0.40-0.25=0.15$.
+
+\textbf{Answer.} $P(A\cup B)=0.70$ and $P(A^c\cap B)=0.15$.
 \end{workedbox}
 
 \begin{workedbox}{D.3: uniform bit strings}
-\textbf{Denominator:} $2^8$ equally likely eight-bit strings.
+\textbf{Problem.} An $8$-bit string is chosen uniformly from all $2^8$ such strings. Find the probability that it contains exactly three $1$s. Give an exact fraction.
+
+\textbf{Worked solution.} \textbf{Denominator:} $2^8$ equally likely eight-bit strings.
 \textbf{Numerator:} choose the three positions containing $1$s, so $\binom83$
 strings qualify. Thus
 \[
 P(\text{exactly three }1\text{s})=\frac{\binom83}{2^8}.
 \]
 The numerator and denominator must describe the same sample space.
+
+\textbf{Answer.} $\binom83/2^8=7/32$.
 \end{workedbox}
 
-\columnbreak
 
 \begin{definitionbox}{Conditional probability and independence}
 For $P(B)>0$,
@@ -294,7 +371,9 @@ Independence is a claim to test, not a default assumption.
 \end{definitionbox}
 
 \begin{workedbox}{D.4: without replacement}
-A bag has four red and six blue tokens. \textbf{First draw:} red has
+\textbf{Problem.} A bag contains $4$ red and $6$ blue tokens. Two tokens are drawn uniformly, one at a time, without replacement. Find the probability that the first is red and the second is blue. Show the conditional product.
+
+\textbf{Worked solution.} A bag has four red and six blue tokens. \textbf{First draw:} red has
 probability $4/10$. \textbf{Update:} after removing a red, nine tokens remain
 and all six blue tokens remain. Therefore
 \[
@@ -302,10 +381,14 @@ and all six blue tokens remain. Therefore
 \]
 The second factor is conditional on the first draw; keeping denominator $10$
 would describe replacement, not this experiment.
+
+\textbf{Answer.} $(4/10)(6/9)=4/15$.
 \end{workedbox}
 
 \begin{workedbox}{D.5: two different conditionals}
-If $24$ students use Python, $18$ use Java, and $10$ use both, then
+\textbf{Problem.} In a class, $24$ students use Python, $18$ use Java, and $10$ use both. One student is chosen uniformly from the class. Let $P$ mean uses Python and $J$ mean uses Java. Find $P(P\mid J)$ and $P(J\mid P)$.
+
+\textbf{Worked solution.} If $24$ students use Python, $18$ use Java, and $10$ use both, then
 \[
 P(P\mid J)=\frac{10}{18},\qquad
 P(J\mid P)=\frac{10}{24}.
@@ -313,6 +396,8 @@ P(J\mid P)=\frac{10}{24}.
 The shared numerator is the intersection. The event after the conditioning bar
 determines the denominator, so reversing the conditional usually changes the
 value.
+
+\textbf{Answer.} $P(P\mid J)=10/18=5/9$; $P(J\mid P)=10/24=5/12$.
 \end{workedbox}
 
 \begin{warningbox}{Frequent D errors}
@@ -329,7 +414,6 @@ independence?
 \end{checklistbox}
 \end{multicols}
 
-\clearpage
 \section*{E. Modeling, Bayes, Expectation, and Interpretation}
 \begin{multicols}{2}
 \begin{definitionbox}{Total probability and Bayes' rule}
@@ -345,13 +429,19 @@ The prior or base rate $P(B_j)$ remains part of the numerator.
 \end{definitionbox}
 
 \begin{workedbox}{E.1: numerical independence test}
-If $P(A)=0.6$, $P(B)=0.5$, and $P(A\cap B)=0.3$, then
+\textbf{Problem.} Events $A,B$ satisfy $P(A)=0.6$, $P(B)=0.5$, and $P(A\cap B)=0.3$. Determine whether they are independent, showing the numerical test, and then find $P(A\mid B)$.
+
+\textbf{Worked solution.} If $P(A)=0.6$, $P(B)=0.5$, and $P(A\cap B)=0.3$, then
 $P(A)P(B)=0.3=P(A\cap B)$, so the events are independent. Consequently
 $P(A\mid B)=0.3/0.5=0.6=P(A)$.
+
+\textbf{Answer.} They are independent, and $P(A\mid B)=0.6$.
 \end{workedbox}
 
 \begin{workedbox}{E.2: screening and base rates}
-Let $C$ be the condition and $+$ a positive test. Then
+\textbf{Problem.} A condition occurs in $1\%$ of a population. A test is positive for $95\%$ of people who have the condition and for $8\%$ of people who do not. For a person chosen at random from this population, find $P(\text{positive})$ and $P(\text{condition}\mid\text{positive})$. Give a one-sentence base-rate interpretation.
+
+\textbf{Worked solution.} Let $C$ be the condition and $+$ a positive test. Then
 \[
 \underbrace{0.95(0.01)}_{\text{true positives}}=0.0095,
 \qquad
@@ -364,10 +454,14 @@ P(C\mid +)=\frac{0.0095}{0.0887}\approx0.107.
 \]
 Even a sensitive test can yield many false positives when the condition is
 rare; the denominator includes both true and false positives.
+
+\textbf{Answer.} $P(+)=0.0887$ and $P(C\mid +)=95/887\approx10.7\%$. Most positive results are false positives because the condition is rare.
 \end{workedbox}
 
 \begin{workedbox}{E.3: factory Bayes model}
-Factory A supplies $40\%$ with defect rate $3\%$; B supplies $60\%$ with rate
+\textbf{Problem.} Factory A supplies $40\%$ of a store's batteries and $3\%$ of its batteries are defective. Factory B supplies the rest and $1\%$ of its batteries are defective. A battery is selected uniformly from the store's stock and is found defective. Find the probability it came from A, showing total probability and Bayes' rule.
+
+\textbf{Worked solution.} Factory A supplies $40\%$ with defect rate $3\%$; B supplies $60\%$ with rate
 $1\%$. First compute both joint routes:
 \[
 \begin{aligned}
@@ -376,9 +470,10 @@ P(B\cap D)&=0.60(0.01)=0.006.
 \end{aligned}
 \]
 Thus $P(D)=0.018$ and $P(A\mid D)=0.012/0.018=2/3$.
+
+\textbf{Answer.} $P(A\mid D)=2/3$.
 \end{workedbox}
 
-\columnbreak
 
 \begin{definitionbox}{Expected value}
 For numerical outcomes $x_i$ with probabilities $p_i$,
@@ -390,7 +485,9 @@ average, not a guaranteed result from one trial.
 \end{definitionbox}
 
 \begin{workedbox}{E.4: expected net value}
-A fair die pays $10$ on a $6$, $2$ on a $4$ or $5$, and $0$ otherwise. With a
+\textbf{Problem.} A game uses a fair six-sided die. It pays \$10 for a $6$, \$2 for a $4$ or $5$, and \$0 otherwise. A play costs \$2 regardless of the result. Find the expected net value of one play and interpret its sign.
+
+\textbf{Worked solution.} A fair die pays $10$ on a $6$, $2$ on a $4$ or $5$, and $0$ otherwise. With a
 $2$ cost, first convert payouts to net outcomes: $8,0,-2$, with probabilities
 $1/6,2/6,3/6$. Therefore
 \[
@@ -398,6 +495,8 @@ E[X]=8\left(\frac16\right)+0\left(\frac26\right)
 -2\left(\frac36\right)=\frac13.
 \]
 The positive sign means an average gain of $\$1/3$ per play over many plays.
+
+\textbf{Answer.} $E[X]=\$1/3$ per play, a positive long-run average gain.
 \end{workedbox}
 
 \begin{definitionbox}{Aggregation reversal}

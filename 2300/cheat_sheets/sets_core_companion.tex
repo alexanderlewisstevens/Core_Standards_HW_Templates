@@ -13,6 +13,7 @@
 \usepackage[most]{tcolorbox}
 \usepackage{fancyhdr}
 \usepackage{titlesec}
+\usepackage{tikz}
 \usepackage[hidelinks]{hyperref}
 
 \definecolor{CoreNavy}{HTML}{18364A}
@@ -68,6 +69,31 @@
 \newcommand{\term}[1]{\textbf{\color{CoreNavy}#1}}
 \newcommand{\U}{\mathfrak U}
 
+
+% Region bits are membership in A, B, C, respectively.
+\newcommand{\vennregion}[3]{%
+  \begin{scope}
+    \ifnum#1=1\relax\pgfsetnonzerorule\clip (-0.55,0.3) circle (0.95);\else
+      \pgfseteorule\clip (-1.65,-1.65) rectangle (1.65,1.45)
+        (-0.55,0.3) circle (0.95);\fi
+    \ifnum#2=1\relax\pgfsetnonzerorule\clip (0.55,0.3) circle (0.95);\else
+      \pgfseteorule\clip (-1.65,-1.65) rectangle (1.65,1.45)
+        (0.55,0.3) circle (0.95);\fi
+    \ifnum#3=1\relax\pgfsetnonzerorule\clip (0,-0.6) circle (0.95);\else
+      \pgfseteorule\clip (-1.65,-1.65) rectangle (1.65,1.45)
+        (0,-0.6) circle (0.95);\fi
+    \fill[CoreTeal!28] (-1.65,-1.65) rectangle (1.65,1.45);
+  \end{scope}}
+\newcommand{\vennframe}{%
+  \draw[CoreNavy,thick] (-1.65,-1.65) rectangle (1.65,1.45);
+  \draw[CoreNavy] (-0.55,0.3) circle (0.95);
+  \draw[CoreNavy] (0.55,0.3) circle (0.95);
+  \draw[CoreNavy] (0,-0.6) circle (0.95);
+  \node[fill=white,inner sep=1pt] at (-1,0.9) {$A$};
+  \node[fill=white,inner sep=1pt] at (1,0.9) {$B$};
+  \node[fill=white,inner sep=1pt] at (0,-1.25) {$C$};
+  \node[anchor=north west,inner sep=2pt] at (-1.65,1.45) {$\U$};}
+
 \begin{document}
 \small
 
@@ -98,23 +124,26 @@ A\times B=\{(a,b):a\in A\text{ and }b\in B\}.
 Ordered pairs preserve order; generally $(a,b)\ne(b,a)$.
 \end{definitionbox}
 
-\begin{workedbox}{A worked construction}
-Let $S=\{x\in\mathbb Z:|x|\le2\}$ and $T=\{-1,1\}$. Then
+\begin{workedbox}{Similar example: a finite construction}
+\textbf{Problem.} Let $S=\{x\in\mathbb Z:|x|\le2\}$ and $T=\{-1,1\}$.
+Write $S$ in roster notation, decide whether $T\subseteq S$ and $T\in S$,
+and list every element of $\mathcal P(T)$.
+
+\textbf{Worked solution.} Solve $|x|\le2$ in the integer domain to obtain
+$S=\{-2,-1,0,1,2\}$. Both elements of $T$ occur in $S$, so $T\subseteq S$.
+However, $S$ contains integers, not the set $T$, so $T\notin S$. List subsets
+of $T$ by size: zero elements, one element, then two elements. The count
+$4=2^2$ checks the result.
+
+\textbf{Answers.}
 \[
-S=\{-2,-1,0,1,2\},\quad T\subseteq S,\quad T\notin S,
-\]
-and
-\[
+\begin{gathered}
+S=\{-2,-1,0,1,2\},\quad T\subseteq S,\quad T\notin S,\\
 \mathcal P(T)=\{\varnothing,\{-1\},\{1\},\{-1,1\}\}.
+\end{gathered}
 \]
-\textbf{Step 1:} solve $|x|\le2$ in the declared integer domain.
-\textbf{Step 2:} both elements of $T$ occur in $S$, so $T\subseteq S$.
-\textbf{Step 3:} the elements of $S$ are integers, so the set $T$ is not itself
-an element: $T\notin S$. \textbf{Step 4:} list subsets of $T$ by size
-(zero, one, then two elements); the count $4=2^2$ checks the power set.
 \end{workedbox}
 
-\columnbreak
 
 \begin{definitionbox}{Set operations}
 Relative to universe $\U$,
@@ -138,20 +167,60 @@ P\leftrightarrow Q\equiv(P\land Q)\lor(\neg P\land\neg Q).
 Then shade exactly the resulting region.
 \end{methodbox}
 
-\begin{workedbox}{B worked translations}
-\begin{align*}
-(x\in A\setminus B)\lor(x\in C)
-&\longleftrightarrow (A\setminus B)\cup C,\\
-(x\in A\cup B)\to(x\in C)
-&\longleftrightarrow \overline{A\cup B}\cup C,\\
-(x\in A)\leftrightarrow(x\in B\setminus C)
-&\longleftrightarrow [A\cap(B\setminus C)]\\
-&\quad\cup[\overline A\cap\overline{(B\setminus C)}].
-\end{align*}
-\textbf{Procedure:} (1) eliminate $\to$ or $\leftrightarrow$; (2) replace
-$\neg,\land,\lor$ by complement, intersection, and union; (3) simplify.
-For the biconditional, the first term is the region where both sides are true;
-the second is where both are false. Shade both.
+\begin{workedbox}{B.1: union and difference in a Venn region}
+\textbf{Problem.} Let $A,B,C\subseteq\U$. Shade exactly those $x\in\U$ for
+which $(x\in A\setminus B)\lor(x\in C)$ is true. Write the region using
+set operations.
+
+\textbf{Worked solution.} The first disjunct requires membership in $A$ but
+not $B$; the second requires membership in $C$. ``Or'' includes either or both,
+so shade all of $C$ together with the part of $A$ outside $B$.
+\begin{center}
+\begin{tikzpicture}[scale=1.15]
+\vennregion{1}{0}{0}\vennregion{0}{0}{1}\vennregion{0}{1}{1}
+\vennregion{1}{0}{1}\vennregion{1}{1}{1}\vennframe
+\end{tikzpicture}
+\end{center}
+\textbf{Answer.} The shaded set is $(A\setminus B)\cup C$.
+\end{workedbox}
+
+\begin{workedbox}{B.3: a conditional Venn region}
+\textbf{Problem.} Let $A,B,C\subseteq\U$. Shade exactly those $x\in\U$ for
+which $(x\in A\cup B)\to(x\in C)$ is true. Write the region using set operations.
+
+\textbf{Worked solution.} Eliminate the implication:
+\[
+\neg(x\in A\cup B)\lor(x\in C).
+\]
+It is true outside $A\cup B$ and everywhere in $C$. It is false only inside
+$A\cup B$ but outside $C$.
+\begin{center}
+\begin{tikzpicture}[scale=1.15]
+\vennregion{0}{0}{0}\vennregion{0}{0}{1}\vennregion{0}{1}{1}
+\vennregion{1}{0}{1}\vennregion{1}{1}{1}\vennframe
+\end{tikzpicture}
+\end{center}
+\textbf{Answer.} The shaded set is $\overline{A\cup B}\cup C$.
+\end{workedbox}
+
+\begin{workedbox}{B.5: a biconditional Venn region}
+\textbf{Problem.} Let $A,B,C\subseteq\U$. Shade exactly those $x\in\U$ for
+which $(x\in A)\leftrightarrow(x\in B\setminus C)$ is true. Write the region
+using set operations.
+
+\textbf{Worked solution.} A biconditional is true when both sides are true
+\emph{or} both are false. The first case gives $A\cap(B\setminus C)$;
+the second gives $\overline A\cap\overline{(B\setminus C)}$. Shade both.
+\begin{center}
+\begin{tikzpicture}[scale=1.15]
+\vennregion{0}{0}{0}\vennregion{0}{0}{1}\vennregion{0}{1}{1}
+\vennregion{1}{1}{0}\vennframe
+\end{tikzpicture}
+\end{center}
+\textbf{Answer.} The shaded set is
+\[
+[A\cap(B\setminus C)]\cup[\overline A\cap\overline{(B\setminus C)}].
+\]
 \end{workedbox}
 
 \begin{warningbox}{Common errors}
@@ -167,7 +236,7 @@ membership formula into a set expression and Venn region?
 \end{checklistbox}
 \end{multicols}
 
-\clearpage
+\bigskip
 \section*{C. Relations as Subsets of Cartesian Products}
 \begin{multicols}{2}
 \begin{definitionbox}{Relations and plots}
@@ -197,18 +266,30 @@ On a finite plot, injective means no two inputs share an output; surjective
 means every codomain value is hit.
 \end{definitionbox}
 
-\begin{workedbox}{C worked plot-to-pairs example}
-Let $X=Y=\{1,2,3\}$ and suppose the plot has points
-\[
-R=\{(1,2),(2,3),(3,2)\}.
-\]
-\textbf{Function check:} columns $x=1,2,3$ each contain exactly one point, so
-$R$ is a function $X\to Y$. \textbf{Injective check:} inputs $1$ and $3$ both
-map to $2$, so it is not injective. \textbf{Surjective check:} codomain value
-$1\in Y$ is never hit, so it is not surjective.
+\begin{workedbox}{Similar example: reading an actual relation plot}
+\textbf{Problem.} Let $X=Y=\{1,2,3\}$. The plotted points are exactly the
+members of $R\subseteq X\times Y$. List $R$ as ordered pairs. Decide whether
+it is a function $X\to Y$; if so, classify it as injective, surjective, both,
+or neither. Justify each answer.
+\begin{center}
+\begin{tikzpicture}[x=0.7cm,y=0.7cm]
+\draw[step=1,gray!35] (0.5,0.5) grid (3.5,3.5);
+\draw[->,CoreNavy] (0.4,0.5)--(3.8,0.5) node[right] {$x\in X$};
+\draw[->,CoreNavy] (0.5,0.4)--(0.5,3.8) node[above] {$y\in Y$};
+\foreach \n in {1,2,3}{\node[below] at (\n,0.5) {$\n$};
+  \node[left] at (0.5,\n) {$\n$};}
+\foreach \x/\y in {1/2,2/3,3/2}{\fill[CoreTeal] (\x,\y) circle (2.8pt);}
+\end{tikzpicture}
+\end{center}
+\textbf{Worked solution.} Read each point as (horizontal coordinate, vertical
+coordinate): $R=\{(1,2),(2,3),(3,2)\}$. Every input has exactly one output,
+so this is a function. Inputs $1$ and $3$ both map to $2$, so it is not
+injective. Codomain value $1\in Y$ is never hit, so it is not surjective.
+
+\textbf{Answer.} $R=\{(1,2),(2,3),(3,2)\}$ defines a function that is neither
+injective nor surjective.
 \end{workedbox}
 
-\columnbreak
 
 \begin{methodbox}{Read quantified plot statements}
 \begin{align*}
@@ -222,24 +303,38 @@ $1\in Y$ is never hit, so it is not surjective.
 The first variable is the horizontal coordinate in $(x,y)$.
 \end{methodbox}
 
-\begin{workedbox}{C quantified evaluation}
-For $R=\{(1,2),(2,3),(3,2)\}$:
-\begin{itemize}
-\item $\forall x\exists!y\,R(x,y)$: scan every column; each has one point, so true.
-\item $\forall y\exists x\,R(x,y)$: row $y=1$ is empty, a counterexample, so false.
-\item $\exists y\forall x\,R(x,y)$: test each row; none contains all three
-inputs, so false.
-\end{itemize}
-For a false universal, name the missing row or column; for a true existential,
-name the row or column that is the witness.
+\begin{workedbox}{Similar example: quantified relation statements}
+\textbf{Problem.} Let $X=Y=\{1,2,3\}$ and
+$R=\{(1,2),(2,3),(3,2)\}$. Use $R(x,y)$ to mean $(x,y)\in R$, with
+$x\in X$ and $y\in Y$. Decide whether each statement is true or false:
+\[
+\forall x\exists!y\,R(x,y),\quad
+\forall y\exists x\,R(x,y),\quad
+\exists y\forall x\,R(x,y).
+\]
+\textbf{Worked solution.}
+\begin{enumerate}
+\item Scan each input column: each has exactly one point.
+\item Row $y=1$ is empty, so this universal statement has a counterexample.
+\item Row $y=1$ is empty, row $y=2$ misses $x=2$, and row $y=3$ misses
+$x=1,3$. Thus no row contains all three inputs.
+\end{enumerate}
+\textbf{Answers.} True, false, false, respectively. For a false universal,
+name a counterexample; to disprove an existential here, check every possible row.
 \end{workedbox}
 
-\begin{workedbox}{C nonfunction diagnosis}
-If
-$S=\{(1,1),(1,3),(2,2),(3,3)\}$, then input $1$ has two outputs. Thus $S$ is
-not a function $X\to Y$, even though every input has at least one output.
-Classification as injective or surjective is requested only after the relation
-passes the function test.
+\begin{workedbox}{Similar example: diagnosing a nonfunction}
+\textbf{Problem.} Let $X=Y=\{1,2,3\}$ and
+$S=\{(1,1),(1,3),(2,2),(3,3)\}$. Does $S$ define a function $X\to Y$?
+If it does, classify it as injective or surjective. If it does not, identify
+an input that violates the function requirement.
+
+\textbf{Worked solution.} Input $1$ has two distinct outputs, $1$ and $3$.
+A function must assign \emph{exactly one} output to every input; having at least
+one is insufficient.
+
+\textbf{Answer.} $S$ is not a function, witnessed by input $1$. The requested
+function classification therefore does not apply.
 \end{workedbox}
 
 \begin{warningbox}{Common errors}
@@ -255,7 +350,7 @@ as injective, surjective, both, or neither?
 \end{checklistbox}
 \end{multicols}
 
-\clearpage
+\bigskip
 \thispagestyle{fancy}
 \section*{D. Functions, Images, and Preimages}
 \begin{multicols}{2}
@@ -277,18 +372,23 @@ $f^{-1}(P)$ is preimage notation and does not require $f$ to have an inverse
 function.
 \end{definitionbox}
 
-\begin{workedbox}{D finite-function example}
-Let $A=\{1,2,3,4\}$, $B=\{a,b,c\}$, and
-$f(1)=a,f(2)=b,f(3)=b,f(4)=c$. Then
+\begin{workedbox}{D.1: finite images, preimages, and classification}
+\textbf{Problem.} Let $A=\{1,2,3,4\}$, $B=\{a,b,c\}$, and define
+$f:A\to B$ by $f(1)=a$, $f(2)=b$, $f(3)=b$, $f(4)=c$.
+Find $f(\{1,3,4\})$ and $f^{-1}(\{a,b\})$. Classify $f$ as injective,
+surjective, both, or neither, and justify the answer.
+
+\textbf{Worked solution.} Evaluate the inputs $1,3,4$ to obtain $a,b,c$.
+For the preimage, collect every input whose output is $a$ or $b$: these are
+$1,2,3$. Every codomain element is hit, so $f$ is surjective. However,
+$f(2)=f(3)=b$ although $2\ne3$, so it is not injective.
+
+\textbf{Answers.}
 \[
-f(\{1,3,4\})=\{a,b,c\},
-\quad
+f(\{1,3,4\})=\{a,b,c\},\qquad
 f^{-1}(\{a,b\})=\{1,2,3\}.
 \]
-\textbf{Image:} evaluate inputs $1,3,4$ to get $a,b,c$.
-\textbf{Preimage:} collect all inputs whose outputs lie in $\{a,b\}$, namely
-$1,2,3$. \textbf{Classification:} every element of $B$ is hit, so $f$ is
-surjective; $f(2)=f(3)=b$ with $2\ne3$, so it is not injective.
+The function is surjective but not injective.
 \end{workedbox}
 
 \begin{methodbox}{Proving or disproving injectivity}
@@ -297,7 +397,6 @@ $f(x_1)=f(x_2)$; derive $x_1=x_2$. To disprove it, give distinct inputs with
 the same output.
 \end{methodbox}
 
-\columnbreak
 
 \begin{methodbox}{Proving or disproving surjectivity}
 To prove surjective, let arbitrary $y$ lie in the codomain and solve
@@ -305,25 +404,46 @@ $f(x)=y$ for an allowed $x$ in the domain. To disprove it, identify one
 codomain element with no preimage.
 \end{methodbox}
 
-\begin{workedbox}{D integer formula examples}
-For $g:\mathbb Z\to\mathbb Z$, $g(n)=n+5$:
+\begin{workedbox}{D.2: an integer formula}
+\textbf{Problem.} Let $g:\mathbb Z\to\mathbb Z$ be $g(n)=n+5$.
+Find $g(\{-1,0,2\})$ and $g^{-1}(\{4,7\})$. Classify $g$ as injective,
+surjective, both, or neither. Justify both properties.
+
+\textbf{Worked solution.} Substitute the three inputs:
+$g(-1)=4$, $g(0)=5$, $g(2)=7$. For the preimage, solve $n+5=4$ or
+$n+5=7$, giving $n=-1$ or $n=2$.
+
+For injectivity, let $n_1,n_2\in\mathbb Z$ and assume $g(n_1)=g(n_2)$.
+Then $n_1+5=n_2+5$; subtracting $5$ yields $n_1=n_2$.
+For surjectivity, let arbitrary $y\in\mathbb Z$. Choose
+$n=y-5\in\mathbb Z$; then $g(n)=(y-5)+5=y$.
+
+\textbf{Answers.}
 \[
-g(\{-1,0,2\})=\{4,5,7\},\quad
-g^{-1}(\{4,7\})=\{-1,2\}.
+g(\{-1,0,2\})=\{4,5,7\},\qquad g^{-1}(\{4,7\})=\{-1,2\}.
 \]
-\textbf{Injective:} assume $g(n_1)=g(n_2)$; then
-$n_1+5=n_2+5$, hence $n_1=n_2$. \textbf{Surjective:} let arbitrary
-$y\in\mathbb Z$; choosing $n=y-5\in\mathbb Z$ gives
-$g(n)=(y-5)+5=y$. Thus $g$ is bijective.
+The function is bijective (both injective and surjective).
 \end{workedbox}
 
-\begin{workedbox}{Domain and codomain matter}
-For $h:\mathbb Z\to\mathbb Z$, $h(n)=n^2$, the inputs $-1$ and $1$ collide,
-so $h$ is not injective. No integer squares to $-1$, so it is not surjective.
-For $q:\mathbb N_0\to\{m^2:m\in\mathbb N_0\}$, $q(n)=n^2$, the domain removes
-the $n,-n$ collisions. Every declared codomain value has the form $m^2=q(m)$
-for an allowed input. Thus $q$ is injective and surjective. The formula did not
-change; the declared domain and codomain did.
+\begin{workedbox}{Similar example: domain and codomain matter}
+\textbf{Problem.} Compare $h:\mathbb Z\to\mathbb Z$, $h(n)=n^2$, with
+$q:\mathbb N_0\to\{m^2:m\in\mathbb N_0\}$, $q(n)=n^2$, where
+$\mathbb N_0=\{0,1,2,\ldots\}$. Classify each as injective, surjective,
+both, or neither, using witnesses or proofs.
+
+\textbf{Worked solution.} For $h$, distinct inputs $-1$ and $1$ give the
+same output $1$, so injectivity fails. The codomain contains $-1$, but no
+integer square equals $-1$, so surjectivity fails.
+
+For $q$, assume $q(n_1)=q(n_2)$ with $n_1,n_2\ge0$. Then
+$(n_1-n_2)(n_1+n_2)=0$. Either $n_1=n_2$ or $n_1+n_2=0$; in the latter
+case both are zero, so again $n_1=n_2$. Thus $q$ is injective. For any
+codomain value $y$, the codomain definition supplies an $m\in\mathbb N_0$
+with $y=m^2$. Choosing input $m$ gives $q(m)=y$, proving surjectivity.
+
+\textbf{Answers.} $h$ is neither; $q$ is bijective. The formula is identical,
+but the declared domain removes sign collisions and the codomain removes
+unattainable values.
 \end{workedbox}
 
 \begin{warningbox}{Common errors}
@@ -340,7 +460,7 @@ how changing the domain or codomain changes the classification?
 \end{checklistbox}
 \end{multicols}
 
-\clearpage
+\bigskip
 \section*{E. Prove or Refute Set and Function Claims}
 \begin{multicols}{2}
 \begin{methodbox}{Element-chasing proof template}
@@ -354,65 +474,90 @@ To prove $S=T$, prove both inclusions. For $S\subseteq T$:
 Do not begin by assuming the desired equality.
 \end{methodbox}
 
-\begin{workedbox}{True claim: image of a union}
-For $f:X\to Y$ and $U,V\subseteq X$,
-$f(U\cup V)=f(U)\cup f(V)$.
+\begin{workedbox}{E.1: image of a union}
+\textbf{Problem.} Let $f:X\to Y$ and $U,V\subseteq X$. Decide whether
+$f(U\cup V)=f(U)\cup f(V)$ always holds. If true, prove it using an arbitrary
+element; if false, give a finite counterexample and compute both sides.
 
-\textbf{Forward inclusion:} if $y\in f(U\cup V)$, then $y=f(x)$ for some
-$x\in U\cup V$. Thus
-$x\in U$ or $x\in V$, so $y\in f(U)$ or $y\in f(V)$. This proves one
-inclusion. \textbf{Reverse inclusion:} if $y\in f(U)\cup f(V)$, then $y=f(x)$ for some
-$x\in U$ or some $x\in V$; in either case $x\in U\cup V$, so
-$y\in f(U\cup V)$. Both inclusions prove equality.
+\textbf{Worked solution.} For the forward inclusion, let $y\in f(U\cup V)$.
+Then $y=f(x)$ for some $x\in U\cup V$. Thus $x\in U$ or $x\in V$, giving
+$y\in f(U)$ or $y\in f(V)$. Hence $y\in f(U)\cup f(V)$.
+
+For the reverse inclusion, let $y\in f(U)\cup f(V)$. If $y\in f(U)$,
+choose $x\in U$ with $f(x)=y$; if $y\in f(V)$, choose $x\in V$ with
+$f(x)=y$. Either case supplies $x\in U\cup V$, so $y\in f(U\cup V)$.
+
+\textbf{Conclusion.} True: the two inclusions prove equality.
 \end{workedbox}
 
-\begin{workedbox}{False claim: image of an intersection}
-In general, $f(U\cap V)\ne f(U)\cap f(V)$. Let
-$X=\{1,2\}$, $Y=\{a\}$, $f(1)=f(2)=a$, $U=\{1\}$, and $V=\{2\}$. Then
+\begin{workedbox}{E.2: image of an intersection}
+\textbf{Problem.} Let $f:X\to Y$ and $U,V\subseteq X$. Decide whether
+$f(U\cap V)=f(U)\cap f(V)$ always holds. If true, prove it using an arbitrary
+element; if false, give a finite counterexample and compute both sides.
+
+\textbf{Worked solution.} Take $X=\{1,2\}$, $Y=\{a\}$,
+$f(1)=f(2)=a$, $U=\{1\}$, and $V=\{2\}$. These are valid sets and a function
+of the required types. Since $U\cap V=\varnothing$,
 \[
-f(U\cap V)=f(\varnothing)=\varnothing,
-\quad
-f(U)\cap f(V)=\{a\}.
+f(U\cap V)=f(\varnothing)=\varnothing.
 \]
-\textbf{Verification:} the hypotheses hold, but the left side is empty and the
-right side is not, so the proposed universal equality is false. It fails because
-two different inputs may have the same output.
+But $f(U)=f(V)=\{a\}$, so
+\[
+f(U)\cap f(V)=\{a\}\cap\{a\}=\{a\}.
+\]
+\textbf{Conclusion.} False in general: the computed sides differ. Distinct
+inputs may have the same output, which is why intersecting images can add an
+output not obtained from the intersection of inputs.
 \end{workedbox}
 
-\columnbreak
 
-\begin{workedbox}{True claim: preimage preserves intersection}
-For $P,Q\subseteq Y$,
-\[
-f^{-1}(P\cap Q)=f^{-1}(P)\cap f^{-1}(Q).
-\]
-Indeed, for arbitrary $x\in X$,
+\begin{workedbox}{E.3: preimage preserves intersection}
+\textbf{Problem.} Let $f:X\to Y$ and $P,Q\subseteq Y$. Decide whether
+$f^{-1}(P\cap Q)=f^{-1}(P)\cap f^{-1}(Q)$ always holds. If true, prove it
+using an arbitrary element; if false, give a finite counterexample.
+
+\textbf{Worked solution.} For arbitrary $x\in X$, unpack the preimage and
+intersection definitions:
 \begin{align*}
 x\in f^{-1}(P\cap Q)
 &\Longleftrightarrow f(x)\in P\cap Q\\
 &\Longleftrightarrow f(x)\in P\text{ and }f(x)\in Q\\
+&\Longleftrightarrow x\in f^{-1}(P)\text{ and }x\in f^{-1}(Q)\\
 &\Longleftrightarrow x\in f^{-1}(P)\cap f^{-1}(Q).
 \end{align*}
-The chain proves both inclusions at once.
+\textbf{Conclusion.} True. Every step works in both directions, so the chain
+proves both inclusions and hence equality.
 \end{workedbox}
 
-\begin{workedbox}{True claim: product distributes over union}
-For arbitrary $(x,y)$,
+\begin{workedbox}{E.4: product distributes over union}
+\textbf{Problem.} For arbitrary sets $A,B,C$, decide whether
+$(A\cup B)\times C=(A\times C)\cup(B\times C)$ always holds. If true,
+prove it using an arbitrary ordered pair; if false, give a finite counterexample.
+
+\textbf{Worked solution.} Let $(x,y)$ be an arbitrary ordered pair. By the
+Cartesian product, union, and distributive definitions,
 \begin{align*}
-(x,y)\in(A\cup B)\times C
-&\Longleftrightarrow (x\in A\text{ or }x\in B)\text{ and }y\in C\\
-&\Longleftrightarrow [(x\in A\text{ and }y\in C)\text{ or}\\
-&\hspace{3.4em}(x\in B\text{ and }y\in C)]\\
-&\Longleftrightarrow (x,y)\in(A\times C)\cup(B\times C).
+&(x,y)\in(A\cup B)\times C\\
+&\ \Longleftrightarrow (x\in A\text{ or }x\in B)\text{ and }y\in C\\
+&\ \Longleftrightarrow (x\in A\text{ and }y\in C)\\
+&\hspace{4em}\text{or }(x\in B\text{ and }y\in C)\\
+&\ \Longleftrightarrow (x,y)\in(A\times C)\cup(B\times C).
 \end{align*}
+\textbf{Conclusion.} True. The reversible membership chain proves equality.
 \end{workedbox}
 
-\begin{workedbox}{False cancellation claim}
-$A\cup B=A\cup C$ need not imply $B=C$. Take
-$A=\{1,2\}$, $B=\{1\}$, and $C=\{2\}$. Then both unions equal
-$\{1,2\}$, so the hypothesis is true, but $B\ne C$, so the conclusion is
-false. Union with $A$ hides differences already contained in $A$. A valid
-counterexample must pass both of these checks.
+\begin{workedbox}{E.5: a false cancellation claim}
+\textbf{Problem.} For arbitrary sets $A,B,C$, does
+$A\cup B=A\cup C$ imply $B=C$? Prove the universal claim or give a finite
+counterexample that satisfies its hypothesis but violates its conclusion.
+
+\textbf{Worked solution.} Take $A=\{1,2\}$, $B=\{1\}$, and $C=\{2\}$.
+Then $A\cup B=\{1,2\}=A\cup C$, so the hypothesis holds. However,
+$B\ne C$ because $1\in B$ but $1\notin C$.
+
+\textbf{Conclusion.} False. Union with $A$ can hide differences already
+contained in $A$. A valid counterexample must check both the true hypothesis
+and the false conclusion.
 \end{workedbox}
 
 \begin{warningbox}{Common errors}

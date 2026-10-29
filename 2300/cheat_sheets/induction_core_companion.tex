@@ -91,6 +91,12 @@ and proves $P(k+1)$. The two principles are logically equivalent; choose the
 form that naturally supplies the earlier cases needed in the step.
 \end{definitionbox}
 
+\begin{definitionbox}{Prime and composite integers}
+A \term{prime} is an integer at least $2$ whose only positive divisors are
+$1$ and itself. A \term{composite} integer is an integer at least $2$ that
+is not prime: it can be written $ab$ with integers $a,b\ge2$.
+\end{definitionbox}
+
 \begin{methodbox}{A planning template}
 Before calculating, write:
 \begin{enumerate}
@@ -106,7 +112,13 @@ For strong induction, state the entire range of assumed cases.
 \columnbreak
 
 \begin{workedbox}{A.1: prime factorization setup}
-Claim: every integer $n\ge2$ is a product of one or more primes.
+\textbf{Problem (Core A.1).} Consider the claim that every integer
+$n\ge2$ is a product of one or more primes. State (a) the base case,
+(b) the strong induction hypothesis for an arbitrary $k\ge2$,
+(c) what must be proved for $k+1$, and (d) the two cases considered in the
+induction step. Do not complete the proof.
+
+\textbf{Worked solution.} Write $P(n)$ for the stated factorization claim.
 
 \textbf{Base.} $P(2)$ holds because $2$ is prime.
 
@@ -119,9 +131,18 @@ integer $j$ with $2\le j\le k$.
 it is composite, write $k+1=ab$ with $2\le a,b\le k$; the strong IH applies
 to both factors. These are the two cases the short Core problem asks you to
 identify; do not assume a factorization before entering the composite case.
+
+\textbf{Answer.} Base $P(2)$; assume $P(j)$ for all integers $2\le j\le k$;
+prove $P(k+1)$; split into $k+1$ prime or composite. No full proof is requested.
 \end{workedbox}
 
 \begin{workedbox}{A similar ordinary-induction plan}
+\textbf{Problem (similar example).} For every integer $n\ge1$, let
+$P(n)$ be $1+3+\cdots+(2n-1)=n^2$. State the base case, ordinary induction
+hypothesis, and next-case goal. Identify the next term and show the algebra
+that connects the hypothesis to the goal.
+
+\textbf{Worked solution.}
 \textbf{1. State and start.} For
 $P(n):1+3+\cdots+(2n-1)=n^2$, use base $n=1$.
 \textbf{2. Assume the $k$ case:}
@@ -135,6 +156,9 @@ k^2+(2k+1)=(k+1)^2.
 \]
 The equality $k^2=1+\cdots+(2k-1)$ is the exact point where the hypothesis
 enters; then the display reaches the $k+1$ formula.
+
+\textbf{Answer.} Start at $1=1^2$, assume $P(k)$ for arbitrary $k\ge1$,
+and add $2k+1$ to obtain $(k+1)^2$, the required $P(k+1)$.
 \end{workedbox}
 
 \begin{warningbox}{Frequent A errors}
@@ -171,8 +195,14 @@ the proof is explicitly reorganized into a forward derivation.
 \end{methodbox}
 
 \begin{workedbox}{B.1: repair the exponential inequality}
-Claim: $2^n\ge n+1$ for every $n\ge0$. The faulty step assumes
-$2^{k+1}\ge k+2$, which is exactly the target. \textbf{Step 1: delete that
+\textbf{Problem (Core B.1).} A student tries to prove $2^n\ge n+1$ for
+every integer $n\ge0$. In the induction step, the student assumes
+$2^{k+1}\ge k+2$ and then declares $P(k+1)$ proved. Identify the error,
+state the correct induction hypothesis, and give a valid chain of inequalities
+that proves the next case.
+
+\textbf{Worked solution.} The faulty assumption is exactly the target,
+so the reasoning is circular. \textbf{Step 1: delete that
 assumption.}
 
 \textbf{Step 2: use the correct hypothesis} $2^k\ge k+1$.
@@ -184,6 +214,9 @@ assumption.}
 \end{align*}
 \textbf{Step 4: close.} Thus $P(k+1)$ follows. Notice that the IH is used once and its direction is
 preserved when multiplying by the positive number $2$.
+
+\textbf{Answer.} Assume $2^k\ge k+1$ for arbitrary integer $k\ge0$, not
+the target. Then $2^{k+1}\ge2k+2\ge k+2$.
 \end{workedbox}
 
 \columnbreak
@@ -202,20 +235,36 @@ preserved when multiplying by the positive number $2$.
 \end{definitionbox}
 
 \begin{workedbox}{Repair a wrong next term}
-Suppose $P(n)$ is $1+3+\cdots+(2n-1)=n^2$. After assuming $P(k)$, the next
+\textbf{Problem (similar example).} A student proving
+$P(n):1+3+\cdots+(2n-1)=n^2$ for integers $n\ge1$ assumes $P(k)$ and
+then adds $2k-1$ to the $k$-term sum to form the $(k+1)$-term sum.
+Identify and repair the incorrect next term.
+
+\textbf{Worked solution.} After assuming $P(k)$, the next
 term is $2(k+1)-1=2k+1$, not $2k-1$. Hence
 \[
 1+3+\cdots+(2k-1)+(2k+1)
 =k^2+2k+1=(k+1)^2.
 \]
 The index, not visual pattern-matching, determines the new term.
+
+\textbf{Answer.} Add $2k+1$, not $2k-1$; the next sum equals $(k+1)^2$.
 \end{workedbox}
 
 \begin{workedbox}{Two-step recurrences need two bases}
-If $a_n=a_{n-1}+a_{n-2}$ and a property of $a_n$ is proved using the two
+\textbf{Problem (similar example).} A sequence is defined by initial
+values $a_0,a_1$ and $a_n=a_{n-1}+a_{n-2}$ for every integer $n\ge2$.
+A proof of a property $P(n)$ uses both $P(n-1)$ and $P(n-2)$ to establish
+$P(n)$. The student checks only $P(0)$. Explain the missing base-case check
+and why it is needed.
+
+\textbf{Worked solution.} When a property of $a_n$ is proved using the two
 previous cases, verify both initial values. In a strong-induction version,
 the hypothesis must include enough earlier indices for the recurrence to be
 defined. One base case cannot support the first step that needs two values.
+
+\textbf{Answer.} Verify both $P(0)$ and $P(1)$; the first recurrence step,
+at $n=2$, needs both.
 \end{workedbox}
 
 \begin{warningbox}{Invalid shortcuts}
@@ -257,6 +306,14 @@ $0\le i\le k-1$.
 \end{methodbox}
 
 \begin{workedbox}{C.1 complete proof: statement and base}
+\textbf{Problem (Core C.1).} Prove by mathematical induction that
+$\sum_{j=0}^{n}\binom nj=2^n$ for every integer $n\ge0$. You may use
+Pascal's identity $\binom{k+1}{j}=\binom kj+\binom{k}{j-1}$ for
+$1\le j\le k$, and the endpoint identities $\binom n0=\binom nn=1$.
+Include $P(n)$, the base case, the induction hypothesis, the complete
+next-case calculation (including reindexing), and the conclusion.
+
+\textbf{Worked solution, part 1.}
 Let
 \[
 P(n):\quad \sum_{j=0}^{n}\binom nj=2^n,
@@ -277,7 +334,9 @@ We must prove the corresponding identity for $k+1$.
 
 \columnbreak
 
-\begin{workedbox}{C.1 complete proof: induction step}
+\begin{workedbox}{C.1 worked solution, continued: induction step}
+For $k=0$, the interior sums below are empty and equal $0$; both rows sum
+to $2$. For $k\ge1$, the displayed endpoint and reindexing calculation applies.
 \textbf{Step 1: split endpoints and use Pascal.}
 \begin{align*}
 \sum_{j=0}^{k+1}\binom{k+1}{j}
@@ -294,6 +353,9 @@ The second line uses $i=j-1$ in the second interior sum. The third line
 restores the missing endpoint in each copy, so the induction hypothesis can
 be used on the fourth line. Thus $P(k+1)$ holds. By mathematical induction,
 $\sum_{j=0}^{n}\binom nj=2^n$ for every integer $n\ge0$.
+
+\textbf{Conclusion.} The identity holds for every integer $n\ge0$; the
+two uses of the IH are the two complete $k$-row sums.
 \end{workedbox}
 
 \begin{definitionbox}{Why the reindexing is valid}
@@ -320,7 +382,11 @@ complete sums, explicit IH use, and final conclusion without a missing term?
 \section*{More Worked Practice and Whole-Core Readiness}
 \begin{multicols}{2}
 \begin{workedbox}{Divisibility by induction}
-Prove $3\mid(4^n-1)$ for every $n\ge0$.
+\textbf{Problem (similar example).} Prove by mathematical induction that
+$3\mid(4^n-1)$ for every integer $n\ge0$. Use the definition of divisibility:
+$3\mid x$ means $x=3q$ for some integer $q$.
+
+\textbf{Worked solution.}
 
 \textbf{Base.} $4^0-1=0$, divisible by $3$.
 
@@ -330,10 +396,15 @@ Prove $3\mid(4^n-1)$ for every $n\ge0$.
 \]
 Because $4q+1$ is an integer, the next expression is divisible by $3$. This
 example shows how a definition supplies the usable form of the IH.
+
+\textbf{Conclusion.} By induction, $3\mid(4^n-1)$ for all integers $n\ge0$.
 \end{workedbox}
 
 \begin{workedbox}{A finite-sum proof}
-Prove $1+2+\cdots+n=n(n+1)/2$ for $n\ge1$.
+\textbf{Problem (similar example).} Prove by mathematical induction that
+$1+2+\cdots+n=n(n+1)/2$ for every integer $n\ge1$.
+
+\textbf{Worked solution.}
 
 Base: $1=1(2)/2$. Assume
 $1+\cdots+k=k(k+1)/2$. Then
@@ -343,15 +414,25 @@ $1+\cdots+k=k(k+1)/2$. Then
 &=\frac{(k+1)(k+2)}2.
 \end{align*}
 This is the formula with $n=k+1$, so induction completes the proof.
+
+\textbf{Conclusion.} The stated sum formula holds for every integer $n\ge1$.
 \end{workedbox}
 
 \begin{workedbox}{An inequality with a domain check}
-To prove $n!\ge2^{n-1}$ for $n\ge1$, the base is $1=1$. Assuming
+\textbf{Problem (similar example).} Prove by mathematical induction that
+$n!\ge2^{n-1}$ for every integer $n\ge1$. Explain where the lower bound on
+the integer index is used in the induction step.
+
+\textbf{Worked solution.} The base is $1!=1=2^0$. Assuming
 $k!\ge2^{k-1}$ for $k\ge1$,
 \[
 (k+1)!=(k+1)k!\ge2\cdot2^{k-1}=2^k,
 \]
 because $k+1\ge2$. The domain supplies the comparison needed after the IH.
+
+\textbf{Conclusion.} By induction, the inequality holds for all integers
+$n\ge1$. The condition $k\ge1$ ensures that multiplying $k!$ by $k+1$
+increases it by a factor of at least $2$.
 \end{workedbox}
 
 \columnbreak

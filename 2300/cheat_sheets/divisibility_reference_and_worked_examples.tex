@@ -35,6 +35,7 @@
 \setlength{\belowdisplayshortskip}{2pt}
 \setlist{leftmargin=*,itemsep=1.5pt,topsep=2pt,parsep=0pt,partopsep=0pt}
 \raggedbottom
+\raggedcolumns
 
 \titleformat{\section}{\Large\bfseries\color{DivNavy}}{}{0pt}{}
   [\vspace{-3pt}\color{DivNavy}\rule{\linewidth}{0.7pt}]
@@ -151,10 +152,11 @@ d\mid a,\ a\mid b &\Longrightarrow d\mid b.
 Each follows by substituting integer witnesses and factoring out $d$.
 \end{methodbox}
 
-\columnbreak
 
-\begin{workedbox}{Worked example: a positive dividend}
-Find all three views for $263$ divided by $17$.
+\begin{workedbox}{Similar example: a positive dividend}
+\textbf{Problem.} For $a=263$ and positive divisor $b=17$, find the canonical integers $q,r$ with $a=bq+r$ and $0\le r<b$. State $a\,\mathrm{div}\,b$, $a\bmod b$, and the corresponding congruence. Justify the congruence from its definition.
+
+\textbf{Worked solution.} Find all three views for $263$ divided by $17$.
 \textbf{Choose $q$:} $17(15)=255$ is the largest multiple not exceeding $263$.
 \textbf{Compute $r$:} $263-255=8$, so
 \[
@@ -169,10 +171,14 @@ The bound $0\le8<17$ makes this canonical. Therefore
 \]
 \textbf{Congruence check:}
 $263-8=255=17(15)$, so $17\mid(263-8)$.
+
+\textbf{Answer.} $q=15$, $r=8$; $263\,\mathrm{div}\,17=15$, $263\bmod17=8$, and $263\equivmod{17}8$.
 \end{workedbox}
 
-\begin{workedbox}{Worked example: a negative dividend}
-Find the canonical quotient and remainder for $-52$ divided by $9$.
+\begin{workedbox}{Similar example: a negative dividend}
+\textbf{Problem.} For $a=-52$ and divisor $b=9$, find the canonical quotient and remainder. Write $a=bq+r$ with $0\le r<b$, and state the div, mod, and congruence forms.
+
+\textbf{Worked solution.} Find the canonical quotient and remainder for $-52$ divided by $9$.
 \textbf{Reject the first try:} $-52=9(-5)-7$ has a negative remainder.
 \textbf{Adjust:} decrease the quotient by $1$ and add $9$ to the remainder:
 \[
@@ -185,6 +191,8 @@ Now $0\le2<9$. Thus
 -52&\equiv2\pmod9.
 \end{aligned}
 \]
+
+\textbf{Answer.} $q=-6$, $r=2$; $-52\,\mathrm{div}\,9=-6$, $-52\bmod9=2$, and $-52\equivmod9 2$.
 \end{workedbox}
 
 \begin{warningbox}{Common mistake}
@@ -199,17 +207,24 @@ $a\,\mathrm{div}\,b$, $a\bmod b$, and a congruence; justify the congruence by
 showing that $b$ divides a difference.
 \end{checklistbox}
 
-\begin{workedbox}{Recover a number; test a congruence}
-\textbf{Recover:} insert $q=-4,r=9$ into $a=13q+r$ to get
-$a=13(-4)+9=-43$; $0\le9<13$ verifies the remainder.
-\textbf{Test:} subtract in $347\equiv-13\pmod{24}$:
-$347-(-13)=360=24(15)$, so the congruence is true. Finally,
-$347=24(14)+11$, so the least nonnegative residue is $11$.
+\begin{workedbox}{A.4: recover a number}
+\textbf{Problem.} An integer $a$ satisfies $a\,\mathrm{div}\,13=-4$ and $a\bmod13=9$. Find $a$ and verify the required remainder bound.
+
+\textbf{Worked solution.} Insert $q=-4,r=9$ into the division equation $a=13q+r$: $a=13(-4)+9=-43$. The given remainder is legal because $0\le9<13$.
+
+\textbf{Answer.} $a=-43$.
+\end{workedbox}
+
+\begin{workedbox}{A.5: test a congruence}
+\textbf{Problem.} Decide whether $347\equiv-13\pmod{24}$. Justify directly from the definition, then give the least nonnegative residue of $347$ modulo $24$.
+
+\textbf{Worked solution.} Subtract the two integers: $347-(-13)=360=24(15)$. Thus $24$ divides the difference, proving the congruence. For the least nonnegative residue, divide: $347=24(14)+11$, with $0\le11<24$.
+
+\textbf{Answer.} The congruence is true, and $347\bmod24=11$.
 \end{workedbox}
 \end{multicols}
 
 \thispagestyle{fancy}
-\clearpage
 \pagestyle{fancy}
 \thispagestyle{fancy}
 \section*{B. Base-$b$ Representations}
@@ -256,12 +271,19 @@ removed digit.
 Repeatedly divide by the new base. Record each remainder. The digits are the
 remainders read from \emph{bottom to top}. Verify by expanding in powers of the
 base. Each line $n=bq+r$ reverses one shift-and-append step. In hexadecimal,
-remainders $10$--$15$ become $A$--$F$; for $1000_{10}$ the successive
-remainders are $8,E,3$, so $1000_{10}=(3E8)_{16}$.
+remainders $10$--$15$ become $A$--$F$.
+
+\textbf{Problem (B.4).} Convert $1000$ from decimal to hexadecimal using repeated division. Check by expanding in powers of $16$.
+
+\textbf{Worked solution.} The divisions are $1000=16(62)+8$, $62=16(3)+14$, and $3=16(0)+3$. Read the remainders upward, replacing $14$ with $E$. Check: $3(16^2)+14(16)+8=1000$.
+
+\textbf{Answer.} $1000_{10}=(3E8)_{16}$.
 \end{methodbox}
 
-\begin{workedbox}{Worked example: $202_{10}$ to binary}
-\textbf{Divide and record remainders:}
+\begin{workedbox}{Similar example: $202_{10}$ to binary}
+\textbf{Problem.} Convert the decimal integer $202$ to binary by repeated division by $2$. Show the quotients and remainders, explain the digit order, and verify the result using powers of $2$.
+
+\textbf{Worked solution.} \textbf{Divide and record remainders:}
 \[
 \begin{array}{rcl@{\qquad}rcl}
 202&=&2(101)+0 & 101&=&2(50)+1\\
@@ -281,34 +303,45 @@ appending verifies the digit order:
 \end{aligned}
 \]
 \textbf{Place-value check:} $128+64+8+2=202$.
+
+\textbf{Answer.} $202_{10}=(11001010)_2$.
 \end{workedbox}
 
-\columnbreak
 
-\begin{workedbox}{Worked example: evaluate a numeral}
-Multiply each digit by the matching power of $5$:
+\begin{workedbox}{Similar example: evaluate a numeral}
+\textbf{Problem.} Convert $(2301)_5$ to decimal using place values. Verify that every digit is legal in base $5$.
+
+\textbf{Worked solution.} Multiply each digit by the matching power of $5$:
 \[
 (2301)_5=2(5^3)+3(5^2)+0(5)+1=326.
 \]
 Thus the value is $326_{10}$. The subscript names the base; it is not a
 multiplier.
+
+\textbf{Answer.} All digits are in $\{0,1,2,3,4\}$, and $(2301)_5=326_{10}$.
 \end{workedbox}
 
 \begin{methodbox}{Binary as a bridge}
 One hexadecimal digit equals exactly four binary bits; one octal digit equals
-exactly three. Pad with leading zeros, then regroup from the \emph{right}. For
-example,
-\[
-\begin{aligned}
-(725)_8&=(111\ 010\ 101)_2=469_{10},\\
-(101\ 101\ 011)_2&=(553)_8,\\
-(0001\ 0110\ 1011)_2&=(16B)_{16}.
-\end{aligned}
-\]
+exactly three. Pad with leading zeros, then regroup from the \emph{right}.
+
+\textbf{Problem (B.3).} Convert $(725)_8$ to binary and decimal. Keep three binary digits for each octal digit.
+
+\textbf{Worked solution.} Convert $7,2,5$ separately to $111,010,101$. Check the value using octal place values: $7(8^2)+2(8)+5=469$.
+
+\textbf{Answer.} $(725)_8=(111\ 010\ 101)_2=469_{10}$.
+
+\textbf{Problem (B.5).} Convert $(101101011)_2$ to octal and hexadecimal without first converting the whole number to decimal. Explain the grouping rule.
+
+\textbf{Worked solution.} From the right, group into threes for octal: $(101\ 101\ 011)_2$. Group into fours for hexadecimal, adding leading zeros: $(0001\ 0110\ 1011)_2$. Each group is one digit because $8=2^3$ and $16=2^4$.
+
+\textbf{Answer.} $(101101011)_2=(553)_8=(16B)_{16}$.
 \end{methodbox}
 
-\begin{workedbox}{Worked example: hexadecimal to binary and octal}
-Convert $(2D7)_{16}$.
+\begin{workedbox}{Similar example: hexadecimal to binary and octal}
+\textbf{Problem.} Convert $(2D7)_{16}$ to binary and octal, where $D=13$. Use four bits per hexadecimal digit, regroup from the right for octal, and check the value in decimal.
+
+\textbf{Worked solution.} Convert $(2D7)_{16}$.
 \textbf{Hex to binary:} replace each digit with four bits:
 \[
 2=0010_2,\qquad D=1101_2,\qquad7=0111_2,
@@ -327,10 +360,14 @@ so
 2(16^2)+13(16)+7=727.
 \]
 Leading zeros change grouping, not value.
+
+\textbf{Answer.} $(2D7)_{16}=(0010\,1101\,0111)_2=(1327)_8=727_{10}$.
 \end{workedbox}
 
-\begin{workedbox}{Worked example: the last two base-$b$ digits}
-Let $n=(25314)_7$. Then
+\begin{workedbox}{Similar example: the last two base-$b$ digits}
+\textbf{Problem.} Let $n=(25314)_7$. Find $n\bmod7^2$ without evaluating the entire numeral in decimal. Explain how the last two base-seven digits determine the answer, and report the residue in decimal.
+
+\textbf{Worked solution.} Let $n=(25314)_7$. Then
 \[
 n=2(7^4)+5(7^3)+3(7^2)+1(7)+4.
 \]
@@ -341,6 +378,8 @@ n\bmod7^2=1(7)+4=11.
 \]
 \textbf{Interpret:} the last two base-seven digits are $(14)_7$, whose decimal
 value is $1(7)+4=11$, not $14$.
+
+\textbf{Answer.} $n\bmod49=11=(14)_7$.
 \end{workedbox}
 
 \begin{checklistbox}{Conversion checks}
@@ -352,9 +391,9 @@ integer.
 \endgroup
 
 \thispagestyle{fancy}
-\clearpage
 \pagestyle{fancy}
 \thispagestyle{fancy}
+\clearpage
 \section*{C--D. Modular Arithmetic, GCD, and B\'ezout}
 \thispagestyle{fancy}
 
@@ -380,8 +419,10 @@ ac\bmod m&=((a\bmod m)(c\bmod m))\bmod m.
 Reduce early; report a least nonnegative residue for $x\bmod m$.
 \end{definitionbox}
 
-\begin{workedbox}{Worked example: reduce early}
-Compute the least nonnegative residue of $(-47)\cdot38+19$ modulo $12$.
+\begin{workedbox}{Similar example: reduce early}
+\textbf{Problem.} Compute $\bigl((-47)\cdot38+19\bigr)\bmod12$. Reduce the inputs before combining them and give the least nonnegative residue.
+
+\textbf{Worked solution.} Compute the least nonnegative residue of $(-47)\cdot38+19$ modulo $12$.
 \textbf{Reduce each input:}
 \[
 -47\equiv1,\quad38\equiv2,\quad19\equiv7\pmod{12},
@@ -391,15 +432,23 @@ Compute the least nonnegative residue of $(-47)\cdot38+19$ modulo $12$.
 (-47)\cdot38+19\equiv1(2)+7\equiv9\pmod{12}.
 \]
 Since $0\le9<12$, $((-47)\cdot38+19)\bmod12=9$.
+
+\textbf{Answer.} $\bigl((-47)\cdot38+19\bigr)\bmod12=9$.
 \end{workedbox}
 
 \begin{methodbox}{Powers modulo $m$: cycles and squaring}
-\textbf{Cycle method.} Compute residues until they repeat. Since
+\textbf{Problem (C.1(b)).} Compute $3^{47}\bmod10$, giving the least nonnegative residue and showing a cycle that avoids large arithmetic.
+
+\textbf{Worked solution: cycle method.} Compute residues until they repeat. Since
 $3,9,7,1$ repeat for powers of $3$ modulo $10$, and $47\equiv3\pmod4$,
 \[
 3^{47}\equiv3^3\equiv7\pmod{10}.
 \]
-\textbf{Repeated squaring.} Square and reduce at every step. Modulo $13$,
+\textbf{Answer.} $3^{47}\bmod10=7$.
+
+\textbf{Problem (C.4).} Compute $5^{117}\bmod13$ by repeated squaring. Display the powers used in the final product.
+
+\textbf{Worked solution: repeated squaring.} Square and reduce at every step. Modulo $13$,
 \[
 5^2\equiv-1,\qquad5^4\equiv1,
 \]
@@ -408,10 +457,9 @@ $117=64+32+16+4+1$,
 \[
 5^{117}\equiv1\cdot1\cdot1\cdot1\cdot5\equiv5\pmod{13}.
 \]
-State the cycle length or the exponent decomposition you used.
+\textbf{Answer.} $5^{117}\bmod13=5$. State the cycle length or the exponent decomposition you used.
 \end{methodbox}
 
-\columnbreak
 
 \begin{definitionbox}{GCD and relative primality}
 For integers $a,b$, not both zero, $\gcd(a,b)$ is the greatest positive
@@ -430,8 +478,10 @@ divisors of $a,b$ are exactly those of $b,r=a-bq$, so
 $\gcd(a,b)=\gcd(b,r)$. Swap the inputs first if necessary.
 \end{methodbox}
 
-\begin{workedbox}{Euclidean algorithm and B\'ezout coefficients}
-Find $\gcd(246,102)$ and express it as $246s+102t$.
+\begin{workedbox}{Similar example: Euclidean algorithm and B\'ezout}
+\textbf{Problem.} Use the Euclidean algorithm to find $\gcd(246,102)$. Then back-substitute to find integers $s,t$ such that $246s+102t=\gcd(246,102)$. Verify the final identity.
+
+\textbf{Worked solution.} Find $\gcd(246,102)$ and express it as $246s+102t$.
 \textbf{Step 1: run the Euclidean algorithm.}
 \[
 \begin{aligned}
@@ -457,20 +507,30 @@ Thus $s=5$ and $t=-12$. \textbf{Step 3: verify both conclusions:}
 \[
 6\mid246,\quad6\mid102,\qquad5(246)-12(102)=6.
 \]
+
+\textbf{Answer.} $\gcd(246,102)=6$, with $s=5$ and $t=-12$.
 \end{workedbox}
 
+\newpage
 \begin{methodbox}{B\'ezout and relative-prime checks}
 Back-substitute through every displayed Euclidean equation; preserve the
 original input order in the final identity. Coefficients are not unique, so
-verify them by substitution. For example,
-$16=2^4$ and $45=3^2\cdot5$ share no prime factor, so
-$\gcd(16,45)=1$: composite numbers can be relatively prime.
+verify them by substitution.
+
+\textbf{Similar example --- Problem.} Are the positive integers $16$ and
+$45$ relatively prime? Justify your answer using their prime factorizations.
+
+\textbf{Worked solution.} We have $16=2^4$ and $45=3^2\cdot5$.
+Their prime factorizations share no prime factor, so their only positive
+common divisor is $1$.
+
+\textbf{Answer.} $\gcd(16,45)=1$, so $16$ and $45$ are relatively prime.
+Composite numbers can be relatively prime.
 \end{methodbox}
 \end{multicols}
 \endgroup
 
 \thispagestyle{fancy}
-\clearpage
 \pagestyle{fancy}
 \thispagestyle{fancy}
 \section*{E. Definition-Driven Proofs and Quiz Bridges}
@@ -486,18 +546,24 @@ positive divisors are $1$ and $p$; an integer greater than $1$ that is not
 prime is \term{composite}.
 \end{definitionbox}
 
-\begin{workedbox}{Proof pattern: divisibility and linear combinations}
-\textbf{Unpack:} assume $d\mid a$ and $d\mid b$, so $a=dr$ and $b=ds$ for
+\begin{workedbox}{E.1: divisibility and linear combinations}
+\textbf{Problem.} Let $d,a,b,m,n\in\Z$. Suppose $d\mid a$ and $d\mid b$. Prove directly from the definition that $d\mid(ma+nb)$. State where each hypothesis is used.
+
+\textbf{Worked solution.} \textbf{Unpack:} assume $d\mid a$ and $d\mid b$, so $a=dr$ and $b=ds$ for
 some $r,s\in\Z$. \textbf{Substitute and factor:} for any $m,n\in\Z$,
 \[
 ma+nb=m(dr)+n(ds)=d(mr+ns).
 \]
 \textbf{Close:} $mr+ns\in\Z$, so the display gives the required witness and
 $d\mid(ma+nb)$.
+
+\textbf{Answer.} The two hypotheses give $a=dr,b=ds$; the integer witness $mr+ns$ proves $d\mid(ma+nb)$.
 \end{workedbox}
 
-\begin{workedbox}{Proof pattern: a modulus that factors}
-\textbf{Unpack:} suppose $p,q\ge2$, $d=pq$, and $x\equiv y\pmod d$. Then
+\begin{workedbox}{Similar example: a modulus that factors}
+\textbf{Problem.} Let $p,q\in\Z$ with $p,q\ge2$, let $d=pq$, and let $x,y\in\Z$. Suppose $x\equivmod d y$. Prove directly that $x\equivmod p y$ and $x\equivmod q y$. Are $p,q$ required to be prime?
+
+\textbf{Worked solution.} \textbf{Unpack:} suppose $p,q\ge2$, $d=pq$, and $x\equiv y\pmod d$. Then
 $d\mid(x-y)$, so $x-y=kd=kpq$ for some $k\in\Z$. \textbf{Refactor:}
 \[
 x-y=p(kq)\quad\text{and}\quad x-y=q(kp).
@@ -509,9 +575,10 @@ x\equiv y\pmod p,\qquad x\equiv y\pmod q.
 This direction needs only positive moduli with $p\mid d$ and $q\mid d$;
 primality is not required. For instance, $103-4=99$ proves the same claim
 from modulus $33$ to moduli $3$ and $11$.
+
+\textbf{Answer.} Both congruences follow from witnesses $kq$ and $kp$. Primality is not required.
 \end{workedbox}
 
-\columnbreak
 
 \begin{methodbox}{A reliable proof skeleton}
 \begin{enumerate}
@@ -523,37 +590,48 @@ from modulus $33$ to moduli $3$ and $11$.
 \end{enumerate}
 \end{methodbox}
 
-\begin{workedbox}{Proof pattern: products preserve congruence}
-\textbf{Unpack:} assume $a\equiv b\pmod m$ and $c\equiv d\pmod m$. Then
+\begin{workedbox}{C.5: products preserve congruence}
+\textbf{Problem.} Suppose $a\equiv b\pmod m$ and $c\equiv d\pmod m$, where $a,b,c,d\in\Z$ and $m\ge2$ is an integer. Prove from the definition that $ac\equiv bd\pmod m$.
+
+\textbf{Worked solution.} \textbf{Unpack:} assume $a\equiv b\pmod m$ and $c\equiv d\pmod m$. Then
 $a=b+mk$ and $c=d+m\ell$ for some $k,\ell\in\Z$. \textbf{Expand and factor:}
 \[
 ac-bd=m(b\ell+dk+mk\ell).
 \]
 \textbf{Close:} the parenthesized expression is an integer, so
 $m\mid(ac-bd)$ and $ac\equiv bd\pmod m$.
+
+\textbf{Answer.} $ac-bd=m(b\ell+dk+mk\ell)$ exhibits an integer multiple of $m$, so $ac\equivmod m bd$.
 \end{workedbox}
 
-\begin{workedbox}{Proof pattern: odd squares modulo $8$}
-\textbf{Represent the odd integer:} let $n=2k+1$. \textbf{Expand:}
+\begin{workedbox}{E.2: odd squares modulo $8$}
+\textbf{Problem.} Let $n\in\Z$ be odd. Prove $n^2\equiv1\pmod8$. Begin with the definition of odd and end by exhibiting an integer multiplier of $8$.
+
+\textbf{Worked solution.} \textbf{Represent the odd integer:} let $n=2k+1$. \textbf{Expand:}
 \[
 n^2-1=4k(k+1).
 \]
 \textbf{Find the extra factor of $2$:} one of $k,k+1$ is even, so
 $k(k+1)=2t$ for some $t\in\Z$. Hence $n^2-1=8t$. Thus
 $8\mid(n^2-1)$, proving $n^2\equiv1\pmod8$.
+
+\textbf{Answer.} $n^2-1=8t$ for an integer $t$, so $n^2\equivmod8 1$.
 \end{workedbox}
 
-\begin{workedbox}{Two short divisibility arguments}
-\textbf{Transitivity:} if $a\mid b$ and $b\mid c$, write $b=ar$ and $c=bs$.
-Substitution gives $c=(ar)s=a(rs)$; since $rs\in\Z$, $a\mid c$.
+\begin{workedbox}{E.3: transitivity}
+\textbf{Problem.} Let $a,b,c\in\Z$. Prove directly that if $a\mid b$ and $b\mid c$, then $a\mid c$. Use distinct integer witnesses for the two hypotheses.
 
-\textbf{Three consecutive integers:} let $P=n(n+1)(n+2)$. One factor is
-even, so $P=2r$ for some $r\in\Z$. One factor is divisible by $3$, so
-$P=3s$ for some $s\in\Z$. Combine these witnesses:
-\[
-P=3P-2P=3(2r)-2(3s)=6(r-s).
-\]
-Since $r-s\in\Z$, the definition gives $6\mid P$.
+\textbf{Worked solution.} By $a\mid b$, write $b=ar$ for some $r\in\Z$. By $b\mid c$, write $c=bs$ for some $s\in\Z$. Substitute: $c=(ar)s=a(rs)$. Since $rs\in\Z$, this equation supplies the witness required by $a\mid c$.
+
+\textbf{Answer.} $a\mid c$, with integer witness $rs$.
+\end{workedbox}
+
+\begin{workedbox}{E.5: three consecutive integers}
+\textbf{Problem.} Prove that the product of any three consecutive integers is divisible by $6$. Exhibit factors of $2$ and $3$, then combine their integer witnesses to produce an integer factor of $6$.
+
+\textbf{Worked solution.} Let $n\in\Z$ be arbitrary and set $P=n(n+1)(n+2)$. Of two consecutive integers one is even; thus at least one factor of $P$ is even and $P=2r$ for some $r\in\Z$. The residues of the three consecutive factors modulo $3$ are $0,1,2$ in some order, so $P=3s$ for some $s\in\Z$. Combine the two witnesses:\[P=3P-2P=3(2r)-2(3s)=6(r-s).\]Since $r-s\in\Z$, the definition proves $6\mid P$.
+
+\textbf{Answer.} $6\mid n(n+1)(n+2)$ for every integer $n$.
 \end{workedbox}
 
 \begin{warningbox}{Claims that need an extra hypothesis}

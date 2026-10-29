@@ -80,8 +80,8 @@ missing link. An argument is \term{valid} exactly when no interpretation makes
 all premises true and the conclusion false.
 
 On the Core, complete all requested parts in A, but any requested explanation
-or justification must be only one or two sentences. Symbols, labels, and compact
-argument maps are encouraged.
+or justification must be only one or two sentences. Each prompt requests at
+most two compact results; a full argument map is not required.
 \end{definitionbox}
 
 \begin{methodbox}{A.1 Argument structure}
@@ -96,18 +96,12 @@ An argument map such as $P_1+P_2\Rightarrow I$ and $I+P_3\Rightarrow C$
 records convergent or linked support without extra prose.
 \end{methodbox}
 
-\begin{workedbox}{A.1 worked example}
-\emph{Encrypted backups can be restored after device loss. The lab's archives
-are encrypted backups. Recoverable records reduce interruption after a failure.
-Therefore the lab should archive every final data set.}
+\begin{workedbox}{A.1: similar example}
+\textbf{Problem.} Read this argument: ``Encrypted backups can be restored after device loss. The lab's archives are encrypted backups, so the archives are recoverable. Recoverable records reduce interruption after a failure. Therefore the lab should archive every final data set.'' State the main conclusion and the intermediate conclusion. No full argument map or extra justification is required.
 
-\textbf{1. Endpoint:} $C$ = archive every final data set. \textbf{2. Chain:}
-$P_1$ = encrypted backups are recoverable; $P_2$ = the archives are encrypted
-backups; therefore $I$ = the archives are recoverable. \textbf{3. Value:}
-$P_3$ = recoverability reduces interruption. \textbf{4. Gap:} $I$ and $P_3$
-describe a benefit but do not yet imply a policy. Bridge: if an affordable
-archive protects final data and reduces interruption, the lab should use it.
-Thus $P_1+P_2\Rightarrow I$ and $I+P_3+\text{bridge}\Rightarrow C$.
+\textbf{Worked solution (teaching explanation).} The policy recommendation is the endpoint: the other claims explain why the lab should adopt it. The claim that the archives are recoverable is first supported by the first two premises and then reused as support for the recommendation. A fuller teaching map is $P_1+P_2\Rightarrow I$, then $I+P_3+\text{bridge}\Rightarrow C$. The policy bridge connects the benefit of recoverability to what the lab should do; identifying that bridge is useful practice, but is not another requested answer.
+
+\textbf{Answer.} Main: archive every final data set. Intermediate: the lab's archives are recoverable.
 \end{workedbox}
 
 \begin{definitionbox}{A.2 Conditionals in English}
@@ -121,21 +115,13 @@ The \term{contrapositive} $\neg Q\to\neg P$ is equivalent to $P\to Q$.
 The converse $Q\to P$ and inverse $\neg P\to\neg Q$ are not.
 \end{definitionbox}
 
-\columnbreak
 
-\begin{workedbox}{A.2 worked example}
-Let $A$ = access is granted, $T$ = training is complete, and $S$ = a supervisor
-is present.
-\begin{itemize}
-  \item ``Access only if trained'': $A\to T$.
-  \item ``Training and supervision are enough'': $(T\land S)\to A$.
-  \item ``Access exactly when both hold'': $A\leftrightarrow(T\land S)$.
-\end{itemize}
-\textbf{Step 1:} Translate each sentence before combining them. \textbf{Step 2:}
-from $A\leftrightarrow(T\land S)$, both $T$ and $S$ are individually necessary
-for $A$, while $T\land S$ is sufficient. \textbf{Step 3:} from the necessary
-direction $A\to T$, reverse and negate to get $\neg T\to\neg A$. Merely reversing the
-arrow gives $T\to A$, an unsupported converse because supervision may be absent.
+\begin{workedbox}{A.2: similar example}
+\textbf{Problem.} Let $A$ mean access is granted, $T$ mean training is complete, and $S$ mean a supervisor is present. The rule is: ``Access is granted exactly when training is complete and a supervisor is present.'' Translate the rule and name one condition necessary for $A$.
+
+\textbf{Worked solution (teaching explanation).} ``Exactly when'' gives both directions, $A\to(T\land S)$ and $(T\land S)\to A$. Thus each of $T,S$ is necessary for access, while their conjunction is sufficient. Related translations clarify the distinction: ``access only if trained'' is $A\to T$; ``training and supervision are enough'' is $(T\land S)\to A$. The contrapositive of $A\to T$ is $\neg T\to\neg A$; the converse $T\to A$ is unsupported because supervision may be absent.
+
+\textbf{Answer.} $A\leftrightarrow(T\land S)$; training ($T$) is necessary for $A$.
 \end{workedbox}
 
 \begin{methodbox}{A.3 Validity, countermodels, and repair}
@@ -148,14 +134,12 @@ premises true and the conclusion false. A \term{minimal repair} adds or changes
 only what is needed to block that countermodel.
 \end{methodbox}
 
-\begin{workedbox}{A.3 worked example}
-\emph{If the cache is stale, the test fails. The test failed. Therefore the
-cache is stale.} \textbf{1. Translate:} $S\to F,F\therefore S$.
-\textbf{2. Compare with a rule:} modus ponens would require $S$, not $F$; this
-instead affirms the consequent. \textbf{3. Disprove validity:} set
-$S=\mathrm F$ and $F=\mathrm T$. Both premises are true while the conclusion is
-false. \textbf{4. Repair:} add $F\to S$, or replace the first premise with
-$S\leftrightarrow F$. Either repair preserves the original conclusion $S$.
+\begin{workedbox}{A.3: similar example}
+\textbf{Problem.} ``If the cache is stale, the test fails. The test failed. Therefore the cache is stale.'' Let $S$ mean the cache is stale and $F$ mean the test fails. State whether the argument is valid; if invalid, give a true-premise/false-conclusion countermodel. One line is enough.
+
+\textbf{Worked solution (teaching explanation).} The form is $S\to F,F\therefore S$, which affirms the consequent. Modus ponens would require $S$ as a premise. When $S=\mathrm F$ and $F=\mathrm T$, the conditional and the second premise are true, but the conclusion is false. For additional practice, adding $F\to S$ (or strengthening the first premise to $S\leftrightarrow F$) repairs the inference. Repair is not requested here.
+
+\textbf{Answer.} Invalid; $S=\mathrm F$, $F=\mathrm T$.
 \end{workedbox}
 
 \begin{warningbox}{Frequent A errors}
@@ -187,15 +171,19 @@ conclusion is both supported and reused. A concession often begins with
 \emph{although} or \emph{admittedly}.
 \end{methodbox}
 
-\begin{workedbox}{B.1 worked example}
-\emph{Weekday appointments occur when many hourly workers cannot attend. Recent
-evening clinics filled immediately. A nurse and funding are now available.
-Therefore the clinic should offer Saturday appointments.}
+\begin{workedbox}{B.1: similar example}
+\textbf{Problem.} ``Weekday appointments occur when many hourly workers cannot attend. Recent evening clinics filled immediately. A nurse and funding are now available. Therefore the clinic should offer Saturday appointments.'' Which statement is the main conclusion? Choose one answer; no written justification is required.
 
-\textbf{Step 1:} ask which claim the others answer \emph{Why believe that?}
-\textbf{Step 2:} the timing and full evening clinics show demand; the nurse and
-funding remove objections. \textbf{Answer:} the Saturday recommendation is the
-endpoint. The other claims support it and are not themselves the main conclusion.
+\begin{enumerate}[label=(\alph*)]
+\item Weekday appointments are inconvenient for many hourly workers.
+\item Recent evening clinics filled immediately.
+\item A nurse is now available.
+\item The clinic should offer Saturday appointments.
+\item Funding for the clinic is now available.
+\end{enumerate}
+\textbf{Worked solution (teaching explanation).} Ask which claim the other sentences answer ``Why believe that?'' Inconvenient weekday timing and full evening clinics support demand; the nurse and funding make the proposal feasible. All three support the Saturday recommendation.
+
+\textbf{Answer.} (d).
 \end{workedbox}
 
 \begin{methodbox}{B.2 Role of a statement}
@@ -204,15 +192,19 @@ main conclusion, concession, objection, reply, example, or background. Read one
 sentence before and after it and identify the claim it supports or qualifies.
 \end{methodbox}
 
-\begin{workedbox}{B.2 worked example}
-\emph{Digitizing the archive will interrupt access for two weeks. However, it
-prevents irreversible loss, and the interruption can be reduced by scanning in
-batches. The archive should be digitized.}
+\begin{workedbox}{B.2: similar example}
+\textbf{Problem.} ``Digitizing the archive will interrupt access for two weeks. However, it prevents irreversible loss, and the interruption can be reduced by scanning in batches. The archive should be digitized.'' What role does the first sentence play? Choose one answer; no written justification is required.
 
-\textbf{Step 1:} the final sentence is the recommendation. \textbf{Step 2:} the
-first sentence counts against it. \textbf{Step 3:} \emph{however} introduces the
-author's reply. Thus the first sentence is a \textbf{concession}: an acknowledged
-cost that the author answers while defending digitization.
+\begin{enumerate}[label=(\alph*)]
+\item It states the main conclusion.
+\item It concedes a cost that the author answers while defending the recommendation.
+\item It supplies an example proving that digitization prevents loss.
+\item It is an intermediate conclusion supporting the final recommendation.
+\item It states a principle that rules out digitization.
+\end{enumerate}
+\textbf{Worked solution (teaching explanation).} The last sentence is the recommendation. The first counts against it; ``however'' introduces reasons the author thinks outweigh that cost. Thus the author acknowledges an objection and responds to it.
+
+\textbf{Answer.} (b).
 \end{workedbox}
 
 \begin{methodbox}{B.3 Point at issue}
@@ -221,27 +213,42 @@ accepts $\neg P$. Agreement about background facts is not disagreement about the
 inference drawn from them.
 \end{methodbox}
 
-\begin{workedbox}{B.3 worked example}
-Mina: ``A random sample of twelve is enough to estimate majority support.''
-Omar: ``Random selection helps, but twelve is too uncertain to determine a
-majority.'' \textbf{Step 1:} both can accept that selection was random.
-\textbf{Step 2:} Mina accepts and Omar rejects the sufficiency claim. They
-disagree whether \textbf{this sample is sufficient to determine majority support}.
+\begin{workedbox}{B.3: similar example}
+\textbf{Problem.} Mina: ``A random sample of twelve is enough to estimate majority support.'' Omar: ``Random selection helps, but twelve is too uncertain to determine a majority.'' Which proposition is a point at issue between them? Choose one answer; no written justification is required.
+
+\begin{enumerate}[label=(\alph*)]
+\item Random selection can improve a sample.
+\item The sample contains twelve people.
+\item A random sample of twelve is sufficient to determine majority support.
+\item Every larger sample is perfectly accurate.
+\item Majority support can never be estimated.
+\end{enumerate}
+\textbf{Worked solution (teaching explanation).} Both can accept that random selection helps. Mina accepts the sample-size sufficiency claim and Omar rejects it. A disagreement must concern the exact same proposition, not an unstated belief about polls in general.
+
+\textbf{Answer.} (c).
 \end{workedbox}
 
-\columnbreak
 
+\columnbreak
 \begin{methodbox}{B.4 Must follow}
 A correct answer is true in \emph{every} situation satisfying the facts. Chain
 conditionals, apply contrapositives, and respect quantifiers. Reject choices that
 are merely possible, likely, or stronger than the premises.
 \end{methodbox}
 
-\begin{workedbox}{B.4 worked example}
-Facts: every certified device was inspected; no inspected device lacks a seal;
-unit K is certified. \textbf{Chain:} certified $\to$ inspected and inspected
-$\to$ sealed, so K is inspected and then sealed. It does \emph{not} follow that
-every sealed device is certified: that conclusion reverses the chain.
+\begin{workedbox}{B.4: similar example}
+\textbf{Problem.} Every certified device was inspected. No inspected device lacks a seal. Unit K is certified. Which statement must follow? Choose one answer; no written justification is required.
+
+\begin{enumerate}[label=(\alph*)]
+\item Unit K has a seal.
+\item Every sealed device is certified.
+\item Every inspected device is certified.
+\item Every device is inspected.
+\item Unit K is the only certified device.
+\end{enumerate}
+\textbf{Worked solution (teaching explanation).} Certification implies inspection, and inspection implies having a seal. Apply each implication to K to conclude that K has a seal. The reverse implications are not supplied; the facts also say nothing about every other device.
+
+\textbf{Answer.} (a).
 \end{workedbox}
 
 \begin{methodbox}{B.5 Parallel reasoning}
@@ -249,14 +256,19 @@ Abstract the structure before comparing topics. Preserve arrow direction,
 negations, conjunction/disjunction, and quantifier strength.
 \end{methodbox}
 
-\begin{workedbox}{B.5 worked example}
-Stimulus: $P\to Q$, $P\lor R$, $\neg Q$, therefore $R$.
-\textbf{Step 1:} modus tollens yields $\neg P$. \textbf{Step 2:} disjunctive
-syllogism on $P\lor R$ and $\neg P$ yields $R$.
+\begin{workedbox}{B.5: similar example}
+\textbf{Problem.} The argument has form $P\to Q$, $P\lor R$, $\neg Q$, therefore $R$. Which argument has the same reasoning pattern? Choose one answer; no written justification is required.
 
-Parallel: ``If the pump runs, water flows. The pump runs or the valve is closed.
-No water flows. Therefore the valve is closed.'' A choice using $Q\to P$ or
-$\neg P\lor R$ does not match.
+\begin{enumerate}[label=(\alph*)]
+\item If the pump runs, water flows. Water flows. Therefore the pump runs.
+\item If water flows, the pump runs. The pump runs or the valve is closed. No water flows. Therefore the valve is closed.
+\item If the pump runs, water flows. The pump does not run or the valve is closed. No water flows. Therefore the valve is closed.
+\item If the pump runs, water flows. The pump runs or the valve is closed. Water flows. Therefore the valve is closed.
+\item If the pump runs, water flows. The pump runs or the valve is closed. No water flows. Therefore the valve is closed.
+\end{enumerate}
+\textbf{Worked solution (teaching explanation).} First use modus tollens on $P\to Q$ and $\neg Q$ to obtain $\neg P$. Then disjunctive syllogism on $P\lor R$ and $\neg P$ yields $R$. In (e), pump running is $P$, water flowing is $Q$, and valve closed is $R$. The other choices change a premise or arrow direction.
+
+\textbf{Answer.} (e).
 \end{workedbox}
 
 \begin{definitionbox}{Useful distinctions}
@@ -298,14 +310,19 @@ A necessary assumption is a condition the argument \emph{requires}. Use the
 the candidate was necessary. The assumption need not prove the conclusion.
 \end{methodbox}
 
-\begin{workedbox}{C.1 worked example}
-Argument: encrypted backups can restore any file in the latest completed backup;
-therefore every current project file could be restored tonight. \textbf{Gap:}
-the premise covers backed-up files, while the conclusion covers every current
-file. Candidate assumption: \textbf{every current file is included in that
-completed backup}. \textbf{Negation test:} some current file is absent. The
-stated restore ability then does not cover that file, so this reasoning no
-longer establishes the conclusion; another recovery method might still exist.
+\begin{workedbox}{C.1: similar example}
+\textbf{Problem.} ``Encrypted backups can restore any file included in the latest completed backup. Therefore every current project file could be restored tonight using that backup.'' Which assumption does this reasoning require? Choose one answer; no written justification is required.
+
+\begin{enumerate}[label=(\alph*)]
+\item Every restored file was created today.
+\item Every current project file is included in the latest completed backup.
+\item Encryption makes all backups smaller.
+\item No project file has ever been deleted.
+\item The backup is the only possible way to recover a file.
+\end{enumerate}
+\textbf{Worked solution (teaching explanation).} The premise covers files in the backup; the conclusion covers every current file. Negate (b): at least one current file is absent. Then the stated backup capability does not cover that file, so this reasoning fails. The conclusion could still hold through another recovery method, but that would be a different argument.
+
+\textbf{Answer.} (b).
 \end{workedbox}
 
 \begin{methodbox}{C.2 Sufficient assumption}
@@ -314,13 +331,19 @@ inserting the choice into the premises and completing a valid chain. It may be
 stronger than necessary, but it must not leave a gap.
 \end{methodbox}
 
-\begin{workedbox}{C.2 worked example}
-Facts: Plan K is the only plan meeting both budget and deadline. Conclusion:
-choose K. \textbf{Gap:} feasibility alone does not imply that a choice must be
-made. Add: \textbf{whenever at least one plan meets both constraints, choose a
-plan that meets both}. K meets them and no other plan does, so this principle
-requires choosing K. A rule saying only that acceptable plans must meet the
-constraints would not establish that K is acceptable.
+\begin{workedbox}{C.2: similar example}
+\textbf{Problem.} Plan K is the only plan meeting both the budget and the deadline. The committee concludes that it should choose K. Which added principle makes that conclusion follow? Choose one answer; no written justification is required.
+
+\begin{enumerate}[label=(\alph*)]
+\item Any chosen plan must meet both constraints.
+\item The committee should prefer a low cost even when the deadline is missed.
+\item Every plan meets at least one constraint.
+\item Whenever at least one plan meets both constraints, the committee should choose a plan that meets both.
+\item The committee may postpone making any choice indefinitely.
+\end{enumerate}
+\textbf{Worked solution (teaching explanation).} The facts identify the unique feasible plan, but do not yet require choosing a feasible plan. Add (d): some plan meets both constraints, so the committee should choose one that does. K is the only such plan, forcing the choice of K. A rule merely forbidding infeasible choices would not require making any choice.
+
+\textbf{Answer.} (d).
 \end{workedbox}
 
 \begin{methodbox}{C.3 Diagnose the flaw}
@@ -330,16 +353,23 @@ whole or whole-to-part error; false dilemma; equivocation; and treating lack of
 evidence as evidence of absence.
 \end{methodbox}
 
-\begin{workedbox}{C.3 worked example}
-The argument observes that benches were installed and attendance later rose,
-then concludes that the benches caused the increase. \textbf{Step 1:} the
-evidence establishes sequence and association. \textbf{Step 2:} causation would
-require ruling out other changes or comparing with a control. The flaw is
-inferring causation from an uncontrolled before--after pattern.
+\begin{workedbox}{C.3: similar example}
+\textbf{Problem.} ``The park installed benches in May. Attendance rose afterward. Therefore the benches caused the increase in attendance.'' Which flaw best describes this argument? Choose one answer; no written justification is required.
+
+\begin{enumerate}[label=(\alph*)]
+\item It infers causation from an uncontrolled before--after association.
+\item It proves the conclusion and then denies it.
+\item It assumes that no one ever uses benches.
+\item It rejects a claim solely because of its source.
+\item It mistakes a statement about every park for one about a single park.
+\end{enumerate}
+\textbf{Worked solution (teaching explanation).} The evidence gives a before--after association. Weather, programming, or another contemporaneous change could explain the attendance rise. Without an appropriate comparison or control, temporal sequence alone does not establish the proposed cause.
+
+\textbf{Answer.} (a).
 \end{workedbox}
 
-\columnbreak
 
+\columnbreak
 \begin{methodbox}{C.4 Strengthen}
 Find the conclusion and its weakest support link. A strengthener may rule out an
 alternative explanation, validate a measurement, make a sample representative,
@@ -347,12 +377,19 @@ establish a missing connection, or show the proposed mechanism operates.
 It need not prove the conclusion.
 \end{methodbox}
 
-\begin{workedbox}{C.4 worked example}
-Claim: high-contrast labels reduce sorting errors. Evidence: one office improved
-after adopting them. \textbf{Weak link:} some other change may explain the drop.
-\textbf{Best strengthener:} comparable lines were randomly assigned old or
-high-contrast labels, and only the latter showed a sustained error drop. The
-control and random assignment directly support the proposed causal link.
+\begin{workedbox}{C.4: similar example}
+\textbf{Problem.} One office made fewer sorting errors after adopting high-contrast labels. Its manager concludes that the new labels reduce sorting errors. Which finding most strengthens the reasoning? Choose one answer; no written justification is required.
+
+\begin{enumerate}[label=(\alph*)]
+\item Employees say the new labels look more attractive.
+\item The new labels cost less than the old ones.
+\item Comparable sorting lines were randomly assigned old or high-contrast labels, and only the latter showed a sustained error reduction.
+\item The office changed its labels at the beginning of a month.
+\item Some errors occurred before either label design was introduced.
+\end{enumerate}
+\textbf{Worked solution (teaching explanation).} The weak link is whether a different change explains the drop. Random assignment and a comparison using old labels help hold other factors comparable. A sustained reduction confined to the high-contrast condition directly supports the proposed mechanism; popularity or lower cost does not.
+
+\textbf{Answer.} (c).
 \end{workedbox}
 
 \begin{methodbox}{C.5 Weaken}
@@ -361,12 +398,19 @@ confounder, selection effect, bad proxy, reversed causation, missing necessary
 step, or evidence that the mechanism will not operate.
 \end{methodbox}
 
-\begin{workedbox}{C.5 worked example}
-Claim: forcing applicants to open an accurate tutorial ensures correct forms.
-\textbf{Proposed mechanism:} opening $\to$ reading and understanding $\to$
-correct completion. \textbf{Best weakener:} applicants can close the tutorial
-immediately without reading it. That breaks the first link; accuracy alone does
-not ensure exposure, understanding, or use.
+\begin{workedbox}{C.5: similar example}
+\textbf{Problem.} ``The application tutorial is accurate. If applicants are required to open it before submitting a form, they will complete their forms correctly.'' Which fact most weakens this reasoning? Choose one answer; no written justification is required.
+
+\begin{enumerate}[label=(\alph*)]
+\item The tutorial contains screenshots of the form.
+\item Applicants can reread the tutorial if they wish.
+\item The tutorial is written in the same language as the form.
+\item The tutorial explains all required fields accurately.
+\item Applicants can close the tutorial immediately without reading it.
+\end{enumerate}
+\textbf{Worked solution (teaching explanation).} The mechanism needs opening the tutorial to lead to reading, understanding, and correct use. Choice (e) breaks the first link: merely opening an accurate resource does not guarantee exposure to its content.
+
+\textbf{Answer.} (e).
 \end{workedbox}
 
 \begin{definitionbox}{Necessary versus sufficient}
@@ -392,9 +436,9 @@ support link. On the Core I record only the selected answer.
 \end{multicols}
 
 \clearpage
-\footnotesize
-\tcbset{before skip=2pt,after skip=2pt}
-\section*{D. Principles and Explanations \hfill E. Evaluation and Revision}
+\small
+\tcbset{before skip=2.5pt,after skip=2.5pt}
+\section*{D. Principles and Explanations; E. Evaluation and Revision}
 \begin{multicols}{2}
 \begin{definitionbox}{How D and E are graded}
 In D, choose one answer only; \textbf{no written justification is required}.
@@ -407,41 +451,72 @@ Translate each principle as conditions $\to$ judgment. Match \emph{every}
 operative condition to a stated fact; reject rules that are too broad, too narrow,
 or point toward the opposite judgment.
 \end{methodbox}
-\begin{workedbox}{D.1 example}
-A fee may be waived when a person took every reasonable step but an agency outage
-prevented timely filing. \textbf{Conditions:} reasonable effort and an external
-outage. \textbf{Case check:} logs establish both for Mira. \textbf{Result:} the
-matching principle permits a waiver because reasonable compliance was blocked
-by circumstances outside the applicant's control.
+\begin{workedbox}{D.1: similar example}
+\textbf{Problem.} Mira took every reasonable step to file on time, but an agency outage prevented timely filing; logs establish both facts. A reviewer concludes that her late fee may be waived. Which principle most directly supports that conclusion? Choose one answer; no written justification is required.
+
+\begin{enumerate}[label=(\alph*)]
+\item A fee may be waived only when no filing attempt was made.
+\item A fee may be waived when reasonable compliance was prevented by circumstances outside the applicant's control.
+\item Every applicant who misses a deadline must receive a waiver.
+\item An agency outage always makes an applicant responsible for the delay.
+\item A fee may never be waived after a deadline.
+\end{enumerate}
+\textbf{Worked solution (teaching explanation).} The matching principle must connect both reasonable effort and the external outage to permission to waive the fee. Choice (b) includes both conditions and reaches exactly that judgment. The other choices omit, reverse, or deny the relevant connection.
+
+\textbf{Answer.} (b).
 \end{workedbox}
 
 \begin{methodbox}{D.2 Resolve the discrepancy}
 Treat both observations as true. Find a third fact that separates the measures,
 groups, or time periods so the apparent conflict disappears.
 \end{methodbox}
-\begin{workedbox}{D.2 example}
-Fewer people registered, yet more seats were occupied. \textbf{Step 1:} keep
-both facts. \textbf{Step 2:} distinguish registration from attendance.
-\textbf{Resolution:} the new group had a much lower no-show rate, so a smaller
-registered group can still produce more occupied seats.
+\begin{workedbox}{D.2: similar example}
+\textbf{Problem.} A workshop had fewer registered participants this year than last year, yet more seats were occupied at the meeting. Each attendee occupied one seat, and no unregistered guests attended. Which fact best resolves the apparent discrepancy? Choose one answer; no written justification is required.
+
+\begin{enumerate}[label=(\alph*)]
+\item The workshop used the same registration system.
+\item Every registered participant attended in both years.
+\item This year's no-show rate was much higher.
+\item This year's registered group had a much lower no-show rate.
+\item The meeting had fewer occupied seats this year.
+\end{enumerate}
+\textbf{Worked solution (teaching explanation).} Registration and actual attendance are different measures. Suppose last year 100 registered and 50 attended, while this year 80 registered and 72 attended. The lower no-show rate produces fewer registrations but more occupied seats. Choice (d) permits exactly this pattern without denying either observation.
+
+\textbf{Answer.} (d).
 \end{workedbox}
 
-\begin{methodbox}{D.3 Parallel flaw}
-Abstract the invalid move. Example: ``certified $\to$ inspected; inspected;
-therefore certified'' affirms the consequent. The correct answer must repeat
-$P\to Q,Q\therefore P$, not merely reach a dubious conclusion.
+\begin{methodbox}{D.3 Parallel flaw: similar example}
+\textbf{Problem.} ``Every certified device has been inspected. This device has been inspected. Therefore it is certified.'' Which argument has the same flawed form? Choose one answer; no written justification is required.
+\begin{enumerate}[label=(\alph*)]
+\item Every oak is a tree. This plant is an oak. Therefore it is a tree.
+\item Every oak is a tree. This plant is a tree. Therefore it is an oak.
+\item Every oak is a tree. This plant is not a tree. Therefore it is not an oak.
+\item Every oak is a tree. This plant is not an oak. Therefore it is not a tree.
+\item Some trees are oaks. This plant is an oak. Therefore some plants are trees.
+\end{enumerate}
+\textbf{Worked solution (teaching explanation).} The original has form $P\to Q,Q\therefore P$: it affirms the consequent. Choice (b) repeats that exact error. Choice (d) is also invalid but denies the antecedent instead. Match the logical structure rather than merely choosing another dubious conclusion.
+\textbf{Answer.} (b).
 \end{methodbox}
 
+\columnbreak
 \begin{methodbox}{D.4 Method of reasoning}
 Describe the argument's actual operation: applies a rule, eliminates alternatives,
 uses an analogy, gives a counterexample, distinguishes cases, concedes then
 responds, or shows that a proposal defeats its own goal.
 \end{methodbox}
-\begin{workedbox}{D.4 example}
-An author rejects a claim that deadlines are never fair by presenting a deadline
-needed to coordinate emergency staffing. \textbf{Pattern:} the original claim is
-universal, while one fair deadline makes it false. Method: \textbf{counterexample
-to a universal claim}, not proof that every deadline is fair.
+\begin{workedbox}{D.4: similar example}
+\textbf{Problem.} One speaker claims that deadlines are never fair. An author replies: ``The deadline for emergency staffing is fair: every qualified volunteer has a reasonable chance to respond, and a firm cutoff is needed to coordinate the rescue teams. So the claim that deadlines are never fair is false.'' Which method does the author use? Choose one answer; no written justification is required.
+
+\begin{enumerate}[label=(\alph*)]
+\item Giving a counterexample to a universal claim.
+\item Showing that every deadline is fair.
+\item Rejecting the speaker because of a personal defect.
+\item Inferring fairness from popularity alone.
+\item Assuming that no deadline can coordinate staffing.
+\end{enumerate}
+\textbf{Worked solution (teaching explanation).} ``Never fair'' is a universal claim. A single fair deadline is enough to refute it. The author supplies such a case; the response does not establish that all deadlines are fair.
+
+\textbf{Answer.} (a).
 \end{workedbox}
 
 \begin{methodbox}{D.5 Complete the argument}
@@ -449,16 +524,21 @@ Insert a claim that connects established facts to the stated conclusion. Prefer
 the weakest answer that closes the exact gap; avoid a new topic or an unnecessary
 universal rule.
 \end{methodbox}
-\begin{workedbox}{D.5 example}
-Facts: a sample contains only early riders, while later riders face different
-service. Conclusion: the survey cannot justify system-wide cuts. \textbf{Gap:}
-the evidence represents only one systematically different subgroup.
-\textbf{Completion:} a sample limited to such a subgroup cannot support a
-system-wide estimate. That sentence connects the sample fact directly to the
-scope of the conclusion.
+\begin{workedbox}{D.5: similar example}
+\textbf{Problem.} A transit survey samples only early riders. Later riders face systematically different service conditions. The author argues: ``Because \underline{\hspace{0.7in}}, this survey cannot justify system-wide service cuts.'' Which completion best connects the facts to the conclusion? Choose one answer; no written justification is required.
+
+\begin{enumerate}[label=(\alph*)]
+\item every early rider favors service cuts
+\item later riders always travel without paying
+\item a sample restricted to a systematically different subgroup cannot support a system-wide estimate
+\item any transit survey proves that all routes are identical
+\item cutting service is always wrong regardless of evidence
+\end{enumerate}
+\textbf{Worked solution (teaching explanation).} The conclusion concerns the whole system, but the evidence represents one systematically different subgroup. Choice (c) states the relevant limitation of that sampling method. It targets scope without adding an unrelated policy claim.
+
+\textbf{Answer.} (c).
 \end{workedbox}
 
-\columnbreak
 
 \begin{methodbox}{E.1 Causal evaluation}
 Separate \term{association} from \term{causation}. Name the conclusion, evidence,
@@ -466,13 +546,12 @@ and a plausible confounder, selection effect, reverse cause, or measurement
 problem. Strong evidence uses random assignment, a valid comparison group,
 baseline measures, or converging mechanisms.
 \end{methodbox}
-\begin{workedbox}{E.1 compact full-credit model}
-Claim: reminders cause timely submission; evidence: students who enabled them
-submitted more often. \textbf{Step 1:} this is observational and self-selected.
-\textbf{Step 2:} already-organized students may both enable reminders and submit
-on time. \textbf{Step 3:} randomly assign comparable students to reminders or no
-reminders and compare submission rates. The original evidence supports an
-association, not yet the causal claim.
+\begin{workedbox}{E.1: similar example}
+\textbf{Problem.} Students who enabled submission reminders submitted assignments on time more often than students who did not. An administrator concludes that reminders cause timely submission. Give one plausible alternative explanation and one study design that would help test the causal claim. Keep the response to two brief sentences.
+
+\textbf{Worked solution (teaching explanation).} This is observational: students selected whether to enable reminders. Already-organized students may both turn on reminders and submit on time. Random assignment of comparable students helps separate that pre-existing difference from the effect of reminders.
+
+\textbf{Answer.} Already-organized students may be more likely both to enable reminders and to submit on time. Randomly assign comparable students to reminders or no reminders and compare timely-submission rates.
 \end{workedbox}
 
 \begin{methodbox}{E.2 Apply a principle}
@@ -480,26 +559,27 @@ List the rule's conditions, compare each with the case, then state the result.
 Do not silently add an exception. If a term is ambiguous, state one reasonable
 interpretation in a short sentence.
 \end{methodbox}
-\begin{workedbox}{E.2 compact full-credit model}
-Principle: a penalty based on a high-false-positive method requires reliable
-independent corroboration. \textbf{Conditions:} proposed penalty; unreliable
-screen; independent corroboration required. \textbf{Case check:} only the screen
-is positive, so corroboration is absent. \textbf{Result:} the penalty is not
-justified, although a proportionate investigation may still be justified.
+\begin{workedbox}{E.2: similar example}
+\textbf{Problem.} Principle: ``A penalty based on a screening method with a high false-positive rate is justified only if reliable independent evidence corroborates the result.'' A student's screen is positive, but no independent corroborating evidence is available. Does the principle justify imposing the penalty now? Give the result and one short sentence identifying the decisive condition.
+
+\textbf{Worked solution (teaching explanation).} The rule makes corroboration necessary for a justified penalty. Here that condition is absent, so the rule does not justify the penalty. The screen may justify a proportionate investigation, but that is a different action from imposing a penalty.
+
+\textbf{Answer.} No. Reliable independent corroboration, a required condition for the penalty, is absent.
 \end{workedbox}
 
+\columnbreak
 \begin{methodbox}{E.3 Integrated Op-Ed analysis and revision}
-State the main conclusion; map the strongest support; identify the most important
-gap; then revise the conclusion to the strength the evidence warrants. A good
+The requested response has two parts: state the main conclusion, then revise it
+to the strength the evidence warrants. To prepare that short answer, identify
+the strongest support and its main gap. A good
 revision preserves useful evidence while adding scope, comparison, or uncertainty.
 \end{methodbox}
-\begin{workedbox}{E.3 compact full-credit model}
-Evidence: one bus-lane pilot reduced corridor travel time and coincided with
-higher ridership. Claim: convert every city road. \textbf{Step 1:} the evidence
-comes from one corridor and does not rule out other causes of ridership.
-\textbf{Step 2:} the conclusion jumps from one pilot to every road.
-\textbf{Revision:} test comparable corridors and measure travel, safety, and
-spillovers before deciding whether broader conversion is warranted.
+\begin{workedbox}{E.3: similar example}
+\textbf{Problem.} ``One bus-lane pilot reduced travel time on its corridor and coincided with higher ridership. Therefore the city should convert every city road to a bus lane.'' State the main conclusion, then give one evidence-supported revision. Two compact sentences are enough.
+
+\textbf{Worked solution (teaching explanation).} The main conclusion recommends converting every road. Evidence from one corridor does not establish effects on every road, and the observed ridership change may have another cause. A cautious revision preserves the pilot's encouraging evidence while limiting the recommendation to further testing on comparable corridors.
+
+\textbf{Answer.} Main conclusion: convert every city road to a bus lane. Revision: test bus lanes on comparable corridors and measure travel time, safety, and spillovers before deciding whether broader conversion is warranted.
 \end{workedbox}
 
 \begin{warningbox}{Frequent D--E errors}
